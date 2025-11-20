@@ -11,12 +11,16 @@ const menu: {title: string; link: string}[] = [
         link: '/about',
     },
     {
-        title: 'Projects',
-        link: '/projects',
+        title: 'Inclusion Numerique',
+        link: '/EPNM',
+    },
+    {
+        title: 'Ecole de Devoir',
+        link: '/EDD',
     },
     {
         title: 'Titres Services',
-        link: '/services',
+        link: '/titres-service',
     },
 ]
 
@@ -30,9 +34,11 @@ const Navbar = () => {
                 ))
             }
             </nav>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                Contactez-nous
-            </button>
+            <Link href='/contact'>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer hover:scale-[101%] transition-all duration-100 ease-in">
+                    Contactez-nous
+                </button>
+            </Link>
         </section>
     );
 };
