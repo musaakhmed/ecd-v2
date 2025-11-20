@@ -1,5 +1,8 @@
 import React from 'react'
-import './styles.css'
+import './globals.css'
+
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 export const metadata = {
   description: 'Espace Culture et Developpement',
@@ -12,7 +15,11 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <main>
+            <Header />
+            {children}
+            <Footer />
+        </main>
       </body>
     </html>
   )
