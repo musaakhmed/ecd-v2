@@ -15,6 +15,42 @@ import { Gallery } from '@/collections/Gallery'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+// Check if all required S3 environment variables are present
+const hasS3Config =
+  process.env.S3_BUCKET &&
+  process.env.S3_ACCESS_KEY_ID &&
+  process.env.S3_SECRET_ACCESS_KEY &&
+  process.env.S3_REGION &&
+  process.env.S3_ENDPOINT
+
+// Conditionally include S3 storage plugin
+const plugins = []
+if (hasS3Config) {
+  plugins.push(
+    s3Storage({
+      collections: {
+        media: {
+          prefix: 'media',
+        },
+        gallery: {
+          prefix: 'gallery',
+        }
+      },
+      bucket: process.env.S3_BUCKET!,
+      config: {
+        forcePathStyle: true,
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID!,
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
+        },
+        region: process.env.S3_REGION!,
+        endpoint: process.env.S3_ENDPOINT!,
+        // ... Other S3 configuration
+      },
+    })
+  )
+}
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -34,30 +70,5 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [
-    // storage-adapter-placeholder
-    s3Storage({
-      collections: {
-        media: {
-          prefix: 'media',
-        },
-        gallery: {
-          prefix: 'gallery',
-        }
-      },
-
-
-      bucket: process.env.S3_BUCKET || '',
-      config: {
-        forcePathStyle: true,
-        credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
-        },
-        region: process.env.S3_REGION,
-        endpoint: process.env.S3_ENDPOINT,
-        // ... Other S3 configuration
-      },
-    }),
-  ],
+  plugins,
 })
