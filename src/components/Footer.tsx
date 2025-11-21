@@ -13,9 +13,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white mb-4">Espace Culture et Développement</h3>
             <p className="text-primary-200 text-sm leading-relaxed">
-              Espace Cultures & Développement asbl favorise l'intégration et l'insertion de tous les
-              publics grâce à la promotion de la culture, l'accès aux outils numériques, et la lutte
-              contre la fracture numérique.
+              Espace Cultures & Développement asbl favorise l&apos;intégration et l&apos;insertion
+              de tous les publics grâce à la promotion de la culture, l&apos;accès aux outils
+              numériques, et la lutte contre la fracture numérique.
             </p>
           </div>
 
@@ -148,7 +148,7 @@ const Footer = () => {
             <div>
               <span className="text-sm">
                 Espace Cultures & Développement asbl veille au respect et la protection des données
-                personnelles de ses usages en s’alignant sur le règlement RGPD
+                personnelles de ses usages en s&apos;alignant sur le règlement RGPD
               </span>
             </div>
 
