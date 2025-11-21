@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { menu } from '../lib/menu'
+import { menu } from '@/lib/menu'
 import { NavBarCTA } from '@/components/Header/NavBarCTA'
 
-const Navbar = () => {
+export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
@@ -77,5 +77,3 @@ const Navbar = () => {
     </section>
   )
 }
-
-export default Navbar

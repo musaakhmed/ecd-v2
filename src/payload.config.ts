@@ -11,7 +11,6 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Gallery } from '@/collections/Gallery'
 
-
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -22,6 +21,14 @@ const hasS3Config =
   process.env.S3_SECRET_ACCESS_KEY &&
   process.env.S3_REGION &&
   process.env.S3_ENDPOINT
+
+// Conditionally configure collections - disable uploads if S3 is not configured
+const collections = [
+  Users,
+  // Only enable uploads if S3 storage is configured
+  hasS3Config ? Media : { ...Media, upload: false },
+  hasS3Config ? Gallery : { ...Gallery, upload: false },
+]
 
 // Conditionally include S3 storage plugin
 const plugins = []
@@ -34,7 +41,7 @@ if (hasS3Config) {
         },
         gallery: {
           prefix: 'gallery',
-        }
+        },
       },
       bucket: process.env.S3_BUCKET!,
       config: {
@@ -47,7 +54,7 @@ if (hasS3Config) {
         endpoint: process.env.S3_ENDPOINT!,
         // ... Other S3 configuration
       },
-    })
+    }),
   )
 }
 
@@ -58,7 +65,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Gallery],
+  collections,
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
