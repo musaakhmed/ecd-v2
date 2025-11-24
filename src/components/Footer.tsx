@@ -65,6 +65,10 @@ const Footer = () => {
                 <span className="text-primary-200">
                   Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique
                 </span>
+              </li>{' '}
+              <li className="flex flex-col">
+                <span className="text-primary-300 mb-1">N° d’entreprise </span>
+                <span className="text-primary-200">0628.538.422</span>
               </li>
             </ul>
           </div>
