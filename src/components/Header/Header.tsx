@@ -8,7 +8,7 @@ import Logo from '@/components/Header/Logo'
 const Header = () => {
   return (
     <motion.header
-      className="h-16 bg-white top-0 left-0 sticky flex items-center justify-center shadow-sm"
+      className="h-16 backdrop-blur  bg-white/30 top-0 left-0 sticky flex items-center justify-center shadow-sm z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
