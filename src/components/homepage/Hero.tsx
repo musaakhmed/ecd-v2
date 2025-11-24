@@ -9,22 +9,22 @@ interface HeroProps {
 
 const slides: Slide[] = [
   {
-    image: '/assets/hero/devoirs.jpg',
+    image: '/api/media/hero/devoirs.jpg',
     title: 'Mentorat personnalisé',
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
   },
   {
-    image: '/assets/hero/titres-services.jpg',
+    image: '/api/media/hero/titres-services.jpg',
     title: 'Formations inspirantes',
     description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
   },
   {
-    image: '/assets/hero/seniors-transition-numerique.jpg',
+    image: '/api/media/seniors-transition-numerique.jpg',
     title: 'Transition numérique inclusive',
     description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
   },
   {
-    image: '/assets/hero/robotics.jpg',
+    image: '/api/media/robotics.jpg',
     title: 'Laboratoire créatif',
     description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
   },
