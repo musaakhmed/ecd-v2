@@ -3,41 +3,22 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
+interface HeroProps {
+  slides: Slide[]
+}
+
 type Slide = {
   image: string
   title: string
-  subtitle: string
+  description: string
 }
-
-const slides: Slide[] = [
-  {
-    image: '/assets/hero/devoirs.jpg',
-    title: 'Mentorat personnalisé',
-    subtitle: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
-  },
-  {
-    image: '/assets/hero/titres-services.jpg',
-    title: 'Formations inspirantes',
-    subtitle: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
-  },
-  {
-    image: '/assets/hero/seniors-transition-numerique.jpg',
-    title: 'Transition numérique inclusive',
-    subtitle: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
-  },
-  {
-    image: '/assets/hero/robotics.jpg',
-    title: 'Laboratoire créatif',
-    subtitle: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
-  },
-]
 
 const textVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 }
 
-const Hero = () => {
+const Hero = ({ slides }: HeroProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
 
@@ -126,7 +107,7 @@ const Hero = () => {
                 className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl"
                 variants={textVariants}
               >
-                {slides[activeIndex].subtitle}
+                {slides[activeIndex].description}
               </motion.p>
             </motion.div>
           </AnimatePresence>
