@@ -74,7 +74,7 @@ const PartnerCard = () => {
   }
 
   return (
-    <div className="min-h-[30vh] flex items-center justify-center gap-6 lg:w-2/3 mx-auto overflow-hidden">
+    <div className="min-h-[30vh] flex items-center justify-center relative lg:w-2/3 mx-auto overflow-hidden">
       {partners.map((partner, idx) => {
         // Calculate offset relative to centerIdx with wrapping for infinite effect
 
@@ -84,25 +84,35 @@ const PartnerCard = () => {
 
         // Set visual properties based on offset
         const scale = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.7 : 0.3
-        const opacity = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.6 : 0.3
-        const translateX = offset * 90 // Adjust this for spacing between logos
+        const opacity = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.4 : 0.2
+        const translateX = offset * 200 // Adjust this for spacing between logos
         const zIndex = 10 - Math.abs(offset)
 
         return (
           <motion.div
             key={idx}
-            className="relative w-32 h-20 md:w-40 md:h-28 rounded-lg drop-shadow-2xl bg-transparent flex items-center justify-center overflow-hidden"
-            style={{ zIndex }}
-            animate={{ scale, opacity, x: translateX }}
-            transition={{ type: 'keyframes', stiffness: 300, damping: 25 }}
+            className="absolute w-32 h-20 md:w-40 md:h-28 rounded-lg drop-shadow-2xl bg-transparent flex items-center justify-center"
+            style={{
+              zIndex,
+              left: '50%',
+            }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            animate={{
+              scale,
+              opacity,
+              x: translateX,
+              translateX: '-50%',
+            }}
+            transition={{ type: 'keyframes', stiffness: 300, damping: 25, duration: 1 }}
             aria-current={offset === 0 ? 'true' : 'false'}
           >
             <Image
               src={partner.image}
               alt={partner.title}
-              height={250}
-              width={250}
-              className="transition-all duration-300 ease-in-out object-contain"
+              height={300}
+              width={300}
+              className="transition-all duration-300 ease-in-out object-contain hover:scale-110"
               priority={offset === 0}
             />
           </motion.div>
