@@ -91,13 +91,13 @@ const PartnerCard = () => {
         return (
           <motion.div
             key={idx}
-            className="absolute w-32 h-20 md:w-40 md:h-28 rounded-lg drop-shadow-2xl bg-transparent flex items-center justify-center"
+            className="absolute rounded-lg drop-shadow-2xl bg-transparent flex items-center justify-center"
             style={{
               zIndex,
               left: '50%',
             }}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity }}
             animate={{
               scale,
               opacity,
@@ -110,8 +110,8 @@ const PartnerCard = () => {
             <Image
               src={partner.image}
               alt={partner.title}
-              height={300}
-              width={300}
+              height={200}
+              width={200}
               className="transition-all duration-300 ease-in-out object-contain hover:scale-110"
               priority={offset === 0}
             />
