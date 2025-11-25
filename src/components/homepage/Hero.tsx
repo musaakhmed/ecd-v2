@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, stagger } from 'framer-motion'
 
 interface HeroProps {
   slides: Slide[]
@@ -110,7 +110,7 @@ const Hero = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                  transition: { delayChildren: stagger(0.08) },
                 },
               }}
             >
@@ -137,7 +137,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="  flex w-full justify-center px-4 pb-6 md:absolute md:bottom-3">
+      <div className="z-10 flex w-full justify-center px-4 pb-6 md:absolute md:bottom-3">
         <div className="flex flex-wrap items-center gap-2 rounded-full bg-white/10 px-4 py-2 shadow-lg shadow-black/30 backdrop-blur sm:gap-3 sm:px-6 sm:py-3">
           {slides.map((slide, index) => {
             const isActive = index === activeIndex
@@ -152,7 +152,7 @@ const Hero = () => {
               >
                 <motion.span
                   layout
-                  className="h-2 rounded-full bg-white"
+                  className="h-2 rounded-full bg-white "
                   initial={false}
                   animate={{
                     width: isActive ? 42 : 8,
