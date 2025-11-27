@@ -10,12 +10,12 @@ export default async function HomePage() {
   // const slides = await fetchSlides()
 
   return (
-    <div className="home">
+    <div>
       <Hero />
       <Projects />
+      <Stats />
       <Programs />
       <Partners />
-      <Stats />
     </div>
   )
 }

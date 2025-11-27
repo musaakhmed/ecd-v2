@@ -8,20 +8,12 @@ type Partners = { title: string; image: string }[]
 
 const partners: Partners = [
   {
-    title: 'engie',
-    image: '/assets/partenaires/fondationengie.png',
-  },
-  {
     title: 'stib',
     image: '/assets/partenaires/stib.jpg',
   },
   {
     title: 'fondation roi baudoin',
     image: '/assets/partenaires/logoFRB.png',
-  },
-  {
-    title: 'itsme',
-    image: '/assets/partenaires/itsme.webp',
   },
   {
     title: 'equal brussels',
@@ -32,12 +24,24 @@ const partners: Partners = [
     image: '/assets/partenaires/Logo_Francophones_Bruxelles.png',
   },
   {
-    title: 'loterie nationale',
-    image: '/assets/partenaires/loterienationale.png',
-  },
-  {
     title: 'region bruxelles capitale',
     image: '/assets/partenaires/region_bruxelles_capitale.png',
+  },
+  {
+    title: 'form ts',
+    image: '/assets/partenaires/form-ts.png',
+  },
+  {
+    title: 'ville de bruxelles',
+    image: '/assets/partenaires/ville_bx.png',
+  },
+  {
+    title: 'brusoc',
+    image: '/assets/partenaires/brusoc.png',
+  },
+  {
+    title: 'digital belgium skills fund',
+    image: '/assets/partenaires/dbsf.avif',
   },
 ]
 
@@ -74,7 +78,7 @@ const PartnerCard = () => {
   }
 
   return (
-    <div className="min-h-[30vh] flex items-center justify-center relative lg:w-2/3 mx-auto overflow-hidden">
+    <div className="min-h-[30vh] flex items-center justify-center relative lg:w-2/3 w-full mx-auto overflow-hidden">
       {partners.map((partner, idx) => {
         // Calculate offset relative to centerIdx with wrapping for infinite effect
 
