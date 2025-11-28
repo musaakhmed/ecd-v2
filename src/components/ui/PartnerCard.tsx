@@ -88,7 +88,7 @@ const PartnerCard = () => {
 
         // Set visual properties based on offset
         const scale = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.7 : 0.3
-        const opacity = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.4 : 0.2
+        const opacity = offset === 0 ? 1 : Math.abs(offset) === 1 ? 0.4 : 0.1
         const translateX = offset * 200 // Adjust this for spacing between logos
         const zIndex = 10 - Math.abs(offset)
 

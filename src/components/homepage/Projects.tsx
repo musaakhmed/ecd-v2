@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Projects = () => {
-    return (
-        <div className='h-[75vh] flex items-center justify-center bg-cyan-200'>
-            Projets Phares
-        </div>
-    );
-};
+  return (
+    <section className="min-h-screen bg-primary-100 flex items-center justify-around p-5">
+      Projects
+    </section>
+  )
+}
 
-export default Projects;
+export default Projects
