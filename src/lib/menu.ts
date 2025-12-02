@@ -1,18 +1,22 @@
 export const menu: { title: string; link: string }[] = [
   {
     title: 'A propos',
-    link: '/about',
+    link: '/a-propos',
+  },
+  {
+    title: 'Nos services',
+    link: '/services',
   },
   {
     title: 'Inclusion numérique',
-    link: '/EPNM',
-  },
-  {
-    title: 'Ecole de devoirs',
-    link: '/EDD',
+    link: '/inclusion-numerique',
   },
   {
     title: 'Titres Services',
     link: '/titres-service',
+  },
+  {
+    title: 'Ecole de devoirs',
+    link: '/ecole-devoirs',
   },
 ]

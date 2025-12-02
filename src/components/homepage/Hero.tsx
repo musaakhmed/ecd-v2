@@ -7,28 +7,28 @@ interface HeroProps {
   slides: Slide[]
 }
 
-const slides: Slide[] = [
-  {
-    image: '/assets/hero/devoirs.jpg',
-    title: 'Mentorat personnalisé',
-    description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
-  },
-  {
-    image: '/assets/hero/titres-services.jpg',
-    title: 'Formations inspirantes',
-    description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
-  },
-  {
-    image: '/assets/hero/seniors-transition-numerique.jpg',
-    title: 'Transition numérique inclusive',
-    description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
-  },
-  {
-    image: '/assets/hero/robotics.jpg',
-    title: 'Laboratoire créatif',
-    description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
-  },
-]
+// const slides: Slide[] = [
+//   {
+//     image: '/assets/hero/devoirs.jpg',
+//     title: 'Mentorat personnalisé',
+//     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
+//   },
+//   {
+//     image: '/assets/hero/titres-services.jpg',
+//     title: 'Formations inspirantes',
+//     description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
+//   },
+//   {
+//     image: '/assets/hero/seniors-transition-numerique.jpg',
+//     title: 'Transition numérique inclusive',
+//     description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
+//   },
+//   {
+//     image: '/assets/hero/robotics.jpg',
+//     title: 'Laboratoire créatif',
+//     description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
+//   },
+// ]
 
 type Slide = {
   image: string
@@ -41,9 +41,13 @@ const textVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-const Hero = () => {
+export const Hero = ({ slides }: HeroProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
+
+  useEffect(() => {
+    console.log('Client-side slides data:', slides)
+  }, [slides])
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -174,5 +178,3 @@ const Hero = () => {
     </>
   )
 }
-
-export default Hero
