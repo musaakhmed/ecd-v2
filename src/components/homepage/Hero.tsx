@@ -3,6 +3,12 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, stagger } from 'framer-motion'
 
+type Slide = {
+  image: string
+  title: string
+  description: string
+}
+
 interface HeroProps {
   slides: Slide[]
 }
@@ -30,26 +36,20 @@ const dummySlides: Slide[] = [
   },
 ]
 
-type Slide = {
-  image: string
-  title: string
-  description: string
-}
-
 const textVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 }
 
 export const Hero = ({ slides }: HeroProps) => {
+  const slideData: Slide[] = (slides?.length ?? 0) > 0 ? slides : dummySlides
+
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
 
-  const slideData: Slide[] = slides ? slides : dummySlides
-
   useEffect(() => {
-    console.log('Client-side slides data:', slideData)
-  }, [slideData])
+    console.log('Client-side slides data:', slides || 'Using dummy slides')
+  }, [slides])
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -66,7 +66,12 @@ export const Hero = ({ slides }: HeroProps) => {
     }, 7000)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [slideData])
+
+  // safety check
+  if (slideData.length === 0) {
+    return null // or return a loading/empty state
+  }
 
   return (
     <>
