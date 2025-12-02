@@ -42,7 +42,7 @@ const textVariants = {
 }
 
 export const Hero = ({ slides }: HeroProps) => {
-  const slideData: Slide[] = dummySlides ? (slides?.length ?? 0) > 0 : slides
+  const slideData: Slide[] = dummySlides?.length > 0 ? dummySlides : slides
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
