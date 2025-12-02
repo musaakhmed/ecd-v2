@@ -6,7 +6,7 @@ const Video = () => {
         loop
         muted
         playsInline
-        className=" object-contain w-full lg:h-full opacity-75 lg:p-12"
+        className=" object-contain w-full lg:h-full opacity-90"
       >
         <source
           src="https://www.espacecultures.be/wp-content/uploads/2023/03/EPNMenimages-new.mp4"
