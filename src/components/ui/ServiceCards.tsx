@@ -12,7 +12,7 @@ interface CardData {
   image: string
 }
 
-const ProjectCard = () => {
+const NosServices = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
   const cardsData: CardData[] = [
@@ -78,7 +78,7 @@ const ProjectCard = () => {
   }, [expandedIndex])
 
   return (
-    <section className="w-full py-12 md:py-20 px-4 md:px-8 bg-primary-50">
+    <section className="w-full py-12 md:py-20 px-4 md:px-8 bg-primary-50" id="services">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-header mb-8 md:mb-12 text-center">
           Nos Services
@@ -346,4 +346,4 @@ const ProjectCard = () => {
   )
 }
 
-export default ProjectCard
+export default NosServices
