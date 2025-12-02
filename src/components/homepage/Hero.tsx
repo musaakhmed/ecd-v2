@@ -7,28 +7,28 @@ interface HeroProps {
   slides: Slide[]
 }
 
-// const slides: Slide[] = [
-//   {
-//     image: '/assets/hero/devoirs.jpg',
-//     title: 'Mentorat personnalisé',
-//     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
-//   },
-//   {
-//     image: '/assets/hero/titres-services.jpg',
-//     title: 'Formations inspirantes',
-//     description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
-//   },
-//   {
-//     image: '/assets/hero/seniors-transition-numerique.jpg',
-//     title: 'Transition numérique inclusive',
-//     description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
-//   },
-//   {
-//     image: '/assets/hero/robotics.jpg',
-//     title: 'Laboratoire créatif',
-//     description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
-//   },
-// ]
+const dummySlides: Slide[] = [
+  {
+    image: '/assets/hero/devoirs.jpg',
+    title: 'Mentorat personnalisé',
+    description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
+  },
+  {
+    image: '/assets/hero/titres-services.jpg',
+    title: 'Formations inspirantes',
+    description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
+  },
+  {
+    image: '/assets/hero/seniors-transition-numerique.jpg',
+    title: 'Transition numérique inclusive',
+    description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
+  },
+  {
+    image: '/assets/hero/robotics.jpg',
+    title: 'Laboratoire créatif',
+    description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
+  },
+]
 
 type Slide = {
   image: string
@@ -45,9 +45,11 @@ export const Hero = ({ slides }: HeroProps) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
 
+  const slideData: Slide[] = slides ? slides : dummySlides
+
   useEffect(() => {
-    console.log('Client-side slides data:', slides)
-  }, [slides])
+    console.log('Client-side slides data:', slideData)
+  }, [slideData])
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -60,7 +62,7 @@ export const Hero = ({ slides }: HeroProps) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1)
-      setActiveIndex((prev) => (prev + 1) % slides.length)
+      setActiveIndex((prev) => (prev + 1) % slideData.length)
     }, 7000)
 
     return () => clearInterval(timer)
@@ -72,7 +74,7 @@ export const Hero = ({ slides }: HeroProps) => {
         <div className="relative aspect-[16/9] w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
           <AnimatePresence mode="wait">
             <motion.div
-              key={slides[activeIndex].image}
+              key={slideData[activeIndex].image}
               className="absolute inset-0 origin-center"
               initial={{
                 opacity: 0.4,
@@ -94,7 +96,7 @@ export const Hero = ({ slides }: HeroProps) => {
                 animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
                 transition={{ duration: 10, ease: 'linear' }}
                 style={{
-                  backgroundImage: `url(${slides[activeIndex].image})`,
+                  backgroundImage: `url(${slideData[activeIndex].image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
@@ -108,7 +110,7 @@ export const Hero = ({ slides }: HeroProps) => {
           <div className="mx-auto w-full max-w-6xl sm:mt-auto">
             <AnimatePresence mode="wait">
               <motion.div
-                key={slides[activeIndex].title}
+                key={slideData[activeIndex].title}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -129,13 +131,13 @@ export const Hero = ({ slides }: HeroProps) => {
                   className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
                   variants={textVariants}
                 >
-                  {slides[activeIndex].title}
+                  {slideData[activeIndex].title}
                 </motion.h1>
                 <motion.p
                   className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl"
                   variants={textVariants}
                 >
-                  {slides[activeIndex].description}
+                  {slideData[activeIndex].description}
                 </motion.p>
               </motion.div>
             </AnimatePresence>
@@ -144,7 +146,7 @@ export const Hero = ({ slides }: HeroProps) => {
 
         <div className="z-10 flex w-full justify-center px-4 pb-6 md:absolute md:bottom-3">
           <div className="flex flex-wrap items-center gap-2 rounded-full bg-white/10 px-4 py-2 shadow-lg shadow-black/30 backdrop-blur sm:gap-3 sm:px-6 sm:py-3">
-            {slides.map((slide, index) => {
+            {slideData.map((slide, index) => {
               const isActive = index === activeIndex
               return (
                 <button
