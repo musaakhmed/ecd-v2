@@ -227,7 +227,7 @@ const Page = () => {
               professionnels
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {modules.map((module, index) => (
+              {modules.map((module) => (
                 <motion.div
                   key={module.title}
                   variants={fadeInUp}
@@ -284,7 +284,7 @@ const Page = () => {
               Avantages de Nos Formations
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
+              {benefits.map((benefit) => (
                 <motion.div
                   key={benefit.title}
                   variants={fadeInUp}
@@ -344,7 +344,7 @@ const Page = () => {
                     description:
                       'Nos formateurs interviennent directement sur site pour former les travailleurs.',
                   },
-                ].map((item, index) => (
+                ].map((item) => (
                   <motion.div
                     key={item.step}
                     variants={fadeInUp}

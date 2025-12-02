@@ -190,7 +190,7 @@ const Page1 = () => {
               personnel
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {activities.map((activity, index) => (
+              {activities.map((activity) => (
                 <motion.div
                   key={activity.title}
                   variants={fadeInUp}
@@ -229,7 +229,7 @@ const Page1 = () => {
               Les Bénéfices pour Votre Enfant
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
+              {benefits.map((benefit) => (
                 <motion.div
                   key={benefit}
                   variants={fadeInUp}

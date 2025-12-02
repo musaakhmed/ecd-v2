@@ -230,7 +230,7 @@ const Page1 = () => {
               essentiels
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {services.map((service, index) => (
+              {services.map((service) => (
                 <motion.div
                   key={service.title}
                   variants={fadeInUp}
@@ -270,7 +270,7 @@ const Page1 = () => {
               numériques
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {targetAudiences.map((audience, index) => (
+              {targetAudiences.map((audience) => (
                 <motion.div
                   key={audience.title}
                   variants={fadeInUp}
@@ -330,7 +330,7 @@ const Page1 = () => {
                     description:
                       'Nous assurons un suivi post-formation pour répondre à vos questions et besoins.',
                   },
-                ].map((item, index) => (
+                ].map((item) => (
                   <motion.div
                     key={item.step}
                     variants={fadeInUp}

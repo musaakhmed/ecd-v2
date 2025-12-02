@@ -11,8 +11,8 @@ const Page1 = () => {
     subject: '',
     message: '',
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [_isSubmitting, setIsSubmitting] = useState(false)
+  const [_submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -29,7 +29,7 @@ const Page1 = () => {
     },
   }
 
-  const handleChange = (
+  const _handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     setFormData({
@@ -38,7 +38,7 @@ const Page1 = () => {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const _handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
@@ -181,7 +181,7 @@ const Page1 = () => {
               </motion.h2>
 
               <motion.div variants={fadeInUp} className="space-y-6 mb-8">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info) => (
                   <motion.div
                     key={info.title}
                     whileHover={{ x: 5 }}
@@ -245,7 +245,7 @@ const Page1 = () => {
                   Horaires d&apos;ouverture
                 </h3>
                 <div className="space-y-3">
-                  {openingHours.map((schedule, index) => (
+                  {openingHours.map((schedule) => (
                     <div
                       key={schedule.day}
                       className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
