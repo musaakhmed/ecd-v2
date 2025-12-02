@@ -13,7 +13,7 @@ interface HeroProps {
   slides: Slide[]
 }
 
-const dummySlides: Slide[] = [
+const slides: Slide[] = [
   {
     image: '/assets/hero/devoirs.jpg',
     title: 'Mentorat personnalisé',
@@ -41,8 +41,8 @@ const textVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-export const Hero = ({ slides }: HeroProps) => {
-  const slideData: Slide[] = dummySlides?.length > 0 ? dummySlides : slides
+export const Hero = () => {
+  // const slideData: Slide[] = dummySlides?.length > 0 ? dummySlides : slides
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
@@ -62,14 +62,14 @@ export const Hero = ({ slides }: HeroProps) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1)
-      setActiveIndex((prev) => (prev + 1) % slideData.length)
+      setActiveIndex((prev) => (prev + 1) % slides.length)
     }, 7000)
 
     return () => clearInterval(timer)
-  }, [slideData])
+  }, [slides])
 
   // safety check
-  if (slideData.length === 0) {
+  if (slides.length === 0) {
     return null // or return a loading/empty state
   }
 
@@ -79,7 +79,7 @@ export const Hero = ({ slides }: HeroProps) => {
         <div className="relative aspect-[16/9] w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
           <AnimatePresence mode="wait">
             <motion.div
-              key={slideData[activeIndex].image}
+              key={slides[activeIndex].image}
               className="absolute inset-0 origin-center"
               initial={{
                 opacity: 0.4,
@@ -101,7 +101,7 @@ export const Hero = ({ slides }: HeroProps) => {
                 animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
                 transition={{ duration: 10, ease: 'linear' }}
                 style={{
-                  backgroundImage: `url(${slideData[activeIndex].image})`,
+                  backgroundImage: `url(${slides[activeIndex].image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
@@ -115,7 +115,7 @@ export const Hero = ({ slides }: HeroProps) => {
           <div className="mx-auto w-full max-w-6xl sm:mt-auto">
             <AnimatePresence mode="wait">
               <motion.div
-                key={slideData[activeIndex].title}
+                key={slides[activeIndex].title}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -136,13 +136,13 @@ export const Hero = ({ slides }: HeroProps) => {
                   className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
                   variants={textVariants}
                 >
-                  {slideData[activeIndex].title}
+                  {slides[activeIndex].title}
                 </motion.h1>
                 <motion.p
                   className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl"
                   variants={textVariants}
                 >
-                  {slideData[activeIndex].description}
+                  {slides[activeIndex].description}
                 </motion.p>
               </motion.div>
             </AnimatePresence>
@@ -151,7 +151,7 @@ export const Hero = ({ slides }: HeroProps) => {
 
         <div className="z-10 flex w-full justify-center px-4 pb-6 md:absolute md:bottom-3">
           <div className="flex flex-wrap items-center gap-2 rounded-full bg-white/10 px-4 py-2 shadow-lg shadow-black/30 backdrop-blur sm:gap-3 sm:px-6 sm:py-3">
-            {slideData.map((slide, index) => {
+            {slides.map((slide, index) => {
               const isActive = index === activeIndex
               return (
                 <button
