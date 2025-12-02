@@ -1,6 +1,3 @@
-import React from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
 import PartnerCard from '@/components/ui/PartnerCard'
 
 const Partners = () => {
