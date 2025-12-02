@@ -1,16 +1,15 @@
-type Slide = {
-  url: string
-  title: string
-  description: string
-}
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 
 export async function fetchSlides() {
-  const res = await fetch('http://localhost:3000/api/media?depth=1')
-  if (!res.ok) {
-    throw new Error('Failed to fetch slides from PayloadCMS')
-  }
-  const data = await res.json()
-  return data.docs.map((doc: Slide) => ({
+  const payload = await getPayload({ config: configPromise })
+
+  const result = await payload.find({
+    collection: 'media',
+    depth: 1,
+  })
+
+  return result.docs.map((doc) => ({
     image: doc.url || '',
     title: doc.title,
     description: doc.description,
