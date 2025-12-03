@@ -11,7 +11,7 @@ const data = [
   {
     title: 'Internet, navigation et recherches en ligne',
     text: 'Choisir un navigateur web fiable, effectuer des recherches efficaces, visiter des sites sécurisés et personnaliser son navigateur. Le module offre aux utilisateurs novices des outils pour surfer en toute sécurité et protéger leurs données.',
-    image: '/assets/programcards/navigation.jpg',
+    image: '/assets/programcards/navigatiion.jpg',
   },
   {
     title: 'Outils de signatures électroniques',
@@ -45,7 +45,7 @@ const Programs = () => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-transparent">
-      <div className="h-screen flex items-center justify-center bg-blue-200 gap-6 sticky top-0 overflow-hidden">
+      <div className="h-screen flex items-center justify-center bg-blue-950 gap-6 sticky top-0 overflow-hidden">
         <motion.div
           className="flex items-center gap-6 justify-center "
           style={{
@@ -56,12 +56,16 @@ const Programs = () => {
           {data.map((item, idx) => (
             <div
               key={idx}
-              className="p-2 lg:p-6 flex flex-col items-center bg-[image:url(${item.image})] group hover:bg-white justify-end gap-8 h-128 w-80 bg-primary-800 rounded-lg overflow-hidden shrink-0 transition-all duration-200 ease-in-out"
+              style={{
+                backgroundImage: 'url(' + `${item.image}` + ')',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              }}
+              className="p-6 py-8 justify-between flex flex-col items-center group bg-secondary-800 bg-blend-overlay hover:scale-105 shadow-2xl gap-8 h-128 w-80  rounded-lg overflow-hidden shrink-0 transition-all duration-200 ease-in-out"
             >
-              <h3 className="text-xl font-semibold group-hover:text-secondary-800 text-primary-100">
-                {item.title}
-              </h3>
-              <span className="group-hover:text-secondary-700 text-primary-200">{item.text}</span>
+              <h3 className="text-3xl font-semibold  text-primary-100">{item.title}</h3>
+              <span className=" text-primary-100 text-lg font-semibold">{item.text}</span>
             </div>
           ))}
         </motion.div>
