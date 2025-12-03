@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Navbar } from '@/components/Header/Navbar'
 import Logo from '@/components/Header/Logo'
+import { NavBarCTA } from '@/components/Header/NavBarCTA'
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
       <section className="flex items-center justify-between container mx-auto px-4">
         <Logo />
         <Navbar />
+        <NavBarCTA />
       </section>
     </motion.header>
   )

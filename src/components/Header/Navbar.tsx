@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { menu } from '@/lib/menu'
-import { NavBarCTA } from '@/components/Header/NavBarCTA'
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -123,13 +122,6 @@ export const Navbar = () => {
               </Link>
             </motion.li>
           ))}
-          <motion.li
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: menu.length * 0.1 }}
-          >
-            <NavBarCTA />
-          </motion.li>
         </ul>
 
         {/* Hamburger button - visible on small screens */}
@@ -279,9 +271,6 @@ export const Navbar = () => {
                   </Link>
                 </motion.li>
               ))}
-              <motion.li variants={itemVariants} className="pt-2">
-                <NavBarCTA />
-              </motion.li>
             </motion.ul>
           )}
         </AnimatePresence>
