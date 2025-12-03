@@ -4,37 +4,34 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const data = [
   {
-    text: 1,
+    title: "Découverte de l'Intelligence artificielle et ChatGPT",
+    text: "L'intelligence artificielle est désormais présente dans tous les secteurs d'activité. Ce module vise à familiariser les usagers avec les technologies émergentes et les algorithmes performants pour fournir des réponses efficaces et personnalisées.",
+    image: '/assets/programcards/ai.jpg',
   },
   {
-    text: 1,
+    title: 'Internet, navigation et recherches en ligne',
+    text: 'Choisir un navigateur web fiable, effectuer des recherches efficaces, visiter des sites sécurisés et personnaliser son navigateur. Le module offre aux utilisateurs novices des outils pour surfer en toute sécurité et protéger leurs données.',
+    image: '/assets/programcards/navigation.jpg',
   },
   {
-    text: 1,
+    title: 'Outils de signatures électroniques',
+    text: "Gain de temps, moins de paperasserie et plus besoin d'imprimer puis de scanner. La signature électronique permet d'acquérir des outils numériques conventionnels ou certifiés, du simple paraphe sur PDF à la signature avec certificat eID.",
+    image: '/assets/programcards/signature.jpg',
   },
   {
-    text: 1,
+    title: 'Messageries électroniques',
+    text: "L'usage des messageries électroniques est devenu indispensable dans le milieu professionnel et le quotidien. Ce module couvre la découverte de différents types de courriers électroniques comme Gmail, Outlook et Yahoo avec leurs fonctionnalités essentielles.",
+    image: '/assets/programcards/email.jpg',
   },
   {
-    text: 1,
+    title: 'Identité numérique, eID, itsme et démarches administratives',
+    text: "Commander des documents administratifs, effectuer des paiements et s'identifier sur un portail numérique exigent une authentification numérique. Le module explore les comptes Itsme, le lecteur eID et les démarches sur Myminfin, My E-Box et IrisBox.",
+    image: '/assets/programcards/eid.avif',
   },
   {
-    text: 1,
-  },
-  {
-    text: 1,
-  },
-  {
-    text: 1,
-  },
-  {
-    text: 1,
-  },
-  {
-    text: 1,
-  },
-  {
-    text: 1,
+    title: 'Vidéoconférence: Zoom et Teams',
+    text: "Microsoft Teams et Zoom sont les outils de communication en temps réel les plus populaires. Le module enseigne à partager des espaces d'échanges professionnels, rejoindre une réunion, créer et programmer des réunions et partager l'écran.",
+    image: '/assets/programcards/videocall.jpg',
   },
 ]
 
@@ -44,11 +41,11 @@ const Programs = () => {
     target: targetRef,
   })
 
-  const x = useTransform(scrollYProgress, [0, 1], ['40%', '-50%'])
+  const x = useTransform(scrollYProgress, [0, 1], ['25%', '-25%'])
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-transparent mt-28">
-      <div className="h-screen flex items-center justify-center bg-slate-200 gap-6 sticky top-0 overflow-hidden">
+    <section ref={targetRef} className="relative h-[300vh] bg-transparent">
+      <div className="h-screen flex items-center justify-center bg-blue-200 gap-6 sticky top-0 overflow-hidden">
         <motion.div
           className="flex items-center gap-6 justify-center "
           style={{
@@ -59,9 +56,12 @@ const Programs = () => {
           {data.map((item, idx) => (
             <div
               key={idx}
-              className="h-48 w-48 bg-primary flex justify-center items-center rounded-lg overflow-hidden shrink-0"
+              className="p-2 lg:p-6 flex flex-col items-center bg-[image:url(${item.image})] group hover:bg-white justify-end gap-8 h-128 w-80 bg-primary-800 rounded-lg overflow-hidden shrink-0 transition-all duration-200 ease-in-out"
             >
-              <span>{item.text}</span>
+              <h3 className="text-xl font-semibold group-hover:text-secondary-800 text-primary-100">
+                {item.title}
+              </h3>
+              <span className="group-hover:text-secondary-700 text-primary-200">{item.text}</span>
             </div>
           ))}
         </motion.div>
