@@ -7,7 +7,7 @@ const Page = () => {
         className="min-h-[50vh] w-full bg-primary-200 flex justify-center items-center"
         id="petite-histoire"
       >
-        La petite histoire de l'EDD
+        La petite histoire de l&apos;EDD
       </div>
       <div
         className="min-h-[50vh] w-full bg-primary-500 flex justify-center items-center"
