@@ -6,9 +6,9 @@ const Page = () => {
       <div className="container mx-auto min-h-[50vh] flex flex-col justify-around items-center px-6 py-4  dark:bg-gray-800 bg-green-300">
         <h1>À Propos de Nous</h1>
         <p>
-          Espace Cultures & Développement asbl favorise l'intégration et l'insertion de tous les
-          publics grâce à la promotion de la culture, l'accès aux outils numériques, et la lutte
-          contre la fracture numérique.
+          Espace Cultures & Développement asbl favorise l&apos;intégration et l&apos;insertion de
+          tous les publics grâce à la promotion de la culture, l&apos;accès aux outils numériques,
+          et la lutte contre la fracture numérique.
         </p>
       </div>
       <div
