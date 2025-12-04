@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const Page1 = () => {
+const Page = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -386,4 +386,4 @@ const Page1 = () => {
   )
 }
 
-export default Page1
+export default Page
