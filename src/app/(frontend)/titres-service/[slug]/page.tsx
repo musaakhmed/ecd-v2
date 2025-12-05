@@ -1,13 +1,18 @@
-'use client'
+import { modules, TitreServiceModules } from '@/lib/titresServices'
 
-import { modules } from '@/lib/titresServices'
+import { notFound } from 'next/navigation'
 
-import { useParams } from 'next/navigation'
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
 
-const Page = () => {
-  const params = useParams()
-  const currentModule = modules.find((m) => m.slug === params.slug)
-  console.log(currentModule)
+const Page = async ({ params }: PageProps) => {
+  const { slug } = await params
+  const currentModule = modules.find((m) => m.slug === slug)
+
+  if (!currentModule) {
+    notFound()
+  }
 
   return (
     <section className="container mx-auto py-12 flex flex-col-reverse lg:flex-row lg:gap-12">
@@ -76,23 +81,27 @@ const Page = () => {
         </div>
       </div>
       <div className="flex flex-col items-start justify-center gap-4 p-6 rounded-2xl h-full bg-secondary-200/80 lg:w-1/4 lg:sticky lg:top-20">
-        {modules.map((module) => (
-          <div key={module.slug}>
-            <h3>Infos</h3>
-            <div>
-              <h4>{module.publicVise}</h4>
-              <p>Aide-ménagères</p>
-            </div>
-            <div>
-              <h4>Approbation(s)</h4>
-              <p>Bruxelles : E1605/B (17/05/2024)</p>
-            </div>
-            <div>
-              <h4>Durée</h4>
-              <p>4 heures</p>
-            </div>
+        <div className="flex flex-col items-start justify-center gap-4">
+          <h3 className="self-center font-semibold text-xl text-secondary-800">Infos</h3>
+          <div>
+            <h4 className="font-semibold">Public visé</h4>
+            <p>{currentModule.publicVise}</p>
           </div>
-        ))}
+          <div>
+            <h4 className="font-semibold">Approbation(s)</h4>
+            <ul>
+              {currentModule.approbation.map(({ region, certificate, date }, index) => (
+                <li key={`${region}-${index}`}>
+                  <span>{region}</span>: {certificate} ({date})
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold">Durée</h4>
+            <p>{currentModule.duree}</p>
+          </div>
+        </div>
       </div>
     </section>
   )
