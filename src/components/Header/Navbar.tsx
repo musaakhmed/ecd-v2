@@ -12,7 +12,7 @@ export const Navbar = () => {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
-  
+
   const toggleSubmenu = (link: string) => {
     setOpenSubmenu(openSubmenu === link ? null : link)
   }
@@ -66,7 +66,7 @@ export const Navbar = () => {
             >
               <Link href={link}>
                 <motion.span
-                  className="relative px-4 py-2 font-semibold overflow-hidden cursor-pointer block"
+                  className="relative px-4 py-2 overflow-hidden cursor-pointer block"
                   style={{
                     color: 'var(--color-header)',
                   }}
@@ -129,7 +129,7 @@ export const Navbar = () => {
                   />
                 </motion.span>
               </Link>
-              
+
               {/* Desktop Submenu */}
               <AnimatePresence>
                 {submenu && hoveredMenuItem === link && (
@@ -204,7 +204,7 @@ export const Navbar = () => {
                           ))}
                         </ul>
                       </div>
-                      
+
                       {/* Image Box */}
                       {submenu.image && (
                         <motion.div
@@ -396,7 +396,7 @@ export const Navbar = () => {
                           />
                         </motion.div>
                       </Link>
-                      
+
                       {/* Mobile Submenu Toggle Button */}
                       {submenu && (
                         <motion.button
@@ -425,7 +425,7 @@ export const Navbar = () => {
                         </motion.button>
                       )}
                     </div>
-                    
+
                     {/* Mobile Submenu */}
                     <AnimatePresence>
                       {submenu && openSubmenu === link && (
@@ -484,7 +484,7 @@ export const Navbar = () => {
                                 />
                               </motion.div>
                             )}
-                            
+
                             {/* Submenu Links */}
                             {submenu.links.map((subLink, subIndex) => (
                               <motion.div
