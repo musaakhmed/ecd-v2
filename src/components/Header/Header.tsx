@@ -16,8 +16,10 @@ const Header = () => {
     >
       <section className="flex items-center justify-between container mx-auto px-4">
         <Logo />
-        <Navbar />
-        <NavBarCTA />
+        <div className="flex items-center justify-between">
+          <Navbar />
+          <NavBarCTA />
+        </div>
       </section>
     </motion.header>
   )

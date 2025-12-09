@@ -66,7 +66,7 @@ export const Navbar = () => {
             >
               <Link href={link}>
                 <motion.span
-                  className="relative px-4 py-2 overflow-hidden cursor-pointer block"
+                  className="relative p-2 overflow-hidden cursor-pointer block"
                   style={{
                     color: 'var(--color-header)',
                   }}
