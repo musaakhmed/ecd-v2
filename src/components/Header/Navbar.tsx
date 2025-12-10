@@ -165,7 +165,7 @@ export const Navbar = () => {
                   >
                     <div className="flex">
                       {/* Links Section */}
-                      <div className="flex-1 p-4">
+                      <div className="flex-1 p-4 w-full">
                         <ul className="space-y-2">
                           {submenu.links.map((subLink, subIndex) => (
                             <motion.li
@@ -187,7 +187,7 @@ export const Navbar = () => {
                             >
                               <Link
                                 href={subLink.link}
-                                className="block px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-primary-50"
+                                className="block px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-primary-50 text-nowrap w-full"
                                 style={{
                                   color: 'var(--color-header)',
                                 }}
@@ -208,7 +208,7 @@ export const Navbar = () => {
                       {/* Image Box */}
                       {submenu.image && (
                         <motion.div
-                          className="w-32 bg-gray-100 relative overflow-hidden"
+                          className="w-1/2 bg-gray-100 relative overflow-hidden"
                           variants={{
                             closed: {
                               opacity: 0,
@@ -327,7 +327,9 @@ export const Navbar = () => {
                             },
                           }}
                         >
-                          <motion.span className="relative z-10">{title}</motion.span>
+                          <motion.span className="relative z-10" onClick={toggleMenu}>
+                            {title}
+                          </motion.span>
                           {/* Animated background that smoothly transitions */}
                           <motion.div
                             className="absolute inset-0 rounded-lg"
