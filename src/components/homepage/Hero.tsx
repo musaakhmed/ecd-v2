@@ -5,6 +5,7 @@ import { AnimatePresence, motion, stagger } from 'framer-motion'
 
 type Slide = {
   image: string
+  subtitle: string
   title: string
   description: string
 }
@@ -16,23 +17,28 @@ interface HeroProps {
 const slides: Slide[] = [
   {
     image: '/assets/hero/devoirs.jpg',
-    title: 'Mentorat personnalisé',
+    title: 'Soutien scolaire',
+    subtitle: "Parce que chaque enfant mérite toute ses chances à l'école",
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
   },
   {
     image: '/assets/hero/titres-services.jpg',
-    title: 'Formations inspirantes',
-    description: 'Des ateliers vivants qui nourrissent la prise de parole et la confiance.',
+    title: 'Transition numérique',
+    subtitle: "Réussir sa transition numérique, c'est possible pour tous",
+    description:
+      'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
     image: '/assets/hero/seniors-transition-numerique.jpg',
-    title: 'Transition numérique inclusive',
-    description: 'Initier les seniors aux outils digitaux avec patience et bienveillance.',
+    title: 'Formations professionelles',
+    subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
+    description: 'Des formations qui transforment le quitidien des aide-ménagères.',
   },
   {
     image: '/assets/hero/robotics.jpg',
-    title: 'Laboratoire créatif',
-    description: "Explorer la robotique pour stimuler curiosité, logique et esprit d'équipe.",
+    title: 'Services sur mesure',
+    subtitle: 'Des solutioins adaptées à vos besoins, tout simplement',
+    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
   },
 ]
 
@@ -130,13 +136,13 @@ export const Hero = () => {
                   className="mb-4 text-xs uppercase tracking-[0.35em] text-white/70 sm:text-sm"
                   variants={textVariants}
                 >
-                  Programmes sur mesure
+                  {slides[activeIndex].title}
                 </motion.p>
                 <motion.h1
                   className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
                   variants={textVariants}
                 >
-                  {slides[activeIndex].title}
+                  {slides[activeIndex].subtitle}
                 </motion.h1>
                 <motion.p
                   className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl"

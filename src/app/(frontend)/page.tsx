@@ -6,6 +6,7 @@ import Stats from '@/components/homepage/Stats'
 import Partners from '@/components/homepage/Partners'
 import ServiceCards from '@/components/ui/ServiceCards'
 import Video from '@/components/homepage/Video'
+import About from '@/components/homepage/About'
 // import { fetchSlides } from 'src/lib/fetchSlides'
 
 export default async function HomePage() {
@@ -15,10 +16,11 @@ export default async function HomePage() {
   return (
     <div>
       <Hero />
-      <Projects />
+      <About />
       <ServiceCards />
       <Video />
       <Stats />
+      <Projects />
       <Programs />
       <Partners />
     </div>

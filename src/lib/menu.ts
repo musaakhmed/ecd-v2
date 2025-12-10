@@ -17,13 +17,13 @@ export const menu: MenuItem[] = [
   },
   {
     title: 'A propos',
-    link: '/a-propos',
+    link: '/#about',
     submenu: {
       links: [
-        { title: 'Qui sommes-nous?', link: '/a-propos#qui-sommes-nous' },
-        { title: 'Nos agréments', link: '/a-propos#agrements' },
-        { title: 'Nos status', link: '/a-propos#status' },
-        { title: 'Notre histoire', link: '/a-propos#notre-histoire' },
+        { title: 'Qui sommes-nous?', link: '/#qui-sommes-nous' },
+        { title: 'Nos agréments', link: '/#agrements' },
+        { title: 'Nos status', link: '/#status' },
+        { title: 'Notre histoire', link: '/#notre-histoire' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
