@@ -1,9 +1,25 @@
 export function ValueCards() {
   const items = [
-    { icon: '', title: 'Les engagements sociaux', text: 'Texte détaillé...' },
-    { icon: '', title: 'Les engagements culturels', text: 'Texte détaillé...' },
-    { icon: '', title: 'Les engagements politiques', text: 'Texte détaillé...' },
-    { icon: '', title: 'Les engagements scientifiques', text: 'Texte détaillé...' },
+    {
+      icon: '',
+      title: 'Opérateur en école de devoirs',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    },
+    {
+      icon: '',
+      title: "Opérateur d'Economie Sociale",
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    },
+    {
+      icon: '',
+      title: "Opérateur d'EPN labelisé",
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    },
+    {
+      icon: '',
+      title: 'Opérateur de formation de Titres Services',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    },
   ]
 
   return (
@@ -12,28 +28,31 @@ export function ValueCards() {
         {items.map((item) => (
           <article key={item.title} className="relative overflow-visible">
             <div className="relative cursor-pointer rounded-xl hover:rounded-b-none bg-white p-6 shadow-md group gap-0 transition-all duration-200 ease-in-out">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500 text-white text-lg">
-                  {item.icon}
-                </span>
-                <h3 className="text-sm font-semibold uppercase tracking-wide">{item.title}</h3>
+              <div className="flex flex-col justify-between gap-2">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500 text-white text-lg">
+                    {item.icon}
+                  </span>
+                  <h3 className="text-sm font-semibold uppercase tracking-wide">{item.title}</h3>
+                </div>
+                <div>
+                  <p className="p-2">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis.
+                    Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni
+                    nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!
+                  </p>
+                </div>
               </div>
 
               <div
                 className="
                   absolute left-0 right-0 top-full
-                  rounded-xl group-hover:rounded-t-none bg-white p-4 shadow-2xl
+                  rounded-xl group-hover:rounded-t-none bg-white p-6 shadow-2xl
                   opacity-0 -translate-y-5 pointer-events-none
                   transition-all duration-300 ease-in-out
-                  group-hover:opacity-100 group-hover:translate-y-0 z-50
+                  group-hover:opacity-100 group-hover:translate-y-0 z-50 flex flex-col gap-6
                 "
               >
-                <p className="text-sm leading-relaxed">{item.text}</p>
-                <p className="text-sm leading-relaxed">{item.text}</p>
-                <p className="text-sm leading-relaxed">{item.text}</p>
-                <p className="text-sm leading-relaxed">{item.text}</p>
-                <p className="text-sm leading-relaxed">{item.text}</p>
-                <p className="text-sm leading-relaxed">{item.text}</p>
                 <p className="text-sm leading-relaxed">{item.text}</p>
                 <p className="text-sm leading-relaxed">{item.text}</p>
               </div>
