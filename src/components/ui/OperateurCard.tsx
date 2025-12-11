@@ -59,7 +59,7 @@ export function ValueCards() {
                 setCardOpen(selectedCard ? null : index)
               }}
             >
-              <div className="relative rounded-xl hover:rounded-b-none h-78 bg-white p-6 shadow-md gap-0 transition-all duration-200 ease-in-out cursor-pointer group-hover:cursor-auto">
+              <div className="relative rounded-xl hover:rounded-b-none h-78 bg-white hover:bg-secondary-800 hover:text-secondary-100 p-6 shadow-md gap-0 transition-all duration-200 ease-in cursor-pointer group-hover:cursor-auto">
                 <div className="flex flex-col justify-between gap-2">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500 text-white text-lg shrink-0">
@@ -79,7 +79,7 @@ export function ValueCards() {
                 {/* mobile: in-flow accordion */}
                 {isMobile && (
                   <div
-                    className={`mt-3 text-sm leading-relaxed transition-all ease-in-out duration-300 ${
+                    className={`mt-3 text-sm bg-white hover:bg-secondary-800 hover:text-secondary-100  leading-relaxed transition-all ease-in duration-200 ${
                       selectedCard ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                     }`}
                   >
@@ -91,9 +91,9 @@ export function ValueCards() {
                 {!isMobile && (
                   <div
                     className="absolute left-0 right-0 top-full
-                    rounded-xl group-hover:rounded-t-none bg-white p-6 shadow-2xl
+                    rounded-xl group-hover:rounded-t-none bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-6 shadow-2xl
                     opacity-0 -translate-y-5 pointer-events-none
-                    transition-all duration-300 ease-in-out z-20
+                    transition-all duration-200 ease-in z-20
                     group-hover:opacity-100 group-hover:translate-y-0 flex flex-col gap-6 group-hover:pointer-events-auto"
                   >
                     <p className="text-sm  leading-relaxed">{item.text}</p>
