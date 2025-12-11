@@ -2,6 +2,7 @@ import React from 'react'
 import WhoWeAre from '@/components/About/WhoWeAre'
 import FormationTS from '@/components/About/FormationTS'
 import ES from '@/components/About/ES'
+import { ValueCards } from '@/components/ui/OperateurCard'
 
 const About = () => {
   return (
@@ -12,8 +13,10 @@ const About = () => {
         </h1>
         <WhoWeAre />
       </div>
-      <FormationTS />
-      <ES />
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 p-12">
+        <ValueCards />
+      </div>
+      <div></div>
     </section>
   )
 }
