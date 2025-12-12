@@ -4,8 +4,11 @@ const WhoWeAre = () => {
   return (
     <div
       id="who-we-are"
-      className="min-h-[25vh] text-xl lg:text-2xl text-center text-white container mx-auto p-6 flex flex-col justify-center items-center gap-6 pb-12"
+      className="min-h-[25vh] text-xl xl:text-2xl text-center text-white container mx-auto p-6 flex flex-col justify-center items-center gap-6 pb-12"
     >
+      <h1 className="p-6 text-2xl xl:text-4xl font-semibold text-white pt-24 text-center">
+        Qui sommes-nous?
+      </h1>
       <p className="">
         Espace Cultures & Développement est un cadre d’action associatif engagé dans la valorisation
         de la culture comme levier d’intégration, d’émancipation et d’insertion sociale.
