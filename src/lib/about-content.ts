@@ -34,6 +34,20 @@ export interface Accreditation {
   content: Record<string, unknown>
 }
 
+export interface EddContent {
+  reperePoints: string[]
+  axes: {
+    title: string
+    description: string
+    points: string[]
+  }[]
+  ateliers: {
+    title: string
+    description: string
+    items: string[]
+  }[]
+}
+
 export const heroContent = {
   title: 'ECD asbl en quelques mots',
   subtitle: "La culture comme levier d'intégration et d'insertion",
@@ -238,3 +252,79 @@ export const stats: StatItem[] = [
   { number: 500, suffix: '+', label: 'Heures de formation' },
   { number: 15, suffix: '+', label: 'Partenaires actifs' }
 ]
+
+export const eddPageContent: EddContent = {
+  reperePoints: [
+    'Reconnu par l’ONE sous l’appellation « Notre-Dame-Aux-Neiges ».',
+    'Enfants majoritairement issus de l’école fondamentale Congrès Dachsbeck (~80 %).',
+    'Programme articulé autour du soutien scolaire et de l’épanouissement.'
+  ],
+  axes: [
+    {
+      title: 'Aide aux devoirs et remédiation scolaire',
+      description:
+        'Chaque vendredi (horaire ajustable) pour sécuriser les apprentissages fondamentaux et accompagner chaque enfant.',
+      points: [
+        'Accompagnement dans la réalisation des travaux scolaires',
+        'Renforcement des prérequis (lecture, écriture, mathématiques)',
+        'Méthodes de travail efficaces',
+        'Espace d’écoute pour repérer les difficultés'
+      ]
+    },
+    {
+      title: 'Animations didactiques, éducatives et ludiques',
+      description:
+        'Du lundi au vendredi, un programme varié qui soutient les apprentissages et l’épanouissement personnel.',
+      points: [
+        'Activités structurées autour de thématiques complémentaires',
+        'Soutien des apprentissages scolaires et développement socio-affectif',
+        'Moments récréatifs pour un cadre apaisant et convivial'
+      ]
+    }
+  ],
+  ateliers: [
+    {
+      title: 'Ateliers didactiques',
+      description: 'Renforcer les compétences scolaires de manière active et motivante.',
+      items: [
+        'Lecture et compréhension',
+        'Jeux mathématiques et logiques',
+        'Initiation scientifique (expériences simples, observation)',
+        'Ateliers de langue (oral, vocabulaire, expression)'
+      ]
+    },
+    {
+      title: 'Ateliers créatifs et artistiques',
+      description: 'Stimuler l’expression, la créativité et la confiance.',
+      items: [
+        'Arts plastiques : dessin, peinture, collage, objets',
+        'Activités manuelles : origami, bricolage, construction',
+        'Expression corporelle, théâtre, contes et mise en scène'
+      ]
+    },
+    {
+      title: 'Ateliers numériques éducatifs',
+      description: 'Apprivoiser le numérique en lien avec le pôle ECD.',
+      items: [
+        'Initiation à l’ordinateur et à la tablette',
+        'Outils ludiques d’apprentissage (jeux pédagogiques, quizz)',
+        'Premiers pas en robotique et programmation (Scratch, adapté)'
+      ]
+    },
+    {
+      title: 'Ateliers socio-éducatifs',
+      description: 'Favoriser le bien-être, la coopération et les compétences psycho-sociales.',
+      items: [
+        'Jeux coopératifs et activités de groupe',
+        'Émotions et gestion de conflits',
+        'Citoyenneté, vivre-ensemble, interculturalité'
+      ]
+    },
+    {
+      title: 'Activités ludiques et récréatives',
+      description: 'Offrir un cadre apaisant, agréable et convivial.',
+      items: ['Jeux de société', 'Activités sportives légères', 'Temps de détente et espace de parole']
+    }
+  ]
+}
+

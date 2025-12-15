@@ -6,29 +6,36 @@ import Link from 'next/link'
 const items = [
   {
     icon: '',
-    title: 'Opérateur en école de devoirs',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
-    link: '',
+    title: 'Opérateur en École de Devoirs',
+    description: `Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs sous l'appellation « Notre-Dame-Aux-Neiges ». L'accueil est orienté vers le soutien scolaire des enfants du quartier, dont environ 80% proviennent de l'école fondamentale Congrès Dachsbeck.`,
+    text: '',
+    link: '/a-propos/ecole-de-devoirs',
     img: '',
   },
   {
     icon: '',
     title: "Opérateur d'Economie Sociale",
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    text: '',
     link: '',
     img: '',
   },
   {
     icon: '',
     title: "Opérateur d'EPN labelisé",
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    text: '',
     link: '',
     img: '',
   },
   {
     icon: '',
     title: 'Opérateur de formation de Titres Services',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
+    text: '',
     link: '',
     img: '',
   },
@@ -69,7 +76,7 @@ export function ValueCards() {
                     <h3 className="text-sm font-semibold uppercase tracking-wide">{item.title}</h3>
                   </div>
                   <div>
-                    <p className="p-2 text-sm leading-relaxed">{item.text}</p>
+                    <p className="p-2 text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
 
@@ -86,7 +93,7 @@ export function ValueCards() {
                       className=" mt-3 text-secondary-900 px-4 py-2 bg-secondary-200 rounded-2xl"
                       href={item.link}
                     >
-                      Savoir plus
+                      En savoir plus
                     </Link>
                   </div>
                 )}
