@@ -12,6 +12,13 @@ const nextConfig = {
 
     return webpackConfig
   },
+  // Prevent aggressive caching in production
+  experimental: {
+    staleTimes: {
+      dynamic: 0,
+      static: 0,
+    },
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })

@@ -9,6 +9,10 @@ export const metadata = {
   title: 'Espace Culture et Developpement',
 }
 
+// Force dynamic rendering to prevent stale cache
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 

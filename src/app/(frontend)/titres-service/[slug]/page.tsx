@@ -6,6 +6,10 @@ type PageProps = {
   params: Promise<{ slug: string }>
 }
 
+// Force dynamic rendering to prevent stale cache
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
   const currentModule = modules.find((m) => m.slug === slug)

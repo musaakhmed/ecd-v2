@@ -9,6 +9,10 @@ import Video from '@/components/homepage/Video'
 import About from '@/components/homepage/About'
 // import { fetchSlides } from 'src/lib/fetchSlides'
 
+// Force dynamic rendering to prevent stale cache
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function HomePage() {
   // const slides = await fetchSlides()
   // console.log('Server-side slides data:', slides)
