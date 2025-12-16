@@ -213,7 +213,7 @@ export function ValueCards() {
                 setCardOpen(selectedCard ? null : index)
               }}
             >
-              <div className="relative rounded-xl bg-white hover:bg-secondary-800 group-hover:rounded-b-none hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in pointer-events-none hover:pointer-events-auto flex flex-col w-full h-full">
+              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:rounded-b-none group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in pointer-events-none hover:pointer-events-auto flex flex-col w-full h-full">
                 {item.img && (
                   <div className="mb-4 relative w-full h-32 rounded-lg overflow-hidden">
                     <Image
