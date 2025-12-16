@@ -20,10 +20,13 @@ export const menu: MenuItem[] = [
     link: '/#about',
     submenu: {
       links: [
-        { title: 'Qui sommes-nous?', link: '/#qui-sommes-nous' },
-        { title: 'Nos agréments', link: '/#agrements' },
-        { title: 'Nos status', link: '/#status' },
-        { title: 'Notre histoire', link: '/#notre-histoire' },
+        { title: 'Opérateur en École de Devoirs', link: '/a-propos/ecole-de-devoirs' },
+        { title: "Opérateur d'Economie Sociale", link: '/a-propos/economie-sociale' },
+        { title: "Opérateur d'EPN labelisé", link: '/a-propos/epn' },
+        {
+          title: 'Opérateur de formation de Titres Services',
+          link: '/a-propos/formation-titres-services',
+        },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
