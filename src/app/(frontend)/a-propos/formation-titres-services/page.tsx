@@ -30,20 +30,32 @@ const Page = () => {
       <section className="relative bg-gradient-to-r from-primary-700 via-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-4xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
             <motion.p
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
               Opérateur de formation de Titres-Services
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            >
               Formations professionnelles pour le secteur des Titres-Services
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 leading-relaxed">
-              ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et
-              reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi
-              qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil.
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
+            >
+              ECD est un opérateur de formation agréé dans le secteur des Titres-Services à
+              Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules
+              s&apos;adressent aux aide-ménagères, aux encadrants ainsi qu&apos;aux équipes
+              administratives, en tenant compte des besoins spécifiques de chaque profil.
             </motion.p>
           </motion.div>
         </div>
@@ -67,9 +79,10 @@ const Page = () => {
                 Des formations adaptées à chaque profil
               </h2>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Nos formations sont conçues pour répondre aux besoins spécifiques des différents acteurs du secteur des
-                Titres-Services : aide-ménagères, encadrants et équipes administratives. Chaque module est adapté aux
-                réalités du terrain et aux compétences à développer.
+                Nos formations sont conçues pour répondre aux besoins spécifiques des différents
+                acteurs du secteur des Titres-Services : aide-ménagères, encadrants et équipes
+                administratives. Chaque module est adapté aux réalités du terrain et aux compétences
+                à développer.
               </p>
             </motion.div>
 
@@ -77,7 +90,9 @@ const Page = () => {
               variants={fadeInUp}
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">Repères clés</h3>
+              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
+                Repères clés
+              </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
                   <li key={point} className="flex gap-3">
@@ -212,4 +227,3 @@ const Page = () => {
 }
 
 export default Page
-

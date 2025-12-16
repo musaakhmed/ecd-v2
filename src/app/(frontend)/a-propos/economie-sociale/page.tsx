@@ -30,21 +30,33 @@ const Page = () => {
       <section className="relative bg-gradient-to-r from-primary-700 via-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-4xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
             <motion.p
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              Opérateur d'économie sociale
+              Opérateur d&apos;économie sociale
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Entreprise Sociale et Démocratique : un dispositif d'insertion professionnelle
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            >
+              Entreprise Sociale et Démocratique : un dispositif d&apos;insertion professionnelle
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 leading-relaxed">
-              Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et
-              spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un
-              engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences
-              des publics éloignés du marché du travail.
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
+            >
+              Espace Cultures & Développement est reconnue comme entreprise sociale d&apos;insertion
+              mandatée et spécifiquement agréée en tant qu&apos;Entreprise Sociale et Démocratique
+              (ESD). Cet agrément atteste d&apos;un engagement structurel en faveur de
+              l&apos;inclusion, de l&apos;emploi durable et du développement des compétences des
+              publics éloignés du marché du travail.
             </motion.p>
           </motion.div>
         </div>
@@ -65,17 +77,18 @@ const Page = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
             >
               <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                Un dispositif d'insertion socioprofessionnelle
+                Un dispositif d&apos;insertion socioprofessionnelle
               </h2>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
-                Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré
-                sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de
-                la transition digitale et de la lutte contre la fracture numérique.
+                Dans ce cadre, l&apos;association a mis en place un dispositif d&apos;insertion
+                socioprofessionnelle (ISP) centré sur le métier d&apos;animateur·trice –
+                médiateur·trice numérique, fonction en plein essor dans le contexte de la transition
+                digitale et de la lutte contre la fracture numérique.
               </p>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                À travers ces missions, les travailleurs développent progressivement un référentiel de compétences
-                professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation
-                permanente.
+                À travers ces missions, les travailleurs développent progressivement un référentiel
+                de compétences professionnelles reconnu dans les secteurs du numérique social, de la
+                formation et de l&apos;éducation permanente.
               </p>
             </motion.div>
 
@@ -83,7 +96,9 @@ const Page = () => {
               variants={fadeInUp}
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">Repères clés</h3>
+              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
+                Repères clés
+              </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
                   <li key={point} className="flex gap-3">
@@ -107,7 +122,10 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            >
               {content.metier.title}
             </motion.h2>
             <motion.p
@@ -167,9 +185,13 @@ const Page = () => {
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
                       {index + 1}
                     </div>
-                    <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100">{dimension.title}</h3>
+                    <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100">
+                      {dimension.title}
+                    </h3>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed ml-14">{dimension.description}</p>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed ml-14">
+                    {dimension.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -296,4 +318,3 @@ const Page = () => {
 }
 
 export default Page
-
