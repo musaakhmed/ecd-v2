@@ -2,13 +2,43 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import {
+  eddPageContent,
+  esdPageContent,
+  epnPageContent,
+  titresServicesPageContent,
+} from '@/lib/about-content'
 
 const items = [
   {
     icon: '',
     title: 'Opérateur en École de Devoirs',
     description: `Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs sous l'appellation « Notre-Dame-Aux-Neiges ». L'accueil est orienté vers le soutien scolaire des enfants du quartier, dont environ 80% proviennent de l'école fondamentale Congrès Dachsbeck.`,
-    text: '',
+    expandedContent: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">Deux axes complémentaires :</h4>
+          {eddPageContent.axes.map((axe, idx) => (
+            <div key={idx} className="mb-3">
+              <p className="font-medium text-sm mb-1">{axe.title}</p>
+              <ul className="list-disc list-inside space-y-1 ml-2">
+                {axe.points.map((point, pIdx) => (
+                  <li key={pIdx} className="text-sm">{point}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Ateliers proposés :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {eddPageContent.ateliers.map((atelier, idx) => (
+              <li key={idx} className="text-sm">{atelier.title}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ),
     link: '/a-propos/ecole-de-devoirs',
     img: '',
   },
@@ -16,27 +46,116 @@ const items = [
     icon: '',
     title: "Opérateur d'Economie Sociale",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
-    text: '',
-    link: '',
+      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et agréée ESD. Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
+    expandedContent: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">Missions principales :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {esdPageContent.metier.missions.map((mission, idx) => (
+              <li key={idx} className="text-sm">{mission}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Dimensions du parcours :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {esdPageContent.parcours.dimensions.map((dim, idx) => (
+              <li key={idx} className="text-sm">{dim.title}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Publics cibles :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {esdPageContent.publicCible.publics.map((publicItem, idx) => (
+              <li key={idx} className="text-sm">{publicItem}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ),
+    link: '/a-propos/economie-sociale',
     img: '',
   },
   {
     icon: '',
     title: "Opérateur d'EPN labelisé",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
-    text: '',
-    link: '',
+      "Opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo. Dispositif entièrement mobile et itinérant, fonctionnant à la demande.",
+    expandedContent: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">Critères du label EPNM :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {epnPageContent.label.criteres.items.map((item, idx) => (
+              <li key={idx} className="text-sm">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Équipement mobile :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {epnPageContent.equipement.items.map((item, idx) => (
+              <li key={idx} className="text-sm">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Publics cibles :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {epnPageContent.publicsCibles.publics.map((publicItem, idx) => (
+              <li key={idx} className="text-sm">{publicItem}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Label Connectoo :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {epnPageContent.connectoo.attestations.map((attestation, idx) => (
+              <li key={idx} className="text-sm">{attestation}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ),
+    link: '/a-propos/epn',
     img: '',
   },
   {
     icon: '',
     title: 'Opérateur de formation de Titres Services',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, esse omnis. Consectetur corporis dolores eligendi, excepturi expedita illum, labore magni nobis officiis pariatur porro, quasi sint vel vero voluptate voluptatem!',
-    text: '',
-    link: '',
+      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Formations adaptées aux aide-ménagères, encadrants et équipes administratives.",
+    expandedContent: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold mb-2">Compétences numériques professionnelles :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {titresServicesPageContent.competencesNumeriques.items.map((item, idx) => (
+              <li key={idx} className="text-sm">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Compétences de bien-être, ergonomie et prévention :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {titresServicesPageContent.competencesBienEtre.items.map((item, idx) => (
+              <li key={idx} className="text-sm">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Impact :</h4>
+          <ul className="list-disc list-inside space-y-1">
+            {titresServicesPageContent.impact.contributions.map((contribution, idx) => (
+              <li key={idx} className="text-sm">{contribution}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ),
+    link: '/a-propos/formation-titres-services',
     img: '',
   },
 ]
@@ -87,10 +206,10 @@ export function ValueCards() {
                       selectedCard ? 'min-h-36 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'
                     }`}
                   >
-                    <p className="pt-1 text-secondary-900">{item.text}</p>
+                    <div className="pt-1 text-secondary-900">{item.expandedContent}</div>
 
                     <Link
-                      className=" mt-3 text-secondary-900 px-4 py-2 bg-secondary-200 rounded-2xl"
+                      className="mt-3 text-secondary-900 px-4 py-2 bg-secondary-200 rounded-2xl text-center"
                       href={item.link}
                     >
                       En savoir plus
@@ -107,16 +226,16 @@ export function ValueCards() {
                       opacity-0 -translate-y-5 pointer-events-none
                       transition-all duration-300 ease-in z-20 group-hover:rounded-t-none
                       group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
-                      flex flex-col gap-6
+                      flex flex-col gap-6 max-h-[600px] overflow-y-auto
                     "
                   >
-                    <p className="text-sm leading-relaxed">{item.text}</p>
+                    <div className="text-sm leading-relaxed">{item.expandedContent}</div>
 
                     <Link
-                      className="text-secondary-800 hover:text-secondary-900 px-4 py-2 hover:bg-secondary-200 bg-primary-100 rounded-2xl"
+                      className="text-secondary-800 hover:text-secondary-900 px-4 py-2 hover:bg-secondary-200 bg-primary-100 rounded-2xl text-center"
                       href={item.link}
                     >
-                      Savoir plus
+                      En savoir plus
                     </Link>
                   </div>
                 )}
