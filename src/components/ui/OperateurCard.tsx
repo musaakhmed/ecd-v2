@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   eddPageContent,
   esdPageContent,
@@ -23,7 +24,9 @@ const items = [
               <p className="font-medium text-sm mb-1">{axe.title}</p>
               <ul className="list-disc list-inside space-y-1 ml-2">
                 {axe.points.map((point, pIdx) => (
-                  <li key={pIdx} className="text-sm">{point}</li>
+                  <li key={pIdx} className="text-sm">
+                    {point}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -33,14 +36,16 @@ const items = [
           <h4 className="font-semibold mb-2">Ateliers proposés :</h4>
           <ul className="list-disc list-inside space-y-1">
             {eddPageContent.ateliers.map((atelier, idx) => (
-              <li key={idx} className="text-sm">{atelier.title}</li>
+              <li key={idx} className="text-sm">
+                {atelier.title}
+              </li>
             ))}
           </ul>
         </div>
       </div>
     ),
     link: '/a-propos/ecole-de-devoirs',
-    img: '',
+    img: '/assets/operateur/ecole-de-devoirs.png',
   },
   {
     icon: '',
@@ -53,7 +58,9 @@ const items = [
           <h4 className="font-semibold mb-2">Missions principales :</h4>
           <ul className="list-disc list-inside space-y-1">
             {esdPageContent.metier.missions.map((mission, idx) => (
-              <li key={idx} className="text-sm">{mission}</li>
+              <li key={idx} className="text-sm">
+                {mission}
+              </li>
             ))}
           </ul>
         </div>
@@ -61,7 +68,9 @@ const items = [
           <h4 className="font-semibold mb-2">Dimensions du parcours :</h4>
           <ul className="list-disc list-inside space-y-1">
             {esdPageContent.parcours.dimensions.map((dim, idx) => (
-              <li key={idx} className="text-sm">{dim.title}</li>
+              <li key={idx} className="text-sm">
+                {dim.title}
+              </li>
             ))}
           </ul>
         </div>
@@ -69,14 +78,16 @@ const items = [
           <h4 className="font-semibold mb-2">Publics cibles :</h4>
           <ul className="list-disc list-inside space-y-1">
             {esdPageContent.publicCible.publics.map((publicItem, idx) => (
-              <li key={idx} className="text-sm">{publicItem}</li>
+              <li key={idx} className="text-sm">
+                {publicItem}
+              </li>
             ))}
           </ul>
         </div>
       </div>
     ),
     link: '/a-propos/economie-sociale',
-    img: '',
+    img: '/assets/operateur/economie-sociale.png',
   },
   {
     icon: '',
@@ -89,7 +100,9 @@ const items = [
           <h4 className="font-semibold mb-2">Critères du label EPNM :</h4>
           <ul className="list-disc list-inside space-y-1">
             {epnPageContent.label.criteres.items.map((item, idx) => (
-              <li key={idx} className="text-sm">{item}</li>
+              <li key={idx} className="text-sm">
+                {item}
+              </li>
             ))}
           </ul>
         </div>
@@ -97,7 +110,9 @@ const items = [
           <h4 className="font-semibold mb-2">Équipement mobile :</h4>
           <ul className="list-disc list-inside space-y-1">
             {epnPageContent.equipement.items.map((item, idx) => (
-              <li key={idx} className="text-sm">{item}</li>
+              <li key={idx} className="text-sm">
+                {item}
+              </li>
             ))}
           </ul>
         </div>
@@ -105,7 +120,9 @@ const items = [
           <h4 className="font-semibold mb-2">Publics cibles :</h4>
           <ul className="list-disc list-inside space-y-1">
             {epnPageContent.publicsCibles.publics.map((publicItem, idx) => (
-              <li key={idx} className="text-sm">{publicItem}</li>
+              <li key={idx} className="text-sm">
+                {publicItem}
+              </li>
             ))}
           </ul>
         </div>
@@ -113,35 +130,43 @@ const items = [
           <h4 className="font-semibold mb-2">Label Connectoo :</h4>
           <ul className="list-disc list-inside space-y-1">
             {epnPageContent.connectoo.attestations.map((attestation, idx) => (
-              <li key={idx} className="text-sm">{attestation}</li>
+              <li key={idx} className="text-sm">
+                {attestation}
+              </li>
             ))}
           </ul>
         </div>
       </div>
     ),
     link: '/a-propos/epn',
-    img: '',
+    img: '/assets/operateur/epnm.png',
   },
   {
     icon: '',
     title: 'Opérateur de formation de Titres Services',
     description:
-      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Formations adaptées aux aide-ménagères, encadrants et équipes administratives.",
+      'ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Formations adaptées aux aide-ménagères, encadrants et équipes administratives.',
     expandedContent: (
       <div className="space-y-4">
         <div>
           <h4 className="font-semibold mb-2">Compétences numériques professionnelles :</h4>
           <ul className="list-disc list-inside space-y-1">
             {titresServicesPageContent.competencesNumeriques.items.map((item, idx) => (
-              <li key={idx} className="text-sm">{item}</li>
+              <li key={idx} className="text-sm">
+                {item}
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">Compétences de bien-être, ergonomie et prévention :</h4>
+          <h4 className="font-semibold mb-2">
+            Compétences de bien-être, ergonomie et prévention :
+          </h4>
           <ul className="list-disc list-inside space-y-1">
             {titresServicesPageContent.competencesBienEtre.items.map((item, idx) => (
-              <li key={idx} className="text-sm">{item}</li>
+              <li key={idx} className="text-sm">
+                {item}
+              </li>
             ))}
           </ul>
         </div>
@@ -149,14 +174,16 @@ const items = [
           <h4 className="font-semibold mb-2">Impact :</h4>
           <ul className="list-disc list-inside space-y-1">
             {titresServicesPageContent.impact.contributions.map((contribution, idx) => (
-              <li key={idx} className="text-sm">{contribution}</li>
+              <li key={idx} className="text-sm">
+                {contribution}
+              </li>
             ))}
           </ul>
         </div>
       </div>
     ),
     link: '/a-propos/formation-titres-services',
-    img: '',
+    img: '/assets/operateur/formation-titres-services.png',
   },
 ]
 
@@ -180,21 +207,33 @@ export function ValueCards() {
           return (
             <article
               key={item.title + index}
-              className="relative overflow-visible group"
+              className="relative overflow-visible group flex"
               onClick={() => {
                 if (!isMobile) return
                 setCardOpen(selectedCard ? null : index)
               }}
             >
-              <div className="relative rounded-xl bg-white min-h-76 hover:bg-secondary-800 group-hover:rounded-b-none hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in cursor-pointer">
-                <div className="flex flex-col justify-between gap-2">
+              <div className="relative rounded-xl bg-white hover:bg-secondary-800 group-hover:rounded-b-none hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in pointer-events-none hover:pointer-events-auto flex flex-col w-full h-full">
+                {item.img && (
+                  <div className="mb-4 relative w-full h-32 rounded-lg overflow-hidden">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-opacity duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-primary-600 opacity-40 group-hover:opacity-0 transition-opacity duration-300"></div>
+                  </div>
+                )}
+                <div className="flex flex-col justify-between gap-2 flex-1">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500 text-white text-lg shrink-0">
                       {item.icon}
                     </span>
                     <h3 className="text-sm font-semibold uppercase tracking-wide">{item.title}</h3>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="p-2 text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
