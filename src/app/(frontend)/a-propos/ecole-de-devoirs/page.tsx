@@ -157,15 +157,30 @@ const Page = () => {
                   key={atelier.title}
                   variants={fadeInUp}
                   whileHover={{ scale: 1.01 }}
-                  className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg border border-primary-100 dark:border-primary-900/60"
+                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[400px] cursor-pointer transition-all duration-300"
                 >
-                  <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100">{atelier.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-200 mt-2 leading-relaxed">{atelier.description}</p>
-                  <ul className="mt-4 space-y-2 text-gray-700 dark:text-gray-200 list-disc list-inside">
-                    {atelier.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  {atelier.image && (
+                    <>
+                      <div className="absolute inset-0">
+                        <Image
+                          src={atelier.image}
+                          alt={atelier.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80 transition-all duration-300" />
+                    </>
+                  )}
+                  <div className="relative p-6 h-full flex flex-col justify-start text-white">
+                    <h3 className="text-xl font-semibold text-white mb-2">{atelier.title}</h3>
+                    <p className="text-white/95 mt-2 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">{atelier.description}</p>
+                    <ul className="mt-4 space-y-2 text-white/90 list-disc list-inside opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {atelier.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -50,6 +50,7 @@ export interface EddContent {
     title: string
     description: string
     items: string[]
+    image?: string
   }[]
 }
 
@@ -464,7 +465,8 @@ export const eddPageContent: EddContent = {
         'Jeux mathématiques et logiques',
         'Initiation scientifique (expériences simples, observation)',
         'Ateliers de langue (oral, vocabulaire, expression)'
-      ]
+      ],
+      image: '/assets/edd/ateliers-didactique.png'
     },
     {
       title: 'Ateliers créatifs et artistiques',
@@ -473,7 +475,8 @@ export const eddPageContent: EddContent = {
         'Arts plastiques : dessin, peinture, collage, objets',
         'Activités manuelles : origami, bricolage, construction',
         'Expression corporelle, théâtre, contes et mise en scène'
-      ]
+      ],
+      image: '/assets/edd/ateliers-artistiques.png'
     },
     {
       title: 'Ateliers numériques éducatifs',
@@ -482,7 +485,8 @@ export const eddPageContent: EddContent = {
         "Initiation à l'ordinateur et à la tablette",
         "Outils ludiques d'apprentissage (jeux pédagogiques, quizz)",
         'Premiers pas en robotique et programmation (Scratch, adapté)'
-      ]
+      ],
+      image: '/assets/edd/ateliers-numeriques.png'
     },
     {
       title: 'Ateliers socio-éducatifs',
@@ -491,12 +495,14 @@ export const eddPageContent: EddContent = {
         'Jeux coopératifs et activités de groupe',
         'Émotions et gestion de conflits',
         'Citoyenneté, vivre-ensemble, interculturalité'
-      ]
+      ],
+      image: '/assets/edd/ateliers-socio-educatifs.png'
     },
     {
       title: 'Activités ludiques et récréatives',
       description: 'Offrir un cadre apaisant, agréable et convivial.',
-      items: ['Jeux de société', 'Activités sportives légères', 'Temps de détente et espace de parole']
+      items: ['Jeux de société', 'Activités sportives légères', 'Temps de détente et espace de parole'],
+      image: '/assets/edd/ateliers-ludiques-recreatifs.png'
     }
   ]
 }
