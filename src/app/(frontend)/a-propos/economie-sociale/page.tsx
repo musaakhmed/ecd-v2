@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { esdPageContent } from '@/lib/about-content'
 
 const Page = () => {
@@ -27,8 +28,18 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary-700 via-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
+      <section className="relative text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/operateur/economie-sociale.png"
+            alt="Économie Sociale"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+        <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -40,23 +51,19 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              Opérateur d&apos;économie sociale
+              {content.hero.subtitle}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             >
-              Entreprise Sociale et Démocratique : un dispositif d&apos;insertion professionnelle
+              {content.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est reconnue comme entreprise sociale d&apos;insertion
-              mandatée et spécifiquement agréée en tant qu&apos;Entreprise Sociale et Démocratique
-              (ESD). Cet agrément atteste d&apos;un engagement structurel en faveur de
-              l&apos;inclusion, de l&apos;emploi durable et du développement des compétences des
-              publics éloignés du marché du travail.
+              {content.hero.description}
             </motion.p>
           </motion.div>
         </div>
@@ -77,19 +84,18 @@ const Page = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
             >
               <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                Un dispositif d&apos;insertion socioprofessionnelle
+                {content.presentation.title}
               </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
-                Dans ce cadre, l&apos;association a mis en place un dispositif d&apos;insertion
-                socioprofessionnelle (ISP) centré sur le métier d&apos;animateur·trice –
-                médiateur·trice numérique, fonction en plein essor dans le contexte de la transition
-                digitale et de la lutte contre la fracture numérique.
-              </p>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                À travers ces missions, les travailleurs développent progressivement un référentiel
-                de compétences professionnelles reconnu dans les secteurs du numérique social, de la
-                formation et de l&apos;éducation permanente.
-              </p>
+              {content.presentation.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={`text-gray-700 dark:text-gray-200 leading-relaxed ${
+                    index < content.presentation.paragraphs.length - 1 ? 'mb-4' : ''
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
             </motion.div>
 
             <motion.div

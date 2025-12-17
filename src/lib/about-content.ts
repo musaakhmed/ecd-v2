@@ -35,6 +35,11 @@ export interface Accreditation {
 }
 
 export interface EddContent {
+  hero: {
+    subtitle: string
+    title: string
+    description: string
+  }
   reperePoints: string[]
   axes: {
     title: string
@@ -49,6 +54,15 @@ export interface EddContent {
 }
 
 export interface EsdContent {
+  hero: {
+    subtitle: string
+    title: string
+    description: string
+  }
+  presentation: {
+    title: string
+    paragraphs: string[]
+  }
   reperePoints: string[]
   metier: {
     title: string
@@ -81,6 +95,11 @@ export interface EsdContent {
 }
 
 export interface EpnContent {
+  hero: {
+    subtitle: string
+    title: string
+    description: string
+  }
   reperePoints: string[]
   label: {
     title: string
@@ -117,6 +136,11 @@ export interface EpnContent {
 }
 
 export interface TitresServicesContent {
+  hero: {
+    subtitle: string
+    title: string
+    description: string
+  }
   reperePoints: string[]
   competencesNumeriques: {
     title: string
@@ -132,6 +156,62 @@ export interface TitresServicesContent {
     title: string
     description: string
     contributions: string[]
+  }
+}
+
+export interface QuiSommesNousContent {
+  hero: {
+    title: string
+    description: string
+  }
+  introduction: {
+    paragraphs: string[]
+  }
+  approche: {
+    title: string
+    description: string
+    objectifs: string[]
+    conclusion: string
+  }
+  domaines: {
+    title: string
+    soutienScolaire: {
+      title: string
+      description: string
+      points: string[]
+      conclusion: string
+    }
+    inclusionNumerique: {
+      title: string
+      description: string
+      publics: {
+        left: string[]
+        right: string[]
+      }
+      interventions: {
+        title: string
+        items: string[]
+      }
+      conclusion: string
+    }
+    formationsTitresServices: {
+      title: string
+      description: string
+      competencesNumeriques: {
+        title: string
+        items: string[]
+      }
+      competencesBienEtre: {
+        title: string
+        items: string[]
+      }
+      conclusion: string
+    }
+    ateliersParentalite: {
+      title: string
+      description: string
+      items: string[]
+    }
   }
 }
 
@@ -341,6 +421,12 @@ export const stats: StatItem[] = [
 ]
 
 export const eddPageContent: EddContent = {
+  hero: {
+    subtitle: 'Opérateur en École de Devoirs',
+    title: "Notre-Dame-Aux-Neiges : un soutien scolaire au cœur du quartier",
+    description:
+      "Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs. Nous accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large participation de l'école fondamentale Congrès Dachsbeck (±80 %)."
+  },
   reperePoints: [
     "Reconnu par l'ONE sous l'appellation « Notre-Dame-Aux-Neiges ».",
     "Enfants majoritairement issus de l'école fondamentale Congrès Dachsbeck (~80 %).",
@@ -416,6 +502,19 @@ export const eddPageContent: EddContent = {
 }
 
 export const esdPageContent: EsdContent = {
+  hero: {
+    subtitle: "Opérateur d'économie sociale",
+    title: "Entreprise Sociale et Démocratique : un dispositif d'insertion professionnelle",
+    description:
+      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail."
+  },
+  presentation: {
+    title: "Un dispositif d'insertion socioprofessionnelle",
+    paragraphs: [
+      "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique.",
+      "À travers ces missions, les travailleurs développent progressivement un référentiel de compétences professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation permanente."
+    ]
+  },
   reperePoints: [
     "Reconnue comme entreprise sociale d'insertion mandatée et agréée ESD.",
     "Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
@@ -493,6 +592,12 @@ export const esdPageContent: EsdContent = {
 }
 
 export const epnPageContent: EpnContent = {
+  hero: {
+    subtitle: "Opérateur d'EPN labellisé",
+    title: 'Inclusion numérique mobile : un dispositif labellisé et itinérant',
+    description:
+      "Espace Cultures & Développement est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics."
+  },
   reperePoints: [
     "Opérateur d'inclusion numérique labellisé en Région bruxelloise.",
     "Détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
@@ -572,6 +677,12 @@ export const epnPageContent: EpnContent = {
 }
 
 export const titresServicesPageContent: TitresServicesContent = {
+  hero: {
+    subtitle: 'Opérateur de formation de Titres-Services',
+    title: 'Formations professionnelles pour le secteur des Titres-Services',
+    description:
+      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil."
+  },
   reperePoints: [
     "Opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS.",
     "Formations adaptées aux aide-ménagères, encadrants et équipes administratives.",
@@ -614,6 +725,106 @@ export const titresServicesPageContent: TitresServicesContent = {
       'À une meilleure qualité de service',
       'À une communication renforcée entre travailleurs et entreprises'
     ]
+  }
+}
+
+export const quiSommesNousPageContent: QuiSommesNousContent = {
+  hero: {
+    title: 'Qui sommes-nous ?',
+    description:
+      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale."
+  },
+  introduction: {
+    paragraphs: [
+      "L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services — en favorisant l'accès à l'éducation, au numérique, à la citoyenneté et au bien-être.",
+      "ECD vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois."
+    ]
+  },
+  approche: {
+    title: 'Une approche interculturelle, inclusive et participative',
+    description:
+      "La démarche d'ECD s'appuie sur une vision profondément interculturelle, promouvant la rencontre, l'expression et la compréhension mutuelle.",
+    objectifs: [
+      'Valoriser les diversités culturelles et sociales ;',
+      'Renforcer la cohésion et les liens entre communautés ;',
+      "Encourager la participation active à la vie sociale ;",
+      "Promouvoir un vivre-ensemble fondé sur l'équité, la solidarité et le respect mutuel."
+    ],
+    conclusion:
+      "ECD crée ainsi des espaces d'apprentissage, de dialogue et d'expérimentation qui favorisent la construction de citoyennetés actives et responsables."
+  },
+  domaines: {
+    title: "Nos domaines d'action",
+    soutienScolaire: {
+      title: 'Soutien scolaire et remédiation',
+      description:
+        'ECD organise un dispositif structuré pour accompagner les enfants et adolescents :',
+      points: [
+        'Aide aux devoirs et consolidation des apprentissages ;',
+        'Remédiation individualisée ;',
+        'Développement de méthodes de travail ;',
+        'Activités didactiques, ludiques et culturelles ;',
+        'Accompagnement favorisant la confiance en soi et la motivation scolaire.'
+      ],
+      conclusion:
+        'Ce pôle contribue à lutter contre les inégalités scolaires et à soutenir la réussite éducative.'
+    },
+    inclusionNumerique: {
+      title: 'Inclusion numérique pour tous',
+      description:
+        'ECD agit au cœur de la lutte contre la fracture numérique en développant une offre adaptée à une grande diversité de publics :',
+      publics: {
+        left: ['Jeunes,', 'Adultes,', 'Seniors,', 'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…),'],
+        right: ["Demandeurs d'emploi,", "Apprenants en alpha et FLE,", 'Professionnels.']
+      },
+      interventions: {
+        title: 'Les interventions comprennent :',
+        items: [
+          'Accompagnements individuels et de proximité ;',
+          "Actions mobiles via l'Espace Public Numérique Mobile (EPNM), permettant d'aller sur les lieux de vie, centres sociaux, écoles, associations ou entreprises."
+        ]
+      },
+      conclusion:
+        "Cette approche globale vise à renforcer l'autonomie numérique, l'accès aux droits, la participation citoyenne et la capacité d'agir dans un monde digitalisé."
+    },
+    formationsTitresServices: {
+      title: 'Formations Titres-Services : compétences numériques et bien-être au travail',
+      description:
+        "ECD est opérateur de formation agréé dans le secteur des Titres-Services (Bruxelles et prochainement Wallonie). Ses modules s'adressent aux aides-ménagères, encadrants et équipes administratives.",
+      competencesNumeriques: {
+        title: 'a) Compétences numériques professionnelles',
+        items: [
+          "Prise en main d'outils numériques professionnels ;",
+          "Gestion de planning, communication digitale avec l'employeur ;",
+          "Utilisation d'applications métier ;",
+          'Bureautique, outils collaboratifs, sécurité numérique ;',
+          "Introduction aux outils d'intelligence artificielle utiles au travail."
+        ]
+      },
+      competencesBienEtre: {
+        title: 'b) Compétences de bien-être, ergonomie et prévention',
+        items: [
+          'Sécurité sur le lieu de travail ;',
+          'Ergonomie et prévention des TMS ;',
+          'Organisation du travail ;',
+          'Communication professionnelle ;',
+          'Gestion du stress et motivation ;',
+          'Prévention des risques domestiques et psychosociaux.'
+        ]
+      },
+      conclusion:
+        "Ces formations contribuent à la professionnalisation du secteur, à l'amélioration des conditions de travail et à la réduction des risques professionnels."
+    },
+    ateliersParentalite: {
+      title: 'Ateliers et groupes de parole autour de la parentalité',
+      description: 'ECD propose des espaces dédiés aux familles et aux parents :',
+      items: [
+        'Ateliers thématiques (éducation, communication familiale, enjeux scolaires) ;',
+        'Groupes de parole entre parents ;',
+        'Rencontres avec des professionnels ;',
+        'Actions favorisant le lien parent-enfant et le soutien éducatif.'
+      ]
+    }
   }
 }
 

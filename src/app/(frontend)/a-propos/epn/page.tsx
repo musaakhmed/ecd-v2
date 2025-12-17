@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { epnPageContent } from '@/lib/about-content'
 
 const Page = () => {
@@ -23,8 +24,18 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary-700 via-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
+      <section className="relative text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/operateur/epnm.png"
+            alt="EPN Mobile"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+        <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -36,21 +47,19 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              Opérateur d&apos;EPN labellisé
+              {content.hero.subtitle}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             >
-              Inclusion numérique mobile : un dispositif labellisé et itinérant
+              {content.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est un opérateur d&apos;inclusion numérique labellisé
-              en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d&apos;une
-              expertise dans l&apos;accompagnement de divers publics.
+              {content.hero.description}
             </motion.p>
           </motion.div>
         </div>
