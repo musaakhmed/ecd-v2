@@ -1,11 +1,29 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { eddPageContent } from '@/lib/about-content'
 
 const Page = () => {
+  const parallaxRef = useRef<HTMLDivElement>(null)
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const rect = parallaxRef.current.getBoundingClientRect()
+        const scrolled = window.scrollY - rect.top
+        // Parallax effect: background moves at 30% of scroll speed
+        setScrollY(scrolled * 0.3)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -114,8 +132,28 @@ const Page = () => {
       </section>
 
       {/* Axes */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
+      <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 -inset-y-[100%]">
+          <div
+            className="absolute inset-0"
+            style={{
+              transform: `translateY(${scrollY}px) scale(1.1)`,
+              willChange: 'transform',
+            }}
+          >
+            <Image
+              src="/assets/edd/ateliers-didactique.png"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* Subtle overlay only in the middle for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-gray-950/40 pointer-events-none" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
