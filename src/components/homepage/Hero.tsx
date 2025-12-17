@@ -37,7 +37,7 @@ const slides: Slide[] = [
   {
     image: '/assets/hero/robotics.jpg',
     title: 'Services sur mesure',
-    subtitle: 'Des solutioins adaptées à vos besoins, tout simplement',
+    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
     description: 'Un accompagnement sur mesure, adapté à vos besoins.',
   },
 ]
