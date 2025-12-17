@@ -37,20 +37,32 @@ const Page = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-4xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
             <motion.p
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
               {content.hero.subtitle}
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            >
               {content.hero.title}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 leading-relaxed">
-              Espace Cultures & Développement est reconnu par l’ONE comme opérateur d’École de Devoirs. Nous
-              accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large
-              participation de l’école fondamentale Congrès Dachsbeck (±80 %).
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
+            >
+              Espace Cultures & Développement est reconnu par l’ONE comme opérateur d’École de
+              Devoirs. Nous accueillons principalement les enfants du quartier
+              Notre-Dame-Aux-Neiges, avec une large participation de l’école fondamentale Congrès
+              Dachsbeck (±80 %).
             </motion.p>
           </motion.div>
         </div>
@@ -66,12 +78,18 @@ const Page = () => {
             variants={staggerContainer}
             className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
           >
-            <motion.div variants={fadeInUp} className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50">
-              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">Un accueil orienté soutien scolaire</h2>
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
+            >
+              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+                Un accueil orienté soutien scolaire
+              </h2>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                L’accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous offrons un
-                cadre rassurant, des repères méthodologiques et un accompagnement rapproché afin de consolider
-                les acquis, révéler les besoins et encourager la confiance.
+                L’accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
+                offrons un cadre rassurant, des repères méthodologiques et un accompagnement
+                rapproché afin de consolider les acquis, révéler les besoins et encourager la
+                confiance.
               </p>
             </motion.div>
 
@@ -79,7 +97,9 @@ const Page = () => {
               variants={fadeInUp}
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">Repères clés</h3>
+              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
+                Repères clés
+              </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
                   <li key={point} className="flex gap-3">
@@ -103,7 +123,10 @@ const Page = () => {
             variants={staggerContainer}
             className="space-y-10"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100"
+            >
               Deux axes complémentaires
             </motion.h2>
             <div className="grid gap-8 md:grid-cols-2">
@@ -114,8 +137,12 @@ const Page = () => {
                   whileHover={{ y: -4 }}
                   className="rounded-2xl border border-primary-100 dark:border-primary-900/50 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-lg p-8"
                 >
-                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">{axe.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">{axe.description}</p>
+                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
+                    {axe.title}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+                    {axe.description}
+                  </p>
                   <ul className="space-y-2 text-gray-700 dark:text-gray-200 list-disc list-inside">
                     {axe.points.map((point) => (
                       <li key={point}>{point}</li>
@@ -147,8 +174,8 @@ const Page = () => {
               variants={fadeInUp}
               className="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed"
             >
-              Un programme hebdomadaire structuré du lundi au vendredi, combinant soutien scolaire, développement
-              des compétences et temps de détente.
+              Un programme hebdomadaire structuré du lundi au vendredi, combinant soutien scolaire,
+              développement des compétences et temps de détente.
             </motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
@@ -157,7 +184,7 @@ const Page = () => {
                   key={atelier.title}
                   variants={fadeInUp}
                   whileHover={{ scale: 1.01 }}
-                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[400px] cursor-pointer transition-all duration-300"
+                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[400px] cursor-pointer transition-all duration-300 ease-in-out"
                 >
                   {atelier.image && (
                     <>
@@ -166,16 +193,20 @@ const Page = () => {
                           src={atelier.image}
                           alt={atelier.title}
                           fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                         />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80 transition-all duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80 transition-all duration-300 ease-in-out" />
                     </>
                   )}
-                  <div className="relative p-6 h-full flex flex-col justify-start text-white">
-                    <h3 className="text-xl font-semibold text-white mb-2">{atelier.title}</h3>
-                    <p className="text-white/95 mt-2 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">{atelier.description}</p>
-                    <ul className="mt-4 space-y-2 text-white/90 list-disc list-inside opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="relative p-6 h-full flex flex-col justify-center items-center group-hover:justify-start text-white transition-all duration-300 ease-in-out">
+                    <h3 className="text-xl font-semibold text-white text-center group-hover:mb-2 transition-all duration-300 ease-in-out">
+                      {atelier.title}
+                    </h3>
+                    <p className="text-white/95 mt-2 leading-relaxed hidden group-hover:block transition-opacity duration-300 ease-in-out">
+                      {atelier.description}
+                    </p>
+                    <ul className="mt-4 space-y-2 text-white/90 list-disc list-inside hidden group-hover:block transition-opacity duration-300 ease-in-out">
                       {atelier.items.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -205,18 +236,28 @@ const Page = () => {
               Modalités et rythme hebdomadaire
             </motion.h2>
             <div className="grid gap-6 md:grid-cols-2">
-              <motion.div variants={fadeInUp} className="rounded-xl border border-primary-100 dark:border-primary-900/60 p-6 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-md">
-                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">Vendredi : aide aux devoirs</h3>
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-xl border border-primary-100 dark:border-primary-900/60 p-6 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-md"
+              >
+                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
+                  Vendredi : aide aux devoirs
+                </h3>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la remédiation et
-                  la méthodologie.
+                  Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
+                  remédiation et la méthodologie.
                 </p>
               </motion.div>
-              <motion.div variants={fadeInUp} className="rounded-xl border border-secondary-100 dark:border-secondary-900/60 p-6 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 shadow-md">
-                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">Lundi à vendredi : animations</h3>
+              <motion.div
+                variants={fadeInUp}
+                className="rounded-xl border border-secondary-100 dark:border-secondary-900/60 p-6 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 shadow-md"
+              >
+                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
+                  Lundi à vendredi : animations
+                </h3>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Parcours équilibré entre soutien scolaire, ateliers thématiques, activités socio-éducatives et
-                  moments récréatifs pour un cadre serein.
+                  Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
+                  socio-éducatives et moments récréatifs pour un cadre serein.
                 </p>
               </motion.div>
             </div>
