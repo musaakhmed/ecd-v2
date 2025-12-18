@@ -38,6 +38,27 @@ export const menu: MenuItem[] = [
   {
     title: 'Nos services',
     link: '/#services',
+    submenu: {
+      links: [
+        { title: 'Initiation en informatique', link: '/nos-services/initiation-informatique' },
+        {
+          title: 'Maintenance & Dépannage Informatiques',
+          link: '/nos-services/maintenance-informatique',
+        },
+        {
+          title: 'Formations en Titres Services',
+          link: '/nos-services/formations-titres-services',
+        },
+        {
+          title: 'Perfectionnement en informatique',
+          link: '/nos-services/perfectionnement',
+        },
+      ],
+      image: {
+        src: '/assets/hero/seniors-transition-numerique.jpg',
+        alt: 'Nos Services',
+      },
+    },
   },
   {
     title: 'Inclusion numérique',

@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface CardData {
   id: number
@@ -10,6 +11,7 @@ interface CardData {
   shortDescription: string
   longDescription: string
   image: string
+  slug: string
 }
 
 const NosServices = () => {
@@ -18,39 +20,43 @@ const NosServices = () => {
   const cardsData: CardData[] = [
     {
       id: 1,
-      title: 'Formation Numérique',
+      title: 'Initiation en informatique',
       shortDescription:
-        'Découvrez nos programmes de formation pour améliorer vos compétences numériques et rester compétitif sur le marché du travail.',
+        'Un programme complet d\'initiation visant à offrir un premier niveau de maîtrise des outils numériques essentiels, adapté aux besoins spécifiques de chacun.',
       longDescription:
-        "Notre programme de formation numérique offre une approche complète pour développer vos compétences dans le domaine du digital. Que vous soyez débutant ou que vous souhaitiez approfondir vos connaissances, nos cours sont adaptés à tous les niveaux. Nous couvrons des sujets variés tels que la bureautique, les outils collaboratifs, la sécurité en ligne, et bien plus encore. Nos formateurs expérimentés vous accompagnent tout au long de votre parcours d'apprentissage.",
+        "ECD asbl développe un programme complet d'initiation en informatique visant à offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre s'adresse à un large public et s'adapte aux besoins spécifiques de chacun.\n\nPublics ciblés : Jeunes (découverte de l'ordinateur, bonnes pratiques numériques, premiers usages scolaires et citoyens), Adultes (acquisition d'autonomie dans l'usage des outils numériques du quotidien et administratifs), Seniors (accompagnement progressif, sécurité en ligne, confiance dans l'usage de l'ordinateur et du smartphone), Apprenants en alpha et FLE (modules simplifiés, vocabulaire visuel, exercices pratiques adaptés aux niveaux linguistiques).\n\nObjectifs généraux : Favoriser l'autonomie numérique au quotidien, permettre l'accès aux services en ligne (e-administration, recherche d'emploi, communication), développer les compétences de base (utilisation d'un ordinateur, gestion de fichiers, navigation Internet), renforcer la confiance, lutter contre l'exclusion numérique et soutenir les parcours d'insertion.\n\nContenus des modules : La découverte de l'ordinateur (clavier, souris, interfaces, organisation), la navigation Internet et la recherche d'informations fiables, la création et l'utilisation d'une adresse e-mail, les démarches administratives de base, les outils essentiels (traitement de texte, applications pratiques, outils collaboratifs simples), les bases de la sécurité numérique (mots de passe, arnaques, bonnes pratiques), l'usage du smartphone pour les services du quotidien.",
       image: '/assets/hero/seniors-transition-numerique.jpg',
+      slug: 'initiation-informatique',
     },
     {
       id: 2,
-      title: 'Accompagnement Personnalisé',
+      title: 'Maintenance & Dépannage Informatiques',
       shortDescription:
-        "Bénéficiez d'un accompagnement sur mesure pour votre transition professionnelle ou votre développement de carrière.",
+        'Services informatiques complets : installation, configuration, dépannage, maintenance préventive, cybersécurité et support technique.',
       longDescription:
-        "L'accompagnement personnalisé est au cœur de notre mission. Nous croyons que chaque parcours est unique et mérite une attention particulière. Nos conseillers vous aident à identifier vos forces, à définir vos objectifs professionnels et à élaborer un plan d'action concret. Que vous cherchiez un nouvel emploi, souhaitiez changer de carrière ou développer vos compétences, nous sommes là pour vous guider à chaque étape de votre parcours.",
-      image: '/assets/hero/devoirs.jpg',
+        "Nos Services Informatiques :\n\n1. Installation & Configuration — Votre matériel prêt à l'emploi : Nous installons et configurons vos équipements pour une utilisation immédiate (PC, imprimantes, scanners et périphériques, logiciels bureautiques et métiers, réseaux locaux (LAN), comptes utilisateurs, partage de dossiers, optimisation système).\n\n2. Serveurs & Réseaux — Une infrastructure sécurisée : Solutions professionnelles pour organisations (installation de serveurs Windows & NAS, cloud privé et sauvegarde centralisée, routeurs, Wi-Fi renforcé, réseau multisite, VPN pour télétravail sécurisé).\n\n3. Maintenance Préventive — Moins de pannes, plus d'efficacité : Entretien régulier pour prolonger la durée de vie de votre matériel (mises à jour système et logiciels, vérification matérielle (disques, ventilation…), nettoyage interne et optimisation).\n\n4. Cybersécurité — Protégez vos données : Nous sécurisons vos appareils et vos usages (antivirus et anti-malwares professionnels, analyse et suppression d'infections, conseils pour une sécurité durable).\n\n5. Sauvegarde & Restauration — Ne perdez jamais vos fichiers : Mise en place de sauvegardes automatiques (locales, NAS, cloud), tests de restauration, récupération de données après incident.\n\n6. Dépannage & Réparation — Intervention rapide : Nous résolvons rapidement les problèmes (PC lent, bloqué ou qui ne démarre plus, problèmes Windows, réseau, Wi-Fi, imprimantes et scanners inactifs, erreurs système et dysfonctionnements).\n\n7. Support & Accompagnement — Un partenaire à vos côtés : Assistance technique continue, aide à l'utilisation du matériel, formations aux bonnes pratiques, conseils pour moderniser votre parc informatique.",
+      image: '/assets/hero/robotics.jpg',
+      slug: 'maintenance-informatique',
     },
     {
       id: 3,
-      title: 'Ateliers Pratiques',
+      title: 'Formations en Titres Services',
       shortDescription:
-        'Participez à nos ateliers interactifs et pratiques pour mettre en application vos connaissances dans un environnement bienveillant.',
+        'Offre complète de formations destinées aux travailleurs, encadrants et équipes administratives, alliant compétences numériques, sécurité, ergonomie et bien-être au travail.',
       longDescription:
-        "Nos ateliers pratiques sont conçus pour vous permettre d'appliquer immédiatement ce que vous apprenez. Dans un cadre convivial et bienveillant, vous travaillez sur des projets concrets, échangez avec d'autres participants et bénéficiez du retour de nos experts. Ces sessions couvrent des domaines variés : création de CV, préparation aux entretiens, gestion de projet, communication professionnelle, et bien d'autres. L'apprentissage par la pratique est notre méthode privilégiée.",
-      image: '/assets/hero/robotics.jpg',
+        "ECD asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives. Ces modules permettent d'acquérir les compétences numériques essentielles et les bonnes pratiques de bien-être au travail, tout en favorisant l'efficacité professionnelle et la prévention des risques.\n\n1. Compétences numériques professionnelles : Identité numérique & démarches administratives (utilisation de l'eID, Itsme, portails administratifs), Navigation Internet & recherches en ligne, Messagerie électronique, Outils de visioconférence (Teams & Zoom), Signatures électroniques, Découverte de ChatGPT et outils IA accessibles.\n\n2. Compétences de bien-être, ergonomie & prévention : Sécurité sur le lieu de travail, Ergonomie & prévention des TMS, Organisation du travail, Communication professionnelle, Gestion du stress & motivation, Prévention des risques domestiques & psychosociaux.",
+      image: '/assets/hero/titres-services.jpg',
+      slug: 'formations-titres-services',
     },
     {
       id: 4,
-      title: 'Services à la Communauté',
+      title: 'Perfectionnement en informatique',
       shortDescription:
-        "Découvrez nos services dédiés à la communauté, incluant le soutien aux familles et l'accès aux titres-services.",
+        'Développez une expertise opérationnelle sur les suites bureautiques et collaboratives, automatisez vos tâches et renforcez la maîtrise des outils numériques professionnels.',
       longDescription:
-        "Nous sommes engagés dans le développement de notre communauté et proposons une gamme complète de services accessibles à tous. Nos services incluent le soutien aux familles dans leurs démarches administratives, l'accès facilité aux titres-services, l'organisation d'événements communautaires et bien plus encore. Notre équipe multilingue est à votre disposition pour vous accompagner dans vos démarches et répondre à vos questions. Ensemble, construisons une communauté plus forte et solidaire.",
-      image: '/assets/hero/titres-services.jpg',
+        "Objectifs : Développer une expertise opérationnelle sur les suites bureautiques et collaboratives les plus utilisées, structurer et automatiser les tâches répétitives pour améliorer l'efficacité individuelle et collective, renforcer la maîtrise des outils numériques professionnels (solutions cloud, outils de gestion documentaire, plateformes de communication), intégrer les usages avancés de l'intelligence artificielle appliquée au travail, soutenir les organisations dans la montée en compétences de leurs équipes.\n\nContenus des modules – Niveau avancé :\n\n1. Bureautique professionnelle avancée : Word (création de modèles institutionnels, automatisation via styles et champs, table des matières, index, références croisées), Excel (fonctions avancées, tableaux structurés, automatisation, macros simples, tableaux croisés dynamiques complexes), PowerPoint (conception visuelle avancée, charte graphique, storytelling, modèles professionnels, animations complexes).\n\n2. Environnements collaboratifs & digital workplace : Structuration d'un écosystème numérique (Teams / SharePoint / OneDrive ou Google Workspace), gestion documentaire avancée, coédition en temps réel, gestion de projets numériques.\n\n3. Gestion avancée des communications professionnelles : Techniques de rédaction professionnelle assistée par IA, gestion avancée d'Outlook, organisation de réunions complexes.\n\n4. Cybersécurité appliquée aux organisations : Analyse des risques numériques, paramétrage de la double authentification, gestion des accès, bonnes pratiques RGPD, détection des tentatives de phishing.\n\n5. Intelligence artificielle appliquée au travail : Utilisation de Copilot, ChatGPT, Gemini Pro, création de prompts professionnels, automatisation de documents, limites de l'IA et bonnes pratiques responsables.\n\n6. Outils métiers & productivité : Tableaux de bord, outils de gestion d'équipe (Trello, Planner, Notion), création de formulaires avancés, introduction aux automatisations simples.",
+      image: '/assets/hero/devoirs.jpg',
+      slug: 'perfectionnement',
     },
   ]
 
@@ -83,6 +89,15 @@ const NosServices = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-header mb-8 md:mb-12 text-center">
           Nos Services
         </h2>
+        
+        {/* Intro Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl border-2 border-primary-200 dark:border-primary-800 p-6 md:p-8 shadow-md">
+            <p className="text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-center">
+              Espace Cultures & Développement (ECD asbl) propose une offre complète de services numériques accessible à tous les publics. L&apos;association accompagne les débutants et les utilisateurs confirmés à travers des modules d&apos;initiation, des parcours de perfectionnement, des formations Titres-Services et un service de maintenance informatique.
+            </p>
+          </div>
+        </div>
 
         {/* Desktop Grid Layout */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 relative min-h-[500px]">
@@ -157,9 +172,21 @@ const NosServices = () => {
                           className="overflow-hidden"
                         >
                           <div className="border-t border-white/30 pt-4 mt-4">
-                            <p className="text-base md:text-lg text-gray-100 leading-relaxed mb-6">
+                            <p className="text-base md:text-lg text-gray-100 leading-relaxed mb-6 whitespace-pre-line">
                               {card.longDescription}
                             </p>
+                            <Link href={`/nos-services/${card.slug}`}>
+                              <button
+                                className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg
+                                         font-semibold transition-colors duration-300 w-full"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  handleClose()
+                                }}
+                              >
+                                Voir la page complète
+                              </button>
+                            </Link>
                           </div>
                         </motion.div>
                       )}
@@ -167,20 +194,21 @@ const NosServices = () => {
 
                     {/* Button */}
                     {expandedIndex !== index && (
-                      <motion.button
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
-                                 font-semibold transition-colors duration-300 text-sm md:text-base cursor-pointer
-                                 mt-2"
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          handleCardClick(index)
-                        }}
-                      >
-                        En savoir plus
-                      </motion.button>
+                      <Link href={`/nos-services/${card.slug}`}>
+                        <motion.button
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
+                                   font-semibold transition-colors duration-300 text-sm md:text-base cursor-pointer
+                                   mt-2 w-full"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                          }}
+                        >
+                          En savoir plus
+                        </motion.button>
+                      </Link>
                     )}
                   </motion.div>
 
@@ -244,13 +272,17 @@ const NosServices = () => {
               <div className="p-4">
                 <h3 className="text-xl font-bold text-header mb-2">{card.title}</h3>
                 <p className="text-sm text-gray-600 mb-4">{card.shortDescription}</p>
-                <button
-                  className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
-                           font-semibold transition-colors duration-300 text-sm w-full"
-                  onClick={() => handleCardClick(index)}
-                >
-                  En savoir plus
-                </button>
+                <Link href={`/nos-services/${card.slug}`}>
+                  <button
+                    className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
+                             font-semibold transition-colors duration-300 text-sm w-full"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                    }}
+                  >
+                    En savoir plus
+                  </button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -330,9 +362,21 @@ const NosServices = () => {
                         {cardsData[expandedIndex].shortDescription}
                       </p>
                       <div className="border-t border-gray-200 pt-4">
-                        <p className="text-base text-gray-700 leading-relaxed">
+                        <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line mb-4">
                           {cardsData[expandedIndex].longDescription}
                         </p>
+                        <Link href={`/nos-services/${cardsData[expandedIndex].slug}`}>
+                          <button
+                            className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg
+                                     font-semibold transition-colors duration-300 w-full"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              handleClose()
+                            }}
+                          >
+                            Voir la page complète
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
