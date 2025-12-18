@@ -1,11 +1,29 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { epnPageContent } from '@/lib/about-content'
 
 const Page = () => {
+  const parallaxRef = useRef<HTMLDivElement>(null)
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const rect = parallaxRef.current.getBoundingClientRect()
+        const scrolled = window.scrollY - rect.top
+        // Parallax effect: background moves at 30% of scroll speed
+        setScrollY(scrolled * 0.3)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -47,19 +65,21 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              {content.hero.subtitle}
+              Opérateur d&apos;EPN labellisé
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             >
-              {content.hero.title}
+              Inclusion numérique mobile : un dispositif labellisé et itinérant
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              {content.hero.description}
+              Espace Cultures & Développement est un opérateur d&apos;inclusion numérique labellisé
+              en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d&apos;une
+              expertise dans l&apos;accompagnement de divers publics.
             </motion.p>
           </motion.div>
         </div>
@@ -108,8 +128,28 @@ const Page = () => {
       </section>
 
       {/* Critères */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
+      <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 -inset-y-[100%]">
+          <div
+            className="absolute inset-0"
+            style={{
+              transform: `translateY(${scrollY}px) scale(1.1)`,
+              willChange: 'transform',
+            }}
+          >
+            <Image
+              src="/assets/operateur/parallax/inclusion-numerique.png"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* Stronger overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -125,7 +165,7 @@ const Page = () => {
             </motion.h2>
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
+              className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
             >
               <ul className="space-y-4 text-gray-700 dark:text-gray-200">
                 {content.label.criteres.items.map((item, index) => (

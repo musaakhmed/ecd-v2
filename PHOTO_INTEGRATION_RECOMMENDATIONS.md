@@ -81,3 +81,4 @@
 4. **Parcours Cards**: Add image slot to card component
 5. **Public Cible**: Add image gallery component
 6. **Accompagnement**: Add image to grid layout
+

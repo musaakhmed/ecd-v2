@@ -1,11 +1,30 @@
 'use client'
 
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { quiSommesNousPageContent } from '@/lib/about-content'
 
 const Page = () => {
   const content = quiSommesNousPageContent
+  const parallaxRef = useRef<HTMLDivElement>(null)
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current) {
+        const rect = parallaxRef.current.getBoundingClientRect()
+        const scrolled = window.scrollY - rect.top
+        // Parallax effect: background moves at 30% of scroll speed
+        setScrollY(scrolled * 0.3)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -22,8 +41,18 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary-700 via-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
+      <section className="relative text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/operateur/economie-sociale.png"
+            alt="Qui sommes-nous"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+        <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
@@ -77,8 +106,28 @@ const Page = () => {
       </section>
 
       {/* Approche interculturelle */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
+      <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 -inset-y-[100%]">
+          <div
+            className="absolute inset-0"
+            style={{
+              transform: `translateY(${scrollY}px) scale(1.1)`,
+              willChange: 'transform',
+            }}
+          >
+            <Image
+              src="/assets/operateur/parallax/approche-participative.png"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* Stronger overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -100,7 +149,7 @@ const Page = () => {
             </motion.p>
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
+              className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
             >
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
                 L&apos;association œuvre à :
