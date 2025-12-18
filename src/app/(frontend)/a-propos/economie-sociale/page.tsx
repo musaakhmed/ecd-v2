@@ -60,16 +60,13 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              Opérateur d'économie sociale
+              {content.hero.subtitle}
             </motion.p>
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Entreprise Sociale et Démocratique : un dispositif d'insertion professionnelle
+              {content.hero.title}
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 leading-relaxed">
-              Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et
-              spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un
-              engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences
-              des publics éloignés du marché du travail.
+              {content.hero.description}
             </motion.p>
           </motion.div>
         </div>
@@ -90,25 +87,27 @@ const Page = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
             >
               <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                Un dispositif d'insertion socioprofessionnelle
+                {content.presentation.title}
               </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
-                Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré
-                sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de
-                la transition digitale et de la lutte contre la fracture numérique.
-              </p>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                À travers ces missions, les travailleurs développent progressivement un référentiel de compétences
-                professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation
-                permanente.
-              </p>
+              {content.presentation.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={`text-gray-700 dark:text-gray-200 leading-relaxed ${
+                    index < content.presentation.paragraphs.length - 1 ? 'mb-4' : ''
+                  }`}
+                >
+                  {paragraph}
+                </p>
+              ))}
             </motion.div>
 
             <motion.div
               variants={fadeInUp}
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">Repères clés</h3>
+              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
+                {content.reperesTitle}
+              </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
                   <li key={point} className="flex gap-3">

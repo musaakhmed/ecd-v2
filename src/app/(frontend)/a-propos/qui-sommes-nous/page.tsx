@@ -152,7 +152,7 @@ const Page = () => {
               className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
             >
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                L&apos;association œuvre à :
+                {content.approche.intro}
               </p>
               <ul className="space-y-4 text-gray-700 dark:text-gray-200">
                 {content.approche.objectifs.map((objectif, index) => (

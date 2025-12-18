@@ -65,6 +65,7 @@ export interface EsdContent {
     paragraphs: string[]
   }
   reperePoints: string[]
+  reperesTitle: string
   metier: {
     title: string
     description: string
@@ -102,6 +103,7 @@ export interface EpnContent {
     description: string
   }
   reperePoints: string[]
+  reperesTitle: string
   label: {
     title: string
     description: string
@@ -128,6 +130,7 @@ export interface EpnContent {
       description: string
     }[]
     garanties: string[]
+    garantiesTitle: string
   }
   connectoo: {
     title: string
@@ -142,7 +145,12 @@ export interface TitresServicesContent {
     title: string
     description: string
   }
+  presentation: {
+    title: string
+    description: string
+  }
   reperePoints: string[]
+  reperesTitle: string
   competencesNumeriques: {
     title: string
     description: string
@@ -171,6 +179,7 @@ export interface QuiSommesNousContent {
   approche: {
     title: string
     description: string
+    intro: string
     objectifs: string[]
     conclusion: string
   }
@@ -526,6 +535,7 @@ export const esdPageContent: EsdContent = {
     "Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
     "Engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences."
   ],
+  reperesTitle: 'Repères clés',
   metier: {
     title: "Un métier au cœur de l'inclusion numérique",
     description:
@@ -609,6 +619,7 @@ export const epnPageContent: EpnContent = {
     "Détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
     "Dispositif entièrement mobile et itinérant, fonctionnant à la demande."
   ],
+  reperesTitle: 'Repères clés',
   label: {
     title: 'Le label EPNM – Espace Public Numérique Mobile',
     description:
@@ -667,7 +678,8 @@ export const epnPageContent: EpnContent = {
       'Une proximité renforcée avec les publics',
       "Un accès facilité pour les personnes éloignées du numérique",
       "Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés"
-    ]
+    ],
+    garantiesTitle: "L'EPNM garantit :"
   },
   connectoo: {
     title: 'Label Connectoo',
@@ -689,11 +701,17 @@ export const titresServicesPageContent: TitresServicesContent = {
     description:
       "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil."
   },
+  presentation: {
+    title: 'Des formations adaptées à chaque profil',
+    description:
+      "Nos formations sont conçues pour répondre aux besoins spécifiques des différents acteurs du secteur des Titres-Services : aide-ménagères, encadrants et équipes administratives. Chaque module est adapté aux réalités du terrain et aux compétences à développer."
+  },
   reperePoints: [
     "Opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS.",
     "Formations adaptées aux aide-ménagères, encadrants et équipes administratives.",
     "Modules personnalisés selon les besoins spécifiques de chaque profil."
   ],
+  reperesTitle: 'Repères clés',
   competencesNumeriques: {
     title: 'Compétences numériques professionnelles',
     description:
@@ -750,6 +768,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
     title: 'Une approche interculturelle, inclusive et participative',
     description:
       "La démarche d'ECD s'appuie sur une vision profondément interculturelle, promouvant la rencontre, l'expression et la compréhension mutuelle.",
+    intro: "L'association œuvre à :",
     objectifs: [
       'Valoriser les diversités culturelles et sociales ;',
       'Renforcer la cohésion et les liens entre communautés ;',

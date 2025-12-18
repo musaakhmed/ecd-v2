@@ -65,21 +65,19 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
-              Opérateur d&apos;EPN labellisé
+              {content.hero.subtitle}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             >
-              Inclusion numérique mobile : un dispositif labellisé et itinérant
+              {content.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est un opérateur d&apos;inclusion numérique labellisé
-              en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d&apos;une
-              expertise dans l&apos;accompagnement de divers publics.
+              {content.hero.description}
             </motion.p>
           </motion.div>
         </div>
@@ -112,7 +110,7 @@ const Page = () => {
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
               <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
-                Repères clés
+                {content.reperesTitle}
               </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
@@ -301,7 +299,7 @@ const Page = () => {
               className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
             >
               <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-4 text-center">
-                L&apos;EPNM garantit :
+                {content.interventions.garantiesTitle}
               </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.interventions.garanties.map((garantie, index) => (

@@ -102,13 +102,10 @@ const Page = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
             >
               <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                Des formations adaptées à chaque profil
+                {content.presentation.title}
               </h2>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Nos formations sont conçues pour répondre aux besoins spécifiques des différents
-                acteurs du secteur des Titres-Services : aide-ménagères, encadrants et équipes
-                administratives. Chaque module est adapté aux réalités du terrain et aux compétences
-                à développer.
+                {content.presentation.description}
               </p>
             </motion.div>
 
@@ -117,7 +114,7 @@ const Page = () => {
               className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
             >
               <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
-                Repères clés
+                {content.reperesTitle}
               </h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                 {content.reperePoints.map((point) => (
