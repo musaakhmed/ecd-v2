@@ -55,17 +55,28 @@ const Page = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-4xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
             <motion.p
               variants={fadeInUp}
               className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
             >
               {content.hero.subtitle}
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            >
               {content.hero.title}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 leading-relaxed">
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
+            >
               {content.hero.description}
             </motion.p>
           </motion.div>
@@ -151,7 +162,10 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            >
               {content.metier.title}
             </motion.h2>
             <motion.p
@@ -211,9 +225,13 @@ const Page = () => {
                     <div className="flex-shrink-0 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
                       {index + 1}
                     </div>
-                    <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100">{dimension.title}</h3>
+                    <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100">
+                      {dimension.title}
+                    </h3>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed ml-14">{dimension.description}</p>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed ml-14">
+                    {dimension.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -276,23 +294,23 @@ const Page = () => {
             >
               {content.accompagnement.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              {content.accompagnement.description}
-            </motion.p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {content.accompagnement.elements.map((element, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg border border-primary-100 dark:border-primary-900/60"
-                >
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">{element}</p>
-                </motion.div>
-              ))}
-            </div>
+
+            <motion.div className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8">
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8"
+              >
+                {content.accompagnement.description}
+              </motion.p>
+              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
+                {content.accompagnement.elements.map((element, index) => (
+                  <motion.li variants={fadeInUp} key={index} className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>{element}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -319,16 +337,13 @@ const Page = () => {
             >
               {content.pac.description}
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
-            >
+            <motion.div className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8">
               <ul className="space-y-4 text-gray-700 dark:text-gray-200">
                 {content.pac.objectifs.map((objectif, index) => (
-                  <li key={index} className="flex gap-3">
+                  <motion.li variants={fadeInUp} key={index} className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <span>{objectif}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>
@@ -340,4 +355,3 @@ const Page = () => {
 }
 
 export default Page
-
