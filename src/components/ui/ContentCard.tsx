@@ -38,15 +38,16 @@ export const ContentCard: React.FC<ContentCardProps> = ({
   const hoverProps = hover
     ? {
         whileHover: { scale: 1.01 },
-        className: `${className} transition-all duration-300`,
       }
-    : { className }
+    : {}
 
   return (
     <motion.div
       variants={fadeInUp}
       {...hoverProps}
-      className={`rounded-2xl shadow-lg p-8 ${variantClasses[variant]} ${borderClasses} ${hoverProps.className}`}
+      className={`rounded-2xl shadow-lg p-8 ${variantClasses[variant]} ${borderClasses} ${
+        hover ? 'transition-all duration-300' : ''
+      } ${className}`}
     >
       {title && title.trim() && (
         <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">

@@ -77,14 +77,14 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de
-              Devoirs, sous l'appellation « Notre-Dame-Aux-Neiges », en référence au quartier
-              emblématique où l'activité est implantée.
+              Espace Cultures & Développement est reconnu par l&apos;ONE comme opérateur d&apos;École de
+              Devoirs, sous l&apos;appellation « Notre-Dame-Aux-Neiges », en référence au quartier
+              emblématique où l&apos;activité est implantée.
               <br />
               <br />
-              L'accueil est orienté vers le soutien scolaire des enfants du quartier, avec une
-              majorité issue de l'école fondamentale Congrès Dachsbeck, représentant environ 80 % de
-              l'ensemble des participants.
+              L&apos;accueil est orienté vers le soutien scolaire des enfants du quartier, avec une
+              majorité issue de l&apos;école fondamentale Congrès Dachsbeck, représentant environ 80 % de
+              l&apos;ensemble des participants.
             </motion.p>
           </motion.div>
         </div>
@@ -108,7 +108,7 @@ const Page = () => {
                 Un accueil orienté soutien scolaire
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                L'accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
+                L&apos;accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
                 offrons un cadre rassurant, des repères méthodologiques et un accompagnement
                 rapproché afin de consolider les acquis, révéler les besoins et encourager la
                 confiance.
@@ -144,7 +144,7 @@ const Page = () => {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto">
                 Un programme adapté aux besoins des enfants, alliant soutien scolaire et activités
-                d'épanouissement
+                d&apos;épanouissement
               </p>
             </motion.div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -221,7 +221,7 @@ const Page = () => {
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
               <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-6">
-                Les activités proposées s'articulent autour de deux axes complémentaires :
+                Les activités proposées s&apos;articulent autour de deux axes complémentaires :
               </p>
             </motion.div>
             <div className="grid gap-8 md:grid-cols-2">
