@@ -286,8 +286,8 @@ const Page = () => {
                 {content.domaines.formationsTitresServices.description}
               </p>
 
-              <div className="ml-16 space-y-8">
-                <div>
+              <div className="ml-16 grid md:grid-cols-2 gap-6 md:gap-8">
+                <div className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-xl p-6 border border-primary-100 dark:border-primary-900/50">
                   <h4 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
                     {content.domaines.formationsTitresServices.competencesNumeriques.title}
                   </h4>
@@ -303,7 +303,7 @@ const Page = () => {
                   </ul>
                 </div>
 
-                <div>
+                <div className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-xl p-6 border border-secondary-100 dark:border-secondary-900/50">
                   <h4 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
                     {content.domaines.formationsTitresServices.competencesBienEtre.title}
                   </h4>
@@ -311,7 +311,7 @@ const Page = () => {
                     {content.domaines.formationsTitresServices.competencesBienEtre.items.map(
                       (item, index) => (
                         <li key={index} className="flex gap-3">
-                          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                          <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
                           <span>{item}</span>
                         </li>
                       )

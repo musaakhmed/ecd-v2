@@ -233,7 +233,7 @@ export interface QuiSommesNousContent {
 export const heroContent = {
   title: 'ECD asbl en quelques mots',
   subtitle: "La culture comme levier d'intégration et d'insertion",
-  cta: 'Découvrez nos actions'
+  cta: 'Découvrez nos actions',
 }
 
 export const missionCards: MissionCard[] = [
@@ -243,13 +243,13 @@ export const missionCards: MissionCard[] = [
     items: [
       'Jeunes en milieu scolaire',
       'Adultes en activation sociale',
-      'Personnes touchées par la fracture numérique'
-    ]
+      'Personnes touchées par la fracture numérique',
+    ],
   },
   {
     icon: 'Compass',
     title: 'Notre approche',
-    text: 'Perspective interculturelle fondée sur des valeurs de citoyenneté et de vivre-ensemble'
+    text: 'Perspective interculturelle fondée sur des valeurs de citoyenneté et de vivre-ensemble',
   },
   {
     icon: 'Target',
@@ -257,9 +257,9 @@ export const missionCards: MissionCard[] = [
     items: [
       'Créer des opportunités de dialogue',
       'Favoriser la participation active',
-      'Faire émerger les diversités'
-    ]
-  }
+      'Faire émerger les diversités',
+    ],
+  },
 ]
 
 export const domains: Domain[] = [
@@ -269,7 +269,7 @@ export const domains: Domain[] = [
     title: 'Soutien scolaire et remédiation',
     description:
       'Accompagnement des enfants et jeunes pour renforcer leurs apprentissages et favoriser leur réussite scolaire.',
-    color: 'blue'
+    color: 'blue',
   },
   {
     id: 'ateliers-informatiques',
@@ -277,7 +277,7 @@ export const domains: Domain[] = [
     title: 'Ateliers informatiques et formations numériques',
     description:
       "Développement des compétences numériques de base et avancées, afin de faciliter l'accès de tous aux outils digitaux.",
-    color: 'purple'
+    color: 'purple',
   },
   {
     id: 'emploi-numerique',
@@ -285,15 +285,15 @@ export const domains: Domain[] = [
     title: "Accompagnement à l'emploi par le numérique",
     description:
       "Appui à la recherche d'emploi, à la rédaction de CV, aux démarches en ligne et à la maîtrise des outils professionnels.",
-    color: 'green'
+    color: 'green',
   },
   {
     id: 'francais-alphabetisation',
     icon: 'MessageSquare',
     title: 'Cours de français et alphabétisation',
     description:
-      "Apprentissage du français oral et écrit, développement des compétences de base et autonomie linguistique.",
-    color: 'orange'
+      'Apprentissage du français oral et écrit, développement des compétences de base et autonomie linguistique.',
+    color: 'orange',
   },
   {
     id: 'parentalite',
@@ -301,7 +301,7 @@ export const domains: Domain[] = [
     title: 'Ateliers et groupes de parole autour de la parentalité',
     description:
       "Espaces d'échanges, d'information et de soutien pour renforcer les compétences parentales et le lien familial.",
-    color: 'pink'
+    color: 'pink',
   },
   {
     id: 'primo-arrivants',
@@ -309,20 +309,17 @@ export const domains: Domain[] = [
     title: 'Accompagnement des primo-arrivants',
     description:
       "Information, orientation et aide aux démarches d'inscription dans des parcours de formation ou d'intégration.",
-    color: 'teal'
-  }
+    color: 'teal',
+  },
 ]
 
-export const colorClasses: Record<
-  ColorKey,
-  { bg: string; text: string; hover: string }
-> = {
+export const colorClasses: Record<ColorKey, { bg: string; text: string; hover: string }> = {
   blue: { bg: 'bg-blue-100', text: 'text-blue-600', hover: 'hover:bg-blue-50' },
   purple: { bg: 'bg-purple-100', text: 'text-purple-600', hover: 'hover:bg-purple-50' },
   green: { bg: 'bg-green-100', text: 'text-green-600', hover: 'hover:bg-green-50' },
   orange: { bg: 'bg-orange-100', text: 'text-orange-600', hover: 'hover:bg-orange-50' },
   pink: { bg: 'bg-pink-100', text: 'text-pink-600', hover: 'hover:bg-pink-50' },
-  teal: { bg: 'bg-teal-100', text: 'text-teal-600', hover: 'hover:bg-teal-50' }
+  teal: { bg: 'bg-teal-100', text: 'text-teal-600', hover: 'hover:bg-teal-50' },
 }
 
 export const accreditations: Accreditation[] = [
@@ -333,24 +330,25 @@ export const accreditations: Accreditation[] = [
     badge: 'Reconnu ONE',
     icon: 'School',
     content: {
-      intro: "Espace Cultures & Développement est reconnu par l'ONE en tant qu'opérateur d'École de Devoirs.",
+      intro:
+        "Espace Cultures & Développement est reconnu par l'ONE en tant qu'opérateur d'École de Devoirs.",
       highlight: {
         stat: '80%',
-        text: "des participants viennent de l'école fondamentale Congrès Dachsbeck"
+        text: "des participants viennent de l'école fondamentale Congrès Dachsbeck",
       },
       activities: [
         {
           icon: 'Calendar',
           day: 'Vendredi',
-          title: 'Aide aux devoirs et remédiation scolaire'
+          title: 'Aide aux devoirs et remédiation scolaire',
         },
         {
           icon: 'Palette',
           day: 'Lun-Ven',
-          title: 'Animations didactiques, éducatives et ludiques'
-        }
-      ]
-    }
+          title: 'Animations didactiques, éducatives et ludiques',
+        },
+      ],
+    },
   },
   {
     id: 'epnm',
@@ -364,15 +362,15 @@ export const accreditations: Accreditation[] = [
         "Amplitude des heures d'ouverture",
         'Nombre de formations proposées',
         "Présence d'un animateur qualifié",
-        "Disponibilité d'un matériel adéquat"
+        "Disponibilité d'un matériel adéquat",
       ],
       features: [
         { icon: 'Laptop', text: 'Ordinateurs portables et tablettes modulables' },
         { icon: 'MapPin', text: 'Formation sur site partenaire' },
         { icon: 'Euro', text: 'Tarif social ou gratuit' },
-        { icon: 'TrendingUp', text: 'Accès aux financements publics' }
-      ]
-    }
+        { icon: 'TrendingUp', text: 'Accès aux financements publics' },
+      ],
+    },
   },
   {
     id: 'esd',
@@ -386,19 +384,19 @@ export const accreditations: Accreditation[] = [
       job: {
         title: 'Animateur·trice - Médiateur·trice numérique',
         description:
-          "Former et accompagner des publics variés dans l'appropriation des outils informatiques"
+          "Former et accompagner des publics variés dans l'appropriation des outils informatiques",
       },
       targetPublic: [
         'Article 60§7',
         "Poste d'Insertion/Transition",
         "Contrats ACS d'Insertion",
-        'Partenariats Actiris/ISP CPAS'
+        'Partenariats Actiris/ISP CPAS',
       ],
       pac: {
         title: "Plan d'Acquisition de Compétences (PAC)",
-        features: ['Suivi personnalisé', 'Progression adaptée', 'Formations internes et externes']
-      }
-    }
+        features: ['Suivi personnalisé', 'Progression adaptée', 'Formations internes et externes'],
+      },
+    },
   },
   {
     id: 'titres-services',
@@ -412,40 +410,40 @@ export const accreditations: Accreditation[] = [
       features: [
         'Modules validés et remboursables',
         'Formation sur site partenaire',
-        'Dispositif mobile et itinérant'
+        'Dispositif mobile et itinérant',
       ],
       locations: [
         { icon: 'Building', text: "Locaux d'entreprise" },
         { icon: 'MapPin', text: 'Antennes décentralisées' },
-        { icon: 'Users', text: 'Espaces communautaires' }
+        { icon: 'Users', text: 'Espaces communautaires' },
       ],
       objectives: [
         { title: 'Réduire', text: 'la fracture numérique' },
         { title: 'Moderniser', text: 'le secteur' },
-        { title: 'Renforcer', text: "l'autonomie numérique" }
-      ]
-    }
-  }
+        { title: 'Renforcer', text: "l'autonomie numérique" },
+      ],
+    },
+  },
 ]
 
 export const stats: StatItem[] = [
   { number: 150, suffix: '+', label: 'Enfants accompagnés' },
   { number: 80, suffix: '%', label: 'École Congrès Dachsbeck' },
   { number: 500, suffix: '+', label: 'Heures de formation' },
-  { number: 15, suffix: '+', label: 'Partenaires actifs' }
+  { number: 15, suffix: '+', label: 'Partenaires actifs' },
 ]
 
 export const eddPageContent: EddContent = {
   hero: {
     subtitle: 'Opérateur en École de Devoirs',
-    title: "Notre-Dame-Aux-Neiges : un soutien scolaire au cœur du quartier",
+    title: 'Notre-Dame-Aux-Neiges : un soutien scolaire au cœur du quartier',
     description:
-      "Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs. Nous accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large participation de l'école fondamentale Congrès Dachsbeck (±80 %)."
+      "Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs. Nous accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large participation de l'école fondamentale Congrès Dachsbeck (±80 %).",
   },
   reperePoints: [
     "Reconnu par l'ONE sous l'appellation « Notre-Dame-Aux-Neiges ».",
     "Enfants majoritairement issus de l'école fondamentale Congrès Dachsbeck (~80 %).",
-    "Programme articulé autour du soutien scolaire et de l'épanouissement."
+    "Programme articulé autour du soutien scolaire et de l'épanouissement.",
   ],
   axes: [
     {
@@ -456,17 +454,15 @@ export const eddPageContent: EddContent = {
         'Accompagner les enfants dans la réalisation de leurs travaux scolaires',
         'Renforcer les prérequis (lecture, écriture, mathématiques)',
         'Développer des méthodes de travail efficaces',
-        "Offrir un espace d'écoute pour identifier d'éventuelles difficultés"
-      ]
+        "Offrir un espace d'écoute pour identifier d'éventuelles difficultés",
+      ],
     },
     {
       title: 'Animations didactiques, éducatives et ludiques',
       description:
         "Proposées du lundi au vendredi, ces animations poursuivent un objectif double : soutenir les apprentissages et encourager l'épanouissement personnel.",
-      points: [
-        'Elles se déclinent en plusieurs thématiques'
-      ]
-    }
+      points: ['Elles se déclinent en plusieurs thématiques'],
+    },
   ],
   ateliers: [
     {
@@ -476,47 +472,52 @@ export const eddPageContent: EddContent = {
         'Ateliers de lecture et compréhension',
         'Jeux mathématiques et logiques',
         'Initiation scientifique (expériences simples, observation, découverte)',
-        'Ateliers de langue (français oral, vocabulaire, expression)'
+        'Ateliers de langue (français oral, vocabulaire, expression)',
       ],
-      image: '/assets/edd/ateliers-didactique.png'
+      image: '/assets/edd/ateliers-didactique.png',
     },
     {
       title: 'Ateliers créatifs et artistiques',
-      description: 'Pour stimuler l\'expression, la créativité et la confiance :',
+      description: "Pour stimuler l'expression, la créativité et la confiance :",
       items: [
-        'Arts plastiques (dessin, peinture, collage, création d\'objets)',
+        "Arts plastiques (dessin, peinture, collage, création d'objets)",
         'Activités manuelles (origami, bricolage, construction)',
-        'Expression corporelle, théâtre, contes et mise en scène'
+        'Expression corporelle, théâtre, contes et mise en scène',
       ],
-      image: '/assets/edd/ateliers-artistiques.png'
+      image: '/assets/edd/ateliers-artistiques.png',
     },
     {
       title: 'Ateliers numériques éducatifs',
-      description: 'En lien avec le pôle numérique d\'ECD :',
+      description: "En lien avec le pôle numérique d'ECD :",
       items: [
         "Initiation à l'ordinateur et à la tablette",
-        'Découverte d\'outils ludiques d\'apprentissage (jeux pédagogiques, quizz interactifs)',
-        'Premiers pas en robotique et programmation (Scratch, activités adaptées aux enfants)'
+        "Découverte d'outils ludiques d'apprentissage (jeux pédagogiques, quizz interactifs)",
+        'Premiers pas en robotique et programmation (Scratch, activités adaptées aux enfants)',
       ],
-      image: '/assets/edd/ateliers-numeriques.png'
+      image: '/assets/edd/ateliers-numeriques.png',
     },
     {
       title: 'Ateliers socio-éducatifs',
-      description: 'Pour favoriser le bien-être, la coopération et les compétences psycho-sociales :',
+      description:
+        'Pour favoriser le bien-être, la coopération et les compétences psycho-sociales :',
       items: [
         'Jeux coopératifs et activités de groupe',
         'Activités autour des émotions et de la gestion de conflits',
-        'Sensibilisation à la citoyenneté, au vivre-ensemble et à l\'interculturalité'
+        "Sensibilisation à la citoyenneté, au vivre-ensemble et à l'interculturalité",
       ],
-      image: '/assets/edd/ateliers-socio-educatifs.png'
+      image: '/assets/edd/ateliers-socio-educatifs.png',
     },
     {
       title: 'Activités ludiques et récréatives',
       description: 'Pour offrir un cadre apaisant, agréable et convivial :',
-      items: ['Jeux de société', 'Activités sportives légères', 'Temps de détente et espace de parole'],
-      image: '/assets/edd/ateliers-ludiques-recreatifs.png'
-    }
-  ]
+      items: [
+        'Jeux de société',
+        'Activités sportives légères',
+        'Temps de détente et espace de parole',
+      ],
+      image: '/assets/edd/ateliers-ludiques-recreatifs.png',
+    },
+  ],
 }
 
 export const esdPageContent: EsdContent = {
@@ -524,19 +525,19 @@ export const esdPageContent: EsdContent = {
     subtitle: "Opérateur d'économie sociale",
     title: "Entreprise Sociale et Démocratique : un dispositif d'insertion professionnelle",
     description:
-      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail."
+      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
   },
   presentation: {
     title: "Un dispositif d'insertion socioprofessionnelle",
     paragraphs: [
       "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
-      "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique."
-    ]
+      "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique.",
+    ],
   },
   reperePoints: [
     "Reconnue comme entreprise sociale d'insertion mandatée et agréée ESD.",
     "Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
-    "Engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences."
+    "Engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences.",
   ],
   reperesTitle: 'Repères clés',
   metier: {
@@ -549,10 +550,10 @@ export const esdPageContent: EsdContent = {
       "Soutenir des publics vulnérables (demandeurs d'emploi, seniors, jeunes, personnes en situation de précarité) dans l'apprentissage d'usages numériques essentiels",
       "Concevoir et animer des ateliers, séances d'initiation ou parcours de formation",
       "Contribuer à la gestion et à l'animation d'un Espace Public Numérique ou d'un EPN Mobile (EPNM)",
-      "Participer à des actions de médiation, d'écoute, de diagnostic des besoins et d'accompagnement personnalisé"
+      "Participer à des actions de médiation, d'écoute, de diagnostic des besoins et d'accompagnement personnalisé",
     ],
     conclusion:
-      "À travers ces missions, les travailleurs développent progressivement un référentiel de compétences professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation permanente."
+      "À travers ces missions, les travailleurs développent progressivement un référentiel de compétences professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation permanente.",
   },
   parcours: {
     title: "Un programme d'insertion structuré, progressif et professionnalisant",
@@ -561,23 +562,27 @@ export const esdPageContent: EsdContent = {
     dimensions: [
       {
         title: 'Développement des compétences techniques',
-        description: 'Maîtrise des outils numériques, logiciels, matériel informatique et technologies émergentes.'
+        description:
+          'Maîtrise des outils numériques, logiciels, matériel informatique et technologies émergentes.',
       },
       {
         title: "Compétences pédagogiques et d'animation",
-        description: "Techniques d'animation de groupe, conception de séquences pédagogiques et adaptation aux différents publics."
+        description:
+          "Techniques d'animation de groupe, conception de séquences pédagogiques et adaptation aux différents publics.",
       },
       {
         title: 'Compétences sociales et relationnelles',
-        description: 'Communication, écoute active, gestion de groupe et accompagnement personnalisé des publics fragilisés.'
+        description:
+          'Communication, écoute active, gestion de groupe et accompagnement personnalisé des publics fragilisés.',
       },
       {
         title: 'Immersion professionnelle et mise en situation réelle',
-        description: "Pratique sur le terrain, gestion d'un EPN, animation d'ateliers et accompagnement de publics réels."
-      }
+        description:
+          "Pratique sur le terrain, gestion d'un EPN, animation d'ateliers et accompagnement de publics réels.",
+      },
     ],
     conclusion:
-      "Cette immersion constitue la clé de l'apprentissage et de la professionnalisation."
+      "Cette immersion constitue la clé de l'apprentissage et de la professionnalisation.",
   },
   publicCible: {
     title: 'Un public cible en partenariat étroit avec les pouvoirs publics',
@@ -586,36 +591,36 @@ export const esdPageContent: EsdContent = {
       "Aux travailleurs engagés sous article 60§7, en Poste d'Insertion (PI) ou Poste de Transition",
       "Aux travailleurs sous contrat ACS d'Insertion",
       'À des candidats orientés par les services ISP des CPAS',
-      'À des candidats identifiés en collaboration avec Actiris'
+      'À des candidats identifiés en collaboration avec Actiris',
     ],
     conclusion:
-      "ECD entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur."
+      "ECD entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur.",
   },
   accompagnement: {
     title: 'Un accompagnement professionnel et social complet',
     description: 'Le dispositif repose sur :',
     elements: [
       'Une équipe de coordination expérimentée (direction, encadrement, référents techniques) ;',
-      "Un accompagnement individuel régulier (entretiens, évaluations, objectifs intermédiaires) ;",
+      'Un accompagnement individuel régulier (entretiens, évaluations, objectifs intermédiaires) ;',
       'Des formations internes spécialisées ;',
-      'Des formations externes ciblées (Connectoo, sécurité, pédagogie, informatique avancée…).'
-    ]
+      'Des formations externes ciblées (Connectoo, sécurité, pédagogie, informatique avancée…).',
+    ],
   },
   pac: {
     title: "Le Plan d'Acquisition de Compétences (PAC)",
     description:
       "Chaque parcours est formalisé par un PAC (Plan d'Acquisition de Compétences), défini conjointement avec le CPAS partenaire.",
-    intro: "Il permet de :",
+    intro: 'Il permet de :',
     objectifs: [
       'Définir clairement les compétences à acquérir ;',
       'Planifier les étapes de progression ;',
       "Évaluer régulièrement l'évolution du travailleur ;",
       'Assurer une cohérence entre les attentes du CPAS et les réalités du terrain ;',
-      'Préparer la sortie positive, vers un emploi, une formation qualifiante ou un métier en lien avec le numérique social.'
+      'Préparer la sortie positive, vers un emploi, une formation qualifiante ou un métier en lien avec le numérique social.',
     ],
     conclusion:
-      "Le PAC garantit un suivi personnalisé, structuré et mesurable, véritable colonne vertébrale du parcours d'insertion."
-  }
+      "Le PAC garantit un suivi personnalisé, structuré et mesurable, véritable colonne vertébrale du parcours d'insertion.",
+  },
 }
 
 export const epnPageContent: EpnContent = {
@@ -623,28 +628,28 @@ export const epnPageContent: EpnContent = {
     subtitle: "Opérateur d'EPN labellisé",
     title: 'Inclusion numérique mobile : un dispositif labellisé et itinérant',
     description:
-      "Espace Cultures & Développement est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics."
+      "Espace Cultures & Développement est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
   },
   reperePoints: [
     "Opérateur d'inclusion numérique labellisé en Région bruxelloise.",
     "Détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
-    "Dispositif entièrement mobile et itinérant, fonctionnant à la demande."
+    'Dispositif entièrement mobile et itinérant, fonctionnant à la demande.',
   ],
   reperesTitle: 'Repères clés',
   label: {
     title: 'Le label EPNM – Espace Public Numérique Mobile',
     description:
-      "Le label EPNM constitue un véritable gage de qualité et de reconnaissance pour les opérateurs répondant à des critères exigeants.",
+      'Le label EPNM constitue un véritable gage de qualité et de reconnaissance pour les opérateurs répondant à des critères exigeants.',
     criteres: {
       title: 'Critères du label EPNM',
       items: [
-        "Une amplitude horaire adaptée aux besoins des publics",
-        "Une offre de formations diversifiée et accessible",
+        'Une amplitude horaire adaptée aux besoins des publics',
+        'Une offre de formations diversifiée et accessible',
         "La présence d'animateurs qualifiés",
-        "Un matériel moderne et adapté à tous",
-        "Un ancrage territorial fort et une mission affirmée d'inclusion numérique"
-      ]
-    }
+        'Un matériel moderne et adapté à tous',
+        "Un ancrage territorial fort et une mission affirmée d'inclusion numérique",
+      ],
+    },
   },
   equipement: {
     title: 'Un équipement entièrement mobile',
@@ -655,8 +660,8 @@ export const epnPageContent: EpnContent = {
       'Tablettes modulables',
       'Routeurs',
       'Vidéoprojecteurs',
-      'Matériel pédagogique'
-    ]
+      'Matériel pédagogique',
+    ],
   },
   publicsCibles: {
     title: 'Publics cibles',
@@ -666,10 +671,10 @@ export const epnPageContent: EpnContent = {
       'Adultes',
       'Seniors',
       'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…)',
-      'Demandeurs d\'emploi',
+      "Demandeurs d'emploi",
       'Apprenants en alpha et FLE',
-      'Professionnels'
-    ]
+      'Professionnels',
+    ],
   },
   interventions: {
     title: 'Interventions et services',
@@ -677,32 +682,32 @@ export const epnPageContent: EpnContent = {
     types: [
       {
         title: 'Accompagnements individuels et de proximité',
-        description: 'Personnalisés selon les besoins de chaque personne.'
+        description: 'Personnalisés selon les besoins de chaque personne.',
       },
       {
-        title: 'Actions mobiles via l\'EPNM',
+        title: "Actions mobiles via l'EPNM",
         description:
-          "Permettant d'intervenir directement dans les lieux de vie : centres sociaux, écoles, maisons de quartier, associations, entreprises, etc."
-      }
+          "Permettant d'intervenir directement dans les lieux de vie : centres sociaux, écoles, maisons de quartier, associations, entreprises, etc.",
+      },
     ],
     garanties: [
       'Une proximité renforcée avec les publics',
-      "Un accès facilité pour les personnes éloignées du numérique",
-      "Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés"
+      'Un accès facilité pour les personnes éloignées du numérique',
+      'Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés',
     ],
-    garantiesTitle: "L'EPNM garantit :"
+    garantiesTitle: "L'EPNM garantit :",
   },
   connectoo: {
     title: 'Label Connectoo',
     description:
-      "En complément, Espace Cultures & Développement dispose également du label Connectoo, délivré par BOSA. Ce label atteste :",
+      'En complément, Espace Cultures & Développement dispose également du label Connectoo, délivré par BOSA. Ce label atteste :',
     attestations: [
       "D'une expertise reconnue en accompagnement numérique",
-      "De la maîtrise des démarches administratives en ligne (eBox, itsme, MyMinfin, MyPension, MyHealth, etc.)",
+      'De la maîtrise des démarches administratives en ligne (eBox, itsme, MyMinfin, MyPension, MyHealth, etc.)',
       "D'une capacité à former, informer et accompagner les citoyens dans l'usage des services publics digitaux",
-      "D'un engagement fort dans la réduction de la fracture numérique administrative"
-    ]
-  }
+      "D'un engagement fort dans la réduction de la fracture numérique administrative",
+    ],
+  },
 }
 
 export const titresServicesPageContent: TitresServicesContent = {
@@ -710,17 +715,17 @@ export const titresServicesPageContent: TitresServicesContent = {
     subtitle: 'Opérateur de formation de Titres-Services',
     title: 'Formations professionnelles pour le secteur des Titres-Services',
     description:
-      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil."
+      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil.",
   },
   presentation: {
     title: 'Des formations adaptées à chaque profil',
     description:
-      "Nos formations sont conçues pour répondre aux besoins spécifiques des différents acteurs du secteur des Titres-Services : aide-ménagères, encadrants et équipes administratives. Chaque module est adapté aux réalités du terrain et aux compétences à développer."
+      'Nos formations sont conçues pour répondre aux besoins spécifiques des différents acteurs du secteur des Titres-Services : aide-ménagères, encadrants et équipes administratives. Chaque module est adapté aux réalités du terrain et aux compétences à développer.',
   },
   reperePoints: [
-    "Opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS.",
-    "Formations adaptées aux aide-ménagères, encadrants et équipes administratives.",
-    "Modules personnalisés selon les besoins spécifiques de chaque profil."
+    'Opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS.',
+    'Formations adaptées aux aide-ménagères, encadrants et équipes administratives.',
+    'Modules personnalisés selon les besoins spécifiques de chaque profil.',
   ],
   reperesTitle: 'Repères clés',
   competencesNumeriques: {
@@ -731,23 +736,23 @@ export const titresServicesPageContent: TitresServicesContent = {
       "Prise en main d'outils numériques professionnels : ordinateur, tablette, smartphone, navigation, gestion des fichiers",
       "Gestion du planning et communication digitale avec l'employeur : e-mails, applications internes, messagerie professionnelle, plateformes de suivi",
       "Utilisation d'applications métier : pointage, prestations, tâches, consignes, suivi client",
-      "Bureautique et outils collaboratifs : traitement de texte, tableaux simples, partage sécurisé de documents, visioconférence",
-      "Sécurité numérique : mots de passe, phishing, bonnes pratiques, confidentialité",
-      "Introduction aux outils d'intelligence artificielle utiles au travail : aide à la rédaction, recherche d'information, organisation et planification assistées"
-    ]
+      'Bureautique et outils collaboratifs : traitement de texte, tableaux simples, partage sécurisé de documents, visioconférence',
+      'Sécurité numérique : mots de passe, phishing, bonnes pratiques, confidentialité',
+      "Introduction aux outils d'intelligence artificielle utiles au travail : aide à la rédaction, recherche d'information, organisation et planification assistées",
+    ],
   },
   competencesBienEtre: {
     title: 'Compétences de bien-être, ergonomie et prévention',
     description:
       "Ces modules ciblent l'amélioration des conditions de travail, la prévention des accidents et la réduction de la pénibilité :",
     items: [
-      "Sécurité sur le lieu de travail : identification des dangers, gestes préventifs, protocoles de base",
-      "Ergonomie et prévention des TMS : postures, mouvements adaptés, optimisation des efforts, équipement adéquat",
-      "Organisation du travail : gestion du temps, structuration des tâches, efficacité au quotidien",
-      "Communication professionnelle : relation avec les clients, posture professionnelle, résolution de situations difficiles",
+      'Sécurité sur le lieu de travail : identification des dangers, gestes préventifs, protocoles de base',
+      'Ergonomie et prévention des TMS : postures, mouvements adaptés, optimisation des efforts, équipement adéquat',
+      'Organisation du travail : gestion du temps, structuration des tâches, efficacité au quotidien',
+      'Communication professionnelle : relation avec les clients, posture professionnelle, résolution de situations difficiles',
       "Gestion du stress et motivation : stratégies de bien-être, équilibre émotionnel, prévention de l'épuisement",
-      "Prévention des risques domestiques et psychosociaux : sécurité dans les domiciles, gestion des imprévus, protection de soi et respect des limites"
-    ]
+      'Prévention des risques domestiques et psychosociaux : sécurité dans les domiciles, gestion des imprévus, protection de soi et respect des limites',
+    ],
   },
   impact: {
     title: 'Un impact direct pour les travailleurs et les entreprises',
@@ -758,22 +763,22 @@ export const titresServicesPageContent: TitresServicesContent = {
       "À l'amélioration des conditions de travail",
       'À la réduction des risques professionnels',
       'À une meilleure qualité de service',
-      'À une communication renforcée entre travailleurs et entreprises'
-    ]
-  }
+      'À une communication renforcée entre travailleurs et entreprises',
+    ],
+  },
 }
 
 export const quiSommesNousPageContent: QuiSommesNousContent = {
   hero: {
     title: 'Qui sommes-nous ?',
     description:
-      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale."
+      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale.",
   },
   introduction: {
     paragraphs: [
       "L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services — en favorisant l'accès à l'éducation, au numérique, à la citoyenneté et au bien-être.",
-      "ECD vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois."
-    ]
+      "ECD vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois.",
+    ],
   },
   approche: {
     title: 'Une approche interculturelle, inclusive et participative',
@@ -783,11 +788,11 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
     objectifs: [
       'Valoriser les diversités culturelles et sociales ;',
       'Renforcer la cohésion et les liens entre communautés ;',
-      "Encourager la participation active à la vie sociale ;",
-      "Promouvoir un vivre-ensemble fondé sur l'équité, la solidarité et le respect mutuel."
+      'Encourager la participation active à la vie sociale ;',
+      "Promouvoir un vivre-ensemble fondé sur l'équité, la solidarité et le respect mutuel.",
     ],
     conclusion:
-      "ECD crée ainsi des espaces d'apprentissage, de dialogue et d'expérimentation qui favorisent la construction de citoyennetés actives et responsables."
+      "ECD crée ainsi des espaces d'apprentissage, de dialogue et d'expérimentation qui favorisent la construction de citoyennetés actives et responsables.",
   },
   domaines: {
     title: "Nos domaines d'action",
@@ -800,56 +805,61 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
         'Remédiation individualisée ;',
         'Développement de méthodes de travail ;',
         'Activités didactiques, ludiques et culturelles ;',
-        'Accompagnement favorisant la confiance en soi et la motivation scolaire.'
+        'Accompagnement favorisant la confiance en soi et la motivation scolaire.',
       ],
       conclusion:
-        'Ce pôle contribue à lutter contre les inégalités scolaires et à soutenir la réussite éducative.'
+        'Ce pôle contribue à lutter contre les inégalités scolaires et à soutenir la réussite éducative.',
     },
     inclusionNumerique: {
       title: 'Inclusion numérique pour tous',
       description:
         'ECD agit au cœur de la lutte contre la fracture numérique en développant une offre adaptée à une grande diversité de publics :',
       publics: {
-        left: ['Jeunes,', 'Adultes,', 'Seniors,', 'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…),'],
-        right: ["Demandeurs d'emploi,", "Apprenants en alpha et FLE,", 'Professionnels.']
+        left: [
+          'Jeunes,',
+          'Adultes,',
+          'Seniors,',
+          'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…),',
+        ],
+        right: ["Demandeurs d'emploi,", 'Apprenants en alpha et FLE,', 'Professionnels.'],
       },
       interventions: {
         title: 'Les interventions comprennent :',
         items: [
           'Accompagnements individuels et de proximité ;',
-          "Actions mobiles via l'Espace Public Numérique Mobile (EPNM), permettant d'aller sur les lieux de vie, centres sociaux, écoles, associations ou entreprises."
-        ]
+          "Actions mobiles via l'Espace Public Numérique Mobile (EPNM), permettant d'aller sur les lieux de vie, centres sociaux, écoles, associations ou entreprises.",
+        ],
       },
       conclusion:
-        "Cette approche globale vise à renforcer l'autonomie numérique, l'accès aux droits, la participation citoyenne et la capacité d'agir dans un monde digitalisé."
+        "Cette approche globale vise à renforcer l'autonomie numérique, l'accès aux droits, la participation citoyenne et la capacité d'agir dans un monde digitalisé.",
     },
     formationsTitresServices: {
       title: 'Formations Titres-Services : compétences numériques et bien-être au travail',
       description:
         "ECD est opérateur de formation agréé dans le secteur des Titres-Services (Bruxelles et prochainement Wallonie). Ses modules s'adressent aux aides-ménagères, encadrants et équipes administratives.",
       competencesNumeriques: {
-        title: 'a) Compétences numériques professionnelles',
+        title: 'Compétences numériques professionnelles',
         items: [
-          "Prise en main d'outils numériques professionnels ;",
-          "Gestion de planning, communication digitale avec l'employeur ;",
-          "Utilisation d'applications métier ;",
-          'Bureautique, outils collaboratifs, sécurité numérique ;',
-          "Introduction aux outils d'intelligence artificielle utiles au travail."
-        ]
+          "Prise en main d'outils numériques professionnels",
+          "Gestion de planning, communication digitale avec l'employeur",
+          "Utilisation d'applications métier",
+          'Bureautique, outils collaboratifs, sécurité numérique',
+          "Introduction aux outils d'intelligence artificielle utiles au travail",
+        ],
       },
       competencesBienEtre: {
-        title: 'b) Compétences de bien-être, ergonomie et prévention',
+        title: 'Compétences de bien-être, ergonomie et prévention',
         items: [
-          'Sécurité sur le lieu de travail ;',
-          'Ergonomie et prévention des TMS ;',
-          'Organisation du travail ;',
-          'Communication professionnelle ;',
-          'Gestion du stress et motivation ;',
-          'Prévention des risques domestiques et psychosociaux.'
-        ]
+          'Sécurité sur le lieu de travail',
+          'Ergonomie et prévention des TMS',
+          'Organisation du travail',
+          'Communication professionnelle',
+          'Gestion du stress et motivation',
+          'Prévention des risques domestiques et psychosociaux',
+        ],
       },
       conclusion:
-        "Ces formations contribuent à la professionnalisation du secteur, à l'amélioration des conditions de travail et à la réduction des risques professionnels."
+        "Ces formations contribuent à la professionnalisation du secteur, à l'amélioration des conditions de travail et à la réduction des risques professionnels.",
     },
     ateliersParentalite: {
       title: 'Ateliers et groupes de parole autour de la parentalité',
@@ -858,9 +868,8 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
         'Ateliers thématiques (éducation, communication familiale, enjeux scolaires) ;',
         'Groupes de parole entre parents ;',
         'Rencontres avec des professionnels ;',
-        'Actions favorisant le lien parent-enfant et le soutien éducatif.'
-      ]
-    }
-  }
+        'Actions favorisant le lien parent-enfant et le soutien éducatif.',
+      ],
+    },
+  },
 }
-
