@@ -87,7 +87,7 @@ const Page = () => {
       ),
       title: 'Téléphone',
       content: '+32 2 425 65 85',
-      link: 'tel:+3224256585',
+      link: '',
     },
     {
       icon: (
@@ -148,7 +148,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Contactez-Nous
+              Contactez-nous
             </motion.h1>
             <motion.p
               variants={fadeInUp}
@@ -177,7 +177,7 @@ const Page = () => {
                 variants={fadeInUp}
                 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6"
               >
-                Informations de Contact
+                Informations de contact
               </motion.h2>
 
               <motion.div variants={fadeInUp} className="space-y-6 mb-8">
