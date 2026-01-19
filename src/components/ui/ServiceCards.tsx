@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface CardData {
   id: number
@@ -10,6 +11,7 @@ interface CardData {
   shortDescription: string
   longDescription: string
   image: string
+  link: string
 }
 
 const NosServices = () => {
@@ -18,39 +20,43 @@ const NosServices = () => {
   const cardsData: CardData[] = [
     {
       id: 1,
-      title: 'Formation Numérique',
+      title: 'Formations en Titres Services',
       shortDescription:
-        'Découvrez nos programmes de formation pour améliorer vos compétences numériques et rester compétitif sur le marché du travail.',
+        'Offre complète de formations pour travailleurs, encadrants et équipes administratives : compétences numériques et bien-être au travail.',
       longDescription:
-        "Notre programme de formation numérique offre une approche complète pour développer vos compétences dans le domaine du digital. Que vous soyez débutant ou que vous souhaitiez approfondir vos connaissances, nos cours sont adaptés à tous les niveaux. Nous couvrons des sujets variés tels que la bureautique, les outils collaboratifs, la sécurité en ligne, et bien plus encore. Nos formateurs expérimentés vous accompagnent tout au long de votre parcours d'apprentissage.",
-      image: '/assets/hero/seniors-transition-numerique.jpg',
+        "ECD asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives. Ces modules permettent d'acquérir les compétences numériques essentielles (identité numérique, messagerie, visioconférence, IA) et les bonnes pratiques de bien-être au travail (sécurité, ergonomie, communication, gestion du stress). L'objectif est de favoriser l'efficacité professionnelle et la prévention des risques dans le secteur des titres-services.",
+      image: '/assets/operateur/formation-titres-services.png',
+      link: '/nos-services/formations-titres-services',
     },
     {
       id: 2,
-      title: 'Accompagnement Personnalisé',
+      title: 'Initiation en informatique',
       shortDescription:
-        "Bénéficiez d'un accompagnement sur mesure pour votre transition professionnelle ou votre développement de carrière.",
+        'Programme complet d&apos;initiation pour acquérir un premier niveau de maîtrise des outils numériques essentiels, adapté à tous.',
       longDescription:
-        "L'accompagnement personnalisé est au cœur de notre mission. Nous croyons que chaque parcours est unique et mérite une attention particulière. Nos conseillers vous aident à identifier vos forces, à définir vos objectifs professionnels et à élaborer un plan d'action concret. Que vous cherchiez un nouvel emploi, souhaitiez changer de carrière ou développer vos compétences, nous sommes là pour vous guider à chaque étape de votre parcours.",
-      image: '/assets/hero/devoirs.jpg',
+        "ECD asbl développe un programme complet d'initiation en informatique visant à offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre s'adresse à un large public (jeunes, adultes, seniors, apprenants en alpha et FLE) et s'adapte aux besoins spécifiques de chacun. Les modules couvrent la découverte de l'ordinateur, la navigation Internet, la messagerie électronique, les démarches administratives, la sécurité numérique et l'usage du smartphone. L'objectif est de favoriser l'autonomie numérique, l'accès aux services en ligne et lutter contre l'exclusion numérique.",
+      image: '/assets/hero/transition-numerique.png',
+      link: '/nos-services/initiation-informatique',
     },
     {
       id: 3,
-      title: 'Ateliers Pratiques',
+      title: 'Maintenance & Dépannage Informatiques',
       shortDescription:
-        'Participez à nos ateliers interactifs et pratiques pour mettre en application vos connaissances dans un environnement bienveillant.',
+        'Service professionnel de maintenance et dépannage pour garantir le bon fonctionnement de vos équipements informatiques.',
       longDescription:
-        "Nos ateliers pratiques sont conçus pour vous permettre d'appliquer immédiatement ce que vous apprenez. Dans un cadre convivial et bienveillant, vous travaillez sur des projets concrets, échangez avec d'autres participants et bénéficiez du retour de nos experts. Ces sessions couvrent des domaines variés : création de CV, préparation aux entretiens, gestion de projet, communication professionnelle, et bien d'autres. L'apprentissage par la pratique est notre méthode privilégiée.",
-      image: '/assets/hero/robotics.jpg',
+        "Un service de maintenance et de dépannage informatique professionnel pour garantir le bon fonctionnement de vos équipements et résoudre rapidement vos problèmes techniques. Nos services incluent : installation et configuration (PC, logiciels, réseaux), serveurs et réseaux sécurisés, maintenance préventive, cybersécurité, sauvegarde et restauration, dépannage et réparation, ainsi qu'un support et accompagnement continu. Nous intervenons rapidement pour diagnostiquer et résoudre vos problèmes, que ce soit pour des pannes matérielles, des problèmes logiciels, ou des besoins de mise à jour et d'optimisation.",
+      image: '/assets/hero/transition-numerique.png',
+      link: '/nos-services/maintenance-depannage-informatiques',
     },
     {
       id: 4,
-      title: 'Services à la Communauté',
+      title: 'Perfectionnement en informatique',
       shortDescription:
-        "Découvrez nos services dédiés à la communauté, incluant le soutien aux familles et l'accès aux titres-services.",
+        'Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l&apos;intelligence artificielle.',
       longDescription:
-        "Nous sommes engagés dans le développement de notre communauté et proposons une gamme complète de services accessibles à tous. Nos services incluent le soutien aux familles dans leurs démarches administratives, l'accès facilité aux titres-services, l'organisation d'événements communautaires et bien plus encore. Notre équipe multilingue est à votre disposition pour vous accompagner dans vos démarches et répondre à vos questions. Ensemble, construisons une communauté plus forte et solidaire.",
-      image: '/assets/hero/titres-services.jpg',
+        "Formations de perfectionnement destinées aux personnes qui maîtrisent déjà les bases de l'informatique. Développez une expertise opérationnelle sur les suites bureautiques et collaboratives (Word, Excel, PowerPoint avancés), structurez et automatisez les tâches répétitives, renforcez la maîtrise des outils numériques professionnels (Teams, SharePoint, cloud), intégrez les usages avancés de l'intelligence artificielle appliquée au travail (Copilot, ChatGPT), et maîtrisez la cybersécurité appliquée aux organisations. Nos modules de niveau avancé soutiennent les organisations dans la montée en compétences de leurs équipes et la modernisation de leurs processus internes.",
+      image: '/assets/hero/transition-numerique.png',
+      link: '/nos-services/perfectionnement-informatique',
     },
   ]
 
@@ -160,6 +166,22 @@ const NosServices = () => {
                             <p className="text-base md:text-lg text-gray-100 leading-relaxed mb-6">
                               {card.longDescription}
                             </p>
+                            <Link href={card.link}>
+                              <motion.button
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                                className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
+                                         font-semibold transition-colors duration-300 text-sm md:text-base cursor-pointer
+                                         w-full"
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  handleClose()
+                                }}
+                              >
+                                Découvrir le service
+                              </motion.button>
+                            </Link>
                           </div>
                         </motion.div>
                       )}
@@ -330,9 +352,18 @@ const NosServices = () => {
                         {cardsData[expandedIndex].shortDescription}
                       </p>
                       <div className="border-t border-gray-200 pt-4">
-                        <p className="text-base text-gray-700 leading-relaxed">
+                        <p className="text-base text-gray-700 leading-relaxed mb-6">
                           {cardsData[expandedIndex].longDescription}
                         </p>
+                        <Link href={cardsData[expandedIndex].link}>
+                          <button
+                            className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg
+                                     font-semibold transition-colors duration-300 text-base w-full"
+                            onClick={handleClose}
+                          >
+                            Découvrir le service
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
