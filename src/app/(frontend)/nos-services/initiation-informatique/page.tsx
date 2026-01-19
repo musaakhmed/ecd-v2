@@ -557,6 +557,146 @@ const Page = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Approche pédagogique */}
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={staggerContainer}
+            className="max-w-6xl mx-auto"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-12"
+            >
+              Approche pédagogique
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-900/20 dark:via-gray-900 dark:to-secondary-900/20 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-4 shadow-md">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                    Méthodes adaptées selon l&apos;âge, le niveau et la réalité linguistique des
+                    participants.
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-secondary-900/20 dark:via-gray-900 dark:to-primary-900/20 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white mb-4 shadow-md">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                    Exercices pratiques, mises en situation et accompagnement individuel si
+                    nécessaire.
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-900/20 dark:via-gray-900 dark:to-secondary-900/20 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-4 shadow-md">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                    Supports visuels accessibles, vocabulaire simplifié et progression en petites
+                    étapes.
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-secondary-900/20 dark:via-gray-900 dark:to-primary-900/20 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white mb-4 shadow-md">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                    Possibilité d&apos;organiser les modules dans les locaux des partenaires ou via
+                    l&apos;Espace Public Numérique Mobile (EPNM).
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 }

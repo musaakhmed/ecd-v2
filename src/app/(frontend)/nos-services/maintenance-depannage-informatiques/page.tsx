@@ -3,6 +3,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { ServiceSection } from '@/components/ui/ServiceSection'
+import { maintenanceSections } from '@/lib/maintenance-services'
 
 const Page = () => {
   const fadeInUp = {
@@ -88,12 +90,23 @@ const Page = () => {
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
                 Nous intervenons rapidement pour diagnostiquer et résoudre vos problèmes, que ce soit
                 pour des pannes matérielles, des problèmes logiciels, ou des besoins de mise à jour
-                et d'optimisation.
+                et d&apos;optimisation.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
+
+      {/* Service Sections */}
+      {maintenanceSections.map((section, index) => (
+        <ServiceSection
+          key={index}
+          section={section}
+          index={index}
+          fadeInUp={fadeInUp}
+          staggerContainer={staggerContainer}
+        />
+      ))}
     </div>
   )
 }
