@@ -70,19 +70,22 @@ export interface EsdContent {
     title: string
     description: string
     missions: string[]
+    conclusion?: string
   }
   parcours: {
     title: string
     description: string
     dimensions: {
       title: string
-      description: string
+      description?: string
     }[]
+    conclusion?: string
   }
   publicCible: {
     title: string
     description: string
     publics: string[]
+    conclusion?: string
   }
   accompagnement: {
     title: string
@@ -92,7 +95,9 @@ export interface EsdContent {
   pac: {
     title: string
     description: string
+    intro?: string
     objectifs: string[]
+    conclusion?: string
   }
 }
 
@@ -446,70 +451,68 @@ export const eddPageContent: EddContent = {
     {
       title: 'Aide aux devoirs et remédiation scolaire',
       description:
-        'Chaque vendredi (horaire ajustable) pour sécuriser les apprentissages fondamentaux et accompagner chaque enfant.',
+        'Organisée chaque vendredi (horaire ajustable selon les besoins), cette mission vise à :',
       points: [
-        'Accompagnement dans la réalisation des travaux scolaires',
-        'Renforcement des prérequis (lecture, écriture, mathématiques)',
-        'Méthodes de travail efficaces',
-        "Espace d'écoute pour repérer les difficultés"
+        'Accompagner les enfants dans la réalisation de leurs travaux scolaires',
+        'Renforcer les prérequis (lecture, écriture, mathématiques)',
+        'Développer des méthodes de travail efficaces',
+        "Offrir un espace d'écoute pour identifier d'éventuelles difficultés"
       ]
     },
     {
       title: 'Animations didactiques, éducatives et ludiques',
       description:
-        "Du lundi au vendredi, un programme varié qui soutient les apprentissages et l'épanouissement personnel.",
+        "Proposées du lundi au vendredi, ces animations poursuivent un objectif double : soutenir les apprentissages et encourager l'épanouissement personnel.",
       points: [
-        'Activités structurées autour de thématiques complémentaires',
-        'Soutien des apprentissages scolaires et développement socio-affectif',
-        'Moments récréatifs pour un cadre apaisant et convivial'
+        'Elles se déclinent en plusieurs thématiques'
       ]
     }
   ],
   ateliers: [
     {
       title: 'Ateliers didactiques',
-      description: 'Renforcer les compétences scolaires de manière active et motivante.',
+      description: 'Pour renforcer les compétences scolaires de manière active et motivante :',
       items: [
-        'Lecture et compréhension',
+        'Ateliers de lecture et compréhension',
         'Jeux mathématiques et logiques',
-        'Initiation scientifique (expériences simples, observation)',
-        'Ateliers de langue (oral, vocabulaire, expression)'
+        'Initiation scientifique (expériences simples, observation, découverte)',
+        'Ateliers de langue (français oral, vocabulaire, expression)'
       ],
       image: '/assets/edd/ateliers-didactique.png'
     },
     {
       title: 'Ateliers créatifs et artistiques',
-      description: "Stimuler l'expression, la créativité et la confiance.",
+      description: 'Pour stimuler l\'expression, la créativité et la confiance :',
       items: [
-        'Arts plastiques : dessin, peinture, collage, objets',
-        'Activités manuelles : origami, bricolage, construction',
+        'Arts plastiques (dessin, peinture, collage, création d\'objets)',
+        'Activités manuelles (origami, bricolage, construction)',
         'Expression corporelle, théâtre, contes et mise en scène'
       ],
       image: '/assets/edd/ateliers-artistiques.png'
     },
     {
       title: 'Ateliers numériques éducatifs',
-      description: 'Apprivoiser le numérique en lien avec le pôle ECD.',
+      description: 'En lien avec le pôle numérique d\'ECD :',
       items: [
         "Initiation à l'ordinateur et à la tablette",
-        "Outils ludiques d'apprentissage (jeux pédagogiques, quizz)",
-        'Premiers pas en robotique et programmation (Scratch, adapté)'
+        'Découverte d\'outils ludiques d\'apprentissage (jeux pédagogiques, quizz interactifs)',
+        'Premiers pas en robotique et programmation (Scratch, activités adaptées aux enfants)'
       ],
       image: '/assets/edd/ateliers-numeriques.png'
     },
     {
       title: 'Ateliers socio-éducatifs',
-      description: 'Favoriser le bien-être, la coopération et les compétences psycho-sociales.',
+      description: 'Pour favoriser le bien-être, la coopération et les compétences psycho-sociales :',
       items: [
         'Jeux coopératifs et activités de groupe',
-        'Émotions et gestion de conflits',
-        'Citoyenneté, vivre-ensemble, interculturalité'
+        'Activités autour des émotions et de la gestion de conflits',
+        'Sensibilisation à la citoyenneté, au vivre-ensemble et à l\'interculturalité'
       ],
       image: '/assets/edd/ateliers-socio-educatifs.png'
     },
     {
       title: 'Activités ludiques et récréatives',
-      description: 'Offrir un cadre apaisant, agréable et convivial.',
+      description: 'Pour offrir un cadre apaisant, agréable et convivial :',
       items: ['Jeux de société', 'Activités sportives légères', 'Temps de détente et espace de parole'],
       image: '/assets/edd/ateliers-ludiques-recreatifs.png'
     }
@@ -526,8 +529,8 @@ export const esdPageContent: EsdContent = {
   presentation: {
     title: "Un dispositif d'insertion socioprofessionnelle",
     paragraphs: [
-      "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique.",
-      "À travers ces missions, les travailleurs développent progressivement un référentiel de compétences professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation permanente."
+      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
+      "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique."
     ]
   },
   reperePoints: [
@@ -547,12 +550,14 @@ export const esdPageContent: EsdContent = {
       "Concevoir et animer des ateliers, séances d'initiation ou parcours de formation",
       "Contribuer à la gestion et à l'animation d'un Espace Public Numérique ou d'un EPN Mobile (EPNM)",
       "Participer à des actions de médiation, d'écoute, de diagnostic des besoins et d'accompagnement personnalisé"
-    ]
+    ],
+    conclusion:
+      "À travers ces missions, les travailleurs développent progressivement un référentiel de compétences professionnelles reconnu dans les secteurs du numérique social, de la formation et de l'éducation permanente."
   },
   parcours: {
     title: "Un programme d'insertion structuré, progressif et professionnalisant",
     description:
-      "Le parcours d'insertion proposé par ECD est organisé en plusieurs dimensions complémentaires. Cette immersion constitue la clé de l'apprentissage et de la professionnalisation.",
+      "Le parcours d'insertion proposé par ECD est organisé en plusieurs dimensions complémentaires :",
     dimensions: [
       {
         title: 'Développement des compétences techniques',
@@ -570,40 +575,46 @@ export const esdPageContent: EsdContent = {
         title: 'Immersion professionnelle et mise en situation réelle',
         description: "Pratique sur le terrain, gestion d'un EPN, animation d'ateliers et accompagnement de publics réels."
       }
-    ]
+    ],
+    conclusion:
+      "Cette immersion constitue la clé de l'apprentissage et de la professionnalisation."
   },
   publicCible: {
     title: 'Un public cible en partenariat étroit avec les pouvoirs publics',
-    description:
-      "Le programme s'adresse notamment : ECD entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur.",
+    description: "Le programme s'adresse notamment :",
     publics: [
       "Aux travailleurs engagés sous article 60§7, en Poste d'Insertion (PI) ou Poste de Transition",
       "Aux travailleurs sous contrat ACS d'Insertion",
       'À des candidats orientés par les services ISP des CPAS',
       'À des candidats identifiés en collaboration avec Actiris'
-    ]
+    ],
+    conclusion:
+      "ECD entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur."
   },
   accompagnement: {
     title: 'Un accompagnement professionnel et social complet',
     description: 'Le dispositif repose sur :',
     elements: [
-      'Une équipe de coordination expérimentée (direction, encadrement, référents techniques)',
-      "Un accompagnement individuel régulier (entretiens, évaluations, objectifs intermédiaires)",
-      'Des formations internes spécialisées',
-      'Des formations externes ciblées (Connectoo, sécurité, pédagogie, informatique avancée…)'
+      'Une équipe de coordination expérimentée (direction, encadrement, référents techniques) ;',
+      "Un accompagnement individuel régulier (entretiens, évaluations, objectifs intermédiaires) ;",
+      'Des formations internes spécialisées ;',
+      'Des formations externes ciblées (Connectoo, sécurité, pédagogie, informatique avancée…).'
     ]
   },
   pac: {
     title: "Le Plan d'Acquisition de Compétences (PAC)",
     description:
-      "Chaque parcours est formalisé par un PAC (Plan d'Acquisition de Compétences), défini conjointement avec le CPAS partenaire. Le PAC garantit un suivi personnalisé, structuré et mesurable, véritable colonne vertébrale du parcours d'insertion.",
+      "Chaque parcours est formalisé par un PAC (Plan d'Acquisition de Compétences), défini conjointement avec le CPAS partenaire.",
+    intro: "Il permet de :",
     objectifs: [
-      'Définir clairement les compétences à acquérir',
-      'Planifier les étapes de progression',
-      "Évaluer régulièrement l'évolution du travailleur",
-      'Assurer une cohérence entre les attentes du CPAS et les réalités du terrain',
-      'Préparer la sortie positive, vers un emploi, une formation qualifiante ou un métier en lien avec le numérique social'
-    ]
+      'Définir clairement les compétences à acquérir ;',
+      'Planifier les étapes de progression ;',
+      "Évaluer régulièrement l'évolution du travailleur ;",
+      'Assurer une cohérence entre les attentes du CPAS et les réalités du terrain ;',
+      'Préparer la sortie positive, vers un emploi, une formation qualifiante ou un métier en lien avec le numérique social.'
+    ],
+    conclusion:
+      "Le PAC garantit un suivi personnalisé, structuré et mesurable, véritable colonne vertébrale du parcours d'insertion."
   }
 }
 

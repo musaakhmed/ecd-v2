@@ -77,56 +77,114 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est reconnu par l’ONE comme opérateur d’École de
-              Devoirs. Nous accueillons principalement les enfants du quartier
-              Notre-Dame-Aux-Neiges, avec une large participation de l’école fondamentale Congrès
-              Dachsbeck (±80 %).
+              Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de
+              Devoirs, sous l'appellation « Notre-Dame-Aux-Neiges », en référence au quartier
+              emblématique où l'activité est implantée.
+              <br />
+              <br />
+              L'accueil est orienté vers le soutien scolaire des enfants du quartier, avec une
+              majorité issue de l'école fondamentale Congrès Dachsbeck, représentant environ 80 % de
+              l'ensemble des participants.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Présentation */}
-      <section className="py-16 md:py-20">
+      {/* Introduction & Repères */}
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
-            className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
+            className="max-w-5xl mx-auto"
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
+              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
             >
-              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-6">
                 Un accueil orienté soutien scolaire
               </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                L’accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
+              <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
+                L'accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
                 offrons un cadre rassurant, des repères méthodologiques et un accompagnement
                 rapproché afin de consolider les acquis, révéler les besoins et encourager la
                 confiance.
               </p>
+              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-primary-100 dark:border-primary-900/50">
+                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+                  {content.reperePoints.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
-            >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
-                Repères clés
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                {content.reperePoints.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+      {/* Modalités */}
+      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={staggerContainer}
+            className="max-w-5xl mx-auto"
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+                Modalités et rythme hebdomadaire
+              </h2>
+              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto">
+                Un programme adapté aux besoins des enfants, alliant soutien scolaire et activités
+                d'épanouissement
+              </p>
             </motion.div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="rounded-xl border-2 border-primary-200 dark:border-primary-800 p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
+                    V
+                  </div>
+                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
+                    Vendredi : aide aux devoirs
+                  </h3>
+                </div>
+                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
+                  Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
+                  remédiation et la méthodologie.
+                </p>
+              </motion.div>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="rounded-xl border-2 border-secondary-200 dark:border-secondary-800 p-8 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-secondary-500 text-white flex items-center justify-center font-bold">
+                    L-V
+                  </div>
+                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
+                    Lundi à vendredi : animations
+                  </h3>
+                </div>
+                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
+                  Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
+                  socio-éducatives et moments récréatifs pour un cadre serein.
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -159,35 +217,50 @@ const Page = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={staggerContainer}
-            className="space-y-10"
+            className="space-y-10 max-w-6xl mx-auto"
           >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100"
-            >
-              Deux axes complémentaires
-            </motion.h2>
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-6">
+                Les activités proposées s'articulent autour de deux axes complémentaires :
+              </p>
+            </motion.div>
             <div className="grid gap-8 md:grid-cols-2">
-              {content.axes.map((axe) => (
-                <motion.article
-                  key={axe.title}
-                  variants={fadeInUp}
-                  whileHover={{ y: -4 }}
-                  className="rounded-2xl border border-primary-100 dark:border-primary-900/50 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-lg p-8"
-                >
-                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
-                    {axe.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
-                    {axe.description}
-                  </p>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-200 list-disc list-inside">
-                    {axe.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </motion.article>
-              ))}
+              {content.axes.map((axe, index) => {
+                const romanNumerals = ['I', 'II']
+                return (
+                  <motion.article
+                    key={axe.title}
+                    variants={fadeInUp}
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    className="rounded-2xl border border-primary-100 dark:border-primary-900/50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-xl p-8 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl">
+                        {romanNumerals[index]}
+                      </div>
+                      <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 pt-2">
+                        {axe.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-5 pl-16">
+                      {axe.description}
+                    </p>
+                    {index === 0 && (
+                      <ul className="space-y-2.5 text-gray-700 dark:text-gray-200 pl-16">
+                        {axe.points.map((point) => (
+                          <li key={point} className="flex gap-3">
+                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary-500 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {index === 1 && (
+                      <p className="text-gray-700 dark:text-gray-200 pl-16">{axe.points[0]}</p>
+                    )}
+                  </motion.article>
+                )
+              })}
             </div>
           </motion.div>
         </div>
@@ -202,27 +275,25 @@ const Page = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
-            >
-              Animations et ateliers
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed"
-            >
-              Un programme hebdomadaire structuré du lundi au vendredi, combinant soutien scolaire,
-              développement des compétences et temps de détente.
-            </motion.p>
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+                II. Animations didactiques, éducatives et ludiques
+              </h2>
+              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed mb-4">
+                {content.axes[1].description}
+              </p>
+              <p className="text-lg font-semibold text-primary-900 dark:text-primary-100 max-w-3xl mx-auto mb-8">
+                {content.axes[1].points[0]} :
+              </p>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-              {content.ateliers.map((atelier) => (
+              {content.ateliers.map((atelier, index) => (
                 <motion.div
                   key={atelier.title}
                   variants={fadeInUp}
-                  whileHover={{ scale: 1.01 }}
-                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[400px] cursor-pointer transition-all duration-300 ease-in-out"
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[420px] cursor-pointer transition-all duration-300 ease-in-out"
                 >
                   {atelier.image && (
                     <>
@@ -231,73 +302,32 @@ const Page = () => {
                           src={atelier.image}
                           alt={atelier.title}
                           fill
-                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                         />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/80 transition-all duration-300 ease-in-out" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 group-hover:from-black/60 group-hover:via-black/70 group-hover:to-black/80 transition-all duration-300 ease-in-out" />
                     </>
                   )}
-                  <div className="relative p-6 h-full flex flex-col justify-center items-center group-hover:justify-start text-white transition-all duration-300 ease-in-out">
-                    <h3 className="text-xl font-semibold text-white text-center group-hover:mb-2 transition-all duration-300 ease-in-out">
-                      {atelier.title}
-                    </h3>
-                    <p className="text-white/95 mt-2 leading-relaxed hidden group-hover:block transition-opacity duration-300 ease-in-out">
-                      {atelier.description}
-                    </p>
-                    <ul className="mt-4 space-y-2 text-white/90 list-disc list-inside hidden group-hover:block transition-opacity duration-300 ease-in-out">
+                  <div className="relative p-6 h-full flex flex-col justify-between text-white">
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:mb-4 transition-all duration-300">
+                        {index + 1}. {atelier.title}
+                      </h3>
+                      <p className="text-white/90 text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                        {atelier.description}
+                      </p>
+                    </div>
+                    <ul className="space-y-2 text-white/90 text-sm list-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
                       {atelier.items.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/80 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
                       ))}
                     </ul>
                   </div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Modalités */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-10"
-            >
-              Modalités et rythme hebdomadaire
-            </motion.h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              <motion.div
-                variants={fadeInUp}
-                className="rounded-xl border border-primary-100 dark:border-primary-900/60 p-6 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-md"
-              >
-                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                  Vendredi : aide aux devoirs
-                </h3>
-                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
-                  remédiation et la méthodologie.
-                </p>
-              </motion.div>
-              <motion.div
-                variants={fadeInUp}
-                className="rounded-xl border border-secondary-100 dark:border-secondary-900/60 p-6 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 shadow-md"
-              >
-                <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                  Lundi à vendredi : animations
-                </h3>
-                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
-                  socio-éducatives et moments récréatifs pour un cadre serein.
-                </p>
-              </motion.div>
             </div>
           </motion.div>
         </div>
