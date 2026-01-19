@@ -218,36 +218,41 @@ const Page = () => {
       </section>
 
       {/* Publics cibles */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-white via-secondary-50/30 to-white dark:from-gray-950 dark:via-secondary-900/10 dark:to-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
             >
               {content.publicsCibles.title}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
+              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center max-w-2xl mx-auto"
             >
               {content.publicsCibles.description}
             </motion.p>
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl border border-secondary-100 dark:border-secondary-900/50 shadow-lg p-8"
+              className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl border border-secondary-100 dark:border-secondary-900/50 shadow-lg p-8 md:p-10"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {content.publicsCibles.publics.map((publicItem, index) => (
-                  <div key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                    <span className="text-gray-700 dark:text-gray-200">{publicItem}</span>
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 group"
+                  >
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0 group-hover:bg-secondary-600 transition-colors" />
+                    <span className="text-gray-700 dark:text-gray-200 font-medium leading-relaxed group-hover:text-primary-900 dark:group-hover:text-primary-100 transition-colors">
+                      {publicItem}
+                    </span>
                   </div>
                 ))}
               </div>

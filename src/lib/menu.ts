@@ -37,6 +37,18 @@ export const menu: MenuItem[] = [
   {
     title: 'Nos services',
     link: '/#services',
+    submenu: {
+      links: [
+        { title: 'Formations en Titres Services', link: '/nos-services/formations-titres-services' },
+        { title: 'Initiation en informatique', link: '/nos-services/initiation-informatique' },
+        { title: 'Maintenance & Dépannage Informatiques', link: '/nos-services/maintenance-depannage-informatiques' },
+        { title: 'Perfectionnement en informatique', link: '/nos-services/perfectionnement-informatique' },
+      ],
+      image: {
+        src: '/assets/hero/devoirs.jpg',
+        alt: 'Nos services',
+      },
+    },
   },
   {
     title: 'Inclusion numérique',
