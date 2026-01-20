@@ -107,6 +107,11 @@ export interface EpnContent {
     title: string
     description: string
   }
+  firstSection: {
+    intro: string
+    items: string[]
+    conclusion: string
+  }
   reperePoints: string[]
   reperesTitle: string
   label: {
@@ -149,6 +154,11 @@ export interface TitresServicesContent {
     subtitle: string
     title: string
     description: string
+  }
+  firstSection: {
+    title: string
+    description: string
+    items: string[]
   }
   presentation: {
     title: string
@@ -630,6 +640,19 @@ export const epnPageContent: EpnContent = {
     description:
       "Espace Cultures & Développement est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
   },
+  firstSection: {
+    intro:
+      "Le label EPNM – Espace Public Numérique Mobile constitue un véritable gage de qualité et de reconnaissance pour les opérateurs répondant à des critères exigeants, tels que :",
+    items: [
+      'Une amplitude horaire adaptée aux besoins des publics',
+      'Une offre de formations diversifiée et accessible',
+      "La présence d'animateurs qualifiés",
+      'Un matériel moderne et adapté à tous',
+      "Un ancrage territorial fort et une mission affirmée d'inclusion numérique",
+    ],
+    conclusion:
+      "L'EPNM d'Espace Cultures & Développement s'appuie sur une équipe de formateurs et d'animateurs spécialisés, dotée d'un équipement entièrement mobile — ordinateurs portables, tablettes modulables, routeurs, vidéoprojecteurs et matériel pédagogique. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement directement au sein des structures partenaires, partout à Bruxelles.",
+  },
   reperePoints: [
     "Opérateur d'inclusion numérique labellisé en Région bruxelloise.",
     "Détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
@@ -678,24 +701,17 @@ export const epnPageContent: EpnContent = {
   },
   interventions: {
     title: 'Interventions et services',
-    description: 'Les interventions comprennent notamment :',
-    types: [
-      {
-        title: 'Accompagnements individuels et de proximité',
-        description: 'Personnalisés selon les besoins de chaque personne.',
-      },
-      {
-        title: "Actions mobiles via l'EPNM",
-        description:
-          "Permettant d'intervenir directement dans les lieux de vie : centres sociaux, écoles, maisons de quartier, associations, entreprises, etc.",
-      },
+    intro: 'Les interventions comprennent notamment :',
+    items: [
+      "Des accompagnements individuels et de proximité, personnalisés selon les besoins ;",
+      "Des actions mobiles via l'Espace Public Numérique Mobile (EPNM), permettant d'intervenir directement dans les lieux de vie : centres sociaux, écoles, maisons de quartier, associations, entreprises, etc.",
     ],
+    conclusion: "Entièrement itinérant et fonctionnant à la demande, l'EPNM garantit :",
     garanties: [
-      'Une proximité renforcée avec les publics',
-      'Un accès facilité pour les personnes éloignées du numérique',
-      'Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés',
+      'Une proximité renforcée avec les publics,',
+      "Un accès facilité pour les personnes éloignées du numérique,",
+      'Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés.',
     ],
-    garantiesTitle: "L'EPNM garantit :",
   },
   connectoo: {
     title: 'Label Connectoo',
@@ -716,6 +732,18 @@ export const titresServicesPageContent: TitresServicesContent = {
     title: 'Formations professionnelles pour le secteur des Titres-Services',
     description:
       "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil.",
+  },
+  firstSection: {
+    title: 'Opérateur de formation agréé',
+    description:
+      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles et en Wallonie, reconnu par le Fonds sectoriel Form TS.",
+    items: [
+      "Formations adaptées aux aide-ménagères, encadrants et équipes administratives",
+      'Modules personnalisés selon les besoins spécifiques de chaque profil',
+      'Compétences numériques professionnelles',
+      'Compétences de bien-être, ergonomie et prévention',
+      'Contribution à la professionnalisation du secteur et à l\'amélioration des conditions de travail',
+    ],
   },
   presentation: {
     title: 'Des formations adaptées à chaque profil',

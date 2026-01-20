@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { titresServicesPageContent } from '@/lib/about-content'
+import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { ContentSection } from '@/components/ui/ContentSection'
 
 const Page = () => {
   const parallaxRef = useRef<HTMLDivElement>(null)
@@ -87,47 +89,20 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Présentation */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                {content.presentation.title}
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                {content.presentation.description}
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-secondary-50 to-primary-50 dark:from-secondary-900/30 dark:to-primary-900/30 rounded-2xl border border-primary-100 dark:border-primary-900/50 p-8 shadow-lg"
-            >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-3">
-                {content.reperesTitle}
-              </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                {content.reperePoints.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* First Section - Summary */}
+      <SectionWrapper
+        title={content.firstSection.title}
+        description={content.firstSection.description}
+        maxWidth="xl"
+      >
+        <ContentSection
+          title=""
+          items={content.firstSection.items}
+          variant="gradient-primary"
+          bulletColor="primary"
+          descriptionCentered={false}
+        />
+      </SectionWrapper>
 
       {/* Compétences numériques */}
       <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
