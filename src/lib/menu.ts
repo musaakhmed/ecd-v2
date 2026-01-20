@@ -20,6 +20,7 @@ export const menu: MenuItem[] = [
     link: '/#about',
     submenu: {
       links: [
+        { title: 'Qui sommes-nous', link: '/a-propos/qui-sommes-nous' },
         { title: 'Opérateur en École de Devoirs', link: '/a-propos/ecole-de-devoirs' },
         { title: "Opérateur d'Economie Sociale", link: '/a-propos/economie-sociale' },
         { title: "Opérateur d'EPN labelisé", link: '/a-propos/epn' },
