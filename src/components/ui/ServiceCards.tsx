@@ -51,7 +51,7 @@ const NosServices = () => {
       id: 4,
       title: 'Perfectionnement en informatique',
       shortDescription:
-        'Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l&apos;intelligence artificielle.',
+        'Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l\'intelligence artificielle.',
       longDescription:
         "Formations de perfectionnement destinées aux personnes qui maîtrisent déjà les bases de l'informatique. Développez une expertise opérationnelle sur les suites bureautiques et collaboratives (Word, Excel, PowerPoint avancés), structurez et automatisez les tâches répétitives, renforcez la maîtrise des outils numériques professionnels (Teams, SharePoint, cloud), intégrez les usages avancés de l'intelligence artificielle appliquée au travail (Copilot, ChatGPT), et maîtrisez la cybersécurité appliquée aux organisations. Nos modules de niveau avancé soutiennent les organisations dans la montée en compétences de leurs équipes et la modernisation de leurs processus internes.",
       image: '/assets/services/perfectionnement.jpg',

@@ -200,7 +200,8 @@ export function ValueCards() {
 
   return (
     <section className="overflow-visible py-12 px-4">
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
         {items.map((item, index) => {
           const selectedCard = cardOpen === index
 
@@ -282,6 +283,7 @@ export function ValueCards() {
             </article>
           )
         })}
+        </div>
       </div>
     </section>
   )

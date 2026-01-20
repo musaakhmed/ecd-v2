@@ -13,7 +13,7 @@ export interface ServiceSection {
 
 export const maintenanceSections: ServiceSection[] = [
   {
-    title: 'Installation & Configuration — Votre matériel prêt à l&apos;emploi',
+    title: 'Installation & Configuration — Votre matériel prêt à l\'emploi',
     description: 'Nous installons et configurons vos équipements pour une utilisation immédiate :',
     items: [
       'PC, imprimantes, scanners et périphériques',
@@ -38,13 +38,13 @@ export const maintenanceSections: ServiceSection[] = [
       'VPN pour télétravail sécurisé',
     ],
     conclusion: {
-      text: 'L&apos;assurance d&apos;un réseau fiable, rapide et adapté à votre structure.',
+      text: 'L\'assurance d\'un réseau fiable, rapide et adapté à votre structure.',
     },
     colorScheme: 'secondary',
     backgroundType: 'white',
   },
   {
-    title: 'Maintenance Préventive — Moins de pannes, plus d&apos;efficacité',
+    title: 'Maintenance Préventive — Moins de pannes, plus d\'efficacité',
     description: 'Entretien régulier pour prolonger la durée de vie de votre matériel :',
     items: [
       'Mises à jour système et logiciels',
@@ -63,7 +63,7 @@ export const maintenanceSections: ServiceSection[] = [
     description: 'Nous sécurisons vos appareils et vos usages :',
     items: [
       'Antivirus et anti-malwares professionnels',
-      'Analyse et suppression d&apos;infections',
+      'Analyse et suppression d\'infections',
       'Conseils pour une sécurité durable',
     ],
     conclusion: {
@@ -80,7 +80,7 @@ export const maintenanceSections: ServiceSection[] = [
       'Récupération de données après incident',
     ],
     conclusion: {
-      text: 'Une stratégie de backup fiable pour ne jamais perdre l&apos;essentiel.',
+      text: 'Une stratégie de backup fiable pour ne jamais perdre l\'essentiel.',
     },
     colorScheme: 'primary',
     backgroundType: 'gradient',
@@ -105,7 +105,7 @@ export const maintenanceSections: ServiceSection[] = [
     title: 'Support & Accompagnement — Un partenaire à vos côtés',
     items: [
       'Assistance technique continue',
-      'Aide à l&apos;utilisation du matériel',
+      'Aide à l\'utilisation du matériel',
       'Formations aux bonnes pratiques',
       'Conseils pour moderniser votre parc informatique',
     ],
