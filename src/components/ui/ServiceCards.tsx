@@ -32,7 +32,7 @@ const NosServices = () => {
       id: 2,
       title: 'Initiation en informatique',
       shortDescription:
-        'Programme complet d&apos;initiation pour acquérir un premier niveau de maîtrise des outils numériques essentiels, adapté à tous.',
+        "Programme complet d'initiation pour acquérir un premier niveau de maîtrise des outils numériques essentiels, adapté à tous.",
       longDescription:
         "ECD asbl développe un programme complet d'initiation en informatique visant à offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre s'adresse à un large public (jeunes, adultes, seniors, apprenants en alpha et FLE) et s'adapte aux besoins spécifiques de chacun. Les modules couvrent la découverte de l'ordinateur, la navigation Internet, la messagerie électronique, les démarches administratives, la sécurité numérique et l'usage du smartphone. L'objectif est de favoriser l'autonomie numérique, l'accès aux services en ligne et lutter contre l'exclusion numérique.",
       image: '/assets/hero/transition-numerique.png',
@@ -45,7 +45,7 @@ const NosServices = () => {
         'Service professionnel de maintenance et dépannage pour garantir le bon fonctionnement de vos équipements informatiques.',
       longDescription:
         "Un service de maintenance et de dépannage informatique professionnel pour garantir le bon fonctionnement de vos équipements et résoudre rapidement vos problèmes techniques. Nos services incluent : installation et configuration (PC, logiciels, réseaux), serveurs et réseaux sécurisés, maintenance préventive, cybersécurité, sauvegarde et restauration, dépannage et réparation, ainsi qu'un support et accompagnement continu. Nous intervenons rapidement pour diagnostiquer et résoudre vos problèmes, que ce soit pour des pannes matérielles, des problèmes logiciels, ou des besoins de mise à jour et d'optimisation.",
-      image: '/assets/hero/transition-numerique.png',
+      image: '/assets/services/maintenance.jpg',
       link: '/nos-services/maintenance-depannage-informatiques',
     },
     {
@@ -55,7 +55,7 @@ const NosServices = () => {
         'Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l&apos;intelligence artificielle.',
       longDescription:
         "Formations de perfectionnement destinées aux personnes qui maîtrisent déjà les bases de l'informatique. Développez une expertise opérationnelle sur les suites bureautiques et collaboratives (Word, Excel, PowerPoint avancés), structurez et automatisez les tâches répétitives, renforcez la maîtrise des outils numériques professionnels (Teams, SharePoint, cloud), intégrez les usages avancés de l'intelligence artificielle appliquée au travail (Copilot, ChatGPT), et maîtrisez la cybersécurité appliquée aux organisations. Nos modules de niveau avancé soutiennent les organisations dans la montée en compétences de leurs équipes et la modernisation de leurs processus internes.",
-      image: '/assets/hero/transition-numerique.png',
+      image: '/assets/services/perfectionnement.jpg',
       link: '/nos-services/perfectionnement-informatique',
     },
   ]

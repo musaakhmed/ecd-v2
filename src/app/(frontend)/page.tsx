@@ -23,7 +23,7 @@ export default async function HomePage() {
       <ServiceCards />
       <Video />
       <Stats />
-      <Projects />
+      {/*<Projects />*/}
       <Partners />
     </div>
   )
