@@ -134,13 +134,10 @@ export interface EpnContent {
   }
   interventions: {
     title: string
-    description: string
-    types: {
-      title: string
-      description: string
-    }[]
+    intro: string
+    items: string[]
     garanties: string[]
-    garantiesTitle: string
+    conclusion?: string
   }
   connectoo: {
     title: string
@@ -642,7 +639,7 @@ export const epnPageContent: EpnContent = {
   },
   firstSection: {
     intro:
-      "Le label EPNM – Espace Public Numérique Mobile constitue un véritable gage de qualité et de reconnaissance pour les opérateurs répondant à des critères exigeants, tels que :",
+      'Le label EPNM – Espace Public Numérique Mobile constitue un véritable gage de qualité et de reconnaissance pour les opérateurs répondant à des critères exigeants, tels que :',
     items: [
       'Une amplitude horaire adaptée aux besoins des publics',
       'Une offre de formations diversifiée et accessible',
@@ -703,13 +700,13 @@ export const epnPageContent: EpnContent = {
     title: 'Interventions et services',
     intro: 'Les interventions comprennent notamment :',
     items: [
-      "Des accompagnements individuels et de proximité, personnalisés selon les besoins ;",
+      'Des accompagnements individuels et de proximité, personnalisés selon les besoins ;',
       "Des actions mobiles via l'Espace Public Numérique Mobile (EPNM), permettant d'intervenir directement dans les lieux de vie : centres sociaux, écoles, maisons de quartier, associations, entreprises, etc.",
     ],
     conclusion: "Entièrement itinérant et fonctionnant à la demande, l'EPNM garantit :",
     garanties: [
       'Une proximité renforcée avec les publics,',
-      "Un accès facilité pour les personnes éloignées du numérique,",
+      'Un accès facilité pour les personnes éloignées du numérique,',
       'Des services proposés à un tarif social et démocratique, voire gratuitement selon les financements mobilisés.',
     ],
   },
@@ -736,13 +733,13 @@ export const titresServicesPageContent: TitresServicesContent = {
   firstSection: {
     title: 'Opérateur de formation agréé',
     description:
-      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles et en Wallonie, reconnu par le Fonds sectoriel Form TS.",
+      'ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles et en Wallonie, reconnu par le Fonds sectoriel Form TS.',
     items: [
-      "Formations adaptées aux aide-ménagères, encadrants et équipes administratives",
+      'Formations adaptées aux aide-ménagères, encadrants et équipes administratives',
       'Modules personnalisés selon les besoins spécifiques de chaque profil',
       'Compétences numériques professionnelles',
       'Compétences de bien-être, ergonomie et prévention',
-      'Contribution à la professionnalisation du secteur et à l\'amélioration des conditions de travail',
+      "Contribution à la professionnalisation du secteur et à l'amélioration des conditions de travail",
     ],
   },
   presentation: {
