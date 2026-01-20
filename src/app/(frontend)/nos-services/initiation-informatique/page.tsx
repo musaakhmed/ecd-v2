@@ -56,9 +56,9 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              ECD asbl développe un programme complet d'initiation en informatique visant à offrir
-              un premier niveau de maîtrise des outils numériques essentiels. Cette offre s'adresse
-              à un large public et s'adapte aux besoins spécifiques de chacun.
+              ECD asbl développe un programme complet d&apos;initiation en informatique visant à
+              offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
+              s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
             </motion.p>
           </motion.div>
         </div>
@@ -79,12 +79,12 @@ const Page = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
             >
               <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                À propos de l'initiation
+                À propos de l&apos;initiation
               </h2>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                ECD asbl développe un programme complet d'initiation en informatique visant à offrir
-                un premier niveau de maîtrise des outils numériques essentiels. Cette offre
-                s'adresse à un large public et s'adapte aux besoins spécifiques de chacun.
+                ECD asbl développe un programme complet d&apos;initiation en informatique visant à
+                offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
+                s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
               </p>
             </motion.div>
           </motion.div>
@@ -116,8 +116,8 @@ const Page = () => {
                   Jeunes
                 </h3>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Découverte de l'ordinateur, bonnes pratiques numériques, premiers usages scolaires
-                  et citoyens.
+                  Découverte de l&apos;ordinateur, bonnes pratiques numériques, premiers usages
+                  scolaires et citoyens.
                 </p>
               </motion.div>
               <motion.div
@@ -128,8 +128,8 @@ const Page = () => {
                   Adultes
                 </h3>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Acquisition d'autonomie dans l'usage des outils numériques du quotidien et
-                  administratifs.
+                  Acquisition d&apos;autonomie dans l&apos;usage des outils numériques du quotidien
+                  et administratifs.
                 </p>
               </motion.div>
               <motion.div
@@ -140,8 +140,8 @@ const Page = () => {
                   Seniors
                 </h3>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Accompagnement progressif, sécurité en ligne, confiance dans l'usage de
-                  l'ordinateur et du smartphone.
+                  Accompagnement progressif, sécurité en ligne, confiance dans l&apos;usage de
+                  l&apos;ordinateur et du smartphone.
                 </p>
               </motion.div>
               <motion.div
@@ -196,7 +196,7 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Favoriser l'autonomie numérique au quotidien.
+                    Favoriser l&apos;autonomie numérique au quotidien.
                   </p>
                 </div>
               </motion.div>
@@ -218,8 +218,8 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Permettre l'accès aux services en ligne (e-administration, recherche d'emploi,
-                    communication).
+                    Permettre l&apos;accès aux services en ligne (e-administration, recherche
+                    d&apos;emploi, communication).
                   </p>
                 </div>
               </motion.div>
@@ -241,8 +241,8 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Développer les compétences de base : utilisation d'un ordinateur, gestion de
-                    fichiers, navigation Internet.
+                    Développer les compétences de base : utilisation d&apos;un ordinateur, gestion
+                    de fichiers, navigation Internet.
                   </p>
                 </div>
               </motion.div>
@@ -264,8 +264,8 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Renforcer la confiance, lutter contre l'exclusion numérique et soutenir les
-                    parcours d'insertion.
+                    Renforcer la confiance, lutter contre l&apos;exclusion numérique et soutenir les
+                    parcours d&apos;insertion.
                   </p>
                 </div>
               </motion.div>
@@ -294,7 +294,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
             >
-              Les séances d'initiation couvrent notamment :
+              Les séances d&apos;initiation couvrent notamment :
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -304,19 +304,19 @@ const Page = () => {
                 <li className="flex gap-4 items-start">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    La découverte de l'ordinateur (clavier, souris, interfaces, organisation).
+                    La découverte de l&apos;ordinateur (clavier, souris, interfaces, organisation).
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    La navigation Internet et la recherche d'informations fiables.
+                    La navigation Internet et la recherche d&apos;informations fiables.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    La création et l'utilisation d'une adresse e-mail.
+                    La création et l&apos;utilisation d&apos;une adresse e-mail.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
@@ -339,7 +339,7 @@ const Page = () => {
                 <li className="flex gap-4 items-start">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    L'usage du smartphone pour les services du quotidien.
+                    L&apos;usage du smartphone pour les services du quotidien.
                   </span>
                 </li>
               </ul>
@@ -477,7 +477,7 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed font-medium">
-                    Centres d'hébergement de primo-arrivants
+                    Centres d&apos;hébergement de primo-arrivants
                   </p>
                 </div>
               </motion.div>
@@ -499,7 +499,7 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed font-medium">
-                    Et tout organisme souhaitant renforcer l'inclusion numérique de son public.
+                    Et tout organisme souhaitant renforcer l&apos;inclusion numérique de son public.
                   </p>
                 </div>
               </motion.div>
@@ -543,7 +543,7 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Méthodes adaptées selon l'âge, le niveau et la réalité linguistique des
+                    Méthodes adaptées selon l&apos;âge, le niveau et la réalité linguistique des
                     participants.
                   </p>
                 </div>
@@ -618,8 +618,8 @@ const Page = () => {
                     </svg>
                   </div>
                   <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
-                    Possibilité d'organiser les modules dans les locaux des partenaires ou via
-                    l'Espace Public Numérique Mobile (EPNM).
+                    Possibilité d&apos;organiser les modules dans les locaux des partenaires ou via
+                    l&apos;Espace Public Numérique Mobile (EPNM).
                   </p>
                 </div>
               </motion.div>

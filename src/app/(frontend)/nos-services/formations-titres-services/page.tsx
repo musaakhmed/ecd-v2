@@ -58,9 +58,9 @@ const Page = () => {
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
               ECD asbl propose une offre complète de formations destinées aux travailleurs,
-              encadrants et équipes administratives. Ces modules permettent d'acquérir les
+              encadrants et équipes administratives. Ces modules permettent d&apos;acquérir les
               compétences numériques essentielles et les bonnes pratiques de bien-être au travail,
-              tout en favorisant l'efficacité professionnelle et la prévention des risques.
+              tout en favorisant l&apos;efficacité professionnelle et la prévention des risques.
             </motion.p>
           </motion.div>
         </div>
@@ -86,7 +86,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
             >
-              Ces formations visent à renforcer l'autonomie numérique des travailleurs et leur
+              Ces formations visent à renforcer l&apos;autonomie numérique des travailleurs et leur
               capacité à utiliser efficacement les outils nécessaires à leurs fonctions.
             </motion.p>
             <motion.div
@@ -104,7 +104,7 @@ const Page = () => {
                       Identité numérique & démarches administratives
                     </span>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Utilisation de l'eID, Itsme, portails administratifs (Mutuelles, ONEM, My
+                      Utilisation de l&apos;eID, Itsme, portails administratifs (Mutuelles, ONEM, My
                       Belgium…).
                     </p>
                   </div>
@@ -133,7 +133,8 @@ const Page = () => {
                   <div>
                     <span className="font-semibold">Outils de visioconférence (Teams & Zoom)</span>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Création de réunions, partage d'écran, règles de communication à distance.
+                      Création de réunions, partage d&apos;écran, règles de communication à
+                      distance.
                     </p>
                   </div>
                 </li>
@@ -163,7 +164,7 @@ const Page = () => {
                   <span className="font-semibold text-primary-900 dark:text-primary-100">
                     Objectif :
                   </span>{' '}
-                  développer l'autonomie, la maîtrise des outils essentiels et la capacité à
+                  développer l&apos;autonomie, la maîtrise des outils essentiels et la capacité à
                   réaliser des tâches numériques en toute confiance.
                 </p>
               </div>
@@ -193,8 +194,8 @@ const Page = () => {
               className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
             >
               Ces modules améliorent les conditions de travail, réduisent la pénibilité et
-              renforcent la sécurité, particulièrement pour les métiers d'intervention à domicile ou
-              de proximité.
+              renforcent la sécurité, particulièrement pour les métiers d&apos;intervention à
+              domicile ou de proximité.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -249,7 +250,8 @@ const Page = () => {
                   <div>
                     <span className="font-semibold">Gestion du stress & motivation</span>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Stratégies de bien-être, équilibre émotionnel, prévention de l'épuisement.
+                      Stratégies de bien-être, équilibre émotionnel, prévention de
+                      l&apos;épuisement.
                     </p>
                   </div>
                 </li>
