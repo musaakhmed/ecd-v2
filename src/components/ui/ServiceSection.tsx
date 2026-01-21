@@ -38,8 +38,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
       ? 'bg-white dark:bg-gray-900 border-primary-100 dark:border-primary-900/50'
       : 'bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 border-secondary-100 dark:border-secondary-900/50'
 
-  const bulletColor =
-    section.colorScheme === 'primary' ? 'bg-primary-500' : 'bg-secondary-500'
+  const bulletColor = section.colorScheme === 'primary' ? 'bg-primary-500' : 'bg-secondary-500'
 
   const borderColor =
     section.colorScheme === 'primary'
@@ -47,7 +46,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
       : 'border-secondary-200 dark:border-secondary-800'
 
   return (
-    <section className={`py-16 md:py-20 ${bgClass}`}>
+    <section className={`py-12 ${bgClass}`}>
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
@@ -77,9 +76,7 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
             <ul className="space-y-4 text-gray-700 dark:text-gray-200 mb-8">
               {section.items.map((item, itemIndex) => (
                 <li key={itemIndex} className="flex gap-3">
-                  <span
-                    className={`mt-1.5 h-2 w-2 rounded-full ${bulletColor} shrink-0`}
-                  />
+                  <span className={`mt-1.5 h-2 w-2 rounded-full ${bulletColor} shrink-0`} />
                   <span className="leading-relaxed">{item}</span>
                 </li>
               ))}

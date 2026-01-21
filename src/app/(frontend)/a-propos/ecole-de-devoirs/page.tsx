@@ -40,9 +40,9 @@ const Page = () => {
   const content = eddPageContent
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen dark:bg-gray-950 flex flex-col gap-12">
       {/* Hero */}
-      <section className="relative text-white py-20 md:py-28 overflow-hidden">
+      <section className="relative p-16 text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assets/operateur/ecole-de-devoirs.png"
@@ -77,21 +77,21 @@ const Page = () => {
               variants={fadeInUp}
               className="text-lg md:text-xl text-white/90 leading-relaxed"
             >
-              Espace Cultures & Développement est reconnu par l&apos;ONE comme opérateur d&apos;École de
-              Devoirs, sous l&apos;appellation « Notre-Dame-Aux-Neiges », en référence au quartier
-              emblématique où l&apos;activité est implantée.
+              Espace Cultures & Développement est reconnu par l&apos;ONE comme opérateur
+              d&apos;École de Devoirs, sous l&apos;appellation « Notre-Dame-Aux-Neiges », en
+              référence au quartier emblématique où l&apos;activité est implantée.
               <br />
               <br />
               L&apos;accueil est orienté vers le soutien scolaire des enfants du quartier, avec une
-              majorité issue de l&apos;école fondamentale Congrès Dachsbeck, représentant environ 80 % de
-              l&apos;ensemble des participants.
+              majorité issue de l&apos;école fondamentale Congrès Dachsbeck, représentant environ 80
+              % de l&apos;ensemble des participants.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Introduction & Repères */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className=" bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -108,8 +108,8 @@ const Page = () => {
                 Un accueil orienté soutien scolaire
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                L&apos;accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
-                offrons un cadre rassurant, des repères méthodologiques et un accompagnement
+                L&apos;accueil est pensé pour soutenir la réussite scolaire des enfants du quartier.
+                Nous offrons un cadre rassurant, des repères méthodologiques et un accompagnement
                 rapproché afin de consolider les acquis, révéler les besoins et encourager la
                 confiance.
               </p>
@@ -129,7 +129,7 @@ const Page = () => {
       </section>
 
       {/* Modalités */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className=" bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -192,7 +192,7 @@ const Page = () => {
       {/* Axes */}
       <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
         {/* Parallax Background */}
-        <div className="absolute inset-0 -inset-y-[100%]">
+        <div className="absolute inset-0 -inset-y-[100%] ">
           <div
             className="absolute inset-0"
             style={{
@@ -204,12 +204,12 @@ const Page = () => {
               src="/assets/edd/ateliers-didactique.png"
               alt=""
               fill
-              className="object-cover"
+              className="object-cover "
               priority
             />
           </div>
           {/* Subtle overlay only in the middle for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-gray-950/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-transparent dark:via-gray-950/40 pointer-events-none" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -220,7 +220,7 @@ const Page = () => {
             className="space-y-10 max-w-6xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
-              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-6">
+              <p className="text-2xl font-semibold text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-6">
                 Les activités proposées s&apos;articulent autour de deux axes complémentaires :
               </p>
             </motion.div>

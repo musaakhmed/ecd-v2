@@ -92,7 +92,7 @@ const Page = () => {
       </section>
 
       {/* Publics ciblés */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -162,7 +162,7 @@ const Page = () => {
       </section>
 
       {/* Objectifs généraux */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -509,7 +509,7 @@ const Page = () => {
       </section>
 
       {/* Approche pédagogique */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"

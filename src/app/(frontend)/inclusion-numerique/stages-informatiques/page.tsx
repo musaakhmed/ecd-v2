@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const Page = () => {
   const fadeInUp = {
@@ -19,8 +20,59 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
-      {/* Stages Informatiques Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      {/* Hero */}
+      <section className="relative text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/hero/robotics.jpg"
+            alt="Stages informatiques"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
+            >
+              Inclusion Numérique
+            </motion.p>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+            >
+              Stages informatiques (6–12 ans)
+            </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed mb-4"
+            >
+              Apprendre, coder, créer : un parcours ludique pour découvrir le numérique
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-white/90 leading-relaxed"
+            >
+              ECD asbl propose des stages scolaires destinés aux enfants de 6 à 12 ans, centrés sur
+              l&apos;initiation à l&apos;informatique, la programmation et la robotique. À travers des
+              activités créatives et des défis ludiques, les jeunes développent leurs compétences
+              numériques tout en s&apos;amusant.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contenu principal */}
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -29,21 +81,6 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            {/* Title */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-2">
-                Stages informatiques (6–12 ans)
-              </h2>
-              <p className="text-xl md:text-2xl text-secondary-700 dark:text-secondary-300 font-semibold mb-4">
-                Apprendre, coder, créer : un parcours ludique pour découvrir le numérique
-              </p>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg">
-                ECD asbl propose des stages scolaires destinés aux enfants de 6 à 12 ans, centrés sur
-                l&apos;initiation à l&apos;informatique, la programmation et la robotique. À travers des
-                activités créatives et des défis ludiques, les jeunes développent leurs compétences
-                numériques tout en s&apos;amusant.
-              </p>
-            </motion.div>
 
             {/* Objectifs du stage */}
             <motion.div

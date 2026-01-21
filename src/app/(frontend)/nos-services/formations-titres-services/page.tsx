@@ -67,7 +67,7 @@ const Page = () => {
       </section>
 
       {/* Compétences numériques professionnelles */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -174,7 +174,7 @@ const Page = () => {
       </section>
 
       {/* Compétences de bien-être, ergonomie & prévention */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -274,15 +274,19 @@ const Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container mx-auto px-6">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="container mx-auto px-6 ">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center flex flex-col gap-6"
           >
+            <motion.div className="font-semibold">
+              ECD asbl propose une offre complète de formations destinées aux travailleurs,
+              encadrants et équipes administratives.
+            </motion.div>
             <motion.div variants={fadeInUp}>
               <Link href="/titres-service">
                 <motion.button

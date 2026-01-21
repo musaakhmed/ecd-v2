@@ -91,28 +91,30 @@ const Page = () => {
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    Structurer et automatiser les tâches répétitives pour améliorer l&apos;efficacité
-                    individuelle et collective.
+                    Structurer et automatiser les tâches répétitives pour améliorer
+                    l&apos;efficacité individuelle et collective.
                   </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    Renforcer la maîtrise des outils numériques professionnels, y compris les solutions
-                    cloud, les outils de gestion documentaire et les plateformes de communication.
+                    Renforcer la maîtrise des outils numériques professionnels, y compris les
+                    solutions cloud, les outils de gestion documentaire et les plateformes de
+                    communication.
                   </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    Intégrer les usages avancés de l&apos;intelligence artificielle appliquée au travail.
+                    Intégrer les usages avancés de l&apos;intelligence artificielle appliquée au
+                    travail.
                   </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    Soutenir les organisations dans la montée en compétences de leurs équipes et dans la
-                    modernisation de leurs processus internes.
+                    Soutenir les organisations dans la montée en compétences de leurs équipes et
+                    dans la modernisation de leurs processus internes.
                   </span>
                 </li>
               </ul>
@@ -122,7 +124,7 @@ const Page = () => {
       </section>
 
       {/* Contenus des modules */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -180,7 +182,8 @@ const Page = () => {
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
-                          Tableaux structurés, automatisation, macros simples (VBA d&apos;initiation).
+                          Tableaux structurés, automatisation, macros simples (VBA
+                          d&apos;initiation).
                         </span>
                       </li>
                       <li className="flex gap-3">
@@ -198,15 +201,11 @@ const Page = () => {
                     <ul className="space-y-2 text-gray-700 dark:text-gray-200 ml-4">
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                        <span>
-                          Conception visuelle avancée, charte graphique, storytelling.
-                        </span>
+                        <span>Conception visuelle avancée, charte graphique, storytelling.</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                        <span>
-                          Modèles professionnels, animations complexes, vidéos intégrées.
-                        </span>
+                        <span>Modèles professionnels, animations complexes, vidéos intégrées.</span>
                       </li>
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
@@ -230,8 +229,8 @@ const Page = () => {
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
                     <span>
-                      Structuration d&apos;un écosystème numérique : Teams / SharePoint / OneDrive ou
-                      Google Workspace.
+                      Structuration d&apos;un écosystème numérique : Teams / SharePoint / OneDrive
+                      ou Google Workspace.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -244,14 +243,15 @@ const Page = () => {
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
                     <span>
-                      Coédition en temps réel, gestion de projets numériques, automatisation des flux.
+                      Coédition en temps réel, gestion de projets numériques, automatisation des
+                      flux.
                     </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
                     <span>
-                      Utilisation professionnelle de Teams (canaux thématiques, applications intégrées,
-                      réunions enrichies).
+                      Utilisation professionnelle de Teams (canaux thématiques, applications
+                      intégrées, réunions enrichies).
                     </span>
                   </li>
                 </ul>
@@ -267,15 +267,13 @@ const Page = () => {
                 <ul className="space-y-3 text-gray-700 dark:text-gray-200">
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>
-                      Techniques de rédaction professionnelle assistée par IA.
-                    </span>
+                    <span>Techniques de rédaction professionnelle assistée par IA.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <span>
-                      Gestion avancée d&apos;Outlook : règles, automatisations, signatures multiples,
-                      boîtes partagées.
+                      Gestion avancée d&apos;Outlook : règles, automatisations, signatures
+                      multiples, boîtes partagées.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -348,9 +346,7 @@ const Page = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>
-                      Automatisation de documents, procédures internes, modèles de mails.
-                    </span>
+                    <span>Automatisation de documents, procédures internes, modèles de mails.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
@@ -375,9 +371,7 @@ const Page = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                    <span>
-                      Outils de gestion d&apos;équipe : Trello, Planner, Notion.
-                    </span>
+                    <span>Outils de gestion d&apos;équipe : Trello, Planner, Notion.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
@@ -401,7 +395,7 @@ const Page = () => {
       </section>
 
       {/* Publics concernés */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -437,7 +431,8 @@ const Page = () => {
                 <li className="flex gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                   <span className="leading-relaxed">
-                    Entreprises Titres-Services (encadrants, responsables de planning, administratifs).
+                    Entreprises Titres-Services (encadrants, responsables de planning,
+                    administratifs).
                   </span>
                 </li>
                 <li className="flex gap-3">

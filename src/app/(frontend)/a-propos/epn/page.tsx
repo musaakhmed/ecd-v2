@@ -195,7 +195,7 @@ const Page = () => {
       </SectionWrapper>
 
       {/* Connectoo */}
-      <section className="py-16 md:py-20 bg-white dark:bg-gray-950">
+      <section className="py-12 bg-white dark:bg-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"

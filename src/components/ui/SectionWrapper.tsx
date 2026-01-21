@@ -27,7 +27,8 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
 }) => {
   const bgClasses = {
     white: 'bg-white dark:bg-gray-950',
-    'gradient-primary': 'bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950',
+    'gradient-primary':
+      'bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950',
     'gradient-secondary':
       'bg-gradient-to-b from-secondary-50 to-white dark:from-gray-900 dark:to-gray-950',
   }
@@ -42,7 +43,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
   }
 
   return (
-    <section className={`py-16 md:py-20 ${bgClasses[bgVariant]} ${className}`}>
+    <section className={`py-12 ${bgClasses[bgVariant]} ${className}`}>
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
