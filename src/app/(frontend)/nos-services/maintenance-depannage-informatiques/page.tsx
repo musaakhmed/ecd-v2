@@ -26,7 +26,7 @@ const Page = () => {
       <section className="relative text-white py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/hero/transition-numerique.png"
+            src="/assets/services/maintenance.jpg"
             alt="Maintenance & Dépannage Informatiques"
             fill
             className="object-cover"
