@@ -33,7 +33,7 @@ const Page = () => {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-700/80 via-teal-600/80 to-cyan-600/80" />
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -88,9 +88,9 @@ const Page = () => {
                 tablettes, smartphones, et périphériques.
               </p>
               <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Nous intervenons rapidement pour diagnostiquer et résoudre vos problèmes, que ce soit
-                pour des pannes matérielles, des problèmes logiciels, ou des besoins de mise à jour
-                et d&apos;optimisation.
+                Nous intervenons rapidement pour diagnostiquer et résoudre vos problèmes, que ce
+                soit pour des pannes matérielles, des problèmes logiciels, ou des besoins de mise à
+                jour et d&apos;optimisation.
               </p>
             </motion.div>
           </motion.div>
