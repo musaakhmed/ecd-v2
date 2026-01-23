@@ -31,7 +31,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           priority
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-700/80 via-primary-600/80 to-secondary-600/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-700/80 via-teal-600/80 to-cyan-600/80" />
       <div className="absolute inset-0 bg-black/20" />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
