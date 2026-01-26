@@ -62,6 +62,7 @@ export const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               onMouseEnter={() => submenu && setHoveredMenuItem(link)}
+              onClick={() => setHoveredMenuItem(null)}
               onMouseLeave={() => setHoveredMenuItem(null)}
             >
               <Link href={link}>
