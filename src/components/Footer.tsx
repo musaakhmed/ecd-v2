@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { menu } from '@/lib/menu'
 import Image from 'next/image'
+import Partners from '@/components/homepage/Partners'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -183,7 +184,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-800 mt-12 pt-8">
+        <div className="relative mt-12 pt-8">
+          {/* Oblique line */}
+          <div className="absolute top-0 left-0 w-full h-px bg-secondary-800 transform -skew-x-12 origin-left"></div>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-300 text-sm">
               © {currentYear} Espace Culture et Développement. Tous droits réservés.
@@ -205,6 +208,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <Partners />
     </footer>
   )
 }

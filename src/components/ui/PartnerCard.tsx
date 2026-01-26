@@ -78,7 +78,7 @@ const PartnerCard = () => {
   }
 
   return (
-    <div className="min-h-[30vh] flex items-center justify-center relative lg:w-2/3 w-full mx-auto overflow-hidden">
+    <div className="min-h-[25vh] flex items-center justify-center relative lg:w-2/3 w-full mx-auto overflow-hidden">
       {partners.map((partner, idx) => {
         // Calculate offset relative to centerIdx with wrapping for infinite effect
 

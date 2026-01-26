@@ -1,8 +1,6 @@
 import './globals.css'
 import { Hero } from '@/components/homepage/Hero'
-import Projects from '@/components/homepage/Projects'
 import Stats from '@/components/homepage/Stats'
-import Partners from '@/components/homepage/Partners'
 import ServiceCards from '@/components/ui/ServiceCards'
 import Video from '@/components/homepage/Video'
 import About from '@/components/homepage/About'
@@ -24,7 +22,6 @@ export default async function HomePage() {
       <Video />
       <Stats />
       {/*<Projects />*/}
-      <Partners />
     </div>
   )
 }
