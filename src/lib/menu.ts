@@ -68,6 +68,7 @@ export const menu: MenuItem[] = [
         { title: 'Stages informatiques', link: '/inclusion-numerique/stages-informatiques' },
         { title: 'Jeunes connectés', link: '/inclusion-numerique/jeunes-connectes' },
         { title: 'Alpha, FLE et Numérique ', link: '/inclusion-numerique/alpha-fle-numerique' },
+        { title: 'Emploi & Numérique', link: '/inclusion-numerique/emploi-numerique' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
