@@ -66,12 +66,8 @@ export const menu: MenuItem[] = [
     submenu: {
       links: [
         { title: 'Stages informatiques', link: '/inclusion-numerique/stages-informatiques' },
-        { title: 'Stages scolaires', link: '/inclusion-numerique#stages-scolaires' },
-        { title: 'Jeunes connectés', link: '/inclusion-numerique#jeunes-connectes' },
-        { title: 'Seniors et le digital', link: '/inclusion-numerique#seniors-digital' },
-        { title: 'Femmes et le digital', link: '/inclusion-numerique#femmes-digital' },
-        { title: 'Numérique et Emploi', link: '/inclusion-numerique#numerique-emploi' },
-        { title: 'Numérique Alpha/FLE', link: '/inclusion-numerique#numerique-alpha-fle' },
+        { title: 'Jeunes connectés', link: '/inclusion-numerique/jeunes-connectes' },
+        { title: 'Alpha, FLE et Numérique ', link: '/inclusion-numerique/alpha-fle-numerique' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',

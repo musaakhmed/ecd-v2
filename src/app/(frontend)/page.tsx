@@ -4,6 +4,7 @@ import Stats from '@/components/homepage/Stats'
 import ServiceCards from '@/components/ui/ServiceCards'
 import Video from '@/components/homepage/Video'
 import About from '@/components/homepage/About'
+import InclusionNumerique from '@/components/homepage/InclusionNumerique'
 // import { fetchSlides } from 'src/lib/fetchSlides'
 
 // Force dynamic rendering to prevent stale cache
@@ -19,6 +20,7 @@ export default async function HomePage() {
       <Hero />
       <About />
       <ServiceCards />
+      <InclusionNumerique />
       <Video />
       <Stats />
       {/*<Projects />*/}
