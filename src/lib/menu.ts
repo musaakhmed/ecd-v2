@@ -65,10 +65,10 @@ export const menu: MenuItem[] = [
     link: '/inclusion-numerique',
     submenu: {
       links: [
-        { title: 'Stages informatiques', link: '/inclusion-numerique/stages-informatiques' },
         { title: 'Jeunes connectés', link: '/inclusion-numerique/jeunes-connectes' },
         { title: 'Alpha, FLE et Numérique ', link: '/inclusion-numerique/alpha-fle-numerique' },
         { title: 'Emploi & Numérique', link: '/inclusion-numerique/emploi-numerique' },
+        { title: 'Seniors & le digital', link: '/inclusion-numerique/seniors-digital' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
