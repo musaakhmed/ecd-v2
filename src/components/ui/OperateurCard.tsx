@@ -202,65 +202,64 @@ export function ValueCards() {
     <section className="overflow-visible py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
-        {items.map((item, index) => {
-          const selectedCard = cardOpen === index
+          {items.map((item, index) => {
+            const selectedCard = cardOpen === index
 
-          return (
-            <article
-              key={item.title + index}
-              className="relative overflow-visible group flex"
-              onClick={() => {
-                if (!isMobile) return
-                setCardOpen(selectedCard ? null : index)
-              }}
-            >
-              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:rounded-b-none group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in pointer-events-none hover:pointer-events-auto flex flex-col w-full h-full">
-                {item.img && (
-                  <div className="mb-4 relative w-full h-32 rounded-lg overflow-hidden">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-opacity duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-primary-600 opacity-40 group-hover:opacity-0 transition-opacity duration-300"></div>
+            return (
+              <article
+                key={item.title + index}
+                className="relative overflow-visible group flex"
+                onClick={() => {
+                  if (!isMobile) return
+                  setCardOpen(selectedCard ? null : index)
+                }}
+              >
+                <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:rounded-b-none group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 ease-in pointer-events-none hover:pointer-events-auto flex flex-col w-full h-full">
+                  {item.img && (
+                    <div className="mb-4 relative w-full h-32 rounded-lg overflow-hidden">
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-opacity duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-primary-600 opacity-40 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
+                  )}
+                  <div className="flex flex-col justify-between gap-2 flex-1">
+                    <div className="flex items-center gap-3">
+                      <h4 className="font-semibold uppercase text-center tracking-wide">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <div className="flex-1">
+                      <p className="p-2 text-sm leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
-                )}
-                <div className="flex flex-col justify-between gap-2 flex-1">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500 text-white text-lg shrink-0">
-                      {item.icon}
-                    </span>
-                    <h3 className="text-sm font-semibold uppercase tracking-wide">{item.title}</h3>
-                  </div>
-                  <div className="flex-1">
-                    <p className="p-2 text-sm leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
 
-                {/* mobile: in-flow accordion */}
-                {isMobile && (
-                  <div
-                    className={`text-sm leading-relaxed overflow-hidden transition-all duration-300 bg-white w-full flex flex-col gap-4 ${
-                      selectedCard ? 'min-h-36 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'
-                    }`}
-                  >
-                    <div className="pt-1 text-secondary-900">{item.expandedContent}</div>
-
-                    <Link
-                      className="mt-3 text-secondary-900 px-4 py-2 bg-secondary-200 rounded-2xl text-center"
-                      href={item.link}
+                  {/* mobile: in-flow accordion */}
+                  {isMobile && (
+                    <div
+                      className={`text-sm leading-relaxed overflow-hidden transition-all duration-300 bg-white w-full flex flex-col gap-4 ${
+                        selectedCard ? 'min-h-36 opacity-100 mt-3' : 'max-h-0 opacity-0 mt-0'
+                      }`}
                     >
-                      En savoir plus
-                    </Link>
-                  </div>
-                )}
+                      <div className="pt-1 text-secondary-900">{item.expandedContent}</div>
 
-                {/* desktop: overlay dropdown */}
-                {!isMobile && (
-                  <div
-                    className="
+                      <Link
+                        className="mt-3 text-secondary-900 px-4 py-2 bg-secondary-200 rounded-2xl text-center"
+                        href={item.link}
+                      >
+                        En savoir plus
+                      </Link>
+                    </div>
+                  )}
+
+                  {/* desktop: overlay dropdown */}
+                  {!isMobile && (
+                    <div
+                      className="
                       absolute left-0 right-0 top-full
                       rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-6 shadow-2xl
                       opacity-0 -translate-y-5 pointer-events-none
@@ -268,21 +267,21 @@ export function ValueCards() {
                       group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
                       flex flex-col gap-6 max-h-[600px] overflow-y-auto
                     "
-                  >
-                    <div className="text-sm leading-relaxed">{item.expandedContent}</div>
-
-                    <Link
-                      className="text-secondary-800 hover:text-secondary-900 px-4 py-2 hover:bg-secondary-200 bg-primary-100 rounded-2xl text-center"
-                      href={item.link}
                     >
-                      En savoir plus
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </article>
-          )
-        })}
+                      <div className="text-sm leading-relaxed">{item.expandedContent}</div>
+
+                      <Link
+                        className="text-secondary-800 hover:text-secondary-900 px-4 py-2 hover:bg-secondary-200 bg-primary-100 rounded-2xl text-center"
+                        href={item.link}
+                      >
+                        En savoir plus
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

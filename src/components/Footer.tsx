@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-secondary-900 text-primary-100">
-        <div className="bg-secondary-900 h-24 transform origin-left -rotate-2 min-w-fit overflow-hidden"></div>
+        <div className="bg-secondary-900 h-16 transform origin-left -rotate-2 min-w-fit overflow-hidden"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {/* About Section */}
@@ -211,7 +211,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-secondary-900 h-24 transform origin-bottom-right -rotate-2 min-w-full overflow-hidden"></div>
+        <div className="bg-secondary-900 h-16 transform origin-bottom-right -rotate-2 min-w-full overflow-hidden"></div>
       </footer>
       <Partners />
     </div>
