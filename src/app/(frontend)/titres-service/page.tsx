@@ -136,17 +136,41 @@ const Page = () => {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2"
             >
-              Formations Titres-Services
+              Titres Services
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6"
+              className="text-xl md:text-2xl text-white/95 font-medium mb-6"
             >
-              Des formations en informatique spécialement conçues pour les travailleurs des
-              entreprises agréées Titres-Services, afin d&apos;améliorer leurs compétences
-              numériques professionnelles.
+              Notre catalogue
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
+            >
+              ECD asbl accompagne les entreprises dans le renforcement des compétences
+              numériques, l&apos;amélioration de l&apos;organisation du travail et la promotion
+              du bien-être des équipes.
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
+            >
+              Les formations sont pratiques et adaptées aux réalités du terrain : outils
+              numériques du quotidien, organisation du temps, communication professionnelle et
+              prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,
+              l&apos;efficacité et le confort de travail des participants.
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-base md:text-lg text-white/90 leading-relaxed mb-6"
+            >
+              Organisées en inter-entreprise ou au sein de votre structure, ces formations
+              s&apos;inscrivent dans les dispositifs de financement existants et sont animées
+              par des formateurs expérimentés, à l&apos;écoute des besoins du secteur
+              Titres-Services.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -162,6 +186,64 @@ const Page = () => {
                 Adapté aux besoins
               </span>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Modalités de partenariat - First section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-12 text-center"
+            >
+              Modalités de partenariat
+            </motion.h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {[
+                {
+                  title: 'Format',
+                  description:
+                    'Formations en inter-entreprise ou au sein de votre structure. Une salle de formation équipée à Bruxelles est mise à votre disposition.',
+                },
+                {
+                  title: 'Financement',
+                  description:
+                    'Bénéficiez du remboursement des frais de formation via le Fonds de Formation de Bruxelles, Forem Formation ou FORM TS.',
+                },
+                {
+                  title: 'Participants',
+                  description:
+                    "L'effectif par session est de 6-12 participants. Le suivi de présence des participants est assuré par les partenaires.",
+                },
+                {
+                  title: 'Tarifs',
+                  description:
+                    'Les tarifs sont proposés par participant ou par groupe, avec un forfait de déplacement inclus.',
+                },
+              ].map((card) => (
+                <motion.div
+                  key={card.title}
+                  variants={fadeInUp}
+                  whileHover={{ y: -5 }}
+                  className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-100 to-transparent rounded-full -mr-12 -mt-12 opacity-50" />
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-semibold text-secondary-900 mb-4">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">{card.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
