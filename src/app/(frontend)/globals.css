@@ -101,9 +101,7 @@ h2 {
 }h3 {
   font-size: 1.5rem !important; /* 24px - equivalent to text-2xl */
   line-height: 1.4;
-}
-
-h4 {
+}h4 {
   font-size: 1.25rem !important; /* 20px - equivalent to text-xl */
   line-height: 1.5;
 }
