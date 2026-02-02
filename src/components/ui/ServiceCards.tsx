@@ -15,7 +15,6 @@ interface CardData {
 }
 
 const NosServices = () => {
-
   const cardsData: CardData[] = [
     {
       id: 1,
@@ -39,7 +38,7 @@ const NosServices = () => {
     },
     {
       id: 3,
-      title: 'Maintenance & Dépannage Informatiques',
+      title: 'Maintenance & Dépannage',
       shortDescription:
         'Service professionnel de maintenance et dépannage pour garantir le bon fonctionnement de vos équipements informatiques.',
       longDescription:
@@ -51,7 +50,7 @@ const NosServices = () => {
       id: 4,
       title: 'Perfectionnement en informatique',
       shortDescription:
-        'Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l\'intelligence artificielle.',
+        "Formations avancées pour développer une expertise opérationnelle sur les outils bureautiques, collaboratifs et l'intelligence artificielle.",
       longDescription:
         "Formations de perfectionnement destinées aux personnes qui maîtrisent déjà les bases de l'informatique. Développez une expertise opérationnelle sur les suites bureautiques et collaboratives (Word, Excel, PowerPoint avancés), structurez et automatisez les tâches répétitives, renforcez la maîtrise des outils numériques professionnels (Teams, SharePoint, cloud), intégrez les usages avancés de l'intelligence artificielle appliquée au travail (Copilot, ChatGPT), et maîtrisez la cybersécurité appliquée aux organisations. Nos modules de niveau avancé soutiennent les organisations dans la montée en compétences de leurs équipes et la modernisation de leurs processus internes.",
       image: '/assets/services/perfectionnement.jpg',
@@ -96,9 +95,11 @@ const NosServices = () => {
                       <p className="text-sm md:text-base text-gray-200 mb-4 line-clamp-2">
                         {card.shortDescription}
                       </p>
-                      <div className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
+                      <div
+                        className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
                                    font-semibold transition-colors duration-300 text-sm md:text-base
-                                   mt-2 text-center">
+                                   mt-2 text-center"
+                      >
                         En savoir plus
                       </div>
                     </div>
@@ -136,8 +137,10 @@ const NosServices = () => {
                 <div className="p-4">
                   <h3 className="text-xl font-bold text-header mb-2">{card.title}</h3>
                   <p className="text-sm text-gray-600 mb-4">{card.shortDescription}</p>
-                  <div className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
-                               font-semibold transition-colors duration-300 text-sm w-full text-center">
+                  <div
+                    className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
+                               font-semibold transition-colors duration-300 text-sm w-full text-center"
+                  >
                     En savoir plus
                   </div>
                 </div>

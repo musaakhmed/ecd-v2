@@ -5,35 +5,38 @@ import Image from 'next/image'
 
 const WhoWeAre = () => {
   return (
-    <div className="w-full container mx-auto">
+    <div className="lg:max-w-4/5 container mx-auto px-2 sm:px-4">
       <div
         id="who-we-are"
-        className="bg-secondary-100 rounded-2xl min-h-[25vh] text-xl xl:text-2xl text-primary-800 flex justify-center gap-6 "
+        className="bg-secondary-100 rounded-xl md:rounded-2xl min-h-[18vh] md:min-h-[19vh] text-base md:text-lg xl:text-xl text-primary-800 flex flex-col md:flex-row justify-center gap-4 md:gap-5 overflow-hidden"
       >
-        <div className="flex flex-col justify-around gap-6 p-6 pr-0 md:p-8">
-          <h2 className="text-2xl xl:text-4xl font-semibold ">
+        {/* Text block */}
+        <div className="flex flex-col justify-around gap-3 md:gap-4 p-4 md:py-8 md:px-6 flex-1 min-w-0">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-semibold">
             {quiSommesNousPageContent.hero.title}
           </h2>
           {quiSommesNousPageContent.introduction.paragraphs.map((paragraph, index) => (
-            <p key={index} className={index === 0 ? '' : ''}>
-              {paragraph}
-            </p>
+            <p key={index}>{paragraph}</p>
           ))}
-          <Link href="/a-propos/qui-sommes-nous">
-            <button className="bg-primary-700 text-secondary-100 px-4 py-2 rounded-xl text-lg hover:bg-primary-500 hover:scale-105 cursor-pointer font-semibold">
+          <Link href="/a-propos/qui-sommes-nous" className="self-start md:self-auto">
+            <button className="bg-primary-700 text-white py-2.5 px-5 rounded-lg md:rounded-xl text-base hover:bg-primary-500 hover:scale-105 cursor-pointer font-semibold">
               Lire plus...
             </button>
           </Link>
         </div>
-        <div className="flex gap-0">
-          <div className="bg-secondary-100 min-h-full w-[40rem] relative left-0 -skew-x-10 overflow-hidden origin-bottom-right transform"></div>
-          <Image
-            className="rounded-r-2xl object-cover object-center"
-            src="/assets/operateur/economie-sociale.png"
-            alt={quiSommesNousPageContent.hero.title}
-            width={500}
-            height={100}
-          />
+        {/* Oblique + image: on mobile diagonal edge; on desktop skewed strip then image (~25% smaller) */}
+        <div className="flex gap-0 flex-shrink-0 w-full md:w-auto min-h-0">
+          <div className="relative w-full md:min-w-[180px] lg:min-w-[220px] xl:min-w-[280px] min-h-[120px] sm:min-h-[140px] md:min-h-[160px] overflow-hidden rounded-b-xl md:rounded-r-2xl md:rounded-bl-none flex-1 md:flex-initial">
+            {/* Mobile: oblique top-left edge via skewed wrapper */}
+            {/*<div className="absolute inset-0 -skew-x-8 md:skew-x-0 origin-top-left md:origin-center w-[120%] -left-[10%] md:left-0 md:w-full"></div>*/}
+            <Image
+              className="object-cover object-center skew-x-8 md:skew-x-0 h-full w-full"
+              src="/assets/operateur/economie-sociale.png"
+              alt={quiSommesNousPageContent.hero.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 280px"
+            />
+          </div>
         </div>
       </div>
     </div>
