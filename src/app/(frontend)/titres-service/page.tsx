@@ -232,14 +232,14 @@ const Page = () => {
                   key={card.title}
                   variants={fadeInUp}
                   whileHover={{ y: -5 }}
-                  className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100 relative overflow-hidden"
+                  className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-600 relative overflow-hidden"
                 >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-100 to-transparent rounded-full -mr-12 -mt-12 opacity-50" />
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold text-secondary-900 mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       {card.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">{card.description}</p>
+                    <p className="text-primary-100 leading-relaxed">{card.description}</p>
                   </div>
                 </motion.div>
               ))}

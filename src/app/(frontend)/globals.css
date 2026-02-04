@@ -109,9 +109,7 @@ h2 {
 h5 {
   font-size: 1.125rem !important; /* 18px - equivalent to text-lg */
   line-height: 1.5;
-}
-
-/* Responsive heading sizes for larger screens */
+}/* Responsive heading sizes for larger screens */
 @media (min-width: 768px) {
   h1 {
     font-size: 3rem !important; /* 48px - equivalent to text-5xl */
