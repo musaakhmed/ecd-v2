@@ -3,6 +3,7 @@ import './globals.css'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header/Header'
+import SocialMediaBar from '@/components/ui/SocialMediaBar'
 
 export const metadata = {
   description: 'Espace Culture et Developpement',
@@ -21,6 +22,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <main>
           <Header />
+          <SocialMediaBar />
           {children}
           <Footer />
         </main>
