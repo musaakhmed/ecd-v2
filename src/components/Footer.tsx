@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="bg-secondary-900 text-primary-100">
+      <footer className="bg-secondary-900 text-primary-100 lg:max-h-1/4">
         <div className="bg-secondary-900 h-16 transform origin-left -rotate-2 min-w-fit overflow-hidden"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
