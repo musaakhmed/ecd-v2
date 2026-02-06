@@ -33,7 +33,7 @@ const Page = () => {
       ),
       title: 'Messagerie électronique',
       description:
-        'Maîtrisez l\'envoi et la réception d\'emails professionnels, la gestion de votre boîte mail et l\'organisation de vos communications.',
+        "Maîtrisez l'envoi et la réception d'emails professionnels, la gestion de votre boîte mail et l'organisation de vos communications.",
       duration: '4 heures',
     },
     {
@@ -105,7 +105,8 @@ const Page = () => {
   const benefits = [
     {
       title: 'Amélioration des compétences',
-      description: 'Développez vos compétences numériques pour être plus efficace dans votre travail.',
+      description:
+        'Développez vos compétences numériques pour être plus efficace dans votre travail.',
     },
     {
       title: 'Formation sur site',
@@ -121,10 +122,10 @@ const Page = () => {
     },
   ]
 
-    return (
+  return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-16 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 bg-[url('/assets/hero/titres-services.jpg')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -150,32 +151,28 @@ const Page = () => {
               variants={fadeInUp}
               className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
             >
-              ECD asbl accompagne les entreprises dans le renforcement des compétences
-              numériques, l&apos;amélioration de l&apos;organisation du travail et la promotion
-              du bien-être des équipes.
+              ECD asbl accompagne les entreprises dans le renforcement des compétences numériques,
+              l&apos;amélioration de l&apos;organisation du travail et la promotion du bien-être des
+              équipes.
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
             >
-              Les formations sont pratiques et adaptées aux réalités du terrain : outils
-              numériques du quotidien, organisation du temps, communication professionnelle et
-              prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,
-              l&apos;efficacité et le confort de travail des participants.
+              Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques
+              du quotidien, organisation du temps, communication professionnelle et prévention de la
+              surcharge mentale. Elles visent à renforcer l&apos;autonomie, l&apos;efficacité et le
+              confort de travail des participants.
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="text-base md:text-lg text-white/90 leading-relaxed mb-6"
             >
               Organisées en inter-entreprise ou au sein de votre structure, ces formations
-              s&apos;inscrivent dans les dispositifs de financement existants et sont animées
-              par des formateurs expérimentés, à l&apos;écoute des besoins du secteur
-              Titres-Services.
+              s&apos;inscrivent dans les dispositifs de financement existants et sont animées par
+              des formateurs expérimentés, à l&apos;écoute des besoins du secteur Titres-Services.
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap gap-4 items-center"
-            >
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
                 Formation professionnelle
               </span>
@@ -236,9 +233,7 @@ const Page = () => {
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold text-white mb-4">
-                      {card.title}
-                    </h3>
+                    <h3 className="text-xl font-semibold text-white mb-4">{card.title}</h3>
                     <p className="text-primary-100 leading-relaxed">{card.description}</p>
                   </div>
                 </motion.div>
@@ -278,8 +273,8 @@ const Page = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 Nos formations sont conçues pour être pratiques, accessibles et directement
                 applicables dans le contexte professionnel des travailleurs Titres-Services. Nous
-                nous déplaçons directement sur les sites des entreprises partenaires pour offrir
-                une formation sur mesure.
+                nous déplaçons directement sur les sites des entreprises partenaires pour offrir une
+                formation sur mesure.
               </p>
             </motion.div>
           </motion.div>
@@ -320,9 +315,7 @@ const Page = () => {
                   <div className="relative z-10">
                     <div className="text-primary-600 mb-4">{module.icon}</div>
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-semibold text-secondary-900">
-                        {module.title}
-                      </h3>
+                      <h3 className="text-xl font-semibold text-secondary-900">{module.title}</h3>
                     </div>
                     <p className="text-gray-600 leading-relaxed mb-4">{module.description}</p>
                     <div className="flex items-center gap-2 text-sm text-primary-600 font-medium">
@@ -373,9 +366,7 @@ const Page = () => {
                   whileHover={{ scale: 1.02 }}
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-secondary-500"
                 >
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">
-                    {benefit.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">{benefit.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </motion.div>
               ))}
@@ -406,13 +397,13 @@ const Page = () => {
                     step: '01',
                     title: 'Contact entreprise',
                     description:
-                      'L\'entreprise agréée Titres-Services nous contacte pour organiser une formation pour ses travailleurs.',
+                      "L'entreprise agréée Titres-Services nous contacte pour organiser une formation pour ses travailleurs.",
                   },
                   {
                     step: '02',
                     title: 'Évaluation des besoins',
                     description:
-                      'Nous évaluons les besoins spécifiques de l\'entreprise et adaptons le programme de formation.',
+                      "Nous évaluons les besoins spécifiques de l'entreprise et adaptons le programme de formation.",
                   },
                   {
                     step: '03',
@@ -470,8 +461,8 @@ const Page = () => {
               className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
             >
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Nous collaborons avec de nombreuses entreprises agréées Titres-Services en
-                Belgique pour offrir des formations numériques de qualité à leurs travailleurs.
+                Nous collaborons avec de nombreuses entreprises agréées Titres-Services en Belgique
+                pour offrir des formations numériques de qualité à leurs travailleurs.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Si vous êtes une entreprise agréée Titres-Services et souhaitez proposer des
@@ -499,10 +490,7 @@ const Page = () => {
             >
               Intéressé par nos Formations ?
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl text-white/90 mb-8 leading-relaxed"
-            >
+            <motion.p variants={fadeInUp} className="text-xl text-white/90 mb-8 leading-relaxed">
               Contactez-nous pour organiser une formation sur site pour vos travailleurs
               Titres-Services.
             </motion.p>

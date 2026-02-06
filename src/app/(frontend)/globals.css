@@ -129,3 +129,19 @@ h5 {
     font-size: 3.75rem !important; /* 60px - equivalent to text-6xl */
   }
 }
+
+/* Partners carousel: right-to-left scroll, --strip-width set by JS */
+.partners-scroll {
+  animation: partners-scroll 25s linear infinite;
+}
+.partners-scroll.partners-scroll--paused {
+  animation-play-state: paused;
+}
+@keyframes partners-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-1 * var(--strip-width, 0px)));
+  }
+}

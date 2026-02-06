@@ -92,7 +92,7 @@ const items = [
     icon: '',
     title: "Opérateur d'EPN labelisé",
     description:
-      "Opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo. Dispositif entièrement mobile et itinérant, fonctionnant à la demande.",
+      "Opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo. Dispositif entièrement mobile et itinérant, fonctionnant à la demande. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement.",
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -142,7 +142,7 @@ const items = [
   },
   {
     icon: '',
-    title: 'Opérateur de formation de Titres Services',
+    title: 'Opérateur de formation TS',
     description:
       'ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Formations adaptées aux aide-ménagères, encadrants et équipes administratives.',
     expandedContent: (
@@ -213,7 +213,7 @@ export function ValueCards() {
                     </h4>
                   </div>
                   <div className="flex-1">
-                    <p className="p-2 text-sm leading-relaxed">{item.description}</p>
+                    <p className="p-2 text-sm leading-relaxed text-justify">{item.description}</p>
                   </div>
                   <Link href={item.link}>
                     <button
