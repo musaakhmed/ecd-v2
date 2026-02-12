@@ -83,23 +83,16 @@ export const Hero = () => {
     <>
       <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-black text-white lg:h-[100vh] h-[70vh] flex flex-col justify-between">
         <div className="relative aspect-[16/9] w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false} mode="sync">
             <motion.div
               key={slides[activeIndex].image}
               className="absolute inset-0 origin-center"
-              initial={{
-                opacity: 0.4,
-                clipPath: direction === 1 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)',
-              }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
-                clipPath: 'inset(0 0 0 0)',
               }}
-              exit={{
-                opacity: 0.4,
-                clipPath: direction === 1 ? 'inset(0 100% 0 0)' : 'inset(0 0 0 100%)',
-              }}
-              transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: 'easeInOut' }}
             >
               <motion.div
                 className="absolute inset-0"
