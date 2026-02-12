@@ -50,8 +50,22 @@ const ProjectCard = ({ project, index = 0, animationDelay }: ProjectCardProps) =
               <p className="text-primary-100 text-sm md:text-base leading-relaxed flex-1 min-h-0 line-clamp-3 mb-4">
                 {project.description}
               </p>
-              <span className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200 text-sm border border-white/20 flex-shrink-0 mt-auto">
+              <span className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200 text-sm border border-white/20 flex-shrink-0 mt-auto">
                 En savoir plus
+                <svg
+                  className="w-4 h-4 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
               </span>
             </div>
           </div>

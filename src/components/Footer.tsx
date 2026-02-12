@@ -10,9 +10,8 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-secondary-900 text-primary-100 lg:max-h-1/4">
-        <div className="bg-secondary-900 h-16 transform origin-left -rotate-2 min-w-fit overflow-hidden"></div>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="container mx-auto px-4 py-4 md:py-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {/* About Section */}
             <div className="hidden lg:block lg:w-1/4"></div>
             <div className="space-y-4 hidden">
@@ -26,9 +25,9 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white mb-4">Liens rapides</h3>
-              <ul className="space-y-3">
+            <div className="space-y-1.5">
+              <h3 className="text-lg font-bold text-white mb-1.5">Liens rapides</h3>
+              <ul className="space-y-1.5">
                 {menu.map((item) => (
                   <li key={item.link}>
                     <Link
@@ -43,11 +42,11 @@ const Footer = () => {
             </div>
 
             {/* Contact Section */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white mb-4">Contact</h3>
-              <ul className="space-y-3 text-sm">
+            <div className="space-y-1.5">
+              <h3 className="text-lg font-bold text-white mb-1.5">Contact</h3>
+              <ul className="space-y-1.5 text-sm">
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-1">Email</span>
+                  <span className="text-primary-300 mb-0.5">Email</span>
                   <a
                     href="mailto:info@espacecultures.be"
                     className="text-primary-200 hover:text-white transition-colors duration-200"
@@ -56,7 +55,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-1">Téléphone</span>
+                  <span className="text-primary-300 mb-0.5">Téléphone</span>
                   <a
                     href="tel:+32123456789"
                     className="text-primary-200 hover:text-white transition-colors duration-200"
@@ -65,29 +64,29 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-1">Adresse</span>
+                  <span className="text-primary-300 mb-0.5">Adresse</span>
                   <span className="text-primary-200">
                     Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique
                   </span>
                 </li>{' '}
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-1">N° d’entreprise </span>
+                  <span className="text-primary-300 mb-0.5">N° d’entreprise </span>
                   <span className="text-primary-200">0628.538.422</span>
                 </li>
               </ul>
             </div>
 
             {/* Social Media & Newsletter */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white mb-4">Suivez-nous</h3>
-              <div className="flex space-x-4 mb-6">
+            <div className="space-y-1.5">
+              <h3 className="text-lg font-bold text-white mb-1.5">Suivez-nous</h3>
+              <div className="flex space-x-3 mb-3">
                 <a
                   href="https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/"
                   aria-label="LinkedIn"
-                  className="w-10 h-10 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 >
                   <svg
-                    className="w-5 h-5 text-primary-200"
+                    className="w-4 h-4 text-primary-200"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -102,10 +101,10 @@ const Footer = () => {
                 <a
                   href="https://www.instagram.com/asblecd/"
                   aria-label="Instagram"
-                  className="w-10 h-10 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 >
                   <svg
-                    className="w-5 h-5 text-primary-200"
+                    className="w-4 h-4 text-primary-200"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -120,10 +119,10 @@ const Footer = () => {
                 <a
                   href="https://www.facebook.com/espaceculturesetdeveloppement/"
                   aria-label="Facebook"
-                  className="w-10 h-10 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 >
                   <svg
-                    className="w-5 h-5 text-primary-200"
+                    className="w-4 h-4 text-primary-200"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -138,10 +137,10 @@ const Footer = () => {
                 <a
                   href="https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw"
                   aria-label="YouTube"
-                  className="w-10 h-10 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
                 >
                   <svg
-                    className="w-5 h-5 text-primary-200"
+                    className="w-4 h-4 text-primary-200"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -155,8 +154,8 @@ const Footer = () => {
                 </a>
               </div>
 
-              <div className="flex space-x-4 items-center">
-                <Image src="/assets/gdpr.png" alt="GDPR Logo RGPD" height={50} width={50} />
+              <div className="flex space-x-3 items-center">
+                <Image src="/assets/gdpr.png" alt="GDPR Logo RGPD" height={36} width={36} />
                 <span className="text-xs">
                   Espace Cultures & Développement asbl veille au respect et la protection des
                   données personnelles de ses usages en s&apos;alignant sur le règlement RGPD
@@ -187,7 +186,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="relative mt-12 pt-8">
+          <div className="relative mt-4 pt-3">
             {/* Oblique line */}
             {/*<div className="absolute top-0 left-0 w-full h-px bg-secondary-800 transform -skew-x-12 origin-left overflow-hidden"></div>*/}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -211,7 +210,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-secondary-900 h-16 transform origin-bottom-right -rotate-2 min-w-full overflow-hidden"></div>
       </footer>
       <Partners />
     </div>

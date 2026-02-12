@@ -12,7 +12,7 @@ const WhoWeAre = () => {
       >
         {/* Text block */}
         <div className="flex flex-col justify-around gap-3 md:gap-4 p-4 md:py-8 md:px-6 flex-1 min-w-0">
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-semibold">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold">
             {quiSommesNousPageContent.hero.title}
           </h2>
           {quiSommesNousPageContent.introduction.paragraphs.map((paragraph, index) => (

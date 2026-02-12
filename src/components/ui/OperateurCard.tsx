@@ -50,7 +50,7 @@ const items = [
     icon: '',
     title: "Opérateur d'Economie Sociale",
     description:
-      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et agréée ESD. Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
+      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et agréée Entreprise Sociale et Démocratique (ESD). Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -213,7 +213,9 @@ export function ValueCards() {
                     </h4>
                   </div>
                   <div className="flex-1">
-                    <p className="p-2 text-sm leading-relaxed text-justify">{item.description}</p>
+                    <p className="p-2 leading-relaxed text-justify tracking-tight hyphens-auto">
+                      {item.description}
+                    </p>
                   </div>
                   <Link href={item.link}>
                     <button

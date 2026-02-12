@@ -8,10 +8,7 @@ const Video = () => {
         playsInline
         className=" object-contain w-full lg:h-full opacity-90"
       >
-        <source
-          src="https://www.espacecultures.be/wp-content/uploads/2023/03/EPNMenimages-new.mp4"
-          type="video/mp4"
-        />
+        <source src="/assets/video/epnm-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

@@ -28,8 +28,7 @@ const partners: Partners = [
 
 const LOGO_SIZE = 132
 const GAP = 48
-const STRIP_WIDTH =
-  partners.length * LOGO_SIZE + (partners.length - 1) * GAP
+const STRIP_WIDTH = partners.length * LOGO_SIZE + (partners.length - 1) * GAP
 
 const PartnerCard = () => {
   const [isHovered, setIsHovered] = useState(false)
