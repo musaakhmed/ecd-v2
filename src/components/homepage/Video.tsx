@@ -1,17 +1,11 @@
 const Video = () => {
   return (
-    <div className="w-full overflow-hidden lg:h-screen">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className=" object-contain w-full lg:h-full opacity-90"
-      >
+    <section className="max-h-[75vh]">
+      <video autoPlay loop muted playsInline className="object-cover max-h-[75vh] mx-auto">
         <source src="/assets/video/epnm-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </div>
+    </section>
   )
 }
 
