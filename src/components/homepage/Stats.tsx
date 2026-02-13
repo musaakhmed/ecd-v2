@@ -21,7 +21,7 @@ const stats: StatItem[] = [
   {
     value: 48,
     label: 'Programmes',
-    description: 'D\'activités et de formations',
+    description: "D'activités et de formations",
   },
   {
     value: 2472,
@@ -59,10 +59,7 @@ const AnimatedCounter = ({
     let currentStep = 0
     const timer = setInterval(() => {
       currentStep++
-      const nextValue = Math.min(
-        Math.floor(increment * currentStep),
-        value,
-      )
+      const nextValue = Math.min(Math.floor(increment * currentStep), value)
       setCount(nextValue)
 
       if (currentStep >= steps) {
@@ -83,13 +80,7 @@ const AnimatedCounter = ({
   )
 }
 
-const StatCard = ({
-  stat,
-  index,
-}: {
-  stat: StatItem
-  index: number
-}) => {
+const StatCard = ({ stat, index }: { stat: StatItem; index: number }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -103,9 +94,9 @@ const StatCard = ({
         delay: index * 0.1,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-primary-100"
+      className="flex flex-col items-center justify-center p-4 md:p-5 rounded-xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-primary-100"
     >
-      <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-600 mb-3">
+      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-600 mb-1.5">
         <AnimatedCounter
           value={stat.value}
           suffix={stat.suffix}
@@ -113,13 +104,11 @@ const StatCard = ({
           isInView={isInView}
         />
       </div>
-      <h3 className="text-lg md:text-xl font-semibold text-secondary-800 mb-2 text-center">
+      <h3 className="text-base md:text-lg font-semibold text-secondary-800 mb-1 text-center">
         {stat.label}
       </h3>
       {stat.description && (
-        <p className="text-sm md:text-base text-secondary-600 text-center">
-          {stat.description}
-        </p>
+        <p className="text-xs md:text-sm text-secondary-600 text-center">{stat.description}</p>
       )}
     </motion.div>
   )
@@ -127,33 +116,33 @@ const StatCard = ({
 
 const Stats = () => {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-primary-50 via-white to-primary-50 overflow-hidden">
+    <section className="relative py-12 lg:py-0 lg:min-h-[50vh] flex flex-col justify-center bg-gradient-to-b from-primary-50 via-white to-primary-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-10 lg:mb-6"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-800 mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-800 mb-2">
             Notre Impact
           </h2>
-          <p className="text-lg md:text-xl text-secondary-600 max-w-3xl mx-auto">
-            Des chiffres qui témoignent de notre engagement et de notre impact
-            positif dans la communauté
+          <p className="text-base md:text-lg text-secondary-600 max-w-2xl mx-auto">
+            Des chiffres qui témoignent de notre engagement et de notre impact positif dans la
+            communauté
           </p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        {/* Stats Grid - four cards on one line on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-4">
           {stats.map((stat, index) => (
             <StatCard key={stat.label} stat={stat} index={index} />
           ))}
