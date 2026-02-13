@@ -13,7 +13,7 @@ const items = [
   {
     icon: '',
     title: 'Opérateur en École de Devoirs',
-    description: `Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs sous l'appellation « Notre-Dame-Aux-Neiges ». L'accueil est orienté vers le soutien scolaire des enfants du quartier, dont environ 80% proviennent de l'école fondamentale Congrès Dachsbeck.`,
+    description: `Reconnu par l'ONE comme opérateur d'École de Devoirs « Notre-Dame-Aux-Neiges ». Soutien scolaire pour les enfants du quartier, majoritairement de l'école Congrès Dachsbeck.`,
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -50,7 +50,7 @@ const items = [
     icon: '',
     title: "Opérateur d'Economie Sociale",
     description:
-      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et agréée Entreprise Sociale et Démocratique (ESD). Dispositif d'insertion socioprofessionnelle centré sur le métier d'animateur·trice – médiateur·trice numérique.",
+      "Reconnue comme entreprise sociale d'insertion (ESD). Insertion socioprofessionnelle centrée sur l'animation et la médiation numérique.",
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -92,7 +92,7 @@ const items = [
     icon: '',
     title: "Opérateur d'EPN labelisé",
     description:
-      "Opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo. Dispositif entièrement mobile et itinérant, fonctionnant à la demande. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement.",
+      "Labellisé en Région bruxelloise et détenteur du label Connectoo. Dispositif mobile et itinérant : initiation, formation et perfectionnement.",
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -144,7 +144,7 @@ const items = [
     icon: '',
     title: 'Opérateur de formation TS',
     description:
-      'ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Formations adaptées aux aide-ménagères, encadrants et équipes administratives.',
+      "Opérateur de formation agréé Titres-Services (Bruxelles, Wallonie, Form TS). Formations pour aide-ménagères, encadrants et équipes administratives.",
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -195,7 +195,7 @@ export function ValueCards() {
             <article key={item.title + index} className="relative overflow-visible group flex">
               <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 flex flex-col w-full h-full">
                 {item.img && (
-                  <div className="mb-4 relative w-full h-32 rounded-lg overflow-hidden">
+                  <div className="mb-4 relative w-full aspect-[4/3] rounded-lg overflow-hidden">
                     <Image
                       src={item.img}
                       alt={item.title}
@@ -213,7 +213,10 @@ export function ValueCards() {
                     </h4>
                   </div>
                   <div className="flex-1">
-                    <p className="p-2 leading-relaxed text-justify tracking-tight hyphens-auto">
+                    <p
+                      lang="fr"
+                      className="p-2 leading-relaxed text-justify tracking-tight hyphens-auto"
+                    >
                       {item.description}
                     </p>
                   </div>
