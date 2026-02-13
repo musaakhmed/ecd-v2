@@ -92,7 +92,7 @@ const items = [
     icon: '',
     title: "Opérateur d'EPN labelisé",
     description:
-      "Labellisé en Région bruxelloise et détenteur du label Connectoo. Dispositif mobile et itinérant : initiation, formation et perfectionnement.",
+      'Labellisé en Région bruxelloise et détenteur du label Connectoo. Dispositif mobile et itinérant : initiation, formation et perfectionnement.',
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -144,7 +144,7 @@ const items = [
     icon: '',
     title: 'Opérateur de formation TS',
     description:
-      "Opérateur de formation agréé Titres-Services (Bruxelles, Wallonie, Form TS). Formations pour aide-ménagères, encadrants et équipes administratives.",
+      'Opérateur de formation agréé Titres-Services (Bruxelles, Wallonie, Form TS). Formations pour aide-ménagères, encadrants et équipes administratives.',
     expandedContent: (
       <div className="space-y-4">
         <div>
@@ -189,7 +189,7 @@ const items = [
 export function ValueCards() {
   return (
     <section className="overflow-visible py-12 px-4 container mx-auto w-full">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
           {items.map((item, index) => (
             <article key={item.title + index} className="relative overflow-visible group flex">
