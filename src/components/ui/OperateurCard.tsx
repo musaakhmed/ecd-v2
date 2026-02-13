@@ -188,14 +188,14 @@ const items = [
 
 export function ValueCards() {
   return (
-    <section className="overflow-visible py-12 px-4 container mx-auto w-full">
+    <section className="overflow-visible py-12 px-4 md:px-8 max-w-7xl mx-auto w-full">
       <div className=" mx-auto">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
           {items.map((item, index) => (
             <article key={item.title + index} className="relative overflow-visible group flex">
               <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 flex flex-col w-full h-full">
                 {item.img && (
-                  <div className="mb-4 relative w-full aspect-[4/3] rounded-lg overflow-hidden">
+                  <div className="mb-4 relative w-full aspect-4/3 rounded-lg overflow-hidden">
                     <Image
                       src={item.img}
                       alt={item.title}
@@ -208,7 +208,7 @@ export function ValueCards() {
                 )}
                 <div className="flex flex-col justify-between gap-2 flex-1">
                   <div className="flex items-center gap-3">
-                    <h4 className="font-semibold uppercase text-center tracking-wide">
+                    <h4 className="font-semibold text-6xl uppercase text-center tracking-wide">
                       {item.title}
                     </h4>
                   </div>

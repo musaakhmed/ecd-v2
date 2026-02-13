@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const WhoWeAre = () => {
   return (
-    <div className="container mx-auto px-2 sm:px-4">
+    <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div
         id="who-we-are"
         className="bg-secondary-100 rounded-xl md:rounded-2xl min-h-[18vh] md:min-h-[19vh] text-base md:text-lg xl:text-xl text-primary-800 flex flex-col md:flex-row justify-center gap-4 md:gap-5 overflow-hidden"
