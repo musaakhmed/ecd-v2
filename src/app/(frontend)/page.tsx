@@ -21,7 +21,7 @@ export default async function HomePage() {
       <About />
       <ServiceCards />
       <Video />
-      <Projects />
+      {/*<Projects />*/}
       <Stats />
     </div>
   )
