@@ -193,7 +193,7 @@ export function ValueCards() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
           {items.map((item, index) => (
             <article key={item.title + index} className="relative overflow-visible group flex">
-              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-6 shadow-md transition-all duration-300 flex flex-col w-full h-full">
+              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-2 shadow-md transition-all duration-300 flex flex-col w-full h-full">
                 {item.img && (
                   <div className="mb-4 relative w-full aspect-4/3 rounded-lg overflow-hidden">
                     <Image

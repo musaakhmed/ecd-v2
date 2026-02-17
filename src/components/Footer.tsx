@@ -83,10 +83,10 @@ const Footer = () => {
                 <a
                   href="https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/"
                   aria-label="LinkedIn"
-                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
-                    className="w-4 h-4 text-primary-200"
+                    className="w-5 h-5 text-[#0A66C2]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -101,10 +101,10 @@ const Footer = () => {
                 <a
                   href="https://www.instagram.com/asblecd/"
                   aria-label="Instagram"
-                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
-                    className="w-4 h-4 text-primary-200"
+                    className="w-5 h-5 text-[#E4405F]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -119,10 +119,10 @@ const Footer = () => {
                 <a
                   href="https://www.facebook.com/espaceculturesetdeveloppement/"
                   aria-label="Facebook"
-                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
-                    className="w-4 h-4 text-primary-200"
+                    className="w-5 h-5 text-[#1877F2]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -137,10 +137,10 @@ const Footer = () => {
                 <a
                   href="https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw"
                   aria-label="YouTube"
-                  className="w-8 h-8 bg-secondary-800 hover:bg-secondary-700 rounded-full flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
-                    className="w-4 h-4 text-primary-200"
+                    className="w-5 h-5 text-[#FF0000]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
