@@ -25,7 +25,7 @@ const WhoWeAre = () => {
           </Link>
         </div>
         {/* Oblique + image: on mobile diagonal edge; on desktop skewed strip then image (~25% smaller) */}
-        <div className="flex gap-0 flex-shrink-0 w-full md:w-auto min-h-0">
+        <div className="flex gap-0 shrink-0 w-full md:w-auto min-h-0">
           <div className="relative w-full md:min-w-[180px] lg:min-w-[220px] xl:min-w-[280px] min-h-[120px] sm:min-h-[140px] md:min-h-[160px] overflow-hidden rounded-b-xl md:rounded-r-2xl md:rounded-bl-none flex-1 md:flex-initial">
             {/* Mobile: oblique top-left edge via skewed wrapper */}
             {/*<div className="absolute inset-0 -skew-x-8 md:skew-x-0 origin-top-left md:origin-center w-[120%] -left-[10%] md:left-0 md:w-full"></div>*/}
