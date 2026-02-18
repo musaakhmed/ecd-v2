@@ -88,12 +88,13 @@ const Page = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
               {content.introduction.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className={`text-gray-700 dark:text-gray-200 leading-relaxed text-lg ${
+                  className={`relative z-10 text-primary-100 leading-relaxed text-lg ${
                     index < content.introduction.paragraphs.length - 1 ? 'mb-4' : ''
                   }`}
                 >
