@@ -10,6 +10,7 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { ParagraphSection } from '@/components/ui/ParagraphSection'
 import { ContentSection } from '@/components/ui/ContentSection'
 import { NumberedCard } from '@/components/ui/NumberedCard'
+import { ImageCardHero } from '@/components/ui/ImageCardHero'
 
 const Page = () => {
   const content = esdPageContent
@@ -100,50 +101,35 @@ const Page = () => {
         )}
       </SectionWrapper>
 
-      {/* Public cible */}
-      <SectionWrapper
+      <ImageCardHero
         title={content.publicCible.title}
+        imageSrc="/assets/operateur/economie-sociale.png"
+        imageAlt="Public cible en partenariat"
+        imageOnLeft
         description={content.publicCible.description}
-        maxWidth="xl"
-      >
-        <ContentSection
-          title=""
-          items={content.publicCible.publics}
-          conclusion={content.publicCible.conclusion}
-          variant="gradient-secondary"
-          bulletColor="secondary"
-          descriptionCentered={false}
-        />
-      </SectionWrapper>
+        listItems={content.publicCible.publics}
+        conclusion={content.publicCible.conclusion}
+      />
 
-      {/* Accompagnement */}
-      <SectionWrapper
+      <ImageCardHero
         title={content.accompagnement.title}
-        maxWidth="xl"
-        bgVariant="gradient-primary"
-      >
-        <ContentSection
-          title=""
-          description={content.accompagnement.description}
-          items={content.accompagnement.elements}
-          variant="gradient-primary"
-          bulletColor="primary"
-          descriptionCentered={false}
-        />
-      </SectionWrapper>
+        imageSrc="/assets/operateur/parallax/metier-social.png"
+        imageAlt="Accompagnement professionnel et social"
+        imageOnLeft={false}
+        description={content.accompagnement.description}
+        listItems={content.accompagnement.elements}
+      />
 
-      {/* PAC */}
-      <SectionWrapper title={content.pac.title} description={content.pac.description} maxWidth="xl">
-        <ContentSection
-          title=""
-          intro={content.pac.intro}
-          items={content.pac.objectifs}
-          conclusion={content.pac.conclusion}
-          variant="gradient-primary"
-          bulletColor="primary"
-          descriptionCentered={false}
-        />
-      </SectionWrapper>
+      <ImageCardHero
+        title={content.pac.title}
+        imageSrc="/assets/operateur/economie-sociale.png"
+        imageAlt="Plan d'Acquisition de Compétences"
+        imageOnLeft
+        description={content.pac.description}
+        intro={content.pac.intro}
+        listItems={content.pac.objectifs}
+        conclusion={content.pac.conclusion}
+      />
     </div>
   )
 }
