@@ -7,10 +7,10 @@ import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { ParallaxSection } from '@/components/ui/ParallaxSection'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
-import { ParagraphSection } from '@/components/ui/ParagraphSection'
 import { ContentSection } from '@/components/ui/ContentSection'
 import { NumberedCard } from '@/components/ui/NumberedCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'
+import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 
 const Page = () => {
   const content = esdPageContent
@@ -26,20 +26,19 @@ const Page = () => {
         description={content.hero.description}
       />
 
-      {/* Présentation */}
-      <SectionWrapper>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-        >
-          <ParagraphSection
-            title={content.presentation.title}
-            paragraphs={content.presentation.paragraphs}
-          />
-        </motion.div>
-      </SectionWrapper>
+      <DarkIntroSection>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-100 mb-6">
+          {content.presentation.title}
+        </h2>
+        {content.presentation.paragraphs.map((paragraph, index) => (
+          <p
+            key={index}
+            className={index < content.presentation.paragraphs.length - 1 ? 'mb-4' : ''}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </DarkIntroSection>
 
       {/* Métier */}
       <ParallaxSection imageSrc="/assets/operateur/parallax/metier-social.png" overlayType="strong">

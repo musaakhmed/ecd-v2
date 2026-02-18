@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export interface ImageCardHeroProps {
-  /** Section title shown above the hero block */
+  /** Section title shown above the hero block (or inside the card when titleInCard is true) */
   title: string
   /** Image source URL */
   imageSrc: string
@@ -13,6 +13,10 @@ export interface ImageCardHeroProps {
   imageAlt: string
   /** When true: image on left, card on right. When false: image on right, card on left */
   imageOnLeft?: boolean
+  /** When true: render title inside the text card instead of above the block */
+  titleInCard?: boolean
+  /** When true: use tighter vertical spacing (less padding between sections) */
+  compactSpacing?: boolean
   /** Optional lead paragraph in the card */
   description?: string
   /** Optional intro line before the list (e.g. "Il permet de :") */
@@ -33,6 +37,8 @@ export function ImageCardHero({
   imageSrc,
   imageAlt,
   imageOnLeft = true,
+  titleInCard = false,
+  compactSpacing = false,
   description,
   intro,
   listItems,
@@ -49,12 +55,17 @@ export function ImageCardHero({
     ? 'lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2'
     : 'lg:absolute lg:left-8 lg:top-1/2 lg:-translate-y-1/2'
 
+  const sectionPadding = compactSpacing ? 'py-8 md:py-12' : 'py-16 md:py-24'
+  const titleMargin = compactSpacing ? 'mb-4 md:mb-6' : 'mb-8 md:mb-10'
+
   return (
-    <section className="w-full bg-background py-16 md:py-24 px-4 md:px-8 lg:px-16">
+    <section className={`w-full bg-background ${sectionPadding} px-4 md:px-8 lg:px-16`}>
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-8 md:mb-10">
-          {title}
-        </h2>
+        {!titleInCard && (
+          <h2 className={`text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 ${titleMargin}`}>
+            {title}
+          </h2>
+        )}
         <div className="relative flex flex-col lg:block">
           {/* Image */}
           <motion.div
@@ -84,6 +95,11 @@ export function ImageCardHero({
             className={`mt-4 w-full lg:max-w-md lg:mt-0 bg-secondary-800 rounded-3xl shadow-lg p-6 md:p-8 ${cardPositionClasses}`}
           >
             <div className="space-y-4 text-secondary-100">
+              {titleInCard && (
+                <h3 className="text-xl md:text-2xl font-bold text-secondary-100">
+                  {title}
+                </h3>
+              )}
               {description && (
                 <p className="text-secondary-100/90 text-sm md:text-base leading-relaxed">
                   {description}

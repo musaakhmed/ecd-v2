@@ -135,9 +135,9 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative h-[35vh] flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="container mx-auto px-4 relative z-10 py-6">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -146,13 +146,13 @@ const Page = () => {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3"
             >
               Contactez-nous
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 leading-relaxed"
+              className="text-sm md:text-base text-white/90 leading-snug"
             >
               Nous sommes là pour répondre à vos questions et vous accompagner dans vos projets.
             </motion.p>

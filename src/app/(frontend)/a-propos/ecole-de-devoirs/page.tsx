@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { eddPageContent } from '@/lib/about-content'
+import { ImageCardHero } from '@/components/ui/ImageCardHero'
+import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 
 const Page = () => {
   const parallaxRef = useRef<HTMLDivElement>(null)
@@ -42,7 +44,7 @@ const Page = () => {
   return (
     <div className="min-h-screen dark:bg-gray-950 flex flex-col gap-12">
       {/* Hero */}
-      <section className="relative p-16 text-white overflow-hidden">
+      <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/assets/operateur/ecole-de-devoirs.png"
@@ -54,7 +56,7 @@ const Page = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-700/80 via-teal-600/80 to-cyan-600/80" />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-6">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -63,70 +65,44 @@ const Page = () => {
           >
             <motion.p
               variants={fadeInUp}
-              className="text-sm uppercase tracking-[0.3em] font-semibold text-white/80 mb-4"
+              className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white/80 mb-1 md:mb-2"
             >
               {content.hero.subtitle}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+              className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-2 md:mb-3"
             >
               {content.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-lg md:text-xl text-white/90 leading-relaxed"
+              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
             >
               Espace Cultures & Développement est reconnu par l&apos;ONE comme opérateur
-              d&apos;École de Devoirs, sous l&apos;appellation « Notre-Dame-Aux-Neiges », en
-              référence au quartier emblématique où l&apos;activité est implantée.
-              <br />
-              <br />
-              L&apos;accueil est orienté vers le soutien scolaire des enfants du quartier, avec une
-              majorité issue de l&apos;école fondamentale Congrès Dachsbeck, représentant environ 80
-              % de l&apos;ensemble des participants.
+              d&apos;École de Devoirs « Notre-Dame-Aux-Neiges ». L&apos;accueil est orienté vers le
+              soutien scolaire des enfants du quartier, avec une majorité issue de l&apos;école
+              Congrès Dachsbeck (~80 % des participants).
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Introduction & Repères */}
-      <section className=" bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Un accueil orienté soutien scolaire
-              </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                L&apos;accueil est pensé pour soutenir la réussite scolaire des enfants du quartier.
-                Nous offrons un cadre rassurant, des repères méthodologiques et un accompagnement
-                rapproché afin de consolider les acquis, révéler les besoins et encourager la
-                confiance.
-              </p>
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-primary-100 dark:border-primary-900/50">
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                  {content.reperePoints.map((point) => (
-                    <li key={point} className="flex gap-3">
-                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <DarkIntroSection>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-100 mb-6">
+          Un accueil orienté soutien scolaire
+        </h2>
+        <p className="mb-6">
+          L&apos;accueil est pensé pour soutenir la réussite scolaire des enfants du quartier. Nous
+          offrons un cadre rassurant, des repères méthodologiques et un accompagnement rapproché
+          afin de consolider les acquis, révéler les besoins et encourager la confiance.
+        </p>
+        <ul className="space-y-2 list-disc list-inside">
+          {content.reperePoints.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
+      </DarkIntroSection>
 
       {/* Modalités */}
       <section className=" bg-white dark:bg-gray-950">
@@ -266,71 +242,51 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Ateliers */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container mx-auto px-6">
+      {/* Ateliers - ImageCardHero per atelier */}
+      <section className="bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="container mx-auto px-6 pt-12 pb-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
+            className="text-center mb-6"
           >
-            <motion.div variants={fadeInUp} className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                II. Animations didactiques, éducatives et ludiques
-              </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed mb-4">
-                {content.axes[1].description}
-              </p>
-              <p className="text-lg font-semibold text-primary-900 dark:text-primary-100 max-w-3xl mx-auto mb-8">
-                {content.axes[1].points[0]} :
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-              {content.ateliers.map((atelier, index) => (
-                <motion.div
-                  key={atelier.title}
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  className="group relative rounded-xl overflow-hidden shadow-lg border border-primary-100 dark:border-primary-900/60 min-h-[420px] cursor-pointer transition-all duration-300 ease-in-out"
-                >
-                  {atelier.image && (
-                    <>
-                      <div className="absolute inset-0">
-                        <Image
-                          src={atelier.image}
-                          alt={atelier.title}
-                          fill
-                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                        />
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60 group-hover:from-black/60 group-hover:via-black/70 group-hover:to-black/80 transition-all duration-300 ease-in-out" />
-                    </>
-                  )}
-                  <div className="relative p-6 h-full flex flex-col justify-between text-white">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:mb-4 transition-all duration-300">
-                        {index + 1}. {atelier.title}
-                      </h3>
-                      <p className="text-white/90 text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                        {atelier.description}
-                      </p>
-                    </div>
-                    <ul className="space-y-2 text-white/90 text-sm list-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                      {atelier.items.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-white/80 flex-shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-3"
+            >
+              II. Animations didactiques, éducatives et ludiques
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed mb-3"
+            >
+              {content.axes[1].description}
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg font-semibold text-primary-900 dark:text-primary-100 max-w-3xl mx-auto mb-0"
+            >
+              {content.axes[1].points[0]} :
+            </motion.p>
           </motion.div>
         </div>
+        {content.ateliers.map((atelier, index) =>
+          atelier.image ? (
+            <ImageCardHero
+              key={atelier.title}
+              title={atelier.title}
+              titleInCard
+              compactSpacing
+              imageSrc={atelier.image}
+              imageAlt={atelier.title}
+              imageOnLeft={index % 2 === 0}
+              description={atelier.description}
+              listItems={atelier.items}
+            />
+          ) : null
+        )}
       </section>
     </div>
   )

@@ -23,10 +23,10 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-20 md:py-28 overflow-hidden">
+      <section className="relative h-[35vh] flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="absolute inset-0 bg-[url('/assets/hero/devoirs.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 py-6">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -35,13 +35,13 @@ const Page = () => {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-2"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-2"
             >
               École de Devoirs
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/95 font-medium"
+              className="text-sm md:text-base text-white/95 font-medium"
             >
               Notre-Dame-Aux-Neiges
             </motion.p>
