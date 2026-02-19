@@ -18,8 +18,8 @@ const contentSections: Array<{
 }> = [
   {
     title: 'Installation & Configuration — Votre matériel prêt à l\'emploi',
-    image: `${IMAGE_BASE}/pexels-athena-2582931.jpg`,
-    imageAlt: 'Installation d\'un disque dur dans un ordinateur',
+    image: `${IMAGE_BASE}/pexels-mikhail-nilov-9301887.jpg`,
+    imageAlt: 'Configuration d\'une imprimante multifonction en bureau',
     description: 'Nous installons et configurons vos équipements pour une utilisation immédiate :',
     listItems: [
       'PC, imprimantes, scanners et périphériques',
@@ -80,8 +80,8 @@ const contentSections: Array<{
   },
   {
     title: 'Dépannage & Réparation — Intervention rapide',
-    image: `${IMAGE_BASE}/pexels-mikhail-nilov-9301887.jpg`,
-    imageAlt: 'Maintenance d\'une imprimante multifonction en bureau',
+    image: `${IMAGE_BASE}/pexels-athena-2582931.jpg`,
+    imageAlt: 'Réparation et dépannage à l\'intérieur d\'un ordinateur',
     description: 'Nous résolvons rapidement :',
     listItems: [
       'PC lent, bloqué ou qui ne démarre plus',
