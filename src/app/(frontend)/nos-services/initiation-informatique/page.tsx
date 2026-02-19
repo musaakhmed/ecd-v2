@@ -301,46 +301,47 @@ const Page = () => {
             </motion.p>
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
             >
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+              <ul className="relative z-10 space-y-4 text-primary-100">
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     La découverte de l&apos;ordinateur (clavier, souris, interfaces, organisation).
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     La navigation Internet et la recherche d&apos;informations fiables.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     La création et l&apos;utilisation d&apos;une adresse e-mail.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">Les démarches administratives de base.</span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Les outils essentiels : traitement de texte, applications pratiques, outils
                     collaboratifs simples.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Les bases de la sécurité numérique : mots de passe, arnaques, bonnes pratiques.
                   </span>
                 </li>
                 <li className="flex gap-4 items-start">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     L&apos;usage du smartphone pour les services du quotidien.
                   </span>
@@ -531,11 +532,11 @@ const Page = () => {
               <motion.div
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-900/20 dark:via-gray-900 dark:to-secondary-900/20 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-4 shadow-md">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-primary-100 mb-4 shadow-md">
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -545,7 +546,7 @@ const Page = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                  <p className="text-primary-100 leading-relaxed text-lg font-medium">
                     Méthodes adaptées selon l&apos;âge, le niveau et la réalité linguistique des
                     participants.
                   </p>
@@ -554,11 +555,11 @@ const Page = () => {
               <motion.div
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-secondary-900/20 dark:via-gray-900 dark:to-primary-900/20 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white mb-4 shadow-md">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-primary-100 mb-4 shadow-md">
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -568,7 +569,7 @@ const Page = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                  <p className="text-primary-100 leading-relaxed text-lg font-medium">
                     Exercices pratiques, mises en situation et accompagnement individuel si
                     nécessaire.
                   </p>
@@ -577,11 +578,11 @@ const Page = () => {
               <motion.div
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-primary-900/20 dark:via-gray-900 dark:to-secondary-900/20 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-4 shadow-md">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-primary-100 mb-4 shadow-md">
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -597,7 +598,7 @@ const Page = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                  <p className="text-primary-100 leading-relaxed text-lg font-medium">
                     Supports visuels accessibles, vocabulaire simplifié et progression en petites
                     étapes.
                   </p>
@@ -606,11 +607,11 @@ const Page = () => {
               <motion.div
                 variants={fadeInUp}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-gradient-to-br from-secondary-50 via-white to-primary-50 dark:from-secondary-900/20 dark:via-gray-900 dark:to-primary-900/20 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-secondary-200/30 to-transparent rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white mb-4 shadow-md">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-primary-100 mb-4 shadow-md">
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -620,7 +621,7 @@ const Page = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-lg font-medium">
+                  <p className="text-primary-100 leading-relaxed text-lg font-medium">
                     Possibilité d&apos;organiser les modules dans les locaux des partenaires ou via
                     l&apos;Espace Public Numérique Mobile (EPNM).
                   </p>

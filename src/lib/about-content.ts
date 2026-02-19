@@ -797,10 +797,11 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
   hero: {
     title: 'Qui sommes-nous ?',
     description:
-      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale.",
+      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale. L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services — en favorisant l'accès à l'éducation, au numérique, à la citoyenneté et au bien-être.",
   },
   introduction: {
     paragraphs: [
+      "ECD vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois.",
       "L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services.",
     ],
   },
