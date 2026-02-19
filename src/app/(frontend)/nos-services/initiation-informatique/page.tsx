@@ -76,16 +76,19 @@ const Page = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
             >
-              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                À propos de l&apos;initiation
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                ECD asbl développe un programme complet d&apos;initiation en informatique visant à
-                offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
-                s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
-              </p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+              <div className="relative z-10 text-primary-100">
+                <h2 className="text-3xl font-bold text-primary-100 mb-4">
+                  À propos de l&apos;initiation
+                </h2>
+                <p className="text-primary-100/90 leading-relaxed text-lg">
+                  ECD asbl développe un programme complet d&apos;initiation en informatique visant à
+                  offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
+                  s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

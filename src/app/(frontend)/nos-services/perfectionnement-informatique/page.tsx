@@ -75,28 +75,30 @@ const Page = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
             >
-              <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Perfectionnement en informatique
-              </h2>
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+              <div className="relative z-10 text-primary-100">
+                <h2 className="text-3xl font-bold text-primary-100 mb-6">
+                  Perfectionnement en informatique
+                </h2>
+                <ul className="space-y-4 text-primary-100/90">
                 <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Développer une expertise opérationnelle sur les suites bureautiques et
                     collaboratives les plus utilisées.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Structurer et automatiser les tâches répétitives pour améliorer
                     l&apos;efficacité individuelle et collective.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Renforcer la maîtrise des outils numériques professionnels, y compris les
                     solutions cloud, les outils de gestion documentaire et les plateformes de
@@ -104,20 +106,21 @@ const Page = () => {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Intégrer les usages avancés de l&apos;intelligence artificielle appliquée au
                     travail.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                   <span className="leading-relaxed">
                     Soutenir les organisations dans la montée en compétences de leurs équipes et
                     dans la modernisation de leurs processus internes.
                   </span>
                 </li>
               </ul>
+              </div>
             </motion.div>
           </motion.div>
         </div>
