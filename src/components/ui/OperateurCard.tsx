@@ -193,20 +193,20 @@ export function ValueCards() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
           {items.map((item, index) => (
             <article key={item.title + index} className="relative overflow-visible group flex">
-              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 p-2 shadow-md transition-all duration-300 flex flex-col w-full h-full">
+              <div className="relative rounded-xl bg-white group-hover:bg-secondary-800 group-hover:text-secondary-100 shadow-md transition-all duration-300 flex flex-col w-full h-full overflow-hidden">
                 {item.img && (
-                  <div className="mb-4 relative w-full aspect-4/3 rounded-lg overflow-hidden">
+                  <div className="relative w-full aspect-4/3 overflow-hidden">
                     <Image
                       src={item.img}
                       alt={item.title}
                       fill
-                      className="object-cover transition-opacity duration-300"
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-primary-600 opacity-40 group-hover:opacity-0 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-primary-600 opacity-20 group-hover:opacity-0 transition-opacity duration-300" />
                   </div>
                 )}
-                <div className="flex flex-col justify-between gap-2 flex-1">
+                <div className="flex flex-col justify-between gap-2 flex-1 p-2">
                   <div className="flex items-center gap-3">
                     <h4 className="font-semibold text-6xl uppercase text-center tracking-wide">
                       {item.title}
