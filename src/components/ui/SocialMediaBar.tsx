@@ -2,7 +2,7 @@ import React from 'react'
 
 const SocialMediaBar = () => {
   return (
-    <section className="sticky top-1/6 right-0 z-50">
+    <section className="sticky top-1/12 right-0 z-50">
       <div className="flex flex-col mb-6 absolute z-10 gap-2 top-1/4 right-0 p-4">
         <a
           href="https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/"
