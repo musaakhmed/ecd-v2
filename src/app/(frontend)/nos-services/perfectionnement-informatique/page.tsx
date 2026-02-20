@@ -224,34 +224,35 @@ const Page = () => {
 
             {/* Module 2 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
+              <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+                <h3 className="relative z-10 text-2xl font-semibold text-primary-100 mb-6">
                   2. Environnements collaboratifs & digital workplace
                 </h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+                <ul className="relative z-10 space-y-3 text-primary-100">
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Structuration d&apos;un écosystème numérique : Teams / SharePoint / OneDrive
                       ou Google Workspace.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Gestion documentaire avancée : versions, métadonnées, droits d&apos;accès,
                       workflows.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Coédition en temps réel, gestion de projets numériques, automatisation des
                       flux.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Utilisation professionnelle de Teams (canaux thématiques, applications
                       intégrées, réunions enrichies).
@@ -292,33 +293,34 @@ const Page = () => {
 
             {/* Module 4 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
+              <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+                <h3 className="relative z-10 text-2xl font-semibold text-primary-100 mb-6">
                   4. Cybersécurité appliquée aux organisations
                 </h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+                <ul className="relative z-10 space-y-3 text-primary-100">
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Analyse des risques numériques courants dans les structures sociales et
                       associatives.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Paramétrage de la double authentification, gestion des accès, bonnes pratiques
                       RGPD.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Détection des tentatives de phishing, prévention des fuites de données.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Sécurisation des appareils mobiles utilisés dans le cadre professionnel.
                     </span>
@@ -363,28 +365,29 @@ const Page = () => {
 
             {/* Module 6 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
+              <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+                <h3 className="relative z-10 text-2xl font-semibold text-primary-100 mb-6">
                   6. Outils métiers & productivité
                 </h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+                <ul className="relative z-10 space-y-3 text-primary-100">
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>Tableaux de bord (Excel / Google Sheets).</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>Outils de gestion d&apos;équipe : Trello, Planner, Notion.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Création de formulaires avancés (Microsoft Forms / Google Forms) + analyse de
                       données.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span>
                       Introduction aux automatisations simples : Power Automate, Zapier (selon
                       contexte).
