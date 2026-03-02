@@ -4,8 +4,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { titresServicesPageContent } from '@/lib/about-content'
-import { SectionWrapper } from '@/components/ui/SectionWrapper'
-import { ContentSection } from '@/components/ui/ContentSection'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 
@@ -141,18 +140,17 @@ const Page = () => {
             >
               {content.competencesNumeriques.description}
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
-            >
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                {content.competencesNumeriques.items.map((item, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="solid" raw>
+                <ul className="space-y-4 text-gray-100">
+                  {content.competencesNumeriques.items.map((item, index) => (
+                    <li key={index} className="flex gap-3">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>

@@ -5,9 +5,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { epnPageContent } from '@/lib/about-content'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
-import { ContentSection } from '@/components/ui/ContentSection'
 import { BulletList } from '@/components/ui/BulletList'
-import { ContentCard } from '@/components/ui/ContentCard'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 
@@ -140,18 +139,17 @@ const Page = () => {
             >
               {content.publicsCibles.description}
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
-            >
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                {content.publicsCibles.publics.map((publicItem, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>{publicItem}</span>
-                  </li>
-                ))}
-              </ul>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="solid" raw>
+                <ul className="space-y-4 text-gray-100">
+                  {content.publicsCibles.publics.map((publicItem, index) => (
+                    <li key={index} className="flex gap-3">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                      <span>{publicItem}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
@@ -169,26 +167,26 @@ const Page = () => {
           viewport={{ once: true, amount: 0.25 }}
           variants={staggerContainer}
         >
-          <ContentCard variant="gradient-primary">
+          <DarkTextCard variant="gradient-primary">
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6"
+              className="text-lg leading-relaxed mb-6 text-inherit"
             >
               {content.interventions.intro}
             </motion.p>
             <motion.div variants={fadeInUp} className="mb-6">
-              <BulletList items={content.interventions.items} color="primary" />
+              <BulletList items={content.interventions.items} color="primary" lightOnDark />
             </motion.div>
             <motion.p
               variants={fadeInUp}
-              className="text-gray-700 dark:text-gray-200 leading-relaxed pt-4 border-t border-primary-100 dark:border-primary-900/50 mb-6"
+              className="leading-relaxed pt-4 border-t border-primary-600/50 mb-6 text-inherit"
             >
               {content.interventions.conclusion}
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <BulletList items={content.interventions.garanties} color="primary" />
+              <BulletList items={content.interventions.garanties} color="primary" lightOnDark />
             </motion.div>
-          </ContentCard>
+          </DarkTextCard>
         </motion.div>
       </SectionWrapper>
 

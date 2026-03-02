@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { eddPageContent } from '@/lib/about-content'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 
@@ -124,41 +125,37 @@ const Page = () => {
               </p>
             </motion.div>
             <div className="grid gap-6 md:grid-cols-2">
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="rounded-xl border-2 border-primary-200 dark:border-primary-800 p-8 bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
-                    V
+              <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-xl">
+                <DarkTextCard variant="gradient-primary" hover raw className="rounded-xl p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
+                      V
+                    </div>
+                    <h3 className="text-2xl font-semibold text-primary-50">
+                      Vendredi : aide aux devoirs
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
-                    Vendredi : aide aux devoirs
-                  </h3>
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
-                  remédiation et la méthodologie.
-                </p>
+                  <p className="leading-relaxed text-inherit">
+                    Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
+                    remédiation et la méthodologie.
+                  </p>
+                </DarkTextCard>
               </motion.div>
-              <motion.div
-                variants={fadeInUp}
-                whileHover={{ y: -4, scale: 1.02 }}
-                className="rounded-xl border-2 border-secondary-200 dark:border-secondary-800 p-8 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-secondary-500 text-white flex items-center justify-center font-bold">
-                    L-V
+              <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-xl">
+                <DarkTextCard variant="gradient-secondary" hover raw className="rounded-xl p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-secondary-500 text-white flex items-center justify-center font-bold">
+                      L-V
+                    </div>
+                    <h3 className="text-2xl font-semibold text-secondary-50">
+                      Lundi à vendredi : animations
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100">
-                    Lundi à vendredi : animations
-                  </h3>
-                </div>
-                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
-                  socio-éducatives et moments récréatifs pour un cadre serein.
-                </p>
+                  <p className="leading-relaxed text-inherit">
+                    Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
+                    socio-éducatives et moments récréatifs pour un cadre serein.
+                  </p>
+                </DarkTextCard>
               </motion.div>
             </div>
           </motion.div>
@@ -204,25 +201,21 @@ const Page = () => {
               {content.axes.map((axe, index) => {
                 const romanNumerals = ['I', 'II']
                 return (
-                  <motion.article
-                    key={axe.title}
-                    variants={fadeInUp}
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    className="rounded-2xl border border-primary-100 dark:border-primary-900/50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-xl p-8 transition-all duration-300"
-                  >
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl">
-                        {romanNumerals[index]}
+                  <motion.article key={axe.title} variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+                    <DarkTextCard variant="solid" hover raw className="rounded-2xl p-8 shadow-xl">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl">
+                          {romanNumerals[index]}
+                        </div>
+                        <h3 className="text-2xl font-semibold text-white pt-2">
+                          {axe.title}
+                        </h3>
                       </div>
-                      <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 pt-2">
-                        {axe.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-5 pl-16">
-                      {axe.description}
-                    </p>
+                      <p className="leading-relaxed mb-5 pl-16 text-inherit">
+                        {axe.description}
+                      </p>
                     {index === 0 && (
-                      <ul className="space-y-2.5 text-gray-700 dark:text-gray-200 pl-16">
+                      <ul className="space-y-2.5 text-inherit pl-16">
                         {axe.points.map((point) => (
                           <li key={point} className="flex gap-3">
                             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary-500 flex-shrink-0" />
@@ -232,8 +225,9 @@ const Page = () => {
                       </ul>
                     )}
                     {index === 1 && (
-                      <p className="text-gray-700 dark:text-gray-200 pl-16">{axe.points[0]}</p>
+                      <p className="text-inherit pl-16">{axe.points[0]}</p>
                     )}
+                    </DarkTextCard>
                   </motion.article>
                 )
               })}

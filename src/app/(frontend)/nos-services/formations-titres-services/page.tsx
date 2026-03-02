@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 const Page = () => {
   const fadeInUp = {
@@ -89,85 +90,81 @@ const Page = () => {
               Ces formations visent à renforcer l&apos;autonomie numérique des travailleurs et leur
               capacité à utiliser efficacement les outils nécessaires à leurs fonctions.
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
-                Modules proposés
-              </h3>
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">
-                      Identité numérique & démarches administratives
-                    </span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Utilisation de l&apos;eID, Itsme, portails administratifs (Mutuelles, ONEM, My
-                      Belgium…).
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Navigation Internet & recherches en ligne</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Méthodes de recherche, vérification des sources, pratiques sécurisées.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Messagerie électronique</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Gestion professionnelle des e-mails, pièces jointes, organisation, bonnes
-                      pratiques.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Outils de visioconférence (Teams & Zoom)</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Création de réunions, partage d&apos;écran, règles de communication à
-                      distance.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Signatures électroniques</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Introduction aux outils de signature numérique, validation, sécurité.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">
-                      Découverte de ChatGPT et outils IA accessibles
-                    </span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Premiers usages, rédaction assistée, résumé, organisation, bonnes pratiques.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <div className="mt-8 pt-6 border-t border-primary-200 dark:border-primary-800">
-                <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  <span className="font-semibold text-primary-900 dark:text-primary-100">
-                    Objectif :
-                  </span>{' '}
-                  développer l&apos;autonomie, la maîtrise des outils essentiels et la capacité à
-                  réaliser des tâches numériques en toute confiance.
-                </p>
-              </div>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="solid" title="Modules proposés" raw>
+                <ul className="space-y-4 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">
+                        Identité numérique & démarches administratives
+                      </span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Utilisation de l&apos;eID, Itsme, portails administratifs (Mutuelles, ONEM, My
+                        Belgium…).
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Navigation Internet & recherches en ligne</span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Méthodes de recherche, vérification des sources, pratiques sécurisées.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Messagerie électronique</span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Gestion professionnelle des e-mails, pièces jointes, organisation, bonnes
+                        pratiques.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Outils de visioconférence (Teams & Zoom)</span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Création de réunions, partage d&apos;écran, règles de communication à
+                        distance.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Signatures électroniques</span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Introduction aux outils de signature numérique, validation, sécurité.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">
+                        Découverte de ChatGPT et outils IA accessibles
+                      </span>
+                      <p className="text-sm text-gray-200 mt-1">
+                        Premiers usages, rédaction assistée, résumé, organisation, bonnes pratiques.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <div className="mt-8 pt-6 border-t border-gray-600/60">
+                  <p className="leading-relaxed text-inherit">
+                    <span className="font-semibold text-white">
+                      Objectif :
+                    </span>{' '}
+                    développer l&apos;autonomie, la maîtrise des outils essentiels et la capacité à
+                    réaliser des tâches numériques en toute confiance.
+                  </p>
+                </div>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
@@ -197,77 +194,73 @@ const Page = () => {
               renforcent la sécurité, particulièrement pour les métiers d&apos;intervention à
               domicile ou de proximité.
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 border border-secondary-100 dark:border-secondary-900/50"
-            >
-              <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
-                Modules proposés
-              </h3>
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Sécurité sur le lieu de travail</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Identification des dangers, gestes préventifs, protocoles simples pour éviter
-                      les accidents.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Ergonomie & prévention des TMS</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Bonnes postures, techniques pour réduire les efforts, optimisation des
-                      mouvements, choix du matériel.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Organisation du travail</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Gestion du temps, priorisation, structuration des tâches, efficacité au
-                      quotidien.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Communication professionnelle</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Posture face aux clients, gestion des demandes, résolution de situations
-                      délicates.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">Gestion du stress & motivation</span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Stratégies de bien-être, équilibre émotionnel, prévention de
-                      l&apos;épuisement.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <div>
-                    <span className="font-semibold">
-                      Prévention des risques domestiques & psychosociaux
-                    </span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                      Sécurité en intervention à domicile, gestion des imprévus, respect des limites
-                      professionnelles.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="gradient-secondary" title="Modules proposés" raw>
+                <ul className="space-y-4 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Sécurité sur le lieu de travail</span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Identification des dangers, gestes préventifs, protocoles simples pour éviter
+                        les accidents.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Ergonomie & prévention des TMS</span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Bonnes postures, techniques pour réduire les efforts, optimisation des
+                        mouvements, choix du matériel.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Organisation du travail</span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Gestion du temps, priorisation, structuration des tâches, efficacité au
+                        quotidien.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Communication professionnelle</span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Posture face aux clients, gestion des demandes, résolution de situations
+                        délicates.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">Gestion du stress & motivation</span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Stratégies de bien-être, équilibre émotionnel, prévention de
+                        l&apos;épuisement.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <div>
+                      <span className="font-semibold">
+                        Prévention des risques domestiques & psychosociaux
+                      </span>
+                      <p className="text-sm text-secondary-100/80 mt-1">
+                        Sécurité en intervention à domicile, gestion des imprévus, respect des limites
+                        professionnelles.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>

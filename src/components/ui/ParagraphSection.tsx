@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ContentCard } from './ContentCard'
+import { DarkTextCard } from './DarkTextCard'
 
 interface ParagraphSectionProps {
   title: string
@@ -9,23 +9,28 @@ interface ParagraphSectionProps {
   variant?: 'default' | 'gradient-primary' | 'gradient-secondary'
 }
 
+const mapVariant = (
+  v: ParagraphSectionProps['variant']
+): 'solid' | 'gradient-primary' | 'gradient-secondary' =>
+  v === 'gradient-secondary' ? 'gradient-secondary' : v === 'gradient-primary' ? 'gradient-primary' : 'solid'
+
 export const ParagraphSection: React.FC<ParagraphSectionProps> = ({
   title,
   paragraphs,
   variant = 'default',
 }) => {
   return (
-    <ContentCard variant={variant} title={title}>
+    <DarkTextCard variant={mapVariant(variant)} title={title}>
       {paragraphs.map((paragraph, index) => (
         <p
           key={index}
-          className={`text-gray-700 dark:text-gray-200 leading-relaxed ${
+          className={`leading-relaxed text-inherit ${
             index < paragraphs.length - 1 ? 'mb-4' : ''
           }`}
         >
           {paragraph}
         </p>
       ))}
-    </ContentCard>
+    </DarkTextCard>
   )
 }

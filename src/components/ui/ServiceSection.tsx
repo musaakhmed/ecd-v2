@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import type { ServiceSection as ServiceSectionType } from '@/lib/maintenance-services'
+import { DarkTextCard } from './DarkTextCard'
 
 interface ServiceSectionProps {
   section: ServiceSectionType
@@ -33,17 +34,10 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
         ? 'bg-primary-50 dark:bg-gray-900'
         : 'bg-white dark:bg-gray-950'
 
-  const cardBgClass =
-    section.colorScheme === 'primary'
-      ? 'bg-white dark:bg-gray-900 border-primary-100 dark:border-primary-900/50'
-      : 'bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 border-secondary-100 dark:border-secondary-900/50'
-
+  const cardVariant = section.colorScheme === 'primary' ? 'solid' : 'gradient-secondary'
   const bulletColor = section.colorScheme === 'primary' ? 'bg-primary-500' : 'bg-secondary-500'
-
   const borderColor =
-    section.colorScheme === 'primary'
-      ? 'border-primary-200 dark:border-primary-800'
-      : 'border-secondary-200 dark:border-secondary-800'
+    section.colorScheme === 'primary' ? 'border-primary-600/50' : 'border-secondary-600/50'
 
   return (
     <section className={`py-12 ${bgClass}`}>
@@ -69,34 +63,33 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
               {section.description}
             </motion.p>
           )}
-          <motion.div
-            variants={fadeInUp}
-            className={`rounded-2xl shadow-lg p-8 border ${cardBgClass}`}
-          >
-            <ul className="space-y-4 text-gray-700 dark:text-gray-200 mb-8">
-              {section.items.map((item, itemIndex) => (
-                <li key={itemIndex} className="flex gap-3">
-                  <span className={`mt-1.5 h-2 w-2 rounded-full ${bulletColor} shrink-0`} />
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-            {section.conclusion && (
-              <div className={`pt-6 border-t ${borderColor}`}>
-                <p
-                  className={`text-gray-700 dark:text-gray-200 leading-relaxed ${
-                    section.conclusion.isBold ? 'font-medium' : ''
-                  }`}
-                >
-                  {section.conclusion.label && (
-                    <span className="font-semibold text-primary-900 dark:text-primary-100">
-                      {section.conclusion.label}{' '}
-                    </span>
-                  )}
-                  {section.conclusion.text}
-                </p>
-              </div>
-            )}
+          <motion.div variants={fadeInUp}>
+            <DarkTextCard variant={cardVariant} raw>
+              <ul className="space-y-4 text-inherit mb-8">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex gap-3">
+                    <span className={`mt-1.5 h-2 w-2 rounded-full ${bulletColor} shrink-0`} />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {section.conclusion && (
+                <div className={`pt-6 border-t ${borderColor}`}>
+                  <p
+                    className={`leading-relaxed text-inherit ${
+                      section.conclusion.isBold ? 'font-medium' : ''
+                    }`}
+                  >
+                    {section.conclusion.label && (
+                      <span className="font-semibold opacity-100">
+                        {section.conclusion.label}{' '}
+                      </span>
+                    )}
+                    {section.conclusion.text}
+                  </p>
+                </div>
+              )}
+            </DarkTextCard>
           </motion.div>
         </motion.div>
       </div>

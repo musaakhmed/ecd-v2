@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 const Page = () => {
   const fadeInUp = {
@@ -75,224 +76,203 @@ const Page = () => {
             className="max-w-4xl mx-auto"
           >
             {/* Objectifs */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Objectifs
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                Permettre aux apprenants d&apos;acquérir des outils numériques facilitant
-                l&apos;apprentissage du français, afin de progresser en autonomie (vocabulaire,
-                prononciation, lecture, écriture, compréhension) et de renforcer leur capacité à
-                réaliser des démarches du quotidien. À travers des ateliers pratiques et progressifs,
-                les participants pourront :
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>
-                    Apprendre à utiliser un smartphone, une tablette ou un ordinateur (clavier,
-                    souris, Wi-Fi),
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Découvrir et utiliser des plateformes d&apos;apprentissage du français adaptées,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Améliorer la prononciation et la compréhension orale,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Enrichir le vocabulaire utile (emploi, santé, école, transport…),</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>S&apos;entraîner à lire et écrire (phrases simples, messages, e-mails),</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Utiliser des outils de soutien (audio, exercices autocorrectifs),</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>
-                    Renforcer la sécurité numérique (mots de passe, arnaques, données personnelles).
-                  </span>
-                </li>
-              </ul>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <DarkTextCard variant="solid" title="Objectifs" raw>
+                <p className="leading-relaxed mb-6 text-inherit">
+                  Permettre aux apprenants d&apos;acquérir des outils numériques facilitant
+                  l&apos;apprentissage du français, afin de progresser en autonomie (vocabulaire,
+                  prononciation, lecture, écriture, compréhension) et de renforcer leur capacité à
+                  réaliser des démarches du quotidien. À travers des ateliers pratiques et progressifs,
+                  les participants pourront :
+                </p>
+                <ul className="space-y-3 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>
+                      Apprendre à utiliser un smartphone, une tablette ou un ordinateur (clavier,
+                      souris, Wi-Fi),
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Découvrir et utiliser des plateformes d&apos;apprentissage du français adaptées,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Améliorer la prononciation et la compréhension orale,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Enrichir le vocabulaire utile (emploi, santé, école, transport…),</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>S&apos;entraîner à lire et écrire (phrases simples, messages, e-mails),</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Utiliser des outils de soutien (audio, exercices autocorrectifs),</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>
+                      Renforcer la sécurité numérique (mots de passe, arnaques, données personnelles).
+                    </span>
+                  </li>
+                </ul>
+              </DarkTextCard>
             </motion.div>
 
             {/* Outils d'apprentissage en ligne */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Outils d&apos;apprentissage en ligne
-              </h2>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <DarkTextCard variant="solid" title="Outils d'apprentissage en ligne" raw>
+                <div className="space-y-6">
+                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
+                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
+                      J&apos;apprends – Apprentissage du français pour adultes migrants
+                    </h3>
+                    <p className="text-primary-100/90 leading-relaxed">
+                      Plateforme conçue pour aider les adultes migrants à apprendre le français de
+                      manière progressive. Travail sur vocabulaire, compréhension, phrases du quotidien.
+                    </p>
+                  </div>
 
-              <div className="space-y-6">
-                <div className="pl-4 border-l-4 border-primary-500 bg-primary-50/50 dark:bg-primary-900/20 rounded-r-lg py-4 pr-4">
-                  <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                    J&apos;apprends – Apprentissage du français pour adultes migrants
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                    Plateforme conçue pour aider les adultes migrants à apprendre le français de
-                    manière progressive. Travail sur vocabulaire, compréhension, phrases du quotidien.
-                  </p>
-                </div>
+                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
+                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
+                      ClicMaClasse (clicmaclass.fr) – Sons et prononciation
+                    </h3>
+                    <p className="text-primary-100/90 leading-relaxed">
+                      Outil utile pour la familiarisation avec les sons du français. Écouter, répéter
+                      et différencier les sons (ex : ou/u, an/en, é/è).
+                    </p>
+                  </div>
 
-                <div className="pl-4 border-l-4 border-primary-500 bg-primary-50/50 dark:bg-primary-900/20 rounded-r-lg py-4 pr-4">
-                  <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                    ClicMaClasse (clicmaclass.fr) – Sons et prononciation
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                    Outil utile pour la familiarisation avec les sons du français. Écouter, répéter
-                    et différencier les sons (ex : ou/u, an/en, é/è).
-                  </p>
-                </div>
+                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
+                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
+                      Applications ludiques pour apprendre le français
+                    </h3>
+                    <ul className="space-y-2 text-primary-100/90 mt-2">
+                      <li className="flex gap-3">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                        <span>
+                          <strong>OrthoLud</strong> (ortholud.com) : exercices ludiques (orthographe,
+                          grammaire, conjugaison, vocabulaire).
+                        </span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                        <span>
+                          <strong>Le Point du FLE</strong> (lepointdufle.net) : ressources FLE par
+                          niveaux (exercices, fiches, audio, activités).
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
 
-                <div className="pl-4 border-l-4 border-primary-500 bg-primary-50/50 dark:bg-primary-900/20 rounded-r-lg py-4 pr-4">
-                  <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                    Applications ludiques pour apprendre le français
-                  </h3>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-200 mt-2">
-                    <li className="flex gap-3">
-                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                      <span>
-                        <strong>OrthoLud</strong> (ortholud.com) : exercices ludiques (orthographe,
-                        grammaire, conjugaison, vocabulaire).
-                      </span>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                      <span>
-                        <strong>Le Point du FLE</strong> (lepointdufle.net) : ressources FLE par
-                        niveaux (exercices, fiches, audio, activités).
-                      </span>
-                    </li>
-                  </ul>
+                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
+                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
+                      RapidTyping (apprentissage du clavier)
+                    </h3>
+                    <p className="text-primary-100/90 leading-relaxed">
+                      Outil pratique pour apprendre à taper au clavier, gagner en aisance et écrire plus
+                      facilement sur PC.
+                    </p>
+                  </div>
                 </div>
-
-                <div className="pl-4 border-l-4 border-primary-500 bg-primary-50/50 dark:bg-primary-900/20 rounded-r-lg py-4 pr-4">
-                  <h3 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                    RapidTyping (apprentissage du clavier)
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                    Outil pratique pour apprendre à taper au clavier, gagner en aisance et écrire plus
-                    facilement sur PC.
-                  </p>
-                </div>
-              </div>
+              </DarkTextCard>
             </motion.div>
 
             {/* Méthode pédagogique */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-secondary-100 dark:border-secondary-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-                Méthode pédagogique
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                Les ateliers sont basés sur :
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <span>Une approche simple et concrète (faire ensemble, étape par étape),</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <span>Des supports visuels et accessibles,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <span>La répétition et la mise en pratique,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                  <span>Un accompagnement individualisé selon le niveau des participants.</span>
-                </li>
-              </ul>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <DarkTextCard variant="gradient-secondary" title="Méthode pédagogique" raw>
+                <p className="leading-relaxed mb-6 text-inherit">
+                  Les ateliers sont basés sur :
+                </p>
+                <ul className="space-y-3 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span>Une approche simple et concrète (faire ensemble, étape par étape),</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span>Des supports visuels et accessibles,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span>La répétition et la mise en pratique,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
+                    <span>Un accompagnement individualisé selon le niveau des participants.</span>
+                  </li>
+                </ul>
+              </DarkTextCard>
             </motion.div>
 
             {/* Formation des aidants numériques */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-8 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Formation des aidants numériques
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                ECD asbl propose également des formations et accompagnements pédagogiques en lien
-                avec les TIC, afin de renforcer les compétences des professionnels de terrain. Nous
-                intervenons notamment pour :
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Former des formateurs,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Professionnaliser des aidants numériques,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Intégrer des outils numériques adaptés aux publics Alpha/FLE,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Accompagner la mise en place de démarches pédagogiques inclusives.</span>
-                </li>
-              </ul>
+            <motion.div variants={fadeInUp} className="mb-8">
+              <DarkTextCard variant="solid" title="Formation des aidants numériques" raw>
+                <p className="leading-relaxed mb-6 text-inherit">
+                  ECD asbl propose également des formations et accompagnements pédagogiques en lien
+                  avec les TIC, afin de renforcer les compétences des professionnels de terrain. Nous
+                  intervenons notamment pour :
+                </p>
+                <ul className="space-y-3 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Former des formateurs,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Professionnaliser des aidants numériques,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Intégrer des outils numériques adaptés aux publics Alpha/FLE,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Accompagner la mise en place de démarches pédagogiques inclusives.</span>
+                  </li>
+                </ul>
+              </DarkTextCard>
             </motion.div>
 
             {/* Partenariats */}
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                Partenariats
-              </h2>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère (FLE)
-                peuvent formuler leurs demandes afin de développer des partenariats avec ECD asbl.
-                Ces partenariats peuvent porter sur :
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200 mb-6">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>L&apos;intégration du numérique dans les parcours Alpha/FLE,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>La mise en place d&apos;ateliers pratiques pour les apprenants,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Des formations TIC adaptées aux publics,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>La formation de formateurs et d&apos;aidants numériques,</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span>Un accompagnement méthodologique et pédagogique sur mesure.</span>
-                </li>
-              </ul>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs besoins
-                et construire ensemble une collaboration adaptée.
-              </p>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="gradient-primary" title="Partenariats" raw>
+                <p className="leading-relaxed mb-6 text-inherit">
+                  Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère (FLE)
+                  peuvent formuler leurs demandes afin de développer des partenariats avec ECD asbl.
+                  Ces partenariats peuvent porter sur :
+                </p>
+                <ul className="space-y-3 text-inherit mb-6">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>L&apos;intégration du numérique dans les parcours Alpha/FLE,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>La mise en place d&apos;ateliers pratiques pour les apprenants,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Des formations TIC adaptées aux publics,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>La formation de formateurs et d&apos;aidants numériques,</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span>Un accompagnement méthodologique et pédagogique sur mesure.</span>
+                  </li>
+                </ul>
+                <p className="leading-relaxed text-inherit">
+                  Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs besoins
+                  et construire ensemble une collaboration adaptée.
+                </p>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
