@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 const Page = () => {
   const fadeInUp = {
@@ -48,7 +49,7 @@ const Page = () => {
             </motion.p>
             <motion.h1
               variants={fadeInUp}
-              className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-2 md:mb-3"
+              className="text-xl md:text-2xl lg:!text-4xl font-bold leading-tight mb-2 md:mb-3"
             >
               Perfectionnement en informatique
             </motion.h1>
@@ -145,16 +146,11 @@ const Page = () => {
 
             {/* Module 1 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
-                  1. Bureautique professionnelle avancée
-                </h3>
+              <DarkTextCard variant="solid" title="1. Bureautique professionnelle avancée" raw>
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-xl font-semibold text-primary-800 dark:text-primary-200 mb-3">
-                      Word
-                    </h4>
-                    <ul className="space-y-2 text-gray-700 dark:text-gray-200 ml-4">
+                    <h4 className="text-xl font-semibold text-primary-200 mb-3">Word</h4>
+                    <ul className="space-y-2 text-gray-200 ml-4">
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
@@ -172,10 +168,8 @@ const Page = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-primary-800 dark:text-primary-200 mb-3">
-                      Excel
-                    </h4>
-                    <ul className="space-y-2 text-gray-700 dark:text-gray-200 ml-4">
+                    <h4 className="text-xl font-semibold text-primary-200 mb-3">Excel</h4>
+                    <ul className="space-y-2 text-gray-200 ml-4">
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
@@ -198,10 +192,8 @@ const Page = () => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-primary-800 dark:text-primary-200 mb-3">
-                      PowerPoint
-                    </h4>
-                    <ul className="space-y-2 text-gray-700 dark:text-gray-200 ml-4">
+                    <h4 className="text-xl font-semibold text-primary-200 mb-3">PowerPoint</h4>
+                    <ul className="space-y-2 text-gray-200 ml-4">
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>Conception visuelle avancée, charte graphique, storytelling.</span>
@@ -219,7 +211,7 @@ const Page = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </DarkTextCard>
             </motion.div>
 
             {/* Module 2 */}
@@ -264,11 +256,8 @@ const Page = () => {
 
             {/* Module 3 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
-                  3. Gestion avancée des communications professionnelles
-                </h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+              <DarkTextCard variant="solid" title="3. Gestion avancée des communications professionnelles" raw>
+                <ul className="space-y-3 text-inherit">
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <span>Techniques de rédaction professionnelle assistée par IA.</span>
@@ -288,7 +277,7 @@ const Page = () => {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </DarkTextCard>
             </motion.div>
 
             {/* Module 4 */}
@@ -331,11 +320,8 @@ const Page = () => {
 
             {/* Module 5 */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50">
-                <h3 className="text-2xl font-semibold text-primary-900 dark:text-primary-100 mb-6">
-                  5. Intelligence artificielle appliquée au travail
-                </h3>
-                <ul className="space-y-3 text-gray-700 dark:text-gray-200">
+              <DarkTextCard variant="solid" title="5. Intelligence artificielle appliquée au travail" raw>
+                <ul className="space-y-3 text-inherit">
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <span>
@@ -360,7 +346,7 @@ const Page = () => {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </DarkTextCard>
             </motion.div>
 
             {/* Module 6 */}
@@ -416,39 +402,38 @@ const Page = () => {
             >
               Publics concernés
             </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-2xl shadow-lg p-8 border border-primary-100 dark:border-primary-900/50"
-            >
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span className="leading-relaxed">
-                    Encadrants, responsables d&apos;équipes, travailleurs administratifs.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span className="leading-relaxed">
-                    Professionnels du secteur associatif, maisons de quartier, CPAS, structures
-                    d&apos;accueil.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span className="leading-relaxed">
-                    Entreprises Titres-Services (encadrants, responsables de planning,
-                    administratifs).
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                  <span className="leading-relaxed">
-                    Travailleurs en transition, Article 60/ACS cherchant une montée en compétences
-                    rapide.
-                  </span>
-                </li>
-              </ul>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="gradient-primary" raw>
+                <ul className="space-y-4 text-inherit">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span className="leading-relaxed">
+                      Encadrants, responsables d&apos;équipes, travailleurs administratifs.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span className="leading-relaxed">
+                      Professionnels du secteur associatif, maisons de quartier, CPAS, structures
+                      d&apos;accueil.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span className="leading-relaxed">
+                      Entreprises Titres-Services (encadrants, responsables de planning,
+                      administratifs).
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                    <span className="leading-relaxed">
+                      Travailleurs en transition, Article 60/ACS cherchant une montée en compétences
+                      rapide.
+                    </span>
+                  </li>
+                </ul>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>

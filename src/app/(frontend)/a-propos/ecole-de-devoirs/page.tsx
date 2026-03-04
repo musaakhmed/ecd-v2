@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { eddPageContent } from '@/lib/about-content'
+import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
@@ -44,50 +45,13 @@ const Page = () => {
 
   return (
     <div className="min-h-screen dark:bg-gray-950 flex flex-col gap-12">
-      {/* Hero */}
-      <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/assets/operateur/ecole-de-devoirs.png"
-            alt="École de Devoirs"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700/80 via-teal-600/80 to-cyan-600/80" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-6 relative z-10 py-6">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl"
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white/80 mb-1 md:mb-2"
-            >
-              {content.hero.subtitle}
-            </motion.p>
-            <motion.h1
-              variants={fadeInUp}
-              className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-2 md:mb-3"
-            >
-              {content.hero.title}
-            </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
-            >
-              Espace Cultures & Développement est reconnu par l&apos;ONE comme opérateur
-              d&apos;École de Devoirs « Notre-Dame-Aux-Neiges ». L&apos;accueil est orienté vers le
-              soutien scolaire des enfants du quartier, avec une majorité issue de l&apos;école
-              Congrès Dachsbeck (~80 % des participants).
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        imageSrc="/assets/operateur/ecole-de-devoirs.png"
+        imageAlt="École de Devoirs"
+        subtitle={content.hero.subtitle}
+        title={content.hero.title}
+        description={content.hero.description}
+      />
 
       <DarkIntroSection>
         <h2 className="text-3xl md:text-4xl font-bold text-primary-100 mb-6">
@@ -124,34 +88,34 @@ const Page = () => {
                 d&apos;épanouissement
               </p>
             </motion.div>
-            <div className="grid gap-6 md:grid-cols-2">
-              <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-xl">
-                <DarkTextCard variant="gradient-primary" hover raw className="rounded-xl p-8">
+            <div className="grid gap-6 md:grid-cols-2 md:items-stretch">
+              <motion.div variants={fadeInUp} className="flex min-h-0 [&_.rounded-2xl]:rounded-xl">
+                <DarkTextCard variant="gradient-primary" hover raw className="rounded-xl p-8 h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold">
                       V
                     </div>
-                    <h3 className="text-2xl font-semibold text-primary-50">
+                    <h4 className="text-2xl font-semibold text-primary-50">
                       Vendredi : aide aux devoirs
-                    </h3>
+                    </h4>
                   </div>
-                  <p className="leading-relaxed text-inherit">
+                  <p className="leading-relaxed text-inherit flex-1">
                     Séances ajustables selon les besoins, centrées sur la réalisation des travaux, la
                     remédiation et la méthodologie.
                   </p>
                 </DarkTextCard>
               </motion.div>
-              <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-xl">
-                <DarkTextCard variant="gradient-secondary" hover raw className="rounded-xl p-8">
+              <motion.div variants={fadeInUp} className="flex min-h-0 [&_.rounded-2xl]:rounded-xl">
+                <DarkTextCard variant="gradient-secondary" hover raw className="rounded-xl p-8 h-full flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-full bg-secondary-500 text-white flex items-center justify-center font-bold">
                       L-V
                     </div>
-                    <h3 className="text-2xl font-semibold text-secondary-50">
+                    <h4 className="text-2xl font-semibold text-secondary-50">
                       Lundi à vendredi : animations
-                    </h3>
+                    </h4>
                   </div>
-                  <p className="leading-relaxed text-inherit">
+                  <p className="leading-relaxed text-inherit flex-1">
                     Parcours équilibré entre soutien scolaire, ateliers thématiques, activités
                     socio-éducatives et moments récréatifs pour un cadre serein.
                   </p>
@@ -197,12 +161,12 @@ const Page = () => {
                 Les activités proposées s&apos;articulent autour de deux axes complémentaires :
               </p>
             </motion.div>
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-8 md:grid-cols-2 md:items-stretch">
               {content.axes.map((axe, index) => {
                 const romanNumerals = ['I', 'II']
                 return (
-                  <motion.article key={axe.title} variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
-                    <DarkTextCard variant="solid" hover raw className="rounded-2xl p-8 shadow-xl">
+                  <motion.article key={axe.title} variants={fadeInUp} className="flex min-h-0 [&_.rounded-2xl]:rounded-2xl">
+                    <DarkTextCard variant="solid" hover raw className="rounded-2xl p-8 shadow-xl h-full flex flex-col">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl">
                           {romanNumerals[index]}
@@ -214,8 +178,8 @@ const Page = () => {
                       <p className="leading-relaxed mb-5 pl-16 text-inherit">
                         {axe.description}
                       </p>
-                    {index === 0 && (
-                      <ul className="space-y-2.5 text-inherit pl-16">
+                    {index === 0 ? (
+                      <ul className="space-y-2.5 text-inherit pl-16 flex-1">
                         {axe.points.map((point) => (
                           <li key={point} className="flex gap-3">
                             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary-500 flex-shrink-0" />
@@ -223,9 +187,8 @@ const Page = () => {
                           </li>
                         ))}
                       </ul>
-                    )}
-                    {index === 1 && (
-                      <p className="text-inherit pl-16">{axe.points[0]}</p>
+                    ) : (
+                      <p className="text-inherit pl-16 flex-1">{axe.points[0]}</p>
                     )}
                     </DarkTextCard>
                   </motion.article>

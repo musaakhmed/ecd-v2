@@ -146,7 +146,7 @@ const Page = () => {
           >
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-4xl md:text-5xl lg:!text-4xl font-bold mb-6"
             >
               Espace Public Numérique Mobile
             </motion.h1>

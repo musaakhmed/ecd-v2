@@ -48,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.p>
           <motion.h1
             variants={fadeInUp}
-            className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight mb-2 md:mb-3"
+            className="text-xl md:text-2xl lg:!text-4xl font-bold leading-tight mb-2 md:mb-3"
           >
             {title}
           </motion.h1>
