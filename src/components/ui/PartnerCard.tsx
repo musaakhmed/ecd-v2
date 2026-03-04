@@ -26,8 +26,8 @@ const partners: Partners = [
   },
 ]
 
-const LOGO_SIZE = 132
-const CARD_PADDING = 24
+const LOGO_SIZE = 100
+const CARD_PADDING = 12
 const CARD_SIZE = LOGO_SIZE + CARD_PADDING
 const GAP = 48
 const STRIP_WIDTH = partners.length * CARD_SIZE + (partners.length - 1) * GAP
@@ -49,7 +49,7 @@ const PartnerCard = () => {
           {[...partners, ...partners].map((partner, idx) => (
             <div
               key={`${partner.title}-${idx}`}
-              className="flex-shrink-0 flex items-center justify-center transition-transform duration-200 hover:scale-105 bg-white rounded-xl p-3 shadow-md border border-primary-200/60"
+              className="shrink-0 flex items-center justify-center transition-transform duration-200 hover:scale-105 bg-white rounded-xl p-3 shadow-md border border-primary-200/60"
               style={{ width: CARD_SIZE, height: CARD_SIZE }}
             >
               <Image

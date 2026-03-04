@@ -19,7 +19,7 @@ interface DarkTextCardProps {
 }
 
 const variantClasses: Record<DarkTextCardVariant, string> = {
-  solid: 'bg-gray-800 border-gray-600/60 text-gray-100',
+  solid: 'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-primary-100',
   'gradient-primary':
     'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-primary-100',
   'gradient-secondary':
