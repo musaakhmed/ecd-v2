@@ -55,7 +55,7 @@ export const DarkTextCard: React.FC<DarkTextCardProps> = ({
       } ${className}`}
     >
       {title && title.trim() && (
-        <h2 className={`text-xl font-bold mb-4 ${titleClasses[variant]}`}>{title}</h2>
+        <h2 className={`text-3xl! font-bold mb-4 ${titleClasses[variant]}`}>{title}</h2>
       )}
       {raw ? (
         children

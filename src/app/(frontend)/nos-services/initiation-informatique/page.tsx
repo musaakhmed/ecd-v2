@@ -84,54 +84,12 @@ const Page = () => {
   ]
 
   const partenaires = [
-    {
-      variant: 'solid' as const,
-      iconBg: 'bg-primary-500',
-      iconPath:
-        'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-      text: 'Associations socioculturelles',
-      colSpanClass: '',
-    },
-    {
-      variant: 'solid' as const,
-      iconBg: 'bg-secondary-500',
-      iconPath:
-        'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-      text: 'Maisons de quartier',
-      colSpanClass: '',
-    },
-    {
-      variant: 'solid' as const,
-      iconBg: 'bg-primary-500',
-      iconPath:
-        'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-      text: 'CPAS',
-      colSpanClass: '',
-    },
-    {
-      variant: 'solid' as const,
-      iconBg: 'bg-secondary-500',
-      iconPath:
-        'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
-      text: 'Sociétés de logements sociaux',
-      colSpanClass: '',
-    },
-    {
-      variant: 'solid' as const,
-      iconBg: 'bg-primary-500',
-      iconPath:
-        'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-      text: "Centres d'hébergement de primo-arrivants",
-      colSpanClass: '',
-    },
-    {
-      variant: 'gradient-primary' as const,
-      iconBg: 'bg-primary-500/80',
-      iconPath:
-        'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-      text: "Et tout organisme souhaitant renforcer l'inclusion numérique de son public.",
-      colSpanClass: 'md:col-span-2 lg:col-span-1',
-    },
+    'Associations socioculturelles',
+    'Maisons de quartier',
+    'CPAS',
+    'Sociétés de logements sociaux',
+    "Centres d'hébergement de primo-arrivants",
+    "Et tout organisme souhaitant renforcer l'inclusion numérique de son public.",
   ]
 
   const approchesPedagogiques = [
@@ -256,24 +214,18 @@ const Page = () => {
             >
               Publics ciblés
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch auto-rows-fr">
-              {publicsCibles.map((item) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeInUp}
-                  className="flex min-h-0 [&_.rounded-2xl]:rounded-2xl"
-                >
-                  <DarkTextCard
-                    variant="solid"
-                    title={item.title}
-                    raw
-                    className="rounded-2xl p-6 h-full flex flex-col"
-                  >
-                    <p className="leading-relaxed text-inherit flex-1">{item.description}</p>
-                  </DarkTextCard>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+              <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
+                <ul className="space-y-5 text-inherit">
+                  {publicsCibles.map((item) => (
+                    <li key={item.title} className="leading-relaxed">
+                      <span className="font-semibold block mb-1">{item.title}</span>
+                      <span className="text-inherit/90">{item.description}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DarkTextCard>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -397,41 +349,18 @@ const Page = () => {
             >
               Les actions sont menées en collaboration avec :
             </motion.p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:items-stretch lg:items-stretch">
-              {partenaires.map((item) => (
-                <motion.div
-                  key={item.text}
-                  variants={fadeInUp}
-                  className={`flex min-h-0 [&_.rounded-2xl]:rounded-2xl ${item.colSpanClass}`}
-                >
-                  <DarkTextCard
-                    variant={item.variant}
-                    hover
-                    raw
-                    className="rounded-2xl p-6 h-full w-full flex flex-col"
-                  >
-                    <div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${item.iconBg} text-white mb-4 shadow-md`}
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d={item.iconPath}
-                        />
-                      </svg>
-                    </div>
-                    <p className="leading-relaxed font-medium text-inherit flex-1">{item.text}</p>
-                  </DarkTextCard>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+              <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
+                <ul className="space-y-3 text-inherit">
+                  {partenaires.map((name) => (
+                    <li key={name} className="leading-relaxed flex gap-3 items-start">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DarkTextCard>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -452,43 +381,21 @@ const Page = () => {
             >
               Approche pédagogique
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch">
-              {approchesPedagogiques.map((item) => (
-                <motion.div
-                  key={item.text}
-                  variants={fadeInUp}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="h-full flex flex-col min-h-0"
-                >
-                  <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 border border-primary-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group h-full w-full flex flex-col">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
-                    <div className="relative z-10 flex flex-col flex-1">
-                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-primary-100 mb-4 shadow-md">
-                        <svg
-                          className="w-7 h-7"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          {item.iconPaths.map((path) => (
-                            <path
-                              key={path}
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d={path}
-                            />
-                          ))}
-                        </svg>
-                      </div>
-                      <p className="text-primary-100 leading-relaxed text-lg font-medium flex-1">
-                        {item.text}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+              <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+                <div className="relative z-10">
+                  <ul className="space-y-4 text-primary-100">
+                    {approchesPedagogiques.map((item) => (
+                      <li key={item.text} className="flex gap-4 items-start">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                        <span className="leading-relaxed text-lg font-medium">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

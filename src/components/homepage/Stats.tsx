@@ -13,7 +13,7 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 250,
+    value: 1250,
     suffix: '+',
     label: 'Participants',
     description: 'Personnes accompagnées',
@@ -24,13 +24,13 @@ const stats: StatItem[] = [
     description: "D'activités et de formations",
   },
   {
-    value: 2472,
+    value: 4472,
     label: 'Sessions',
     description: 'Sessions organisées',
   },
   {
     value: 102,
-    label: 'Partenaires satisfaits',
+    label: 'Partenaires',
     description: 'Institutions et associations',
   },
 ]
