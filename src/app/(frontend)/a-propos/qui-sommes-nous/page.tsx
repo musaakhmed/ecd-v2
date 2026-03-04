@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { quiSommesNousPageContent } from '@/lib/about-content'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
+import { BulletList } from '@/components/ui/BulletList'
 
 const Page = () => {
   const content = quiSommesNousPageContent
@@ -130,24 +132,17 @@ const Page = () => {
             >
               {content.approche.description}
             </motion.p>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-primary-100 dark:border-primary-900/50 shadow-lg p-8"
-            >
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6">
-                {content.approche.intro}
-              </p>
-              <ul className="space-y-4 text-gray-700 dark:text-gray-200">
-                {content.approche.objectifs.map((objectif, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>{objectif}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mt-6">
-                {content.approche.conclusion}
-              </p>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="solid" raw className="rounded-2xl p-8">
+                <p className="text-inherit leading-relaxed mb-6">{content.approche.intro}</p>
+                <BulletList
+                  items={content.approche.objectifs}
+                  lightOnDark
+                  animated={false}
+                  className="mb-6"
+                />
+                <p className="text-inherit leading-relaxed">{content.approche.conclusion}</p>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
@@ -170,167 +165,130 @@ const Page = () => {
             </motion.h2>
 
             {/* 1. Soutien scolaire */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-12 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-                  1
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100">
-                  {content.domaines.soutienScolaire.title}
-                </h3>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6 ml-16">
-                {content.domaines.soutienScolaire.description}
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200 ml-16">
-                {content.domaines.soutienScolaire.points.map((point, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mt-6 ml-16 italic">
-                {content.domaines.soutienScolaire.conclusion}
-              </p>
+            <motion.div variants={fadeInUp} className="mb-12">
+              <DarkTextCard
+                variant="solid"
+                title={`1. ${content.domaines.soutienScolaire.title}`}
+                raw
+                hover
+                className="rounded-2xl p-8 md:p-10"
+              >
+                <p className="text-inherit leading-relaxed mb-6">
+                  {content.domaines.soutienScolaire.description}
+                </p>
+                <BulletList
+                  items={content.domaines.soutienScolaire.points}
+                  lightOnDark
+                  animated={false}
+                  className="mb-6"
+                />
+                <p className="text-inherit leading-relaxed italic">
+                  {content.domaines.soutienScolaire.conclusion}
+                </p>
+              </DarkTextCard>
             </motion.div>
 
             {/* 2. Inclusion numérique */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-12 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-                  2
+            <motion.div variants={fadeInUp} className="mb-12">
+              <DarkTextCard
+                variant="gradient-secondary"
+                title={`2. ${content.domaines.inclusionNumerique.title}`}
+                raw
+                hover
+                className="rounded-2xl p-8 md:p-10"
+              >
+                <p className="text-inherit leading-relaxed mb-6">
+                  {content.domaines.inclusionNumerique.description}
+                </p>
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <BulletList
+                    items={content.domaines.inclusionNumerique.publics.left}
+                    color="secondary"
+                    lightOnDark
+                    animated={false}
+                  />
+                  <BulletList
+                    items={content.domaines.inclusionNumerique.publics.right}
+                    color="secondary"
+                    lightOnDark
+                    animated={false}
+                  />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100">
-                  {content.domaines.inclusionNumerique.title}
-                </h3>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6 ml-16">
-                {content.domaines.inclusionNumerique.description}
-              </p>
-              <div className="grid md:grid-cols-2 gap-6 mb-6 ml-16">
-                <div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
-                    {content.domaines.inclusionNumerique.publics.left.map((publicItem, index) => (
-                      <li key={index} className="flex gap-3">
-                        <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                        <span>{publicItem}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-200">
-                    {content.domaines.inclusionNumerique.publics.right.map((publicItem, index) => (
-                      <li key={index} className="flex gap-3">
-                        <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                        <span>{publicItem}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-4 ml-16 font-semibold">
-                {content.domaines.inclusionNumerique.interventions.title}
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200 ml-16">
-                {content.domaines.inclusionNumerique.interventions.items.map((item, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mt-6 ml-16 italic">
-                {content.domaines.inclusionNumerique.conclusion}
-              </p>
+                <p className="text-inherit font-semibold mb-4">
+                  {content.domaines.inclusionNumerique.interventions.title}
+                </p>
+                <BulletList
+                  items={content.domaines.inclusionNumerique.interventions.items}
+                  color="secondary"
+                  lightOnDark
+                  animated={false}
+                  className="mb-6"
+                />
+                <p className="text-inherit leading-relaxed italic">
+                  {content.domaines.inclusionNumerique.conclusion}
+                </p>
+              </DarkTextCard>
             </motion.div>
 
             {/* 3. Formations Titres-Services */}
-            <motion.div
-              variants={fadeInUp}
-              className="mb-12 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-                  3
+            <motion.div variants={fadeInUp} className="mb-12">
+              <DarkTextCard
+                variant="solid"
+                title={`3. ${content.domaines.formationsTitresServices.title}`}
+                raw
+                hover
+                className="rounded-2xl p-8 md:p-10"
+              >
+                <p className="text-inherit leading-relaxed mb-6">
+                  {content.domaines.formationsTitresServices.description}
+                </p>
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-6">
+                  <div className="bg-primary-700/30 rounded-xl p-6 border border-primary-600/50">
+                    <h4 className="text-lg font-semibold text-primary-50 mb-4">
+                      {content.domaines.formationsTitresServices.competencesNumeriques.title}
+                    </h4>
+                    <BulletList
+                      items={content.domaines.formationsTitresServices.competencesNumeriques.items}
+                      lightOnDark
+                      animated={false}
+                    />
+                  </div>
+                  <div className="bg-secondary-700/30 rounded-xl p-6 border border-secondary-600/50">
+                    <h4 className="text-lg font-semibold text-secondary-50 mb-4">
+                      {content.domaines.formationsTitresServices.competencesBienEtre.title}
+                    </h4>
+                    <BulletList
+                      items={content.domaines.formationsTitresServices.competencesBienEtre.items}
+                      color="secondary"
+                      lightOnDark
+                      animated={false}
+                    />
+                  </div>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100">
-                  {content.domaines.formationsTitresServices.title}
-                </h3>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6 ml-16">
-                {content.domaines.formationsTitresServices.description}
-              </p>
-
-              <div className="ml-16 grid md:grid-cols-2 gap-6 md:gap-8">
-                <div className="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900 rounded-xl p-6 border border-primary-100 dark:border-primary-900/50">
-                  <h4 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
-                    {content.domaines.formationsTitresServices.competencesNumeriques.title}
-                  </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                    {content.domaines.formationsTitresServices.competencesNumeriques.items.map(
-                      (item, index) => (
-                        <li key={index} className="flex gap-3">
-                          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900 rounded-xl p-6 border border-secondary-100 dark:border-secondary-900/50">
-                  <h4 className="text-xl font-semibold text-primary-900 dark:text-primary-100 mb-4">
-                    {content.domaines.formationsTitresServices.competencesBienEtre.title}
-                  </h4>
-                  <ul className="space-y-3 text-gray-700 dark:text-gray-200">
-                    {content.domaines.formationsTitresServices.competencesBienEtre.items.map(
-                      (item, index) => (
-                        <li key={index} className="flex gap-3">
-                          <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mt-6 ml-16 italic">
-                {content.domaines.formationsTitresServices.conclusion}
-              </p>
+                <p className="text-inherit leading-relaxed italic">
+                  {content.domaines.formationsTitresServices.conclusion}
+                </p>
+              </DarkTextCard>
             </motion.div>
 
             {/* 4. Ateliers parentalité */}
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 dark:border-primary-900/50"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
-                  4
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100">
-                  {content.domaines.ateliersParentalite.title}
-                </h3>
-              </div>
-              <p className="text-gray-700 dark:text-gray-200 leading-relaxed mb-6 ml-16">
-                {content.domaines.ateliersParentalite.description}
-              </p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-200 ml-16">
-                {content.domaines.ateliersParentalite.items.map((item, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard
+                variant="gradient-primary"
+                title={`4. ${content.domaines.ateliersParentalite.title}`}
+                raw
+                hover
+                className="rounded-2xl p-8 md:p-10"
+              >
+                <p className="text-inherit leading-relaxed mb-6">
+                  {content.domaines.ateliersParentalite.description}
+                </p>
+                <BulletList
+                  items={content.domaines.ateliersParentalite.items}
+                  lightOnDark
+                  animated={false}
+                />
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
