@@ -213,11 +213,8 @@ export function ValueCards() {
                     </h4>
                   </div>
                   <div className="flex-1">
-                    <p
-                      lang="fr"
-                      className="p-2 leading-relaxed text-justify tracking-tight hyphens-auto line-clamp-5"
-                    >
-                      {item.description}
+                    <p lang="fr" className="p-3 hyphens-auto text-justify overflow-hidden">
+                      <span className="line-clamp-3">{item.description}</span>
                     </p>
                   </div>
                   <Link href={item.link}>

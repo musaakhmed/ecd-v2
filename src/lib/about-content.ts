@@ -771,12 +771,12 @@ export const titresServicesPageContent: TitresServicesContent = {
     description:
       "Ces modules ciblent l'amélioration des conditions de travail, la prévention des accidents et la réduction de la pénibilité :",
     items: [
-      'Sécurité sur le lieu de travail : identification des dangers, gestes préventifs, protocoles de base',
-      'Ergonomie et prévention des TMS : postures, mouvements adaptés, optimisation des efforts, équipement adéquat',
-      'Organisation du travail : gestion du temps, structuration des tâches, efficacité au quotidien',
-      'Communication professionnelle : relation avec les clients, posture professionnelle, résolution de situations difficiles',
-      "Gestion du stress et motivation : stratégies de bien-être, équilibre émotionnel, prévention de l'épuisement",
-      'Prévention des risques domestiques et psychosociaux : sécurité dans les domiciles, gestion des imprévus, protection de soi et respect des limites',
+      'Sécurité sur le lieu de travail',
+      'Ergonomie et prévention des TMS',
+      'Organisation du travail',
+      'Communication professionnelle',
+      'Gestion du stress et motivation',
+      'Prévention des risques domestiques et psychosociaux',
     ],
   },
   impact: {
