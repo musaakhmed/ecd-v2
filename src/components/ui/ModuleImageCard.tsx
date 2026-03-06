@@ -16,8 +16,12 @@ export interface ModuleImageCardProps {
   badge?: string
   /** Optional label above title (defaults to "Module {number}") */
   moduleLabel?: string
-  /** Tailwind class for the content wrapper (e.g. grid layout) */
+  /** Tailwind class for the content layout (e.g. grid/columns) */
   contentClassName?: string
+  /** Tailwind class for the content padding inside the inner frame */
+  contentPaddingClassName?: string
+  /** Tailwind class for the inner framed panel */
+  frameClassName?: string
   children: React.ReactNode
 }
 
@@ -28,7 +32,9 @@ export const ModuleImageCard: React.FC<ModuleImageCardProps> = ({
   title,
   badge,
   moduleLabel,
-  contentClassName = 'p-5 md:p-6',
+  contentClassName = '',
+  contentPaddingClassName = 'p-4 md:p-5',
+  frameClassName = '',
   children,
 }) => {
   const label = moduleLabel ?? `Module ${number}`
@@ -63,7 +69,15 @@ export const ModuleImageCard: React.FC<ModuleImageCardProps> = ({
           )}
         </div>
       </div>
-      <div className={contentClassName}>{children}</div>
+      <div className="p-5 md:p-6">
+        <div
+          className={`rounded-2xl border border-white/10 bg-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] ${frameClassName}`.trim()}
+        >
+          <div className={contentPaddingClassName}>
+            <div className={contentClassName}>{children}</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
