@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { menu } from '@/lib/menu'
 import Image from 'next/image'
-import Partners from '@/components/homepage/Partners'
+import Partners from '@/components/Footer/Partners'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()

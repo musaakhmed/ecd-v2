@@ -1,7 +1,7 @@
 import React from 'react'
 import './globals.css'
 
-import Footer from '@/components/Footer'
+import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import SocialMediaBar from '@/components/ui/SocialMediaBar'
 

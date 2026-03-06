@@ -44,12 +44,12 @@ const PartnerCard = () => {
     >
       <div className="w-full overflow-hidden">
         <div
-          className={`flex items-center gap-12 shrink-0 w-max partners-scroll ${isHovered ? 'partners-scroll--paused' : ''}`}
+          className={`flex items-center gap-12 shrink-0 w-max partners-scroll p-2 ${isHovered ? 'partners-scroll--paused' : ''}`}
         >
           {[...partners, ...partners].map((partner, idx) => (
             <div
               key={`${partner.title}-${idx}`}
-              className="shrink-0 flex items-center justify-center transition-transform duration-200 hover:scale-105 bg-white rounded-xl p-3 shadow-md border border-primary-200/60"
+              className="shrink-0 flex items-center justify-center transition-transform duration-200 ease-in-out hover:scale-110 bg-white/40 rounded-xl p-0.5 shadow-md border border-primary-200/60"
               style={{ width: CARD_SIZE, height: CARD_SIZE }}
             >
               <Image
