@@ -8,35 +8,35 @@ import { BulletList } from '@/components/ui/BulletList'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 
 const objectifsItems = [
-  "Apprendre à utiliser un smartphone, une tablette ou un ordinateur (clavier, souris, Wi-Fi),",
+  'Apprendre à utiliser un smartphone, une tablette ou un ordinateur (clavier, souris, Wi-Fi),',
   "Découvrir et utiliser des plateformes d'apprentissage du français adaptées,",
-  "Améliorer la prononciation et la compréhension orale,",
-  "Enrichir le vocabulaire utile (emploi, santé, école, transport…),",
+  'Améliorer la prononciation et la compréhension orale,',
+  'Enrichir le vocabulaire utile (emploi, santé, école, transport…),',
   "S'entraîner à lire et écrire (phrases simples, messages, e-mails),",
-  "Utiliser des outils de soutien (audio, exercices autocorrectifs),",
-  "Renforcer la sécurité numérique (mots de passe, arnaques, données personnelles).",
+  'Utiliser des outils de soutien (audio, exercices autocorrectifs),',
+  'Renforcer la sécurité numérique (mots de passe, arnaques, données personnelles).',
 ]
 
 const methodeItems = [
-  "Une approche simple et concrète (faire ensemble, étape par étape),",
-  "Des supports visuels et accessibles,",
-  "La répétition et la mise en pratique,",
-  "Un accompagnement individualisé selon le niveau des participants.",
+  'Une approche simple et concrète (faire ensemble, étape par étape),',
+  'Des supports visuels et accessibles,',
+  'La répétition et la mise en pratique,',
+  'Un accompagnement individualisé selon le niveau des participants.',
 ]
 
 const formationAidants = [
-  "Former des formateurs,",
-  "Professionnaliser des aidants numériques,",
-  "Intégrer des outils numériques adaptés aux publics Alpha/FLE,",
-  "Accompagner la mise en place de démarches pédagogiques inclusives.",
+  'Former des formateurs,',
+  'Professionnaliser des aidants numériques,',
+  'Intégrer des outils numériques adaptés aux publics Alpha/FLE,',
+  'Accompagner la mise en place de démarches pédagogiques inclusives.',
 ]
 
 const partenariatsItems = [
   "L'intégration du numérique dans les parcours Alpha/FLE,",
   "La mise en place d'ateliers pratiques pour les apprenants,",
-  "Des formations TIC adaptées aux publics,",
+  'Des formations TIC adaptées aux publics,',
   "La formation de formateurs et d'aidants numériques,",
-  "Un accompagnement méthodologique et pédagogique sur mesure.",
+  'Un accompagnement méthodologique et pédagogique sur mesure.',
 ]
 
 const Page = () => {
@@ -67,8 +67,8 @@ const Page = () => {
                   Permettre aux apprenants d&apos;acquérir des outils numériques facilitant
                   l&apos;apprentissage du français, afin de progresser en autonomie (vocabulaire,
                   prononciation, lecture, écriture, compréhension) et de renforcer leur capacité à
-                  réaliser des démarches du quotidien. À travers des ateliers pratiques et progressifs,
-                  les participants pourront :
+                  réaliser des démarches du quotidien. À travers des ateliers pratiques et
+                  progressifs, les participants pourront :
                 </p>
                 <BulletList items={objectifsItems} lightOnDark animated={false} />
               </DarkTextCard>
@@ -84,17 +84,24 @@ const Page = () => {
                     </h3>
                     <p className="text-primary-100/90 leading-relaxed">
                       Plateforme conçue pour aider les adultes migrants à apprendre le français de
-                      manière progressive. Travail sur vocabulaire, compréhension, phrases du quotidien.
+                      manière progressive. Travail sur vocabulaire, compréhension, phrases du
+                      quotidien.
                     </p>
                   </div>
 
                   <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
                     <h3 className="text-xl font-semibold text-primary-50 mb-2">
-                      ClicMaClasse (clicmaclass.fr) – Sons et prononciation
+                      ClicMaClasse (
+                      <a href="https://clicmaclasse.fr/" target="_blank" rel="noopener noreferrer">
+                        <span className="italic underline underline-offset-4 underline-">
+                          clicmaclasse.fr
+                        </span>
+                      </a>
+                      ) – Sons et prononciation
                     </h3>
                     <p className="text-primary-100/90 leading-relaxed">
-                      Outil utile pour la familiarisation avec les sons du français. Écouter, répéter
-                      et différencier les sons (ex : ou/u, an/en, é/è).
+                      Outil utile pour la familiarisation avec les sons du français. Écouter,
+                      répéter et différencier les sons (ex : ou/u, an/en, é/è).
                     </p>
                   </div>
 
@@ -106,8 +113,8 @@ const Page = () => {
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
-                          <strong>OrthoLud</strong> (ortholud.com) : exercices ludiques (orthographe,
-                          grammaire, conjugaison, vocabulaire).
+                          <strong>OrthoLud</strong> (ortholud.com) : exercices ludiques
+                          (orthographe, grammaire, conjugaison, vocabulaire).
                         </span>
                       </li>
                       <li className="flex gap-3">
@@ -125,8 +132,8 @@ const Page = () => {
                       RapidTyping (apprentissage du clavier)
                     </h3>
                     <p className="text-primary-100/90 leading-relaxed">
-                      Outil pratique pour apprendre à taper au clavier, gagner en aisance et écrire plus
-                      facilement sur PC.
+                      Outil pratique pour apprendre à taper au clavier, gagner en aisance et écrire
+                      plus facilement sur PC.
                     </p>
                   </div>
                 </div>
@@ -136,9 +143,7 @@ const Page = () => {
             {/* Méthode pédagogique */}
             <motion.div variants={fadeInUp} className="mb-8">
               <DarkTextCard variant="gradient-secondary" title="Méthode pédagogique" raw hover>
-                <p className="leading-relaxed mb-6 text-inherit">
-                  Les ateliers sont basés sur :
-                </p>
+                <p className="leading-relaxed mb-6 text-inherit">Les ateliers sont basés sur :</p>
                 <BulletList items={methodeItems} color="secondary" lightOnDark animated={false} />
               </DarkTextCard>
             </motion.div>
@@ -148,8 +153,8 @@ const Page = () => {
               <DarkTextCard variant="solid" title="Formation des aidants numériques" raw hover>
                 <p className="leading-relaxed mb-6 text-inherit">
                   ECD asbl propose également des formations et accompagnements pédagogiques en lien
-                  avec les TIC, afin de renforcer les compétences des professionnels de terrain. Nous
-                  intervenons notamment pour :
+                  avec les TIC, afin de renforcer les compétences des professionnels de terrain.
+                  Nous intervenons notamment pour :
                 </p>
                 <BulletList items={formationAidants} lightOnDark animated={false} />
               </DarkTextCard>
@@ -163,10 +168,15 @@ const Page = () => {
                   peuvent formuler leurs demandes afin de développer des partenariats avec ECD asbl.
                   Ces partenariats peuvent porter sur :
                 </p>
-                <BulletList items={partenariatsItems} lightOnDark animated={false} className="mb-6" />
+                <BulletList
+                  items={partenariatsItems}
+                  lightOnDark
+                  animated={false}
+                  className="mb-6"
+                />
                 <p className="leading-relaxed text-inherit">
-                  Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs besoins
-                  et construire ensemble une collaboration adaptée.
+                  Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs
+                  besoins et construire ensemble une collaboration adaptée.
                 </p>
               </DarkTextCard>
             </motion.div>
