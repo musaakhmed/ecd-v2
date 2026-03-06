@@ -77,7 +77,7 @@ const Page = () => {
     "La découverte de l'ordinateur (clavier, souris, interfaces, organisation).",
     "La navigation Internet et la recherche d'informations fiables.",
     "La création et l'utilisation d'une adresse e-mail.",
-    "Les démarches administratives de base.",
+    'Les démarches administratives de base.',
     'Les outils essentiels : traitement de texte, applications pratiques, outils collaboratifs simples.',
     'Les bases de la sécurité numérique : mots de passe, arnaques, bonnes pratiques.',
     "L'usage du smartphone pour les services du quotidien.",
@@ -97,28 +97,24 @@ const Page = () => {
       iconPaths: [
         'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
       ],
-      text:
-        "Méthodes adaptées selon l'âge, le niveau et la réalité linguistique des participants.",
+      text: "Méthodes adaptées selon l'âge, le niveau et la réalité linguistique des participants.",
     },
     {
       iconPaths: [
         'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
       ],
-      text:
-        'Exercices pratiques, mises en situation et accompagnement individuel si nécessaire.',
+      text: 'Exercices pratiques, mises en situation et accompagnement individuel si nécessaire.',
     },
     {
       iconPaths: [
         'M15 12a3 3 0 11-6 0 3 3 0 016 0z',
         'M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
       ],
-      text:
-        'Supports visuels accessibles, vocabulaire simplifié et progression en petites étapes.',
+      text: 'Supports visuels accessibles, vocabulaire simplifié et progression en petites étapes.',
     },
     {
       iconPaths: ['M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'],
-      text:
-        "Possibilité d'organiser les modules dans les locaux des partenaires ou via l'Espace Public Numérique Mobile (EPNM).",
+      text: "Possibilité d'organiser les modules dans les locaux des partenaires ou via l'Espace Public Numérique Mobile (EPNM).",
     },
   ]
 
@@ -190,7 +186,8 @@ const Page = () => {
                 <p className="text-primary-100/90 leading-relaxed text-lg">
                   ECD asbl développe un programme complet d&apos;initiation en informatique visant à
                   offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
-                  s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
+                  s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de
+                  chacun.
                 </p>
               </div>
             </motion.div>
@@ -303,16 +300,16 @@ const Page = () => {
             >
               Contenus des modules
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              Les séances d&apos;initiation couvrent notamment :
-            </motion.p>
             <motion.div
               variants={fadeInUp}
               className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
             >
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
+              >
+                Les séances d&apos;initiation couvrent notamment :
+              </motion.p>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
               <ul className="relative z-10 space-y-4 text-primary-100">
                 {moduleContents.map((item) => (
@@ -343,14 +340,15 @@ const Page = () => {
             >
               Partenaires
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-12 text-center max-w-2xl mx-auto"
-            >
-              Les actions sont menées en collaboration avec :
-            </motion.p>
+
             <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
               <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-gray-200 leading-relaxed mb-12 text-center max-w-2xl mx-auto"
+                >
+                  Les actions sont menées en collaboration avec :
+                </motion.p>
                 <ul className="space-y-3 text-inherit">
                   {partenaires.map((name) => (
                     <li key={name} className="leading-relaxed flex gap-3 items-start">
