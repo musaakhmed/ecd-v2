@@ -12,9 +12,11 @@ const WhoWeAre = () => {
       >
         {/* Text block */}
         <div className="flex flex-col justify-around gap-3 md:gap-4 py-3 px-4 md:py-4 md:px-6 flex-1 min-w-0">
-          <h2 className="text-xl md:text-2xl  font-bold">{quiSommesNousPageContent.hero.title}</h2>
+          <h2 className="font-bold">{quiSommesNousPageContent.hero.title}</h2>
           {quiSommesNousPageContent.introduction.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className="text-base">
+              {paragraph}
+            </p>
           ))}
           <Link href="/a-propos/qui-sommes-nous" className="self-start md:self-auto">
             <button className="bg-primary-700 text-white py-2.5 px-5 rounded-lg md:rounded-xl text-base hover:bg-primary-500 hover:scale-105 cursor-pointer font-semibold">
