@@ -126,14 +126,14 @@ const Page = () => {
             >
               {content.approche.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              {content.approche.description}
-            </motion.p>
             <motion.div variants={fadeInUp}>
               <DarkTextCard variant="solid" raw className="rounded-2xl p-8">
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
+                >
+                  {content.approche.description}
+                </motion.p>
                 <p className="text-inherit leading-relaxed mb-6">{content.approche.intro}</p>
                 <BulletList
                   items={content.approche.objectifs}
@@ -298,4 +298,3 @@ const Page = () => {
 }
 
 export default Page
-

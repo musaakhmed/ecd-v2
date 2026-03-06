@@ -134,14 +134,14 @@ const Page = () => {
             >
               {content.competencesNumeriques.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              {content.competencesNumeriques.description}
-            </motion.p>
             <motion.div variants={fadeInUp}>
               <DarkTextCard variant="solid" raw>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg dark:text-gray-200 leading-relaxed mb-8 text-center"
+                >
+                  {content.competencesNumeriques.description}
+                </motion.p>
                 <ul className="space-y-4 text-gray-100">
                   {content.competencesNumeriques.items.map((item, index) => (
                     <li key={index} className="flex gap-3">
