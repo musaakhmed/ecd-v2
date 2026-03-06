@@ -101,7 +101,7 @@ const Page = () => {
 
       {/* Publics cibles - Parallax */}
       <section ref={parallaxRef} className="relative py-16 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 -inset-y-[100%]">
+        <div className="absolute inset-0 -inset-y-full">
           <div
             className="absolute inset-0"
             style={{
@@ -117,7 +117,7 @@ const Page = () => {
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -133,14 +133,14 @@ const Page = () => {
             >
               {content.publicsCibles.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              {content.publicsCibles.description}
-            </motion.p>
             <motion.div variants={fadeInUp}>
               <DarkTextCard variant="solid" raw>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
+                >
+                  {content.publicsCibles.description}
+                </motion.p>
                 <ul className="space-y-4 text-gray-100">
                   {content.publicsCibles.publics.map((publicItem, index) => (
                     <li key={index} className="flex gap-3">
@@ -168,19 +168,13 @@ const Page = () => {
           variants={staggerContainer}
         >
           <DarkTextCard variant="gradient-primary">
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg leading-relaxed mb-6 text-inherit"
-            >
+            <motion.p variants={fadeInUp} className="text-lg leading-3 mb-6 text-inherit">
               {content.interventions.intro}
             </motion.p>
             <motion.div variants={fadeInUp} className="mb-6">
               <BulletList items={content.interventions.items} color="primary" lightOnDark />
             </motion.div>
-            <motion.p
-              variants={fadeInUp}
-              className="leading-relaxed pt-4 border-t border-primary-600/50 mb-6 text-inherit"
-            >
+            <motion.p variants={fadeInUp} className="text-lg leading-3 mb-6 text-inherit">
               {content.interventions.conclusion}
             </motion.p>
             <motion.div variants={fadeInUp}>
