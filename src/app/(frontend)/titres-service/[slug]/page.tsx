@@ -1,10 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import {
-  getCatalogueModuleBySlug,
-  getCatalogueSlugs,
-} from '@/lib/titresServices'
+import { getCatalogueModuleBySlug, getCatalogueSlugs } from '@/lib/titresServices'
 import { TitresServiceModuleClient } from './TitresServiceModuleClient'
 
 type PageProps = {
@@ -27,9 +24,9 @@ const Page = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
+    <div className="min-h-screen bg-linear-to-b from-white to-primary-50">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-12 md:py-16 overflow-hidden">
+      <section className="relative bg-linear-to-r from-primary-600 to-secondary-600 text-white py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
@@ -43,9 +40,7 @@ const Page = async ({ params }: PageProps) => {
             <span className="mx-2">/</span>
             <span className="text-white">{module_.titre}</span>
           </nav>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl">
-            {module_.titre}
-          </h1>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl">{module_.titre}</h1>
           <p className="mt-2 text-base md:text-lg text-white/95 max-w-2xl">
             {module_.category === 'numerique'
               ? 'Compétences numériques'
