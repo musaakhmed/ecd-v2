@@ -1,113 +1,102 @@
-import { modules, TitreServiceModules } from '@/lib/titresServices'
-
+import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import {
+  getCatalogueModuleBySlug,
+  getCatalogueSlugs,
+} from '@/lib/titresServices'
+import { TitresServiceModuleClient } from './TitresServiceModuleClient'
 
 type PageProps = {
   params: Promise<{ slug: string }>
 }
 
-// Force dynamic rendering to prevent stale cache
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+export function generateStaticParams() {
+  return getCatalogueSlugs().map((slug) => ({ slug }))
+}
+
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-  const currentModule = modules.find((m) => m.slug === slug)
+  const module_ = getCatalogueModuleBySlug(slug)
 
-  if (!currentModule) {
+  if (!module_) {
     notFound()
   }
 
   return (
-    <section className="container mx-auto py-12 flex flex-col-reverse lg:flex-row lg:gap-12">
-      <div className="flex flex-col items-center justify-center gap-12 lg:w-3/4">
-        <div className="space-y-4 text-center bg-primary-100 rounded-2xl p-6">
-          <h2 className="text-3xl text-primary-800 font-semibold">Course Title</h2>
-          <p>
-            Course description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid
-            animi consectetur consequuntur delectus, deserunt eligendi et excepturi inventore magni
-            nostrum odit officiis quidem rem reprehenderit sapiente temporibus vel voluptates.
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
+      {/* Hero */}
+      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-12 md:py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-[url('/assets/hero/titres-services.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
+        <div className="container mx-auto px-4 relative z-10">
+          <nav className="mb-4 text-sm text-white/80" aria-label="Fil d'Ariane">
+            <Link href="/titres-service" className="hover:text-white underline">
+              Titres Services
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-white">{module_.titre}</span>
+          </nav>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl">
+            {module_.titre}
+          </h1>
+          <p className="mt-2 text-base md:text-lg text-white/95 max-w-2xl">
+            {module_.category === 'numerique'
+              ? 'Compétences numériques'
+              : 'Bien-être et organisation'}
           </p>
         </div>
-        <div className="space-y-4">
-          <h3 className="text-2xl text-secondary-700 font-semibold">Objectif</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolore fugit hic omnis
-            praesentium. Accusamus accusantium aliquam aut, cupiditate eaque enim est expedita ipsum
-            iure officiis, omnis ratione, sit soluta!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aut culpa cumque
-            dolores eligendi ex explicabo fugit ipsam iure labore laudantium numquam odio,
-            perspiciatis sapiente similique voluptates voluptatum. Quidem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque beatae culpa
-            dolorum esse exercitationem facilis impedit laborum mollitia nemo numquam, quasi
-            quibusdam quod repellendus, totam unde vero? Doloribus, rem.
-          </p>
-        </div>{' '}
-        <div className="space-y-4">
-          <h3 className="text-2xl text-secondary-700 font-semibold">Objectif</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolore fugit hic omnis
-            praesentium. Accusamus accusantium aliquam aut, cupiditate eaque enim est expedita ipsum
-            iure officiis, omnis ratione, sit soluta!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aut culpa cumque
-            dolores eligendi ex explicabo fugit ipsam iure labore laudantium numquam odio,
-            perspiciatis sapiente similique voluptates voluptatum. Quidem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque beatae culpa
-            dolorum esse exercitationem facilis impedit laborum mollitia nemo numquam, quasi
-            quibusdam quod repellendus, totam unde vero? Doloribus, rem.
-          </p>
-        </div>{' '}
-        <div className="space-y-4">
-          <h3 className="text-2xl text-secondary-700 font-semibold">Objectif</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolore fugit hic omnis
-            praesentium. Accusamus accusantium aliquam aut, cupiditate eaque enim est expedita ipsum
-            iure officiis, omnis ratione, sit soluta!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores aut culpa cumque
-            dolores eligendi ex explicabo fugit ipsam iure labore laudantium numquam odio,
-            perspiciatis sapiente similique voluptates voluptatum. Quidem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque beatae culpa
-            dolorum esse exercitationem facilis impedit laborum mollitia nemo numquam, quasi
-            quibusdam quod repellendus, totam unde vero? Doloribus, rem.
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-col items-start justify-center gap-4 p-6 rounded-2xl h-full bg-secondary-200/80 lg:w-1/4 lg:sticky lg:top-20">
-        <div className="flex flex-col items-start justify-center gap-4">
-          <h3 className="self-center font-semibold text-xl text-secondary-800">Infos</h3>
-          <div>
-            <h4 className="font-semibold">Public visé</h4>
-            <p>{currentModule.publicVise}</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Approbation(s)</h4>
-            <ul>
-              {currentModule.approbation.map(({ region, certificate, date }, index) => (
-                <li key={`${region}-${index}`}>
-                  <span>{region}</span>: {certificate} ({date})
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold">Durée</h4>
-            <p>{currentModule.duree}</p>
+      </section>
+
+      {/* Main + Sidebar */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+            {/* Main content */}
+            <div className="flex-1 min-w-0">
+              <TitresServiceModuleClient module_={module_} />
+            </div>
+
+            {/* Sidebar */}
+            <aside className="lg:w-80 flex-shrink-0">
+              <div className="lg:sticky lg:top-24 rounded-2xl border border-primary-200 bg-white shadow-lg p-6">
+                <h2 className="text-lg font-semibold text-secondary-900 mb-4">Infos pratiques</h2>
+                <div className="space-y-4 text-sm">
+                  <div>
+                    <h3 className="font-semibold text-secondary-800 mb-1">Public visé</h3>
+                    <p className="text-gray-600">{module_.publicVise}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-secondary-800 mb-1">Durée</h3>
+                    <p className="text-gray-600">{module_.duree}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-secondary-800 mb-2">Approbation(s)</h3>
+                    <ul className="space-y-1 text-gray-600">
+                      {module_.approbation.map((a) => (
+                        <li key={`${a.region}-${a.certificate}`}>
+                          <span className="font-medium">{a.region}</span> : {a.certificate}
+                          {a.date ? ` (${a.date})` : ''}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <Link
+                  href="/contact"
+                  className="mt-6 block w-full text-center bg-primary-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary-700 transition-colors"
+                >
+                  Demander une offre
+                </Link>
+              </div>
+            </aside>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 

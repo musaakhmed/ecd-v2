@@ -1,7 +1,9 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { catalogueModules } from '@/lib/titresServices'
 
 const Page = () => {
   const fadeInUp = {
@@ -337,6 +339,93 @@ const Page = () => {
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Catalogue des formations (ancien site) — Compétences numériques & Bien-être */}
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center mt-16 md:mt-20"
+            >
+              Catalogue des formations Titres-Services
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-center text-gray-600 mb-10 max-w-2xl mx-auto"
+            >
+              Formations agréées Bruxelles et Wallonie, éligibles au financement (FORM TS, Fonds de
+              Formation, Forem). Détail et inscriptions par module ci-dessous.
+            </motion.p>
+
+            {/* Compétences numériques */}
+            <motion.h3
+              variants={fadeInUp}
+              className="text-xl md:text-2xl font-semibold text-primary-700 mb-4 mt-8"
+            >
+              Compétences numériques
+            </motion.h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {catalogueModules
+                .filter((m) => m.category === 'numerique')
+                .map((mod) => (
+                  <motion.div key={mod.slug} variants={fadeInUp}>
+                    <Link
+                      href={`/titres-service/${mod.slug}`}
+                      className="block bg-white rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100 hover:border-primary-300 hover:-translate-y-0.5"
+                    >
+                      <h4 className="text-lg font-semibold text-secondary-900 mb-2">{mod.titre}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-3">
+                        {mod.description}
+                      </p>
+                      <span className="text-primary-600 text-sm font-medium inline-flex items-center gap-1">
+                        Lire plus
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
+            </div>
+
+            {/* Bien-être et organisation */}
+            <motion.h3
+              variants={fadeInUp}
+              className="text-xl md:text-2xl font-semibold text-primary-700 mb-4 mt-4"
+            >
+              Bien-être et organisation
+            </motion.h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {catalogueModules
+                .filter((m) => m.category === 'bien-etre')
+                .map((mod) => (
+                  <motion.div key={mod.slug} variants={fadeInUp}>
+                    <Link
+                      href={`/titres-service/${mod.slug}`}
+                      className="block bg-white rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100 hover:border-primary-300 hover:-translate-y-0.5"
+                    >
+                      <h4 className="text-lg font-semibold text-secondary-900 mb-2">{mod.titre}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-3">
+                        {mod.description}
+                      </p>
+                      <span className="text-primary-600 text-sm font-medium inline-flex items-center gap-1">
+                        Lire plus
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
             </div>
           </motion.div>
         </div>

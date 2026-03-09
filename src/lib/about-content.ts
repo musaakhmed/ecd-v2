@@ -841,12 +841,12 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
         'ECD agit au cœur de la lutte contre la fracture numérique en développant une offre adaptée à une grande diversité de publics :',
       publics: {
         left: [
-          'Jeunes,',
-          'Adultes,',
-          'Seniors,',
-          'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…),',
+          'Jeunes',
+          'Adultes',
+          'Seniors',
+          'Publics spécifiques (isolement, précarité, handicap, primo-arrivants…)',
         ],
-        right: ["Demandeurs d'emploi,", 'Apprenants en alpha et FLE,', 'Professionnels.'],
+        right: ["Demandeurs d'emploi", 'Apprenants en alpha et FLE', 'Professionnels'],
       },
       interventions: {
         title: 'Les interventions comprennent :',
