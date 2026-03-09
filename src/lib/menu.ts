@@ -85,11 +85,11 @@ export const menu: MenuItem[] = [
     link: '/ecole-devoirs',
     submenu: {
       links: [
-        { title: 'Petite histoire', link: '/ecole-devoirs#petite-histoire' },
-        { title: 'Projet pédagogique', link: '/ecole-devoirs#projet-pedagogique' },
-        { title: 'Activités et programmes', link: '/ecole-devoirs#activite-programmes' },
-        { title: 'Café Parents', link: '/ecole-devoirs#cafe-parents' },
-        { title: 'Partenaires', link: '/ecole-devoirs#partenaires' },
+        { title: 'Petite histoire', link: '/ecole-devoirs/petite-histoire' },
+        { title: 'Projet pédagogique', link: '/ecole-devoirs/projet-pedagogique' },
+        { title: 'Activités et programmes', link: '/ecole-devoirs/activites-et-programmes' },
+        { title: 'Café Parents', link: '/ecole-devoirs/cafe-parents' },
+        { title: 'Partenaires', link: '/ecole-devoirs/partenaires' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',

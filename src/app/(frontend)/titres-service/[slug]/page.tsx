@@ -31,7 +31,10 @@ const Page = async ({ params }: PageProps) => {
       {/* Hero */}
       <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-0 bg-[url('/assets/hero/titres-services.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
+        <div
+          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
+          style={{ backgroundImage: "url('/assets/hero/titres-services.jpg')" }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <nav className="mb-4 text-sm text-white/80" aria-label="Fil d'Ariane">
             <Link href="/titres-service" className="hover:text-white underline">

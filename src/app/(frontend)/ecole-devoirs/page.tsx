@@ -1,31 +1,36 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { eddPageContent } from '@/lib/ecole-devoirs-content'
+import { eddPageContent, eddSections } from '@/lib/ecole-devoirs-content'
+import { fadeInUp, staggerContainer } from '@/lib/animations'
+
+const sectionDescriptions: Record<string, string> = {
+  'petite-histoire':
+    "L'histoire du quartier du Congrès et de la création de l'École de Devoirs depuis 2015.",
+  'projet-pedagogique':
+    "Nos objectifs éducatifs et notre approche inclusive : élève, école et parents.",
+  'activites-et-programmes':
+    "Aide aux devoirs, ateliers créatifs, numérique, sorties, jeux, cuisine et bien plus.",
+  'cafe-parents':
+    "Un espace d'échange et de parole pour les parents, en partenariat avec la Maison Médicale Enseignement.",
+  partenaires:
+    "ONE, CEDD, école Congrès Dachsbeck, Maison Médicale et acteurs du quartier.",
+  'public-cible':
+    "Enfants 6-12 ans, quartier du Congrès et environs : mixité, accessibilité et continuité.",
+}
 
 const Page = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08 },
-    },
-  }
-
-  const content = eddPageContent
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
       <section className="relative h-[35vh] flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-0 bg-[url('/assets/hero/devoirs.jpg')] bg-cover bg-center mix-blend-overlay opacity-20" />
+        <div
+          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
+          style={{ backgroundImage: "url('/assets/hero/devoirs.jpg')" }}
+        />
         <div className="container mx-auto px-4 relative z-10 py-6">
           <motion.div
             initial="hidden"
@@ -50,7 +55,7 @@ const Page = () => {
       </section>
 
       {/* Intro */}
-      <section className="py-16 md:py-24" id="intro">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -63,7 +68,7 @@ const Page = () => {
               variants={fadeInUp}
               className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
             >
-              {content.intro.map((paragraph, i) => (
+              {eddPageContent.intro.map((paragraph, i) => (
                 <p
                   key={i}
                   className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
@@ -76,201 +81,61 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Activités et programmes */}
-      <section className="py-16 md:py-24 bg-white" id="activites-programmes">
+      {/* Section cards */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
+              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
             >
-              Activités et programmes
+              Découvrir l&apos;École de Devoirs
             </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              {content.activites.intro.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-4"
-                >
-                  {paragraph}
-                </p>
-              ))}
-              <ul className="space-y-3 text-gray-700 mt-4">
-                {content.activites.items.map((item, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0" />
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Public cible */}
-      <section className="py-16 md:py-24" id="public-cible">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              Public cible
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              {content.publicCible.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Notre projet pédagogique */}
-      <section className="py-16 md:py-24 bg-white" id="projet-pedagogique">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              Notre projet pédagogique
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100 mb-8"
-            >
-              {content.projetPedagogique.intro.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </motion.div>
-            <motion.h3
-              variants={fadeInUp}
-              className="text-2xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              Nos objectifs prioritaires
-            </motion.h3>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 text-center mb-8"
+              className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
             >
-              Nous visons à développer :
+              Projet pédagogique, activités, public, partenaires et petite histoire.
             </motion.p>
-            <div className="space-y-4">
-              {content.projetPedagogique.objectifs.map((obj, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeInUp}
-                  className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 border border-primary-100"
-                >
-                  <h4 className="text-lg font-semibold text-secondary-900 mb-1">
-                    {obj.title}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">{obj.description}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {eddSections.map((section) => (
+                <motion.div key={section.slug} variants={fadeInUp}>
+                  <Link
+                    href={`/ecole-devoirs/${section.slug}`}
+                    className="block h-full bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 border border-primary-100 shadow-md hover:shadow-xl hover:border-primary-200 transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+                      {section.menuTitle}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {sectionDescriptions[section.slug]}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-primary-600 text-sm font-medium">
+                      Lire plus
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Café-Parents */}
-      <section className="py-16 md:py-24" id="cafe-parents">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              Café-Parents
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              {content.cafeParents.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* La petite histoire */}
-      <section className="py-16 md:py-24 bg-white" id="petite-histoire">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              La petite histoire de l&apos;École de Devoirs
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              {content.petiteHistoire.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </section>

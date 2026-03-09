@@ -96,4 +96,21 @@ export const eddPageContent = {
     "L'EDD bénéficie aujourd'hui d'une deuxième reconnaissance par l'ONE, gage de la qualité et de la pertinence de son projet.",
     "Notre projet pédagogique repose sur une approche inclusive associant l'élève, l'école et les parents. Il s'inscrit dans une démarche d'émancipation de l'enfant, considéré comme l'acteur central de son propre épanouissement. Dans cette perspective, l'école de devoirs accorde une place importante au soutien à la parentalité et à la valorisation de tous les facteurs favorisant la réussite éducative.",
   ],
+
+  partenaires: [
+    "L'École de Devoirs « Notre-Dame-Aux-Neiges » s'inscrit dans un réseau de partenaires institutionnels et de terrain. Elle est reconnue par l'Office de la Naissance et de l'Enfance (ONE) et s'appuie sur les orientations de la Coordonnatrice des Écoles de Devoirs de Bruxelles (CEDD) pour le développement de ses activités.",
+    "Un partenariat privilégié lie l'EDD à l'école fondamentale Congrès Dachsbeck, dont une majorité des enfants accueillis sont issus. Cette collaboration permet un suivi cohérent entre le temps scolaire et le temps de l'école de devoirs, au bénéfice des apprentissages et du bien-être des enfants.",
+    "Le Café-Parents est animé en partenariat avec la Maison Médicale Enseignement, favorisant un espace d'échange et de soutien à la parentalité au cœur du quartier. D'autres collaborations ponctuelles ou durables sont nouées avec des acteurs locaux (associations, institutions culturelles, services sociaux) pour enrichir l'offre d'activités et ouvrir l'EDD sur son environnement.",
+    "Ces partenariats contribuent à la qualité de l'accueil, à la cohérence éducative et au rayonnement de l'École de Devoirs dans le Quartier du Congrès et au-delà.",
+  ],
 }
+
+/** Slugs and metadata for EDD section pages (menu + routing) */
+export const eddSections = [
+  { slug: 'petite-histoire', title: "La petite histoire de l'École de Devoirs", menuTitle: 'Petite histoire' },
+  { slug: 'projet-pedagogique', title: 'Notre projet pédagogique', menuTitle: 'Projet pédagogique' },
+  { slug: 'activites-et-programmes', title: 'Activités et programmes', menuTitle: 'Activités et programmes' },
+  { slug: 'cafe-parents', title: 'Café-Parents', menuTitle: 'Café Parents' },
+  { slug: 'partenaires', title: 'Partenaires', menuTitle: 'Partenaires' },
+  { slug: 'public-cible', title: 'Public cible', menuTitle: 'Public cible' },
+] as const
