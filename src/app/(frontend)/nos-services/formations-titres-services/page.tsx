@@ -103,13 +103,13 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-white mb-6 drop-shadow-md"
+              className="text-3xl md:text-4xl font-bold text-center mb-6 drop-shadow-md"
             >
               Compétences numériques professionnelles
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-primary-50 leading-relaxed mb-8 text-center max-w-3xl mx-auto"
+              className="text-lg  leading-relaxed mb-8 text-center max-w-3xl mx-auto"
             >
               Ces formations visent à renforcer l&apos;autonomie numérique des travailleurs et leur
               capacité à utiliser efficacement les outils nécessaires à leurs fonctions.
@@ -124,15 +124,17 @@ const Page = () => {
                         Identité numérique & démarches administratives
                       </span>
                       <p className="text-sm text-gray-200 mt-1">
-                        Utilisation de l&apos;eID, Itsme, portails administratifs (Mutuelles, ONEM, My
-                        Belgium…).
+                        Utilisation de l&apos;eID, Itsme, portails administratifs (Mutuelles, ONEM,
+                        My Belgium…).
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <div>
-                      <span className="font-semibold">Navigation Internet & recherches en ligne</span>
+                      <span className="font-semibold">
+                        Navigation Internet & recherches en ligne
+                      </span>
                       <p className="text-sm text-gray-200 mt-1">
                         Méthodes de recherche, vérification des sources, pratiques sécurisées.
                       </p>
@@ -151,7 +153,9 @@ const Page = () => {
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                     <div>
-                      <span className="font-semibold">Outils de visioconférence (Teams & Zoom)</span>
+                      <span className="font-semibold">
+                        Outils de visioconférence (Teams & Zoom)
+                      </span>
                       <p className="text-sm text-gray-200 mt-1">
                         Création de réunions, partage d&apos;écran, règles de communication à
                         distance.
@@ -181,11 +185,9 @@ const Page = () => {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-gray-600/60">
                   <p className="leading-relaxed text-inherit">
-                    <span className="font-semibold text-white">
-                      Objectif :
-                    </span>{' '}
-                    développer l&apos;autonomie, la maîtrise des outils essentiels et la capacité à
-                    réaliser des tâches numériques en toute confiance.
+                    <span className="font-semibold text-white">Objectif :</span> développer
+                    l&apos;autonomie, la maîtrise des outils essentiels et la capacité à réaliser
+                    des tâches numériques en toute confiance.
                   </p>
                 </div>
               </DarkTextCard>
@@ -245,8 +247,8 @@ const Page = () => {
                     <div>
                       <span className="font-semibold">Sécurité sur le lieu de travail</span>
                       <p className="text-sm text-secondary-100/80 mt-1">
-                        Identification des dangers, gestes préventifs, protocoles simples pour éviter
-                        les accidents.
+                        Identification des dangers, gestes préventifs, protocoles simples pour
+                        éviter les accidents.
                       </p>
                     </div>
                   </li>
@@ -297,8 +299,8 @@ const Page = () => {
                         Prévention des risques domestiques & psychosociaux
                       </span>
                       <p className="text-sm text-secondary-100/80 mt-1">
-                        Sécurité en intervention à domicile, gestion des imprévus, respect des limites
-                        professionnelles.
+                        Sécurité en intervention à domicile, gestion des imprévus, respect des
+                        limites professionnelles.
                       </p>
                     </div>
                   </li>
