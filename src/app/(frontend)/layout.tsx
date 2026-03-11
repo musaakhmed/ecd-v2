@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import SocialMediaBar from '@/components/ui/SocialMediaBar'
+import { RebrandingToast } from '@/components/RebrandingToast'
 
 export const metadata = {
   description: 'Espace Culture et Developpement',
@@ -21,6 +22,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="fr">
       <body>
         <main>
+          <RebrandingToast />
           <Header />
           <SocialMediaBar />
           {children}
