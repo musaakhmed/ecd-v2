@@ -1,12 +1,28 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 const Page = () => {
+  const parallaxRef = useRef<HTMLDivElement>(null)
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!parallaxRef.current) return
+      const rect = parallaxRef.current.getBoundingClientRect()
+      const scrolled = window.scrollY - rect.top
+      setScrollY(scrolled * 0.3)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -179,8 +195,27 @@ const Page = () => {
       </section>
 
       {/* Compétences de bien-être, ergonomie & prévention */}
-      <section className="py-12 bg-white dark:bg-gray-950">
-        <div className="container mx-auto px-6">
+      <section ref={parallaxRef} className="relative py-12 md:py-16 overflow-hidden">
+        <div className="absolute inset-0 -inset-y-[100%]">
+          <div
+            className="absolute inset-0"
+            style={{
+              transform: `translateY(${scrollY}px) scale(1.1)`,
+              willChange: 'transform',
+            }}
+          >
+            <Image
+              src="/assets/services/perfectionnement/ai-work.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
