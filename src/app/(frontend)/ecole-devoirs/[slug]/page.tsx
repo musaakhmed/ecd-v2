@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import {
   eddPageContent,
   eddSections,
+  eddSectionMeta,
 } from '@/lib/ecole-devoirs-content'
 import { EddSectionClient, type SectionContent } from './EddSectionClient'
 
@@ -39,24 +41,34 @@ const Page = async ({ params }: PageProps) => {
   const content = eddPageContent[contentKey] as SectionContent
   if (!content) notFound()
 
+  const meta = eddSectionMeta[slug]
+  const heroImage = meta?.image ?? '/assets/hero/devoirs.jpg'
+  const heroImageAlt = meta?.imageAlt ?? section.title
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
-      {/* Hero */}
-      <section className="relative h-[28vh] min-h-[200px] flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: "url('/assets/hero/devoirs.jpg')" }}
-        />
-        <div className="container mx-auto px-4 relative z-10">
-          <nav className="mb-3 text-sm text-white/80" aria-label="Fil d'Ariane">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+      {/* Hero – aligned with nos-services (Image + gradient + breadcrumb) */}
+      <section className="relative h-[35vh] min-h-[220px] flex items-center text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/85 via-primary-600/85 to-secondary-600/85" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto px-6 relative z-10 py-6">
+          <nav className="mb-3 text-xs md:text-sm text-white/80" aria-label="Fil d'Ariane">
             <Link href="/ecole-devoirs" className="hover:text-white underline">
               École de Devoirs
             </Link>
             <span className="mx-2">/</span>
             <span className="text-white">{section.menuTitle}</span>
           </nav>
-          <h1 className="text-2xl md:text-3xl font-bold max-w-4xl">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-bold max-w-4xl leading-tight">
             {section.title}
           </h1>
         </div>
@@ -64,9 +76,9 @@ const Page = async ({ params }: PageProps) => {
 
       {/* Content */}
       <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <EddSectionClient slug={slug} content={content} />
+            <EddSectionClient slug={slug} content={content} sectionImage={meta?.image} sectionImageAlt={meta?.imageAlt} />
           </div>
         </div>
       </section>

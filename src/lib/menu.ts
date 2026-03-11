@@ -90,6 +90,7 @@ export const menu: MenuItem[] = [
         { title: 'Activités et programmes', link: '/ecole-devoirs/activites-et-programmes' },
         { title: 'Café Parents', link: '/ecole-devoirs/cafe-parents' },
         { title: 'Partenaires', link: '/ecole-devoirs/partenaires' },
+        { title: 'Public cible', link: '/ecole-devoirs/public-cible' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',

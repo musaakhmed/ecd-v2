@@ -2,88 +2,89 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { eddPageContent, eddSections } from '@/lib/ecole-devoirs-content'
+import { eddPageContent, eddSections, eddSectionMeta } from '@/lib/ecole-devoirs-content'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
-
-const sectionDescriptions: Record<string, string> = {
-  'petite-histoire':
-    "L'histoire du quartier du Congrès et de la création de l'École de Devoirs depuis 2015.",
-  'projet-pedagogique':
-    "Nos objectifs éducatifs et notre approche inclusive : élève, école et parents.",
-  'activites-et-programmes':
-    "Aide aux devoirs, ateliers créatifs, numérique, sorties, jeux, cuisine et bien plus.",
-  'cafe-parents':
-    "Un espace d'échange et de parole pour les parents, en partenariat avec la Maison Médicale Enseignement.",
-  partenaires:
-    "ONE, CEDD, école Congrès Dachsbeck, Maison Médicale et acteurs du quartier.",
-  'public-cible':
-    "Enfants 6-12 ans, quartier du Congrès et environs : mixité, accessibilité et continuité.",
-}
+import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
-      {/* Hero */}
-      <section className="relative h-[35vh] flex items-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: "url('/assets/hero/devoirs.jpg')" }}
-        />
-        <div className="container mx-auto px-4 relative z-10 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+      {/* Hero – aligned with nos-services design */}
+      <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/hero/devoirs.jpg"
+            alt="École de Devoirs Notre-Dame-Aux-Neiges"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/85 via-primary-600/85 to-secondary-600/85" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container mx-auto px-6 relative z-10 py-6">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-3xl"
+            className="max-w-4xl"
           >
-            <motion.h1
+            <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl lg:!text-4xl font-bold mb-2"
+              className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white/80 mb-1 md:mb-2"
             >
               École de Devoirs
+            </motion.p>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-xl md:text-2xl lg:text-4xl! font-bold leading-tight mb-2 md:mb-3"
+            >
+              Notre-Dame-Aux-Neiges
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-sm md:text-base text-white/95 font-medium"
+              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
             >
-              Notre-Dame-Aux-Neiges
+              Un lieu bienveillant d&apos;épanouissement et de réussite pour chaque enfant du quartier
+              du Congrès. Soutien scolaire, activités variées et coéducation avec les familles.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      {/* Intro – primary gradient card like nos-services */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              {eddPageContent.intro.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-lg text-gray-700 leading-relaxed mb-6 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
+            <motion.div variants={fadeInUp}>
+              <DarkTextCard variant="gradient-primary" raw>
+                <h2 className="text-2xl md:text-3xl font-bold text-primary-100 mb-6">
+                  Une École de Devoirs reconnue par l&apos;ONE
+                </h2>
+                <div className="space-y-4 text-primary-100/90">
+                  {eddPageContent.intro.map((paragraph, i) => (
+                    <p key={i} className="leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </DarkTextCard>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Section cards */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Section cards – dynamic from content, with images */}
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -93,48 +94,68 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
             >
               Découvrir l&apos;École de Devoirs
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
+              className="text-center text-primary-700/80 dark:text-primary-100/80 mb-10 md:mb-14 max-w-2xl mx-auto text-sm md:text-base"
             >
               Projet pédagogique, activités, public, partenaires et petite histoire.
             </motion.p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eddSections.map((section) => (
-                <motion.div key={section.slug} variants={fadeInUp}>
-                  <Link
-                    href={`/ecole-devoirs/${section.slug}`}
-                    className="block h-full bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 border border-primary-100 shadow-md hover:shadow-xl hover:border-primary-200 transition-all duration-300 hover:-translate-y-0.5"
-                  >
-                    <h3 className="text-xl font-semibold text-secondary-900 mb-2">
-                      {section.menuTitle}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {sectionDescriptions[section.slug]}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-primary-600 text-sm font-medium">
-                      Lire plus
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {eddSections.map((section) => {
+                const meta = eddSectionMeta[section.slug]
+                const imageSrc = meta?.image ?? '/assets/hero/devoirs.jpg'
+                const imageAlt = meta?.imageAlt ?? section.menuTitle
+                const description = meta?.shortDescription ?? ''
+                return (
+                  <motion.article key={section.slug} variants={fadeInUp}>
+                    <Link
+                      href={`/ecole-devoirs/${section.slug}`}
+                      className="group block h-full overflow-hidden rounded-2xl border border-primary-500/50 bg-gradient-to-br from-primary-500 to-primary-600 shadow-[0_22px_45px_rgba(66,142,189,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(66,142,189,0.3)] hover:-translate-y-0.5"
+                    >
+                      <div className="relative h-44 w-full overflow-hidden md:h-52">
+                        <Image
+                          src={imageSrc}
+                          alt={imageAlt}
+                          fill
+                          className="object-cover transition duration-700 group-hover:scale-105"
+                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         />
-                      </svg>
-                    </span>
-                  </Link>
-                </motion.div>
-              ))}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-800/20 to-transparent" />
+                        <div className="absolute bottom-3 left-4 right-4">
+                          <h3 className="text-base md:text-lg font-semibold text-white leading-snug drop-shadow-sm">
+                            {section.menuTitle}
+                          </h3>
+                        </div>
+                      </div>
+                      <div className="p-5 md:p-6">
+                        <p className="text-sm text-primary-100/90 leading-relaxed line-clamp-3">
+                          {description}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-1 text-primary-100 text-sm font-medium">
+                          Lire plus
+                          <svg
+                            className="w-4 h-4 transition group-hover:translate-x-0.5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.article>
+                )
+              })}
             </div>
           </motion.div>
         </div>

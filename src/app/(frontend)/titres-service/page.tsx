@@ -84,23 +84,6 @@ const Page = () => {
               l&apos;amélioration de l&apos;organisation du travail et la promotion du bien-être des
               équipes.
             </motion.p>
-            <motion.p
-              variants={fadeInUp}
-              className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
-            >
-              Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques
-              du quotidien, organisation du temps, communication professionnelle et prévention de la
-              surcharge mentale. Elles visent à renforcer l&apos;autonomie, l&apos;efficacité et le
-              confort de travail des participants.
-            </motion.p>
-            <motion.p
-              variants={fadeInUp}
-              className="text-base md:text-lg text-white/90 leading-relaxed mb-6"
-            >
-              Organisées en inter-entreprise ou au sein de votre structure, ces formations
-              s&apos;inscrivent dans les dispositifs de financement existants et sont animées par
-              des formateurs expérimentés, à l&apos;écoute des besoins du secteur Titres-Services.
-            </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
                 Formation professionnelle
@@ -116,9 +99,48 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Modalités de partenariat - First section */}
-      <section className="py-16 md:py-24">
+      {/* Contenu principal */}
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.div
+              variants={fadeInUp}
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+              <div className="relative z-10 text-primary-100">
+                <p className="text-lg leading-relaxed mb-6">
+                  Les formations sont pratiques et adaptées aux réalités du terrain : outils
+                  numériques du quotidien, organisation du temps, communication professionnelle et
+                  prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,
+                  l&apos;efficacité et le confort de travail des participants.
+                </p>
+                <p className="text-lg leading-relaxed mb-0">
+                  Organisées en inter-entreprise ou au sein de votre structure, ces formations
+                  s&apos;inscrivent dans les dispositifs de financement existants et sont animées
+                  par des formateurs expérimentés, à l&apos;écoute des besoins du secteur
+                  Titres-Services.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Modalités de partenariat (parallax background) */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
+        <div className="relative container mx-auto px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -127,7 +149,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-12 text-center"
+              className="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-md"
             >
               Modalités de partenariat
             </motion.h2>
@@ -198,21 +220,20 @@ const Page = () => {
               <div key={g.key} className="mb-14 last:mb-0">
                 <motion.h3
                   variants={fadeInUp}
-                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-6"
+                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-6 text-center"
                 >
                   {g.title}
                 </motion.h3>
-                <div className="max-w-7xl mx-auto">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
-                    {catalogueModules
-                      .filter((m) => m.category === g.key)
-                      .map((mod) => (
-                        <motion.div
-                          key={mod.slug}
-                          variants={fadeInUp}
-                          whileHover={{ y: -4 }}
-                          className="h-full"
-                        >
+                <div className="flex flex-wrap justify-center gap-4 md:gap-5">
+                  {catalogueModules
+                    .filter((m) => m.category === g.key)
+                    .map((mod) => (
+                      <motion.div
+                        key={mod.slug}
+                        variants={fadeInUp}
+                        whileHover={{ y: -4 }}
+                        className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-[240px] xl:w-[220px]"
+                      >
                           <Link
                             href={`/titres-service/${mod.slug}`}
                             className="group block h-full overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-md hover:shadow-xl transition-all duration-300"
@@ -259,7 +280,6 @@ const Page = () => {
                           </Link>
                         </motion.div>
                       ))}
-                  </div>
                 </div>
               </div>
             ))}

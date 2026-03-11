@@ -105,6 +105,49 @@ export const eddPageContent = {
   ],
 }
 
+/** Section image and short description for landing cards and sub-pages */
+export const eddSectionMeta: Record<
+  string,
+  { image: string; imageAlt: string; shortDescription: string }
+> = {
+  'petite-histoire': {
+    image: '/assets/hero/devoirs.jpg',
+    imageAlt: "Quartier du Congrès et histoire de l'École de Devoirs",
+    shortDescription:
+      "L'histoire du quartier du Congrès et de la création de l'École de Devoirs depuis 2015.",
+  },
+  'projet-pedagogique': {
+    image: '/assets/edd/ateliers-didactique.png',
+    imageAlt: 'Projet pédagogique et objectifs',
+    shortDescription:
+      "Nos objectifs éducatifs et notre approche inclusive : élève, école et parents.",
+  },
+  'activites-et-programmes': {
+    image: '/assets/edd/ateliers-ludiques-recreatifs.png',
+    imageAlt: 'Activités et programmes',
+    shortDescription:
+      "Aide aux devoirs, ateliers créatifs, numérique, sorties, jeux, cuisine et bien plus.",
+  },
+  'cafe-parents': {
+    image: '/assets/edd/ateliers-socio-educatifs.png',
+    imageAlt: 'Café-Parents',
+    shortDescription:
+      "Un espace d'échange et de parole pour les parents, en partenariat avec la Maison Médicale Enseignement.",
+  },
+  partenaires: {
+    image: '/assets/edd/ateliers-numeriques.png',
+    imageAlt: 'Partenaires',
+    shortDescription:
+      "ONE, CEDD, école Congrès Dachsbeck, Maison Médicale et acteurs du quartier.",
+  },
+  'public-cible': {
+    image: '/assets/edd/ateliers-artistiques.png',
+    imageAlt: 'Public cible',
+    shortDescription:
+      "Enfants 6-12 ans, quartier du Congrès et environs : mixité, accessibilité et continuité.",
+  },
+}
+
 /** Slugs and metadata for EDD section pages (menu + routing) */
 export const eddSections = [
   { slug: 'petite-histoire', title: "La petite histoire de l'École de Devoirs", menuTitle: 'Petite histoire' },
