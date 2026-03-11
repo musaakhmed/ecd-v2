@@ -67,9 +67,17 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Compétences numériques professionnelles */}
-      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container mx-auto px-6">
+      {/* Compétences numériques professionnelles (parallax background) */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Parallax background image */}
+        <div
+          className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-950/80 via-primary-900/80 to-primary-950/85" />
+
+        <div className="relative container mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -79,13 +87,13 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+              className="text-3xl md:text-4xl font-bold text-center text-white mb-6 drop-shadow-md"
             >
               Compétences numériques professionnelles
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
+              className="text-lg text-primary-50 leading-relaxed mb-8 text-center max-w-3xl mx-auto"
             >
               Ces formations visent à renforcer l&apos;autonomie numérique des travailleurs et leur
               capacité à utiliser efficacement les outils nécessaires à leurs fonctions.

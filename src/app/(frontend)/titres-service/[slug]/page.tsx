@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getCatalogueModuleBySlug, getCatalogueSlugs } from '@/lib/titresServices'
@@ -30,7 +29,7 @@ const Page = async ({ params }: PageProps) => {
         <div className="absolute inset-0 bg-black/10" />
         <div
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: "url('/assets/hero/titres-services.jpg')" }}
+          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <nav className="mb-4 text-sm text-white/80" aria-label="Fil d'Ariane">
@@ -42,9 +41,11 @@ const Page = async ({ params }: PageProps) => {
           </nav>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl">{module_.titre}</h1>
           <p className="mt-2 text-base md:text-lg text-white/95 max-w-2xl">
-            {module_.category === 'numerique'
-              ? 'Compétences numériques'
-              : 'Bien-être et organisation'}
+            {module_.category === 'outils-numeriques'
+              ? 'Outils numériques'
+              : module_.category === 'techniques-prevention'
+                ? 'Techniques et prévention'
+                : 'Bien-être et savoir faire'}
           </p>
         </div>
       </section>

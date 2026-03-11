@@ -31,6 +31,15 @@ export function TitresServiceModuleClient({
       <motion.section variants={fadeInUp}>
         <h2 className="text-xl font-semibold text-secondary-900 mb-3">Description</h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
+          {module_.isPlaceholder && (
+            <div className="mb-4 rounded-xl border border-auxiliary-300 bg-auxiliary-50 px-4 py-3">
+              <p className="text-sm font-semibold text-auxiliary-800">Contenu à venir</p>
+              <p className="text-sm text-auxiliary-800/80">
+                Cette page est en cours de rédaction. Vous pouvez déjà demander une offre via le
+                bouton « Demander une offre ».
+              </p>
+            </div>
+          )}
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
             {module_.description}
           </p>

@@ -7,7 +7,9 @@ export type TitreServiceModuleApproval = {
 export type TitreServiceCatalogueModule = {
   slug: string
   titre: string
+  titreCourt?: string
   description: string
+  descriptionCourte: string
   objectifs: string[]
   modalitesPédagogie: string
   evaluationSuivi: string
@@ -15,322 +17,404 @@ export type TitreServiceCatalogueModule = {
   publicVise: string
   approbation: TitreServiceModuleApproval[]
   duree: string
-  category: 'numerique' | 'bien-etre'
+  category: 'outils-numeriques' | 'techniques-prevention' | 'bien-etre-savoir-faire'
+  imageSrc: string
+  imageAlt: string
+  isPlaceholder?: boolean
 }
 
-/** Catalogue des formations Titres-Services (ancien site espacecultures.be) */
 export const catalogueModules: TitreServiceCatalogueModule[] = [
-  // ——— Compétences numériques ———
+  // ——— Outils numériques ———
   {
     slug: 'identite-numerique',
-    titre: 'Identité numérique & démarches administratives',
-    category: 'numerique',
+    titre: 'Identité numérique',
+    descriptionCourte:
+      "eID, Itsme et portails administratifs : se connecter, s'identifier et réaliser ses démarches en autonomie.",
     description:
-      "« Se connecter, s'identifier et agir en toute autonomie sur les plateformes en ligne » — Apprendre à se familiariser avec l'usage de l'identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l'application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics : ONVA, Chômage temporaire, MyMinfin, IRISbox, Mon Espace Wallonie ou My eBox. Commander un document administratif, effectuer un paiement, s'identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd'hui une authentification sécurisée via une clé numérique.",
+      "« Se connecter, s’identifier et agir en toute autonomie sur les plateformes en ligne »\n\nApprendre à se familiariser avec l’usage de l’identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l’application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics.\n\nCommander un document administratif, effectuer un paiement, s’identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd’hui une authentification sécurisée via une clé numérique.",
     objectifs: [
       "Comprendre les outils d'identification numérique (eID, Itsme, Token, codes SMS/e-mail).",
-      "Utiliser le lecteur de carte eID : télécharger des documents officiels, s'identifier sur les portails, installer eID Belgium.",
-      "Maîtriser l'application Itsme : connexion aux portails (ONEM, IRISbox, MyMinfin, ONVA, Mon Espace Wallonie), création de compte, installation sur smartphone.",
-      "Réaliser des démarches en ligne : commander des documents, demandes communales via IRISbox, carte de chômage ONEM, documents d'impôt MyMinfin, attestation ONVA.",
-      "Adopter les bonnes pratiques de sécurité numérique : RGPD, authenticité des sites, détection du phishing, mots de passe forts.",
+      "Utiliser le lecteur de carte eID et résoudre les problèmes de connexion.",
+      'Maîtriser l’application Itsme et se connecter à des portails publics.',
+      'Réaliser des démarches administratives en ligne en toute autonomie.',
+      'Adopter les bonnes pratiques de sécurité numérique (RGPD, phishing, mots de passe).',
     ],
     modalitesPédagogie:
-      "La formation s'appuie sur une pédagogie différenciée mêlant théorie et pratique, avec une approche individuelle et collective. Chaque séance comprend une évaluation des acquis, des mises en situation réelles, des exercices guidés et des démonstrations pas à pas. Un syllabus numérique et des tutoriels accessibles via QR Code sont remis à chaque participant. Une aide à distance est également proposée après la formation.",
+      "Pédagogie différenciée mêlant théorie et pratique, avec une approche individuelle et collective. Mises en situation, exercices guidés et démonstrations pas à pas. Syllabus/tutoriels via QR Code. Aide à distance possible après la formation.",
     evaluationSuivi:
-      "À la fin de chaque session, les participants complètent un questionnaire d'évaluation post-formation. Les feedbacks recueillis permettent d'améliorer en continu le contenu, la méthode et l'animation.",
+      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer en continu le contenu et l'animation.",
     supportsLogistiques:
-      "Formations dans les locaux d'ECD ou chez les partenaires. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox (connexion Internet), syllabus. Les participants peuvent apporter leur propre PC, smartphone ou tablette.",
+      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Les participants peuvent apporter leur propre PC/smartphone/tablette.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10240', date: '23/02/2024' },
       { region: 'Bruxelles', certificate: 'E1421/B', date: '03/03/2022' },
     ],
-    duree: '4 heures / Groupe (journée ou demi-journée possible)',
-  },
-  {
-    slug: 'internet-navigation-et-recherches-en-ligne',
-    titre: 'Internet, navigation et recherches en ligne',
-    category: 'numerique',
-    description:
-      "Ce module permet d'apprendre à naviguer sur Internet de manière sûre, efficace et adaptée à ses besoins. Les participants découvriront comment choisir et utiliser un navigateur fiable, effectuer des recherches ciblées, reconnaître les sites sécurisés, personnaliser leur navigateur et adopter les bons réflexes face aux menaces en ligne. Ils apprendront également à explorer les premières fonctionnalités d'intelligence artificielle (Copilot, Gemini) pour l'aide à la rédaction et les réponses assistées.",
-    objectifs: [
-      "Découvrir l'apport de l'IA dans la navigation : utiliser Gemini (Google) et Copilot (Edge) pour répondre, analyser, résumer et guider la recherche.",
-      "Réaliser une recherche simple et pertinente grâce aux mots-clés.",
-      "Installer, ouvrir et utiliser un navigateur sur PC et smartphone.",
-      "Distinguer un navigateur d'un moteur de recherche et comprendre leur rôle.",
-      "Naviguer de manière sécurisée, gérer la confidentialité et évaluer la fiabilité des sources.",
-    ],
-    modalitesPédagogie:
-      "Pédagogie différenciée mêlant théorie et pratique, approche individuelle et collective. Chaque séance comprend une évaluation des acquis, des mises en situation réelles, des exercices guidés et des démonstrations pas à pas. Syllabus numérique et tutoriels via QR Code. Aide à distance proposée après la formation.",
-    evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer en continu le contenu et l'animation.",
-    supportsLogistiques:
-      "Formations dans les locaux d'ECD ou chez les partenaires. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur PC, smartphone ou tablette.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
-    approbation: [
-      { region: 'Wallonie', certificate: 'E10257', date: '15/04/2024' },
-      { region: 'Bruxelles', certificate: 'E1422/B', date: '03/03/2022' },
-    ],
     duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageAlt: 'Identité numérique',
   },
   {
     slug: 'messageries-electroniques',
     titre: 'Messageries électroniques',
-    category: 'numerique',
+    descriptionCourte:
+      'Créer et organiser sa boîte mail, rédiger des emails clairs, gérer pièces jointes et se protéger des spams/phishing.',
     description:
-      "La messagerie électronique est aujourd'hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel. Ce module permet de découvrir et d'utiliser efficacement les principales messageries en ligne (Gmail, Outlook), avec une initiation à l'usage de l'IA pour la rédaction, la correction, l'amélioration du style et la traduction des messages.",
+      "La messagerie électronique est aujourd’hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel.\n\nCe module a pour objectif de permettre aux participants de découvrir et d’utiliser efficacement les principales messageries (Gmail, Outlook). Il inclut aussi une initiation à l’usage de l’IA pour la rédaction, la correction, l’amélioration du style et la traduction des messages.",
     objectifs: [
-      "Création et paramétrage d'un compte email : personnaliser l'affichage, la signature et les préférences.",
-      "Navigation et utilisation : rédiger des emails clairs, utiliser l'IA pour améliorer ses messages, comprendre l'interface (envoyer/recevoir).",
-      "Gestion des pièces jointes et liens de façon sécurisée.",
-      "Organisation de la boîte de réception : trier, classer, créer des dossiers, étiquettes, archiver.",
-      "Sécurité et bonnes pratiques : protéger ses données, identifier les spams et le phishing.",
+      "Créer et paramétrer un compte email (signature, préférences).",
+      "Envoyer/recevoir et rédiger des emails adaptés au contexte.",
+      "Joindre des documents, photos et liens de façon sécurisée.",
+      'Trier, classer, archiver et retrouver des messages.',
+      'Identifier les spams et reconnaître les tentatives de phishing.',
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée, accompagnement individuel et dynamique collective. Mises en situation réelles, exercices pratiques à chaque étape. Support pédagogique accessible via QR Code. Aide à distance possible après la formation.",
+      "Pédagogie différenciée, exercices pratiques et mises en situation réelles. Support via QR Code. Aide à distance possible après la formation.",
     evaluationSuivi:
-      "Ajustement des contenus selon le niveau et le rythme des participants. Feedback et échanges individuels. Évaluations courtes en fin de séance.",
+      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
     supportsLogistiques:
-      "Formation dans vos locaux, nos espaces ou ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur PC, smartphone ou tablette.",
+      "Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur matériel.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10256', date: '15/04/2024' },
       { region: 'Bruxelles', certificate: 'E1420/B', date: '03/03/2022' },
     ],
     duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageAlt: 'Messageries électroniques',
   },
   {
-    slug: 'signatures-electroniques',
-    titre: 'Outils de signatures électroniques',
-    category: 'numerique',
+    slug: 'internet-et-navigation',
+    titre: 'Internet et navigation',
+    descriptionCourte:
+      "Naviguer efficacement, rechercher, vérifier les sources et adopter les bons réflexes de sécurité en ligne.",
     description:
-      "Simplifiez votre quotidien : plus besoin d'imprimer, signer à la main, puis scanner. La signature électronique permet de signer vos documents en ligne, rapidement et en toute sécurité, depuis un ordinateur, une tablette ou un smartphone. Du simple paraphe numérique à la signature sécurisée via carte d'identité ou Itsme, ce module vous guide pour utiliser efficacement les différents outils reconnus légalement.",
+      "Ce module permet d’apprendre à naviguer sur Internet de manière sûre, efficace et adaptée à ses besoins. Les participants découvrent comment choisir et utiliser un navigateur, effectuer des recherches, reconnaître des sites sécurisés et adopter les bons réflexes face aux menaces en ligne.",
     objectifs: [
-      "Créer une signature manuscrite numérisée (photo, recadrage, fond transparent, format PNG).",
-      "Ouvrir, signer et enregistrer un document PDF (Adobe Acrobat Reader, Aperçu, outils « Remplir et signer »).",
-      "Utiliser la carte eID ou Itsme pour une signature avancée et certifiée.",
-      "Utiliser des plateformes professionnelles pour signer et faire signer (DocuSign, Yousign, PandaDoc, etc.).",
-      "Protéger un document signé, reconnaître le niveau de signature nécessaire, vérifier l'authenticité d'une signature numérique.",
+      'Installer et utiliser un navigateur sur PC et smartphone.',
+      'Comprendre la différence entre navigateur et moteur de recherche.',
+      'Faire des recherches ciblées avec des mots-clés.',
+      'Reconnaître un site sécurisé et paramétrer la confidentialité.',
+      "Découvrir l'apport de l'IA (Copilot/Gemini) pour aider la recherche.",
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée, théorie et pratique, approche individuelle et collective. Évaluation des acquis, mises en situation réelles, exercices guidés, démonstrations pas à pas. Syllabus et tutoriels via QR Code. Aide à distance après la formation.",
+      "Pédagogie différenciée mêlant théorie et pratique. Mises en situation, exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.",
     evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer le contenu et l'animation.",
+      "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
-      "Formations dans les locaux d'ECD ou chez les partenaires. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur PC, smartphone ou tablette.",
+      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
-      { region: 'Wallonie', certificate: 'E10254', date: '15/04/2024' },
-      { region: 'Bruxelles', certificate: 'E1642/B', date: '30/10/2024' },
+      { region: 'Wallonie', certificate: 'E10257', date: '15/04/2024' },
+      { region: 'Bruxelles', certificate: 'E1422/B', date: '03/03/2022' },
     ],
     duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/epnm/initiation/informatique.jpeg',
+    imageAlt: 'Internet et navigation',
   },
   {
     slug: 'decouverte-de-chatgpt',
     titre: 'Découverte de ChatGPT',
-    category: 'numerique',
+    descriptionCourte:
+      "Découvrir ChatGPT : prompts, rédaction, reformulation, résumé, traduction et bonnes pratiques (limites, confidentialité).",
     description:
-      "Poser des questions, obtenir des explications, rédiger, corriger, reformuler, résumer, traduire, donner des idées : ce module propose une introduction pratique à ChatGPT. Accessible aux débutants et utilisateurs intermédiaires, la formation vise à comprendre comment exploiter ChatGPT de manière efficace, responsable et sécurisée, dans un cadre personnel, administratif ou professionnel.",
+      "Poser des questions, obtenir des explications, rédiger, corriger, reformuler, résumer, traduire, donner des idées : ce module propose une introduction pratique à l’utilisation de ChatGPT.\n\nLes participants apprennent à formuler des requêtes (prompts), à identifier les usages pertinents et à comprendre les limites et bonnes pratiques.",
     objectifs: [
-      "Comprendre ce qu'est une IA conversationnelle et à quoi elle sert (aide administrative, rédaction, apprentissage, organisation, créativité).",
-      "Accéder à ChatGPT sur ordinateur ou smartphone : naviguer dans l'interface, se connecter, utiliser le navigateur ou l'application mobile.",
-      "Formuler des demandes claires (technique du prompt) : structurer une consigne, tenir compte de l'objectif et du public visé.",
-      "Utiliser ChatGPT pour des tâches pratiques : idées et organisation, traduction et reformulation, rédaction/correction de textes, recherche et résumé d'informations.",
+      "Comprendre ce qu’est une IA conversationnelle et ses usages.",
+      'Accéder à ChatGPT sur ordinateur ou smartphone et naviguer dans l’interface.',
+      'Structurer une consigne (prompt) en fonction de son objectif.',
+      'Rédiger/corriger/reformuler/traduire des messages et documents.',
+      'Rechercher et résumer des informations en gardant un esprit critique.',
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée, théorie et pratique, approche individuelle et collective. Évaluation des acquis, mises en situation réelles, exercices guidés, démonstrations pas à pas. Syllabus et tutoriels via QR Code. Aide à distance après la formation.",
+      "Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.",
     evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer le contenu et l'animation.",
+      "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
-      "Formations dans les locaux d'ECD ou chez les partenaires. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur PC, smartphone ou tablette.",
+      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1605/B', date: '17/05/2024' }],
     duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
+    imageAlt: 'Découverte de ChatGPT',
   },
-  {
-    slug: 'outils-de-videoconference',
-    titre: 'Visioconférence (Microsoft Teams, Zoom & autres outils)',
-    category: 'numerique',
-    description:
-      "Microsoft Teams et Zoom sont parmi les solutions de visioconférence les plus utilisées pour communiquer et collaborer à distance. Ce module propose une découverte progressive de Teams et Zoom, sur ordinateur et smartphone, en mettant en avant leurs fonctionnalités communes et spécificités, pour permettre une utilisation autonome (participer ou organiser une réunion).",
-    objectifs: [
-      "Installer et configurer Teams et Zoom sur ordinateur et smartphone.",
-      "Rejoindre une réunion via un lien, une invitation ou une application.",
-      "Créer, planifier et organiser une réunion en ligne.",
-      "Gérer l'audio, la caméra, l'arrière-plan et les réglages d'affichage.",
-      "Utiliser les outils interactifs : chat, partage d'écran, réactions, envoi de fichiers.",
-      "Gérer les participants (micro, caméra, salle d'attente, etc.).",
-      "Options avancées : salles de répartition, enregistrement, sous-titrage, accessibilité.",
-      "Identifier les différences entre Teams, Zoom, Meet, Webex, Skype et choisir l'outil adapté.",
-    ],
-    modalitesPédagogie:
-      "Pédagogie différenciée, théorie et pratique. Évaluation des acquis, mises en situation réelles, exercices guidés, démonstrations pas à pas. Syllabus et tutoriels via QR Code. Aide à distance après la formation.",
-    evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer le contenu et l'animation.",
-    supportsLogistiques:
-      "Formations dans les locaux d'ECD ou chez les partenaires. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur PC, smartphone ou tablette.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
-    approbation: [
-      { region: 'Wallonie', certificate: 'E10255', date: '15/04/2024' },
-      { region: 'Bruxelles', certificate: 'E1427/B', date: '03/03/2022' },
-    ],
-    duree: '4 heures / Groupe',
-  },
-  // ——— Bien-être et organisation ———
+
+  // ——— Techniques et prévention ———
   {
     slug: 'techniques-de-nettoyage',
     titre: 'Techniques de nettoyage',
-    category: 'bien-etre',
+    descriptionCourte:
+      'Gestes professionnels, matériel, choix des produits, pictogrammes de sécurité et prévention des accidents.',
     description:
-      "Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d'utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces. La formation aborde les bases du nettoyage professionnel : entretien et utilisation du matériel (microfibres, éponges, aspirateur, raclettes, seaux…), précautions d'usage des produits chimiques, lecture des étiquettes et pictogrammes de sécurité, choix du produit selon la saleté et la surface, échelle des pH, cercle de Sinner (TACT). Adaptée à un public peu scolarisé, elle utilise un langage clair, des démonstrations réalistes et des activités pratiques.",
+      "Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d’utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces.\n\nLa formation aborde l’entretien du matériel, la lecture des pictogrammes, l’échelle de pH et le cercle de Sinner (TACT).",
     objectifs: [
-      "Comprendre les principes du nettoyage professionnel et le cercle de Sinner (chimie, action mécanique, temps, température).",
-      "Utiliser correctement les produits : éviter les erreurs (dosage, mélanges dangereux), choisir le produit selon la surface et la saleté, comprendre l'échelle des pH.",
-      "Assurer la sécurité : identifier les EPI nécessaires, lire étiquettes et pictogrammes, éviter brûlures, allergies, irritations.",
-      "Utiliser et entretenir le matériel professionnel : microfibres, éponges, aspirateurs, raclettes, seaux, codes couleur, bonnes pratiques d'hygiène.",
-      "Appliquer les bonnes postures et règles de sécurité (éviter chutes, torsions, plier les genoux).",
+      'Comprendre les principes du nettoyage professionnel (cercle de Sinner).',
+      'Choisir le produit adapté selon la surface et la saleté.',
+      'Lire et interpréter étiquettes, pictogrammes et labels.',
+      'Utiliser et entretenir le matériel (microfibres, aspirateur, raclettes…).',
+      'Appliquer les bonnes postures et règles de sécurité.',
     ],
     modalitesPédagogie:
-      "Adaptation aux besoins d'un public peu qualifié. Apprentissage par l'observation et la manipulation réelle. Ateliers pratiques : simulations bon/mauvais usage, lecture d'étiquette, utilisation du matériel, dilution. Participation active et démonstrations.",
+      "Ateliers pratiques, démonstrations et manipulations réelles. Langage clair et supports visuels adaptés.",
     evaluationSuivi:
-      "Exercices pratiques évalués (utilisation du matériel, choix du produit, dilution). Validation des acquis et identification des points d'attention.",
+      "Exercices pratiques évalués (choix produit/surface, dilution, matériel).",
     supportsLogistiques:
-      "Fiches illustrées (codes couleur, dilution, pictogrammes, cercle de Sinner, pH). Matériel de démonstration : EPI, produits pH variés, escabelle, seaux, raclettes, aspirateur, microfibres, plumeaux.",
+      'Fiches illustrées, EPI, produits pH variés, matériel de démonstration (microfibres, seaux, raclettes, aspirateur…).',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10406', date: '12/11/2025' },
       { region: 'Bruxelles', certificate: 'E1697/B', date: '03/09/2025' },
     ],
     duree: '4 heures / Groupe',
+    category: 'techniques-prevention',
+    imageSrc: '/assets/services/perfectionnement/bureautique.jpeg',
+    imageAlt: 'Techniques de nettoyage',
   },
   {
-    slug: 'communication-professionnelle',
-    titre: 'Communication professionnelle',
-    category: 'bien-etre',
+    slug: 'ergonomie-et-prevention-tms',
+    titre: 'Ergonomie et prévention TMS',
+    descriptionCourte:
+      'Bonnes postures, gestes protecteurs, organisation des tâches et routines simples pour réduire douleurs et fatigue.',
     description:
-      "Ce module vise à renforcer les compétences de communication interpersonnelle des aides-ménagères, tant avec les clients qu'avec les collègues ou la hiérarchie. La formation s'appuie sur des situations concrètes : demandes difficiles, incompréhensions, critiques, gestion des limites. Les participantes apprennent à accueillir une critique, désamorcer une tension, comprendre l'impact du non-verbal, poser des limites sans conflit, s'exprimer avec clarté et respect. L'approche est simple, visuelle, interactive et accessible.",
+      "Ce module sensibilise aux troubles musculo-squelettiques (TMS) liés aux tâches physiques du métier.\n\nLa formation alterne explications accessibles, démonstrations et exercices pratiques pour apprendre des gestes protecteurs directement applicables sur le terrain.",
     objectifs: [
-      "Comprendre la communication : comment naissent les malentendus, les trois dimensions (verbal, paraverbal, non verbal).",
-      "S'exprimer de manière professionnelle : message en « je », méthode DESC (Décrire, Exprimer, Suggérer, Conclure), dire non ou poser une limite sans agressivité.",
-      "Gérer les tensions et situations délicates : demandes excessives, désamorcer un conflit, réagir face à une critique.",
-      "Renforcer les compétences relationnelles : écoute active, reformulation, reconnaissance des émotions, posture professionnelle.",
+      'Comprendre les TMS et les zones du corps les plus exposées.',
+      'Repérer les gestes et situations à risque dans ses tâches.',
+      'Adopter des gestes et postures ergonomiques.',
+      'Organiser sa journée (alternance, micro-pauses).',
+      'Mettre en place des routines de prévention (étirements, échauffements).',
     ],
     modalitesPédagogie:
-      "Pédagogie active, pratique et participative. Jeux de rôle réalistes, activités ludiques (émotions, paraverbal, non-verbal), travail en duo/trio. Vocabulaire simple, cadre bienveillant, focus sur la confiance en soi.",
+      'Mises en situation, exercices en binômes, corrections personnalisées, démonstrations avec matériel réel.',
     evaluationSuivi:
-      "Auto-évaluation en début et fin de séance (progrès, besoins, confort). Bilan individuel oral : ce que j'ai appris, ce que je vais essayer dans mon prochain chantier.",
+      'Observation pratique, auto-évaluation des douleurs, quiz visuel/oral.',
     supportsLogistiques:
-      "Fiches illustrées (message en je, DESC, écoute active, 3 dimensions de la communication). Scénarios pour mises en situation. Salle modulable pour travail en groupes et jeux de rôle.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
-    approbation: [
-      { region: 'Wallonie', certificate: 'E10403', date: '12/11/2025' },
-      { region: 'Bruxelles', certificate: 'E1693/B', date: '27/07/2025' },
-    ],
-    duree: '4 heures / Groupe',
-  },
-  {
-    slug: 'ergonomie-et-prevention-des-tms',
-    titre: 'Ergonomie et prévention des TMS',
-    category: 'bien-etre',
-    description:
-      "Ce module sensibilise les aides-ménagères aux troubles musculo-squelettiques (TMS) liés aux tâches physiques du métier : nettoyage, port d'objets, travail au sol, repassage, mauvaises postures. La formation permet d'identifier les facteurs de risque et d'apprendre des gestes protecteurs simples, applicables sur le terrain. Objectifs : adopter une organisation plus ergonomique, prévenir les douleurs (dos, épaules, poignets, genoux), réduire la fatigue, améliorer le confort au travail.",
-    objectifs: [
-      "Comprendre les TMS : zones exposées (lombaires, cervicales, poignets, genoux, épaules), causes principales.",
-      "Analyser ses pratiques : repérer les gestes et situations à risque (aspirer, laver le sol, repasser, transporter, nettoyer en hauteur).",
-      "Adopter des gestes et postures ergonomiques : éviter torsions et charges, utiliser le poids du corps, ajuster la hauteur du matériel, soulever et porter sans se blesser.",
-      "Organiser sa journée : micro-pauses, alternance des tâches, optimisation de l'espace chez le client.",
-      "Mettre en place des routines de prévention : étirements, pauses actives, échauffements courts.",
-    ],
-    modalitesPédagogie:
-      "Mises en situation réalistes, exercices en binômes, démonstrations avec matériel réel (aspirateur, balais, seaux, escabelle, table de repassage). Explications accessibles avec schémas. Priorité à la répétition des bons gestes.",
-    evaluationSuivi:
-      "Observation pratique lors des exercices. Auto-évaluation des douleurs. Quiz visuel/oral : gestes corrects vs incorrects. Objectif : nouvelles habitudes protectrices.",
-    supportsLogistiques:
-      "Fiches illustrées (réglage du matériel, position du dos, gestes à éviter/corrects). Matériel : aspirateur, balais, seaux, table de repassage, escabelle, tapis pour étirements.",
+      'Fiches illustrées, matériel de démonstration (aspirateur, balais, seaux, escabelle, table de repassage…).',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10405', date: '12/11/2025' },
       { region: 'Bruxelles', certificate: 'E1696/B', date: '03/09/2025' },
     ],
     duree: '4 heures / Groupe',
+    category: 'techniques-prevention',
+    imageSrc: '/assets/services/perfectionnement/cybersecurity.avif',
+    imageAlt: 'Ergonomie et prévention TMS',
   },
   {
-    slug: 'organisation-du-travail',
-    titre: 'Organisation du travail',
-    category: 'bien-etre',
+    slug: 'produits-chimiques',
+    titre: 'Produits chimiques',
+    isPlaceholder: true,
+    descriptionCourte:
+      "Manipuler les produits d'entretien en sécurité : lecture d'étiquettes, pictogrammes et bonnes pratiques.",
     description:
-      "Ce module fournit aux aides-ménagères des outils simples et concrets pour mieux organiser leur travail au quotidien : gestion du temps, structuration des tâches, anticipation des imprévus, planification des prestations chez les clients. La formation aide à gagner en efficacité, diminuer le stress lié à la désorganisation, réduire la fatigue, éviter les allers-retours inutiles et renforcer l'autonomie et la satisfaction professionnelle.",
+      "Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).",
     objectifs: [
-      "Comprendre les principes de l'organisation : bénéfices (moins de fatigue, stress, plus d'efficacité).",
-      "Planifier efficacement : routine logique (haut vers bas, propre vers sale), prioriser, évaluer le temps des tâches courantes.",
-      "Optimiser les gestes et méthodes : méthode en zone, méthode en boucle.",
-      "Gérer les imprévus : dire non poliment, revoir les priorités avec le client, rester calme face à une demande non conforme.",
-      "Créer une organisation quotidienne et hebdomadaire : planning, carnet, to-do list ou applications, espacer les tâches lourdes.",
+      'Reconnaître les pictogrammes et comprendre les risques.',
+      'Appliquer les règles de dilution, stockage et ventilation.',
+      'Éviter les mélanges dangereux et adopter les EPI adaptés.',
     ],
-    modalitesPédagogie:
-      "Participative, bienveillante, centrée sur l'expérience. Brainstormings, mises en situation, exercices pratiques. Supports visuels simples. Jeux pédagogiques et simulations (déplacement désorganisé vs structuré).",
-    evaluationSuivi:
-      "Exercices pratiques : optimiser un déplacement, organiser une routine, remplir un planning réaliste. Auto-évaluation : prise de conscience, engagement (« Demain, je teste… »).",
-    supportsLogistiques:
-      "Fiches illustrées (méthodes en boucle/zone, routines, planification). Carnet de planification, téléphone pour listes de tâches. Matériel : paperboard, aspirateur, balais, seaux.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
-    approbation: [
-      { region: 'Wallonie', certificate: 'E10404', date: '12/11/2025' },
-      { region: 'Bruxelles', certificate: 'E1698/B', date: '03/09/2025' },
-    ],
+    modalitesPédagogie: 'Contenu à venir.',
+    evaluationSuivi: 'Contenu à venir.',
+    supportsLogistiques: 'Contenu à venir.',
+    publicVise: 'Aide-ménagères',
+    approbation: [],
     duree: '4 heures / Groupe',
-  },
-  {
-    slug: 'motivation-et-gestion-du-stress',
-    titre: 'Motivation et gestion du stress',
-    category: 'bien-etre',
-    description:
-      "Ce module accompagne les aide-ménagères dans la compréhension et la gestion du stress professionnel et le renforcement de la motivation au quotidien. À partir de situations concrètes (pression du temps, isolement, exigences des clients), la formation propose des outils simples : respiration, recentrage, pensée positive, valorisation de soi. L'approche est participative, bienveillante et adaptée au niveau de langue du public.",
-    objectifs: [
-      "Comprendre le stress : définition, phases, symptômes. Identifier comment je ressens le stress.",
-      "Identifier les sources de stress du métier (carte mentale, situations en binômes).",
-      "Mettre en pratique des techniques de gestion du stress : respiration abdominale, relaxation musculaire, ancrage, visualisation positive.",
-      "Donner du sens à son travail : création d'un « carnet de fiertés », témoignages.",
-      "Identifier une action concrète à mettre en place après la formation.",
-    ],
-    modalitesPédagogie:
-      "Participative : échanges, partages d'expérience. Concrète : situations du quotidien professionnel. Bienveillante : respect du rythme et du niveau de langue. Pratique : exercices de respiration, recentrage, visualisation, jeux de rôle.",
-    evaluationSuivi:
-      "Évaluation à chaud en fin de séance : engagement personnel (« Ce que je vais essayer »), fiche simple (smileys, ressentis, acquis).",
-    supportsLogistiques:
-      "Fiches synthétiques : pensées positives, techniques de respiration et relaxation, phases du stress. Résumé diffusé en fin de formation.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
-    approbation: [
-      { region: 'Wallonie', certificate: 'E10407', date: '12/11/2025' },
-      { region: 'Bruxelles', certificate: 'E1695/B', date: '03/09/2025' },
-    ],
-    duree: '4 heures / Groupe',
+    category: 'techniques-prevention',
+    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageAlt: 'Produits chimiques',
   },
   {
     slug: 'securite-sur-son-lieu-de-travail',
     titre: 'Sécurité sur son lieu de travail',
-    category: 'bien-etre',
+    descriptionCourte:
+      "Prévenir les risques à domicile : identifier les dangers, sécuriser l'espace de travail, réagir en cas d'incident.",
     description:
-      "La formation « Sécurité sur son lieu de travail – Prévention et protection » s'adresse aux aides-ménagères du secteur Titres-Services et vise à renforcer leurs compétences en prévention des risques dans le travail à domicile. Les travailleuses sont exposées à de multiples dangers : produits chimiques, chutes, postures contraignantes, matériel défectueux, stress, interactions avec les occupants et animaux. Ce module apporte des outils concrets pour identifier les risques, dialoguer avec le client, réagir en cas d'incident et adopter des gestes professionnels sécurisés.",
+      "Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.",
     objectifs: [
-      "Identifier les risques dans un domicile : analyser l'environnement, repérer les dangers avant de commencer.",
-      "Utiliser les produits d'entretien en sécurité : stockage, protection, éviter les mélanges dangereux, comprendre les pictogrammes.",
-      "Prévenir les TMS : utiliser correctement le matériel, adopter des postures ergonomiques.",
-      "Réagir face à un incident : signaler à l'employeur, premiers réflexes en cas de blessure.",
-      "Communiquer de manière professionnelle : demander des adaptations sans conflit, exprimer un risque au client.",
+      'Repérer les dangers avant de commencer une tâche.',
+      'Utiliser les produits en sécurité (pictogrammes, stockage, protection).',
+      'Prévenir les TMS via le bon usage du matériel et des postures.',
+      'Réagir face à un incident et signaler correctement.',
+      'Communiquer de manière professionnelle autour des risques.',
     ],
     modalitesPédagogie:
-      "Droits et devoirs en matière de sécurité. Procédure en cas d'urgence. Prévention des chutes et accidents. Lecture des pictogrammes et FDS. Exercices de communication client-travailleur. Analyse de cas concrets. Démonstrations pratiques (dilution, posture, port de charges). Mises en situation (cuisine, salle de bain, escaliers). Approche participative.",
+      'Approche participative : analyse de cas, démonstrations pratiques, mises en situation (cuisine, salle de bain, escaliers).',
     evaluationSuivi:
-      "Quiz visuel de reconnaissance des dangers. Mise en situation observée. Auto-évaluation des pratiques avant/après. Échange collectif de validation. Attestation de participation. Fiche mémo « réflexes sécurité ». Rapport pédagogique à l'entreprise. Possibilité de séance de rappel 3 à 6 mois après.",
+      'Quiz visuel, mises en situation observées, auto-évaluation avant/après, attestation de participation.',
     supportsLogistiques:
-      "Supports traduits et imagés. Trousse de premiers secours pédagogique. Affiches pictogrammes et fiches de risques. Matériel réel : produits d'entretien, gants, serpillières, aspirateur. Salle équipée (tables, chaises, vidéoprojecteur).",
+      "Supports imagés, pictogrammes, matériel réel (produits, gants, serpillières, aspirateur), salle équipée.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'En attente', date: '' },
       { region: 'Bruxelles', certificate: 'E1730/B', date: '29/01/2026' },
     ],
     duree: '4 heures / Groupe',
+    category: 'techniques-prevention',
+    imageSrc: '/assets/services/perfectionnement/trello.jpg',
+    imageAlt: 'Sécurité sur son lieu de travail',
+  },
+  {
+    slug: 'techniques-de-repassage',
+    titre: 'Techniques de repassage',
+    isPlaceholder: true,
+    descriptionCourte:
+      'Gestes, organisation et astuces pour repasser efficacement et limiter la fatigue.',
+    description:
+      'Contenu à venir. Cette page détaillera les techniques de repassage, l’organisation du poste, les gestes ergonomiques et les bonnes pratiques selon les textiles.',
+    objectifs: [
+      'Organiser son poste de repassage et régler le matériel.',
+      'Appliquer des gestes efficaces et économes en effort.',
+      'Adapter les techniques selon les textiles et les vêtements.',
+    ],
+    modalitesPédagogie: 'Contenu à venir.',
+    evaluationSuivi: 'Contenu à venir.',
+    supportsLogistiques: 'Contenu à venir.',
+    publicVise: 'Aide-ménagères',
+    approbation: [],
+    duree: '4 heures / Groupe',
+    category: 'techniques-prevention',
+    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageAlt: 'Techniques de repassage',
+  },
+
+  // ——— Bien-être et savoir faire ———
+  {
+    slug: 'communication-professionnelle',
+    titre: 'Communication professionnelle',
+    descriptionCourte:
+      "S'exprimer avec clarté, gérer les tensions, poser des limites et renforcer l'écoute active au quotidien.",
+    description:
+      "Ce module vise à renforcer les compétences de communication interpersonnelle des aides-ménagères, tant avec les clients qu'avec les collègues ou la hiérarchie.\n\nIl s'appuie sur des situations concrètes : demandes difficiles, incompréhensions, critiques, gestion des limites.",
+    objectifs: [
+      'Comprendre les dimensions de la communication (verbal, paraverbal, non verbal).',
+      'Utiliser des techniques d’expression assertive (message en « je », méthode DESC).',
+      'Désamorcer un conflit naissant et réagir face à une critique.',
+      'Pratiquer l’écoute active (reformulation, clarification).',
+    ],
+    modalitesPédagogie:
+      'Jeux de rôle réalistes, activités ludiques, travail en duo/trio. Cadre bienveillant et vocabulaire simple.',
+    evaluationSuivi:
+      'Auto-évaluation début/fin, bilan individuel oral (ce que je vais essayer).',
+    supportsLogistiques:
+      'Fiches illustrées (DESC, écoute active), scénarios imprimés, salle modulable.',
+    publicVise: 'Personnel assimilé, Aide-ménagères',
+    approbation: [
+      { region: 'Wallonie', certificate: 'E10403', date: '12/11/2025' },
+      { region: 'Bruxelles', certificate: 'E1693/B', date: '27/07/2025' },
+    ],
+    duree: '4 heures / Groupe',
+    category: 'bien-etre-savoir-faire',
+    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageAlt: 'Communication professionnelle',
+  },
+  {
+    slug: 'motivation-et-gestion-du-stress',
+    titre: 'Motivation et gestion de stress',
+    descriptionCourte:
+      'Comprendre ses sources de stress et pratiquer des techniques simples (respiration, ancrage, visualisation) au quotidien.',
+    description:
+      "Ce module accompagne dans la compréhension et la gestion du stress professionnel, ainsi que dans le renforcement de la motivation.\n\nÀ partir de situations concrètes vécues sur le terrain, la formation propose des outils simples et accessibles.",
+    objectifs: [
+      'Identifier les sources de stress et leurs effets.',
+      'Mettre en pratique des techniques simples (respiration, relaxation, ancrage, visualisation).',
+      'Renforcer la motivation et la valorisation de soi au quotidien.',
+      'Définir une action concrète à mettre en place après la formation.',
+    ],
+    modalitesPédagogie:
+      'Participative, bienveillante, adaptée au niveau de langue. Exercices guidés et échanges.',
+    evaluationSuivi:
+      'Évaluation à chaud en fin de séance (engagement personnel, fiche simple).',
+    supportsLogistiques:
+      'Fiches synthétiques (respiration, relaxation, phases du stress).',
+    publicVise: 'Personnel assimilé, Aide-ménagères',
+    approbation: [
+      { region: 'Wallonie', certificate: 'E10407', date: '12/11/2025' },
+      { region: 'Bruxelles', certificate: 'E1695/B', date: '03/09/2025' },
+    ],
+    duree: '4 heures / Groupe',
+    category: 'bien-etre-savoir-faire',
+    imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
+    imageAlt: 'Motivation et gestion de stress',
+  },
+  {
+    slug: 'organisation-du-travail',
+    titre: 'Organisation du travail',
+    descriptionCourte:
+      'Méthodes concrètes pour planifier, prioriser et gagner du temps sans perdre en qualité.',
+    description:
+      "Ce module fournit des outils simples, concrets et immédiatement applicables pour mieux organiser le travail au quotidien.\n\nIl permet d’améliorer la gestion du temps, de structurer les tâches, d’anticiper les imprévus et de planifier efficacement les prestations chez les clients.",
+    objectifs: [
+      "Comprendre les principes de l'organisation et leurs bénéfices.",
+      'Construire une routine logique et prioriser.',
+      'Appliquer des méthodes d’organisation (zone, boucle).',
+      'Gérer les imprévus et revoir les priorités avec le client.',
+      'Utiliser des outils simples (planning, carnet, to-do, appli).',
+    ],
+    modalitesPédagogie:
+      "Participative, centrée sur l'expérience : exercices, mises en situation, supports visuels.",
+    evaluationSuivi:
+      'Exercices pratiques et auto-évaluation (engagement « Demain, je teste… »).',
+    supportsLogistiques:
+      'Fiches illustrées, carnet/planning, supports visuels.',
+    publicVise: 'Personnel assimilé, Aide-ménagères',
+    approbation: [
+      { region: 'Wallonie', certificate: 'E10404', date: '12/11/2025' },
+      { region: 'Bruxelles', certificate: 'E1698/B', date: '03/09/2025' },
+    ],
+    duree: '4 heures / Groupe',
+    category: 'bien-etre-savoir-faire',
+    imageSrc: '/assets/services/perfectionnement/trello.jpg',
+    imageAlt: 'Organisation du travail',
+  },
+  {
+    slug: 'assertivite-poser-ses-limites',
+    titre: 'L’assertivité, poser ses limites',
+    isPlaceholder: true,
+    descriptionCourte:
+      "Dire non avec respect, clarifier les attentes et préserver une relation professionnelle saine.",
+    description:
+      "Contenu à venir. Cette page présentera des outils d'assertivité pour poser des limites, gérer des demandes inadaptées et communiquer avec respect.",
+    objectifs: [
+      'Formuler un refus de manière respectueuse et claire.',
+      'Clarifier une consigne et désamorcer une tension.',
+      'Préserver ses limites sans conflit.',
+    ],
+    modalitesPédagogie: 'Contenu à venir.',
+    evaluationSuivi: 'Contenu à venir.',
+    supportsLogistiques: 'Contenu à venir.',
+    publicVise: 'Aide-ménagères',
+    approbation: [],
+    duree: '4 heures / Groupe',
+    category: 'bien-etre-savoir-faire',
+    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageAlt: 'Assertivité, poser ses limites',
+  },
+  {
+    slug: 'deontologie-et-professionnalisme',
+    titre: 'Déontologie et professionnalisme',
+    isPlaceholder: true,
+    descriptionCourte:
+      'Cadre professionnel, discrétion, respect, posture et bonnes pratiques sur le terrain.',
+    description:
+      'Contenu à venir. Cette page détaillera les règles de base, la posture professionnelle et les principes de déontologie dans le cadre du travail à domicile.',
+    objectifs: [
+      'Comprendre les principes de base de la déontologie et de la confidentialité.',
+      'Adopter une posture professionnelle (communication, ponctualité, limites).',
+      'Identifier des situations sensibles et les bons réflexes.',
+    ],
+    modalitesPédagogie: 'Contenu à venir.',
+    evaluationSuivi: 'Contenu à venir.',
+    supportsLogistiques: 'Contenu à venir.',
+    publicVise: 'Aide-ménagères',
+    approbation: [],
+    duree: '4 heures / Groupe',
+    category: 'bien-etre-savoir-faire',
+    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageAlt: 'Déontologie et professionnalisme',
   },
 ]
 
