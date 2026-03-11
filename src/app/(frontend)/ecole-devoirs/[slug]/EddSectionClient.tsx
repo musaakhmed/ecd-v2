@@ -10,7 +10,7 @@ type ProjetContent = {
   intro: string[]
   objectifs: { title: string; description: string }[]
 }
-type SectionContent = ParagraphContent | ActivitesContent | ProjetContent
+export type SectionContent = ParagraphContent | ActivitesContent | ProjetContent
 
 function isActivites(c: SectionContent): c is ActivitesContent {
   return typeof c === 'object' && c !== null && 'items' in c && Array.isArray((c as ActivitesContent).items)

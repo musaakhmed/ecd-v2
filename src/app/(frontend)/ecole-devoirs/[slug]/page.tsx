@@ -4,7 +4,7 @@ import {
   eddPageContent,
   eddSections,
 } from '@/lib/ecole-devoirs-content'
-import { EddSectionClient } from './EddSectionClient'
+import { EddSectionClient, type SectionContent } from './EddSectionClient'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -22,7 +22,7 @@ const slugToContentKey = {
   'public-cible': 'publicCible',
 } as const
 
-type ContentKey = keyof typeof slugToContentKey
+type ContentKey = (typeof slugToContentKey)[keyof typeof slugToContentKey]
 
 export function generateStaticParams() {
   return eddSections.map((s) => ({ slug: s.slug }))
@@ -33,10 +33,10 @@ const Page = async ({ params }: PageProps) => {
   const section = eddSections.find((s) => s.slug === slug)
   if (!section) notFound()
 
-  const contentKey = slugToContentKey[slug as ContentKey]
+  const contentKey = slugToContentKey[slug as keyof typeof slugToContentKey]
   if (!contentKey) notFound()
 
-  const content = (eddPageContent as Record<string, unknown>)[contentKey]
+  const content = eddPageContent[contentKey] as SectionContent
   if (!content) notFound()
 
   return (
