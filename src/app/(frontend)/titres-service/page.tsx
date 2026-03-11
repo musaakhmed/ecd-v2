@@ -134,13 +134,13 @@ const Page = () => {
       </section>
 
       {/* Modalités de partenariat (parallax background) */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative isolate py-16 md:py-24 overflow-hidden">
         <div
-          className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
+          className="absolute inset-0 z-0 bg-fixed bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/assets/epnm/initiation/informatique.jpeg')" }}
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
-        <div className="relative container mx-auto px-4">
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
