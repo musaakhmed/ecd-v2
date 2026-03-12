@@ -7,27 +7,12 @@ const STORAGE_KEY = 'rebrand_toast_seen_v1'
 
 export function RebrandingToast() {
   useEffect(() => {
-    try {
-      // if (typeof window === 'undefined') return
-      // if (window.localStorage.getItem(STORAGE_KEY) === '1') return
-
-      toast(
-        'Bienvenue sur notre nouveau site suite au rebranding. Nous étions auparavant « Espace Culture et Développement ».',
-        {
-          duration: 9000,
-        },
-      )
-
-      window.localStorage.setItem(STORAGE_KEY, '1')
-    } catch {
-      // If storage is unavailable (privacy mode, etc.), still show toast once per load.
-      toast(
-        'Bienvenue sur notre nouveau site suite au rebranding. Nous étions auparavant « Espace Culture et Développement ».',
-        {
-          duration: 9000,
-        },
-      )
-    }
+    toast(
+      'Bienvenue sur notre nouveau site suite au rebranding. Nous étions auparavant «Espace Culture et Développement ASBL».',
+      {
+        duration: 3000,
+      },
+    )
   }, [])
 
   return (
@@ -35,23 +20,14 @@ export function RebrandingToast() {
       position="top-right"
       toastOptions={{
         style: {
-          background: '#0b1220',
+          background: '#163550',
           color: '#fff',
           border: '1px solid rgba(255,255,255,0.12)',
+          padding: '10px',
         },
       }}
     >
-      {(t) => (
-        <ToastBar toast={t}>
-          {({ icon, message }) => (
-            <>
-              {icon}
-              {message}
-              {t.type !== 'loading' && <button onClick={() => toast.dismiss(t.id)}>X</button>}
-            </>
-          )}
-        </ToastBar>
-      )}
+      {}
     </Toaster>
   )
 }
