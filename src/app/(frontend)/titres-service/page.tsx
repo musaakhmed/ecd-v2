@@ -28,26 +28,6 @@ const Page = () => {
     { key: 'bien-etre-savoir-faire' as const, title: 'Bien-être et savoir faire' },
   ]
 
-  const benefits = [
-    {
-      title: 'Amélioration des compétences',
-      description:
-        'Développez vos compétences numériques pour être plus efficace dans votre travail.',
-    },
-    {
-      title: 'Formation sur site',
-      description: 'Nous venons directement dans votre entreprise pour vous former à votre rythme.',
-    },
-    {
-      title: 'Équipements fournis',
-      description: 'Tous les équipements nécessaires sont apportés sur place pour la formation.',
-    },
-    {
-      title: 'Accompagnement personnalisé',
-      description: 'Un formateur dédié vous accompagne selon vos besoins et votre niveau.',
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero Section */}
@@ -100,46 +80,46 @@ const Page = () => {
       </section>
 
       {/* Contenu principal */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="bg-linear-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
-              <div className="relative z-10 text-primary-100">
-                <p className="text-lg leading-relaxed mb-6">
-                  Les formations sont pratiques et adaptées aux réalités du terrain : outils
-                  numériques du quotidien, organisation du temps, communication professionnelle et
-                  prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,
-                  l&apos;efficacité et le confort de travail des participants.
-                </p>
-                <p className="text-lg leading-relaxed mb-0">
-                  Organisées en inter-entreprise ou au sein de votre structure, ces formations
-                  s&apos;inscrivent dans les dispositifs de financement existants et sont animées
-                  par des formateurs expérimentés, à l&apos;écoute des besoins du secteur
-                  Titres-Services.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/*<section className="py-16 md:py-20">*/}
+      {/*  <div className="container mx-auto px-4">*/}
+      {/*    <motion.div*/}
+      {/*      initial="hidden"*/}
+      {/*      whileInView="visible"*/}
+      {/*      viewport={{ once: true, amount: 0.3 }}*/}
+      {/*      variants={staggerContainer}*/}
+      {/*      className="max-w-4xl mx-auto"*/}
+      {/*    >*/}
+      {/*      <motion.div*/}
+      {/*        variants={fadeInUp}*/}
+      {/*        className="bg-linear-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"*/}
+      {/*      >*/}
+      {/*        <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />*/}
+      {/*        <div className="relative z-10 text-primary-100">*/}
+      {/*          <p className="text-lg leading-relaxed mb-6">*/}
+      {/*            Les formations sont pratiques et adaptées aux réalités du terrain : outils*/}
+      {/*            numériques du quotidien, organisation du temps, communication professionnelle et*/}
+      {/*            prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,*/}
+      {/*            l&apos;efficacité et le confort de travail des participants.*/}
+      {/*          </p>*/}
+      {/*          <p className="text-lg leading-relaxed mb-0">*/}
+      {/*            Organisées en inter-entreprise ou au sein de votre structure, ces formations*/}
+      {/*            s&apos;inscrivent dans les dispositifs de financement existants et sont animées*/}
+      {/*            par des formateurs expérimentés, à l&apos;écoute des besoins du secteur*/}
+      {/*            Titres-Services.*/}
+      {/*          </p>*/}
+      {/*        </div>*/}
+      {/*      </motion.div>*/}
+      {/*    </motion.div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* Modalités de partenariat (parallax background) */}
-      <section className="relative isolate py-16 md:py-24 overflow-hidden">
+      <section className="relative isolate py-16 md:py-24 overflow-hidden h-[75vh] flex justify-center items-center">
         <div
           className="absolute inset-0 z-0 bg-fixed bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/epnm/initiation/informatique.jpeg')" }}
         />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
+        <div className="absolute inset-0 z-1 bg-linear-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -203,12 +183,12 @@ const Page = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            <motion.h2
+            <motion.h1
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
             >
               Modules de formation
-            </motion.h2>
+            </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
@@ -232,11 +212,11 @@ const Page = () => {
                         key={mod.slug}
                         variants={fadeInUp}
                         whileHover={{ y: -4 }}
-                        className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-[240px] xl:w-[220px]"
+                        className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:w-69 xl:h-96"
                       >
                         <Link
                           href={`/titres-service/${mod.slug}`}
-                          className="group block h-full overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-md hover:shadow-xl transition-all duration-300"
+                          className="group block h-full overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                         >
                           <div className="relative h-36 md:h-40 w-full overflow-hidden">
                             <Image
@@ -283,39 +263,6 @@ const Page = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-5xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-12 text-center"
-            >
-              Avantages de Nos Formations
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {benefits.map((benefit) => (
-                <motion.div
-                  key={benefit.title}
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-secondary-500"
-                >
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
