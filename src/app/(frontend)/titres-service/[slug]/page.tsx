@@ -60,9 +60,9 @@ const Page = async ({ params }: PageProps) => {
             </div>
 
             {/* Sidebar */}
-            <aside className="lg:w-80 flex-shrink-0">
+            <aside className="lg:w-80 shrink-0">
               <div className="lg:sticky lg:top-24 rounded-2xl border border-primary-200 bg-white shadow-lg p-6">
-                <h2 className="text-lg font-semibold text-secondary-900 mb-4">Infos pratiques</h2>
+                <h2 className="text-4xl! font-semibold text-secondary-900 mb-4">Infos pratiques</h2>
                 <div className="space-y-4 text-sm">
                   <div>
                     <h3 className="font-semibold text-secondary-800 mb-1">Public visé</h3>

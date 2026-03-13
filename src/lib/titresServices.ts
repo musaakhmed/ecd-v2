@@ -380,7 +380,10 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi: 'Contenu à venir.',
     supportsLogistiques: 'Contenu à venir.',
     publicVise: 'Aide-ménagères',
-    approbation: [],
+    approbation: [
+      { region: 'Wallonie', certificate: 'en attente', date: '' },
+      { region: 'Bruxelles', certificate: 'en attente', date: '' },
+    ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
     imageSrc: '/assets/services/perfectionnement/outlook.jpg',
@@ -403,7 +406,10 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi: 'Contenu à venir.',
     supportsLogistiques: 'Contenu à venir.',
     publicVise: 'Aide-ménagères',
-    approbation: [],
+    approbation: [
+      { region: 'Wallonie', certificate: 'en attente', date: '' },
+      { region: 'Bruxelles', certificate: 'en attente', date: '' },
+    ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
     imageSrc: '/assets/services/perfectionnement/office.jpg',
