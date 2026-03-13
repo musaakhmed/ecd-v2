@@ -27,20 +27,20 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
   // ——— Outils numériques ———
   {
     slug: 'identite-numerique',
-    titre: 'Identité numérique',
+    titre: 'Identité numérique et démarches administratives',
     descriptionCourte:
       "eID, Itsme et portails administratifs : se connecter, s'identifier et réaliser ses démarches en autonomie.",
     description:
-      "« Se connecter, s’identifier et agir en toute autonomie sur les plateformes en ligne »\n\nApprendre à se familiariser avec l’usage de l’identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l’application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics.\n\nCommander un document administratif, effectuer un paiement, s’identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd’hui une authentification sécurisée via une clé numérique.",
+      '« Se connecter, s’identifier et agir en toute autonomie sur les plateformes en ligne »\n\nApprendre à se familiariser avec l’usage de l’identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l’application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics.\n\nCommander un document administratif, effectuer un paiement, s’identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd’hui une authentification sécurisée via une clé numérique.',
     objectifs: [
       "Comprendre les outils d'identification numérique (eID, Itsme, Token, codes SMS/e-mail).",
-      "Utiliser le lecteur de carte eID et résoudre les problèmes de connexion.",
+      'Utiliser le lecteur de carte eID et résoudre les problèmes de connexion.',
       'Maîtriser l’application Itsme et se connecter à des portails publics.',
       'Réaliser des démarches administratives en ligne en toute autonomie.',
       'Adopter les bonnes pratiques de sécurité numérique (RGPD, phishing, mots de passe).',
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée mêlant théorie et pratique, avec une approche individuelle et collective. Mises en situation, exercices guidés et démonstrations pas à pas. Syllabus/tutoriels via QR Code. Aide à distance possible après la formation.",
+      'Pédagogie différenciée mêlant théorie et pratique, avec une approche individuelle et collective. Mises en situation, exercices guidés et démonstrations pas à pas. Syllabus/tutoriels via QR Code. Aide à distance possible après la formation.',
     evaluationSuivi:
       "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer en continu le contenu et l'animation.",
     supportsLogistiques:
@@ -61,20 +61,20 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Créer et organiser sa boîte mail, rédiger des emails clairs, gérer pièces jointes et se protéger des spams/phishing.',
     description:
-      "La messagerie électronique est aujourd’hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel.\n\nCe module a pour objectif de permettre aux participants de découvrir et d’utiliser efficacement les principales messageries (Gmail, Outlook). Il inclut aussi une initiation à l’usage de l’IA pour la rédaction, la correction, l’amélioration du style et la traduction des messages.",
+      'La messagerie électronique est aujourd’hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel.\n\nCe module a pour objectif de permettre aux participants de découvrir et d’utiliser efficacement les principales messageries (Gmail, Outlook). Il inclut aussi une initiation à l’usage de l’IA pour la rédaction, la correction, l’amélioration du style et la traduction des messages.',
     objectifs: [
-      "Créer et paramétrer un compte email (signature, préférences).",
-      "Envoyer/recevoir et rédiger des emails adaptés au contexte.",
-      "Joindre des documents, photos et liens de façon sécurisée.",
+      'Créer et paramétrer un compte email (signature, préférences).',
+      'Envoyer/recevoir et rédiger des emails adaptés au contexte.',
+      'Joindre des documents, photos et liens de façon sécurisée.',
       'Trier, classer, archiver et retrouver des messages.',
       'Identifier les spams et reconnaître les tentatives de phishing.',
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée, exercices pratiques et mises en situation réelles. Support via QR Code. Aide à distance possible après la formation.",
+      'Pédagogie différenciée, exercices pratiques et mises en situation réelles. Support via QR Code. Aide à distance possible après la formation.',
     evaluationSuivi:
       'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
     supportsLogistiques:
-      "Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur matériel.",
+      'Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur matériel.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10256', date: '15/04/2024' },
@@ -86,12 +86,12 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Messageries électroniques',
   },
   {
-    slug: 'internet-et-navigation',
-    titre: 'Internet et navigation',
+    slug: 'internet-navigation-recherches-en-ligne',
+    titre: 'Internet, navigation et recherches en ligne',
     descriptionCourte:
-      "Naviguer efficacement, rechercher, vérifier les sources et adopter les bons réflexes de sécurité en ligne.",
+      'Naviguer efficacement, rechercher, vérifier les sources et adopter les bons réflexes de sécurité en ligne.',
     description:
-      "Ce module permet d’apprendre à naviguer sur Internet de manière sûre, efficace et adaptée à ses besoins. Les participants découvrent comment choisir et utiliser un navigateur, effectuer des recherches, reconnaître des sites sécurisés et adopter les bons réflexes face aux menaces en ligne.",
+      'Ce module permet d’apprendre à naviguer sur Internet de manière sûre, efficace et adaptée à ses besoins. Les participants découvrent comment choisir et utiliser un navigateur, effectuer des recherches, reconnaître des sites sécurisés et adopter les bons réflexes face aux menaces en ligne.',
     objectifs: [
       'Installer et utiliser un navigateur sur PC et smartphone.',
       'Comprendre la différence entre navigateur et moteur de recherche.',
@@ -100,7 +100,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       "Découvrir l'apport de l'IA (Copilot/Gemini) pour aider la recherche.",
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée mêlant théorie et pratique. Mises en situation, exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.",
+      'Pédagogie différenciée mêlant théorie et pratique. Mises en situation, exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.',
     evaluationSuivi:
       "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
@@ -119,18 +119,18 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     slug: 'decouverte-de-chatgpt',
     titre: 'Découverte de ChatGPT',
     descriptionCourte:
-      "Découvrir ChatGPT : prompts, rédaction, reformulation, résumé, traduction et bonnes pratiques (limites, confidentialité).",
+      'Découvrir ChatGPT : prompts, rédaction, reformulation, résumé, traduction et bonnes pratiques (limites, confidentialité).',
     description:
-      "Poser des questions, obtenir des explications, rédiger, corriger, reformuler, résumer, traduire, donner des idées : ce module propose une introduction pratique à l’utilisation de ChatGPT.\n\nLes participants apprennent à formuler des requêtes (prompts), à identifier les usages pertinents et à comprendre les limites et bonnes pratiques.",
+      'Poser des questions, obtenir des explications, rédiger, corriger, reformuler, résumer, traduire, donner des idées : ce module propose une introduction pratique à l’utilisation de ChatGPT.\n\nLes participants apprennent à formuler des requêtes (prompts), à identifier les usages pertinents et à comprendre les limites et bonnes pratiques.',
     objectifs: [
-      "Comprendre ce qu’est une IA conversationnelle et ses usages.",
+      'Comprendre ce qu’est une IA conversationnelle et ses usages.',
       'Accéder à ChatGPT sur ordinateur ou smartphone et naviguer dans l’interface.',
       'Structurer une consigne (prompt) en fonction de son objectif.',
       'Rédiger/corriger/reformuler/traduire des messages et documents.',
       'Rechercher et résumer des informations en gardant un esprit critique.',
     ],
     modalitesPédagogie:
-      "Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.",
+      'Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.',
     evaluationSuivi:
       "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
@@ -145,12 +145,12 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
 
   // ——— Techniques et prévention ———
   {
-    slug: 'techniques-de-nettoyage',
-    titre: 'Techniques de nettoyage',
+    slug: 'techniques-de-nettoyage-securite',
+    titre: 'Techniques de nettoyage et sécurité',
     descriptionCourte:
       'Gestes professionnels, matériel, choix des produits, pictogrammes de sécurité et prévention des accidents.',
     description:
-      "Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d’utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces.\n\nLa formation aborde l’entretien du matériel, la lecture des pictogrammes, l’échelle de pH et le cercle de Sinner (TACT).",
+      'Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d’utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces.\n\nLa formation aborde l’entretien du matériel, la lecture des pictogrammes, l’échelle de pH et le cercle de Sinner (TACT).',
     objectifs: [
       'Comprendre les principes du nettoyage professionnel (cercle de Sinner).',
       'Choisir le produit adapté selon la surface et la saleté.',
@@ -159,9 +159,8 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Appliquer les bonnes postures et règles de sécurité.',
     ],
     modalitesPédagogie:
-      "Ateliers pratiques, démonstrations et manipulations réelles. Langage clair et supports visuels adaptés.",
-    evaluationSuivi:
-      "Exercices pratiques évalués (choix produit/surface, dilution, matériel).",
+      'Ateliers pratiques, démonstrations et manipulations réelles. Langage clair et supports visuels adaptés.',
+    evaluationSuivi: 'Exercices pratiques évalués (choix produit/surface, dilution, matériel).',
     supportsLogistiques:
       'Fiches illustrées, EPI, produits pH variés, matériel de démonstration (microfibres, seaux, raclettes, aspirateur…).',
     publicVise: 'Personnel assimilé, Aide-ménagères',
@@ -176,11 +175,11 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
   },
   {
     slug: 'ergonomie-et-prevention-tms',
-    titre: 'Ergonomie et prévention TMS',
+    titre: 'Ergonomie et prévention des TMS',
     descriptionCourte:
       'Bonnes postures, gestes protecteurs, organisation des tâches et routines simples pour réduire douleurs et fatigue.',
     description:
-      "Ce module sensibilise aux troubles musculo-squelettiques (TMS) liés aux tâches physiques du métier.\n\nLa formation alterne explications accessibles, démonstrations et exercices pratiques pour apprendre des gestes protecteurs directement applicables sur le terrain.",
+      'Ce module sensibilise aux troubles musculo-squelettiques (TMS) liés aux tâches physiques du métier.\n\nLa formation alterne explications accessibles, démonstrations et exercices pratiques pour apprendre des gestes protecteurs directement applicables sur le terrain.',
     objectifs: [
       'Comprendre les TMS et les zones du corps les plus exposées.',
       'Repérer les gestes et situations à risque dans ses tâches.',
@@ -190,8 +189,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     modalitesPédagogie:
       'Mises en situation, exercices en binômes, corrections personnalisées, démonstrations avec matériel réel.',
-    evaluationSuivi:
-      'Observation pratique, auto-évaluation des douleurs, quiz visuel/oral.',
+    evaluationSuivi: 'Observation pratique, auto-évaluation des douleurs, quiz visuel/oral.',
     supportsLogistiques:
       'Fiches illustrées, matériel de démonstration (aspirateur, balais, seaux, escabelle, table de repassage…).',
     publicVise: 'Personnel assimilé, Aide-ménagères',
@@ -206,12 +204,12 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
   },
   {
     slug: 'produits-chimiques',
-    titre: 'Produits chimiques',
+    titre: 'Produits chimiques et sécurité',
     isPlaceholder: true,
     descriptionCourte:
       "Manipuler les produits d'entretien en sécurité : lecture d'étiquettes, pictogrammes et bonnes pratiques.",
     description:
-      "Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).",
+      'Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).',
     objectifs: [
       'Reconnaître les pictogrammes et comprendre les risques.',
       'Appliquer les règles de dilution, stockage et ventilation.',
@@ -229,11 +227,11 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
   },
   {
     slug: 'securite-sur-son-lieu-de-travail',
-    titre: 'Sécurité sur son lieu de travail',
+    titre: 'Sécurité sur le lieu de travail-Prévention et protection',
     descriptionCourte:
       "Prévenir les risques à domicile : identifier les dangers, sécuriser l'espace de travail, réagir en cas d'incident.",
     description:
-      "Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.",
+      'Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.',
     objectifs: [
       'Repérer les dangers avant de commencer une tâche.',
       'Utiliser les produits en sécurité (pictogrammes, stockage, protection).',
@@ -246,7 +244,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi:
       'Quiz visuel, mises en situation observées, auto-évaluation avant/après, attestation de participation.',
     supportsLogistiques:
-      "Supports imagés, pictogrammes, matériel réel (produits, gants, serpillières, aspirateur), salle équipée.",
+      'Supports imagés, pictogrammes, matériel réel (produits, gants, serpillières, aspirateur), salle équipée.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'En attente', date: '' },
@@ -297,8 +295,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     modalitesPédagogie:
       'Jeux de rôle réalistes, activités ludiques, travail en duo/trio. Cadre bienveillant et vocabulaire simple.',
-    evaluationSuivi:
-      'Auto-évaluation début/fin, bilan individuel oral (ce que je vais essayer).',
+    evaluationSuivi: 'Auto-évaluation début/fin, bilan individuel oral (ce que je vais essayer).',
     supportsLogistiques:
       'Fiches illustrées (DESC, écoute active), scénarios imprimés, salle modulable.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
@@ -317,7 +314,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Comprendre ses sources de stress et pratiquer des techniques simples (respiration, ancrage, visualisation) au quotidien.',
     description:
-      "Ce module accompagne dans la compréhension et la gestion du stress professionnel, ainsi que dans le renforcement de la motivation.\n\nÀ partir de situations concrètes vécues sur le terrain, la formation propose des outils simples et accessibles.",
+      'Ce module accompagne dans la compréhension et la gestion du stress professionnel, ainsi que dans le renforcement de la motivation.\n\nÀ partir de situations concrètes vécues sur le terrain, la formation propose des outils simples et accessibles.',
     objectifs: [
       'Identifier les sources de stress et leurs effets.',
       'Mettre en pratique des techniques simples (respiration, relaxation, ancrage, visualisation).',
@@ -326,10 +323,8 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     modalitesPédagogie:
       'Participative, bienveillante, adaptée au niveau de langue. Exercices guidés et échanges.',
-    evaluationSuivi:
-      'Évaluation à chaud en fin de séance (engagement personnel, fiche simple).',
-    supportsLogistiques:
-      'Fiches synthétiques (respiration, relaxation, phases du stress).',
+    evaluationSuivi: 'Évaluation à chaud en fin de séance (engagement personnel, fiche simple).',
+    supportsLogistiques: 'Fiches synthétiques (respiration, relaxation, phases du stress).',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10407', date: '12/11/2025' },
@@ -346,7 +341,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Méthodes concrètes pour planifier, prioriser et gagner du temps sans perdre en qualité.',
     description:
-      "Ce module fournit des outils simples, concrets et immédiatement applicables pour mieux organiser le travail au quotidien.\n\nIl permet d’améliorer la gestion du temps, de structurer les tâches, d’anticiper les imprévus et de planifier efficacement les prestations chez les clients.",
+      'Ce module fournit des outils simples, concrets et immédiatement applicables pour mieux organiser le travail au quotidien.\n\nIl permet d’améliorer la gestion du temps, de structurer les tâches, d’anticiper les imprévus et de planifier efficacement les prestations chez les clients.',
     objectifs: [
       "Comprendre les principes de l'organisation et leurs bénéfices.",
       'Construire une routine logique et prioriser.',
@@ -356,10 +351,8 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     modalitesPédagogie:
       "Participative, centrée sur l'expérience : exercices, mises en situation, supports visuels.",
-    evaluationSuivi:
-      'Exercices pratiques et auto-évaluation (engagement « Demain, je teste… »).',
-    supportsLogistiques:
-      'Fiches illustrées, carnet/planning, supports visuels.',
+    evaluationSuivi: 'Exercices pratiques et auto-évaluation (engagement « Demain, je teste… »).',
+    supportsLogistiques: 'Fiches illustrées, carnet/planning, supports visuels.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10404', date: '12/11/2025' },
@@ -375,7 +368,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     titre: 'L’assertivité, poser ses limites',
     isPlaceholder: true,
     descriptionCourte:
-      "Dire non avec respect, clarifier les attentes et préserver une relation professionnelle saine.",
+      'Dire non avec respect, clarifier les attentes et préserver une relation professionnelle saine.',
     description:
       "Contenu à venir. Cette page présentera des outils d'assertivité pour poser des limites, gérer des demandes inadaptées et communiquer avec respect.",
     objectifs: [
