@@ -6,6 +6,45 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { catalogueModules } from '@/lib/titresServices'
 
+const modalitiesParticipation = [
+  {
+    step: '01',
+    title: 'Prise de contact avec l’entreprise',
+    description:
+      'L’entreprise agréée Titres-Services prend contact avec notre équipe afin d’organiser une formation destinée à ses travailleurs, par e-mail ou par téléphone. Un rendez-vous est ensuite fixé afin d’échanger sur vos besoins et les modalités d’organisation.',
+  },
+  {
+    step: '02',
+    title: 'Analyse des besoins',
+    description:
+      'En fonction de votre demande, nous analysons les besoins spécifiques de l’entreprise afin de proposer un programme de formation adapté au contexte professionnel et au niveau des participants. Notre catalogue de formations est également mis à votre disposition pour vous aider dans le choix des modules.',
+  },
+  {
+    step: '03',
+    title: 'Planification des sessions',
+    description:
+      'Les sessions de formation sont planifiées en concertation avec l’entreprise, en tenant compte des disponibilités des travailleurs et des contraintes organisationnelles. Les formations peuvent être organisées directement dans votre entreprise ou dans nos locaux à Bruxelles.',
+  },
+  {
+    step: '04',
+    title: 'Mise en œuvre de la formation',
+    description:
+      'Nos formateurs interviennent directement au sein de l’entreprise pour dispenser les formations et accompagner les travailleurs dans le développement de leurs compétences professionnelles. À l’issue des formations, nous transmettons à l’entreprise les évaluations des participants ainsi que nos recommandations pédagogiques.',
+  },
+  {
+    step: '05',
+    title: 'Démarches de remboursement',
+    description:
+      'Pour les entreprises souhaitant introduire des demandes de remboursement, notre équipe peut vous accompagner tout au long de la procédure auprès des fonds de formation de Bruxelles, de la Wallonie et du Form TS.',
+  },
+  {
+    step: '06',
+    title: 'Subventions de formation',
+    description:
+      'Certains de nos modules sont repris dans le catalogue du Form TS, en formule « In Company » ou « Calendrier ouvert », selon les sessions proposées.',
+  },
+]
+
 const Page = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -61,8 +100,9 @@ const Page = () => {
               className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
             >
               ECD asbl accompagne les entreprises dans le renforcement des compétences numériques,
-              l&apos;amélioration de l&apos;organisation du travail et la promotion du bien-être des
-              équipes.
+              l’amélioration de l’organisation du travail et la promotion du bien-être des équipes.
+              Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques,
+              organisation du temps, communication professionnelle, sécurité et prévention.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
@@ -78,40 +118,6 @@ const Page = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Contenu principal */}
-      {/*<section className="py-16 md:py-20">*/}
-      {/*  <div className="container mx-auto px-4">*/}
-      {/*    <motion.div*/}
-      {/*      initial="hidden"*/}
-      {/*      whileInView="visible"*/}
-      {/*      viewport={{ once: true, amount: 0.3 }}*/}
-      {/*      variants={staggerContainer}*/}
-      {/*      className="max-w-4xl mx-auto"*/}
-      {/*    >*/}
-      {/*      <motion.div*/}
-      {/*        variants={fadeInUp}*/}
-      {/*        className="bg-linear-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"*/}
-      {/*      >*/}
-      {/*        <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />*/}
-      {/*        <div className="relative z-10 text-primary-100">*/}
-      {/*          <p className="text-lg leading-relaxed mb-6">*/}
-      {/*            Les formations sont pratiques et adaptées aux réalités du terrain : outils*/}
-      {/*            numériques du quotidien, organisation du temps, communication professionnelle et*/}
-      {/*            prévention de la surcharge mentale. Elles visent à renforcer l&apos;autonomie,*/}
-      {/*            l&apos;efficacité et le confort de travail des participants.*/}
-      {/*          </p>*/}
-      {/*          <p className="text-lg leading-relaxed mb-0">*/}
-      {/*            Organisées en inter-entreprise ou au sein de votre structure, ces formations*/}
-      {/*            s&apos;inscrivent dans les dispositifs de financement existants et sont animées*/}
-      {/*            par des formateurs expérimentés, à l&apos;écoute des besoins du secteur*/}
-      {/*            Titres-Services.*/}
-      {/*          </p>*/}
-      {/*        </div>*/}
-      {/*      </motion.div>*/}
-      {/*    </motion.div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
 
       {/* Modalités de partenariat (parallax background) */}
       <section className="relative isolate py-16 md:py-24 overflow-hidden h-[50vh] flex justify-center items-center">
@@ -194,7 +200,7 @@ const Page = () => {
               <div key={g.key} className="mb-14 last:mb-0">
                 <motion.h3
                   variants={fadeInUp}
-                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-6"
+                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-2"
                 >
                   {g.title}
                 </motion.h3>
@@ -262,7 +268,7 @@ const Page = () => {
       </section>
 
       {/* How it Works Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -278,32 +284,7 @@ const Page = () => {
             </motion.h2>
             <div className="max-w-4xl mx-auto">
               <div className="space-y-8">
-                {[
-                  {
-                    step: '01',
-                    title: 'Contact entreprise',
-                    description:
-                      "L'entreprise agréée Titres-Services nous contacte pour organiser une formation pour ses travailleurs.",
-                  },
-                  {
-                    step: '02',
-                    title: 'Évaluation des besoins',
-                    description:
-                      "Nous évaluons les besoins spécifiques de l'entreprise et adaptons le programme de formation.",
-                  },
-                  {
-                    step: '03',
-                    title: 'Planification',
-                    description:
-                      'Nous planifions les sessions de formation sur site avec les équipements nécessaires.',
-                  },
-                  {
-                    step: '04',
-                    title: 'Formation',
-                    description:
-                      'Nos formateurs interviennent directement sur site pour former les travailleurs.',
-                  },
-                ].map((item) => (
+                {modalitiesParticipation.map((item) => (
                   <motion.div
                     key={item.step}
                     variants={fadeInUp}
@@ -322,40 +303,6 @@ const Page = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Partnerships Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
-            >
-              Partenariats
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-primary-100"
-            >
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Nous collaborons avec de nombreuses entreprises agréées Titres-Services en Belgique
-                pour offrir des formations numériques de qualité à leurs travailleurs.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Si vous êtes une entreprise agréée Titres-Services et souhaitez proposer des
-                formations numériques à vos travailleurs, n&apos;hésitez pas à nous contacter pour
-                discuter de vos besoins et organiser une intervention sur votre site.
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </section>
