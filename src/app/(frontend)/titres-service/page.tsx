@@ -114,12 +114,12 @@ const Page = () => {
       {/*</section>*/}
 
       {/* Modalités de partenariat (parallax background) */}
-      <section className="relative isolate py-16 md:py-24 overflow-hidden h-[75vh] flex justify-center items-center">
+      <section className="relative isolate py-16 md:py-24 overflow-hidden h-[50vh] flex justify-center items-center">
         <div
           className="absolute inset-0 z-0 bg-fixed bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/epnm/initiation/informatique.jpeg')" }}
         />
-        <div className="absolute inset-0 z-1 bg-linear-to-b from-primary-950/85 via-primary-900/80 to-primary-950/85" />
+        <div className="absolute inset-0 z-1 bg-linear-to-b from-primary-950/55 via-primary-900/45 to-primary-950/55 " />
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -175,7 +175,7 @@ const Page = () => {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -189,22 +189,16 @@ const Page = () => {
             >
               Modules de formation
             </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
-            >
-              Une offre structurée en trois axes. Cliquez sur un module pour accéder à sa fiche.
-            </motion.p>
 
             {groupes.map((g) => (
               <div key={g.key} className="mb-14 last:mb-0">
                 <motion.h3
                   variants={fadeInUp}
-                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-6 text-center"
+                  className="text-xl md:text-2xl font-semibold text-primary-700 mb-6"
                 >
                   {g.title}
                 </motion.h3>
-                <div className="flex flex-wrap justify-center gap-4 md:gap-5">
+                <div className="flex flex-wrap gap-4 md:gap-5">
                   {catalogueModules
                     .filter((m) => m.category === g.key)
                     .map((mod) => (
