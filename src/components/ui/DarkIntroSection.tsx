@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 
 interface DarkIntroSectionProps {
   children: React.ReactNode

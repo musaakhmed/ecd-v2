@@ -1,12 +1,12 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { eddPageContent, eddSections, eddSectionMeta } from '@/lib/ecole-devoirs-content'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
+import { DiscoverCard } from '@/components/ui/DiscoverCard'
 
 const Page = () => {
   return (
@@ -111,49 +111,15 @@ const Page = () => {
                 const imageAlt = meta?.imageAlt ?? section.menuTitle
                 const description = meta?.shortDescription ?? ''
                 return (
-                  <motion.article key={section.slug} variants={fadeInUp}>
-                    <Link
-                      href={`/ecole-devoirs/${section.slug}`}
-                      className="group block h-full overflow-hidden rounded-2xl border border-primary-500/50 bg-gradient-to-br from-primary-500 to-primary-600 shadow-[0_22px_45px_rgba(66,142,189,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(66,142,189,0.3)] hover:-translate-y-0.5"
-                    >
-                      <div className="relative h-44 w-full overflow-hidden md:h-52">
-                        <Image
-                          src={imageSrc}
-                          alt={imageAlt}
-                          fill
-                          className="object-cover transition duration-700 group-hover:scale-105"
-                          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-800/20 to-transparent" />
-                        <div className="absolute bottom-3 left-4 right-4">
-                          <h3 className="text-base md:text-lg font-semibold text-white leading-snug drop-shadow-sm">
-                            {section.menuTitle}
-                          </h3>
-                        </div>
-                      </div>
-                      <div className="p-5 md:p-6">
-                        <p className="text-sm text-primary-100/90 leading-relaxed line-clamp-3">
-                          {description}
-                        </p>
-                        <span className="mt-4 inline-flex items-center gap-1 text-primary-100 text-sm font-medium">
-                          Lire plus
-                          <svg
-                            className="w-4 h-4 transition group-hover:translate-x-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </Link>
-                  </motion.article>
+                  <DiscoverCard
+                    key={section.slug}
+                    href={`/ecole-devoirs/${section.slug}`}
+                    title={section.menuTitle}
+                    description={description}
+                    imageSrc={imageSrc}
+                    imageAlt={imageAlt}
+                    variants={fadeInUp}
+                  />
                 )
               })}
             </div>

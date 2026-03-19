@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 
 type ParagraphContent = string[]

@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { menu } from '@/lib/menu'
+import { menu } from '@/lib/data/navigation/menu'
 import Image from 'next/image'
 import Partners from '@/components/Footer/Partners'
+import { footerContent } from '@/lib/content/footerContent'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -15,18 +16,16 @@ const Footer = () => {
             {/* About Section */}
             <div className="hidden lg:block lg:w-1/4"></div>
             <div className="space-y-4 hidden">
-              <h3 className="text-xl font-bold text-white mb-4">Espace Culture et Développement</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{footerContent.about.title}</h3>
 
               <p className="text-primary-200 text-sm leading-relaxed">
-                Espace Cultures & Développement asbl favorise l&apos;intégration et l&apos;insertion
-                de tous les publics grâce à la promotion de la culture, l&apos;accès aux outils
-                numériques, et la lutte contre la fracture numérique.
+                {footerContent.about.description}
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-white mb-1.5">Liens rapides</h3>
+              <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.quickLinksTitle}</h3>
               <ul className="space-y-1.5">
                 {menu.map((item) => (
                   <li key={item.link}>
@@ -43,46 +42,44 @@ const Footer = () => {
 
             {/* Contact Section */}
             <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-white mb-1.5">Contact</h3>
+              <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.contactTitle}</h3>
               <ul className="space-y-1.5 text-sm">
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">Email</span>
+                  <span className="text-primary-300 mb-0.5">{footerContent.contact.emailLabel}</span>
                   <a
-                    href="mailto:info@espacecultures.be"
+                    href={footerContent.contact.emailHref}
                     className="text-primary-200 hover:text-white transition-colors duration-200"
                   >
-                    info@espacecultures.be
+                    {footerContent.contact.email}
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">Téléphone</span>
+                  <span className="text-primary-300 mb-0.5">{footerContent.contact.phoneLabel}</span>
                   <a
-                    href="tel:+32123456789"
+                    href={footerContent.contact.phoneHref}
                     className="text-primary-200 hover:text-white transition-colors duration-200"
                   >
-                    +32 2 425 65 85
+                    {footerContent.contact.phone}
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">Adresse</span>
-                  <span className="text-primary-200">
-                    Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique
-                  </span>
+                  <span className="text-primary-300 mb-0.5">{footerContent.contact.addressLabel}</span>
+                  <span className="text-primary-200">{footerContent.contact.address}</span>
                 </li>{' '}
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">N° d’entreprise </span>
-                  <span className="text-primary-200">0628.538.422</span>
+                  <span className="text-primary-300 mb-0.5">{footerContent.contact.companyNumberLabel} </span>
+                  <span className="text-primary-200">{footerContent.contact.companyNumber}</span>
                 </li>
               </ul>
             </div>
 
             {/* Social Media & Newsletter */}
             <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-white mb-1.5">Suivez-nous</h3>
+              <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.followUsTitle}</h3>
               <div className="flex space-x-3 mb-3">
                 <a
-                  href="https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/"
-                  aria-label="LinkedIn"
+                  href={footerContent.social.linkedin.href}
+                  aria-label={footerContent.social.linkedin.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
@@ -99,8 +96,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/asblecd/"
-                  aria-label="Instagram"
+                  href={footerContent.social.instagram.href}
+                  aria-label={footerContent.social.instagram.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
@@ -117,8 +114,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/espaceculturesetdeveloppement/"
-                  aria-label="Facebook"
+                  href={footerContent.social.facebook.href}
+                  aria-label={footerContent.social.facebook.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
@@ -135,8 +132,8 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw"
-                  aria-label="YouTube"
+                  href={footerContent.social.youtube.href}
+                  aria-label={footerContent.social.youtube.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
                   <svg
@@ -155,30 +152,27 @@ const Footer = () => {
               </div>
 
               <div className="flex space-x-3 items-center">
-                <Image src="/assets/gdpr.png" alt="GDPR Logo RGPD" height={36} width={36} />
+                <Image src="/assets/gdpr.png" alt={footerContent.gdpr.imageAlt} height={36} width={36} />
                 <span className="text-xs">
-                  Espace Cultures & Développement asbl veille au respect et la protection des
-                  données personnelles de ses usages en s&apos;alignant sur le règlement RGPD
+                  {footerContent.gdpr.text}
                 </span>
               </div>
 
               {/* Section NEWSLETTER peut etre activée en supprimant 'hidden' dans le div suivant */}
               <div className="hidden">
-                <h4 className="text-sm font-semibold text-white mb-2">Newsletter</h4>
-                <p className="text-primary-200 text-xs mb-3">
-                  Restez informé de nos dernières actualités
-                </p>
+                <h4 className="text-sm font-semibold text-white mb-2">{footerContent.newsletter.title}</h4>
+                <p className="text-primary-200 text-xs mb-3">{footerContent.newsletter.description}</p>
                 <form className="flex flex-col space-y-2">
                   <input
                     type="email"
-                    placeholder="Votre email"
+                    placeholder={footerContent.newsletter.emailPlaceholder}
                     className="px-3 py-2 bg-secondary-800 border border-secondary-700 rounded text-primary-100 placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                   />
                   <button
                     type="submit"
                     className="px-4 py-2 bg-accent-600 hover:bg-accent-700 text-white rounded transition-colors duration-200 text-sm font-medium"
                   >
-                    S&apos;abonner
+                    {footerContent.newsletter.submitLabel}
                   </button>
                 </form>
               </div>
@@ -191,20 +185,20 @@ const Footer = () => {
             {/*<div className="absolute top-0 left-0 w-full h-px bg-secondary-800 transform -skew-x-12 origin-left overflow-hidden"></div>*/}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-primary-300 text-sm">
-                © {currentYear} Espace Culture et Développement. Tous droits réservés.
+                © {currentYear} {footerContent.bottomBar.copyrightSuffix}
               </p>
               <div className="flex space-x-6 text-sm">
                 <Link
-                  href="/mentions-legales"
+                  href={footerContent.bottomBar.legal.href}
                   className="text-primary-300 hover:text-white transition-colors duration-200"
                 >
-                  Mentions légales
+                  {footerContent.bottomBar.legal.label}
                 </Link>
                 <Link
-                  href="/politique-de-confidentialite"
+                  href={footerContent.bottomBar.privacy.href}
                   className="text-primary-300 hover:text-white transition-colors duration-200"
                 >
-                  Politique de confidentialité
+                  {footerContent.bottomBar.privacy.label}
                 </Link>
               </div>
             </div>

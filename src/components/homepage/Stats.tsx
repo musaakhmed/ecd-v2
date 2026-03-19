@@ -2,38 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { homepageImpactStats, type ImpactStatItem } from '@/lib/data/homepage/homepageData'
 
-interface StatItem {
-  value: number
-  suffix?: string
-  prefix?: string
-  label: string
-  description?: string
-}
-
-const stats: StatItem[] = [
-  {
-    value: 1250,
-    suffix: '+',
-    label: 'Participants',
-    description: 'Personnes accompagnées',
-  },
-  {
-    value: 48,
-    label: 'Programmes',
-    description: "D'activités et de formations",
-  },
-  {
-    value: 4472,
-    label: 'Sessions',
-    description: 'Sessions organisées',
-  },
-  {
-    value: 102,
-    label: 'Partenaires',
-    description: 'Institutions et associations',
-  },
-]
+type StatItem = ImpactStatItem
 
 const AnimatedCounter = ({
   value,
@@ -143,7 +114,7 @@ const Stats = () => {
 
         {/* Stats Grid - four cards on one line on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-4">
-          {stats.map((stat, index) => (
+          {homepageImpactStats.map((stat, index) => (
             <StatCard key={stat.label} stat={stat} index={index} />
           ))}
         </div>

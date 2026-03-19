@@ -3,7 +3,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { quiSommesNousPageContent } from '@/lib/about-content'
+import { quiSommesNousPageContent } from '@/lib/content/pages/about-content'
+import { aboutPageMedia } from '@/lib/content/aboutPageMedia'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
@@ -47,8 +48,8 @@ const Page = () => {
       <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/operateur/economie-sociale.png"
-            alt="Qui sommes-nous"
+            src={aboutPageMedia.quiSommesNous.heroImage.src}
+            alt={aboutPageMedia.quiSommesNous.heroImage.alt}
             fill
             className="object-cover"
             priority
@@ -102,8 +103,8 @@ const Page = () => {
             }}
           >
             <Image
-              src="/assets/operateur/parallax/approche-participative.png"
-              alt=""
+              src={aboutPageMedia.quiSommesNous.approcheParallaxImage.src}
+              alt={aboutPageMedia.quiSommesNous.approcheParallaxImage.alt}
               fill
               className="object-cover"
               priority

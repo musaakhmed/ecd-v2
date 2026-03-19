@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { quiSommesNousPageContent } from '@/lib/about-content'
+import { quiSommesNousPageContent } from '@/lib/content/pages/about-content'
 import Image from 'next/image'
 
 const WhoWeAre = () => {

@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { commonLabels } from '@/lib/content/commonLabels'
 
 export interface ProjectCardItem {
   title: string
@@ -51,7 +52,7 @@ const ProjectCard = ({ project, index = 0, animationDelay }: ProjectCardProps) =
                 {project.description}
               </p>
               <span className="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200 text-sm border border-white/20 flex-shrink-0 mt-auto">
-                En savoir plus
+                {commonLabels.ctas.learnMore}
                 <svg
                   className="w-4 h-4 flex-shrink-0"
                   fill="none"

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { contactPageContent, type ContactInfoKind } from '@/lib/content/contactPage'
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -58,79 +59,54 @@ const Page = () => {
     }, 1500)
   }
 
-  const contactInfo = [
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      ),
-      title: 'Email',
-      content: 'info@espacecultures.be',
-      link: 'mailto:info@espacecultures.be',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-          />
-        </svg>
-      ),
-      title: 'Téléphone',
-      content: '+32 2 425 65 85',
-      link: '',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-        </svg>
-      ),
-      title: 'Adresse',
-      content: 'Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique',
-      link: 'https://maps.google.com/?q=Rue+du+Gouvernement+Provisoire+34A,+1000+Bruxelles',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          />
-        </svg>
-      ),
-      title: "N° d'entreprise",
-      content: '0628.538.422',
-      link: null,
-    },
-  ]
-
-  const openingHours = [
-    { day: 'Lundi - Vendredi', hours: '8h00 - 16h00' },
-    { day: 'Samedi et Dimanche', hours: 'Fermé' },
-  ]
+  const contactInfoIcons: Record<ContactInfoKind, React.ReactNode> = {
+    email: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+    phone: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+        />
+      </svg>
+    ),
+    address: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
+    ),
+    companyNumber: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+        />
+      </svg>
+    ),
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
@@ -148,13 +124,13 @@ const Page = () => {
               variants={fadeInUp}
               className="text-xl md:text-2xl lg:!text-4xl font-bold mb-2 md:mb-3"
             >
-              Contactez-nous
+              {contactPageContent.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-sm md:text-base text-white/90 leading-snug"
             >
-              Nous sommes là pour répondre à vos questions et vous accompagner dans vos projets.
+              {contactPageContent.hero.description}
             </motion.p>
           </motion.div>
         </div>
@@ -177,11 +153,11 @@ const Page = () => {
                 variants={fadeInUp}
                 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6"
               >
-                Informations de contact
+                {contactPageContent.contactInfoTitle}
               </motion.h2>
 
               <motion.div variants={fadeInUp} className="space-y-6 mb-8">
-                {contactInfo.map((info) => (
+                {contactPageContent.contactInfo.map((info) => (
                   <motion.div
                     key={info.title}
                     whileHover={{ x: 5 }}
@@ -197,7 +173,7 @@ const Page = () => {
                         className="flex items-start gap-4"
                       >
                         <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">
-                          {info.icon}
+                          {contactInfoIcons[info.kind]}
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-secondary-900 mb-1">
@@ -209,7 +185,7 @@ const Page = () => {
                     ) : (
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">
-                          {info.icon}
+                          {contactInfoIcons[info.kind]}
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-secondary-900 mb-1">
@@ -242,10 +218,10 @@ const Page = () => {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  Horaires d&apos;ouverture
+                  {contactPageContent.openingHours.title}
                 </h3>
                 <div className="space-y-3">
-                  {openingHours.map((schedule) => (
+                  {contactPageContent.openingHours.items.map((schedule) => (
                     <div
                       key={schedule.day}
                       className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
@@ -275,7 +251,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-secondary-900 mb-8 text-center"
             >
-              Comment Nous Trouver
+              {contactPageContent.map.title}
             </motion.h2>
             <motion.div
               variants={fadeInUp}
@@ -283,7 +259,7 @@ const Page = () => {
             >
               <div className="aspect-video bg-gray-200 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?z13&pb=!1m18!1m12!1m3!1d157.4349295965867!2d4.366605689163625!3d50.85044584013054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c37c36537d0d%3A0xfc739c17df9b3856!2sEspace%20Cultures%20%26%20D%C3%A9veloppement%20asbl!5e0!3m2!1sen!2sbe!4v1768469153906!5m2!1sen!2sbe"
+                  src={contactPageContent.map.iframeSrc}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -295,12 +271,11 @@ const Page = () => {
               </div>
               <div className="p-6 bg-primary-50">
                 <p className="text-gray-700 text-center">
-                  <strong>Adresse :</strong> Rue du Gouvernement Provisoire 34A, 1000 Bruxelles,
-                  Belgique
+                  <strong>{contactPageContent.map.addressLabel}</strong> {contactPageContent.map.address}
                 </p>
                 <div className="flex justify-center mt-4">
                   <a
-                    href="https://www.google.com/maps/place/Espace+Cultures+%26+D%C3%A9veloppement+asbl/"
+                    href={contactPageContent.map.openInGoogleMapsHref}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors"
@@ -313,7 +288,7 @@ const Page = () => {
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
-                    Ouvrir dans Google Maps
+                    {contactPageContent.map.openInGoogleMapsLabel}
                   </a>
                 </div>
               </div>

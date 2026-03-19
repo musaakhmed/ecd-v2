@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { menu } from '@/lib/menu'
+import { menu } from '@/lib/data/navigation/menu'
+import { uiLabels } from '@/lib/content/uiLabels'
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -247,7 +248,7 @@ export const Navbar = () => {
           onClick={toggleMenu}
           className="lg:hidden px-2 py-1 rounded focus:outline-none focus:ring-2 transition-all duration-200 relative z-50"
           style={{ '--tw-ring-color': 'var(--color-primary)' } as React.CSSProperties}
-          aria-label="Toggle mobile menu"
+          aria-label={uiLabels.navbar.toggleMobileMenuAriaLabel}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -406,7 +407,7 @@ export const Navbar = () => {
                           onClick={() => toggleSubmenu(link)}
                           className="px-4 py-3 text-gray-600"
                           whileTap={{ scale: 0.95 }}
-                          aria-label="Toggle submenu"
+                          aria-label={uiLabels.navbar.toggleSubmenuAriaLabel}
                         >
                           <motion.svg
                             className="w-5 h-5"

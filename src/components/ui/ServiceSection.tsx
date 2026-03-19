@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import type { ServiceSection as ServiceSectionType } from '@/lib/maintenance-services'
+import type { ServiceSection as ServiceSectionType } from '@/lib/data/services/maintenance-services'
 import { DarkTextCard } from './DarkTextCard'
 
 interface ServiceSectionProps {

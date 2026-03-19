@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 
 interface HeroSectionProps {
   imageSrc: string
@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
+            className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
           >
             {description}
           </motion.p>

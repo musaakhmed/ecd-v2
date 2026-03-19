@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { fadeInUp } from '@/lib/animations'
 
 interface BulletListProps {
-  items: string[]
+  items: readonly string[]
   color?: 'primary' | 'secondary'
   className?: string
   itemClassName?: string

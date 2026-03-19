@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { fadeInUp } from '@/lib/animations'
+import { fadeInUp } from '@/lib/utils/animations'
 
 interface ContentCardProps {
   title?: string

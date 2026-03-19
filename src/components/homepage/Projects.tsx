@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { projects } from '@/lib/projects'
+import { projects } from '@/lib/data/homepage/projects'
 import ProjectCard from '@/components/ui/ProjectCard'
 
 const Projects = () => {

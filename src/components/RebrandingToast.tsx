@@ -3,9 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, X } from 'lucide-react'
-
-const TITLE = 'Nouveau nom, même mission'
-const OLD_NAME = 'Espace Culture et Développement ASBL'
+import { rebrandingToastContent } from '@/lib/content/rebrandingToastContent'
 
 export function RebrandingToast() {
   const [open, setOpen] = useState(false)
@@ -50,55 +48,55 @@ export function RebrandingToast() {
           type="button"
           onClick={close}
           className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-xl text-white/80 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-200 focus:ring-offset-2 focus:ring-offset-primary-800"
-          aria-label="Fermer"
+          aria-label={rebrandingToastContent.modal.closeAriaLabel}
         >
           <X className="size-5" />
         </button>
 
         <div className="relative">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-white/90">
-            Mise à jour
+            {rebrandingToastContent.modal.badgeLeft}
             <span className="h-1 w-1 rounded-full bg-white/50" />
-            Rebranding
+            {rebrandingToastContent.modal.badgeRight}
           </div>
 
           <h2
             id="rebrand-modal-title"
             className="text-pretty text-2xl font-semibold tracking-tight text-white md:text-3xl"
           >
-            {TITLE}
+            {rebrandingToastContent.modal.title}
           </h2>
 
           <p className="mt-3 text-base leading-relaxed text-primary-50/90">
-            Vous êtes au bon endroit. Nous changeons d’identité visuelle et de nom — auparavant{' '}
-            <span className="font-semibold text-white">{OLD_NAME}</span>.
+            {rebrandingToastContent.modal.introPrefix}{' '}
+            <span className="font-semibold text-white">{rebrandingToastContent.modal.oldName}</span>.
           </p>
 
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm font-semibold text-white">Ce qui change</p>
+              <p className="text-sm font-semibold text-white">{rebrandingToastContent.panels.changes.title}</p>
               <ul className="mt-3 space-y-2 text-sm text-primary-50/85">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary-200" />
-                  <span>Le nom, le logo et le design du site.</span>
+                  <span>{rebrandingToastContent.panels.changes.items[0]}</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary-200" />
-                  <span>Une navigation plus simple pour trouver nos services.</span>
+                  <span>{rebrandingToastContent.panels.changes.items[1]}</span>
                 </li>
               </ul>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm font-semibold text-white">Ce qui ne change pas</p>
+              <p className="text-sm font-semibold text-white">{rebrandingToastContent.panels.unchanged.title}</p>
               <ul className="mt-3 space-y-2 text-sm text-primary-50/85">
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-200" />
-                  <span>Nos équipes, nos valeurs et nos activités.</span>
+                  <span>{rebrandingToastContent.panels.unchanged.items[0]}</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-200" />
-                  <span>Les moyens de contact et l’accompagnement sur le terrain.</span>
+                  <span>{rebrandingToastContent.panels.unchanged.items[1]}</span>
                 </li>
               </ul>
             </div>
@@ -110,15 +108,15 @@ export function RebrandingToast() {
               onClick={close}
               className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:ring-offset-2 focus:ring-offset-primary-800"
             >
-              Continuer
+              {rebrandingToastContent.actions.continueLabel}
             </button>
 
             <Link
-              href="/a-propos/qui-sommes-nous"
+              href={rebrandingToastContent.actions.learnMoreHref}
               onClick={close}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-50 px-5 py-3 text-sm font-semibold text-primary-900 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-primary-200 focus:ring-offset-2 focus:ring-offset-primary-800"
             >
-              En savoir plus
+              {rebrandingToastContent.actions.learnMoreLabel}
               <ArrowRight className="size-4" />
             </Link>
           </div>

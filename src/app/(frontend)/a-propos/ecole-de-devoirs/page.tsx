@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { eddPageContent } from '@/lib/about-content'
+import { eddPageContent } from '@/lib/content/pages/about-content'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { ImageCardHero } from '@/components/ui/ImageCardHero'

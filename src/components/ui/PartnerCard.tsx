@@ -2,29 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { partnersContent } from '@/lib/content/partnersAndServicesContent'
 
 type Partners = { title: string; image: string }[]
 
-const partners: Partners = [
-  { title: 'stib', image: '/assets/partenaires/stib.jpg' },
-  { title: 'fondation roi baudoin', image: '/assets/partenaires/logoFRB.png' },
-  { title: 'equal brussels', image: '/assets/partenaires/Logo-equal-bleu.png' },
-  {
-    title: 'francophones bruxelles',
-    image: '/assets/partenaires/Logo_Francophones_Bruxelles.png',
-  },
-  {
-    title: 'region bruxelles capitale',
-    image: '/assets/partenaires/region_bruxelles_capitale.png',
-  },
-  { title: 'form ts', image: '/assets/partenaires/form-ts.png' },
-  { title: 'ville de bruxelles', image: '/assets/partenaires/ville_bx.png' },
-  { title: 'brusoc', image: '/assets/partenaires/brusoc.png' },
-  {
-    title: 'digital belgium skills fund',
-    image: '/assets/partenaires/dbsf.avif',
-  },
-]
+const partners: Partners = [...partnersContent.logos]
 
 const LOGO_SIZE = 100
 const CARD_PADDING = 12

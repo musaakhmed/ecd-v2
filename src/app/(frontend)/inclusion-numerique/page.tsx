@@ -6,58 +6,18 @@ import { motion } from 'framer-motion'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
-
-const programmes = [
-  {
-    title: 'Jeunes connectés',
-    href: '/inclusion-numerique/jeunes-connectes',
-    description:
-      "Stages et ateliers 6–18 ans : programmation, robotique (Thymio, Micro:bit), création numérique. Développer ses compétences en s'amusant.",
-    variant: 'gradient-primary' as const,
-  },
-  {
-    title: 'Seniors & le digital',
-    href: '/inclusion-numerique/seniors-digital',
-    description:
-      "Accompagnement pour gagner en autonomie numérique : démarches en ligne, smartphone, tablette, sécurité. À son rythme, dans un cadre bienveillant.",
-    variant: 'gradient-secondary' as const,
-  },
-  {
-    title: 'Alpha, FLE et Numérique',
-    href: '/inclusion-numerique/alpha-fle-numerique',
-    description:
-      "Intégration du numérique dans les parcours Alpha et FLE. Accès aux démarches en ligne malgré le double obstacle langue et numérique.",
-    variant: 'gradient-primary' as const,
-  },
-  {
-    title: 'Emploi & Numérique',
-    href: '/inclusion-numerique/emploi-numerique',
-    description:
-      "Ateliers informatiques pour demandeurs d'emploi et publics en activation : recherche d'emploi, candidatures, plateformes, CV en ligne.",
-    variant: 'gradient-secondary' as const,
-  },
-]
-
-const lieuxIntervention = [
-  'Associations et collectifs',
-  'Écoles de devoirs',
-  'Maisons de quartier',
-  'Permanences sociales',
-  'Centres communautaires',
-  'Logements sociaux',
-  'Structures partenaires',
-]
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
+import { inclusionNumeriqueLanding } from '@/lib/content/pages/inclusionNumeriqueData'
 
 const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       <HeroSection
-        imageSrc="/assets/hero/transition-numerique.png"
-        imageAlt="Inclusion numérique"
-        subtitle="Espace Public Numérique Mobile"
-        title="Inclusion numérique"
-        description="ECD asbl déploie un accompagnement mobile et inclusif : ateliers et permanences numériques au plus près des habitants, dans les lieux de proximité."
+        imageSrc={inclusionNumeriqueLanding.hero.imageSrc}
+        imageAlt={inclusionNumeriqueLanding.hero.imageAlt}
+        subtitle={inclusionNumeriqueLanding.hero.subtitle}
+        title={inclusionNumeriqueLanding.hero.title}
+        description={inclusionNumeriqueLanding.hero.description}
       />
 
       {/* Intro – dispositif de proximité */}
@@ -77,20 +37,13 @@ const Page = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
               <div className="relative z-10 text-primary-100">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary-100 mb-4">
-                  Un dispositif de proximité
+                  {inclusionNumeriqueLanding.intro.title}
                 </h2>
                 <p className="text-primary-100/90 leading-relaxed text-lg mb-4">
-                  Aujourd&apos;hui, de plus en plus de démarches essentielles se font en ligne :
-                  prendre un rendez-vous, consulter ses documents, accéder à une administration,
-                  envoyer un e-mail, utiliser une application bancaire ou rechercher une information
-                  fiable. Pour une partie de la population, ces gestes restent complexes ou
-                  inaccessibles. Le manque d&apos;équipement, de compétences ou de confiance
-                  renforce la fracture numérique et les inégalités.
+                  {inclusionNumeriqueLanding.intro.paragraphs[0]}
                 </p>
                 <p className="text-primary-100/90 leading-relaxed text-lg">
-                  Pour répondre à ces enjeux, ECD asbl déploie l&apos;EPNM – Espace Public Numérique
-                  Mobile – et propose des ateliers et permanences numériques directement sur le
-                  terrain, au plus près des habitants.
+                  {inclusionNumeriqueLanding.intro.paragraphs[1]}
                 </p>
               </div>
             </motion.div>
@@ -112,16 +65,16 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
             >
-              Nos programmes
+              {inclusionNumeriqueLanding.programmesSection.title}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-lg text-gray-700 dark:text-gray-200 text-center mb-12 max-w-2xl mx-auto"
             >
-              Découvrez les actions d&apos;inclusion numérique adaptées à chaque public.
+              {inclusionNumeriqueLanding.programmesSection.description}
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch">
-              {programmes.map((programme) => (
+              {inclusionNumeriqueLanding.programmes.map((programme) => (
                 <motion.div key={programme.href} variants={fadeInUp} className="flex min-h-0">
                   <Link href={programme.href} className="block w-full min-h-0 flex">
                     <DarkTextCard
@@ -135,7 +88,7 @@ const Page = () => {
                         {programme.description}
                       </p>
                       <span className="inline-flex items-center gap-2 text-inherit font-medium">
-                        Découvrir
+                        {inclusionNumeriqueLanding.programmesSection.linkLabel}
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path
                             strokeLinecap="round"
@@ -167,16 +120,15 @@ const Page = () => {
             <motion.div variants={fadeInUp}>
               <DarkTextCard
                 variant="solid"
-                title="Lieux d'intervention"
+                title={inclusionNumeriqueLanding.lieuxSection.title}
                 raw
                 hover
                 className="rounded-2xl p-6 md:p-8"
               >
                 <p className="leading-relaxed text-inherit mb-6">
-                  Les ateliers et permanences sont organisés dans des lieux de proximité, en
-                  partenariat avec :
+                  {inclusionNumeriqueLanding.lieuxSection.intro}
                 </p>
-                <BulletList items={lieuxIntervention} lightOnDark animated={false} />
+                <BulletList items={inclusionNumeriqueLanding.lieuxIntervention} lightOnDark animated={false} />
               </DarkTextCard>
             </motion.div>
           </motion.div>

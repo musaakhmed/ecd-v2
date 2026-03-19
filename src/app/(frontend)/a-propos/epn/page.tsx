@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { epnPageContent } from '@/lib/about-content'
+import { epnPageContent } from '@/lib/content/pages/about-content'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { BulletList } from '@/components/ui/BulletList'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'

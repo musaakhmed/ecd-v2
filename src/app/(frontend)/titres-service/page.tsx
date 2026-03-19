@@ -1,10 +1,9 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { catalogueModules } from '@/lib/titresServices'
+import { DiscoverCard } from '@/components/ui/DiscoverCard'
 
 const modalitiesParticipation = [
   {
@@ -208,57 +207,18 @@ const Page = () => {
                   {catalogueModules
                     .filter((m) => m.category === g.key)
                     .map((mod) => (
-                      <motion.div
-                        key={mod.slug}
-                        variants={fadeInUp}
-                        whileHover={{ y: -4 }}
-                        className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:w-69 xl:h-96"
-                      >
-                        <Link
+                      <div key={mod.slug} className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:w-69 xl:h-96">
+                        <DiscoverCard
                           href={`/titres-service/${mod.slug}`}
-                          className="group block h-full overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-                        >
-                          <div className="relative h-36 md:h-40 w-full overflow-hidden">
-                            <Image
-                              src={mod.imageSrc}
-                              alt={mod.imageAlt}
-                              fill
-                              className="object-cover transition duration-700 group-hover:scale-105"
-                              sizes="(min-width: 1280px) 16rem, (min-width: 1024px) 18rem, (min-width: 640px) 50vw, 100vw"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/55 via-secondary-900/10 to-transparent" />
-                            {mod.isPlaceholder && (
-                              <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-auxiliary-50 px-3 py-1 text-[11px] font-semibold text-auxiliary-800 ring-1 ring-auxiliary-200">
-                                Contenu à venir
-                              </span>
-                            )}
-                          </div>
-                          <div className="p-4 md:p-5 flex flex-col h-[220px]">
-                            <h4 className="text-base md:text-lg font-semibold text-secondary-900 mb-2">
-                              {mod.titre}
-                            </h4>
-                            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-3">
-                              {mod.descriptionCourte}
-                            </p>
-                            <span className="mt-auto text-primary-600 text-sm font-medium inline-flex items-center gap-1">
-                              Voir la fiche
-                              <svg
-                                className="w-4 h-4"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </Link>
-                      </motion.div>
+                          title={mod.titre}
+                          description={mod.descriptionCourte}
+                          imageSrc={mod.imageSrc}
+                          imageAlt={mod.imageAlt}
+                          ctaLabel="Voir la fiche"
+                          badgeLabel={mod.isPlaceholder ? 'Contenu à venir' : undefined}
+                          variants={fadeInUp}
+                        />
+                      </div>
                     ))}
                 </div>
               </div>

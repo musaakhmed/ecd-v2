@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { esdPageContent } from '@/lib/about-content'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { esdPageContent } from '@/lib/content/pages/about-content'
+import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { ParallaxSection } from '@/components/ui/ParallaxSection'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'

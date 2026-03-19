@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, stagger } from 'framer-motion'
+import { homepageHeroSlides } from '@/lib/data/homepage/homepageData'
 
 type Slide = {
   image: string
@@ -10,37 +11,7 @@ type Slide = {
   description: string
 }
 
-interface HeroProps {
-  slides: Slide[]
-}
-
-const slides: Slide[] = [
-  {
-    image: '/assets/hero/devoirs.jpg',
-    title: 'Soutien scolaire',
-    subtitle: "Parce que chaque enfant mérite toute ses chances à l'école",
-    description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
-  },
-  {
-    image: '/assets/hero/titres-services.jpg',
-    title: 'Transition numérique',
-    subtitle: "Réussir sa transition numérique, c'est possible pour tous",
-    description:
-      'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
-  },
-  {
-    image: '/assets/hero/seniors-transition-numerique.jpg',
-    title: 'Formations professionelles',
-    subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
-    description: 'Des formations qui transforment le quitidien des aide-ménagères.',
-  },
-  {
-    image: '/assets/hero/robotics.jpg',
-    title: 'Services sur mesure',
-    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
-    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
-  },
-]
+const slides: Slide[] = homepageHeroSlides
 
 const textVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -138,7 +109,7 @@ export const Hero = () => {
                   {slides[activeIndex].subtitle}
                 </motion.h1>
                 <motion.p
-                  className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl"
+                  className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl text-justify [text-align-last:start]"
                   variants={textVariants}
                 >
                   {slides[activeIndex].description}

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import type { TitreServiceCatalogueModule } from '@/lib/titresServices'
+import type { TitreServiceCatalogueModule } from '@/lib/data/titres-services/titresServices'
+import { titresServiceModuleLabels } from '@/lib/content/pages/titresServicePageData'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -29,14 +30,17 @@ export function TitresServiceModuleClient({
     >
       {/* Description */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">Description</h2>
+        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+          {titresServiceModuleLabels.descriptionTitle}
+        </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
           {module_.isPlaceholder && (
             <div className="mb-4 rounded-xl border border-auxiliary-300 bg-auxiliary-50 px-4 py-3">
-              <p className="text-sm font-semibold text-auxiliary-800">Contenu à venir</p>
+              <p className="text-sm font-semibold text-auxiliary-800">
+                {titresServiceModuleLabels.placeholderTitle}
+              </p>
               <p className="text-sm text-auxiliary-800/80">
-                Cette page est en cours de rédaction. Vous pouvez déjà demander une offre via le
-                bouton « Demander une offre ».
+                {titresServiceModuleLabels.placeholderDescription}
               </p>
             </div>
           )}
@@ -48,8 +52,15 @@ export function TitresServiceModuleClient({
 
       {/* Objectifs */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">Objectifs</h2>
+        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+          {titresServiceModuleLabels.objectifsTitle}
+        </h2>
         <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl border border-primary-100 p-6 shadow-sm">
+          {module_.objectifsIntro && (
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-4">
+              {module_.objectifsIntro}
+            </p>
+          )}
           <ul className="space-y-3">
             {module_.objectifs.map((obj, i) => (
               <li key={i} className="flex gap-3">
@@ -64,7 +75,7 @@ export function TitresServiceModuleClient({
       {/* Modalités et pédagogie */}
       <motion.section variants={fadeInUp}>
         <h2 className="text-xl font-semibold text-secondary-900 mb-3">
-          Modalités et pédagogie
+          {titresServiceModuleLabels.modalitesTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -76,7 +87,7 @@ export function TitresServiceModuleClient({
       {/* Évaluation et suivi */}
       <motion.section variants={fadeInUp}>
         <h2 className="text-xl font-semibold text-secondary-900 mb-3">
-          Évaluation et suivi
+          {titresServiceModuleLabels.evaluationTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -88,7 +99,7 @@ export function TitresServiceModuleClient({
       {/* Supports logistiques */}
       <motion.section variants={fadeInUp}>
         <h2 className="text-xl font-semibold text-secondary-900 mb-3">
-          Supports logistiques
+          {titresServiceModuleLabels.supportsTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
