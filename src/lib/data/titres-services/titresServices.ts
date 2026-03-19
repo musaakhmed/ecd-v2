@@ -157,6 +157,43 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
     imageAlt: 'Découverte de ChatGPT',
   },
+  {
+    slug: 'word-excel-debutant',
+    titre: 'Word et Excel – Niveau débutant',
+    descriptionCourte:
+      'Initiation à Word et Excel : premiers gestes sur ordinateur, documents simples et bases d’un tableau, par des exercices pratiques et progressifs.',
+    description:
+      "Cette formation d’initiation à Word et Excel a pour objectif d’accompagner les participantes dans la découverte des outils bureautiques de base, utiles tant dans la vie quotidienne que dans le cadre professionnel.\n\nAdaptée à un public débutant, elle permet d’acquérir les premières compétences numériques à travers des exercices pratiques, concrets et progressifs. Les participantes apprennent à utiliser un ordinateur, à manipuler la souris et le clavier, à créer des documents simples et à comprendre les bases de l’utilisation d’un tableau.",
+    objectifs: [
+      'Développer l’autonomie numérique de base.',
+      'Se familiariser avec les outils bureautiques Word et Excel.',
+      'Renforcer la confiance dans l’utilisation de l’ordinateur.',
+      'Module Word – Traitement de texte :',
+      'Créer, enregistrer et ouvrir un document.',
+      'Saisir, corriger et modifier un texte.',
+      'Mettre en forme un document (police, taille, alignement, espaces).',
+      'Réaliser des documents simples tels que des lettres ou un CV.',
+      'Module Excel – Tableur :',
+      'Découvrir l’environnement de travail d’Excel.',
+      'Ouvrir, créer et enregistrer un classeur.',
+      'Saisir des données dans un tableau.',
+      'Sélectionner, modifier et organiser des cellules.',
+      'Mettre en forme un tableau simple.',
+      'Créer des outils utiles du quotidien : listes, plannings, tableaux de suivi simples.',
+    ],
+    modalitesPédagogie:
+      'La formation repose sur une pédagogie différenciée, alternant apports théoriques et mises en pratique. Elle s’appuie sur des exercices guidés, des démonstrations pas à pas et des situations concrètes adaptées au niveau des participantes. Un syllabus est mis à disposition via un QR code. Une aide à distance peut également être proposée après la formation.',
+    evaluationSuivi:
+      "Un questionnaire d’évaluation est remis à l’issue de la formation afin de recueillir l’avis des participantes. Les retours collectés alimentent une démarche d’amélioration continue des contenus et des méthodes pédagogiques.",
+    supportsLogistiques:
+      "Les formations peuvent être organisées soit chez les partenaires, soit dans les locaux d'Espace Cultures & Développement. Le matériel nécessaire est mis à disposition : ordinateurs portables, tablettes, vidéoprojecteur, Flybox et supports pédagogiques.",
+    publicVise: 'Personnel assimilé, Aide-ménagères',
+    approbation: [{ region: 'Bruxelles', certificate: 'E1426/B', date: '07/03/2022' }],
+    duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageAlt: 'Word et Excel – Niveau débutant',
+  },
 
   // ——— Techniques et prévention ———
   {
