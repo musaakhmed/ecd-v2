@@ -4,6 +4,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { catalogueModules } from '@/lib/titresServices'
 import { DiscoverCard } from '@/components/ui/DiscoverCard'
+import { HeroSection } from '@/components/ui/HeroSection'
+import { titresServiceCatalogueHero } from '@/lib/content/pages/titresServicePageData'
 
 const modalitiesParticipation = [
   {
@@ -69,54 +71,21 @@ const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
-        />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-3xl"
-          >
-            <motion.h1
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl lg:!text-4xl font-bold mb-2"
-            >
-              Titres Services
-            </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/95 font-medium mb-6"
-            >
-              Notre catalogue
-            </motion.p>
-            <motion.p
-              variants={fadeInUp}
-              className="text-base md:text-lg text-white/90 leading-relaxed mb-4"
-            >
-              ECD asbl accompagne les entreprises dans le renforcement des compétences numériques,
-              l’amélioration de l’organisation du travail et la promotion du bien-être des équipes.
-              Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques,
-              organisation du temps, communication professionnelle, sécurité et prévention.
-            </motion.p>
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                Formation professionnelle
-              </span>
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                Sur site
-              </span>
-              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                Adapté aux besoins
-              </span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        imageSrc={titresServiceCatalogueHero.backgroundImage}
+        imageAlt="Titres Services"
+        subtitle={titresServiceCatalogueHero.subtitle}
+        title={titresServiceCatalogueHero.title}
+        description={titresServiceCatalogueHero.description}
+      >
+        <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
+          {titresServiceCatalogueHero.tags.map((tag) => (
+            <span key={tag} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+              {tag}
+            </span>
+          ))}
+        </motion.div>
+      </HeroSection>
 
       {/* Modalités de partenariat (parallax background) */}
       <section className="relative isolate py-16 md:py-24 overflow-hidden h-[50vh] flex justify-center items-center">
@@ -243,17 +212,17 @@ const Page = () => {
               Modalités de Participation
             </motion.h2>
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {modalitiesParticipation.map((item) => (
                   <motion.div
                     key={item.step}
                     variants={fadeInUp}
-                    className="flex gap-6 items-start"
+                    className="flex gap-6 items-start bg-primary-50 rounded-lg p-6 border border-primary-100 h-full"
                   >
                     <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
                       {item.step}
                     </div>
-                    <div className="flex-1 bg-primary-50 rounded-lg p-6 border border-primary-100">
+                    <div className="flex-1">
                       <h3 className="text-xl font-semibold text-secondary-900 mb-2">
                         {item.title}
                       </h3>
