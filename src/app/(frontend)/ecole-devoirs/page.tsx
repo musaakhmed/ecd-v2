@@ -1,58 +1,24 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { eddPageContent, eddSections, eddSectionMeta } from '@/lib/ecole-devoirs-content'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { DiscoverCard } from '@/components/ui/DiscoverCard'
+import { HeroSection } from '@/components/ui/HeroSection'
 
 const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       {/* Hero – aligned with nos-services design */}
-      <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/assets/hero/devoirs.jpg"
-            alt="École de Devoirs Notre-Dame-Aux-Neiges"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-700/85 via-primary-600/85 to-secondary-600/85" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-6 relative z-10 py-6">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl"
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white/80 mb-1 md:mb-2"
-            >
-              École de Devoirs
-            </motion.p>
-            <motion.h1
-              variants={fadeInUp}
-              className="text-xl md:text-2xl lg:text-4xl! font-bold leading-tight mb-2 md:mb-3"
-            >
-              Notre-Dame-Aux-Neiges
-            </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
-            >
-              Un lieu bienveillant d&apos;épanouissement et de réussite pour chaque enfant du quartier
-              du Congrès. Soutien scolaire, activités variées et coéducation avec les familles.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        imageSrc="/assets/hero/devoirs.jpg"
+        imageAlt="École de Devoirs Notre-Dame-Aux-Neiges"
+        subtitle="École de Devoirs"
+        title="Notre-Dame-Aux-Neiges"
+        description="Un lieu bienveillant d&apos;épanouissement et de réussite pour chaque enfant du quartier du Congrès. Soutien scolaire, activités variées et coéducation avec les familles."
+      />
 
       {/* Intro – primary gradient card like nos-services */}
       <section className="py-16 md:py-20">

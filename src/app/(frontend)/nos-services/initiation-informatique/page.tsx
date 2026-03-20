@@ -154,7 +154,7 @@ const Page = () => {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
+              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
             >
               ECD asbl développe un programme complet d&apos;initiation en informatique visant à
               offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre

@@ -80,7 +80,7 @@ const Page = () => {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3"
+              className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
             >
               {content.hero.description}
             </motion.p>

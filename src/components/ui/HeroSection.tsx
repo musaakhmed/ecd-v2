@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 
 interface HeroSectionProps {
+  children?: React.ReactNode
   imageSrc: string
   imageAlt: string
   subtitle: string
@@ -14,6 +15,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
+  children,
   imageSrc,
   imageAlt,
   subtitle,
@@ -58,6 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           >
             {description}
           </motion.p>
+          {children}
         </motion.div>
       </div>
     </section>

@@ -107,7 +107,7 @@ const Page = () => {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6"
+              className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6 text-justify [text-align-last:start]"
             >
               {epnmTestPageContent.hero.description}
             </motion.p>

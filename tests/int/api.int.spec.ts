@@ -1,20 +1,11 @@
-import { getPayload, Payload } from 'payload'
-import config from '@/payload.config'
-
-import { describe, it, beforeAll, expect } from 'vitest'
-
-let payload: Payload
+import { describe, it, expect } from 'vitest'
 
 describe('API', () => {
-  beforeAll(async () => {
-    const payloadConfig = await config
-    payload = await getPayload({ config: payloadConfig })
-  })
-
-  it('fetches users', async () => {
-    const users = await payload.find({
-      collection: 'users',
-    })
-    expect(users).toBeDefined()
+  it('example route returns JSON', async () => {
+    const base = process.env.PLAYWRIGHT_TEST_BASE_URL ?? 'http://localhost:3000'
+    const res = await fetch(`${base}/my-route`)
+    expect(res.ok).toBe(true)
+    const data = await res.json()
+    expect(data).toHaveProperty('message')
   })
 })

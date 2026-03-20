@@ -128,7 +128,7 @@ const Page = () => {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-sm md:text-base text-white/90 leading-snug"
+              className="text-sm md:text-base text-white/90 leading-snug text-justify [text-align-last:start]"
             >
               {contactPageContent.hero.description}
             </motion.p>
