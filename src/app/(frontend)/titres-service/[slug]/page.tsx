@@ -1,12 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getCatalogueModuleBySlug, getCatalogueSlugs } from '@/lib/titresServices'
-import { draftMode } from 'next/headers'
-import {
-  getTitresServiceModuleBySlug,
-  getAllTitresServiceSlugs,
-} from '@/lib/contentful/queries/titresService'
-import { mapTitresServiceEntryToCatalogueModule } from '@/lib/contentful/mappers/titresService'
 import { TitresServiceModuleClient } from './TitresServiceModuleClient'
 
 type PageProps = {
@@ -17,21 +11,12 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 export async function generateStaticParams() {
-  try {
-    const slugs = await getAllTitresServiceSlugs()
-    if (slugs.length > 0) return slugs.map((slug) => ({ slug }))
-  } catch {
-    // Contentful unavailable; use static fallback
-  }
   return getCatalogueSlugs().map((slug) => ({ slug }))
 }
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-  const { isEnabled } = await draftMode()
-  const entry = await getTitresServiceModuleBySlug(slug, { preview: isEnabled })
-
-  const module_ = entry ? mapTitresServiceEntryToCatalogueModule(entry) : getCatalogueModuleBySlug(slug)
+  const module_ = getCatalogueModuleBySlug(slug)
 
   if (!module_) {
     notFound()
