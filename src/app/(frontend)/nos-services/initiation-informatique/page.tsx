@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
-import { ImageCardHero } from '@/components/ui/ImageCardHero'
 
 const Page = () => {
   const fadeInUp = {
@@ -119,52 +118,6 @@ const Page = () => {
     },
   ]
 
-  const imageSections: Array<{
-    title: string
-    imageSrc: string
-    imageAlt: string
-    description?: string
-    intro?: string
-    listItems: string[]
-    conclusion?: string
-  }> = [
-    {
-      title: 'Publics cibles',
-      imageSrc: '/assets/epnm/initiation/informatique.jpeg',
-      imageAlt: "Participants en atelier d'initiation informatique",
-      intro: "L'initiation en informatique s'adresse notamment a :",
-      listItems: publicsCibles.map((item) => `${item.title} : ${item.description}`),
-      conclusion:
-        'Chaque parcours est ajuste au rythme, aux besoins et au contexte des apprenants.',
-    },
-    {
-      title: 'Contenus des modules',
-      imageSrc: '/assets/services/perfectionnement/bureautique.jpeg',
-      imageAlt: "Apprentissage des competences numeriques de base",
-      intro: "Les seances d'initiation couvrent notamment :",
-      listItems: moduleContents,
-      conclusion:
-        'Les modules combinent acquisition des bases et application immediate dans la vie quotidienne.',
-    },
-    {
-      title: 'Partenaires',
-      imageSrc: '/assets/services/perfectionnement/office.jpg',
-      imageAlt: 'Travail collaboratif entre partenaires associatifs',
-      intro: 'Les actions sont menees en collaboration avec :',
-      listItems: partenaires,
-      conclusion:
-        "Ce reseau de partenaires permet de deployer des actions de proximite et d'inclusion numerique.",
-    },
-    {
-      title: 'Approche pedagogique',
-      imageSrc: '/assets/epnm/initiation/microbit.jpg',
-      imageAlt: "Animation pedagogique autour d'outils numeriques",
-      description:
-        'Une pedagogie progressive, concrete et inclusive est mise en place pour favoriser la confiance numerique.',
-      listItems: approchesPedagogiques.map((item) => item.text),
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
       {/* Hero */}
@@ -242,7 +195,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Publics cibles */}
+      {/* Publics ciblés */}
       <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-6">
           <motion.div
@@ -252,8 +205,11 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
-            <motion.h2 variants={fadeInUp} className="sr-only">
-              Publics cibles
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-12"
+            >
+              Publics ciblés
             </motion.h2>
             <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
               <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
@@ -328,21 +284,119 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Sections image + texte */}
-      {imageSections.map((section, index) => (
-        <ImageCardHero
-          key={section.title}
-          title={section.title}
-          imageSrc={section.imageSrc}
-          imageAlt={section.imageAlt}
-          imageOnLeft={index % 2 === 0}
-          description={section.description}
-          intro={section.intro}
-          listItems={section.listItems}
-          conclusion={section.conclusion}
-          compactSpacing
-        />
-      ))}
+      {/* Contenus des modules */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={staggerContainer}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            >
+              Contenus des modules
+            </motion.h2>
+            <motion.div
+              variants={fadeInUp}
+              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
+            >
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
+              >
+                Les séances d&apos;initiation couvrent notamment :
+              </motion.p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+              <ul className="relative z-10 space-y-4 text-primary-100">
+                {moduleContents.map((item) => (
+                  <li key={item} className="flex gap-4 items-start">
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Partenaires */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={staggerContainer}
+            className="max-w-6xl mx-auto"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            >
+              Partenaires
+            </motion.h2>
+
+            <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+              <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-gray-200 leading-relaxed mb-12 text-center max-w-2xl mx-auto"
+                >
+                  Les actions sont menées en collaboration avec :
+                </motion.p>
+                <ul className="space-y-3 text-inherit">
+                  {partenaires.map((name) => (
+                    <li key={name} className="leading-relaxed flex gap-3 items-start">
+                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </DarkTextCard>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Approche pédagogique */}
+      <section className="py-12 bg-white dark:bg-gray-950">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            variants={staggerContainer}
+            className="max-w-6xl mx-auto"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-12"
+            >
+              Approche pédagogique
+            </motion.h2>
+            <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
+              <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+                <div className="relative z-10">
+                  <ul className="space-y-4 text-primary-100">
+                    {approchesPedagogiques.map((item) => (
+                      <li key={item.text} className="flex gap-4 items-start">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                        <span className="leading-relaxed text-lg font-medium">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 }
