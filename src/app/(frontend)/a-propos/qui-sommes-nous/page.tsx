@@ -8,6 +8,7 @@ import { aboutPageMedia } from '@/lib/content/aboutPageMedia'
 import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
+import { ImageCardHero } from '@/components/ui/ImageCardHero'
 
 const Page = () => {
   const content = quiSommesNousPageContent
@@ -167,26 +168,17 @@ const Page = () => {
 
             {/* 1. Soutien scolaire */}
             <motion.div variants={fadeInUp} className="mb-12">
-              <DarkTextCard
-                variant="solid"
+              <ImageCardHero
                 title={`1. ${content.domaines.soutienScolaire.title}`}
-                raw
-                hover
-                className="rounded-2xl p-8 md:p-10"
-              >
-                <p className="text-inherit leading-relaxed mb-6">
-                  {content.domaines.soutienScolaire.description}
-                </p>
-                <BulletList
-                  items={content.domaines.soutienScolaire.points}
-                  lightOnDark
-                  animated={false}
-                  className="mb-6"
-                />
-                <p className="text-inherit leading-relaxed italic">
-                  {content.domaines.soutienScolaire.conclusion}
-                </p>
-              </DarkTextCard>
+                imageSrc="/assets/hero/devoirs.jpg"
+                imageAlt={content.domaines.soutienScolaire.title}
+                imageOnLeft
+                titleInCard
+                compactSpacing
+                description={content.domaines.soutienScolaire.description}
+                listItems={content.domaines.soutienScolaire.points}
+                conclusion={content.domaines.soutienScolaire.conclusion}
+              />
             </motion.div>
 
             {/* 2. Inclusion numérique */}
@@ -274,22 +266,16 @@ const Page = () => {
 
             {/* 4. Ateliers parentalité */}
             <motion.div variants={fadeInUp}>
-              <DarkTextCard
-                variant="gradient-primary"
+              <ImageCardHero
                 title={`4. ${content.domaines.ateliersParentalite.title}`}
-                raw
-                hover
-                className="rounded-2xl p-8 md:p-10"
-              >
-                <p className="text-inherit leading-relaxed mb-6">
-                  {content.domaines.ateliersParentalite.description}
-                </p>
-                <BulletList
-                  items={content.domaines.ateliersParentalite.items}
-                  lightOnDark
-                  animated={false}
-                />
-              </DarkTextCard>
+                imageSrc="/assets/operateur/ecole-de-devoirs.png"
+                imageAlt={content.domaines.ateliersParentalite.title}
+                imageOnLeft={false}
+                titleInCard
+                compactSpacing
+                description={content.domaines.ateliersParentalite.description}
+                listItems={content.domaines.ateliersParentalite.items}
+              />
             </motion.div>
           </motion.div>
         </div>

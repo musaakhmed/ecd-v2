@@ -4,8 +4,7 @@ import { useEffect } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
 
 export function RebrandingToast() {
-  const message =
-    'Vous êtes au bon endroit. Nous changeons d’identité visuelle et de nom — auparavant Espace Culture et Développement ASBL.'
+  const message = `Vous êtes au bon endroit. Nous changeons d’identité — auparavant Espace Culture et Développement ASBL.`
 
   useEffect(() => {
     toast(message, {

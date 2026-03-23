@@ -106,14 +106,18 @@ const Page = () => {
             >
               {content.competencesNumeriques.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg  leading-relaxed mb-8 text-center max-w-3xl mx-auto"
-            >
-              {content.competencesNumeriques.description}
-            </motion.p>
             <motion.div variants={fadeInUp}>
-              <DarkTextCard variant="solid" title={content.competencesNumeriques.cardTitle} raw>
+              <DarkTextCard variant="solid" raw>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg leading-relaxed mb-8 text-center max-w-3xl mx-auto"
+                >
+                  {content.competencesNumeriques.description}
+                </motion.p>
+                <h3 className="font-semibold text-white py-2">
+                  {content.competencesNumeriques.cardTitle}
+                </h3>
+
                 <ul className="space-y-4 text-inherit">
                   {content.competencesNumeriques.modules.map((m) => (
                     <li key={m.title} className="flex gap-3">
@@ -127,7 +131,9 @@ const Page = () => {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-gray-600/60">
                   <p className="leading-relaxed text-inherit">
-                    <span className="font-semibold text-white">{content.competencesNumeriques.objectifLabel}</span>{' '}
+                    <span className="font-semibold text-white">
+                      {content.competencesNumeriques.objectifLabel}
+                    </span>{' '}
                     {content.competencesNumeriques.objectifText}
                   </p>
                 </div>
@@ -172,14 +178,15 @@ const Page = () => {
             >
               {content.bienEtre.title}
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
-            >
-              {content.bienEtre.description}
-            </motion.p>
             <motion.div variants={fadeInUp}>
-              <DarkTextCard variant="gradient-secondary" title={content.bienEtre.cardTitle} raw>
+              <DarkTextCard variant="gradient-secondary" raw>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
+                >
+                  {content.bienEtre.description}
+                </motion.p>
+                <h3 className="font-semibold text-white py-2">{content.bienEtre.cardTitle}</h3>
                 <ul className="space-y-4 text-inherit">
                   {content.bienEtre.modules.map((m) => (
                     <li key={m.title} className="flex gap-3">
@@ -207,9 +214,7 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-4xl mx-auto text-center flex flex-col gap-6"
           >
-            <motion.div className="font-semibold">
-              {content.cta.text}
-            </motion.div>
+            <motion.div className="font-semibold">{content.cta.text}</motion.div>
             <motion.div variants={fadeInUp}>
               <Link href={content.cta.href}>
                 <motion.button
