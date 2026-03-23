@@ -2,9 +2,11 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
+import { TextWithImageOverlap } from '@/components/ui/TextWithImageOverlap'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 
 const objectifsItems = [
@@ -142,43 +144,97 @@ const Page = () => {
 
             {/* Méthode pédagogique */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="gradient-secondary" title="Méthode pédagogique" raw hover>
-                <p className="leading-relaxed mb-6 text-inherit">Les ateliers sont basés sur :</p>
-                <BulletList items={methodeItems} color="secondary" lightOnDark animated={false} />
-              </DarkTextCard>
+              <TextWithImageOverlap
+                title="Méthode pédagogique"
+                imagePosition="right"
+                className="bg-transparent py-0"
+                cardClassName="bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50"
+                imageWrapperClassName="p-0 overflow-hidden"
+                image={
+                  <Image
+                    src="/assets/services/perfectionnement/bureautique.jpeg"
+                    alt="Atelier numerique avec support pedagogique"
+                    width={340}
+                    height={260}
+                    className="h-full w-full object-cover object-center"
+                  />
+                }
+                content={
+                  <>
+                    <p className="leading-relaxed mb-6 text-inherit">Les ateliers sont basés sur :</p>
+                    <BulletList items={methodeItems} color="secondary" lightOnDark animated={false} />
+                  </>
+                }
+              />
             </motion.div>
 
             {/* Formation des aidants numériques */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title="Formation des aidants numériques" raw hover>
-                <p className="leading-relaxed mb-6 text-inherit">
-                  ECD asbl propose également des formations et accompagnements pédagogiques en lien
-                  avec les TIC, afin de renforcer les compétences des professionnels de terrain.
-                  Nous intervenons notamment pour :
-                </p>
-                <BulletList items={formationAidants} lightOnDark animated={false} />
-              </DarkTextCard>
+              <TextWithImageOverlap
+                title="Formation des aidants numériques"
+                imagePosition="left"
+                className="bg-transparent py-0"
+                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
+                imageWrapperClassName="p-0 overflow-hidden"
+                image={
+                  <Image
+                    src="/assets/services/perfectionnement/ai-work.jpg"
+                    alt="Formation numerique pour professionnels et aidants"
+                    width={340}
+                    height={260}
+                    className="h-full w-full object-cover object-center"
+                  />
+                }
+                content={
+                  <>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      ECD asbl propose également des formations et accompagnements pédagogiques en
+                      lien avec les TIC, afin de renforcer les compétences des professionnels de
+                      terrain. Nous intervenons notamment pour :
+                    </p>
+                    <BulletList items={formationAidants} lightOnDark animated={false} />
+                  </>
+                }
+              />
             </motion.div>
 
             {/* Partenariats */}
             <motion.div variants={fadeInUp}>
-              <DarkTextCard variant="gradient-primary" title="Partenariats" raw hover>
-                <p className="leading-relaxed mb-6 text-inherit">
-                  Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère (FLE)
-                  peuvent formuler leurs demandes afin de développer des partenariats avec ECD asbl.
-                  Ces partenariats peuvent porter sur :
-                </p>
-                <BulletList
-                  items={partenariatsItems}
-                  lightOnDark
-                  animated={false}
-                  className="mb-6"
-                />
-                <p className="leading-relaxed text-inherit">
-                  Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs
-                  besoins et construire ensemble une collaboration adaptée.
-                </p>
-              </DarkTextCard>
+              <TextWithImageOverlap
+                title="Partenariats"
+                imagePosition="right"
+                className="bg-transparent py-0"
+                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
+                imageWrapperClassName="p-0 overflow-hidden"
+                image={
+                  <Image
+                    src="/assets/about/ecd.jpg"
+                    alt="Partenariat avec ECD asbl"
+                    width={340}
+                    height={260}
+                    className="h-full w-full object-cover object-center"
+                  />
+                }
+                content={
+                  <>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère
+                      (FLE) peuvent formuler leurs demandes afin de développer des partenariats
+                      avec ECD asbl. Ces partenariats peuvent porter sur :
+                    </p>
+                    <BulletList
+                      items={partenariatsItems}
+                      lightOnDark
+                      animated={false}
+                      className="mb-6"
+                    />
+                    <p className="leading-relaxed text-inherit">
+                      Les structures intéressées peuvent nous contacter afin d&apos;analyser leurs
+                      besoins et construire ensemble une collaboration adaptée.
+                    </p>
+                  </>
+                }
+              />
             </motion.div>
           </motion.div>
         </div>
