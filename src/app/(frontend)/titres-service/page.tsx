@@ -176,7 +176,7 @@ const Page = () => {
                   {catalogueModules
                     .filter((m) => m.category === g.key)
                     .map((mod) => (
-                      <div key={mod.slug} className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:w-69 xl:h-96">
+                      <div key={mod.slug} className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:h-96">
                         <DiscoverCard
                           href={`/titres-service/${mod.slug}`}
                           title={mod.titre}
