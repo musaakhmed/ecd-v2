@@ -32,11 +32,11 @@ export const BulletList: React.FC<BulletListProps> = ({
   const itemProps = animated ? { variants: fadeInUp } : {}
 
   return (
-    <ul className={`space-y-4 ${textClass} ${className}`}>
+    <ul className={`space-y-1.5 ${textClass} ${className}`}>
       {items.map((item, index) => (
         <ListItem key={index} {...itemProps} className={`flex gap-3 ${itemClassName}`}>
-          <span className={`mt-1.5 h-2 w-2 rounded-full ${colorClasses[color]} shrink-0`} />
-          <span>{item}</span>
+          <span className={`mt-1 h-2 w-2 rounded-full ${colorClasses[color]} shrink-0`} />
+          <span className="">{item}</span>
         </ListItem>
       ))}
     </ul>

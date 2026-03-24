@@ -32,7 +32,7 @@ export function TextWithImageOverlap({
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
-            className={`pointer-events-none absolute top-0 -mt-48  z-0 hidden h-[230px] w-[300px] items-center justify-center rounded-[28px] bg-[#ff1a1a] text-center text-3xl font-medium text-black md:flex lg:h-[260px] lg:w-[340px] ${
+            className={`pointer-events-none absolute top-0 -mt-48  z-0 hidden h-[230px] w-[300px] items-center justify-center rounded-[28px] bg-[#ff1a1a] text-center text-3xl font-medium text-black md:flex lg:h-[340px] lg:w-[420px] ${
               isImageLeft ? 'left-0' : 'right-0'
             } ${imageWrapperClassName}`.trim()}
           >
@@ -44,7 +44,7 @@ export function TextWithImageOverlap({
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
-            className={`relative z-10 mt-20 rounded-[16px] border border-black/30 bg-[#221d62] px-6 py-8 text-slate-100 shadow-[0_10px_0_rgba(0,0,0,0.35)] md:mt-28 md:rounded-[20px] md:px-10 md:py-10 lg:px-12 lg:py-12 ${
+            className={`relative z-10 mt-20 rounded-2xl border border-black/30 bg-[#221d62] px-6 py-8 text-slate-100 shadow-[0_10px_0_rgba(0,0,0,0.35)] md:mt-28 md:rounded-[20px] md:px-10 md:py-10 lg:px-12 lg:py-12 ${
               isImageLeft ? 'md:ml-36 lg:ml-48' : 'md:mr-36 lg:mr-48'
             } ${cardClassName}`.trim()}
           >

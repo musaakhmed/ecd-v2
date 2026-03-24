@@ -8,13 +8,14 @@ export function RebrandingToast() {
 
   useEffect(() => {
     toast(message, {
-      duration: 5000,
+      duration: 10000,
       position: 'top-right',
       style: {
         background: '#ffffff',
         color: '#111827',
         border: '1px solid #e5e7eb',
         boxShadow: '0 10px 25px rgba(17, 24, 39, 0.12)',
+        width: '500px',
       },
     })
   }, [])

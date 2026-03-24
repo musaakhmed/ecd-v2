@@ -33,7 +33,12 @@ const Page = () => {
           >
             {/* Objectif */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title={emploiNumeriquePage.sections.objectif.title} raw hover>
+              <DarkTextCard
+                variant="solid"
+                title={emploiNumeriquePage.sections.objectif.title}
+                raw
+                hover
+              >
                 <p className="leading-relaxed mb-6 text-inherit">
                   {emploiNumeriquePage.sections.objectif.paragraphs[0]}
                 </p>
@@ -66,7 +71,12 @@ const Page = () => {
 
             {/* Contenus pédagogiques */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title={emploiNumeriquePage.sections.contenus.title} raw hover>
+              <DarkTextCard
+                variant="solid"
+                title={emploiNumeriquePage.sections.contenus.title}
+                raw
+                hover
+              >
                 <p className="leading-relaxed mb-6 text-inherit">
                   {emploiNumeriquePage.sections.contenus.intro}
                 </p>
@@ -82,7 +92,7 @@ const Page = () => {
                     <p className="mb-4 leading-relaxed text-primary-100/90">
                       {emploiNumeriquePage.sections.contenus.modulesBase.intro}
                     </p>
-                    <ul className="space-y-2 text-primary-100/90">
+                    <ul className="space-y-1 text-primary-100/90">
                       {emploiNumeriquePage.sections.contenus.modulesBase.items.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
@@ -102,7 +112,7 @@ const Page = () => {
                     <p className="mb-4 leading-relaxed text-secondary-100/90">
                       {emploiNumeriquePage.sections.contenus.demarchesEmploi.intro}
                     </p>
-                    <ul className="space-y-2 text-secondary-100/90">
+                    <ul className="space-y-1 text-secondary-100/90">
                       {emploiNumeriquePage.sections.contenus.demarchesEmploi.items.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-1.5 h-2 w-2 rounded-full bg-secondary-500 shrink-0" />
@@ -122,7 +132,7 @@ const Page = () => {
                     <p className="mb-4 leading-relaxed text-primary-100/90">
                       {emploiNumeriquePage.sections.contenus.modulesAvances.intro}
                     </p>
-                    <ul className="space-y-2 text-primary-100/90">
+                    <ul className="space-y-1 text-primary-100/90">
                       {emploiNumeriquePage.sections.contenus.modulesAvances.items.map((item) => (
                         <li key={item} className="flex gap-3">
                           <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />

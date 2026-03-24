@@ -2,8 +2,7 @@ import React from 'react'
 
 /** Shared styles for all social buttons – change here to update every button. */
 const socialButtonStyles = {
-  link:
-    'w-12 h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-md border border-gray-200 ease-in-out',
+  link: 'w-12 h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-md border border-gray-200 ease-in-out',
   icon: 'w-6 h-6',
 } as const
 
@@ -14,12 +13,31 @@ type SocialMediaButtonProps = {
   children: React.ReactNode
 }
 
-const SocialMediaButton = ({
-  href,
-  ariaLabel,
-  iconColor,
-  children,
-}: SocialMediaButtonProps) => (
+interface SocialMediaLink {
+  name: string
+  link: string
+}
+
+const socialMediaLinks: SocialMediaLink[] = [
+  {
+    name: 'linkedin',
+    link: 'https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/',
+  },
+  {
+    name: 'instagram',
+    link: 'https://www.instagram.com/asblecd/',
+  },
+  {
+    name: 'facebook',
+    link: 'https://www.facebook.com/espaceculturesetdeveloppement/',
+  },
+  {
+    name: 'youtube',
+    link: 'https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw',
+  },
+]
+
+const SocialMediaButton = ({ href, ariaLabel, iconColor, children }: SocialMediaButtonProps) => (
   <a
     href={href}
     aria-label={ariaLabel}
@@ -43,8 +61,8 @@ const SocialMediaBar = () => {
     <section className="sticky top-1/12 right-0 z-50">
       <div className="flex flex-col mb-6 absolute z-10 gap-2 top-1/4 right-0 p-4">
         <SocialMediaButton
-          href="https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/"
-          ariaLabel="LinkedIn"
+          href={socialMediaLinks[0].link}
+          ariaLabel={socialMediaLinks[0].name}
           iconColor="text-[#0A66C2]"
         >
           <path
@@ -54,8 +72,8 @@ const SocialMediaBar = () => {
           />
         </SocialMediaButton>
         <SocialMediaButton
-          href="https://www.instagram.com/asblecd/"
-          ariaLabel="Instagram"
+          href={socialMediaLinks[1].link}
+          ariaLabel={socialMediaLinks[1].name}
           iconColor="text-[#E4405F]"
         >
           <path
@@ -65,8 +83,8 @@ const SocialMediaBar = () => {
           />
         </SocialMediaButton>
         <SocialMediaButton
-          href="https://www.facebook.com/espaceculturesetdeveloppement/"
-          ariaLabel="Facebook"
+          href={socialMediaLinks[2].link}
+          ariaLabel={socialMediaLinks[2].name}
           iconColor="text-[#1877F2]"
         >
           <path
@@ -76,8 +94,8 @@ const SocialMediaBar = () => {
           />
         </SocialMediaButton>
         <SocialMediaButton
-          href="https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw"
-          ariaLabel="YouTube"
+          href={socialMediaLinks[3].link}
+          ariaLabel={socialMediaLinks[3].name}
           iconColor="text-[#FF0000]"
         >
           <path
