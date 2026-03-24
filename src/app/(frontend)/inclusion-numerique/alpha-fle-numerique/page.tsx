@@ -79,62 +79,76 @@ const Page = () => {
             {/* Outils d'apprentissage en ligne */}
             <motion.div variants={fadeInUp} className="mb-8">
               <DarkTextCard variant="solid" title="Outils d'apprentissage en ligne" raw hover>
-                <div className="space-y-6">
-                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
-                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
-                      J&apos;apprends – Apprentissage du français pour adultes migrants
-                    </h3>
-                    <p className="text-primary-100/90 leading-relaxed">
-                      Plateforme conçue pour aider les adultes migrants à apprendre le français de
-                      manière progressive. Travail sur vocabulaire, compréhension, phrases du
+                <div className="space-y-5">
+                  <div className="rounded-2xl border border-primary-500/40 bg-primary-700/20 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <div className="mb-3 inline-flex rounded-full bg-primary-500/25 px-3 py-1 text-xs font-semibold tracking-[0.12em] uppercase text-primary-100">
+                      Plateforme
+                    </div>
+                    <h4 className="mb-2 text-xl font-semibold text-primary-50">
+                      J&apos;apprends - Apprentissage du francais pour adultes migrants
+                    </h4>
+                    <p className="leading-relaxed text-primary-100/90">
+                      Plateforme concue pour aider les adultes migrants a apprendre le francais de
+                      maniere progressive. Travail sur vocabulaire, comprehension et phrases du
                       quotidien.
                     </p>
                   </div>
 
-                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
-                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
-                      ClicMaClasse (
-                      <a href="https://clicmaclasse.fr/" target="_blank" rel="noopener noreferrer">
-                        <span className="italic underline underline-offset-4 underline-">
-                          clicmaclasse.fr
-                        </span>
-                      </a>
-                      ) – Sons et prononciation
-                    </h3>
-                    <p className="text-primary-100/90 leading-relaxed">
-                      Outil utile pour la familiarisation avec les sons du français. Écouter,
-                      répéter et différencier les sons (ex : ou/u, an/en, é/è).
+                  <div className="rounded-2xl border border-secondary-500/40 bg-secondary-700/20 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <div className="mb-3 inline-flex rounded-full bg-secondary-500/25 px-3 py-1 text-xs font-semibold tracking-[0.12em] uppercase text-secondary-100">
+                      Prononciation
+                    </div>
+                    <h4 className="mb-2 text-xl font-semibold text-secondary-50">
+                      ClicMaClasse - Sons et prononciation
+                    </h4>
+                    <p className="mb-3 leading-relaxed text-secondary-100/90">
+                      Outil utile pour se familiariser avec les sons du francais : ecouter, repeter
+                      et differencier les sons (ex: ou/u, an/en, e/eh).
                     </p>
+                    <a
+                      href="https://clicmaclasse.fr/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-secondary-100 underline decoration-secondary-300/70 underline-offset-4 transition hover:text-white"
+                    >
+                      Acceder a clicmaclasse.fr
+                    </a>
                   </div>
 
-                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
-                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
-                      Applications ludiques pour apprendre le français
-                    </h3>
-                    <ul className="space-y-2 text-primary-100/90 mt-2">
+                  <div className="rounded-2xl border border-primary-500/40 bg-primary-700/20 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <div className="mb-3 inline-flex rounded-full bg-primary-500/25 px-3 py-1 text-xs font-semibold tracking-[0.12em] uppercase text-primary-100">
+                      Ressources FLE
+                    </div>
+                    <h4 className="mb-3 text-xl font-semibold text-primary-50">
+                      Applications ludiques pour apprendre le francais
+                    </h4>
+                    <ul className="space-y-2 text-primary-100/90">
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
-                          <strong>OrthoLud</strong> (ortholud.com) : exercices ludiques
-                          (orthographe, grammaire, conjugaison, vocabulaire).
+                          <strong>OrthoLud</strong> (ortholud.com): exercices ludiques en
+                          orthographe, grammaire, conjugaison et vocabulaire.
                         </span>
                       </li>
                       <li className="flex gap-3">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
                         <span>
-                          <strong>Le Point du FLE</strong> (lepointdufle.net) : ressources FLE par
-                          niveaux (exercices, fiches, audio, activités).
+                          <strong>Le Point du FLE</strong> (lepointdufle.net): ressources par
+                          niveaux (exercices, fiches, audio, activites).
                         </span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="pl-4 border-l-4 border-primary-400 bg-primary-700/30 rounded-r-lg py-4 pr-4">
-                    <h3 className="text-xl font-semibold text-primary-50 mb-2">
+                  <div className="rounded-2xl border border-secondary-500/40 bg-secondary-700/20 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <div className="mb-3 inline-flex rounded-full bg-secondary-500/25 px-3 py-1 text-xs font-semibold tracking-[0.12em] uppercase text-secondary-100">
+                      Clavier
+                    </div>
+                    <h4 className="mb-2 text-xl font-semibold text-secondary-50">
                       RapidTyping (apprentissage du clavier)
-                    </h3>
-                    <p className="text-primary-100/90 leading-relaxed">
-                      Outil pratique pour apprendre à taper au clavier, gagner en aisance et écrire
+                    </h4>
+                    <p className="leading-relaxed text-secondary-100/90">
+                      Outil pratique pour apprendre a taper au clavier, gagner en aisance et ecrire
                       plus facilement sur PC.
                     </p>
                   </div>

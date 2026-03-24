@@ -23,6 +23,16 @@ body {
   line-height: 1.35 !important;
 }
 
+/* List readability: keep bullet text close to normal paragraph leading */
+:where(.list-disc, .list-decimal) > li {
+  line-height: 1.4 !important;
+}
+
+/* Tighten vertical gaps between bullet items site-wide */
+:where(.list-disc, .list-decimal) > li + li {
+  margin-top: 0.35em !important;
+}
+
 html,
 body,
 #app {
