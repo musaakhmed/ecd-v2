@@ -6,9 +6,6 @@ import Link from 'next/link'
 import { X } from 'lucide-react'
 
 export function RebrandingToast() {
-  const message =
-    'Vous êtes au bon endroit. Nous changeons d’identité visuelle et de nom — auparavant Espace Culture et Développement ASBL.'
-
   useEffect(() => {
     toast(
       (t) => (
@@ -34,7 +31,7 @@ export function RebrandingToast() {
         </section>
       ),
       {
-        duration: 5000,
+        duration: 10000,
         position: 'top-right',
         style: {
           width: '20rem',
