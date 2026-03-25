@@ -58,7 +58,7 @@ const Page = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
@@ -175,8 +175,15 @@ const Page = () => {
                 }
                 content={
                   <>
-                    <p className="leading-relaxed mb-6 text-inherit">Les ateliers sont basés sur :</p>
-                    <BulletList items={methodeItems} color="secondary" lightOnDark animated={false} />
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      Les ateliers sont basés sur :
+                    </p>
+                    <BulletList
+                      items={methodeItems}
+                      color="secondary"
+                      lightOnDark
+                      animated={false}
+                    />
                   </>
                 }
               />
@@ -233,8 +240,8 @@ const Page = () => {
                   <>
                     <p className="leading-relaxed mb-6 text-inherit">
                       Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère
-                      (FLE) peuvent formuler leurs demandes afin de développer des partenariats
-                      avec ECD asbl. Ces partenariats peuvent porter sur :
+                      (FLE) peuvent formuler leurs demandes afin de développer des partenariats avec
+                      ECD asbl. Ces partenariats peuvent porter sur :
                     </p>
                     <BulletList
                       items={partenariatsItems}

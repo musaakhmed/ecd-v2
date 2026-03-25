@@ -26,7 +26,7 @@ const Page = () => {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
@@ -48,7 +48,9 @@ const Page = () => {
                   />
                 }
                 content={
-                  <p className="leading-relaxed text-inherit">{seniorsDigitalPage.sections.objectif.paragraph}</p>
+                  <p className="leading-relaxed text-inherit">
+                    {seniorsDigitalPage.sections.objectif.paragraph}
+                  </p>
                 }
               />
             </motion.div>
@@ -72,7 +74,9 @@ const Page = () => {
                 }
                 content={
                   <>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.objectifsSpecifiques.intro}</p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.objectifsSpecifiques.intro}
+                    </p>
                     <BulletList
                       items={seniorsDigitalPage.objectifsSpecifiques}
                       color="secondary"
@@ -115,17 +119,27 @@ const Page = () => {
                 }
                 content={
                   <>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.approche.paragraphs[0]}</p>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.approche.paragraphs[1]}</p>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.approche.paragraphs[2]}</p>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.approche.paragraphs[3]}</p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.approche.paragraphs[0]}
+                    </p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.approche.paragraphs[1]}
+                    </p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.approche.paragraphs[2]}
+                    </p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.approche.paragraphs[3]}
+                    </p>
                     <BulletList
                       items={seniorsDigitalPage.approcheProximite}
                       lightOnDark
                       animated={false}
                       className="mb-6"
                     />
-                    <p className="leading-relaxed text-inherit">{seniorsDigitalPage.sections.approche.paragraphs[4]}</p>
+                    <p className="leading-relaxed text-inherit">
+                      {seniorsDigitalPage.sections.approche.paragraphs[4]}
+                    </p>
                   </>
                 }
               />
@@ -150,16 +164,24 @@ const Page = () => {
                 }
                 content={
                   <>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.impact.paragraphs[0]}</p>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.impact.paragraphs[1]}</p>
-                    <p className="leading-relaxed mb-6 text-inherit">{seniorsDigitalPage.sections.impact.paragraphs[2]}</p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.impact.paragraphs[0]}
+                    </p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.impact.paragraphs[1]}
+                    </p>
+                    <p className="leading-relaxed mb-6 text-inherit">
+                      {seniorsDigitalPage.sections.impact.paragraphs[2]}
+                    </p>
                     <BulletList
                       items={seniorsDigitalPage.impactFinalite}
                       lightOnDark
                       animated={false}
                       className="mb-6"
                     />
-                    <p className="leading-relaxed text-inherit">{seniorsDigitalPage.sections.impact.paragraphs[3]}</p>
+                    <p className="leading-relaxed text-inherit">
+                      {seniorsDigitalPage.sections.impact.paragraphs[3]}
+                    </p>
                   </>
                 }
               />
@@ -170,6 +192,5 @@ const Page = () => {
     </div>
   )
 }
-
 
 export default Page
