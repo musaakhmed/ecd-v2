@@ -20,7 +20,7 @@ export function RebrandingToast() {
             Nous changeons d’identité visuelle et de nom — auparavant Espace Culture et
             Développement ASBL, dorénavant <span className="font-semibold">Espace Form</span>.
           </p>
-          <Link href="/#about">
+          <Link href="/a-propos/qui-sommes-nous">
             <button
               onClick={() => toast.dismiss(t.id)}
               className="bg-secondary-50 py-1.5 px-3 rounded text-primary-800 cursor-pointer"
