@@ -32,11 +32,11 @@ export function TextWithImageOverlap({
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
-            className={`pointer-events-none absolute top-0 -mt-48  z-0 hidden h-[230px] w-[300px] items-center justify-center rounded-[28px] bg-[#ff1a1a] text-center text-3xl font-medium text-black md:flex lg:h-[340px] lg:w-[420px] ${
-              isImageLeft ? 'left-0' : 'right-0'
+            className={`pointer-events-none absolute top-0 z-0 hidden h-[230px] w-[300px] items-center justify-center rounded-[28px] text-center text-3xl font-medium text-black md:flex lg:h-[340px] lg:w-[420px] ${
+              isImageLeft ? 'left-0 -ml-32' : 'right-0 -mr-32'
             } ${imageWrapperClassName}`.trim()}
           >
-            {image ?? <span>IMAGE</span>}
+            {image}
           </motion.div>
 
           <motion.article
