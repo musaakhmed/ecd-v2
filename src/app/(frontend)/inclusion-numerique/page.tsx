@@ -8,6 +8,7 @@ import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { inclusionNumeriqueLanding } from '@/lib/content/pages/inclusionNumeriqueData'
+import { epnmTestPageContent } from '@/lib/content/epnmTestPage'
 
 const Page = () => {
   return (
@@ -89,7 +90,12 @@ const Page = () => {
                       </p>
                       <span className="inline-flex items-center gap-2 text-inherit font-medium">
                         {inclusionNumeriqueLanding.programmesSection.linkLabel}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -128,9 +134,43 @@ const Page = () => {
                 <p className="leading-relaxed text-inherit mb-6">
                   {inclusionNumeriqueLanding.lieuxSection.intro}
                 </p>
-                <BulletList items={inclusionNumeriqueLanding.lieuxIntervention} lightOnDark animated={false} />
+                <BulletList
+                  items={inclusionNumeriqueLanding.lieuxIntervention}
+                  lightOnDark
+                  animated={false}
+                />
               </DarkTextCard>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary-600 to-secondary-600">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="max-w-2xl mx-auto"
+          >
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+            >
+              {epnmTestPageContent.cta.title}
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-xl text-white/90 mb-8 leading-relaxed">
+              {epnmTestPageContent.cta.description}
+            </motion.p>
+            <motion.a
+              variants={fadeInUp}
+              href={epnmTestPageContent.cta.href}
+              className="inline-block bg-white text-primary-600 font-semibold px-8 py-4 rounded-lg hover:bg-primary-50 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              {epnmTestPageContent.cta.buttonLabel}
+            </motion.a>
           </motion.div>
         </div>
       </section>
