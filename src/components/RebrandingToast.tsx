@@ -9,7 +9,7 @@ export function RebrandingToast() {
   useEffect(() => {
     toast(
       (t) => (
-        <section className="flex flex-col gap-2">
+        <section className="flex flex-col justify-between gap-4">
           <div className="flex justify-between">
             <h4 className="font-semibold">Vous êtes au bon endroit</h4>
             <p onClick={() => toast.dismiss(t.id)} className="cursor-pointer text-right text-sm">
@@ -34,7 +34,7 @@ export function RebrandingToast() {
         duration: 10000,
         position: 'top-right',
         style: {
-          width: '20rem',
+          width: '24rem',
           height: '14rem',
           maxWidth: 'calc(100vw - 2rem)',
           padding: '1.5rem',
