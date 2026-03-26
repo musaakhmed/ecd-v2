@@ -164,37 +164,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Contenu principal */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.div
-              variants={fadeInUp}
-              className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
-              <div className="relative z-10 text-primary-100">
-                <h2 className="text-3xl font-bold text-primary-100 mb-4">
-                  À propos de l&apos;initiation
-                </h2>
-                <p className="text-primary-100/90 leading-relaxed text-lg">
-                  ECD asbl développe un programme complet d&apos;initiation en informatique visant à
-                  offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
-                  s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de
-                  chacun.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Publics ciblés */}
       <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto px-6">
