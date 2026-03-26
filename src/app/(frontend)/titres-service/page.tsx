@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { catalogueModules } from '@/lib/titresServices'
-import { DiscoverCard } from '@/components/ui/DiscoverCard'
+import { CourseModuleCard } from '@/components/ui/CourseModuleCard'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { titresServiceCatalogueHero } from '@/lib/content/pages/titresServicePageData'
 
@@ -80,7 +80,10 @@ const Page = () => {
       >
         <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 items-center">
           {titresServiceCatalogueHero.tags.map((tag) => (
-            <span key={tag} className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+            <span
+              key={tag}
+              className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium"
+            >
               {tag}
             </span>
           ))}
@@ -172,12 +175,12 @@ const Page = () => {
                 >
                   {g.title}
                 </motion.h3>
-                <div className="flex flex-wrap gap-4 md:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
                   {catalogueModules
                     .filter((m) => m.category === g.key)
                     .map((mod) => (
-                      <div key={mod.slug} className="h-full w-full sm:w-[calc(50%-0.5rem)] lg:w-60 xl:h-96">
-                        <DiscoverCard
+                      <div key={mod.slug} className="h-full">
+                        <CourseModuleCard
                           href={`/titres-service/${mod.slug}`}
                           title={mod.titre}
                           description={mod.descriptionCourte}
@@ -237,7 +240,7 @@ const Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial="hidden"
