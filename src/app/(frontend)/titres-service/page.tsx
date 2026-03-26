@@ -255,10 +255,7 @@ const Page = () => {
             >
               Intéressé par nos Formations ?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-xl text-white/90 mb-8 leading-relaxed">
-              Contactez-nous pour organiser une formation sur site pour vos travailleurs
-              Titres-Services.
-            </motion.p>
+
             <motion.a
               variants={fadeInUp}
               href="/contact"

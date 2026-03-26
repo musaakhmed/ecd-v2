@@ -16,7 +16,8 @@ export const homepageHeroSlides: HeroSlide[] = [
     image: '/assets/hero/titres-services.jpg',
     title: 'Transition numérique',
     subtitle: "Réussir sa transition numérique, c'est possible pour tous",
-    description: 'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
+    description:
+      'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
     image: '/assets/hero/seniors-transition-numerique.jpg',
@@ -80,9 +81,9 @@ export type ImpactStatItem = {
 }
 
 export const homepageImpactStats: ImpactStatItem[] = [
-  { value: 1250, suffix: '+', label: 'Participants', description: 'Personnes accompagnées' },
-  { value: 48, label: 'Programmes', description: "D'activités et de formations" },
-  { value: 4472, label: 'Sessions', description: 'Sessions organisées' },
-  { value: 102, label: 'Partenaires', description: 'Institutions et associations' },
+  { value: 2402, label: 'Participants', description: 'Personnes accompagnées' },
+  { value: 1633, label: 'Participantes femmes', description: '' },
+  { value: 528, label: 'Participants hommes', description: '' },
+  { value: 450, label: 'Sessions', description: 'Sessions organisées' },
+  { value: 103, label: 'Partenaires', description: 'Institutions et associations' },
 ]
-

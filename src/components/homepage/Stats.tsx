@@ -104,7 +104,7 @@ const Stats = () => {
           className="text-center mb-8 md:mb-10 lg:mb-6"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-800 mb-2">
-            Notre Impact
+            Notre Impact en 2025
           </h2>
           <p className="text-base md:text-lg text-secondary-600 max-w-2xl mx-auto">
             Des chiffres qui témoignent de notre engagement et de notre impact positif dans la
@@ -113,7 +113,7 @@ const Stats = () => {
         </motion.div>
 
         {/* Stats Grid - four cards on one line on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 lg:gap-4">
           {homepageImpactStats.map((stat, index) => (
             <StatCard key={stat.label} stat={stat} index={index} />
           ))}
