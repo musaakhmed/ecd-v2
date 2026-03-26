@@ -24,7 +24,7 @@ export function TextWithImageOverlap({
   const imageOffsetX = isImageLeft ? -36 : 36
 
   return (
-    <section className={`w-full bg-[#ebebeb] py-12 md:py-16 ${className}`.trim()}>
+    <section className={`w-full bg-[#ebebeb] py-8 ${className}`.trim()}>
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="relative">
           <motion.div
@@ -44,7 +44,7 @@ export function TextWithImageOverlap({
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
-            className={`relative z-10 mt-20 rounded-2xl border border-black/30 bg-[#221d62] px-6 py-8 text-slate-100 shadow-[0_10px_0_rgba(0,0,0,0.35)] md:mt-28 md:rounded-[20px] md:px-10 md:py-10 lg:px-12 lg:py-12 ${
+            className={`relative z-10 rounded-2xl border border-black/30 bg-[#221d62] px-6 py-8 text-slate-100 shadow-[0_10px_0_rgba(0,0,0,0.35)]  md:rounded-[20px] md:px-10 md:py-10 lg:px-12  ${
               isImageLeft ? 'md:ml-36 lg:ml-48' : 'md:mr-36 lg:mr-48'
             } ${cardClassName}`.trim()}
           >
