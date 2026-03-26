@@ -33,11 +33,20 @@ const Page = () => {
           >
             {/* Objectifs généraux */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title={jeunesConnectesPage.sections.objectifs.title} raw hover>
+              <DarkTextCard
+                variant="solid"
+                title={jeunesConnectesPage.sections.objectifs.title}
+                raw
+                hover
+              >
                 <p className="leading-relaxed mb-6 text-inherit">
                   {jeunesConnectesPage.sections.objectifs.intro}
                 </p>
-                <BulletList items={jeunesConnectesPage.objectifsGeneraux} lightOnDark animated={false} />
+                <BulletList
+                  items={jeunesConnectesPage.objectifsGeneraux}
+                  lightOnDark
+                  animated={false}
+                />
               </DarkTextCard>
             </motion.div>
 
@@ -51,7 +60,12 @@ const Page = () => {
 
             {/* Parcours 1 : Stages informatiques (6–12 ans) */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title={jeunesConnectesPage.sections.parcours1.title} raw hover>
+              <DarkTextCard
+                variant="solid"
+                title={jeunesConnectesPage.sections.parcours1.title}
+                raw
+                hover
+              >
                 <p className="leading-relaxed mb-6 text-inherit">
                   {jeunesConnectesPage.sections.parcours1.intro}
                 </p>
@@ -97,7 +111,12 @@ const Page = () => {
 
             {/* Parcours 2 : Jeunes connectés (12–18 ans) */}
             <motion.div variants={fadeInUp} className="mb-8">
-              <DarkTextCard variant="solid" title={jeunesConnectesPage.sections.parcours2.title} raw hover>
+              <DarkTextCard
+                variant="solid"
+                title={jeunesConnectesPage.sections.parcours2.title}
+                raw
+                hover
+              >
                 <p className="leading-relaxed mb-6 text-inherit">
                   {jeunesConnectesPage.sections.parcours2.intro}
                 </p>
@@ -148,7 +167,6 @@ const Page = () => {
                 </div>
               </DarkTextCard>
             </motion.div>
-
           </motion.div>
         </div>
       </section>
@@ -212,7 +230,13 @@ const Page = () => {
                     className="h-full w-full object-cover object-center"
                   />
                 }
-                content={<BulletList items={jeunesConnectesPage.organisation} lightOnDark animated={false} />}
+                content={
+                  <BulletList
+                    items={jeunesConnectesPage.organisation}
+                    lightOnDark
+                    animated={false}
+                  />
+                }
               />
             </motion.div>
 
@@ -233,7 +257,13 @@ const Page = () => {
                     className="h-full w-full object-cover object-center"
                   />
                 }
-                content={<BulletList items={jeunesConnectesPage.competences} lightOnDark animated={false} />}
+                content={
+                  <BulletList
+                    items={jeunesConnectesPage.competences}
+                    lightOnDark
+                    animated={false}
+                  />
+                }
               />
             </motion.div>
 
@@ -268,7 +298,11 @@ const Page = () => {
                     <p className="leading-relaxed mb-4 text-inherit">
                       {jeunesConnectesPage.sections.pourQui.introSouhaitant}
                     </p>
-                    <BulletList items={jeunesConnectesPage.pourQuiSouhaitant} lightOnDark animated={false} />
+                    <BulletList
+                      items={jeunesConnectesPage.pourQuiSouhaitant}
+                      lightOnDark
+                      animated={false}
+                    />
                   </>
                 }
               />

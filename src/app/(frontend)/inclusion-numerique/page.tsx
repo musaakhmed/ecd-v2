@@ -146,7 +146,7 @@ const Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial="hidden"
