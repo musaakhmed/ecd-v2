@@ -53,7 +53,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
-    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageSrc: '/assets/TS/courses/numerique/identite-numerique.jpg',
     imageAlt: 'Identité numérique',
   },
   {
@@ -83,7 +83,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
-    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageSrc: '/assets/TS/courses/numerique/messagerie-electronique.jpg',
     imageAlt: 'Messageries électroniques',
   },
   {
@@ -127,7 +127,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
-    imageSrc: '/assets/epnm/initiation/informatique.jpeg',
+    imageSrc: '/assets/TS/courses/numerique/navigation-internet.webp',
     imageAlt: 'Internet et navigation',
   },
   {
@@ -154,7 +154,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     approbation: [{ region: 'Bruxelles', certificate: 'E1605/B', date: '17/05/2024' }],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
-    imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
+    imageSrc: '/assets/TS/courses/numerique/chatgpt.webp',
     imageAlt: 'Découverte de ChatGPT',
   },
   {
@@ -163,7 +163,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Initiation à Word et Excel : premiers gestes sur ordinateur, documents simples et bases d’un tableau, par des exercices pratiques et progressifs.',
     description:
-      "Cette formation d’initiation à Word et Excel a pour objectif d’accompagner les participantes dans la découverte des outils bureautiques de base, utiles tant dans la vie quotidienne que dans le cadre professionnel.\n\nAdaptée à un public débutant, elle permet d’acquérir les premières compétences numériques à travers des exercices pratiques, concrets et progressifs. Les participantes apprennent à utiliser un ordinateur, à manipuler la souris et le clavier, à créer des documents simples et à comprendre les bases de l’utilisation d’un tableau.",
+      'Cette formation d’initiation à Word et Excel a pour objectif d’accompagner les participantes dans la découverte des outils bureautiques de base, utiles tant dans la vie quotidienne que dans le cadre professionnel.\n\nAdaptée à un public débutant, elle permet d’acquérir les premières compétences numériques à travers des exercices pratiques, concrets et progressifs. Les participantes apprennent à utiliser un ordinateur, à manipuler la souris et le clavier, à créer des documents simples et à comprendre les bases de l’utilisation d’un tableau.',
     objectifs: [
       'Développer l’autonomie numérique de base.',
       'Se familiariser avec les outils bureautiques Word et Excel.',
@@ -184,14 +184,14 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     modalitesPédagogie:
       'La formation repose sur une pédagogie différenciée, alternant apports théoriques et mises en pratique. Elle s’appuie sur des exercices guidés, des démonstrations pas à pas et des situations concrètes adaptées au niveau des participantes. Un syllabus est mis à disposition via un QR code. Une aide à distance peut également être proposée après la formation.',
     evaluationSuivi:
-      "Un questionnaire d’évaluation est remis à l’issue de la formation afin de recueillir l’avis des participantes. Les retours collectés alimentent une démarche d’amélioration continue des contenus et des méthodes pédagogiques.",
+      'Un questionnaire d’évaluation est remis à l’issue de la formation afin de recueillir l’avis des participantes. Les retours collectés alimentent une démarche d’amélioration continue des contenus et des méthodes pédagogiques.',
     supportsLogistiques:
       "Les formations peuvent être organisées soit chez les partenaires, soit dans les locaux d'Espace Cultures & Développement. Le matériel nécessaire est mis à disposition : ordinateurs portables, tablettes, vidéoprojecteur, Flybox et supports pédagogiques.",
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1426/B', date: '07/03/2022' }],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
-    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageSrc: '/assets/TS/courses/numerique/word-excel.jpeg',
     imageAlt: 'Word et Excel – Niveau débutant',
   },
 
@@ -222,7 +222,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'techniques-prevention',
-    imageSrc: '/assets/services/perfectionnement/bureautique.jpeg',
+    imageSrc: '/assets/TS/courses/technique-prevention/technique-nettoyage.jpg',
     imageAlt: 'Techniques de nettoyage',
   },
   {
@@ -251,7 +251,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'techniques-prevention',
-    imageSrc: '/assets/services/perfectionnement/cybersecurity.avif',
+    imageSrc: '/assets/TS/courses/technique-prevention/ergonomie-tms.jpg',
     imageAlt: 'Ergonomie et prévention TMS',
   },
   {
@@ -261,7 +261,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       "Manipuler les produits d'entretien en sécurité : lecture d'étiquettes, pictogrammes et bonnes pratiques.",
     description:
-      "Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).",
+      'Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).',
     objectifs: [
       'Reconnaître les pictogrammes et comprendre les risques.',
       'Appliquer les règles de dilution, stockage et ventilation.',
@@ -274,7 +274,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     approbation: [],
     duree: '4 heures / Groupe',
     category: 'techniques-prevention',
-    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageSrc: '/assets/TS/courses/technique-prevention/produits-chimiques-et-securite.jpg',
     imageAlt: 'Produits chimiques',
   },
   {
@@ -283,7 +283,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       "Prévenir les risques à domicile : identifier les dangers, sécuriser l'espace de travail, réagir en cas d'incident.",
     description:
-      "Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.",
+      'Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.',
     objectifs: [
       'Repérer les dangers avant de commencer une tâche.',
       'Utiliser les produits en sécurité (pictogrammes, stockage, protection).',
@@ -304,14 +304,15 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'techniques-prevention',
-    imageSrc: '/assets/services/perfectionnement/trello.jpg',
+    imageSrc: '/assets/TS/courses/technique-prevention/securite-lieu-travail.jpg',
     imageAlt: 'Sécurité sur son lieu de travail',
   },
   {
     slug: 'techniques-de-repassage',
     titre: 'Techniques de repassage',
     isPlaceholder: true,
-    descriptionCourte: 'Gestes, organisation et astuces pour repasser efficacement et limiter la fatigue.',
+    descriptionCourte:
+      'Gestes, organisation et astuces pour repasser efficacement et limiter la fatigue.',
     description:
       'Contenu à venir. Cette page détaillera les techniques de repassage, l’organisation du poste, les gestes ergonomiques et les bonnes pratiques selon les textiles.',
     objectifs: [
@@ -326,7 +327,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     approbation: [],
     duree: '4 heures / Groupe',
     category: 'techniques-prevention',
-    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageSrc: '/assets/TS/courses/technique-prevention/technique-repassage.jpg',
     imageAlt: 'Techniques de repassage',
   },
 
@@ -389,7 +390,8 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
   {
     slug: 'organisation-du-travail',
     titre: 'Organisation du travail',
-    descriptionCourte: 'Méthodes concrètes pour planifier, prioriser et gagner du temps sans perdre en qualité.',
+    descriptionCourte:
+      'Méthodes concrètes pour planifier, prioriser et gagner du temps sans perdre en qualité.',
     description:
       'Ce module fournit des outils simples, concrets et immédiatement applicables pour mieux organiser le travail au quotidien.\n\nIl permet d’améliorer la gestion du temps, de structurer les tâches, d’anticiper les imprévus et de planifier efficacement les prestations chez les clients.',
     objectifs: [
@@ -496,4 +498,3 @@ export const modules: TitreServiceModules[] = catalogueModules.map((m) => ({
   approbation: m.approbation,
   duree: m.duree,
 }))
-

@@ -160,12 +160,12 @@ const Page = () => {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            <motion.h1
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
             >
               Modules de formation
-            </motion.h1>
+            </motion.h2>
 
             {groupes.map((g) => (
               <div key={g.key} className="mb-14 last:mb-0">
@@ -183,7 +183,6 @@ const Page = () => {
                         <CourseModuleCard
                           href={`/titres-service/${mod.slug}`}
                           title={mod.titre}
-                          description={mod.descriptionCourte}
                           imageSrc={mod.imageSrc}
                           imageAlt={mod.imageAlt}
                           ctaLabel="Voir la fiche"

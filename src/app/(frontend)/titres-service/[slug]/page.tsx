@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getCatalogueModuleBySlug, getCatalogueSlugs } from '@/lib/titresServices'
 import { TitresServiceModuleClient } from './TitresServiceModuleClient'
@@ -27,9 +28,13 @@ const Page = async ({ params }: PageProps) => {
       {/* Hero */}
       <section className="relative bg-linear-to-r from-primary-600 to-secondary-600 text-white py-12 md:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
-        <div
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-20"
-          style={{ backgroundImage: "url('/assets/services/perfectionnement/office.jpg')" }}
+        <Image
+          src={module_.imageSrc}
+          alt={module_.imageAlt}
+          fill
+          priority
+          className="object-cover mix-blend-overlay opacity-20"
+          sizes="100vw"
         />
         <div className="container mx-auto px-4 relative z-10">
           <nav className="mb-4 text-sm text-white/80" aria-label="Fil d'Ariane">
