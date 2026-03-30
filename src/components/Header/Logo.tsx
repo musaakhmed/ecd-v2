@@ -1,18 +1,25 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Logo = () => {
   return (
     <Link href="/">
       <motion.div
-        className="font-semibold lg:text-3xl lg:font-bold cursor-pointer"
-        style={{ color: 'var(--color-header)' }}
+        className="cursor-pointer flex items-center"
         whileHover={{ scale: 1.05, color: 'var(--color-primary)' }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
       >
-        ECD
+        <Image
+          src="/assets/logo/logo.png"
+          alt="Espace Form"
+          width={160}
+          height={44}
+          priority
+          className="h-9 w-auto lg:h-10"
+        />
       </motion.div>
     </Link>
   )

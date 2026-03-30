@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div>
-      <footer className="bg-secondary-900 text-primary-100 lg:max-h-1/4">
+      <footer className="bg-primary-950 text-primary-100 lg:max-h-1/4">
         <div className="container mx-auto px-4 py-4 md:py-5">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {/* About Section */}
@@ -25,7 +25,9 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="space-y-1.5">
-              <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.quickLinksTitle}</h3>
+              <h3 className="text-lg font-bold text-white mb-1.5">
+                {footerContent.quickLinksTitle}
+              </h3>
               <ul className="space-y-1.5">
                 {menu.map((item) => (
                   <li key={item.link}>
@@ -45,7 +47,9 @@ const Footer = () => {
               <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.contactTitle}</h3>
               <ul className="space-y-1.5 text-sm">
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">{footerContent.contact.emailLabel}</span>
+                  <span className="text-primary-300 mb-0.5">
+                    {footerContent.contact.emailLabel}
+                  </span>
                   <a
                     href={footerContent.contact.emailHref}
                     className="text-primary-200 hover:text-white transition-colors duration-200"
@@ -54,7 +58,9 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">{footerContent.contact.phoneLabel}</span>
+                  <span className="text-primary-300 mb-0.5">
+                    {footerContent.contact.phoneLabel}
+                  </span>
                   <a
                     href={footerContent.contact.phoneHref}
                     className="text-primary-200 hover:text-white transition-colors duration-200"
@@ -63,11 +69,15 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">{footerContent.contact.addressLabel}</span>
+                  <span className="text-primary-300 mb-0.5">
+                    {footerContent.contact.addressLabel}
+                  </span>
                   <span className="text-primary-200">{footerContent.contact.address}</span>
                 </li>{' '}
                 <li className="flex flex-col">
-                  <span className="text-primary-300 mb-0.5">{footerContent.contact.companyNumberLabel} </span>
+                  <span className="text-primary-300 mb-0.5">
+                    {footerContent.contact.companyNumberLabel}{' '}
+                  </span>
                   <span className="text-primary-200">{footerContent.contact.companyNumber}</span>
                 </li>
               </ul>
@@ -152,16 +162,23 @@ const Footer = () => {
               </div>
 
               <div className="flex space-x-3 items-center">
-                <Image src="/assets/gdpr.png" alt={footerContent.gdpr.imageAlt} height={36} width={36} />
-                <span className="text-xs">
-                  {footerContent.gdpr.text}
-                </span>
+                <Image
+                  src="/assets/gdpr.png"
+                  alt={footerContent.gdpr.imageAlt}
+                  height={36}
+                  width={36}
+                />
+                <span className="text-xs">{footerContent.gdpr.text}</span>
               </div>
 
               {/* Section NEWSLETTER peut etre activée en supprimant 'hidden' dans le div suivant */}
               <div className="hidden">
-                <h4 className="text-sm font-semibold text-white mb-2">{footerContent.newsletter.title}</h4>
-                <p className="text-primary-200 text-xs mb-3">{footerContent.newsletter.description}</p>
+                <h4 className="text-sm font-semibold text-white mb-2">
+                  {footerContent.newsletter.title}
+                </h4>
+                <p className="text-primary-200 text-xs mb-3">
+                  {footerContent.newsletter.description}
+                </p>
                 <form className="flex flex-col space-y-2">
                   <input
                     type="email"
