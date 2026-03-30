@@ -31,46 +31,67 @@ body,
 
 @theme {
 
-  --color-primary: #428ebd;
-  --color-accent: #a83c24;
+  --color-primary: #1b1d43;
+  --color-secondary: #43c6cd;
+  --color-accent: #ff8a6b;
+  --color-bg: #fbfcfe;
+  --color-surface: #f4f7fb;
+  --color-text: #1f2533;
+  --color-muted: #5f6980;
+  --color-border: #d5ddea;
   --color-header: #000;
 
+  /* Brand primaries */
+  --color-primary-50:  #eef0ff;
+  --color-primary-100: #dde0ff;
+  --color-primary-200: #c2c7ff;
+  --color-primary-300: #9ea5ff;
+  --color-primary-400: #747cf4;
+  --color-primary-500: #5961e0;
+  --color-primary-600: #4148cb; /* logo blue */
+  --color-primary-700: #353aa9;
+  --color-primary-800: #2f3387;
+  --color-primary-900: #2b306d;
+  --color-primary-950: #1b1d43;
 
-  --color-primary-50: #ecf4f8;
-  --color-primary-100: #d9e8f2;
-  --color-primary-200: #b4d2e4;
-  --color-primary-300: #8ebbd7;
-  --color-primary-400: #68a4ca;
-  --color-primary-500: #428ebd;
-  --color-primary-600: #357197;
-  --color-primary-700: #285571;
-  --color-primary-800: #1b394b;
-  --color-primary-900: #0d1c26;
-  --color-primary-950: #09141a;
+  /* Secondary turquoise */
+  --color-secondary-50:  #eefcfd;
+  --color-secondary-100: #d4f7f8;
+  --color-secondary-200: #abedf0;
+  --color-secondary-300: #76dfe5;
+  --color-secondary-400: #43c6cd; /* logo turquoise */
+  --color-secondary-500: #2fb0b8;
+  --color-secondary-600: #278f96;
+  --color-secondary-700: #247279;
+  --color-secondary-800: #255c61;
+  --color-secondary-900: #234d51;
+  --color-secondary-950: #102f33;
 
-  --color-secondary-50: #ebf3fa;
-  --color-secondary-100: #d7e6f4;
-  --color-secondary-200: #afcee9;
-  --color-secondary-300: #87b5de;
-  --color-secondary-400: #5f9dd3;
-  --color-secondary-500: #3784c8;
-  --color-secondary-600: #2c6aa0;
-  --color-secondary-700: #214f78;
-  --color-secondary-800: #163550;
-  --color-secondary-900: #0b1a28;
-  --color-secondary-950: #08131c;
+  /* Warm accent */
+  --color-accent-50:  #fff3ef;
+  --color-accent-100: #ffe3da;
+  --color-accent-200: #ffc5b5;
+  --color-accent-300: #ffa18a;
+  --color-accent-400: #ff8a6b;
+  --color-accent-500: #f66b49;
+  --color-accent-600: #e7512d;
+  --color-accent-700: #c13f20;
+  --color-accent-800: #9a371f;
+  --color-accent-900: #7d321f;
+  --color-accent-950: #44160d;
 
-  --color-accent-50: #fbedea;
-  --color-accent-100: #f6dbd5;
-  --color-accent-200: #edb7ab;
-  --color-accent-300: #e49381;
-  --color-accent-400: #db6f57;
-  --color-accent-500: #d24b2d;
-  --color-accent-600: #a83c24;
-  --color-accent-700: #7e2d1b;
-  --color-accent-800: #541e12;
-  --color-accent-900: #2a0f09;
-  --color-accent-950: #1d0b06;
+  /* Neutral surfaces / text */
+  --color-neutral-50:  #fbfcfe;
+  --color-neutral-100: #f4f7fb;
+  --color-neutral-200: #e8edf5;
+  --color-neutral-300: #d5ddea;
+  --color-neutral-400: #aab7cc;
+  --color-neutral-500: #7f8aa1;
+  --color-neutral-600: #5f6980;
+  --color-neutral-700: #485065;
+  --color-neutral-800: #31384a;
+  --color-neutral-900: #1f2533;
+  --color-neutral-950: #111522;
 
   --color-auxiliary-50: #fef3e6;
   --color-auxiliary-100: #fde6ce;
@@ -154,4 +175,56 @@ h5 {
   to {
     transform: translateX(calc(-1 * var(--strip-width, 0px)));
   }
+}
+
+/* Grey notched pill (matches provided screenshot) */
+.notched-pill {
+  --notched-pill-bg: #dadada;
+  --notched-pill-notch-bg: #ffffff;
+  --notched-pill-radius: 28px;
+  --notched-pill-notch-size: 84px;
+  --notched-pill-notch-offset: 22px;
+
+  position: relative;
+  display: block;
+  padding: 34px 72px 34px 36px;
+  overflow: visible;
+}
+
+.notched-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--notched-pill-bg);
+  border-radius: var(--notched-pill-radius);
+  box-shadow: 0 18px 50px rgba(17, 21, 34, 0.12);
+  z-index: 0;
+}
+
+.notched-pill::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--notched-pill-notch-offset));
+  transform: translateY(-50%);
+  width: var(--notched-pill-notch-size);
+  height: var(--notched-pill-notch-size);
+  border-radius: 999px;
+  background: var(--notched-pill-notch-bg);
+  z-index: 1;
+}
+
+.notched-pill > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Slanted variant: makes one side visually higher */
+.notched-pill--slant {
+  --notched-pill-slant: -6deg;
+}
+
+.notched-pill--slant::before {
+  transform: skewX(var(--notched-pill-slant));
+  transform-origin: 50% 50%;
 }
