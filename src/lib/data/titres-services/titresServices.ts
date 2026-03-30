@@ -357,7 +357,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
-    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageSrc: '/assets/TS/courses/savoir-faire/communication-professionnelle.jpg',
     imageAlt: 'Communication professionnelle',
   },
   {
@@ -384,7 +384,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
-    imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
+    imageSrc: '/assets/TS/courses/savoir-faire/motivation.jpg',
     imageAlt: 'Motivation et gestion de stress',
   },
   {
@@ -412,7 +412,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
-    imageSrc: '/assets/services/perfectionnement/trello.jpg',
+    imageSrc: '/assets/TS/courses/savoir-faire/organisation-travail.webp',
     imageAlt: 'Organisation du travail',
   },
   {
@@ -438,7 +438,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
-    imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+    imageSrc: '/assets/TS/courses/savoir-faire/assertivite.jpg',
     imageAlt: 'Assertivité, poser ses limites',
   },
   {
@@ -464,7 +464,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     ],
     duree: '4 heures / Groupe',
     category: 'bien-etre-savoir-faire',
-    imageSrc: '/assets/services/perfectionnement/office.jpg',
+    imageSrc: '/assets/TS/courses/savoir-faire/deontologie.jpg',
     imageAlt: 'Déontologie et professionnalisme',
   },
 ]
