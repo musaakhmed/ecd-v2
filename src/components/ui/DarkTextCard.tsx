@@ -23,7 +23,7 @@ const variantClasses: Record<DarkTextCardVariant, string> = {
   'gradient-primary':
     'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-primary-100',
   'gradient-secondary':
-    'bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50 text-secondary-100',
+    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-secondary-100',
 }
 
 const titleClasses: Record<DarkTextCardVariant, string> = {
