@@ -1,6 +1,5 @@
 export const eddPageContent = {
   intro: [
-    "L'asbl Espace Cultures & Développement est reconnue par l'ONE comme opérateur d'École de Devoirs sous l'appellation « Notre-Dame-Aux-Neiges », en référence au quartier où se déploie l'action. Active depuis septembre 2015, elle accueille prioritairement les enfants du quartier du Congrès, dont une majorité est issue de l'école fondamentale Congrès Dachsbeck.",
     "Le projet vise à offrir un soutien scolaire accessible afin de prévenir le décrochage et les échecs répétés. L'accompagnement comprend l'aide aux devoirs, la remédiation et le renforcement des compétences de base en lecture, écriture et mathématiques. Des animations éducatives et ludiques sont proposées pour favoriser l'autonomie et la confiance en soi. Des ateliers créatifs, numériques et socio-éducatifs complètent le dispositif.",
     "L'objectif est de développer des méthodes de travail efficaces et le goût d'apprendre. Un espace d'écoute permet d'identifier les difficultés et d'y répondre de manière adaptée. Le projet s'inscrit dans une démarche de coéducation avec les familles et les écoles. L'École de Devoirs constitue ainsi un lieu bienveillant d'épanouissement et de réussite pour chaque enfant.",
   ],
@@ -36,12 +35,13 @@ export const eddPageContent = {
     intro: [
       "Notre projet pédagogique s'inscrit dans une approche inclusive associant l'élève, l'école et les parents, afin de favoriser un véritable processus d'émancipation de l'enfant.",
       "Au-delà d'une simple déclaration d'intentions, ce projet vise la mise en œuvre concrète d'objectifs éducatifs favorisant la réussite et l'égalité des chances. L'école de devoirs « Notre-Dame-Aux-Neiges » s'engage ainsi en faveur d'une école de la réussite, accessible à tous, et porte l'ambition d'une éducation d'excellence. Notre démarche entend redonner à l'école son rôle central dans la construction d'une enfance épanouie, confiante et ouverte sur le monde.",
-      "Une attention particulière est accordée aux publics les plus fragilisés, quels que soient leurs origines ou leurs parcours, afin de réduire les inégalités et de renforcer les opportunités de réussite.",
+      'Une attention particulière est accordée aux publics les plus fragilisés, quels que soient leurs origines ou leurs parcours, afin de réduire les inégalités et de renforcer les opportunités de réussite.',
     ],
     objectifs: [
       {
         title: "L'épanouissement global de l'enfant",
-        description: "par l'organisation d'activités adaptées à ses capacités, à ses besoins et à son rythme d'apprentissage ;",
+        description:
+          "par l'organisation d'activités adaptées à ses capacités, à ses besoins et à son rythme d'apprentissage ;",
       },
       {
         title: "L'amélioration de la qualité de l'accueil",
@@ -53,7 +53,8 @@ export const eddPageContent = {
       },
       {
         title: 'La cohésion sociale',
-        description: "en favorisant la rencontre et le dialogue entre des publics d'horizons divers au sein d'un même lieu ;",
+        description:
+          "en favorisant la rencontre et le dialogue entre des publics d'horizons divers au sein d'un même lieu ;",
       },
       {
         title: 'Le renforcement des apprentissages de base',
@@ -65,11 +66,13 @@ export const eddPageContent = {
       },
       {
         title: 'La sensibilisation à la citoyenneté',
-        description: 'pour éveiller les enfants aux valeurs de respect, de solidarité et de responsabilité ;',
+        description:
+          'pour éveiller les enfants aux valeurs de respect, de solidarité et de responsabilité ;',
       },
       {
         title: 'Le soutien à la vie familiale',
-        description: 'en contribuant à une meilleure conciliation entre vie familiale, sociale et professionnelle.',
+        description:
+          'en contribuant à une meilleure conciliation entre vie familiale, sociale et professionnelle.',
       },
     ],
   },
@@ -113,7 +116,7 @@ export const eddSectionMeta: Record<
     image: '/assets/edd/ateliers-didactique.png',
     imageAlt: 'Projet pédagogique et objectifs',
     shortDescription:
-      "Nos objectifs éducatifs et notre approche inclusive : élève, école et parents.",
+      'Nos objectifs éducatifs et notre approche inclusive : élève, école et parents.',
   },
   'activites-et-programmes': {
     image: '/assets/edd/ateliers-ludiques-recreatifs.png',
@@ -130,8 +133,7 @@ export const eddSectionMeta: Record<
   partenaires: {
     image: '/assets/edd/ateliers-numeriques.png',
     imageAlt: 'Partenaires',
-    shortDescription:
-      'ONE, CEDD, école Congrès Dachsbeck, Maison Médicale et acteurs du quartier.',
+    shortDescription: 'ONE, CEDD, école Congrès Dachsbeck, Maison Médicale et acteurs du quartier.',
   },
   'public-cible': {
     image: '/assets/edd/ateliers-artistiques.png',
@@ -148,10 +150,17 @@ export const eddSections = [
     title: "La petite histoire de l'École de Devoirs",
     menuTitle: 'Petite histoire',
   },
-  { slug: 'projet-pedagogique', title: 'Notre projet pédagogique', menuTitle: 'Projet pédagogique' },
-  { slug: 'activites-et-programmes', title: 'Activités et programmes', menuTitle: 'Activités et programmes' },
+  {
+    slug: 'projet-pedagogique',
+    title: 'Notre projet pédagogique',
+    menuTitle: 'Projet pédagogique',
+  },
+  {
+    slug: 'activites-et-programmes',
+    title: 'Activités et programmes',
+    menuTitle: 'Activités et programmes',
+  },
   { slug: 'cafe-parents', title: 'Café-Parents', menuTitle: 'Café Parents' },
   { slug: 'partenaires', title: 'Partenaires', menuTitle: 'Partenaires' },
   { slug: 'public-cible', title: 'Public cible', menuTitle: 'Public cible' },
 ] as const
-

@@ -17,7 +17,7 @@ const Page = () => {
         imageAlt="École de Devoirs Notre-Dame-Aux-Neiges"
         subtitle="École de Devoirs"
         title="Notre-Dame-Aux-Neiges"
-        description="Un lieu bienveillant d&apos;épanouissement et de réussite pour chaque enfant du quartier du Congrès. Soutien scolaire, activités variées et coéducation avec les familles."
+        description="Un lieu bienveillant d'épanouissement et de réussite pour chaque enfant du quartier. Soutien scolaire, activités variées et coéducation avec les familles. L’asbl Espace Cultures & Développement est un opérateur d’École de Devoirs sous l’appellation « Notre-Dame-Aux-Neiges », en référence au quartier où se déploie l’action."
       />
 
       {/* Intro – primary gradient card like nos-services */}
@@ -33,7 +33,7 @@ const Page = () => {
             <motion.div variants={fadeInUp}>
               <DarkTextCard variant="gradient-primary" raw>
                 <h2 className="text-2xl md:text-3xl font-bold text-primary-100 mb-6">
-                  Une École de Devoirs reconnue par l&apos;ONE
+                  Accompagner chaque enfant vers la réussite
                 </h2>
                 <div className="space-y-4 text-primary-100/90">
                   {eddPageContent.intro.map((paragraph, i) => (
