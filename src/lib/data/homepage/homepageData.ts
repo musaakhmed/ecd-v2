@@ -85,5 +85,5 @@ export const homepageImpactStats: ImpactStatItem[] = [
   { value: 1633, label: 'Femmes', description: '' },
   { value: 528, label: 'Hommes', description: '' },
   { value: 450, label: 'Sessions', description: '' },
-  { value: 103, label: 'Partenaires', description: '' },
+  { value: 103, label: 'Organisations', description: '' },
 ]

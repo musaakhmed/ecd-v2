@@ -42,10 +42,10 @@ export function RebrandingToast() {
         duration: 60000,
         position: 'top-right',
         style: {
-          width: '24rem',
-          height: '16rem',
+          width: '14rem',
+          height: '10rem',
           maxWidth: 'calc(100vw - 2rem)',
-          padding: '1.5rem',
+          padding: '1rem',
           borderRadius: '0.75rem',
           color: 'var(--color-primary-50)',
           border: '1px solid var(--color-primary-600)',

@@ -1,15 +1,48 @@
 export const partnersContent = {
   sectionTitle: 'Nos Soutiens',
   logos: [
-    { title: 'stib', image: '/assets/partenaires/stib.jpg' },
-    { title: 'fondation roi baudoin', image: '/assets/partenaires/logoFRB.png' },
-    { title: 'equal brussels', image: '/assets/partenaires/Logo-equal-bleu.png' },
-    { title: 'francophones bruxelles', image: '/assets/partenaires/Logo_Francophones_Bruxelles.png' },
-    { title: 'region bruxelles capitale', image: '/assets/partenaires/region_bruxelles_capitale.png' },
-    { title: 'form ts', image: '/assets/partenaires/form-ts.png' },
-    { title: 'ville de bruxelles', image: '/assets/partenaires/ville_bx.png' },
-    { title: 'brusoc', image: '/assets/partenaires/brusoc.png' },
-    { title: 'digital belgium skills fund', image: '/assets/partenaires/dbsf.avif' },
+    {
+      title: 'equal.brussels',
+      link: 'https://equal.brussels/fr/',
+      image: '/assets/partenaires/Logo-equal-bleu.png',
+    },
+    {
+      title: 'STIB',
+      link: 'https://www.stib-mivb.be/accueil',
+      image: '/assets/partenaires/stib.jpg',
+    },
+    { title: 'Form TS', link: 'https://form-ts.be/', image: '/assets/partenaires/form-ts.png' },
+    {
+      title: 'BRUSOC',
+      link: 'https://info.hub.brussels/outils/qui-peut-maider/brusoc-par-finance-investbrussels',
+      image: '/assets/partenaires/brusoc.png',
+    },
+    {
+      title: 'Ville de Bruxelles',
+      link: 'https://www.bruxelles.be/',
+      image: '/assets/partenaires/ville_bx.png',
+    },
+    {
+      title: 'COCOF',
+      link: 'https://ccf.brussels/',
+      image: '/assets/partenaires/Logo_Francophones_Bruxelles.png',
+    },
+    {
+      title: 'Bruxelles Economie et Emploi',
+      link: 'https://economie-emploi.brussels/',
+      image: '/assets/partenaires/bruxelles-economie-emploi.png',
+    },
+    {
+      title: 'FOREM',
+      link: 'https://www.leforem.be/',
+      image: '/assets/partenaires/forem.jpg',
+    },
+    // { title: 'fondation roi baudoin', image: '/assets/partenaires/logoFRB.png' },
+    // {
+    //   title: 'region bruxelles capitale',
+    //   image: '/assets/partenaires/region_bruxelles_capitale.png',
+    // },
+    // { title: 'digital belgium skills fund', image: '/assets/partenaires/dbsf.avif' },
   ],
 } as const
 
@@ -68,4 +101,3 @@ export const serviceCardsContent = {
     },
   ] satisfies ServiceCardContent[],
 } as const
-
