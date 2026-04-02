@@ -25,12 +25,12 @@ export const homepageHeroSlides: HeroSlide[] = [
     subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',
   },
-  {
-    image: '/assets/hero/robotics.jpg',
-    title: 'Services sur mesure',
-    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
-    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
-  },
+  // {
+  //   image: '/assets/hero/robotics.jpg',
+  //   title: 'Services sur mesure',
+  //   subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
+  //   description: 'Un accompagnement sur mesure, adapté à vos besoins.',
+  // },
 ]
 
 export type ProgramCard = {
