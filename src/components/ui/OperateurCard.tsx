@@ -11,7 +11,7 @@ export function ValueCards() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 overflow-visible">
           {valueCardsItems.map((item, index) => (
             <article key={item.title + index} className="relative overflow-visible group flex">
-              <div className="relative rounded-xl bg-azure-500 group-hover:bg-azure-600 text-white shadow-md transition-all duration-300 flex flex-col w-full h-full overflow-hidden">
+              <div className="relative rounded-xl bg-azure-700 group-hover:bg-azure-800 text-white shadow-md transition-all duration-300 flex flex-col w-full h-full overflow-hidden">
                 {item.img && (
                   <div className="relative w-full aspect-4/3 overflow-hidden">
                     <Image
@@ -38,7 +38,7 @@ export function ValueCards() {
                   <Link href={item.link}>
                     <button
                       type="button"
-                      className="mt-2 cursor-pointer w-full py-2.5 px-4 rounded-xl font-semibold text-sm bg-white/15 text-white hover:bg-white/20 transition-all duration-300 border border-white/25"
+                      className="mt-2 cursor-pointer w-full py-2.5 px-4 rounded-xl font-semibold text-sm bg-azure-200/25 text-white hover:bg-azure-100/80 hover:text-azure-800 transition-all duration-300 border border-white/25"
                     >
                       Lire plus
                     </button>
