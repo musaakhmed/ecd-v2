@@ -1,7 +1,5 @@
 import React from 'react'
 import WhoWeAre from '@/components/About/WhoWeAre'
-import FormationTS from '@/components/About/FormationTS'
-import ES from '@/components/About/ES'
 import { ValueCards } from '@/components/ui/OperateurCard'
 
 const About = () => {

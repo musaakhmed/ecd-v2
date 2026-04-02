@@ -58,8 +58,8 @@ const SocialMediaButton = ({ href, ariaLabel, iconColor, children }: SocialMedia
 
 const SocialMediaBar = () => {
   return (
-    <section className="sticky top-1/12 right-0 z-50">
-      <div className="flex flex-col mb-6 absolute z-10 gap-2 top-1/4 right-0 p-4">
+    <section className="sticky bottom-0 md:top-1/12 right-0 z-50">
+      <div className="flex flex-col mb-6 absolute z-10 gap-2 md:top-1/4 right-0 p-4">
         <SocialMediaButton
           href={socialMediaLinks[0].link}
           ariaLabel={socialMediaLinks[0].name}
