@@ -62,7 +62,9 @@ export function ImageCardHero({
     <section className={`w-full bg-background ${sectionPadding} px-4 md:px-8 lg:px-16`}>
       <div className="max-w-6xl mx-auto">
         {!titleInCard && (
-          <h2 className={`text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 ${titleMargin}`}>
+          <h2
+            className={`text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 ${titleMargin}`}
+          >
             {title}
           </h2>
         )}
@@ -92,33 +94,31 @@ export function ImageCardHero({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={motionConfig.viewport}
             transition={motionConfig.transition}
-            className={`mt-4 w-full lg:max-w-md lg:mt-0 bg-secondary-800 rounded-3xl shadow-lg p-6 md:p-8 ${cardPositionClasses}`}
+            className={`mt-4 w-full lg:max-w-md lg:mt-0 bg-primary-800 rounded-3xl shadow-lg p-6 md:p-8 ${cardPositionClasses}`}
           >
-            <div className="space-y-4 text-secondary-100">
+            <div className="space-y-4 text-secondary-50">
               {titleInCard && (
-                <h3 className="text-xl md:text-2xl font-bold text-secondary-100">
-                  {title}
-                </h3>
+                <h3 className="text-xl md:text-2xl font-bold text-secondary-100">{title}</h3>
               )}
               {description && (
-                <p className="text-secondary-100/90 text-sm md:text-base leading-relaxed">
+                <p className="text-secondary-50 text-sm md:text-base leading-relaxed">
                   {description}
                 </p>
               )}
               {intro && (
-                <p className="text-secondary-100/90 text-sm md:text-base leading-relaxed font-medium">
+                <p className="text-secondary-50 text-sm md:text-base leading-relaxed font-medium">
                   {intro}
                 </p>
               )}
               {listItems && listItems.length > 0 && (
-                <ul className="space-y-2 text-secondary-100/90 text-sm md:text-base leading-relaxed list-disc list-inside">
+                <ul className="space-y-2 text-secondary-50 text-sm md:text-base leading-relaxed list-disc list-inside">
                   {listItems.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
               )}
               {conclusion && (
-                <p className="text-secondary-100/90 text-sm md:text-base leading-relaxed pt-2">
+                <p className="text-secondary-50 text-sm md:text-base leading-relaxed pt-2">
                   {conclusion}
                 </p>
               )}

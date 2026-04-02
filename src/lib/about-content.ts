@@ -238,7 +238,7 @@ export interface QuiSommesNousContent {
 }
 
 export const heroContent = {
-  title: 'ECD asbl en quelques mots',
+  title: 'EF en quelques mots',
   subtitle: "La culture comme levier d'intégration et d'insertion",
   cta: 'Découvrez nos actions',
 }
@@ -337,8 +337,7 @@ export const accreditations: Accreditation[] = [
     badge: 'Reconnu ONE',
     icon: 'School',
     content: {
-      intro:
-        "Espace Cultures & Développement est reconnu par l'ONE en tant qu'opérateur d'École de Devoirs.",
+      intro: "Espace Forma est reconnu par l'ONE en tant qu'opérateur d'École de Devoirs.",
       highlight: {
         stat: '80%',
         text: "des participants viennent de l'école fondamentale Congrès Dachsbeck",
@@ -387,7 +386,7 @@ export const accreditations: Accreditation[] = [
     icon: 'Building2',
     content: {
       intro:
-        "ECD développe un dispositif d'insertion professionnelle centré sur le métier d'animateur·trice - médiateur·trice numérique.",
+        "EF développe un dispositif d'insertion professionnelle centré sur le métier d'animateur·trice - médiateur·trice numérique.",
       job: {
         title: 'Animateur·trice - Médiateur·trice numérique',
         description:
@@ -413,7 +412,7 @@ export const accreditations: Accreditation[] = [
     icon: 'Award',
     content: {
       intro:
-        'ECD est agréé comme opérateur de formation externe en informatique pour le secteur des Titres-Services.',
+        'EF est agréé comme opérateur de formation externe en informatique pour le secteur des Titres-Services.',
       features: [
         'Modules validés et remboursables',
         'Formation sur site partenaire',
@@ -445,7 +444,7 @@ export const eddPageContent: EddContent = {
     subtitle: 'Opérateur en École de Devoirs',
     title: 'Notre-Dame-Aux-Neiges : un soutien scolaire au cœur du quartier',
     description:
-      "Espace Cultures & Développement est reconnu par l'ONE comme opérateur d'École de Devoirs. Nous accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large participation de l'école fondamentale Congrès Dachsbeck (±80 %).",
+      "Espace Forma est reconnu par l'ONE comme opérateur d'École de Devoirs. Nous accueillons principalement les enfants du quartier Notre-Dame-Aux-Neiges, avec une large participation de l'école fondamentale Congrès Dachsbeck (±80 %).",
   },
   reperePoints: [
     "Reconnu par l'ONE sous l'appellation « Notre-Dame-Aux-Neiges ».",
@@ -495,7 +494,7 @@ export const eddPageContent: EddContent = {
     },
     {
       title: 'Ateliers numériques éducatifs',
-      description: "En lien avec le pôle numérique d'ECD :",
+      description: "En lien avec le pôle numérique d'EF :",
       items: [
         "Initiation à l'ordinateur et à la tablette",
         "Découverte d'outils ludiques d'apprentissage (jeux pédagogiques, quizz interactifs)",
@@ -532,12 +531,12 @@ export const esdPageContent: EsdContent = {
     subtitle: "Opérateur d'économie sociale",
     title: "Entreprise Sociale et Démocratique : un dispositif d'insertion professionnelle",
     description:
-      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
+      "Espace Forma est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
   },
   presentation: {
     title: "Un dispositif d'insertion socioprofessionnelle",
     paragraphs: [
-      "Espace Cultures & Développement est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
+      "Espace Forma est reconnue comme entreprise sociale d'insertion mandatée et spécifiquement agréée en tant qu'Entreprise Sociale et Démocratique (ESD). Cet agrément atteste d'un engagement structurel en faveur de l'inclusion, de l'emploi durable et du développement des compétences des publics éloignés du marché du travail.",
       "Dans ce cadre, l'association a mis en place un dispositif d'insertion socioprofessionnelle (ISP) centré sur le métier d'animateur·trice – médiateur·trice numérique, fonction en plein essor dans le contexte de la transition digitale et de la lutte contre la fracture numérique.",
     ],
   },
@@ -565,7 +564,7 @@ export const esdPageContent: EsdContent = {
   parcours: {
     title: "Un programme d'insertion structuré, progressif et professionnalisant",
     description:
-      "Le parcours d'insertion proposé par ECD est organisé en plusieurs dimensions complémentaires :",
+      "Le parcours d'insertion proposé par EF est organisé en plusieurs dimensions complémentaires :",
     dimensions: [
       {
         title: 'Développement des compétences techniques',
@@ -601,7 +600,7 @@ export const esdPageContent: EsdContent = {
       'À des candidats identifiés en collaboration avec Actiris',
     ],
     conclusion:
-      "ECD entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur.",
+      "EF entretient une relation régulière avec les référents CPAS/Actiris afin d'assurer un suivi cohérent et transparent de l'évolution du travailleur.",
   },
   accompagnement: {
     title: 'Un accompagnement professionnel et social complet',
@@ -635,7 +634,7 @@ export const epnPageContent: EpnContent = {
     subtitle: "Opérateur d'EPN labellisé",
     title: 'Inclusion numérique mobile : un dispositif labellisé et itinérant',
     description:
-      "Espace Cultures & Développement est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
+      "Espace Forma est un opérateur d'inclusion numérique labellisé en Région bruxelloise et détenteur du label fédéral Connectoo, attestant d'une expertise dans l'accompagnement de divers publics.",
   },
   firstSection: {
     intro:
@@ -648,7 +647,7 @@ export const epnPageContent: EpnContent = {
       "Un ancrage territorial fort et une mission affirmée d'inclusion numérique",
     ],
     conclusion:
-      "L'EPNM d'Espace Cultures & Développement s'appuie sur une équipe de formateurs et d'animateurs spécialisés, dotée d'un équipement entièrement mobile — ordinateurs portables, tablettes modulables, routeurs, vidéoprojecteurs et matériel pédagogique. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement directement au sein des structures partenaires, partout à Bruxelles.",
+      "L'EPNM d'Espace Forma s'appuie sur une équipe de formateurs et d'animateurs spécialisés, dotée d'un équipement entièrement mobile — ordinateurs portables, tablettes modulables, routeurs, vidéoprojecteurs et matériel pédagogique. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement directement au sein des structures partenaires, partout à Bruxelles.",
   },
   reperePoints: [
     "Opérateur d'inclusion numérique labellisé en Région bruxelloise.",
@@ -674,7 +673,7 @@ export const epnPageContent: EpnContent = {
   equipement: {
     title: 'Un équipement entièrement mobile',
     description:
-      "L'EPNM d'Espace Cultures & Développement s'appuie sur une équipe de formateurs et d'animateurs spécialisés, dotée d'un équipement entièrement mobile. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement directement au sein des structures partenaires, partout à Bruxelles.",
+      "L'EPNM d'Espace Forma s'appuie sur une équipe de formateurs et d'animateurs spécialisés, dotée d'un équipement entièrement mobile. Ce dispositif permet de proposer des séances d'initiation, de formation et de perfectionnement directement au sein des structures partenaires, partout à Bruxelles.",
     items: [
       'Ordinateurs portables',
       'Tablettes modulables',
@@ -713,7 +712,7 @@ export const epnPageContent: EpnContent = {
   connectoo: {
     title: 'Label Connectoo',
     description:
-      'En complément, Espace Cultures & Développement dispose également du label Connectoo, délivré par BOSA. Ce label atteste :',
+      'En complément, Espace Forma dispose également du label Connectoo, délivré par BOSA. Ce label atteste :',
     attestations: [
       "D'une expertise reconnue en accompagnement numérique",
       'De la maîtrise des démarches administratives en ligne (eBox, itsme, MyMinfin, MyPension, MyHealth, etc.)',
@@ -728,12 +727,12 @@ export const titresServicesPageContent: TitresServicesContent = {
     subtitle: 'Opérateur de formation de Titres-Services',
     title: 'Formations professionnelles pour le secteur des Titres-Services',
     description:
-      "ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil.",
+      "EF est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles, à Wallonie et reconnu par le Fonds sectoriel, Form TS. Ses modules s'adressent aux aide-ménagères, aux encadrants ainsi qu'aux équipes administratives, en tenant compte des besoins spécifiques de chaque profil.",
   },
   firstSection: {
     title: 'Opérateur de formation agréé',
     description:
-      'ECD est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles et en Wallonie, reconnu par le Fonds sectoriel Form TS.',
+      'EF est un opérateur de formation agréé dans le secteur des Titres-Services à Bruxelles et en Wallonie, reconnu par le Fonds sectoriel Form TS.',
     items: [
       'Formations adaptées aux aide-ménagères, encadrants et équipes administratives',
       'Modules personnalisés selon les besoins spécifiques de chaque profil',
@@ -797,7 +796,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
   hero: {
     title: 'Qui sommes-nous ?',
     description:
-      "Espace Cultures & Développement est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale. L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services — en favorisant l'accès à l'éducation, au numérique, à la citoyenneté et au bien-être.",
+      "Espace Forma (EF) asbl (auparavant: Espace Cultures & Développement) est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale. L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services — en favorisant l'accès à l'éducation, au numérique, à la citoyenneté et au bien-être.",
   },
   introduction: {
     paragraphs: [
@@ -808,7 +807,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
   approche: {
     title: 'Une approche interculturelle, inclusive et participative',
     description:
-      "La démarche d'ECD s'appuie sur une vision profondément interculturelle, promouvant la rencontre, l'expression et la compréhension mutuelle.",
+      "La démarche d'EF s'appuie sur une vision profondément interculturelle, promouvant la rencontre, l'expression et la compréhension mutuelle.",
     intro: "L'association œuvre à :",
     objectifs: [
       'Valoriser les diversités culturelles et sociales ;',
@@ -817,14 +816,14 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
       "Promouvoir un vivre-ensemble fondé sur l'équité, la solidarité et le respect mutuel.",
     ],
     conclusion:
-      "ECD crée ainsi des espaces d'apprentissage, de dialogue et d'expérimentation qui favorisent la construction de citoyennetés actives et responsables.",
+      "Espace Forma crée ainsi des espaces d'apprentissage, de dialogue et d'expérimentation qui favorisent la construction de citoyennetés actives et responsables.",
   },
   domaines: {
     title: "Nos domaines d'action",
     soutienScolaire: {
       title: 'Soutien scolaire et remédiation',
       description:
-        'ECD organise un dispositif structuré pour accompagner les enfants et adolescents :',
+        'EF organise un dispositif structuré pour accompagner les enfants et adolescents :',
       points: [
         'Aide aux devoirs et consolidation des apprentissages ;',
         'Remédiation individualisée ;',
@@ -838,7 +837,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
     inclusionNumerique: {
       title: 'Inclusion numérique pour tous',
       description:
-        'ECD agit au cœur de la lutte contre la fracture numérique en développant une offre adaptée à une grande diversité de publics :',
+        'EF agit au cœur de la lutte contre la fracture numérique en développant une offre adaptée à une grande diversité de publics :',
       publics: {
         left: [
           'Jeunes',
@@ -861,7 +860,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
     formationsTitresServices: {
       title: 'Formations Titres-Services : compétences numériques et bien-être au travail',
       description:
-        "ECD est opérateur de formation agréé dans le secteur des Titres-Services (Bruxelles et prochainement Wallonie). Ses modules s'adressent aux aides-ménagères, encadrants et équipes administratives.",
+        "EF est opérateur de formation agréé dans le secteur des Titres-Services (Bruxelles et prochainement Wallonie). Ses modules s'adressent aux aides-ménagères, encadrants et équipes administratives.",
       competencesNumeriques: {
         title: 'Compétences numériques professionnelles',
         items: [
@@ -888,7 +887,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
     },
     ateliersParentalite: {
       title: 'Ateliers et groupes de parole autour de la parentalité',
-      description: 'ECD propose des espaces dédiés aux familles et aux parents :',
+      description: 'EF propose des espaces dédiés aux familles et aux parents :',
       items: [
         'Ateliers thématiques (éducation, communication familiale, enjeux scolaires) ;',
         'Groupes de parole entre parents ;',

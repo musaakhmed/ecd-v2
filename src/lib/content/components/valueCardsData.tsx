@@ -52,7 +52,7 @@ export const valueCardsItems: ValueCardItem[] = [
       </div>
     ),
     link: '/a-propos/ecole-de-devoirs',
-    img: '/assets/operateur/ecole-de-devoirs.png',
+    img: '/assets/operateur/ecole-de-devoirs.jpg',
   },
   {
     icon: '',
@@ -166,7 +166,9 @@ export const valueCardsItems: ValueCardItem[] = [
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold mb-2">Compétences de bien-être, ergonomie et prévention :</h4>
+          <h4 className="font-semibold mb-2">
+            Compétences de bien-être, ergonomie et prévention :
+          </h4>
           <ul className="list-disc list-inside space-y-1">
             {titresServicesPageContent.competencesBienEtre.items.map((item, idx) => (
               <li key={idx} className="text-sm">
@@ -191,4 +193,3 @@ export const valueCardsItems: ValueCardItem[] = [
     img: '/assets/operateur/formation-titres-services.png',
   },
 ]
-

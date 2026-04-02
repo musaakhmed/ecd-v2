@@ -31,7 +31,7 @@ const WhoWeAre = () => {
             {/*<div className="absolute inset-0 -skew-x-8 md:skew-x-0 origin-top-left md:origin-center w-[120%] -left-[10%] md:left-0 md:w-full"></div>*/}
             <Image
               className="object-cover object-center skew-x-8 md:skew-x-0 h-full w-full"
-              src="/assets/operateur/economie-sociale.png"
+              src="/assets/about/qui-sommes-nous.jpg"
               alt={quiSommesNousPageContent.hero.title}
               fill
               sizes="(max-width: 768px) 100vw, 280px"

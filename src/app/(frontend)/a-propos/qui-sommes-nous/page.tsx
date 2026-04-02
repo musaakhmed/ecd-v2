@@ -268,7 +268,7 @@ const Page = () => {
             <motion.div variants={fadeInUp}>
               <ImageCardHero
                 title={`4. ${content.domaines.ateliersParentalite.title}`}
-                imageSrc="/assets/operateur/ecole-de-devoirs.png"
+                imageSrc="/assets/about/qui-sommes-nous/ateliers-parentalite.jpg"
                 imageAlt={content.domaines.ateliersParentalite.title}
                 imageOnLeft={false}
                 titleInCard
