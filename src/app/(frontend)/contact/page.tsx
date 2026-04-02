@@ -151,7 +151,7 @@ const Page = () => {
             >
               <motion.h2
                 variants={fadeInUp}
-                className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6"
+                className="text-3xl md:text-4xl font-bold text-primary-900 mb-6"
               >
                 {contactPageContent.contactInfoTitle}
               </motion.h2>
@@ -176,7 +176,7 @@ const Page = () => {
                           {contactInfoIcons[info.kind]}
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-secondary-900 mb-1">
+                          <h3 className="text-lg font-semibold text-primary-900 mb-1">
                             {info.title}
                           </h3>
                           <p className="text-gray-600">{info.content}</p>
@@ -188,7 +188,7 @@ const Page = () => {
                           {contactInfoIcons[info.kind]}
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-secondary-900 mb-1">
+                          <h3 className="text-lg font-semibold text-primary-900 mb-1">
                             {info.title}
                           </h3>
                           <p className="text-gray-600">{info.content}</p>
@@ -204,7 +204,7 @@ const Page = () => {
                 variants={fadeInUp}
                 className="bg-white rounded-xl p-6 shadow-md border border-primary-100"
               >
-                <h3 className="text-xl font-semibold text-secondary-900 mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold text-primary-900 mb-4 flex items-center gap-2">
                   <svg
                     className="w-6 h-6 text-primary-600"
                     fill="none"
@@ -249,7 +249,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-8 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-8 text-center"
             >
               {contactPageContent.map.title}
             </motion.h2>

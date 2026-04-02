@@ -137,7 +137,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-6 text-center"
             >
               {epnmTestPageContent.whatIs.title}
             </motion.h2>
@@ -166,7 +166,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 text-center"
             >
               {epnmTestPageContent.services.title}
             </motion.h2>
@@ -185,7 +185,7 @@ const Page = () => {
                   className="bg-gradient-to-br from-primary-50 to-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-100"
                 >
                   <div className="text-primary-600 mb-4">{serviceIcons[service.kind]}</div>
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-primary-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
@@ -205,7 +205,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 text-center"
             >
               {epnmTestPageContent.audiences.title}
             </motion.h2>
@@ -223,7 +223,7 @@ const Page = () => {
                   whileHover={{ scale: 1.02 }}
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-secondary-500"
                 >
-                  <h3 className="text-xl font-semibold text-secondary-900 mb-3">
+                  <h3 className="text-xl font-semibold text-primary-900 mb-3">
                     {audience.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{audience.description}</p>
@@ -245,7 +245,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-12 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-12 text-center"
             >
               {epnmTestPageContent.howItWorks.title}
             </motion.h2>
@@ -261,7 +261,7 @@ const Page = () => {
                       {item.step}
                     </div>
                     <div className="flex-1 bg-primary-50 rounded-lg p-6 border border-primary-100">
-                      <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+                      <h3 className="text-xl font-semibold text-primary-900 mb-2">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">{item.description}</p>

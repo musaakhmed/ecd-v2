@@ -16,12 +16,12 @@ interface DarkIntroSectionProps {
  */
 export function DarkIntroSection({ children, animated = true }: DarkIntroSectionProps) {
   const cardClasses =
-    'bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden'
-  const contentClasses = 'relative z-10 text-primary-100 leading-relaxed text-lg'
+    'bg-gradient-to-br from-azure-500 to-azure-600 rounded-2xl shadow-lg p-8 md:p-10 border border-azure-600/50 relative overflow-hidden'
+  const contentClasses = 'relative z-10 text-white/90 leading-relaxed text-lg'
 
   const cardContent = (
     <>
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/25 to-transparent rounded-full -mr-16 -mt-16" />
       <div className={contentClasses}>{children}</div>
     </>
   )

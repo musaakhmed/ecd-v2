@@ -2,11 +2,10 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
-import { TextWithImageOverlap } from '@/components/ui/TextWithImageOverlap'
+import { AlternatingImageCards } from '@/components/ui/AlternatingImageCards'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { emploiNumeriquePage } from '@/lib/content/pages/inclusionNumeriqueData'
 
@@ -145,116 +144,83 @@ const Page = () => {
               </DarkTextCard>
             </motion.div>
 
-            {/* Approche pédagogique */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <TextWithImageOverlap
-                title={emploiNumeriquePage.sections.approche.title}
-                imagePosition="right"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/services/perfectionnement/bureautique.jpeg"
-                    alt="Approche pedagogique numerique orientee emploi"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <>
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {emploiNumeriquePage.sections.approche.paragraphs[0]}
-                    </p>
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {emploiNumeriquePage.sections.approche.paragraphs[1]}
-                    </p>
-                    <BulletList
-                      items={emploiNumeriquePage.approcheList}
-                      color="secondary"
-                      lightOnDark
-                      animated={false}
-                      className="mb-6"
-                    />
-                    <p className="leading-relaxed text-inherit">
-                      {emploiNumeriquePage.sections.approche.paragraphs[2]}
-                    </p>
-                  </>
-                }
-              />
-            </motion.div>
-
-            {/* Suivi et évaluation */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <TextWithImageOverlap
-                title={emploiNumeriquePage.sections.suivi.title}
-                imagePosition="left"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/services/perfectionnement/outlook.jpg"
-                    alt="Suivi numerique des demarches emploi"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <>
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {emploiNumeriquePage.sections.suivi.paragraphs[0]}
-                    </p>
-                    <BulletList
-                      items={emploiNumeriquePage.suiviItems}
-                      lightOnDark
-                      animated={false}
-                      className="mb-6"
-                    />
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {emploiNumeriquePage.sections.suivi.paragraphs[1]}
-                    </p>
-                    <p className="leading-relaxed text-inherit">
-                      {emploiNumeriquePage.sections.suivi.paragraphs[2]}
-                    </p>
-                  </>
-                }
-              />
-            </motion.div>
-
-            {/* Partenariats */}
-            <motion.div variants={fadeInUp}>
-              <TextWithImageOverlap
-                title={emploiNumeriquePage.sections.partenariats.title}
-                imagePosition="right"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/about/ecd.jpg"
-                    alt="Partenariats ECD autour de l'emploi et du numerique"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <>
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {emploiNumeriquePage.sections.partenariats.intro}
-                    </p>
-                    <BulletList
-                      items={emploiNumeriquePage.partenariatsList}
-                      lightOnDark
-                      animated={false}
-                    />
-                  </>
-                }
-              />
-            </motion.div>
+            <AlternatingImageCards
+              variants={fadeInUp}
+              items={[
+                {
+                  title: emploiNumeriquePage.sections.approche.title,
+                  imageSrc: '/assets/services/perfectionnement/bureautique.jpeg',
+                  imageAlt: 'Approche pedagogique numerique orientee emploi',
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900  border-secondary-600/50',
+                  content: (
+                    <>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {emploiNumeriquePage.sections.approche.paragraphs[0]}
+                      </p>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {emploiNumeriquePage.sections.approche.paragraphs[1]}
+                      </p>
+                      <BulletList
+                        items={emploiNumeriquePage.approcheList}
+                        color="secondary"
+                        lightOnDark
+                        animated={false}
+                        className="mb-6"
+                      />
+                      <p className="leading-relaxed text-inherit">
+                        {emploiNumeriquePage.sections.approche.paragraphs[2]}
+                      </p>
+                    </>
+                  ),
+                },
+                {
+                  title: emploiNumeriquePage.sections.suivi.title,
+                  imageSrc: '/assets/services/perfectionnement/outlook.jpg',
+                  imageAlt: 'Suivi numerique des demarches emploi',
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
+                  content: (
+                    <>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {emploiNumeriquePage.sections.suivi.paragraphs[0]}
+                      </p>
+                      <BulletList
+                        items={emploiNumeriquePage.suiviItems}
+                        lightOnDark
+                        animated={false}
+                        className="mb-6"
+                      />
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {emploiNumeriquePage.sections.suivi.paragraphs[1]}
+                      </p>
+                      <p className="leading-relaxed text-inherit">
+                        {emploiNumeriquePage.sections.suivi.paragraphs[2]}
+                      </p>
+                    </>
+                  ),
+                },
+                {
+                  title: emploiNumeriquePage.sections.partenariats.title,
+                  imageSrc: '/assets/about/ecd.jpg',
+                  imageAlt: "Partenariats ECD autour de l'emploi et du numerique",
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
+                  content: (
+                    <>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {emploiNumeriquePage.sections.partenariats.intro}
+                      </p>
+                      <BulletList
+                        items={emploiNumeriquePage.partenariatsList}
+                        lightOnDark
+                        animated={false}
+                      />
+                    </>
+                  ),
+                },
+              ]}
+            />
           </motion.div>
         </div>
       </section>

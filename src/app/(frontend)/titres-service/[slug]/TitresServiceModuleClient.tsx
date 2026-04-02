@@ -30,7 +30,7 @@ export function TitresServiceModuleClient({
     >
       {/* Description */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+        <h2 className="text-xl font-semibold text-primary-900 mb-3">
           {titresServiceModuleLabels.descriptionTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
@@ -52,7 +52,7 @@ export function TitresServiceModuleClient({
 
       {/* Objectifs */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+        <h2 className="text-xl font-semibold text-primary-900 mb-3">
           {titresServiceModuleLabels.objectifsTitle}
         </h2>
         <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl border border-primary-100 p-6 shadow-sm">
@@ -74,7 +74,7 @@ export function TitresServiceModuleClient({
 
       {/* Modalités et pédagogie */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+        <h2 className="text-xl font-semibold text-primary-900 mb-3">
           {titresServiceModuleLabels.modalitesTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
@@ -86,7 +86,7 @@ export function TitresServiceModuleClient({
 
       {/* Évaluation et suivi */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+        <h2 className="text-xl font-semibold text-primary-900 mb-3">
           {titresServiceModuleLabels.evaluationTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
@@ -98,7 +98,7 @@ export function TitresServiceModuleClient({
 
       {/* Supports logistiques */}
       <motion.section variants={fadeInUp}>
-        <h2 className="text-xl font-semibold text-secondary-900 mb-3">
+        <h2 className="text-xl font-semibold text-primary-900 mb-3">
           {titresServiceModuleLabels.supportsTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">

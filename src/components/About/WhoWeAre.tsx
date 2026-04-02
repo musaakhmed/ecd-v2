@@ -8,7 +8,7 @@ const WhoWeAre = () => {
     <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div
         id="who-we-are"
-        className="bg-secondary-100 rounded-xl md:rounded-2xl min-h-[18vh] md:min-h-[19vh] text-base md:text-lg xl:text-xl text-primary-800 flex flex-col md:flex-row justify-center gap-4 md:gap-5 overflow-hidden"
+        className="bg-sage-50 rounded-xl md:rounded-2xl min-h-[18vh] md:min-h-[19vh] text-base md:text-lg xl:text-xl text-primary-800 flex flex-col md:flex-row justify-center gap-4 md:gap-5 overflow-hidden"
       >
         {/* Text block */}
         <div className="flex flex-col justify-around gap-3 md:gap-4 py-3 px-4 md:py-4 md:px-6 flex-1 min-w-0">

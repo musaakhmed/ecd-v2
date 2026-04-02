@@ -19,17 +19,17 @@ interface DarkTextCardProps {
 }
 
 const variantClasses: Record<DarkTextCardVariant, string> = {
-  solid: 'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-primary-100',
+  solid: 'bg-gradient-to-br from-azure-500 to-azure-600 border-azure-600/50 text-white',
   'gradient-primary':
-    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-primary-100',
+    'bg-gradient-to-br from-azure-500 to-azure-600 border-azure-600/50 text-white',
   'gradient-secondary':
-    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50 text-secondary-100',
+    'bg-gradient-to-br from-azure-500 to-azure-600 border-azure-600/50 text-white',
 }
 
 const titleClasses: Record<DarkTextCardVariant, string> = {
   solid: 'text-white',
-  'gradient-primary': 'text-primary-50',
-  'gradient-secondary': 'text-secondary-50',
+  'gradient-primary': 'text-white',
+  'gradient-secondary': 'text-white',
 }
 
 export const DarkTextCard: React.FC<DarkTextCardProps> = ({

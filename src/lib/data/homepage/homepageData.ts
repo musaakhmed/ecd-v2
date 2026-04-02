@@ -81,9 +81,9 @@ export type ImpactStatItem = {
 }
 
 export const homepageImpactStats: ImpactStatItem[] = [
-  { value: 2402, label: 'Participants', description: 'Personnes accompagnées' },
-  { value: 1633, label: 'Participantes femmes', description: '' },
-  { value: 528, label: 'Participants hommes', description: '' },
-  { value: 450, label: 'Sessions', description: 'Sessions organisées' },
-  { value: 103, label: 'Partenaires', description: 'Institutions et associations' },
+  { value: 2402, label: 'Participants', description: '' },
+  { value: 1633, label: 'Femmes', description: '' },
+  { value: 528, label: 'Hommes', description: '' },
+  { value: 450, label: 'Sessions', description: '' },
+  { value: 103, label: 'Partenaires', description: '' },
 ]

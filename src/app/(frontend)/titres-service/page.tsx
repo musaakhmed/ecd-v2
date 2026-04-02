@@ -162,7 +162,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 text-center"
             >
               Modules de formation
             </motion.h2>
@@ -209,7 +209,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-secondary-900 mb-12 text-center"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-12 text-center"
             >
               Modalités de Participation
             </motion.h2>
@@ -225,7 +225,7 @@ const Page = () => {
                       {item.step}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+                      <h3 className="text-xl font-semibold text-primary-900 mb-2">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">{item.description}</p>

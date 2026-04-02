@@ -17,7 +17,7 @@ export function TextWithImageOverlap({
   image,
   imagePosition = 'right',
   className = '',
-  cardClassName = '',
+  cardClassName = 'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
   imageWrapperClassName = '',
 }: TextWithImageOverlapProps) {
   const isImageLeft = imagePosition === 'left'
@@ -44,14 +44,14 @@ export function TextWithImageOverlap({
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.08 }}
-            className={`relative z-10 rounded-2xl border border-black/30 bg-[#221d62] px-6 py-8 text-slate-100 shadow-[0_10px_0_rgba(0,0,0,0.35)]  md:rounded-[20px] md:px-10 md:py-10 lg:px-12  ${
+            className={`relative z-10 rounded-2xl border px-6 py-8 text-white shadow-[0_10px_0_rgba(0,0,0,0.35)] md:rounded-[20px] md:px-10 md:py-10 lg:px-12 ${
               isImageLeft ? 'md:ml-36 lg:ml-48' : 'md:mr-36 lg:mr-48'
             } ${cardClassName}`.trim()}
           >
-            <h2 className="mb-6 text-4xl leading-tight font-light tracking-tight text-slate-100 md:mb-8 md:text-6xl">
+            <h2 className="mb-6 text-4xl leading-tight font-light tracking-tight text-white md:mb-8 md:text-6xl">
               {title}
             </h2>
-            <div className="max-w-2xl text-lg text-slate-200/90 ">{content}</div>
+            <div className="max-w-2xl text-lg text-white/90">{content}</div>
           </motion.article>
 
           <div className="mt-4 flex md:hidden">
@@ -60,7 +60,7 @@ export function TextWithImageOverlap({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
-              className={`flex h-[200px] w-full items-center justify-center overflow-hidden rounded-[20px] bg-[#ff1a1a] text-center font-medium text-black ${imageWrapperClassName}`.trim()}
+              className={`flex h-[200px] w-full items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-primary-800 to-primary-900 text-center font-medium text-white ${imageWrapperClassName}`.trim()}
             >
               {image ?? <span>IMAGE</span>}
             </motion.div>

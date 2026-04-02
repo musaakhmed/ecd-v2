@@ -31,7 +31,7 @@ const PartnerCard = () => {
           {[...partners, ...partners].map((partner, idx) => (
             <div
               key={`${partner.title}-${idx}`}
-              className="shrink-0 flex items-center justify-center transition-transform duration-200 ease-in-out hover:scale-110 bg-white/40 rounded-xl p-0.5 shadow-md border border-primary-200/60"
+              className="shrink-0 flex items-center justify-center transition-transform duration-200 ease-in-out hover:scale-110 bg-azure-500 rounded-xl p-0.5 shadow-md border border-azure-600/40"
               style={{ width: CARD_SIZE, height: CARD_SIZE }}
             >
               <Image
@@ -39,7 +39,7 @@ const PartnerCard = () => {
                 alt={partner.title}
                 width={LOGO_SIZE}
                 height={LOGO_SIZE}
-                className="object-contain w-full h-full"
+                className="object-contain w-full h-full rounded-lg bg-white/90 p-2"
               />
             </div>
           ))}

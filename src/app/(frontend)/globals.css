@@ -31,8 +31,9 @@ body,
 
 @theme {
 
-  --color-primary: #1b1d43;
+  --color-primary: #0087B8;
   --color-secondary: #43c6cd;
+  --color-azure: #00A6D6;
   --color-accent: #ff8a6b;
   --color-bg: #fbfcfe;
   --color-surface: #f4f7fb;
@@ -42,17 +43,17 @@ body,
   --color-header: #000;
 
   /* Brand primaries */
-  --color-primary-50:  #eef0ff;
-  --color-primary-100: #dde0ff;
-  --color-primary-200: #c2c7ff;
-  --color-primary-300: #9ea5ff;
-  --color-primary-400: #747cf4;
-  --color-primary-500: #5961e0;
-  --color-primary-600: #4148cb; /* logo blue */
-  --color-primary-700: #353aa9;
-  --color-primary-800: #2f3387;
-  --color-primary-900: #2b306d;
-  --color-primary-950: #1b1d43;
+  --color-primary-50:  #F6F8F9;
+  --color-primary-100: #E9EFF1;
+  --color-primary-200: #CEE2E9;
+  --color-primary-300: #A4D3E5;
+  --color-primary-400: #69CAEC;
+  --color-primary-500: #0087B8;
+  --color-primary-600: #068FC1;
+  --color-primary-700: #0B6F93;
+  --color-primary-800: #10526A;
+  --color-primary-900: #113B4A;
+  --color-primary-950: #112932;
 
   /* Secondary turquoise */
   --color-secondary-50:  #eefcfd;
@@ -66,6 +67,20 @@ body,
   --color-secondary-800: #255c61;
   --color-secondary-900: #234d51;
   --color-secondary-950: #102f33;
+
+  /* Azure blue (#00A6D6) */
+
+  --color-azure-50:  #e6f7fd;
+  --color-azure-100: #ccf0fb;
+  --color-azure-200: #99e1f6;
+  --color-azure-300: #66d1f0;
+  --color-azure-400: #33c2eb;
+  --color-azure-500: #00A6D6;
+  --color-azure-600: #0086ab;
+  --color-azure-700: #006580;
+  --color-azure-800: #004556;
+  --color-azure-900: #00242b;
+  --color-azure-950: #00161a;
 
   /* Warm accent */
   --color-accent-50:  #fff3ef;

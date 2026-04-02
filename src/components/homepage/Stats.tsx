@@ -75,11 +75,11 @@ const StatCard = ({ stat, index }: { stat: StatItem; index: number }) => {
           isInView={isInView}
         />
       </div>
-      <h3 className="text-base md:text-lg font-semibold text-secondary-800 mb-1 text-center">
+      <h3 className="text-base md:text-lg font-semibold text-primary-900 mb-1 text-center">
         {stat.label}
       </h3>
       {stat.description && (
-        <p className="text-xs md:text-sm text-secondary-600 text-center">{stat.description}</p>
+        <p className="text-xs md:text-sm text-gray-600 text-center">{stat.description}</p>
       )}
     </motion.div>
   )
@@ -103,12 +103,12 @@ const Stats = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 md:mb-10 lg:mb-6"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-800 mb-2">
-            Notre Impact en 2025
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-900 mb-2">
+            Notre Impact
           </h2>
-          <p className="text-base md:text-lg text-secondary-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
             Des chiffres qui témoignent de notre engagement et de notre impact positif dans la
-            communauté
+            communauté*
           </p>
         </motion.div>
 
@@ -118,6 +118,9 @@ const Stats = () => {
             <StatCard key={stat.label} stat={stat} index={index} />
           ))}
         </div>
+        <p className="text-xs text-gray-500 max-w-2xl mx-auto py-4 italic">
+          * Statistique de l'année 2025
+        </p>
       </div>
     </section>
   )

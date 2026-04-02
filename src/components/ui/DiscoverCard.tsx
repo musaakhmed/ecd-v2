@@ -34,7 +34,7 @@ export function DiscoverCard({
     <motion.article variants={variants}>
       <Link
         href={href}
-        className="group block h-full overflow-hidden rounded-2xl border border-primary-500/50 bg-gradient-to-br from-primary-500 to-primary-600 shadow-[0_22px_45px_rgba(66,142,189,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(66,142,189,0.3)] hover:-translate-y-0.5"
+        className="group block h-full overflow-hidden rounded-2xl border border-azure-500/50 bg-gradient-to-br from-azure-500 to-azure-600 shadow-[0_22px_45px_rgba(0,166,214,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(0,166,214,0.3)] hover:-translate-y-0.5"
       >
         <div className="relative h-44 w-full overflow-hidden md:h-52">
           <Image
@@ -44,7 +44,7 @@ export function DiscoverCard({
             className="object-cover transition duration-700 group-hover:scale-105"
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 via-primary-800/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-azure-900/70 via-azure-800/20 to-transparent" />
           {badgeLabel ? (
             <span
               className={`absolute top-3 left-3 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold ${badgeClassName}`}
@@ -58,9 +58,9 @@ export function DiscoverCard({
         </div>
         <div className="p-5 md:p-6">
           {description ? (
-            <p className="text-sm text-primary-100/90 leading-relaxed line-clamp-3">{description}</p>
+            <p className="text-sm text-white/90 leading-relaxed line-clamp-3">{description}</p>
           ) : null}
-          <span className="mt-4 inline-flex items-center gap-1 text-primary-100 text-sm font-medium">
+          <span className="mt-4 inline-flex items-center gap-1 text-white/90 text-sm font-medium">
             {ctaLabel}
             <svg
               className="w-4 h-4 transition group-hover:translate-x-0.5"

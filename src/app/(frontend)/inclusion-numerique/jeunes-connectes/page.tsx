@@ -2,11 +2,10 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { HeroSection } from '@/components/ui/HeroSection'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
 import { BulletList } from '@/components/ui/BulletList'
-import { TextWithImageOverlap } from '@/components/ui/TextWithImageOverlap'
+import { AlternatingImageCards } from '@/components/ui/AlternatingImageCards'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { jeunesConnectesPage } from '@/lib/content/pages/inclusionNumeriqueData'
 
@@ -181,132 +180,75 @@ const Page = () => {
             className="max-w-4xl mx-auto"
           >
             {/* Créations & projets */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <TextWithImageOverlap
-                title={jeunesConnectesPage.sections.creations.title}
-                imagePosition="right"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/epnm/initiation/microbit.jpg"
-                    alt="Projet micro:bit réalisé par des jeunes"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <>
-                    <p className="leading-relaxed mb-6 text-inherit">
-                      {jeunesConnectesPage.sections.creations.intro}
-                    </p>
-                    <BulletList
-                      items={jeunesConnectesPage.creationsProjets}
-                      color="primary"
-                      lightOnDark
-                      animated={false}
-                    />
-                  </>
-                }
-              />
-            </motion.div>
-
-            {/* Organisation */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <TextWithImageOverlap
-                title={jeunesConnectesPage.sections.organisation.title}
-                imagePosition="left"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/services/perfectionnement/trello.jpg"
-                    alt="Organisation de projet et suivi des taches"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <BulletList
-                    items={jeunesConnectesPage.organisation}
-                    lightOnDark
-                    animated={false}
-                  />
-                }
-              />
-            </motion.div>
-
-            {/* Compétences développées */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <TextWithImageOverlap
-                title={jeunesConnectesPage.sections.competences.title}
-                imagePosition="right"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/services/perfectionnement/office.jpg"
-                    alt="Competences numeriques et bureautiques"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <BulletList
-                    items={jeunesConnectesPage.competences}
-                    lightOnDark
-                    animated={false}
-                  />
-                }
-              />
-            </motion.div>
-
-            {/* Pour qui ? */}
-            <motion.div variants={fadeInUp}>
-              <TextWithImageOverlap
-                title={jeunesConnectesPage.sections.pourQui.title}
-                imagePosition="left"
-                className="bg-transparent py-0"
-                cardClassName="bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50"
-                imageWrapperClassName="p-0 overflow-hidden"
-                image={
-                  <Image
-                    src="/assets/epnm/initiation/informatique.jpeg"
-                    alt="Public jeune accompagne en atelier numerique"
-                    width={340}
-                    height={260}
-                    className="h-full w-full object-cover object-center"
-                  />
-                }
-                content={
-                  <>
-                    <p className="leading-relaxed mb-4 text-inherit">
-                      {jeunesConnectesPage.sections.pourQui.introStructures}
-                    </p>
-                    <BulletList
-                      items={jeunesConnectesPage.pourQuiStructures}
-                      lightOnDark
-                      animated={false}
-                      className="mb-6"
-                    />
-                    <p className="leading-relaxed mb-4 text-inherit">
-                      {jeunesConnectesPage.sections.pourQui.introSouhaitant}
-                    </p>
-                    <BulletList
-                      items={jeunesConnectesPage.pourQuiSouhaitant}
-                      lightOnDark
-                      animated={false}
-                    />
-                  </>
-                }
-              />
-            </motion.div>
+            <AlternatingImageCards
+              variants={fadeInUp}
+              items={[
+                {
+                  title: jeunesConnectesPage.sections.creations.title,
+                  imageSrc: '/assets/epnm/initiation/microbit.jpg',
+                  imageAlt: 'Projet micro:bit réalisé par des jeunes',
+                  cardClassName:
+                    'bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50',
+                  content: (
+                    <>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        {jeunesConnectesPage.sections.creations.intro}
+                      </p>
+                      <BulletList
+                        items={jeunesConnectesPage.creationsProjets}
+                        color="primary"
+                        lightOnDark
+                        animated={false}
+                      />
+                    </>
+                  ),
+                },
+                {
+                  title: jeunesConnectesPage.sections.organisation.title,
+                  imageSrc: '/assets/services/perfectionnement/trello.jpg',
+                  imageAlt: 'Organisation de projet et suivi des taches',
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
+                  content: (
+                    <BulletList items={jeunesConnectesPage.organisation} lightOnDark animated={false} />
+                  ),
+                },
+                {
+                  title: jeunesConnectesPage.sections.competences.title,
+                  imageSrc: '/assets/services/perfectionnement/office.jpg',
+                  imageAlt: 'Competences numeriques et bureautiques',
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
+                  content: (
+                    <BulletList items={jeunesConnectesPage.competences} lightOnDark animated={false} />
+                  ),
+                },
+                {
+                  title: jeunesConnectesPage.sections.pourQui.title,
+                  imageSrc: '/assets/epnm/initiation/informatique.jpeg',
+                  imageAlt: 'Public jeune accompagne en atelier numerique',
+                  cardClassName:
+                    'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
+                  content: (
+                    <>
+                      <p className="leading-relaxed mb-4 text-inherit">
+                        {jeunesConnectesPage.sections.pourQui.introStructures}
+                      </p>
+                      <BulletList
+                        items={jeunesConnectesPage.pourQuiStructures}
+                        lightOnDark
+                        animated={false}
+                        className="mb-6"
+                      />
+                      <p className="leading-relaxed mb-4 text-inherit">
+                        {jeunesConnectesPage.sections.pourQui.introSouhaitant}
+                      </p>
+                      <BulletList items={jeunesConnectesPage.pourQuiSouhaitant} lightOnDark animated={false} />
+                    </>
+                  ),
+                },
+              ]}
+            />
           </motion.div>
         </div>
       </section>

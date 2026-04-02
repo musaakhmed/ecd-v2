@@ -75,7 +75,7 @@ const NosServices = () => {
           {cardsData.map((card, index) => (
             <Link key={card.id} href={card.link}>
               <motion.div
-                className="relative rounded-2xl overflow-hidden shadow-lg bg-white
+                className="relative rounded-2xl overflow-hidden shadow-lg bg-azure-500
                          hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -95,8 +95,8 @@ const NosServices = () => {
 
                 {/* Card Content */}
                 <div className="p-4">
-                  <h3 className="text-xl font-bold text-header mb-2">{card.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{card.shortDescription}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
+                  <p className="text-sm text-white/90 mb-4">{card.shortDescription}</p>
                   <div
                     className="bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg
                                font-semibold transition-colors duration-300 text-sm w-full text-center"

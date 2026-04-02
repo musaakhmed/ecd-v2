@@ -40,7 +40,7 @@ export const ModuleImageCard: React.FC<ModuleImageCardProps> = ({
   const label = moduleLabel ?? `Module ${number}`
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-primary-500/50 bg-gradient-to-br from-primary-500 to-primary-600 shadow-[0_22px_45px_rgba(66,142,189,0.25)]">
+    <div className="overflow-hidden rounded-2xl border border-azure-500/50 bg-gradient-to-br from-azure-500 to-azure-600 shadow-[0_22px_45px_rgba(0,166,214,0.25)]">
       <div className="relative h-52 w-full overflow-hidden md:h-64 lg:h-72">
         <Image
           src={imageSrc}
@@ -49,13 +49,13 @@ export const ModuleImageCard: React.FC<ModuleImageCardProps> = ({
           className="object-cover transition duration-700 hover:scale-105"
           sizes="(min-width: 1024px) 36rem, (min-width: 768px) 60vw, 100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 via-primary-800/5 to-transparent" />
-        <span className="absolute top-3 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-sm font-semibold text-primary-50 shadow-lg ring-2 ring-white/30">
+        <div className="absolute inset-0 bg-gradient-to-t from-azure-900/40 via-azure-800/5 to-transparent" />
+        <span className="absolute top-3 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-azure-600 text-sm font-semibold text-white shadow-lg ring-2 ring-white/30">
           {number}
         </span>
         <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between gap-3">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-50/90">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
               {label}
             </p>
             <h3 className="text-sm md:text-base font-semibold text-white leading-snug drop-shadow-sm">

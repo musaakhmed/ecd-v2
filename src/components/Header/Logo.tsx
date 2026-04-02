@@ -18,7 +18,7 @@ const Logo = () => {
           width={160}
           height={44}
           priority
-          className="h-9 w-auto lg:h-10"
+          className="h-10 w-auto lg:h-15"
         />
       </motion.div>
     </Link>

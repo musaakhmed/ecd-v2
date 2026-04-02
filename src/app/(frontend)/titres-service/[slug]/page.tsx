@@ -67,18 +67,18 @@ const Page = async ({ params }: PageProps) => {
             {/* Sidebar */}
             <aside className="lg:w-80 shrink-0">
               <div className="lg:sticky lg:top-24 rounded-2xl border border-primary-200 bg-white shadow-lg p-6">
-                <h2 className="text-4xl! font-semibold text-secondary-900 mb-4">Infos pratiques</h2>
+                <h2 className="text-4xl! font-semibold text-primary-900 mb-4">Infos pratiques</h2>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h3 className="font-semibold text-secondary-800 mb-1">Public visé</h3>
+                    <h3 className="font-semibold text-primary-800 mb-1">Public visé</h3>
                     <p className="text-gray-600">{module_.publicVise}</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-800 mb-1">Durée</h3>
+                    <h3 className="font-semibold text-primary-800 mb-1">Durée</h3>
                     <p className="text-gray-600">{module_.duree}</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary-800 mb-2">Approbation(s)</h3>
+                    <h3 className="font-semibold text-primary-800 mb-2">Approbation(s)</h3>
                     <ul className="space-y-1 text-gray-600">
                       {module_.approbation.map((a) => (
                         <li key={`${a.region}-${a.certificate}`}>

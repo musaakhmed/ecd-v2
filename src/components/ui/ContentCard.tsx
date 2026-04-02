@@ -20,20 +20,16 @@ export const ContentCard: React.FC<ContentCardProps> = ({
   hover = false,
 }) => {
   const variantClasses = {
-    default: 'bg-white dark:bg-gray-900',
-    'gradient-primary':
-      'bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-900',
-    'gradient-secondary':
-      'bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-900',
-    transparent: 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm',
+    default: 'bg-azure-500 text-white',
+    'gradient-primary': 'bg-gradient-to-br from-azure-500 to-azure-600 text-white',
+    'gradient-secondary': 'bg-gradient-to-br from-azure-500 to-azure-600 text-white',
+    transparent: 'bg-azure-500/95 text-white backdrop-blur-sm',
   }
 
   const borderClasses =
     variant === 'transparent'
-      ? 'border border-primary-100 dark:border-primary-900/50'
-      : variant === 'gradient-secondary'
-        ? 'border border-secondary-100 dark:border-secondary-900/50'
-        : 'border border-primary-100 dark:border-primary-900/50'
+      ? 'border border-azure-600/40'
+      : 'border border-azure-600/40'
 
   const hoverProps = hover
     ? {
@@ -50,9 +46,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({
       } ${className}`}
     >
       {title && title.trim() && (
-        <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
-          {title}
-        </h2>
+        <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
       )}
       {children}
     </motion.div>

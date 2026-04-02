@@ -6,7 +6,7 @@ import { ValueCards } from '@/components/ui/OperateurCard'
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen bg-primary-900 py-8">
+    <section id="about" className="min-h-screen bg-primary-950 py-8">
       <div className="">
         <WhoWeAre />
         <ValueCards />
