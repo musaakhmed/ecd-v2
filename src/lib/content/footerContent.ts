@@ -8,14 +8,14 @@ export const footerContent = {
   contactTitle: 'Contact',
   contact: {
     emailLabel: 'Email',
-    email: 'info@espacecultures.be',
-    emailHref: 'mailto:info@espacecultures.be',
+    email: 'info@espaceforma.be',
+    emailHref: 'mailto:info@espaceforma.be',
     phoneLabel: 'Téléphone',
     phone: '+32 2 425 65 85',
     phoneHref: 'tel:+3224256585',
     addressLabel: 'Adresse',
     address: 'Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique',
-    companyNumberLabel: "N° d’entreprise",
+    companyNumberLabel: 'N° d’entreprise',
     companyNumber: '0628.538.422',
   },
   followUsTitle: 'Suivez-nous',
@@ -36,7 +36,7 @@ export const footerContent = {
   },
   gdpr: {
     imageAlt: 'GDPR Logo RGPD',
-    text: "Espace Cultures & Développement asbl veille au respect et la protection des données personnelles de ses usages en s'alignant sur le règlement RGPD",
+    text: "Espace Forma asbl veille au respect et la protection des données personnelles de ses usages en s'alignant sur le règlement RGPD",
   },
   newsletter: {
     title: 'Newsletter',
@@ -45,9 +45,8 @@ export const footerContent = {
     submitLabel: "S'abonner",
   },
   bottomBar: {
-    copyrightSuffix: 'Espace Culture et Développement. Tous droits réservés.',
+    copyrightSuffix: 'Espace Forma (EF) asbl. Tous droits réservés.',
     legal: { label: 'Mentions légales', href: '/mentions-legales' },
     privacy: { label: 'Politique de confidentialité', href: '/politique-de-confidentialite' },
   },
 } as const
-

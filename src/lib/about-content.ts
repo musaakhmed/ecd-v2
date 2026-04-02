@@ -801,7 +801,7 @@ export const quiSommesNousPageContent: QuiSommesNousContent = {
   },
   introduction: {
     paragraphs: [
-      "ECD vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois.",
+      "Espace Forma (EF) vise à renforcer l'autonomie, les capacités d'agir et la participation active de chacun, en tenant compte des réalités sociales, économiques et culturelles propres aux quartiers bruxellois.",
       "L'association accompagne divers publics — jeunes en milieu scolaire, adultes en activation sociale, travailleurs peu qualifiés, publics éloignés du numérique, primo-arrivants, ainsi que professionnels du secteur des Titres-Services.",
     ],
   },
