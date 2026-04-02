@@ -59,7 +59,7 @@ export function RebrandingToast() {
         </section>
       ),
       {
-        duration: 100000,
+        duration: 5000,
         position: 'top-right',
         style: {
           width: '14rem',
