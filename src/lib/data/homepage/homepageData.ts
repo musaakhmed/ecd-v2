@@ -13,14 +13,14 @@ export const homepageHeroSlides: HeroSlide[] = [
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
   },
   {
-    image: '/assets/hero/titres-services.jpg',
+    image: "'/assets/hero/seniors-transition-numerique.jpg'",
     title: 'Transition numérique',
     subtitle: "Réussir sa transition numérique, c'est possible pour tous",
     description:
       'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
-    image: '/assets/hero/seniors-transition-numerique.jpg',
+    image: '/assets/hero/titres-services.jpg',
     title: 'Formations professionelles',
     subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',

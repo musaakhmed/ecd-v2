@@ -52,7 +52,7 @@ export const Hero = () => {
 
   return (
     <>
-      <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-black text-white lg:h-[100vh] h-[70vh] flex flex-col justify-between">
+      <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-black text-white lg:h-screen h-[70vh] flex flex-col justify-between">
         <div className="relative aspect-[16/9] w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
           <AnimatePresence initial={false} mode="sync">
             <motion.div
@@ -76,7 +76,7 @@ export const Hero = () => {
                   backgroundPosition: 'center',
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/85 via-primary-800/20 to-black/0" />
             </motion.div>
           </AnimatePresence>
         </div>
