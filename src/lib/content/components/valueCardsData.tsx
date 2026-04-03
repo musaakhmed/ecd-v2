@@ -94,7 +94,7 @@ export const valueCardsItems: ValueCardItem[] = [
       </div>
     ),
     link: '/a-propos/economie-sociale',
-    img: '/assets/operateur/economie-sociale.png',
+    img: '/assets/operateur/ESD/public-cible-partenariat.jpg',
   },
   {
     icon: '',
@@ -190,6 +190,6 @@ export const valueCardsItems: ValueCardItem[] = [
       </div>
     ),
     link: '/a-propos/formation-titres-services',
-    img: '/assets/operateur/formation-titres-services.png',
+    img: '/assets/operateur/formation-titres-services.jpg',
   },
 ]
