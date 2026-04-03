@@ -9,8 +9,8 @@ export function RebrandingToast() {
   useEffect(() => {
     toast(
       (t) => (
-        <section className="flex flex-col relative justify-between gap-2 min-w-90">
-          <div className="w-full -ml-44 mt-24 text-left mx-auto space-y-4">
+        <section className="flex flex-col relative justify-between gap-2 min-w-60">
+          <div className="w-full -ml-20 mt-24 text-left mx-auto space-y-4">
             <div className="flex justify-between">
               <h6 className="font-semibold">Changement de nom et d'identité visuelle</h6>
 
@@ -23,22 +23,19 @@ export function RebrandingToast() {
                 Dans une dynamique d'évolution et afin de mieux refléter ses missions acuelles,
                 notre association change d'identité.
               </p>
-              <ul className="list-disc">
-                <li>Anciennement: Espace Cultures & Développement ASBL (ECD)</li>
-                <li>
-                  Désormais: <span className="font-semibold">Espace Forma ASBL (EF)</span>
-                </li>
-              </ul>
             </div>
             <Link href="/a-propos/qui-sommes-nous/#">
-              <button className="px-2 py-1 bg-azure-100 text-primary-800 rounded right-0 cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out">
+              <button
+                onClick={() => toast.dismiss(t.id)}
+                className="px-2 py-1 bg-azure-100 text-primary-800 rounded right-0 cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"
+              >
                 En savoir plus
               </button>
             </Link>
           </div>
           <svg
-            className="absolute top-2 -left-90 -z-50"
-            width="600"
+            className="absolute top-8 -left-70 -z-50"
+            width="500"
             viewBox="0 0 320 180"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"

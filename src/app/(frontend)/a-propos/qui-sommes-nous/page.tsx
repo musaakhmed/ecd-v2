@@ -81,6 +81,45 @@ const Page = () => {
         </div>
       </section>
 
+      {/* Rebranding information */}
+      <section className="w-full bg-cyan-700 text-azure-50 h-auto p-6 ">
+        <div className="space-y-4 max-w-4xl px-8 mx-auto">
+          <h3 className="text-center font-semibold">
+            Nous changeons de nom et d'identité visuelle
+          </h3>
+          <p>
+            Dans une dynamique d'évolution et afin de mieux refléter ses missions actuelles, notre
+            association change d'identité:
+          </p>
+          <ul className="ml-6">
+            <li>
+              Anciennement:
+              <span className="italic">Espace Cultures & Développement ASBL (ECD)</span>
+            </li>
+            <li>
+              <span className="font-semibold">
+                Désormais: <span className="italic">Espace Forma ASBL (EF)</span>
+              </span>
+            </li>
+          </ul>
+          <p>
+            Ce changement s'accompagne de l'adoption d'une nouvelle identité visuelle, en cohérence
+            avec nos axes d'interventioin centrés sur:
+          </p>
+          <ul className="list-decimal ml-8">
+            <li>La formation et le développement des compétences</li>
+            <li>L'accompagnement vers l'autonomie</li>
+            <li>L'inclusion sociale et numérique</li>
+            <li>L'innovation pédagogique</li>
+          </ul>
+          <p>
+            Cette évolution marque une étape importante dans le développement de nos activités, tout
+            en assurant la continuité de nos engagements auprès de nos publics et partenaires.
+          </p>
+        </div>
+      </section>
+
+      {/* Introduction */}
       <DarkIntroSection>
         {content.introduction.paragraphs.map((paragraph, index) => (
           <p

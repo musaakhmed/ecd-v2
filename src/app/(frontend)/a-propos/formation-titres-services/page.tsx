@@ -158,7 +158,7 @@ const Page = () => {
 
       <ImageCardHero
         title={content.competencesBienEtre.title}
-        imageSrc="/assets/operateur/formation-titres-services.png"
+        imageSrc="/assets/operateur/formation-titres-services.jpg"
         imageAlt="Compétences bien-être et prévention"
         imageOnLeft
         description={content.competencesBienEtre.description}
@@ -167,7 +167,7 @@ const Page = () => {
 
       <ImageCardHero
         title={content.impact.title}
-        imageSrc="/assets/operateur/parallax/integration-numerique.png"
+        imageSrc="/assets/operateur/bien-etre-ts.jpg"
         imageAlt="Impact des formations"
         imageOnLeft={false}
         description={content.impact.description}

@@ -102,7 +102,7 @@ const Page = () => {
 
       <ImageCardHero
         title={content.publicCible.title}
-        imageSrc="/assets/operateur/economie-sociale.png"
+        imageSrc="/assets/operateur/ESD/public-cible-partenariat.jpg"
         imageAlt="Public cible en partenariat"
         imageOnLeft
         description={content.publicCible.description}
@@ -112,7 +112,7 @@ const Page = () => {
 
       <ImageCardHero
         title={content.accompagnement.title}
-        imageSrc="/assets/operateur/parallax/metier-social.png"
+        imageSrc="/assets/operateur/ESD/accompagnement.jpg"
         imageAlt="Accompagnement professionnel et social"
         imageOnLeft={false}
         description={content.accompagnement.description}
@@ -121,7 +121,7 @@ const Page = () => {
 
       <ImageCardHero
         title={content.pac.title}
-        imageSrc="/assets/operateur/economie-sociale.png"
+        imageSrc="/assets/operateur/ESD/acquisition-de-competences.jpg"
         imageAlt="Plan d'Acquisition de Compétences"
         imageOnLeft
         description={content.pac.description}
