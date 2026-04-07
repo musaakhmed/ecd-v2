@@ -35,7 +35,7 @@ export const partnersContent = {
     {
       title: 'FOREM',
       link: 'https://www.leforem.be/',
-      image: '/assets/partenaires/forem.jpg',
+      image: '/assets/partenaires/forem.png',
     },
     // { title: 'fondation roi baudoin', image: '/assets/partenaires/logoFRB.png' },
     // {

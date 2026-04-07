@@ -19,7 +19,7 @@ const PartnerCard = () => {
 
   return (
     <div
-      className="w-full overflow-y-visible! overflow-x-auto"
+      className="w-full overflow-y-visible! overflow-x-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ ['--strip-width' as string]: `${STRIP_WIDTH}px` }}
@@ -31,15 +31,9 @@ const PartnerCard = () => {
           {[...partners, ...partners].map((partner, idx) => (
             <div
               key={`${partner.title}-${idx}`}
-              className="shrink-0 group flex items-center justify-center transition-transform duration-200 z-50 group ease-in-out hover:scale-120  rounded-xl p-0.5 shadow-md "
+              className="shrink-0 group flex flex-col items-center justify-center transition-transform duration-200 z-50 group ease-in-out hover:scale-120  rounded-xl p-0.5 shadow-md "
               style={{ width: CARD_SIZE, height: CARD_SIZE }}
             >
-              <p className="absolute z-50 opacity-0 scale-0 w-full bg-azure-200 p-1 text-center font-semibold text-primary-900 rounded-lg group-hover:opacity-100 group-hover:scale-100 duration-300 transition-all">
-                <a href={partner.link} target="blank">
-                  {partner.title}
-                </a>
-              </p>
-
               <Image
                 src={partner.image}
                 alt={partner.title}
@@ -47,6 +41,11 @@ const PartnerCard = () => {
                 height={LOGO_SIZE}
                 className="object-contain w-full h-full rounded-lg bg-white/90 p-2"
               />
+              <p className=" z-50 w-full bg-azure-200 p-1 text-center font-semibold text-primary-900 rounded-lg ">
+                <a href={partner.link} target="blank">
+                  {partner.title}
+                </a>
+              </p>
             </div>
           ))}
         </div>
