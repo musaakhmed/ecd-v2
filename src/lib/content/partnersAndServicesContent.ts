@@ -28,7 +28,7 @@ export const partnersContent = {
       image: '/assets/partenaires/Logo_Francophones_Bruxelles.png',
     },
     {
-      title: 'Bruxelles Economie et Emploi',
+      title: 'BEE',
       link: 'https://economie-emploi.brussels/',
       image: '/assets/partenaires/bruxelles-economie-emploi.png',
     },
