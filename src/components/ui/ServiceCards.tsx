@@ -4,7 +4,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { serviceCardsContent, type ServiceCardContent } from '@/lib/content/partnersAndServicesContent'
+import {
+  serviceCardsContent,
+  type ServiceCardContent,
+} from '@/lib/content/partnersAndServicesContent'
 
 interface CardData {
   id: number
@@ -19,9 +22,9 @@ const NosServices = () => {
   const cardsData: CardData[] = serviceCardsContent.cards as unknown as ServiceCardContent[]
 
   return (
-    <section className="w-full py-12 md:py-20 px-4 md:px-8 bg-primary-50" id="services">
+    <section className="w-full py-12 px-4 bg-primary-50" id="services">
       <div className="max-w-7xl mx-auto px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-header mb-8 md:mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-header mb-8  text-center">
           {serviceCardsContent.sectionTitle}
         </h2>
 
