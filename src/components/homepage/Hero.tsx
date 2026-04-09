@@ -76,7 +76,7 @@ export const Hero = () => {
                   backgroundPosition: 'center',
                 }}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-azure-600 via-azure-600/20 to-transparent" />
+              <div className="absolute inset-0 " />
             </motion.div>
           </AnimatePresence>
         </div>
