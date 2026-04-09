@@ -8,8 +8,9 @@ import SocialMediaBar from '@/components/ui/SocialMediaBar'
 import { RebrandingToast } from '@/components/RebrandingToast'
 
 export const metadata = {
-  description: 'Espace Culture et Developpement',
-  title: 'Espace Culture et Developpement',
+  description:
+    "Espace Forma (EF) asbl, auparavant Espace Cultures et Developpement (ECD) asbl, est un cadre d'action associatif engagé dans la valorisation de la culture comme levier d'intégration, d'émancipation et d'insertion sociale.",
+  title: 'Espace Forma (EF)',
 }
 
 // Force dynamic rendering to prevent stale cache
