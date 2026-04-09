@@ -17,7 +17,7 @@ const Page = () => {
         imageAlt="École de Devoirs Notre-Dame-Aux-Neiges"
         subtitle="École de Devoirs"
         title="Notre-Dame-Aux-Neiges"
-        description="Un lieu bienveillant d'épanouissement et de réussite pour chaque enfant du quartier. Soutien scolaire, activités variées et coéducation avec les familles. L’asbl Espace Cultures & Développement est un opérateur d’École de Devoirs sous l’appellation « Notre-Dame-Aux-Neiges », en référence au quartier où se déploie l’action."
+        description="Un lieu bienveillant d'épanouissement et de réussite pour chaque enfant du quartier. Soutien scolaire, activités variées et coéducation avec les familles. L’asbl Espace Forma est un opérateur d’École de Devoirs sous l’appellation « Notre-Dame-Aux-Neiges », en référence au quartier où se déploie l’action."
       />
 
       {/* Intro – primary gradient card like nos-services */}

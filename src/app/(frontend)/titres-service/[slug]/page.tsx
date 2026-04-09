@@ -70,15 +70,17 @@ const Page = async ({ params }: PageProps) => {
                 <h2 className="text-4xl! font-semibold text-primary-900 mb-4">Infos pratiques</h2>
                 <div className="space-y-4 text-sm">
                   <div>
-                    <h3 className="font-semibold text-primary-800 mb-1">Public visé</h3>
+                    <h3 className="font-semibold text-primary-800 mb-1 text-2xl!">Public visé</h3>
                     <p className="text-gray-600">{module_.publicVise}</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-800 mb-1">Durée</h3>
+                    <h3 className="font-semibold text-primary-800 mb-1 text-2xl!">Durée</h3>
                     <p className="text-gray-600">{module_.duree}</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-800 mb-2">Approbation(s)</h3>
+                    <h3 className="font-semibold text-primary-800 mb-2 text-2xl!">
+                      Approbation(s)
+                    </h3>
                     <ul className="space-y-1 text-gray-600">
                       {module_.approbation.map((a) => (
                         <li key={`${a.region}-${a.certificate}`}>

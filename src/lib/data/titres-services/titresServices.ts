@@ -46,7 +46,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer en continu le contenu et l'animation.",
     supportsLogistiques:
       "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Les participants peuvent apporter leur propre PC/smartphone/tablette.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10240', date: '23/02/2024' },
       { region: 'Bruxelles', certificate: 'E1421/B', date: '03/03/2022' },
@@ -76,7 +76,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
     supportsLogistiques:
       'Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur matériel.',
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10256', date: '15/04/2024' },
       { region: 'Bruxelles', certificate: 'E1420/B', date: '03/03/2022' },
@@ -120,7 +120,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
       "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10257', date: '15/04/2024' },
       { region: 'Bruxelles', certificate: 'E1422/B', date: '03/03/2022' },
@@ -150,7 +150,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
     supportsLogistiques:
       "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1605/B', date: '17/05/2024' }],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
@@ -187,7 +187,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Un questionnaire d’évaluation est remis à l’issue de la formation afin de recueillir l’avis des participantes. Les retours collectés alimentent une démarche d’amélioration continue des contenus et des méthodes pédagogiques.',
     supportsLogistiques:
       "Les formations peuvent être organisées soit chez les partenaires, soit dans les locaux d'Espace Cultures & Développement. Le matériel nécessaire est mis à disposition : ordinateurs portables, tablettes, vidéoprojecteur, Flybox et supports pédagogiques.",
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1426/B', date: '07/03/2022' }],
     duree: '4 heures / Groupe',
     category: 'outils-numeriques',
@@ -215,7 +215,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi: 'Exercices pratiques évalués (choix produit/surface, dilution, matériel).',
     supportsLogistiques:
       'Fiches illustrées, EPI, produits pH variés, matériel de démonstration (microfibres, seaux, raclettes, aspirateur…).',
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10406', date: '12/11/2025' },
       { region: 'Bruxelles', certificate: 'E1697/B', date: '03/09/2025' },
@@ -244,7 +244,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi: 'Observation pratique, auto-évaluation des douleurs, quiz visuel/oral.',
     supportsLogistiques:
       'Fiches illustrées, matériel de démonstration (aspirateur, balais, seaux, escabelle, table de repassage…).',
-    publicVise: 'Personnel assimilé, Aide-ménagères',
+    publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10405', date: '12/11/2025' },
       { region: 'Bruxelles', certificate: 'E1696/B', date: '03/09/2025' },

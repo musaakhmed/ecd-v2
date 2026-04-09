@@ -9,17 +9,18 @@ export const titresServiceCategoryLabels: Record<TitresServiceCategoryKey, strin
   'bien-etre-savoir-faire': 'Bien-être et savoir faire',
 }
 
-export const titresServiceCatalogueGroups: Array<{ key: TitresServiceCategoryKey; title: string }> = [
-  { key: 'outils-numeriques', title: titresServiceCategoryLabels['outils-numeriques'] },
-  { key: 'techniques-prevention', title: titresServiceCategoryLabels['techniques-prevention'] },
-  { key: 'bien-etre-savoir-faire', title: titresServiceCategoryLabels['bien-etre-savoir-faire'] },
-]
+export const titresServiceCatalogueGroups: Array<{ key: TitresServiceCategoryKey; title: string }> =
+  [
+    { key: 'outils-numeriques', title: titresServiceCategoryLabels['outils-numeriques'] },
+    { key: 'techniques-prevention', title: titresServiceCategoryLabels['techniques-prevention'] },
+    { key: 'bien-etre-savoir-faire', title: titresServiceCategoryLabels['bien-etre-savoir-faire'] },
+  ]
 
 export const titresServiceCatalogueHero = {
   title: 'Titres Services',
   subtitle: 'Notre catalogue',
   description:
-    'ECD asbl accompagne les entreprises dans le renforcement des compétences numériques, l’amélioration de l’organisation du travail et la promotion du bien-être des équipes. Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques, organisation du temps, communication professionnelle, sécurité et prévention.',
+    'EF asbl accompagne les entreprises dans le renforcement des compétences numériques, l’amélioration de l’organisation du travail et la promotion du bien-être des équipes. Les formations sont pratiques et adaptées aux réalités du terrain : outils numériques, organisation du temps, communication professionnelle, sécurité et prévention.',
   tags: ['Formation professionnelle', 'Sur site', 'Adapté aux besoins'],
   backgroundImage: '/assets/services/perfectionnement/office.jpg',
 } as const
@@ -135,4 +136,3 @@ export const titresServiceModuleLabels = {
   placeholderDescription:
     'Cette page est en cours de rédaction. Vous pouvez déjà demander une offre via le bouton « Demander une offre ».',
 } as const
-
