@@ -156,9 +156,10 @@ const Page = () => {
               variants={fadeInUp}
               className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
             >
-              ECD asbl développe un programme complet d&apos;initiation en informatique visant à
-              offrir un premier niveau de maîtrise des outils numériques essentiels. Cette offre
-              s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de chacun.
+              Espace Forma asbl développe un programme complet d&apos;initiation en informatique
+              visant à offrir un premier niveau de maîtrise des outils numériques essentiels. Cette
+              offre s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de
+              chacun.
             </motion.p>
           </motion.div>
         </div>

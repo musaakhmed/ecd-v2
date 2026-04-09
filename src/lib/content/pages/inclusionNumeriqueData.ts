@@ -20,13 +20,13 @@ export const inclusionNumeriqueLanding = {
     subtitle: 'Espace Public Numérique Mobile',
     title: 'Inclusion numérique',
     description:
-      'ECD asbl déploie un accompagnement mobile et inclusif : ateliers et permanences numériques au plus près des habitants, dans les lieux de proximité.',
+      'EF asbl déploie un accompagnement mobile et inclusif : ateliers et permanences numériques au plus près des habitants, dans les lieux de proximité.',
   } satisfies HeroSectionData,
   intro: {
     title: 'Un dispositif de proximité',
     paragraphs: [
       "Aujourd'hui, de plus en plus de démarches essentielles se font en ligne : prendre un rendez-vous, consulter ses documents, accéder à une administration, envoyer un e-mail, utiliser une application bancaire ou rechercher une information fiable. Pour une partie de la population, ces gestes restent complexes ou inaccessibles. Le manque d'équipement, de compétences ou de confiance renforce la fracture numérique et les inégalités.",
-      "Pour répondre à ces enjeux, ECD asbl déploie l'EPNM – Espace Public Numérique Mobile – et propose des ateliers et permanences numériques directement sur le terrain, au plus près des habitants.",
+      "Pour répondre à ces enjeux, EF asbl déploie l'EPNM – Espace Public Numérique Mobile – et propose des ateliers et permanences numériques directement sur le terrain, au plus près des habitants.",
     ],
   },
   programmesSection: {
@@ -87,7 +87,7 @@ export const emploiNumeriquePage = {
     subtitle: 'Inclusion Numérique',
     title: 'Emploi & Numérique',
     description:
-      "ECD asbl propose des ateliers informatiques pour les personnes en recherche d'emploi ou en activation sociale, en complément des ISP : un volet numérique concret et adapté aux démarches pour accéder à l'emploi.",
+      "EF asbl propose des ateliers informatiques pour les personnes en recherche d'emploi ou en activation sociale, en complément des ISP : un volet numérique concret et adapté aux démarches pour accéder à l'emploi.",
   } satisfies HeroSectionData,
   sections: {
     objectif: {
@@ -155,7 +155,7 @@ export const emploiNumeriquePage = {
     },
     partenariats: {
       title: 'Partenariats',
-      intro: 'ECD asbl développe des partenariats avec des acteurs tels que :',
+      intro: 'EF asbl développe des partenariats avec des acteurs tels que :',
     },
   },
   objectifList: [
@@ -200,7 +200,7 @@ export const alphaFleNumeriquePage = {
     subtitle: 'Inclusion Numérique',
     title: 'Alpha, FLE et Numérique',
     description:
-      'ECD asbl intègre le numérique dans ses parcours Alpha et FLE. Pour les personnes en parcours, les démarches en ligne représentent souvent un double obstacle (langue et numérique) ; nous les accompagnons pour y accéder.',
+      'EF asbl intègre le numérique dans ses parcours Alpha et FLE. Pour les personnes en parcours, les démarches en ligne représentent souvent un double obstacle (langue et numérique) ; nous les accompagnons pour y accéder.',
   } satisfies HeroSectionData,
   sections: {
     objectifs: {
@@ -253,12 +253,12 @@ export const alphaFleNumeriquePage = {
     aidants: {
       title: 'Formation des aidants numériques',
       intro:
-        "ECD asbl propose également des formations et accompagnements pédagogiques en lien avec les TIC, afin de renforcer les compétences des professionnels de terrain. Nous intervenons notamment pour :",
+        'EF asbl propose également des formations et accompagnements pédagogiques en lien avec les TIC, afin de renforcer les compétences des professionnels de terrain. Nous intervenons notamment pour :',
     },
     partenariats: {
       title: 'Partenariats',
       intro:
-        "Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère (FLE) peuvent formuler leurs demandes afin de développer des partenariats avec ECD asbl. Ces partenariats peuvent porter sur :",
+        'Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère (FLE) peuvent formuler leurs demandes afin de développer des partenariats avec EF asbl. Ces partenariats peuvent porter sur :',
       outro:
         "Les structures intéressées peuvent nous contacter afin d'analyser leurs besoins et construire ensemble une collaboration adaptée.",
     },
@@ -300,10 +300,13 @@ export const jeunesConnectesPage = {
     subtitle: 'Inclusion Numérique',
     title: 'Jeunes connectés',
     description:
-      'ECD asbl propose des stages et ateliers pour les 6-18 ans (informatique, programmation, robotique, création numérique). Un parcours ludique pour développer ses compétences tout en s’amusant.',
+      'EF asbl propose des stages et ateliers pour les 6-18 ans (informatique, programmation, robotique, création numérique). Un parcours ludique pour développer ses compétences tout en s’amusant.',
   } satisfies HeroSectionData,
   sections: {
-    objectifs: { title: 'Objectifs généraux', intro: 'Ces stages permettent aux participants de :' },
+    objectifs: {
+      title: 'Objectifs généraux',
+      intro: 'Ces stages permettent aux participants de :',
+    },
     parcours: { title: "Deux parcours adaptés à l'âge" },
     parcours1: {
       title: 'Parcours 1 : Stages informatiques (6–12 ans)',
@@ -421,7 +424,7 @@ export const seniorsDigitalPage = {
     subtitle: 'Inclusion Numérique',
     title: 'Accompagner les seniors dans la transition numérique',
     description:
-      'De nombreux services du quotidien sont devenus numériques. ECD asbl propose un accompagnement numérique adapté et accessible, pour utiliser les outils en toute sécurité, à son rythme et dans un cadre bienveillant.',
+      'De nombreux services du quotidien sont devenus numériques. EF asbl propose un accompagnement numérique adapté et accessible, pour utiliser les outils en toute sécurité, à son rythme et dans un cadre bienveillant.',
   } satisfies HeroSectionData,
   sections: {
     objectif: {
@@ -431,7 +434,7 @@ export const seniorsDigitalPage = {
     },
     objectifsSpecifiques: {
       title: 'Objectifs spécifiques',
-      intro: 'À travers ces ateliers, ECD asbl vise à :',
+      intro: 'À travers ces ateliers, EF asbl vise à :',
     },
     approche: {
       title: 'Une approche de proximité, centrée sur les besoins',
@@ -455,7 +458,7 @@ export const seniorsDigitalPage = {
   },
   objectifsSpecifiques: [
     "Renforcer l'autonomie numérique dans les usages du quotidien : recherche d'informations, prise de rendez-vous, téléchargement de documents, démarches simples en ligne.",
-    "Développer les compétences de base sur smartphone, tablette et ordinateur : connexion Wi-Fi, navigation Internet, clavier, gestion des applications, photos et documents.",
+    'Développer les compétences de base sur smartphone, tablette et ordinateur : connexion Wi-Fi, navigation Internet, clavier, gestion des applications, photos et documents.',
     "Faciliter la communication avec les proches et les services grâce à l'e-mail, aux messageries instantanées et aux appels vidéo.",
     "Accompagner l'accès aux services essentiels en ligne, notamment les plateformes communales, administratives, sociales ou de santé.",
     "Renforcer la sécurité numérique : reconnaissance des arnaques, protection des données personnelles, gestion des mots de passe, bonnes pratiques pour l'e-banking et les paiements en ligne.",
@@ -473,4 +476,3 @@ export const seniorsDigitalPage = {
     "D'utiliser les guichets électroniques et services numériques de manière autonome.",
   ],
 } as const
-

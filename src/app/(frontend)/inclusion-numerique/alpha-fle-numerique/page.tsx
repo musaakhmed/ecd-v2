@@ -48,7 +48,7 @@ const Page = () => {
         imageAlt="Alpha, FLE et Numérique"
         subtitle="Inclusion Numérique"
         title="Alpha, FLE et Numérique"
-        description="ECD asbl intègre le numérique dans ses parcours Alpha et FLE. Pour les personnes en parcours, les démarches en ligne représentent souvent un double obstacle (langue et numérique) ; nous les accompagnons pour y accéder."
+        description="EF asbl intègre le numérique dans ses parcours Alpha et FLE. Pour les personnes en parcours, les démarches en ligne représentent souvent un double obstacle (langue et numérique) ; nous les accompagnons pour y accéder."
       />
 
       {/* Contenu principal */}
@@ -167,7 +167,9 @@ const Page = () => {
                     'bg-gradient-to-br from-primary-800 to-primary-950 border-primary-600/50',
                   content: (
                     <>
-                      <p className="leading-relaxed mb-6 text-inherit">Les ateliers sont basés sur :</p>
+                      <p className="leading-relaxed mb-6 text-inherit">
+                        Les ateliers sont basés sur :
+                      </p>
                       <BulletList
                         items={methodeItems}
                         color="secondary"
@@ -180,13 +182,13 @@ const Page = () => {
                 {
                   title: 'Formation des aidants numériques',
                   imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
-                  imageAlt: "Formation numerique pour professionnels et aidants",
+                  imageAlt: 'Formation numerique pour professionnels et aidants',
                   cardClassName:
                     'bg-gradient-to-br from-primary-800 to-primary-950 border-primary-600/50',
                   content: (
                     <>
                       <p className="leading-relaxed mb-6 text-inherit">
-                        ECD asbl propose également des formations et accompagnements pédagogiques en
+                        EF asbl propose également des formations et accompagnements pédagogiques en
                         lien avec les TIC, afin de renforcer les compétences des professionnels de
                         terrain. Nous intervenons notamment pour :
                       </p>
@@ -197,15 +199,15 @@ const Page = () => {
                 {
                   title: 'Partenariats',
                   imageSrc: '/assets/about/ecd.jpg',
-                  imageAlt: 'Partenariat avec ECD asbl',
+                  imageAlt: 'Partenariat avec EF asbl',
                   cardClassName:
                     'bg-gradient-to-br from-primary-800 to-primary-950 border-primary-600/50',
                   content: (
                     <>
                       <p className="leading-relaxed mb-6 text-inherit">
                         Les asbl actives en alphabétisation (Alpha) et en Français Langue Étrangère
-                        (FLE) peuvent formuler leurs demandes afin de développer des partenariats avec
-                        ECD asbl. Ces partenariats peuvent porter sur :
+                        (FLE) peuvent formuler leurs demandes afin de développer des partenariats
+                        avec EF asbl. Ces partenariats peuvent porter sur :
                       </p>
                       <BulletList
                         items={partenariatsItems}

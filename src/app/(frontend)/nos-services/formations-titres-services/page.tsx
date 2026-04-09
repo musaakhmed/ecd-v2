@@ -157,7 +157,7 @@ const Page = () => {
               src={content.bienEtre.parallaxImage.src}
               alt={content.bienEtre.parallaxImage.alt}
               fill
-              className="object-cover"
+              className="object-contain object-center"
               priority
             />
           </div>

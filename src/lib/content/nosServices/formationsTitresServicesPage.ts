@@ -7,7 +7,7 @@ export const formationsTitresServicesPageContent = {
     eyebrow: 'Nos Services',
     title: 'Formations en Titres Services',
     description:
-      "ECD asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives. Ces modules permettent d'acquérir les compétences numériques essentielles et les bonnes pratiques de bien-être au travail, tout en favorisant l'efficacité professionnelle et la prévention des risques.",
+      "Espace Forma asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives. Ces modules permettent d'acquérir les compétences numériques essentielles et les bonnes pratiques de bien-être au travail, tout en favorisant l'efficacité professionnelle et la prévention des risques.",
   },
   competencesNumeriques: {
     title: 'Compétences numériques professionnelles',
@@ -18,7 +18,8 @@ export const formationsTitresServicesPageContent = {
     modules: [
       {
         title: 'Identité numérique & démarches administratives',
-        description: "Utilisation de l'eID, Itsme, portails administratifs (Mutuelles, ONEM, My Belgium…).",
+        description:
+          "Utilisation de l'eID, Itsme, portails administratifs (Mutuelles, ONEM, My Belgium…).",
       },
       {
         title: 'Navigation Internet & recherches en ligne',
@@ -26,7 +27,8 @@ export const formationsTitresServicesPageContent = {
       },
       {
         title: 'Messagerie électronique',
-        description: 'Gestion professionnelle des e-mails, pièces jointes, organisation, bonnes pratiques.',
+        description:
+          'Gestion professionnelle des e-mails, pièces jointes, organisation, bonnes pratiques.',
       },
       {
         title: 'Outils de visioconférence (Teams & Zoom)',
@@ -49,13 +51,16 @@ export const formationsTitresServicesPageContent = {
     title: 'Compétences de bien-être, ergonomie & prévention',
     description:
       "Ces modules améliorent les conditions de travail, réduisent la pénibilité et renforcent la sécurité, particulièrement pour les métiers d'intervention à domicile ou de proximité.",
-    parallaxImage: { src: '/assets/services/perfectionnement/ai-work.jpg', alt: 'Bien-être au travail' },
+    parallaxImage: {
+      src: '/assets/operateur/formation-titres-services.jpg',
+      alt: 'Bien-être au travail',
+    },
     cardTitle: 'Modules proposés',
     modules: [
       {
         title: 'Sécurité sur le lieu de travail',
         description:
-          "Identification des dangers, gestes préventifs, protocoles simples pour éviter les accidents.",
+          'Identification des dangers, gestes préventifs, protocoles simples pour éviter les accidents.',
       },
       {
         title: 'Ergonomie & prévention des TMS',
@@ -64,11 +69,13 @@ export const formationsTitresServicesPageContent = {
       },
       {
         title: 'Organisation du travail',
-        description: 'Gestion du temps, priorisation, structuration des tâches, efficacité au quotidien.',
+        description:
+          'Gestion du temps, priorisation, structuration des tâches, efficacité au quotidien.',
       },
       {
         title: 'Communication professionnelle',
-        description: 'Posture face aux clients, gestion des demandes, résolution de situations délicates.',
+        description:
+          'Posture face aux clients, gestion des demandes, résolution de situations délicates.',
       },
       {
         title: 'Gestion du stress & motivation',
@@ -82,10 +89,8 @@ export const formationsTitresServicesPageContent = {
     ] satisfies BulletModule[],
   },
   cta: {
-    text:
-      'ECD asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives.',
+    text: 'Espace Forma asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives.',
     buttonLabel: 'En savoir plus',
     href: '/titres-service',
   },
 } as const
-
