@@ -39,9 +39,9 @@ const PartnerCard = () => {
                 alt={partner.title}
                 width={LOGO_SIZE}
                 height={LOGO_SIZE}
-                className="object-contain w-full h-full rounded-lg bg-white/90 p-2"
+                className="object-contain w-full h-full rounded-t-lg bg-white/90 p-2"
               />
-              <p className=" z-50 w-full bg-azure-200 p-1 text-center font-semibold text-primary-900 rounded-lg ">
+              <p className=" z-50 w-full bg-accent-200 p-1 text-center text-sm font-semibold text-primary-900 rounded-b-lg ">
                 <a href={partner.link} target="blank">
                   {partner.title}
                 </a>
