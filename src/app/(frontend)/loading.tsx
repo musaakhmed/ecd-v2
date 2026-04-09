@@ -8,7 +8,7 @@ const FrontendLoading = () => {
           <div className="absolute inset-0 rounded-full border-4 border-primary-200 dark:border-primary-900" />
           <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-primary-600 dark:border-t-primary-400 animate-spin" />
         </div>
-        <p className="text-sm font-medium tracking-wide text-primary-800 dark:text-primary-100">
+        <p className="text-sm font-medium tracking-wide italic text-primary-800 dark:text-primary-100">
           Chargement de la page...
         </p>
       </div>
@@ -17,4 +17,3 @@ const FrontendLoading = () => {
 }
 
 export default FrontendLoading
-
