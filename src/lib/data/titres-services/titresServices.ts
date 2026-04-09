@@ -417,18 +417,60 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       "S'exprimer avec clarté, gérer les tensions, poser des limites et renforcer l'écoute active au quotidien.",
     description:
-      "Ce module vise à renforcer les compétences de communication interpersonnelle des aides-ménagères, tant avec les clients qu'avec les collègues ou la hiérarchie.\n\nIl s'appuie sur des situations concrètes : demandes difficiles, incompréhensions, critiques, gestion des limites.",
+      'Ce module vise à renforcer les compétences de communication interpersonnelle des aides-ménagères, tant dans la relation avec les clients que dans les échanges avec les collègues ou la hiérarchie.\n\n' +
+      'La formation s’appuie sur des situations concrètes issues du quotidien professionnel : demandes difficiles ou contradictoires, incompréhensions, critiques de clients, gestion des limites ou malaise dans la relation.\n\n' +
+      'Les participantes apprennent à :\n' +
+      '• S’exprimer avec clarté et respect,\n' +
+      '• Poser des limites sans conflit,\n' +
+      '• Comprendre l’impact du non-verbal,\n' +
+      '• Désamorcer une tension,\n' +
+      '• Accueillir et formuler une critique de manière professionnelle.\n\n' +
+      'L’approche est simple, visuelle, interactive et accessible, adaptée à un public peu qualifié et parfois peu à l’aise avec l’expression orale. Les activités permettent de pratiquer immédiatement les outils de communication dans un cadre sécurisant et bienveillant.',
     objectifs: [
-      'Comprendre les dimensions de la communication (verbal, paraverbal, non verbal).',
-      'Utiliser des techniques d’expression assertive (message en « je », méthode DESC).',
-      'Désamorcer un conflit naissant et réagir face à une critique.',
+      'Comprendre la communication :',
+      'Identifier les trois dimensions de la communication : verbal (les mots), paraverbal (ton, rythme, volume), non verbal (attitude, posture, gestes).',
+      'Comprendre comment les malentendus naissent et comment les prévenir.',
+      'S’exprimer de manière professionnelle :',
+      'Formuler un message clair, respectueux et adapté au contexte.',
+      'Utiliser des techniques d’expression assertive : message en « je » et méthode DESC (Décrire, Exprimer, Suggérer, Conclure).',
+      'Dire non ou poser une limite sans agressivité.',
+      'Gérer les tensions et situations délicates :',
+      'Réagir de manière professionnelle face à une critique ou à une remarque injuste.',
+      'Désamorcer un conflit naissant avec un client ou un collègue.',
+      'Faire face à des demandes excessives ou non conformes au contrat.',
+      'Renforcer les compétences relationnelles :',
       'Pratiquer l’écoute active (reformulation, clarification).',
+      'Reconnaître les émotions exprimées dans un échange et y répondre avec justesse.',
+      'Adopter une posture professionnelle favorisant le respect mutuel, l’efficacité et la collaboration.',
     ],
     modalitesPédagogie:
-      'Jeux de rôle réalistes, activités ludiques, travail en duo/trio. Cadre bienveillant et vocabulaire simple.',
-    evaluationSuivi: 'Auto-évaluation début/fin, bilan individuel oral (ce que je vais essayer).',
+      'La pédagogie est active, pratique et participative, adaptée au public des aide-ménagères et centrée sur la réalité du terrain.\n\n' +
+      'Méthodes utilisées\n' +
+      '• Jeux de rôle réalistes : recevoir une critique du client, dire non à une demande inappropriée, demander une clarification, gérer un malentendu ou une tension.\n' +
+      '• Mises en situation directement inspirées des prestations à domicile.\n' +
+      '• Activités ludiques : mimes pour identifier le non-verbal, variation de ton pour comprendre l’impact du paraverbal, exercices émotionnels.\n' +
+      '• Apports théoriques courts et imagés, sous forme de schémas simples.\n' +
+      '• Travail en duo/trio : reformulation, clarification d’un message, construction d’un « message en je ».\n' +
+      '• Démonstration par l’animatrice, puis pratique accompagnée.\n' +
+      '• Focus sur la confiance en soi : encourager l’expression, valoriser les réussites, rassurer.\n\n' +
+      'Principes pédagogiques\n' +
+      '• Utiliser un vocabulaire simple et des consignes courtes.\n' +
+      '• Favoriser l’oral et les échanges.\n' +
+      '• Créer un cadre bienveillant permettant à chacune d’oser parler et essayer.\n' +
+      '• Alterner théorie/pratique pour maintenir l’attention.\n' +
+      '• Encourager la coopération et le soutien entre participantes.',
+    evaluationSuivi:
+      '• Auto-évaluation en début et en fin de séance : niveau de confort en communication, besoins prioritaires, progrès perçus.\n' +
+      '• Observation continue lors des jeux de rôle et exercices.\n' +
+      '• Feedback collectif pour consolider les acquis, partager les stratégies efficaces et revenir sur ce qui reste difficile.\n' +
+      '• Bilan individuel oral : ce que j’ai appris, ce que je vais essayer dans mon prochain chantier.\n' +
+      '• Attestation de participation remise en fin de formation selon les exigences des Fonds TS.',
     supportsLogistiques:
-      'Fiches illustrées (DESC, écoute active), scénarios imprimés, salle modulable.',
+      '• Auto-évaluation en début et en fin de séance : niveau de confort en communication, besoins prioritaires, progrès perçus.\n' +
+      '• Observation continue lors des jeux de rôle et exercices.\n' +
+      '• Feedback collectif pour consolider les acquis, partager les stratégies efficaces et revenir sur ce qui reste difficile.\n' +
+      '• Bilan individuel oral : ce que j’ai appris, ce que je vais essayer dans mon prochain chantier.\n' +
+      '• Attestation de participation remise en fin de formation selon les exigences des Fonds TS.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10403', date: '12/11/2025' },
