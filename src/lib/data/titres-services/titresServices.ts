@@ -32,20 +32,21 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       "eID, Itsme et portails administratifs : se connecter, s'identifier et réaliser ses démarches en autonomie.",
     description:
-      '« Se connecter, s’identifier et agir en toute autonomie sur les plateformes en ligne »\n\nApprendre à se familiariser avec l’usage de l’identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l’application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics.\n\nCommander un document administratif, effectuer un paiement, s’identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd’hui une authentification sécurisée via une clé numérique.',
+      '« Se connecter, s’identifier et agir en toute autonomie sur les plateformes en ligne »\n\nApprendre à se familiariser avec l’usage de l’identité numérique pour simplifier vos démarches administratives et quotidiennes. Ce module vous guide pas à pas pour utiliser l’application Itsme et le lecteur de carte eID, et naviguer facilement sur les principaux portails publics.\n\nCommander un document administratif, effectuer un paiement, s’identifier sur un site public ou signer électroniquement un document… toutes ces actions nécessitent aujourd’hui une authentification sécurisée via une clé numérique. \n\n Ce module vous permet de découvrir, comprendre et utiliser ces outils essentiels à travers différents portails administratifs, selon votre profil et vos besoins. Vous apprendrez à effectuer vos démarches en ligne en toute confiance, à protéger vos données personnelles et à gagner en autonomie numérique dans votre vie professionnelle et privée.',
     objectifs: [
       "Comprendre les outils d'identification numérique (eID, Itsme, Token, codes SMS/e-mail).",
       'Utiliser le lecteur de carte eID et résoudre les problèmes de connexion.',
       'Maîtriser l’application Itsme et se connecter à des portails publics.',
-      'Réaliser des démarches administratives en ligne en toute autonomie.',
+      'Réaliser des démarches administratives en ligne en toute autonomie. (ONVA, MyMinfin, MyPension, IRISbox, Mon Espace Wallonie)',
       'Adopter les bonnes pratiques de sécurité numérique (RGPD, phishing, mots de passe).',
     ],
     modalitesPédagogie:
-      'Pédagogie différenciée mêlant théorie et pratique, avec une approche individuelle et collective. Mises en situation, exercices guidés et démonstrations pas à pas. Syllabus/tutoriels via QR Code. Aide à distance possible après la formation.',
+      'La formation s’appuie sur une pédagogie différenciée mêlant théorie et pratique, avec une approche à la fois individuelle et collective. \n\n Un syllabus numérique et des tutoriels accessibles via QR Code sont remis à chaque participant. Une aide à distance est également proposée après la formation.\n',
     evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Les feedbacks permettent d'améliorer en continu le contenu et l'animation.",
+      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation :\n' +
+      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
     supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Les participants peuvent apporter leur propre PC/smartphone/tablette.",
+      "Formations chez les partenaires ou dans les locaux d'EF. \n \n Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Les participants peuvent apporter leur propre PC/smartphone/tablette.",
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10240', date: '23/02/2024' },
@@ -62,7 +63,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Créer et organiser sa boîte mail, rédiger des emails clairs, gérer pièces jointes et se protéger des spams/phishing.',
     description:
-      'La messagerie électronique est aujourd’hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel.\n\nCe module a pour objectif de permettre aux participants de découvrir et d’utiliser efficacement les principales messageries (Gmail, Outlook). Il inclut aussi une initiation à l’usage de l’IA pour la rédaction, la correction, l’amélioration du style et la traduction des messages.',
+      'La messagerie électronique est aujourd’hui incontournable, aussi bien dans la vie quotidienne que dans le cadre professionnel. La majorité des administrations et des entreprises privilégient désormais la communication par email ou via des applications de messagerie. Pourtant, de nombreux utilisateurs ne maîtrisent pas encore les fonctionnalités essentielles de ces outils.\n\nCe module a pour objectif de permettre aux participants de découvrir et d’utiliser efficacement les principales messageries (Gmail, Outlook). Il inclut aussi une initiation à l’usage de l’IA pour la rédaction, la correction, l’amélioration du style et la traduction des messages.',
     objectifs: [
       'Créer et paramétrer un compte email (signature, préférences).',
       'Envoyer/recevoir et rédiger des emails adaptés au contexte.',
@@ -75,7 +76,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     evaluationSuivi:
       'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
     supportsLogistiques:
-      'Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Participants peuvent apporter leur matériel.',
+      'Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. \n Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10256', date: '15/04/2024' },
@@ -117,9 +118,12 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     modalitesPédagogie:
       'Pédagogie différenciée mêlant théorie et pratique. Mises en situation, exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.',
     evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
+      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation.\n' +
+      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
     supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
+      "Formations chez les partenaires ou dans les locaux d'ECD. \n" +
+      'Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox (connexion Internet), syllabus. ' +
+      'Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10257', date: '15/04/2024' },
@@ -136,7 +140,9 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Découvrir ChatGPT : prompts, rédaction, reformulation, résumé, traduction et bonnes pratiques (limites, confidentialité).',
     description:
-      'Poser des questions, obtenir des explications, rédiger, corriger, reformuler, résumer, traduire, donner des idées : ce module propose une introduction pratique à l’utilisation de ChatGPT.\n\nLes participants apprennent à formuler des requêtes (prompts), à identifier les usages pertinents et à comprendre les limites et bonnes pratiques.',
+      'Poser des questions et obtenir des explications, Rédiger, Corriger, Reformuler, Résumer Traduire, Donner des idées voici autant de fonctionnalités de base que propose ChatGPT. Ce module propose une introduction pratique à l’utilisation de ChatGPT, un outil d’intelligence artificielle capable de générer du texte, d’expliquer, de reformuler, de traduire ou d’aider à produire des documents variés. \n\n' +
+      'Accessible aussi bien aux débutants qu’aux utilisateurs intermédiaires, la formation vise à comprendre comment exploiter ChatGPT de manière efficace, responsable et sécurisée, dans un cadre personnel, administratif ou professionnel.\n' +
+      'Les participants apprendront à formuler des requêtes claires (prompts), à identifier les usages pertinents, et à comprendre les limites ainsi que les bonnes pratiques de l’IA.',
     objectifs: [
       'Comprendre ce qu’est une IA conversationnelle et ses usages.',
       'Accéder à ChatGPT sur ordinateur ou smartphone et naviguer dans l’interface.',
@@ -145,11 +151,13 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Rechercher et résumer des informations en gardant un esprit critique.',
     ],
     modalitesPédagogie:
-      'Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.',
+      'Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. \n Un syllabus numérique et des tutoriels accessibles via QR Code sont remis à chaque participant. Une aide à distance est également proposée après la formation.',
     evaluationSuivi:
-      "Questionnaire d'évaluation post-formation. Amélioration continue via les retours.",
+      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation.\n' +
+      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
     supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'ECD. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus.",
+      "Formations chez les partenaires ou dans les locaux d'ECD. \n\n Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox (connexion Internet), syllabus.\n" +
+      'Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
     publicVise: 'Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1605/B', date: '17/05/2024' }],
     duree: '4 heures / Groupe',
@@ -202,19 +210,70 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Gestes professionnels, matériel, choix des produits, pictogrammes de sécurité et prévention des accidents.',
     description:
-      'Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d’utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces.\n\nLa formation aborde l’entretien du matériel, la lecture des pictogrammes, l’échelle de pH et le cercle de Sinner (TACT).',
+      'Ce module initie les aides-ménagères aux techniques de nettoyage professionnelles, en leur permettant d’utiliser les produits et le matériel de manière efficace, sécurisée et adaptée aux surfaces.\n\nLa formation aborde l’entretien du matériel, la lecture des pictogrammes, l’échelle de pH et le cercle de Sinner (TACT). \n\n' +
+      'Adaptée à un public peu scolarisé, elle utilise un langage clair, des exemples concrets, des démonstrations réalistes et des activités pratiques. L’objectif est de garantir un nettoyage efficace et sûr, tout en évitant les accidents et en renforçant les réflexes professionnels.',
+    objectifsIntro: 'À l’issue du module, les participantes seront capables de :',
     objectifs: [
-      'Comprendre les principes du nettoyage professionnel (cercle de Sinner).',
-      'Choisir le produit adapté selon la surface et la saleté.',
-      'Lire et interpréter étiquettes, pictogrammes et labels.',
-      'Utiliser et entretenir le matériel (microfibres, aspirateur, raclettes…).',
-      'Appliquer les bonnes postures et règles de sécurité.',
+      'Comprendre les principes du nettoyage professionnel :',
+      'Expliquer le cercle de Sinner et son impact sur l’efficacité du nettoyage.',
+      'Identifier le rôle de chaque facteur : chimie, action mécanique, temps d’action, température.',
+      'Utiliser correctement les produits :',
+      'Comprendre l’échelle des pH et les trois grandes familles de produits (acides, neutres, alcalins).',
+      'Choisir le produit adapté selon le type de saleté et la surface.',
+      'Repérer les erreurs à éviter : mauvais dosage, mélange dangereux, mauvais usage des produits forts.',
+      'Assurer la sécurité dans l’utilisation des produits :',
+      'Lire et interpréter une étiquette, une fiche de sécurité, les pictogrammes et les labels.',
+      'Appliquer les précautions indispensables pour éviter brûlures, allergies, irritations ou intoxications.',
+      'Identifier les EPI nécessaires et les situations où ils doivent être utilisés.',
+      'Utiliser et entretenir le matériel professionnel :',
+      'Utiliser correctement microfibres, éponges, plumeaux, aspirateurs, raclettes, seaux, escabelles.',
+      'Adopter les codes couleur et les bonnes pratiques d’hygiène.',
+      'Entretenir le matériel pour éviter contamination, usure ou manque d’efficacité.',
+      'Appliquer les bonnes postures et règles de sécurité :',
+      'Plier les genoux, pas le dos.',
+      'Éviter les torsions et les gestes brusques.',
+      'Sécuriser l’espace de travail pour éviter chutes, glissades, faux mouvements.',
     ],
     modalitesPédagogie:
-      'Ateliers pratiques, démonstrations et manipulations réelles. Langage clair et supports visuels adaptés.',
-    evaluationSuivi: 'Exercices pratiques évalués (choix produit/surface, dilution, matériel).',
+      'Approche pédagogique\n' +
+      '• Langage visuel et accessible.\n' +
+      '• Participation active, échanges d’expérience et démonstrations.\n' +
+      '• Apprentissage par l’observation et la manipulation réelle.\n' +
+      '• Adaptation aux besoins d’un public peu qualifié ou débutant.\n\n' +
+      'Méthodes utilisées\n' +
+      '• Présentations visuelles (pH, cercle de Sinner, pictogrammes).\n' +
+      '• Exemples concrets : saletés, surfaces, produits.\n' +
+      '• Jeux d’association (produit/saleté/surface).\n' +
+      '• Ateliers pratiques : dilution, utilisation microfibre/aspirateur/raclette, lecture d’étiquette, simulations bon/mauvais usage.\n' +
+      '• Études de cas et situations réalistes rencontrées chez les clients.\n' +
+      '• Travail en petits groupes pour analyser et corriger les pratiques.\n\n' +
+      'Matériel utilisé\n' +
+      'Microfibres, gants, éponges, aspirateurs, seaux, produits pH variés, raclettes, plumeaux, supports visuels, pictogrammes, fiches techniques, EPI.',
+    evaluationSuivi:
+      'L’évaluation vise à mesurer la compréhension des notions clés et la capacité à appliquer les gestes professionnels en situation.\n\n' +
+      'Outils d’évaluation\n' +
+      '• Quiz visuel/oral sur les pictogrammes, les produits, les usages corrects/incorrects.\n' +
+      '• Exercices pratiques évalués : dilution d’un produit, choix d’un produit en fonction d’une surface, utilisation du matériel.\n' +
+      '• Observation directe lors des ateliers (posture, sécurité, rangement).\n' +
+      '• Mini-jeu vrai/faux en fin de séance.\n' +
+      '• Retour d’expérience + distribution d’un mémo visuel.\n\n' +
+      'L’évaluation a pour but de valider les acquis et d’identifier les points d’attention pour la suite.',
     supportsLogistiques:
-      'Fiches illustrées, EPI, produits pH variés, matériel de démonstration (microfibres, seaux, raclettes, aspirateur…).',
+      'Supports remis aux participantes\n' +
+      '• Fiches illustrées : cercle de Sinner, échelle de pH, familles de produits, pictogrammes de sécurité, bonnes pratiques de dilution, codes couleur microfibres.\n' +
+      '• Schémas (surface/saleté/produit).\n' +
+      '• Tableau « gestes sûrs / gestes dangereux ».\n' +
+      '• Mémo visuel de fin de formation.\n\n' +
+      'Matériel de démonstration\n' +
+      '• Microfibres (couleurs différentes).\n' +
+      '• Éponges (douces / grattantes).\n' +
+      '• Plumeaux et têtes de loup.\n' +
+      '• Aspirateur (embouts variés).\n' +
+      '• Raclettes pour vitres.\n' +
+      '• Seaux (eau propre et eau sale).\n' +
+      '• Escabelle sécurisée.\n' +
+      '• Produits à pH acide / neutre / alcalin.\n' +
+      '• EPI : gants, lunettes, masque.',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10406', date: '12/11/2025' },
@@ -255,21 +314,30 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Ergonomie et prévention TMS',
   },
   {
-    slug: 'produits-chimiques',
+    slug: 'produits-chimiques-securite',
     titre: 'Produits chimiques et sécurité',
-    isPlaceholder: true,
+    isPlaceholder: false,
     descriptionCourte:
       "Manipuler les produits d'entretien en sécurité : lecture d'étiquettes, pictogrammes et bonnes pratiques.",
     description:
-      'Contenu à venir. Cette page sera dédiée à la manipulation sécurisée des produits chimiques (pictogrammes, dilution, stockage, EPI, prévention des mélanges dangereux).',
+      'Ce module vise à sensibiliser les participants à l’utilisation sécurisée des produits chimiques d’entretien utilisés au quotidien.',
     objectifs: [
-      'Reconnaître les pictogrammes et comprendre les risques.',
-      'Appliquer les règles de dilution, stockage et ventilation.',
-      'Éviter les mélanges dangereux et adopter les EPI adaptés.',
+      'Connaitre les produits chimiques, Identifier les produits d’entretien courants (Javel, détartrants, dégraissants…), différencier les produits acides et basiques, comprendre la notion de pH.',
+      'Identifier les dangers, reconnaître les risques pour la santé (brûlures, intoxications, allergies), les situations à risque (mélange, mauvais dosage, mauvaise ventilation), les erreurs fréquentes à éviter. ',
+      'Lire et comprendre les étiquettes, identifier les pictogrammes de danger.',
+      'Utiliser les produits correctement, respecter les doses recommandées, choisir le bon produit selon la saleté (calcaire → acide, graisse → basique), réaliser une dilution correcte, Éviter les mélanges dangereux (ex : Javel + acide).',
+      'Se protéger efficacement, utiliser les équipements de protection (gants, lunettes, masque), adopter les bons réflexes, travailler dans un environnement sécurisé.',
+      'Prévenir les accidents, stocker les produits correctement, Éviter les erreurs de manipulation, réagir correctement en cas d’accident (contact, projection, inhalation).',
     ],
-    modalitesPédagogie: 'Contenu à venir.',
-    evaluationSuivi: 'Contenu à venir.',
-    supportsLogistiques: 'Contenu à venir.',
+    modalitesPédagogie:
+      'La pédagogie est active, concrète et centrée sur la réalité du terrain. Présentation de produits réels. Entraînement pratique, mise en confiance et répétition. Support via QR Code. Aide à distance possible après la formation.',
+    evaluationSuivi:
+      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.\n' +
+      'Vérification que les consignes de sécurités sont bien assimilées.',
+    supportsLogistiques:
+      'Produits chimiques, Équipements de protection (gants, lunettes, masques), \n' +
+      '\n' +
+      'Fiches illustrées (DESC, écoute active), salle modulable. Accès à un point d’eau.\n',
     publicVise: 'Aide-ménagères',
     approbation: [],
     duree: '4 heures / Groupe',
@@ -308,21 +376,32 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Sécurité sur son lieu de travail',
   },
   {
-    slug: 'techniques-de-repassage',
-    titre: 'Techniques de repassage',
-    isPlaceholder: true,
+    slug: 'techniques-de-repassage-professionnel',
+    titre: 'Techniques de repassage professionnel',
+    isPlaceholder: false,
     descriptionCourte:
       'Gestes, organisation et astuces pour repasser efficacement et limiter la fatigue.',
     description:
-      'Contenu à venir. Cette page détaillera les techniques de repassage, l’organisation du poste, les gestes ergonomiques et les bonnes pratiques selon les textiles.',
+      'Ce module vise à développer les compétences techniques en repassage professionnel, afin d’améliorer la qualité du travail, la rapidité et la sécurité.\n' +
+      '\n' +
+      'La formation s’appuie sur une approche très pratique, basée sur la démonstration, la reproduction des gestes et la correction individuelle.\n' +
+      '\n' +
+      'Les participants travaillent directement avec du matériel réel (fers à repasser, différents textiles) et s’exercent sur des vêtements courants.',
     objectifs: [
-      'Organiser son poste de repassage et régler le matériel.',
-      'Appliquer des gestes efficaces et économes en effort.',
-      'Adapter les techniques selon les textiles et les vêtements.',
+      'Comprendre les bases du repassage, identifier les différents types de matériel (fer, centrale vapeur, table), lire les symboles textiles (température, vapeur), organiser son poste de travail (tri du linge, ordre de repassage). ',
+      'Maîtriser les gestes professionnels, adopter une posture adaptée pour éviter les tensions.',
+      'Adapter la technique aux vêtements, adapter leur méthode selon le textile.',
+      'Améliorer la qualité et la rapidité, identifier et corriger les erreurs fréquentes, organiser son travail pour gagner du temps, contrôler la qualité avant de plier ou ranger le linge.',
+      'Travailler en sécurité, prévenir les risques (brûlures, électricité), utiliser le matériel en toute sécurité, entretenir le fer ou la centrale vapeur (détartrage, nettoyage). ',
     ],
-    modalitesPédagogie: 'Contenu à venir.',
-    evaluationSuivi: 'Contenu à venir.',
-    supportsLogistiques: 'Contenu à venir.',
+    modalitesPédagogie:
+      'Ateliers pratiques, démonstrations et manipulations réelles. Langage clair et supports visuels adaptés. Apprentissage par le geste.',
+    evaluationSuivi:
+      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
+    supportsLogistiques:
+      'Fers à repasser, Tables à repasser, Vêtements variés (t-shirts, pantalons, chemises). \n' +
+      '\n' +
+      'Fiches illustrées (DESC, écoute active), salle modulable.',
     publicVise: 'Aide-ménagères',
     approbation: [],
     duree: '4 heures / Groupe',
@@ -416,21 +495,25 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Organisation du travail',
   },
   {
-    slug: 'assertivite-poser-ses-limites',
-    titre: 'L’assertivité, poser ses limites',
-    isPlaceholder: true,
+    slug: 'assertivite-professionnelles',
+    titre: 'Assertivité Professionnelle ',
+    isPlaceholder: false,
     descriptionCourte:
       'Dire non avec respect, clarifier les attentes et préserver une relation professionnelle saine.',
     description:
-      "Contenu à venir. Cette page présentera des outils d'assertivité pour poser des limites, gérer des demandes inadaptées et communiquer avec respect.",
+      'Ce module vise à renforcer l’assertivité professionnelle, afin de permettre de se positionner clairement dans son travail, de poser des limites et de faire respecter son cadre d’intervention.',
     objectifs: [
-      'Formuler un refus de manière respectueuse et claire.',
-      'Clarifier une consigne et désamorcer une tension.',
-      'Préserver ses limites sans conflit.',
+      'Comprendre ses droits, poser ses limites, identifier son rôle professionnel et son cadre.',
+      'Dire non de manière professionnelle, formuler des réponses simples, claires et respectueuses.',
+      'Gérer les pressions et insistances et identifier les formes de pression exercées par certains clients.',
+      'Renforcer la confiance et se respecter davantage.',
     ],
-    modalitesPédagogie: 'Contenu à venir.',
-    evaluationSuivi: 'Contenu à venir.',
-    supportsLogistiques: 'Contenu à venir.',
+    modalitesPédagogie:
+      'La pédagogie est active, concrète et centrée sur la réalité du terrain. Elle vise avant tout l’entraînement pratique, la mise en confiance et la répétition. Support via QR Code. Aide à distance possible après la formation.',
+    evaluationSuivi:
+      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
+    supportsLogistiques:
+      'Fiches illustrées (DESC, écoute active), scénarios imprimés, salle modulable.',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'en attente', date: '' },
@@ -442,21 +525,26 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Assertivité, poser ses limites',
   },
   {
-    slug: 'deontologie-et-professionnalisme',
-    titre: 'Déontologie et professionnalisme',
-    isPlaceholder: true,
+    slug: 'deontologie-professionnelle',
+    titre: 'Déontologie professionnelle ',
+    isPlaceholder: false,
     descriptionCourte:
       'Cadre professionnel, discrétion, respect, posture et bonnes pratiques sur le terrain.',
     description:
-      'Contenu à venir. Cette page détaillera les règles de base, la posture professionnelle et les principes de déontologie dans le cadre du travail à domicile.',
+      'Ce module vise à renforcer les compétences déontologiques, le respect du client et de son domicile, la confidentialité, les limites professionnelles et la gestion des situations sensibles.',
     objectifs: [
-      'Comprendre les principes de base de la déontologie et de la confidentialité.',
-      'Adopter une posture professionnelle (communication, ponctualité, limites).',
-      'Identifier des situations sensibles et les bons réflexes.',
+      'Comprendre la déontologie, définir la déontologie professionnelle (règles, valeurs, cadre du métier).',
+      'Respecter les règles du métier, appliquer les principes de confidentialité (secret professionnel), respecter le domicile et les biens du client, adopter une attitude respectueuse, sans jugement.',
+      'Identifier et poser des limites, reconnaître les tâches autorisées et non autorisées, refuser une demande abusive ou dangereuse, maintenir une distance professionnelle adaptée.',
+      'Gérer les situations délicates, réagir face à une demande inappropriée (ex : garder un enfant), gérer la familiarité ou les comportements déplacés, savoir quand et comment alerter la hiérarchie.',
+      'Adopter une posture professionnelle, maintenir une bonne distance relationnelle, soigner son image (ponctualité, tenue, attitude), gérer ses émotions en situation de tension.',
     ],
-    modalitesPédagogie: 'Contenu à venir.',
-    evaluationSuivi: 'Contenu à venir.',
-    supportsLogistiques: 'Contenu à venir.',
+    modalitesPédagogie:
+      'La pédagogie est active, concrète et centrée sur la réalité du terrain. Elle vise avant tout l’entraînement pratique, la mise en confiance et la répétition. Support via QR Code. Aide à distance possible après la formation.',
+    evaluationSuivi:
+      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
+    supportsLogistiques:
+      'Fiches illustrées (DESC, écoute active), scénarios imprimés, salle modulable.',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'en attente', date: '' },
