@@ -4,7 +4,7 @@ import { ValueCards } from '@/components/ui/OperateurCard'
 
 const About = () => {
   return (
-    <section id="about" className="h-auto py-8">
+    <section id="about" className="min-h-full py-8">
       <div className="">
         <WhoWeAre />
         <ValueCards />
