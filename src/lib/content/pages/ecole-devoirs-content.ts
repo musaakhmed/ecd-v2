@@ -86,11 +86,12 @@ export const eddPageContent = {
   ],
 
   petiteHistoire: [
-    "L'école de devoirs « Notre-Dame-Aux-Neiges » tire son nom d'un quartier emblématique de Bruxelles. Aujourd'hui connu sous l'appellation de Quartier du Congrès, ce lieu chargé d'histoire abrite des monuments prestigieux tels que la Colonne du Congrès ainsi que de nombreuses institutions publiques.",
-    "À travers ce projet, l'asbl Espace Forma (EF) a souhaité contribuer, à son échelle, au rayonnement de ce quartier en favorisant l'accès à l'éducation de base et en promouvant une véritable école de la réussite. Cette initiative de proximité a pour ambition de renforcer la cohésion sociale et de lutter contre les inégalités au sein d'un environnement marqué par une forte mixité sociale.",
-    "Officiellement active depuis septembre 2015, l'école de devoirs « Notre-Dame-Aux-Neiges » s'est progressivement imposée comme une réponse essentielle aux besoins des familles du Quartier du Congrès et de ses environs. Face au manque de structures d'accueil et d'accompagnement adaptées, l'asbl EF a placé le soutien scolaire au cœur de son plan d'action afin de prévenir le décrochage et les situations d'échec.",
-    "L'EDD bénéficie aujourd'hui d'une deuxième reconnaissance par l'ONE, gage de la qualité et de la pertinence de son projet.",
-    "Notre projet pédagogique repose sur une approche inclusive associant l'élève, l'école et les parents. Il s'inscrit dans une démarche d'émancipation de l'enfant, considéré comme l'acteur central de son propre épanouissement. Dans cette perspective, l'école de devoirs accorde une place importante au soutien à la parentalité et à la valorisation de tous les facteurs favorisant la réussite éducative.",
+    'Au cœur de Bruxelles, dans le quartier historique aujourd’hui connu sous le nom de Quartier du Congrès, se trouve un lieu chargé de mémoire et de symboles. Dominé par la majestueuse Colonne du Congrès et entouré d’institutions emblématiques, ce quartier incarne à la fois l’histoire et la diversité de la capitale.',
+    'C’est dans cet environnement riche mais contrasté que l’asbl Espace Cultures & Développement (ECD) a donné naissance, en septembre 2015, à l’École de Devoirs « Notre-Dame-Aux-Neiges ». Bien plus qu’un simple espace de soutien scolaire, ce projet est né d’une volonté forte : offrir aux enfants du quartier un cadre structurant, bienveillant et stimulant, propice à leur réussite.',
+    'Face au manque de structures adaptées pour accompagner les élèves et soutenir les familles, l’association a fait le choix de placer l’éducation au cœur de son action. L’objectif est clair : prévenir le décrochage scolaire, renforcer les apprentissages fondamentaux et redonner confiance aux enfants dans leurs capacités.',
+    'Au fil des années, l’École de Devoirs s’est imposée comme un acteur essentiel du quartier, répondant concrètement aux besoins d’une population marquée par une grande mixité sociale. Elle contribue ainsi, à son échelle, au renforcement de la cohésion sociale et à la réduction des inégalités.',
+    'Au cœur de cette initiative se trouve une approche pédagogique inclusive, qui considère l’enfant comme acteur principal de son parcours. L’école de devoirs favorise une collaboration étroite entre l’élève, sa famille et l’école, tout en accordant une attention particulière au soutien à la parentalité.',
+    'Ainsi, « Notre-Dame-Aux-Neiges » ne se limite pas à accompagner les devoirs : elle accompagne des parcours de vie, encourage l’autonomie, et participe à l’épanouissement global de chaque enfant.',
   ],
 
   partenaires: [
@@ -147,7 +148,7 @@ export const eddSectionMeta: Record<
 export const eddSections = [
   {
     slug: 'petite-histoire',
-    title: "La petite histoire de l'École de Devoirs",
+    title: 'La petite histoire de l’École de Devoirs « Notre-Dame-Aux-Neiges »',
     menuTitle: 'Petite histoire',
   },
   {

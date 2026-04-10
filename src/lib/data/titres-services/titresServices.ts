@@ -290,19 +290,56 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Bonnes postures, gestes protecteurs, organisation des tâches et routines simples pour réduire douleurs et fatigue.',
     description:
-      'Ce module sensibilise aux troubles musculo-squelettiques (TMS) liés aux tâches physiques du métier.\n\nLa formation alterne explications accessibles, démonstrations et exercices pratiques pour apprendre des gestes protecteurs directement applicables sur le terrain.',
+      'Ce module a pour objectif de sensibiliser les aides-ménagères aux troubles musculo-squelettiques (TMS) fréquemment associés aux tâches physiques du métier : nettoyage, port d’objets, travail au sol, repassage, déplacements répétés, mauvaises postures ou utilisation inadaptée d’outils.\n\nLa formation permet d’identifier les facteurs de risque (postures contraignantes, gestes répétitifs, efforts brusques) et d’apprendre des gestes protecteurs simples, directement applicables sur le terrain.\n\nAlternant explications accessibles, démonstrations concrètes et exercices pratiques, elle vise à :\n• Améliorer le confort au travail,\n• Réduire la fatigue physique,\n• Prévenir l’apparition ou l’aggravation des douleurs (dos, épaules, poignets, genoux),\n• Adopter une organisation plus ergonomique des tâches quotidiennes.\n\nL’approche se veut pratique, participative et bienveillante, adaptée à un public peu qualifié.',
+    objectifsIntro: 'À l’issue de la formation, les participantes seront capables de :',
     objectifs: [
-      'Comprendre les TMS et les zones du corps les plus exposées.',
-      'Repérer les gestes et situations à risque dans ses tâches.',
-      'Adopter des gestes et postures ergonomiques.',
-      'Organiser sa journée (alternance, micro-pauses).',
-      'Mettre en place des routines de prévention (étirements, échauffements).',
+      'Comprendre les TMS \n • Définir ce que sont les TMS et leurs principales causes.\n• Identifier les zones du corps les plus exposées : lombaires, cervicales, poignets, genoux, épaules.',
+      'Analyser leurs pratiques\n• Repérer les gestes, habitudes et situations à risque dans leurs propres tâches.\n• Aspirer, laver le sol, repasser, transporter des seaux, nettoyer en hauteur, etc.\n• Prendre conscience de l’impact des gestes automatiques ou répétés.',
+      'Adopter des gestes et postures ergonomiques\n• Soulever, porter et déplacer des objets sans se blesser.\n• Ajuster la hauteur du matériel (table de repassage, manche de balai).\n• Utiliser le poids du corps plutôt que la force des bras.\n• Éviter les torsions, accumulations de charges et postures prolongées.',
+      'Organiser intelligemment sa journée de travail\n• Alterner les tâches pour éviter les surcharges.\n• Optimiser l’ergonomie de l’espace chez le client.\n• Prévoir des micro-pauses pour diminuer la fatigue musculaire.',
+      'Mettre en place des routines de prévention\n• Réaliser des échauffements courts avant de commencer.\n• Pratiquer des pauses actives en cours de journée.\n• Apprendre des étirements adaptés pour soulager les tensions.',
     ],
     modalitesPédagogie:
-      'Mises en situation, exercices en binômes, corrections personnalisées, démonstrations avec matériel réel.',
-    evaluationSuivi: 'Observation pratique, auto-évaluation des douleurs, quiz visuel/oral.',
+      '• Explications accessibles avec schémas et exemples concrets.\n' +
+      '• Démonstrations avec matériel réel : aspirateur, balais, seaux, escabelle, table de repassage.\n' +
+      '• Observation guidée des postures habituelles.\n' +
+      '• Corrections personnalisées pour chaque participante.\n' +
+      '• Exercices en binômes : analyse d’une posture, repérage des erreurs, ajustements.\n' +
+      '• Mises en situation réalistes inspirées des tâches effectuées chez les clients.\n\n' +
+      'Principes pédagogiques\n' +
+      '• Approche participative et valorisante : chacun part de sa réalité et de ses limites.\n' +
+      '• Apprentissage par l’expérience : pratiquer, corriger, recommencer.\n' +
+      '• Priorité à la répétition des bons gestes pour ancrer les automatismes.\n' +
+      '• Sensibilisation à long terme : prévenir plutôt que réparer.\n\n' +
+      'Conditions de formation\n' +
+      '• Public : aides-ménagères sous contrat Titres-Services\n' +
+      '• Matériel utilisé : aspirateur, balais, seaux, escabelle, tapis, chaises, supports visuels, vidéos.',
+    evaluationSuivi:
+      'L’évaluation vise à mesurer la compréhension et la capacité à reproduire correctement les gestes ergonomiques vus pendant la formation.\n\n' +
+      'Outils d’évaluation\n' +
+      '• Quiz visuel / oral : gestes corrects vs gestes incorrects (photo ou carte à montrer).\n' +
+      '• Auto-évaluation des douleurs : zones du corps sollicitées, points de tension ressentis, évolution.\n' +
+      '• Observation pratique lors des exercices (port de charge, utilisation du balai, gestes d’appui).\n' +
+      '• Retour immédiat et conseils personnalisés pour consolider les bonnes pratiques.\n\n' +
+      'L’objectif n’est pas la performance, mais la mise en place de nouvelles habitudes protectrices.',
     supportsLogistiques:
-      'Fiches illustrées, matériel de démonstration (aspirateur, balais, seaux, escabelle, table de repassage…).',
+      'Supports pédagogiques remis aux participantes\n' +
+      '• Fiches illustrées :\n' +
+      '  • Gestes à éviter / gestes corrects,\n' +
+      '  • Position du dos,\n' +
+      '  • Réglage du matériel.\n' +
+      '• Silhouette corporelle : repérage individuel des zones douloureuses.\n' +
+      '• Fiche “routine étirements” à emporter (dos, poignets, nuque, jambes).\n' +
+      '• Images/vidéos pour l’activité « Ergonomètre » (analyse de situations).\n' +
+      '• Petit quiz visuel de fin de formation.\n\n' +
+      'Matériel pour démonstration\n' +
+      '• Aspirateur (avec flexible et manche réglable)\n' +
+      '• Balais à manche long\n' +
+      '• Seau et serpillière\n' +
+      '• Table de repassage\n' +
+      '• Escabelle ou marche-pied\n' +
+      '• Tapis pour exercices d’étirement\n' +
+      '• Chaises et paperboard',
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10405', date: '12/11/2025' },

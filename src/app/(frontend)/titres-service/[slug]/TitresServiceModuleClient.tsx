@@ -65,7 +65,9 @@ export function TitresServiceModuleClient({
             {module_.objectifs.map((obj, i) => (
               <li key={i} className="flex gap-3">
                 <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{obj}</span>
+                <span className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {obj}
+                </span>
               </li>
             ))}
           </ul>
