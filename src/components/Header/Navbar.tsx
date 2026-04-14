@@ -208,7 +208,7 @@ export const Navbar = () => {
                       </div>
 
                       {/* Image Box */}
-                      {submenu.image && (
+                      {/* {submenu.image && (
                         <motion.div
                           className="w-1/2 bg-gray-100 relative overflow-hidden"
                           variants={{
@@ -234,7 +234,7 @@ export const Navbar = () => {
                             sizes="128px"
                           />
                         </motion.div>
-                      )}
+                      )} */}
                     </div>
                   </motion.div>
                 )}
@@ -460,7 +460,7 @@ export const Navbar = () => {
                           }}
                         >
                           <div className="px-4 py-2 space-y-2">
-                            {/* Image Box for Mobile */}
+                            {/* Image Box for Mobile
                             {submenu.image && (
                               <motion.div
                                 className="w-full h-32 rounded-lg overflow-hidden mb-3 relative bg-gray-100"
@@ -487,7 +487,7 @@ export const Navbar = () => {
                                   sizes="100vw"
                                 />
                               </motion.div>
-                            )}
+                            )} */}
 
                             {/* Submenu Links */}
                             {submenu.links.map((subLink, subIndex) => (
