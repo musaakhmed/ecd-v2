@@ -52,7 +52,7 @@ export const Hero = () => {
 
   return (
     <>
-      <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-black text-white lg:h-screen h-[70vh] flex flex-col justify-between">
+      <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-primary-800  text-white lg:h-screen h-[70vh] flex flex-col justify-between">
         <div className="relative aspect-video w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
           <AnimatePresence initial={false} mode="sync">
             <motion.div
@@ -81,7 +81,7 @@ export const Hero = () => {
           </AnimatePresence>
         </div>
 
-        <div className="relative z-10 flex flex-col gap-6 bg-black px-4 pb-10 pt-6 sm:absolute sm:inset-0 sm:bg-transparent sm:px-8 sm:pb-36 sm:pt-0">
+        <div className="relative z-10 flex flex-col gap-6 bg-primary-800 px-4 pb-10 pt-6 sm:absolute sm:inset-0 sm:bg-transparent sm:px-8 sm:pb-36 sm:pt-0">
           <div className="mx-auto w-full max-w-6xl sm:mt-auto">
             <AnimatePresence mode="wait">
               <motion.div
