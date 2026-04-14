@@ -31,12 +31,12 @@ export const homepageHeroSlides: HeroSlide[] = [
     subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
     description: 'Un accompagnement sur mesure, adapté à vos besoins.',
   },
-  {
-    image: '/assets/hero/formation-titre-service.jpg',
-    title: 'Services sur mesure 2',
-    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
-    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
-  },
+  // {
+  //   image: '/assets/hero/formation-titre-service.jpg',
+  //   title: 'Services sur mesure 2',
+  //   subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
+  //   description: 'Un accompagnement sur mesure, adapté à vos besoins.',
+  // },
 ]
 
 export type ProgramCard = {
