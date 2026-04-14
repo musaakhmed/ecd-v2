@@ -13,7 +13,7 @@ export const homepageHeroSlides: HeroSlide[] = [
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
   },
   {
-    image: "'/assets/hero/seniors-transition-numerique.jpg'",
+    image: '/assets/hero/transition-numerique-2.jpg',
     title: 'Transition numérique',
     subtitle: "Réussir sa transition numérique, c'est possible pour tous",
     description:
