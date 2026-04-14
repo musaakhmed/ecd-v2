@@ -97,22 +97,24 @@ export const Hero = () => {
                 }}
               >
                 <motion.p
-                  className="mb-4 text-xs uppercase tracking-[0.35em] text-white/70 sm:text-sm"
+                  className="mb-4 text-xs uppercase tracking-[0.35em] text-white/70 sm:text-sm "
                   variants={textVariants}
                 >
-                  {slides[activeIndex].title}
+                  <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].title}</span>
                 </motion.p>
                 <motion.h1
-                  className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
+                  className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl "
                   variants={textVariants}
                 >
-                  {slides[activeIndex].subtitle}
+                  <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].subtitle}</span>
                 </motion.h1>
                 <motion.p
                   className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl text-justify [text-align-last:start]"
                   variants={textVariants}
                 >
-                  {slides[activeIndex].description}
+                  <span className="bg-primary-800 px-0.5 py-1">
+                    {slides[activeIndex].description}
+                  </span>
                 </motion.p>
               </motion.div>
             </AnimatePresence>

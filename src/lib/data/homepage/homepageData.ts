@@ -7,7 +7,7 @@ export type HeroSlide = {
 
 export const homepageHeroSlides: HeroSlide[] = [
   {
-    image: '/assets/hero/devoirs.jpg',
+    image: '/assets/hero/edd.webp',
     title: 'Soutien scolaire',
     subtitle: "Parce que chaque enfant mérite toute ses chances à l'école",
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
@@ -20,17 +20,23 @@ export const homepageHeroSlides: HeroSlide[] = [
       'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
-    image: '/assets/hero/titres-services.jpg',
+    image: '/assets/hero/aide-menagere.jpg',
     title: 'Formations professionelles',
     subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',
   },
-  // {
-  //   image: '/assets/hero/robotics.jpg',
-  //   title: 'Services sur mesure',
-  //   subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
-  //   description: 'Un accompagnement sur mesure, adapté à vos besoins.',
-  // },
+  {
+    image: '/assets/hero/formation-titre-service-2.jpg',
+    title: 'Services sur mesure',
+    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
+    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
+  },
+  {
+    image: '/assets/hero/formation-titre-service.jpg',
+    title: 'Services sur mesure 2',
+    subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
+    description: 'Un accompagnement sur mesure, adapté à vos besoins.',
+  },
 ]
 
 export type ProgramCard = {
