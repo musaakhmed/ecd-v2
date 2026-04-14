@@ -10,7 +10,7 @@ import { seniorsDigitalPage } from '@/lib/content/pages/inclusionNumeriqueData'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       <HeroSection
         imageSrc={seniorsDigitalPage.hero.imageSrc}
         imageAlt={seniorsDigitalPage.hero.imageAlt}
@@ -70,7 +70,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"

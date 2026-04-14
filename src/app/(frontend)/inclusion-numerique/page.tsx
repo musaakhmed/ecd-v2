@@ -12,7 +12,7 @@ import { epnmTestPageContent } from '@/lib/content/epnmTestPage'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       <HeroSection
         imageSrc={inclusionNumeriqueLanding.hero.imageSrc}
         imageAlt={inclusionNumeriqueLanding.hero.imageAlt}
@@ -53,7 +53,7 @@ const Page = () => {
       </section>
 
       {/* Programmes */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -64,13 +64,13 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-4"
             >
               {inclusionNumeriqueLanding.programmesSection.title}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 text-center mb-12 max-w-2xl mx-auto"
+              className="text-lg text-gray-700 text-center mb-12 max-w-2xl mx-auto"
             >
               {inclusionNumeriqueLanding.programmesSection.description}
             </motion.p>

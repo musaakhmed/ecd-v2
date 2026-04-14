@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <section className="min-h-[50vh] ">
       <div
-        className="container mx-auto min-h-[50vh] flex flex-col justify-around items-center px-6 py-4  dark:bg-gray-800 bg-green-300"
+        className="container mx-auto min-h-[50vh] flex flex-col justify-around items-center px-6 py-4 bg-green-300"
         id="qui-sommes-nous"
       >
         <h1>{quiSommesNousPlaceholderContent.hero.title}</h1>

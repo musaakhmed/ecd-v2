@@ -11,7 +11,7 @@ import { jeunesConnectesPage } from '@/lib/content/pages/inclusionNumeriqueData'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       <HeroSection
         imageSrc={jeunesConnectesPage.hero.imageSrc}
         imageAlt={jeunesConnectesPage.hero.imageAlt}
@@ -52,7 +52,7 @@ const Page = () => {
             {/* Deux parcours */}
             <motion.h2
               variants={fadeInUp}
-              className="text-2xl md:text-3xl font-bold text-primary-900 dark:text-primary-100 mb-6"
+              className="text-2xl md:text-3xl font-bold text-primary-900 mb-6"
             >
               {jeunesConnectesPage.sections.parcours.title}
             </motion.h2>
@@ -170,7 +170,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"

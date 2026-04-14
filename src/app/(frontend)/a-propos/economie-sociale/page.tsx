@@ -16,7 +16,7 @@ const Page = () => {
   const content = esdPageContent
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
       <HeroSection
         imageSrc="/assets/operateur/economie-sociale.png"
@@ -51,13 +51,13 @@ const Page = () => {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6"
           >
             {content.metier.title}
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
+            className="text-lg text-gray-700 leading-relaxed mb-8 text-center"
           >
             {content.metier.description}
           </motion.p>
@@ -93,7 +93,7 @@ const Page = () => {
         {content.parcours.conclusion && (
           <motion.p
             variants={fadeInUp}
-            className="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed text-lg"
+            className="text-center text-gray-700 max-w-3xl mx-auto leading-relaxed text-lg"
           >
             {content.parcours.conclusion}
           </motion.p>

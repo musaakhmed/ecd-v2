@@ -37,7 +37,7 @@ const Page = async ({ params }: PageProps) => {
   const heroImageAlt = meta?.imageAlt ?? section.title
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero – aligned with nos-services (Image + gradient + breadcrumb) */}
       <section className="relative h-[35vh] min-h-[220px] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">

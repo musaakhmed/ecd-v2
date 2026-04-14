@@ -82,7 +82,7 @@ export function EddSectionClient({
         </motion.div>
         <motion.h2
           variants={fadeInUp}
-          className="text-2xl md:text-3xl font-bold text-center pt-4 text-primary-900 dark:text-primary-100"
+          className="text-2xl md:text-3xl font-bold text-center pt-4 text-primary-900"
         >
           Nos objectifs prioritaires
         </motion.h2>
@@ -92,15 +92,15 @@ export function EddSectionClient({
               key={i}
               variants={fadeInUp}
               whileHover={{ y: -3 }}
-              className="group relative overflow-hidden rounded-2xl border border-primary-500/40 bg-gradient-to-br from-primary-700 to-primary-800 shadow-[0_18px_40px_rgba(66,142,189,0.22)] transition-shadow hover:shadow-[0_24px_55px_rgba(66,142,189,0.28)] dark:border-white/10 dark:from-primary-900 dark:to-primary-950 dark:shadow-black/35"
+              className="group relative overflow-hidden rounded-2xl border border-primary-500/40 bg-gradient-to-br from-primary-700 to-primary-800 shadow-[0_18px_40px_rgba(66,142,189,0.22)] transition-shadow hover:shadow-[0_24px_55px_rgba(66,142,189,0.28)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10 dark:from-white/5 dark:to-black/20" />
-              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-secondary-300/35 to-primary-300/20 blur-2xl transition-transform duration-500 group-hover:scale-110 dark:from-secondary-500/18 dark:to-primary-500/10" />
-              <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-gradient-to-br from-primary-200/12 to-secondary-200/10 blur-2xl dark:from-primary-500/10 dark:to-secondary-500/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+              <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-secondary-300/35 to-primary-300/20 blur-2xl transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-gradient-to-br from-primary-200/12 to-secondary-200/10 blur-2xl" />
 
               <div className="relative p-6 md:p-7">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-600 text-white shadow-md ring-1 ring-white/10 dark:bg-primary-500 dark:ring-white/15">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-600 text-white shadow-md ring-1 ring-white/10">
                     <span className="text-sm font-semibold tabular-nums">
                       {String(i + 1).padStart(2, '0')}
                     </span>

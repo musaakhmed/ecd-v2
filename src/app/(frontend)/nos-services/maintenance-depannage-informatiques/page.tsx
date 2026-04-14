@@ -120,7 +120,7 @@ const Page = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
       <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">

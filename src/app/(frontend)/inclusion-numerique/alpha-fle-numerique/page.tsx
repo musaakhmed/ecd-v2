@@ -42,7 +42,7 @@ const partenariatsItems = [
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       <HeroSection
         imageSrc="/assets/hero/transition-numerique.png"
         imageAlt="Alpha, FLE et Numérique"

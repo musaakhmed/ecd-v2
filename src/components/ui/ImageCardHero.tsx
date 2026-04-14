@@ -63,7 +63,7 @@ export function ImageCardHero({
       <div className="max-w-6xl mx-auto">
         {!titleInCard && (
           <h2
-            className={`text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 ${titleMargin}`}
+            className={`text-3xl md:text-4xl font-bold text-center text-primary-900 ${titleMargin}`}
           >
             {title}
           </h2>

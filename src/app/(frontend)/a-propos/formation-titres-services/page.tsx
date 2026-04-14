@@ -45,7 +45,7 @@ const Page = () => {
   const content = titresServicesPageContent
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
       <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">
@@ -118,7 +118,7 @@ const Page = () => {
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 pointer-events-none" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -130,7 +130,7 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6"
             >
               {content.competencesNumeriques.title}
             </motion.h2>
@@ -138,7 +138,7 @@ const Page = () => {
               <DarkTextCard variant="solid" raw>
                 <motion.p
                   variants={fadeInUp}
-                  className="text-lg dark:text-gray-200 leading-relaxed mb-8 text-center"
+                  className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
                 >
                   {content.competencesNumeriques.description}
                 </motion.p>

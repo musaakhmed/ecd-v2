@@ -26,11 +26,9 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
   descriptionCentered = true,
 }) => {
   const bgClasses = {
-    white: 'bg-white dark:bg-gray-950',
-    'gradient-primary':
-      'bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950',
-    'gradient-secondary':
-      'bg-gradient-to-b from-secondary-50 to-white dark:from-gray-900 dark:to-gray-950',
+    white: 'bg-white',
+    'gradient-primary': 'bg-gradient-to-b from-primary-50 to-white',
+    'gradient-secondary': 'bg-gradient-to-b from-secondary-50 to-white',
   }
 
   const maxWidthClasses = {
@@ -55,7 +53,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
           {title && (
             <motion.h2
               variants={fadeInUp}
-              className={`text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-6 ${
+              className={`text-3xl md:text-4xl font-bold text-primary-900 mb-6 ${
                 titleCentered ? 'text-center' : ''
               }`}
             >
@@ -65,7 +63,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
           {description && (
             <motion.p
               variants={fadeInUp}
-              className={`text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 ${
+              className={`text-lg text-gray-700 leading-relaxed mb-8 ${
                 descriptionCentered ? 'text-center' : ''
               }`}
             >

@@ -10,7 +10,7 @@ import { HeroSection } from '@/components/ui/HeroSection'
 
 const Page = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero – aligned with nos-services design */}
       <HeroSection
         imageSrc="/assets/hero/devoirs.jpg"
@@ -49,7 +49,7 @@ const Page = () => {
       </section>
 
       {/* Section cards – dynamic from content, with images */}
-      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -60,13 +60,13 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-4"
+              className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-4"
             >
               Découvrir l&apos;École de Devoirs
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-center text-primary-700/80 dark:text-primary-100/80 mb-10 md:mb-14 max-w-2xl mx-auto text-sm md:text-base"
+              className="text-center text-primary-700/80 mb-10 md:mb-14 max-w-2xl mx-auto text-sm md:text-base"
             >
               Projet pédagogique, activités, public, partenaires et petite histoire.
             </motion.p>

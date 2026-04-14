@@ -27,7 +27,7 @@ export const BulletList: React.FC<BulletListProps> = ({
     secondary: 'bg-secondary-500',
   }
 
-  const textClass = lightOnDark ? 'text-gray-100' : 'text-gray-700 dark:text-gray-200'
+  const textClass = lightOnDark ? 'text-gray-100' : 'text-gray-700'
   const ListItem = animated ? motion.li : 'li'
   const itemProps = animated ? { variants: fadeInUp } : {}
 

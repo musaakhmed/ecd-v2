@@ -25,8 +25,8 @@ export const ParallaxSection: React.FC<ParallaxSectionProps> = ({
 
   const overlayClasses =
     overlayType === 'strong'
-      ? 'bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70'
-      : 'bg-gradient-to-b from-transparent via-white/30 to-transparent dark:via-gray-950/40'
+      ? 'bg-gradient-to-b from-white/70 via-white/80 to-white/70'
+      : 'bg-gradient-to-b from-transparent via-white/30 to-transparent'
 
   return (
     <section ref={parallaxRef} className={`relative py-16 md:py-20 overflow-hidden ${className}`}>

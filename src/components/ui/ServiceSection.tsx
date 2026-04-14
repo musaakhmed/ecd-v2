@@ -29,10 +29,10 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
 }) => {
   const bgClass =
     section.backgroundType === 'gradient'
-      ? 'bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950'
+      ? 'bg-gradient-to-b from-primary-50 to-white'
       : section.backgroundType === 'light'
-        ? 'bg-primary-50 dark:bg-gray-900'
-        : 'bg-white dark:bg-gray-950'
+        ? 'bg-primary-50'
+        : 'bg-white'
 
   const cardVariant = section.colorScheme === 'primary' ? 'solid' : 'gradient-secondary'
   const bulletColor = section.colorScheme === 'primary' ? 'bg-primary-500' : 'bg-secondary-500'
@@ -51,14 +51,14 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
+            className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6"
           >
             {section.title}
           </motion.h2>
           {section.description && (
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-8 text-center"
+              className="text-lg text-gray-700 leading-relaxed mb-8 text-center"
             >
               {section.description}
             </motion.p>

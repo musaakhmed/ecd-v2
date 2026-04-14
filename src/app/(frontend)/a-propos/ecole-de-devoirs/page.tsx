@@ -44,7 +44,7 @@ const Page = () => {
   const content = eddPageContent
 
   return (
-    <div className="min-h-screen dark:bg-gray-950 flex flex-col gap-12">
+    <div className="min-h-screen flex flex-col gap-12">
       <HeroSection
         imageSrc="/assets/operateur/ecole-de-devoirs.png"
         imageAlt="École de Devoirs"
@@ -70,7 +70,7 @@ const Page = () => {
       </DarkIntroSection>
 
       {/* Modalités */}
-      <section className=" bg-white dark:bg-gray-950">
+      <section className="bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -80,10 +80,10 @@ const Page = () => {
             className="max-w-5xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
                 Modalités et rythme hebdomadaire
               </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Un programme adapté aux besoins des enfants, alliant soutien scolaire et activités
                 d&apos;épanouissement
               </p>
@@ -146,7 +146,7 @@ const Page = () => {
             />
           </div>
           {/* Subtle overlay only in the middle for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-transparent dark:via-gray-950/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-transparent pointer-events-none" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -157,7 +157,7 @@ const Page = () => {
             className="space-y-10 max-w-6xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
-              <p className="text-2xl font-semibold text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-6">
+              <p className="text-2xl font-semibold text-gray-700 max-w-3xl mx-auto mb-6">
                 Les activités proposées s&apos;articulent autour de deux axes complémentaires :
               </p>
             </motion.div>
@@ -200,7 +200,7 @@ const Page = () => {
       </section>
 
       {/* Ateliers - ImageCardHero per atelier */}
-      <section className="bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="bg-gradient-to-b from-primary-50 to-white">
         <div className="container mx-auto px-6 pt-12 pb-4">
           <motion.div
             initial="hidden"
@@ -211,19 +211,19 @@ const Page = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-3"
+              className="text-3xl md:text-4xl font-bold text-primary-900 mb-3"
             >
               II. Animations didactiques, éducatives et ludiques
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-700 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed mb-3"
+              className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-3"
             >
               {content.axes[1].description}
             </motion.p>
             <motion.p
               variants={fadeInUp}
-              className="text-lg font-semibold text-primary-900 dark:text-primary-100 max-w-3xl mx-auto mb-0"
+              className="text-lg font-semibold text-primary-900 max-w-3xl mx-auto mb-0"
             >
               {content.axes[1].points[0]} :
             </motion.p>

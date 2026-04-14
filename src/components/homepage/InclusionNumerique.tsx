@@ -6,11 +6,9 @@ const InclusionNumerique = () => {
       id="inclusion-numerique-home"
       className="w-full py-16 md:py-20 px-4 md:px-8 bg-gradient-to-b from-primary-50 to-white"
     >
-      <div className="max-w-5xl mx-auto rounded-2xl shadow-lg border bg-white dark:bg-gray-900 border-primary-100 dark:border-primary-900/50 px-6 md:px-10 py-8 md:py-10">
-        <h2 className="font-bold text-primary-900 dark:text-primary-100 mb-6 text-center">
-          Inclusion numérique
-        </h2>
-        <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-4">
+      <div className="max-w-5xl mx-auto rounded-2xl shadow-lg border bg-white border-primary-100 px-6 md:px-10 py-8 md:py-10">
+        <h2 className="font-bold text-primary-900 mb-6 text-center">Inclusion numérique</h2>
+        <p className="text-lg text-gray-700 leading-relaxed mb-4">
           Aujourd’hui, de plus en plus de démarches essentielles se font en ligne : prendre un
           rendez-vous, consulter ses documents, accéder à une administration, remplir un
           formulaire, envoyer un e-mail, utiliser une application bancaire ou simplement rechercher
@@ -19,7 +17,7 @@ const InclusionNumerique = () => {
           confiance entraîne une véritable fracture numérique, pouvant renforcer l’isolement social
           et les inégalités.
         </p>
-        <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+        <p className="text-lg text-gray-700 leading-relaxed">
           Pour répondre à ces enjeux, Espace Cultures &amp; Développement déploie un dispositif
           d’accompagnement mobile, itinérant et inclusif : l’EPNM – Espace Public Numérique Mobile.
           Ce service permet de proposer des ateliers et des permanences numériques directement sur

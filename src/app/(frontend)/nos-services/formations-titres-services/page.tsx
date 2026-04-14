@@ -39,7 +39,7 @@ const Page = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero */}
       <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">
@@ -86,13 +86,13 @@ const Page = () => {
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Parallax background image */}
         <div
-          className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center"
+          className="absolute inset-0 -z-20 bg-scroll md:bg-fixed bg-cover bg-center"
           style={{ backgroundImage: `url('${content.competencesNumeriques.backgroundImage}')` }}
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-950/80 via-primary-900/80 to-primary-950/85" />
 
-        <div className="relative container mx-auto px-6">
+        <div className="relative container mx-auto px-4 sm:px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -157,14 +157,14 @@ const Page = () => {
               src={content.bienEtre.parallaxImage.src}
               alt={content.bienEtre.parallaxImage.alt}
               fill
-              className="object-contain object-center"
+              className="object-cover object-center sm:object-contain"
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 dark:from-gray-950/70 dark:via-gray-950/80 dark:to-gray-950/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white/70 pointer-events-none" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -172,10 +172,7 @@ const Page = () => {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <motion.h2
-              variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-center text-primary-900 dark:text-primary-100 mb-6"
-            >
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6">
               {content.bienEtre.title}
             </motion.h2>
             <motion.div variants={fadeInUp}>
@@ -205,8 +202,8 @@ const Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container mx-auto px-6 ">
+      <section className="py-12 bg-gradient-to-b from-primary-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 ">
           <motion.div
             initial="hidden"
             whileInView="visible"
