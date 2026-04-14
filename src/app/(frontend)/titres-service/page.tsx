@@ -91,17 +91,16 @@ const Page = () => {
       </HeroSection>
 
       {/* Modalités de partenariat (parallax background) */}
-      <section className="relative isolate py-16 md:py-24 overflow-hidden h-[50vh] flex justify-center items-center">
+      <section className="relative isolate py-12 md:py-24 overflow-hidden flex justify-center items-center">
         <div
-          className="absolute inset-0 z-0 bg-fixed bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 z-0 bg-scroll md:bg-fixed bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/assets/epnm/initiation/informatique.jpeg')" }}
         />
-        <div className="absolute inset-0 z-1 bg-linear-to-b from-primary-950/55 via-primary-900/45 to-primary-950/55 " />
+        <div className="absolute inset-0 z-[1] bg-linear-to-b from-primary-950/55 via-primary-900/45 to-primary-950/55 " />
         <div className="relative z-10 container mx-auto px-4">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            initial="visible"
+            animate="visible"
             variants={staggerContainer}
           >
             <motion.h2
@@ -137,12 +136,16 @@ const Page = () => {
                   key={card.title}
                   variants={fadeInUp}
                   whileHover={{ y: -5 }}
-                  className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-600 relative overflow-hidden"
+                  className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-xl p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-600 relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold text-white mb-4">{card.title}</h3>
-                    <p className="text-primary-100 leading-relaxed">{card.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4">
+                      {card.title}
+                    </h3>
+                    <p className="text-primary-100 leading-relaxed text-sm md:text-base break-words">
+                      {card.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -155,9 +158,8 @@ const Page = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            initial="visible"
+            animate="visible"
             variants={staggerContainer}
           >
             <motion.h2
@@ -202,9 +204,8 @@ const Page = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            initial="visible"
+            animate="visible"
             variants={staggerContainer}
           >
             <motion.h2
@@ -219,16 +220,18 @@ const Page = () => {
                   <motion.div
                     key={item.step}
                     variants={fadeInUp}
-                    className="flex gap-6 items-start bg-primary-50 rounded-lg p-6 border border-primary-100 h-full"
+                    className="flex gap-4 md:gap-6 items-start bg-primary-50 rounded-lg p-4 md:p-6 border border-primary-100 h-full min-w-0"
                   >
-                    <div className="flex-shrink-0 w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-base md:text-xl">
                       {item.step}
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-primary-900 mb-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg md:text-xl font-semibold text-primary-900 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                      <p className="text-gray-600 leading-relaxed break-words text-sm md:text-base">
+                        {item.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -242,9 +245,8 @@ const Page = () => {
       <section className="py-12 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            initial="visible"
+            animate="visible"
             variants={staggerContainer}
             className="max-w-2xl mx-auto"
           >

@@ -383,25 +383,49 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     imageAlt: 'Produits chimiques',
   },
   {
-    slug: 'securite-sur-son-lieu-de-travail',
-    titre: 'Sécurité sur le lieu de travail-Prévention et protection',
+    slug: 'securite-sur-le-lieu-de-travail-prevention-protection',
+    titre: 'Sécurité sur le lieu de travail - Prévention et protection',
     descriptionCourte:
       "Prévenir les risques à domicile : identifier les dangers, sécuriser l'espace de travail, réagir en cas d'incident.",
     description:
-      'Ce module vise à renforcer les compétences en prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nIl apporte des outils concrets pour identifier les situations à risque, dialoguer avec le client et adopter des gestes professionnels sécurisés.',
+      'La formation « Sécurité sur son lieu de travail – Prévention et protection » s’adresse aux aides-ménagères du secteur des Titres-Services et vise à renforcer leurs compétences en matière de prévention des risques professionnels dans le contexte spécifique du travail à domicile.\n\nLe métier s’exerce dans des environnements privés, changeants et non standardisés, où les travailleuses sont exposées à de multiples dangers : manipulation de produits chimiques, chutes, postures contraignantes, matériel défectueux, stress organisationnel ou encore interactions imprévues avec les occupants et les animaux domestiques. Ce module apporte des outils concrets pour :\n• Identifier les situations à risque,\n• Adopter des gestes professionnels sécurisés,\n• Protéger sa santé physique,\n• Réagir adéquatement en cas d’incident,\n• Dialoguer avec le client autour des questions de sécurité.',
+    objectifsIntro:
+      'Permettre aux aides-ménagères d’exercer leur activité dans des conditions sûres, en développant des réflexes de prévention adaptés au travail à domicile.\n\nÀ l’issue de la formation, les participantes seront capables de :',
     objectifs: [
-      'Repérer les dangers avant de commencer une tâche.',
-      'Utiliser les produits en sécurité (pictogrammes, stockage, protection).',
-      'Prévenir les TMS via le bon usage du matériel et des postures.',
-      'Réagir face à un incident et signaler correctement.',
-      'Communiquer de manière professionnelle autour des risques.',
+      'Identifier les risques dans un domicile\n• Repérer les dangers avant de commencer une tâche.\n• Analyser l’environnement de travail et son organisation.',
+      'Utiliser les produits d’entretien en sécurité\n• Comprendre les pictogrammes.\n• Éviter les mélanges dangereux.\n• Appliquer les règles de stockage et de protection.',
+      'Prévenir les troubles musculo-squelettiques\n• Adopter des postures ergonomiques.\n• Utiliser correctement le matériel professionnel.',
+      'Réagir face à un incident\n• Appliquer les premiers réflexes en cas de blessure.\n• Signaler correctement un problème à l’employeur.',
+      'Communiquer de manière professionnelle\n• Exprimer un risque au client.\n• Demander des adaptations sans conflit.',
     ],
     modalitesPédagogie:
-      'Approche participative : analyse de cas, démonstrations pratiques, mises en situation (cuisine, salle de bain, escaliers).',
+      '• Approche participative centrée sur l’expérience des participantes.\n' +
+      '• Mises en situation réelles (cuisine, salle de bain, escaliers).\n' +
+      '• Démonstrations pratiques : dilution de produits, posture de nettoyage, port de charges.\n' +
+      '• Analyse de photos et de cas concrets.\n' +
+      '• Échanges sur les situations vécues.\n' +
+      '• Exercices de communication client-travailleur.\n' +
+      '• Lecture des pictogrammes et FDS.\n' +
+      '• Gestes ergonomiques et prévention TMS.\n' +
+      '• Prévention des chutes et accidents domestiques.\n' +
+      '• Procédure en cas d’urgence.\n' +
+      '• Droits et devoirs en matière de sécurité.',
     evaluationSuivi:
-      'Quiz visuel, mises en situation observées, auto-évaluation avant/après, attestation de participation.',
+      '• Quiz visuel de reconnaissance des dangers.\n' +
+      '• Mise en situation observée par le formateur.\n' +
+      '• Auto-évaluation des pratiques avant/après.\n' +
+      '• Échange collectif de validation des bonnes pratiques.\n' +
+      '• Remise d’une fiche mémo « réflexes sécurité ».\n' +
+      '• Attestation de participation.\n' +
+      '• Possibilité de séance de rappel 3 à 6 mois après.\n' +
+      '• Rapport pédagogique transmis à l’entreprise (présences, points d’attention, recommandations).',
     supportsLogistiques:
-      'Supports imagés, pictogrammes, matériel réel (produits, gants, serpillières, aspirateur), salle équipée.',
+      '• Salle équipée (tables, chaises, vidéoprojecteur).\n' +
+      '• Matériel réel : produits d’entretien, gants, serpillières, aspirateur.\n' +
+      '• Affiches pictogrammes et fiches de risques.\n' +
+      '• Trousse de premiers secours pédagogique.\n' +
+      '• Supports traduits et imagés.\n' +
+      '• Feuilles d’émargement et formulaires d’évaluation.',
     publicVise: 'Personnel assimilé, Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'En attente', date: '' },
@@ -524,7 +548,7 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     descriptionCourte:
       'Comprendre ses sources de stress et pratiquer des techniques simples (respiration, ancrage, visualisation) au quotidien.',
     description:
-      'Ce module accompagne dans la compréhension et la gestion du stress professionnel, ainsi que dans le renforcement de la motivation.\n\nÀ partir de situations concrètes vécues sur le terrain, la formation propose des outils simples et accessibles.',
+      'Ce module vise à accompagner les aide-ménagères dans la compréhension et la gestion de leur stress professionnel, ainsi que dans le renforcement de leur motivation au quotidien.\n\nÀ partir de situations concrètes vécues sur le terrain (pression du temps, isolement, exigences des clients), la formation propose des outils simples et accessibles : respiration, recentrage, pensée positive, valorisation de soi.\n\nL’approche est participative, bienveillante et adaptée au niveau de langue du public.',
     objectifs: [
       'Identifier les sources de stress et leurs effets.',
       'Mettre en pratique des techniques simples (respiration, relaxation, ancrage, visualisation).',
