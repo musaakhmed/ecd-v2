@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import type { TitreServiceCatalogueModule } from '@/lib/data/titres-services/titresServices'
 import { titresServiceModuleLabels } from '@/lib/content/pages/titresServicePageData'
 
 const fadeInUp = {
@@ -16,10 +15,20 @@ const stagger = {
   },
 }
 
+export type TitresServiceModuleViewModel = {
+  description: string
+  objectifsIntro?: string | null
+  objectifs: string[]
+  modalitesPedagogie: string
+  evaluationSuivi: string
+  supportsLogistiques: string
+  isPlaceholder?: boolean | null
+}
+
 export function TitresServiceModuleClient({
   module_,
 }: {
-  module_: TitreServiceCatalogueModule
+  module_: TitresServiceModuleViewModel
 }) {
   return (
     <motion.div
@@ -81,7 +90,7 @@ export function TitresServiceModuleClient({
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
           <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-            {module_.modalitesPédagogie}
+            {module_.modalitesPedagogie}
           </p>
         </div>
       </motion.section>

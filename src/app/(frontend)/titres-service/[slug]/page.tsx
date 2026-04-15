@@ -3,6 +3,11 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getCatalogueModuleBySlug, getCatalogueSlugs } from '@/lib/titresServices'
 import { TitresServiceModuleClient } from './TitresServiceModuleClient'
+import { hasContentfulEnv } from '@/lib/contentful/env'
+import {
+  getTitresServiceModuleBySlug,
+  listTitresServiceModuleSlugs,
+} from '@/lib/contentful/queries/titresServiceModule'
 
 type PageProps = {
   params: Promise<{ slug: string }>
@@ -12,12 +17,57 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 export async function generateStaticParams() {
+  if (hasContentfulEnv()) {
+    const slugs = await listTitresServiceModuleSlugs()
+    return slugs.map((slug) => ({ slug }))
+  }
+
   return getCatalogueSlugs().map((slug) => ({ slug }))
 }
 
 const Page = async ({ params }: PageProps) => {
   const { slug } = await params
-  const module_ = getCatalogueModuleBySlug(slug)
+  const cmsModule = hasContentfulEnv() ? await getTitresServiceModuleBySlug(slug) : null
+  const localModule = cmsModule ? null : getCatalogueModuleBySlug(slug)
+
+  const module_ = cmsModule
+    ? {
+        slug: cmsModule.slug,
+        titre: cmsModule.titre,
+        category: cmsModule.category,
+        publicVise: cmsModule.publicVise,
+        duree: cmsModule.duree,
+        approbation: cmsModule.approbation,
+        imageSrc: cmsModule.image?.url ?? '/assets/services/perfectionnement/office.jpg',
+        imageAlt: cmsModule.image?.title ?? cmsModule.titre,
+        // View-model fields for the client component
+        description: cmsModule.description,
+        objectifsIntro: cmsModule.objectifsIntro ?? null,
+        objectifs: cmsModule.objectifs ?? [],
+        modalitesPedagogie: cmsModule.modalitesPedagogie,
+        evaluationSuivi: cmsModule.evaluationSuivi,
+        supportsLogistiques: cmsModule.supportsLogistiques,
+        isPlaceholder: cmsModule.isPlaceholder ?? null,
+      }
+    : localModule
+      ? {
+          slug: localModule.slug,
+          titre: localModule.titre,
+          category: localModule.category,
+          publicVise: localModule.publicVise,
+          duree: localModule.duree,
+          approbation: localModule.approbation,
+          imageSrc: localModule.imageSrc,
+          imageAlt: localModule.imageAlt,
+          description: localModule.description,
+          objectifsIntro: localModule.objectifsIntro ?? null,
+          objectifs: localModule.objectifs ?? [],
+          modalitesPedagogie: localModule.modalitesPédagogie,
+          evaluationSuivi: localModule.evaluationSuivi,
+          supportsLogistiques: localModule.supportsLogistiques,
+          isPlaceholder: localModule.isPlaceholder ?? null,
+        }
+      : null
 
   if (!module_) {
     notFound()
@@ -61,7 +111,17 @@ const Page = async ({ params }: PageProps) => {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
             {/* Main content */}
             <div className="flex-1 min-w-0">
-              <TitresServiceModuleClient module_={module_} />
+              <TitresServiceModuleClient
+                module_={{
+                  description: module_.description,
+                  objectifsIntro: module_.objectifsIntro,
+                  objectifs: module_.objectifs,
+                  modalitesPedagogie: module_.modalitesPedagogie,
+                  evaluationSuivi: module_.evaluationSuivi,
+                  supportsLogistiques: module_.supportsLogistiques,
+                  isPlaceholder: module_.isPlaceholder,
+                }}
+              />
             </div>
 
             {/* Sidebar */}
@@ -78,9 +138,7 @@ const Page = async ({ params }: PageProps) => {
                     <p className="text-gray-600">{module_.duree}</p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-800 mb-2 text-2xl!">
-                      Approbation(s)
-                    </h3>
+                    <h3 className="font-semibold text-primary-800 mb-2 text-2xl!">Approbations</h3>
                     <ul className="space-y-1 text-gray-600">
                       {module_.approbation.map((a) => (
                         <li key={`${a.region}-${a.certificate}`}>
