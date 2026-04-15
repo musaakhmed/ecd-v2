@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      // Contentful Assets
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '/**',
+      },
+    ],
+  },
   // Your Next.js config here
   // webpack: (webpackConfig) => {
   //   webpackConfig.resolve.extensionAlias = {
