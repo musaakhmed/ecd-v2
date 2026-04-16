@@ -102,10 +102,10 @@ const Page = () => {
           imageSrc={section.image}
           imageAlt={section.imageAlt}
           imageOnLeft={index % 2 === 0}
-          description={section.description}
-          intro={section.intro}
-          listItems={section.listItems}
-          conclusion={section.conclusion}
+          description={'description' in section ? section.description : undefined}
+          intro={'intro' in section ? section.intro : undefined}
+          listItems={[...section.listItems]}
+          conclusion={'conclusion' in section ? section.conclusion : undefined}
           compactSpacing
         />
       ))}
