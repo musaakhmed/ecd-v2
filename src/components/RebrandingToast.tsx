@@ -5,8 +5,11 @@ import { Toaster, toast } from 'react-hot-toast'
 import { X } from 'lucide-react'
 import Link from 'next/link'
 
-export function RebrandingToast() {
+export function RebrandingToast(props: { enabled: boolean; durationMs: number }) {
+  const { enabled, durationMs } = props
+
   useEffect(() => {
+    if (!enabled) return
     toast(
       (t) => (
         <section className="flex flex-col relative justify-between gap-2 min-w-60">
@@ -50,7 +53,7 @@ export function RebrandingToast() {
         </section>
       ),
       {
-        duration: 5000,
+        duration: durationMs,
         position: 'top-right',
         style: {
           width: '14rem',
@@ -65,7 +68,7 @@ export function RebrandingToast() {
         },
       },
     )
-  }, [])
+  }, [enabled, durationMs])
 
   return <Toaster position="top-right" />
 }

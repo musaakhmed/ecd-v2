@@ -6,6 +6,7 @@ import { filterFieldsByContentType } from './_contentTypes'
 import { upsertAssetFromPublicPath } from './_assets'
 import { safeContentfulId } from './_ids'
 import { richTextFromText } from './_richText'
+import { publishEntryIfNeeded, updateEntryWithVersion } from './_publish'
 
 async function upsertSectionBlock(args: {
   cma: PlainClientAPI
@@ -40,11 +41,11 @@ async function upsertSectionBlock(args: {
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId({ contentTypeId: 'sectionBlock', entryId }, { fields })
   }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
   return entry
 }
 
@@ -78,11 +79,11 @@ async function upsertHomePage(args: { cma: PlainClientAPI; locale: string; block
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId({ contentTypeId: 'page', entryId }, { fields })
   }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
   return entry
 }
 

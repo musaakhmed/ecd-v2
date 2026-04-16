@@ -5,6 +5,7 @@ import { getContentfulManagementEnv } from './_env'
 import { filterFieldsByContentType } from './_contentTypes'
 import { upsertAssetFromPublicPath } from './_assets'
 import { safeContentfulId } from './_ids'
+import { publishEntryIfNeeded, updateEntryWithVersion } from './_publish'
 
 async function upsertNavigationLink(args: { cma: PlainClientAPI; locale: string; title: string; link: string }) {
   const { cma, locale, title, link } = args
@@ -23,11 +24,11 @@ async function upsertNavigationLink(args: { cma: PlainClientAPI; locale: string;
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId({ contentTypeId: 'navigationLink', entryId }, { fields })
   }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
   return entry
 }
 
@@ -74,11 +75,11 @@ async function upsertNavigationItem(args: {
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId({ contentTypeId: 'navigationItem', entryId }, { fields })
   }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
   return entry
 }
 
@@ -101,11 +102,11 @@ async function upsertNavigationMenu(args: { cma: PlainClientAPI; locale: string;
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId({ contentTypeId: 'navigationMenu', entryId }, { fields })
   }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
   return entry
 }
 

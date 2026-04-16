@@ -5,6 +5,7 @@ import { getCmaClient } from './_client'
 import { getContentfulManagementEnv } from './_env'
 import { filterFieldsByContentType } from './_contentTypes'
 import { upsertAssetFromPublicPath } from './_assets'
+import { publishEntryIfNeeded, updateEntryWithVersion } from './_publish'
 
 async function upsertSiteSettings(args: { cma: PlainClientAPI; locale: string }) {
   const { cma, locale } = args
@@ -45,14 +46,20 @@ async function upsertSiteSettings(args: { cma: PlainClientAPI; locale: string })
       newsletterDescription: { [locale]: footerContent.newsletter.description },
       newsletterEmailPlaceholder: { [locale]: footerContent.newsletter.emailPlaceholder },
       newsletterSubmitLabel: { [locale]: footerContent.newsletter.submitLabel },
+
+      // Rebranding toast settings (optional fields; add them to Contentful model to enable CMS control)
+      // This space expects locale-keyed values even for non-localized fields.
+      rebrandingToastEnabled: { [locale]: true },
+      rebrandingToastDurationMs: { [locale]: 5000 },
     },
+    requiredFieldIds: ['internalName'],
   })
 
   let entry: EntryProps
   try {
     entry = await cma.entry.get({ entryId })
     entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
+    entry = await updateEntryWithVersion({ cma, entryId, entry })
   } catch {
     entry = await cma.entry.createWithId(
       { contentTypeId: 'siteSettings', entryId },
@@ -62,9 +69,25 @@ async function upsertSiteSettings(args: { cma: PlainClientAPI; locale: string })
     )
   }
 
-  if (!entry.sys?.publishedVersion) {
-    entry = await cma.entry.publish({ entryId }, entry)
+  // Some spaces validate these two fields as required (and they can be added later to the model).
+  // Ensure they exist before publishing, even if the generic update path didn't add them.
+  const hasEnabled = Object.prototype.hasOwnProperty.call((entry.fields as any) ?? {}, 'rebrandingToastEnabled')
+  const hasDuration = Object.prototype.hasOwnProperty.call((entry.fields as any) ?? {}, 'rebrandingToastDurationMs')
+  if (!hasEnabled || !hasDuration) {
+    entry = await cma.entry.patch(
+      { entryId, version: (entry.sys as any).version } as any,
+      [
+        !hasEnabled
+          ? { op: 'add', path: '/fields/rebrandingToastEnabled', value: { [locale]: true } }
+          : null,
+        !hasDuration
+          ? { op: 'add', path: '/fields/rebrandingToastDurationMs', value: { [locale]: 5000 } }
+          : null,
+      ].filter(Boolean) as any,
+    )
   }
+
+  entry = await publishEntryIfNeeded({ cma, entryId, entry })
 
   return entry
 }

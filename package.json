@@ -12,7 +12,9 @@
     "test": "pnpm run test:int && pnpm run test:e2e",
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test",
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
-    "contentful:migrate": "tsx scripts/contentful/migrate-all.ts"
+    "contentful:migrate": "tsx scripts/contentful/migrate-all.ts",
+    "contentful:report": "tsx scripts/contentful/report.ts",
+    "contentful:migrate-model:rebranding-toast": "node -r dotenv/config ./node_modules/.pnpm/contentful-migration@4.32.0_@types+node@22.19.1/node_modules/contentful-migration/bin/contentful-migration --space-id \"$CONTENTFUL_SPACE_ID\" --environment-id \"$CONTENTFUL_ENVIRONMENT\" --access-token \"$CONTENTFUL_MANAGEMENT_TOKEN\" --yes scripts/contentful/content-model/add-rebranding-toast-settings.cjs"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.2.1",

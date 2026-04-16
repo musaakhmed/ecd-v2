@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
+import { initiationInformatiquePageContent as content } from '@/lib/content/nosServices/initiationInformatiquePage'
 
 const Page = () => {
   const fadeInUp = {
@@ -19,102 +20,34 @@ const Page = () => {
     },
   }
 
-  const publicsCibles = [
-    {
-      title: 'Jeunes',
-      description:
-        "Découverte de l'ordinateur, bonnes pratiques numériques, premiers usages scolaires et citoyens.",
-    },
-    {
-      title: 'Adultes',
-      description:
-        "Acquisition d'autonomie dans l'usage des outils numériques du quotidien et administratifs.",
-    },
-    {
-      title: 'Seniors',
-      description:
-        "Accompagnement progressif, sécurité en ligne, confiance dans l'usage de l'ordinateur et du smartphone.",
-    },
-    {
-      title: 'Apprenants en alpha et FLE',
-      description:
-        'Modules simplifiés, vocabulaire visuel, exercices pratiques adaptés aux niveaux linguistiques.',
-    },
-  ]
-
   const objectifsGeneraux = [
     {
       variant: 'gradient-primary' as const,
       iconBg: 'bg-primary-500/80',
       iconPath:
         'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-      text: "Favoriser l'autonomie numérique au quotidien.",
+      text: content.objectifsGeneraux.items[0],
     },
     {
       variant: 'gradient-secondary' as const,
       iconBg: 'bg-secondary-500/80',
       iconPath:
         'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
-      text: "Permettre l'accès aux services en ligne (e-administration, recherche d'emploi, communication).",
+      text: content.objectifsGeneraux.items[1],
     },
     {
       variant: 'gradient-primary' as const,
       iconBg: 'bg-primary-500/80',
       iconPath:
         'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
-      text: "Développer les compétences de base : utilisation d'un ordinateur, gestion de fichiers, navigation Internet.",
+      text: content.objectifsGeneraux.items[2],
     },
     {
       variant: 'gradient-secondary' as const,
       iconBg: 'bg-secondary-500/80',
       iconPath:
         'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-      text: "Renforcer la confiance, lutter contre l'exclusion numérique et soutenir les parcours d'insertion.",
-    },
-  ]
-
-  const moduleContents = [
-    "La découverte de l'ordinateur (clavier, souris, interfaces, organisation).",
-    "La navigation Internet et la recherche d'informations fiables.",
-    "La création et l'utilisation d'une adresse e-mail.",
-    'Les démarches administratives de base.',
-    'Les outils essentiels : traitement de texte, applications pratiques, outils collaboratifs simples.',
-    'Les bases de la sécurité numérique : mots de passe, arnaques, bonnes pratiques.',
-    "L'usage du smartphone pour les services du quotidien.",
-  ]
-
-  const partenaires = [
-    'Associations socioculturelles',
-    'Maisons de quartier',
-    'CPAS',
-    'Sociétés de logements sociaux',
-    "Centres d'hébergement de primo-arrivants",
-    "Et tout organisme souhaitant renforcer l'inclusion numérique de son public.",
-  ]
-
-  const approchesPedagogiques = [
-    {
-      iconPaths: [
-        'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-      ],
-      text: "Méthodes adaptées selon l'âge, le niveau et la réalité linguistique des participants.",
-    },
-    {
-      iconPaths: [
-        'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
-      ],
-      text: 'Exercices pratiques, mises en situation et accompagnement individuel si nécessaire.',
-    },
-    {
-      iconPaths: [
-        'M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-        'M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
-      ],
-      text: 'Supports visuels accessibles, vocabulaire simplifié et progression en petites étapes.',
-    },
-    {
-      iconPaths: ['M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'],
-      text: "Possibilité d'organiser les modules dans les locaux des partenaires ou via l'Espace Public Numérique Mobile (EPNM).",
+      text: content.objectifsGeneraux.items[3],
     },
   ]
 
@@ -124,8 +57,8 @@ const Page = () => {
       <section className="relative h-[35vh] flex items-center text-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/hero/transition-numerique.png"
-            alt="Initiation en informatique"
+            src={content.hero.imageSrc}
+            alt={content.hero.imageAlt}
             fill
             className="object-cover"
             priority
@@ -144,22 +77,19 @@ const Page = () => {
               variants={fadeInUp}
               className="text-xs md:text-sm uppercase tracking-[0.2em] font-semibold text-white/80 mb-1 md:mb-2"
             >
-              Nos Services
+              {content.hero.eyebrow}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-xl md:text-2xl lg:!text-4xl font-bold leading-tight mb-2 md:mb-3"
             >
-              Initiation en informatique
+              {content.hero.title}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
             >
-              Espace Forma asbl développe un programme complet d&apos;initiation en informatique
-              visant à offrir un premier niveau de maîtrise des outils numériques essentiels. Cette
-              offre s&apos;adresse à un large public et s&apos;adapte aux besoins spécifiques de
-              chacun.
+              {content.hero.description}
             </motion.p>
           </motion.div>
         </div>
@@ -179,12 +109,12 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12"
             >
-              Publics ciblés
+              {content.publicsCibles.title}
             </motion.h2>
             <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
               <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
                 <ul className="space-y-5 text-inherit">
-                  {publicsCibles.map((item) => (
+                  {content.publicsCibles.items.map((item) => (
                     <li key={item.title} className="leading-relaxed">
                       <span className="font-semibold block mb-1">{item.title}</span>
                       <span className="text-inherit/90">{item.description}</span>
@@ -211,7 +141,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12"
             >
-              Objectifs généraux
+              {content.objectifsGeneraux.title}
             </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch auto-rows-fr">
               {objectifsGeneraux.map((item, index) => (
@@ -268,7 +198,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6"
             >
-              Contenus des modules
+              {content.modules.title}
             </motion.h2>
             <motion.div
               variants={fadeInUp}
@@ -278,11 +208,11 @@ const Page = () => {
                 variants={fadeInUp}
                 className="text-lg text-gray-200 leading-relaxed mb-8 text-center"
               >
-                Les séances d&apos;initiation couvrent notamment :
+              {content.modules.intro}
               </motion.p>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
               <ul className="relative z-10 space-y-4 text-primary-100">
-                {moduleContents.map((item) => (
+                {content.modules.items.map((item) => (
                   <li key={item} className="flex gap-4 items-start">
                     <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                     <span className="leading-relaxed">{item}</span>
@@ -308,7 +238,7 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-6"
             >
-              Partenaires
+              {content.partenaires.title}
             </motion.h2>
 
             <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
@@ -317,10 +247,10 @@ const Page = () => {
                   variants={fadeInUp}
                   className="text-lg text-gray-200 leading-relaxed mb-12 text-center max-w-2xl mx-auto"
                 >
-                  Les actions sont menées en collaboration avec :
+              {content.partenaires.intro}
                 </motion.p>
                 <ul className="space-y-3 text-inherit">
-                  {partenaires.map((name) => (
+              {content.partenaires.items.map((name) => (
                     <li key={name} className="leading-relaxed flex gap-3 items-start">
                       <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
                       <span>{name}</span>
@@ -347,17 +277,17 @@ const Page = () => {
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-center text-primary-900 mb-12"
             >
-              Approche pédagogique
+              {content.approchePedagogique.title}
             </motion.h2>
             <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
               <div className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
                   <ul className="space-y-4 text-primary-100">
-                    {approchesPedagogiques.map((item) => (
-                      <li key={item.text} className="flex gap-4 items-start">
+                    {content.approchePedagogique.items.map((text) => (
+                      <li key={text} className="flex gap-4 items-start">
                         <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
-                        <span className="leading-relaxed text-lg font-medium">{item.text}</span>
+                        <span className="leading-relaxed text-lg font-medium">{text}</span>
                       </li>
                     ))}
                   </ul>

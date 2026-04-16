@@ -7,6 +7,8 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import SocialMediaBar from '@/components/ui/SocialMediaBar'
 import { RebrandingToast } from '@/components/RebrandingToast'
+import { hasContentfulEnv } from '@/lib/contentful/env'
+import { getSiteSettings } from '@/lib/contentful/queries/siteSettings'
 
 function getSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL
@@ -51,12 +53,15 @@ export const revalidate = 0
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
+  const settings = hasContentfulEnv() ? await getSiteSettings() : null
+  const rebrandingToastEnabled = settings?.rebrandingToastEnabled ?? true
+  const rebrandingToastDurationMs = settings?.rebrandingToastDurationMs ?? 5000
 
   return (
     <html lang="fr">
       <body>
         <main>
-          <RebrandingToast />
+          <RebrandingToast enabled={rebrandingToastEnabled} durationMs={rebrandingToastDurationMs} />
           <Header />
           <SocialMediaBar />
           {children}

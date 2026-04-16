@@ -5,6 +5,7 @@ import { getContentfulManagementEnv } from './_env'
 import { upsertAssetFromPublicPath } from './_assets'
 import { filterFieldsByContentType } from './_contentTypes'
 import { safeContentfulId } from './_ids'
+import { publishEntryIfNeeded, updateEntryWithVersion } from './_publish'
 
 async function upsertEddSection(args: {
   env: PlainClientAPI
@@ -29,37 +30,46 @@ async function upsertEddSection(args: {
       })
     : null
 
+  const { fields } = await filterFieldsByContentType({
+    cma: env,
+    contentTypeId: 'eddSection',
+    fields: {
+      slug: { [locale]: slug },
+      title: { [locale]: title },
+      menuTitle: { [locale]: menuTitle },
+      shortDescription: { [locale]: shortDescription },
+      // Canonical model: `intro` is a list of long text (paragraphs).
+      intro: { [locale]: introParagraphs ?? [] },
+      image: imageAsset
+        ? {
+            [locale]: { sys: { type: 'Link', linkType: 'Asset', id: imageAsset.sys.id } },
+          }
+        : undefined,
+    },
+    requiredFieldIds: ['slug', 'title', 'menuTitle', 'shortDescription'],
+  })
+
   let entry: EntryProps
   try {
     entry = await env.entry.get({ entryId: id })
+    entry.fields = { ...(entry.fields as any), ...(fields as any) }
+    try {
+      entry = await updateEntryWithVersion({ cma: env, entryId: id, entry })
+    } catch (err: any) {
+      // If another process updated the entry between get() and update(), refetch and retry once.
+      if (err?.name === 'VersionMismatch' || err?.status === 409) {
+        const latest = await env.entry.get({ entryId: id })
+        latest.fields = { ...(latest.fields as any), ...(fields as any) }
+        entry = await updateEntryWithVersion({ cma: env, entryId: id, entry: latest as any })
+      } else {
+        throw err
+      }
+    }
   } catch {
-    const { fields } = await filterFieldsByContentType({
-      cma: env,
-      contentTypeId: 'eddSection',
-      fields: {
-        slug: { [locale]: slug },
-        title: { [locale]: title },
-        menuTitle: { [locale]: menuTitle },
-        shortDescription: { [locale]: shortDescription },
-        // Some models define `intro` as a single Text field, others as a list.
-        // We store as a single text blob (paragraphs separated by blank lines).
-        intro: { [locale]: (introParagraphs ?? []).join('\n\n') },
-        image: imageAsset
-          ? {
-              [locale]: { sys: { type: 'Link', linkType: 'Asset', id: imageAsset.sys.id } },
-            }
-          : undefined,
-      },
-    })
-    entry = await env.entry.createWithId(
-      { contentTypeId: 'eddSection', entryId: id },
-      {
-        fields,
-      },
-    )
+    entry = await env.entry.createWithId({ contentTypeId: 'eddSection', entryId: id }, { fields })
   }
 
-  if (!entry.sys?.publishedVersion) entry = await env.entry.publish({ entryId: id }, entry)
+  entry = await publishEntryIfNeeded({ cma: env, entryId: id, entry })
   return entry
 }
 

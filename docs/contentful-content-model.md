@@ -182,6 +182,8 @@ Site-wide editable content (footer, contact, socials, newsletter copy).
 | `newsletterDescription` | Newsletter description | Long text |  |  |
 | `newsletterEmailPlaceholder` | Newsletter email placeholder | Short text |  |  |
 | `newsletterSubmitLabel` | Newsletter submit label | Short text |  |  |
+| `rebrandingToastEnabled` | Rebranding toast enabled | Boolean |  | Show/hide the “rebranding” toast site-wide |
+| `rebrandingToastDurationMs` | Rebranding toast duration (ms) | Number |  | Toast duration in milliseconds (e.g. `5000`) |
 
 **Validations**
 - `internalName`: required (treat as singleton key)

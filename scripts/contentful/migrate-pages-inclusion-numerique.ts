@@ -8,10 +8,7 @@ import {
 } from '../../src/lib/content/pages/inclusionNumeriqueData'
 import { getCmaClient } from './_client'
 import { getContentfulManagementEnv } from './_env'
-import { filterFieldsByContentType } from './_contentTypes'
-import { upsertAssetFromPublicPath } from './_assets'
-import { safeContentfulId } from './_ids'
-import { richTextFromText } from './_richText'
+import { upsertPage as upsertGenericPage, upsertSectionBlock as upsertGenericSectionBlock } from './_pageBuilder'
 
 async function upsertSectionBlock(args: {
   cma: PlainClientAPI
@@ -24,39 +21,17 @@ async function upsertSectionBlock(args: {
   items?: string[]
 }) {
   const { cma, locale, internalName, title, body, imagePath, imageAlt, items } = args
-  const entryId = safeContentfulId('sectionBlock', internalName)
-
-  const imageAsset = imagePath
-    ? await upsertAssetFromPublicPath({
-        cma,
-        publicPath: imagePath,
-        title: imageAlt ?? title ?? internalName,
-        locale,
-      })
-    : null
-
-  const { fields } = await filterFieldsByContentType({
+  // Backwards-compat wrapper (kept local signatures, delegates to shared builder).
+  return await upsertGenericSectionBlock({
     cma,
-    contentTypeId: 'sectionBlock',
-    fields: {
-      internalName: { [locale]: internalName },
-      title: title ? { [locale]: title } : undefined,
-      body: body ? { [locale]: richTextFromText(body) } : undefined,
-      image: imageAsset ? { [locale]: { sys: { type: 'Link', linkType: 'Asset', id: imageAsset.sys.id } } } : undefined,
-      items: items?.length ? { [locale]: items } : undefined,
-    },
+    locale,
+    internalName,
+    title,
+    body,
+    imagePath,
+    imageAlt,
+    items,
   })
-
-  let entry: EntryProps
-  try {
-    entry = await cma.entry.get({ entryId })
-    entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
-  } catch {
-    entry = await cma.entry.createWithId({ contentTypeId: 'sectionBlock', entryId }, { fields })
-  }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
-  return entry
 }
 
 async function upsertPage(args: {
@@ -71,37 +46,17 @@ async function upsertPage(args: {
   sectionBlocks: EntryProps[]
 }) {
   const { cma, locale, slug, title, heroSubtitle, heroDescription, heroImagePath, heroImageAlt, sectionBlocks } = args
-  const entryId = safeContentfulId('page', slug)
-
-  const heroAsset = heroImagePath
-    ? await upsertAssetFromPublicPath({ cma, publicPath: heroImagePath, title: heroImageAlt ?? title, locale })
-    : null
-
-  const { fields } = await filterFieldsByContentType({
+  return await upsertGenericPage({
     cma,
-    contentTypeId: 'page',
-    fields: {
-      slug: { [locale]: slug },
-      title: { [locale]: title },
-      heroSubtitle: heroSubtitle ? { [locale]: heroSubtitle } : undefined,
-      heroDescription: heroDescription ? { [locale]: heroDescription } : undefined,
-      heroImage: heroAsset ? { [locale]: { sys: { type: 'Link', linkType: 'Asset', id: heroAsset.sys.id } } } : undefined,
-      sections: {
-        [locale]: sectionBlocks.map((b) => ({ sys: { type: 'Link', linkType: 'Entry', id: b.sys.id } })),
-      },
-    },
+    locale,
+    slug,
+    title,
+    heroSubtitle,
+    heroDescription,
+    heroImagePath,
+    heroImageAlt,
+    sectionBlocks,
   })
-
-  let entry: EntryProps
-  try {
-    entry = await cma.entry.get({ entryId })
-    entry.fields = { ...(entry.fields as any), ...(fields as any) }
-    entry = await cma.entry.update({ entryId }, entry)
-  } catch {
-    entry = await cma.entry.createWithId({ contentTypeId: 'page', entryId }, { fields })
-  }
-  if (!entry.sys?.publishedVersion) entry = await cma.entry.publish({ entryId }, entry)
-  return entry
 }
 
 export async function migrateInclusionNumeriquePages() {

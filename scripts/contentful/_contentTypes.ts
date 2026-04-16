@@ -16,8 +16,9 @@ export async function filterFieldsByContentType(args: {
   cma: PlainClientAPI
   contentTypeId: string
   fields: Record<string, unknown>
+  requiredFieldIds?: string[]
 }): Promise<{ fields: Record<string, unknown>; dropped: string[] }> {
-  const { cma, contentTypeId, fields } = args
+  const { cma, contentTypeId, fields, requiredFieldIds } = args
   const allowed = await getContentTypeFieldIds(cma, contentTypeId)
   const next: Record<string, unknown> = {}
   const dropped: string[] = []
@@ -28,6 +29,22 @@ export async function filterFieldsByContentType(args: {
       continue
     }
     next[key] = value
+  }
+
+  if (requiredFieldIds?.length) {
+    const missing = requiredFieldIds.filter((id) => !Object.prototype.hasOwnProperty.call(next, id))
+    if (missing.length) {
+      throw new Error(
+        `Contentful content type '${contentTypeId}' is missing required field IDs: ${missing.join(
+          ', ',
+        )}. Dropped fields: ${dropped.join(', ')}`,
+      )
+    }
+  }
+
+  if (dropped.length) {
+    // eslint-disable-next-line no-console
+    console.warn(`[contentful:migrate] Dropped fields for '${contentTypeId}': ${dropped.join(', ')}`)
   }
 
   return { fields: next, dropped }
