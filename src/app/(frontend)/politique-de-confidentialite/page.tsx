@@ -12,7 +12,7 @@ const Page = () => {
         </h1>
 
         <div className="prose prose-lg max-w-none space-y-8">
-          {politiqueConfidentialiteContent.sections.map((section) => (
+          {(politiqueConfidentialiteContent.sections ?? []).map((section) => (
             <section key={section.id}>
               <h2 className="text-2xl font-semibold mb-4 text-primary-700">{section.title}</h2>
               {section.content}
