@@ -271,7 +271,8 @@ const Page = () => {
               </div>
               <div className="p-6 bg-primary-50">
                 <p className="text-gray-700 text-center">
-                  <strong>{contactPageContent.map.addressLabel}</strong> {contactPageContent.map.address}
+                  <strong>{contactPageContent.map.addressLabel}</strong>{' '}
+                  {contactPageContent.map.address}
                 </p>
                 <div className="flex justify-center mt-4">
                   <a

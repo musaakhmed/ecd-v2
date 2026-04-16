@@ -50,7 +50,7 @@ export const contactPageContent = {
   map: {
     title: 'Comment nous trouver',
     iframeSrc:
-      'https://www.google.com/maps/embed?z13&pb=!1m18!1m12!1m3!1d157.4349295965867!2d4.366605689163625!3d50.85044584013054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c37c36537d0d%3A0xfc739c17df9b3856!2sEspace%20Cultures%20%26%20D%C3%A9veloppement%20asbl!5e0!3m2!1sen!2sbe!4v1768469153906!5m2!1sen!2sbe',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.9566577515016!2d4.364060912731139!3d50.85048687155324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c374b6cc9cfd%3A0x83135b31ae2b56a9!2sEspace%20Forma%20asbl!5e0!3m2!1sen!2sbe!4v1776329929988!5m2!1sen!2sbe',
     addressLabel: 'Adresse :',
     address: 'Rue du Gouvernement Provisoire 34A, 1000 Bruxelles, Belgique',
     openInGoogleMapsLabel: 'Ouvrir dans Google Maps',
