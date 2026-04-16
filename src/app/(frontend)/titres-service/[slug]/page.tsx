@@ -142,8 +142,8 @@ const Page = async ({ params }: PageProps) => {
                     <ul className="space-y-1 text-gray-600">
                       {module_.approbation.map((a) => (
                         <li key={`${a.region}-${a.certificate}`}>
-                          <span className="font-medium">{a.region}</span> : {a.certificate} (
-                          {a.date})
+                          <span className="font-medium">{a.region}</span> :{' '}
+                          {a.certificate ? a.certificate : 'À venir'} {a.date ? `(${a.date})` : ''}
                         </li>
                       ))}
                     </ul>
