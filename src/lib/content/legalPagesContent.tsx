@@ -521,3 +521,171 @@ export const politiqueConfidentialiteContent = {
   ] satisfies LegalSection[],
 } as const
 
+export const politiqueCookiesContent = {
+  metadata: {
+    title: 'Politique de cookies - Espace Forma',
+    description:
+      'Politique de cookies et informations sur l’utilisation des cookies et technologies similaires sur espaceforma.be',
+  } satisfies LegalMetadata,
+  pageTitle: 'Politique de cookies',
+  sections: [
+    {
+      id: 'introduction',
+      title: '1. Introduction',
+      content: (
+        <>
+          <p className="text-gray-700">
+            La présente politique de cookies explique comment Espace Forma asbl (ci-après « nous »)
+            utilise des cookies et des technologies similaires lorsque vous consultez notre site web.
+          </p>
+          <p className="text-gray-700">
+            Vous pouvez à tout moment accepter, refuser ou modifier vos préférences concernant les
+            cookies non essentiels via l’outil de gestion des cookies (si disponible) ou via les
+            paramètres de votre navigateur.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'definition',
+      title: '2. Qu’est-ce qu’un cookie ?',
+      content: (
+        <>
+          <p className="text-gray-700">
+            Un cookie est un petit fichier texte stocké sur votre appareil (ordinateur, tablette,
+            smartphone) lors de la consultation d’un site web. Il permet notamment de mémoriser des
+            informations sur votre navigation.
+          </p>
+          <p className="text-gray-700">
+            D’autres technologies similaires (par ex. pixels, balises) peuvent être utilisées à des
+            fins comparables.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'types',
+      title: '3. Types de cookies que nous utilisons',
+      content: (
+        <>
+          <p className="text-gray-700 mb-3">Nous pouvons utiliser les catégories suivantes :</p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              <strong>Cookies strictement nécessaires :</strong> indispensables au fonctionnement du
+              site et à la sécurité.
+            </li>
+            <li>
+              <strong>Cookies de mesure d’audience (Analytics) :</strong> utilisés pour analyser la
+              fréquentation et améliorer le site (Google Analytics).
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 'google-analytics',
+      title: '4. Google Analytics',
+      content: (
+        <>
+          <p className="text-gray-700">
+            Nous utilisons Google Analytics (service fourni par Google) afin de mesurer l’audience de
+            notre site (pages consultées, durée de visite, interactions, etc.) et d’améliorer nos
+            contenus.
+          </p>
+          <p className="text-gray-700">
+            Les informations collectées peuvent inclure des identifiants en ligne et des données de
+            navigation. Google agit en tant que sous-traitant pour fournir le service d’analyse.
+          </p>
+          <p className="text-gray-700">
+            Pour en savoir plus, consultez la documentation et la politique de confidentialité de
+            Google :
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-3">
+            <li>
+              <a
+                className="text-primary-600 hover:underline"
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Politique de confidentialité de Google
+              </a>
+            </li>
+            <li>
+              <a
+                className="text-primary-600 hover:underline"
+                href="https://support.google.com/analytics/answer/6004245"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cookies Google Analytics
+              </a>
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 'google-maps',
+      title: '5. Google Maps',
+      content: (
+        <>
+          <p className="text-gray-700">
+            La page Contact peut intégrer une carte Google Maps. Afin de limiter le chargement de
+            contenus tiers, la carte n’est affichée qu’après votre action (« Activer la carte »).
+          </p>
+          <p className="text-gray-700">
+            Une fois la carte activée, des requêtes vers les serveurs de Google peuvent être
+            effectuées et des cookies/technologies similaires peuvent être utilisés par Google.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'gestion',
+      title: '6. Gérer vos préférences',
+      content: (
+        <>
+          <p className="text-gray-700">
+            Vous pouvez gérer ou supprimer les cookies dans les paramètres de votre navigateur. La
+            procédure varie selon le navigateur.
+          </p>
+          <p className="text-gray-700">
+            Le refus de certains cookies peut affecter votre expérience (par exemple, l’affichage de
+            la carte).
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'mise-a-jour',
+      title: '7. Mise à jour de la politique',
+      content: (
+        <>
+          <p className="text-gray-700">
+            Nous pouvons mettre à jour la présente politique de cookies afin de refléter les
+            évolutions de notre site ou des exigences légales.
+          </p>
+          <p className="text-gray-700">
+            <strong>Dernière mise à jour :</strong>{' '}
+            {new Date().toLocaleDateString('fr-BE', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'contact',
+      title: '8. Contact',
+      content: (
+        <p className="text-gray-700">
+          Pour toute question concernant cette politique de cookies, vous pouvez nous contacter à{' '}
+          <a href="mailto:info@espaceforma.be" className="text-primary-600 hover:underline">
+            info@espaceforma.be
+          </a>
+          .
+        </p>
+      ),
+    },
+  ] satisfies LegalSection[],
+} as const
+

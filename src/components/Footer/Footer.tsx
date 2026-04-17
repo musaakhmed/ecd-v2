@@ -217,6 +217,12 @@ const Footer = () => {
                 >
                   {footerContent.bottomBar.privacy.label}
                 </Link>
+                <Link
+                  href={footerContent.bottomBar.cookies.href}
+                  className="text-primary-300 hover:text-white transition-colors duration-200"
+                >
+                  {footerContent.bottomBar.cookies.label}
+                </Link>
               </div>
             </div>
           </div>

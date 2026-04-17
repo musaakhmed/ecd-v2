@@ -48,5 +48,6 @@ export const footerContent = {
     copyrightSuffix: 'Espace Forma (EF) asbl. Tous droits réservés.',
     legal: { label: 'Mentions légales', href: '/mentions-legales' },
     privacy: { label: 'Politique de confidentialité', href: '/politique-de-confidentialite' },
+    cookies: { label: 'Politique de cookies', href: '/politique-de-cookies' },
   },
 } as const

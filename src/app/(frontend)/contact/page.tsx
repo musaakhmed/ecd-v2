@@ -12,6 +12,7 @@ const Page = () => {
     subject: '',
     message: '',
   })
+  const [isMapEnabled, setIsMapEnabled] = useState(false)
   const [_isSubmitting, setIsSubmitting] = useState(false)
   const [_submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
@@ -258,16 +259,42 @@ const Page = () => {
               className="bg-white rounded-2xl shadow-lg overflow-hidden border border-primary-100"
             >
               <div className="aspect-video bg-gray-200 relative">
-                <iframe
-                  src={contactPageContent.map.iframeSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0"
-                ></iframe>
+                {isMapEnabled ? (
+                  <iframe
+                    src={contactPageContent.map.iframeSrc}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                  ></iframe>
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
+                    <p className="text-gray-700 max-w-xl">
+                      Pour afficher la carte Google Maps, vous devez l’activer. Cela chargera du contenu
+                      depuis Google.
+                    </p>
+                    <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setIsMapEnabled(true)}
+                        className="inline-flex items-center justify-center rounded-lg bg-primary-600 px-5 py-2.5 text-white font-semibold hover:bg-primary-700 transition-colors"
+                      >
+                        Activer la carte
+                      </button>
+                      <a
+                        href={contactPageContent.map.openInGoogleMapsHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-lg border border-primary-200 bg-white px-5 py-2.5 text-primary-700 font-semibold hover:bg-primary-50 transition-colors"
+                      >
+                        {contactPageContent.map.openInGoogleMapsLabel}
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="p-6 bg-primary-50">
                 <p className="text-gray-700 text-center">
