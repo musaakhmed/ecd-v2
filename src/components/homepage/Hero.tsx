@@ -31,135 +31,16 @@ export const Hero = () => {
   }, [slides])
 
   useEffect(() => {
-    const slide = slides[activeIndex]
-    if (!slide?.image) return
-
-    const runId = 'pre-fix'
-    const hypothesisId = 'H1_progressive_or_decode_timing'
-    const startedAt = Date.now()
-    const imageUrl = slide.image
-    const ext = imageUrl.split('?')[0]?.split('#')[0]?.split('.').pop()?.toLowerCase()
-
-    // #region agent log
-    fetch('http://127.0.0.1:7393/ingest/7260fbd9-f4f8-49c2-984a-0f9cfe8a1aa4', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2d45ad' },
-      body: JSON.stringify({
-        sessionId: '2d45ad',
-        runId,
-        hypothesisId,
-        location: 'src/components/homepage/Hero.tsx:activeIndexEffect:enter',
-        message: 'Hero slide change - start preload/decode',
-        data: { activeIndex, direction, imageUrl, ext, wasReady: !!readyByIndex[activeIndex] },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    const img = new window.Image()
-    img.decoding = 'async'
-    img.loading = 'eager'
-
-    const log = (location: string, message: string, data: Record<string, unknown>) => {
-      // #region agent log
-      fetch('http://127.0.0.1:7393/ingest/7260fbd9-f4f8-49c2-984a-0f9cfe8a1aa4', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2d45ad' },
-        body: JSON.stringify({
-          sessionId: '2d45ad',
-          runId,
-          hypothesisId,
-          location,
-          message,
-          data,
-          timestamp: Date.now(),
-        }),
-      }).catch(() => {})
-      // #endregion
-    }
-
-    const onLoad = () => {
-      log('src/components/homepage/Hero.tsx:activeIndexEffect:onload', 'Hero preload Image onload', {
-        dtMs: Date.now() - startedAt,
-        complete: img.complete,
-        naturalWidth: img.naturalWidth,
-        naturalHeight: img.naturalHeight,
-        currentSrc: img.currentSrc,
-      })
-    }
-
-    const onError = () => {
-      log('src/components/homepage/Hero.tsx:activeIndexEffect:onerror', 'Hero preload Image onerror', {
-        dtMs: Date.now() - startedAt,
-        complete: img.complete,
-        currentSrc: img.currentSrc,
-      })
-    }
-
-    img.addEventListener('load', onLoad)
-    img.addEventListener('error', onError)
-    img.src = imageUrl
-
-    const decodeStart = Date.now()
-    img
-      .decode()
-      .then(() => {
-        log('src/components/homepage/Hero.tsx:activeIndexEffect:decode:ok', 'Hero preload Image decode ok', {
-          dtMs: Date.now() - startedAt,
-          decodeMs: Date.now() - decodeStart,
-          naturalWidth: img.naturalWidth,
-          naturalHeight: img.naturalHeight,
-          currentSrc: img.currentSrc,
-        })
-      })
-      .catch((e: unknown) => {
-        log('src/components/homepage/Hero.tsx:activeIndexEffect:decode:err', 'Hero preload Image decode error', {
-          dtMs: Date.now() - startedAt,
-          decodeMs: Date.now() - decodeStart,
-          errorName: (e as Error | undefined)?.name,
-        })
-      })
-
-    return () => {
-      img.removeEventListener('load', onLoad)
-      img.removeEventListener('error', onError)
-    }
-  }, [activeIndex, direction, readyByIndex])
-
-  useEffect(() => {
     if (slides.length === 0) return
     const nextIndex = (activeIndex + 1) % slides.length
     const next = slides[nextIndex]
     if (!next?.image) return
 
-    const runId = 'pre-fix'
-    const hypothesisId = 'H3_preload_next_slide'
-    const startedAt = Date.now()
-
     const img = new window.Image()
     img.decoding = 'async'
     img.loading = 'eager'
     img.src = next.image
-    img
-      .decode()
-      .then(() => {
-        // #region agent log
-        fetch('http://127.0.0.1:7393/ingest/7260fbd9-f4f8-49c2-984a-0f9cfe8a1aa4', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2d45ad' },
-          body: JSON.stringify({
-            sessionId: '2d45ad',
-            runId,
-            hypothesisId,
-            location: 'src/components/homepage/Hero.tsx:preloadNext:decode:ok',
-            message: 'Hero preload-next decode ok',
-            data: { activeIndex, nextIndex, nextImageUrl: next.image, dtMs: Date.now() - startedAt },
-            timestamp: Date.now(),
-          }),
-        }).catch(() => {})
-        // #endregion
-      })
-      .catch(() => {})
+    img.decode().catch(() => {})
   }, [activeIndex])
 
   const goToSlide = useCallback(
@@ -214,51 +95,11 @@ export const Hero = () => {
                   priority={activeIndex === 0}
                   onLoad={(e) => {
                     const img = e.currentTarget
-                    const runId = 'pre-fix'
-                    const hypothesisId = 'H2_next_image_onLoad'
-                    const startedAt = Date.now()
-
-                    // #region agent log
-                    fetch('http://127.0.0.1:7393/ingest/7260fbd9-f4f8-49c2-984a-0f9cfe8a1aa4', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2d45ad' },
-                      body: JSON.stringify({
-                        sessionId: '2d45ad',
-                        runId,
-                        hypothesisId,
-                        location: 'src/components/homepage/Hero.tsx:Image:onLoad',
-                        message: 'Hero next/image onLoad',
-                        data: {
-                          activeIndex,
-                          imageUrl: slides[activeIndex].image,
-                          naturalWidth: img.naturalWidth,
-                          naturalHeight: img.naturalHeight,
-                          currentSrc: img.currentSrc,
-                        },
-                        timestamp: Date.now(),
-                      }),
-                    }).catch(() => {})
-                    // #endregion
 
                     img
                       .decode()
                       .then(() => {
                         setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                        // #region agent log
-                        fetch('http://127.0.0.1:7393/ingest/7260fbd9-f4f8-49c2-984a-0f9cfe8a1aa4', {
-                          method: 'POST',
-                          headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '2d45ad' },
-                          body: JSON.stringify({
-                            sessionId: '2d45ad',
-                            runId,
-                            hypothesisId,
-                            location: 'src/components/homepage/Hero.tsx:Image:onLoad:decode:ok',
-                            message: 'Hero next/image decode ok (unmask placeholder)',
-                            data: { activeIndex, imageUrl: slides[activeIndex].image, dtMs: Date.now() - startedAt },
-                            timestamp: Date.now(),
-                          }),
-                        }).catch(() => {})
-                        // #endregion
                       })
                       .catch(() => {
                         setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
@@ -266,7 +107,7 @@ export const Hero = () => {
                   }}
                 />
                 <motion.div
-                  className="absolute inset-0 bg-primary-800"
+                  className="absolute inset-0 bg-primary-800/20"
                   initial={false}
                   animate={{ opacity: readyByIndex[activeIndex] ? 0 : 1 }}
                   transition={{ duration: 0.25, ease: 'easeOut' }}

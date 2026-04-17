@@ -184,7 +184,7 @@ const Page = () => {
                       </a>
                     ) : (
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">
+                        <div className="shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">
                           {contactInfoIcons[info.kind]}
                         </div>
                         <div>
