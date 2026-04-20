@@ -26,7 +26,7 @@ export const homepageHeroSlides: HeroSlide[] = [
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',
   },
   {
-    image: '/assets/hero/formation-titre-service-2.jpg',
+    image: '/assets/hero/formation.jpg',
     title: 'Services sur mesure',
     subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
     description: 'Un accompagnement sur mesure, adapté à vos besoins.',
