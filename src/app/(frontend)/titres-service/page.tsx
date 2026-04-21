@@ -93,16 +93,14 @@ const Page = () => {
       {/* Modalités de partenariat (parallax background) */}
       <section className="relative isolate py-12 md:py-24 overflow-hidden flex justify-center items-center">
         <div
-          className="absolute inset-0 z-0 bg-scroll md:bg-fixed bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/assets/epnm/initiation/informatique.jpeg')" }}
+          className="absolute inset-0 z-0 bg-scroll md:bg-fixed bg-cover bg-top bg-no-repeat"
+          style={{
+            backgroundImage: "url('/assets/hero/formation-titre-service-2.jpg')",
+          }}
         />
-        <div className="absolute inset-0 z-[1] bg-linear-to-b from-primary-950/55 via-primary-900/45 to-primary-950/55 " />
+        <div className="absolute inset-0 z-[1] bg-linear-to-b from-primary-950/35 via-primary-900/25 to-primary-950/35 " />
         <div className="relative z-10 container mx-auto px-4">
-          <motion.div
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
-          >
+          <motion.div initial="visible" animate="visible" variants={staggerContainer}>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-white mb-12 text-center drop-shadow-md"
@@ -157,11 +155,7 @@ const Page = () => {
       {/* Modules Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
-          >
+          <motion.div initial="visible" animate="visible" variants={staggerContainer}>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 text-center"
@@ -203,11 +197,7 @@ const Page = () => {
       {/* How it Works Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial="visible"
-            animate="visible"
-            variants={staggerContainer}
-          >
+          <motion.div initial="visible" animate="visible" variants={staggerContainer}>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl md:text-4xl font-bold text-primary-900 mb-12 text-center"
