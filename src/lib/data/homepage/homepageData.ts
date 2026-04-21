@@ -20,7 +20,7 @@ export const homepageHeroSlides: HeroSlide[] = [
       'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
-    image: '/assets/hero/aide-menagere.jpg',
+    image: '/assets/hero/cleaning6.jpg',
     title: 'Formations professionelles',
     subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',
