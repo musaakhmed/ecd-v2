@@ -72,6 +72,103 @@ export async function listTitresServiceModuleSlugs(): Promise<string[]> {
   )
 }
 
+export async function listTitresServiceModules(): Promise<TitresServiceModule[]> {
+  const client = getContentfulGraphQLClient()
+  const data = await client.request<{
+    titresServiceModuleCollection?: {
+      items: Array<
+        | {
+            slug?: string | null
+            titre?: string | null
+            titreCourt?: string | null
+            description?: string | null
+            descriptionCourte?: string | null
+            objectifsIntro?: string | null
+            objectifs?: string[] | null
+            modalitesPedagogie?: string | null
+            evaluationSuivi?: string | null
+            supportsLogistiques?: string | null
+            publicVise?: string | null
+            duree?: string | null
+            category?: string | null
+            isPlaceholder?: boolean | null
+            image?: GqlAsset | null
+            approbationCollection?: {
+              items: Array<{ region?: string | null; certificate?: string | null; date?: string | null } | null>
+            } | null
+          }
+        | null
+      >
+    } | null
+  }>(
+    /* GraphQL */ `
+      query ListTitresServiceModules {
+        titresServiceModuleCollection(limit: 1000, where: { slug_exists: true }) {
+          items {
+            slug
+            titre
+            titreCourt
+            description
+            descriptionCourte
+            objectifsIntro
+            objectifs
+            modalitesPedagogie
+            evaluationSuivi
+            supportsLogistiques
+            publicVise
+            duree
+            category
+            isPlaceholder
+            image {
+              url
+              title
+              description
+              contentType
+              width
+              height
+            }
+            approbationCollection(limit: 20) {
+              items {
+                region
+                certificate
+                date
+              }
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  const items = data.titresServiceModuleCollection?.items ?? []
+
+  return items
+    .filter((i): i is NonNullable<typeof i> => Boolean(i))
+    .filter((i): i is NonNullable<typeof i> & { slug: string; titre: string } => Boolean(i.slug && i.titre))
+    .map((item) => ({
+      slug: item.slug,
+      titre: item.titre,
+      titreCourt: item.titreCourt ?? null,
+      description: item.description ?? '',
+      descriptionCourte: item.descriptionCourte ?? '',
+      objectifsIntro: item.objectifsIntro ?? null,
+      objectifs: item.objectifs ?? [],
+      modalitesPedagogie: item.modalitesPedagogie ?? '',
+      evaluationSuivi: item.evaluationSuivi ?? '',
+      supportsLogistiques: item.supportsLogistiques ?? '',
+      publicVise: item.publicVise ?? '',
+      approbation:
+        item.approbationCollection?.items
+          ?.filter((a): a is NonNullable<typeof a> => Boolean(a))
+          .map((a) => ({ region: a.region ?? '', certificate: a.certificate ?? '', date: a.date ?? null }))
+          .filter((a): a is TitresServiceModuleApproval => Boolean(a.region && a.certificate)) ?? [],
+      duree: item.duree ?? '',
+      category: (item.category ?? 'outils-numeriques') as TitresServiceCategoryKey,
+      image: mapAsset(item.image),
+      isPlaceholder: item.isPlaceholder ?? null,
+    }))
+}
+
 export async function getTitresServiceModuleBySlug(slug: string): Promise<TitresServiceModule | null> {
   const client = getContentfulGraphQLClient()
 
