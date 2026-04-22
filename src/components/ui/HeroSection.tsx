@@ -25,15 +25,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section className="relative text-white h-[35vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="object-cover"
-          priority
-        />
+        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-700/80 via-teal-600/80 to-cyan-600/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-700/90 via-teal-900/80 to-cyan-900/80" />
       <div className="absolute inset-0 bg-black/20" />
       <div className="container mx-auto px-6 relative z-10 py-6">
         <motion.div
@@ -56,7 +50,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start]"
+            className="text-sm md:text-base text-white/90 leading-snug line-clamp-3 text-justify [text-align-last:start] py-2"
           >
             {description}
           </motion.p>
