@@ -18,7 +18,7 @@ export const projects = [
     description:
       'Formations sur mesure pour les travailleurs et encadrants du secteur : compétences numériques et bien-être au travail.',
     image: '/assets/hero/titres-services.jpg',
-    link: '/titres-service',
+    link: '/titres-services',
   },
   {
     title: 'Seniors & transition numérique',

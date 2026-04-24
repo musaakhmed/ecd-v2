@@ -16,7 +16,7 @@ export async function migrateTitresServiceCataloguePage() {
   const cma = getCmaClient()
   const locale = env.locale
 
-  const slug = 'titres-service'
+  const slug = 'titres-services'
   const data = {
     hero: titresServiceCatalogueHero,
     groups: titresServiceCatalogueGroups,

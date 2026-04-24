@@ -91,6 +91,6 @@ export const formationsTitresServicesPageContent = {
   cta: {
     text: 'Espace Forma asbl propose une offre complète de formations destinées aux travailleurs, encadrants et équipes administratives.',
     buttonLabel: 'En savoir plus',
-    href: '/titres-service',
+    href: '/titres-services',
   },
 } as const

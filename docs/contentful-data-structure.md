@@ -75,7 +75,7 @@ If you prefer to keep it simple, use **two list fields** on `eddSection` instead
 
 **Content type ID:** `titresServiceModule`
 
-Used for: `/titres-service/[slug]`.
+Used for: `/titres-services/[slug]`.
 
 | Field ID             | Name (display)      | Type              | Required | Notes |
 |----------------------|---------------------|-------------------|----------|-------|

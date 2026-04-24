@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: '/inclusion-numerique/emploi-numerique', changeFrequency: 'monthly', priority: 0.6 },
       { path: '/inclusion-numerique/seniors-digital', changeFrequency: 'monthly', priority: 0.6 },
 
-      { path: '/titres-service', changeFrequency: 'weekly', priority: 0.9 },
+      { path: '/titres-services', changeFrequency: 'weekly', priority: 0.9 },
       { path: '/ecole-devoirs', changeFrequency: 'monthly', priority: 0.8 },
       { path: '/contact', changeFrequency: 'yearly', priority: 0.7 },
       { path: '/mentions-legales', changeFrequency: 'yearly', priority: 0.3 },
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const titresServiceRoutes = getCatalogueSlugs().map((slug) => ({
-    url: `${siteUrl}/titres-service/${slug}`,
+    url: `${siteUrl}/titres-services/${slug}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.6,

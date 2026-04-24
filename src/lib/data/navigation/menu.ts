@@ -78,7 +78,7 @@ export const menu: MenuItem[] = [
   },
   {
     title: 'Titres Services',
-    link: '/titres-service',
+    link: '/titres-services',
   },
   {
     title: 'Ecole de devoirs',

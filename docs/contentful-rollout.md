@@ -27,13 +27,13 @@ pnpm contentful:migrate
   - Images exist as Assets (when present in `public/`).
 
 - Verify on site:
-  - `/titres-service/[slug]` renders for existing slugs.
+  - `/titres-services/[slug]` renders for existing slugs.
   - 404 still works when slug doesn’t exist.
   - Hero image renders (falls back gracefully if missing).
 
 ### Phase 2 — Switch Titres Services listing page
 
-- Replace local `catalogueModules` usage in `src/app/(frontend)/titres-service/page.tsx` with CMS collection query.
+ - Replace local `catalogueModules` usage in `src/app/(frontend)/titres-services/page.tsx` with CMS collection query.
 - Verify:
   - Category grouping unchanged.
   - Placeholder badge still appears for `isPlaceholder`.

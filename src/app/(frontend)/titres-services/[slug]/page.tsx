@@ -88,7 +88,7 @@ const Page = async ({ params }: PageProps) => {
         />
         <div className="container mx-auto px-4 relative z-10">
           <nav className="mb-4 text-sm text-white/80" aria-label="Fil d'Ariane">
-            <Link href="/titres-service" className="hover:text-white underline">
+            <Link href="/titres-services" className="hover:text-white underline">
               Titres Services
             </Link>
             <span className="mx-2">/</span>

@@ -36,7 +36,7 @@ Utilisé pour :
   - `nos-services/maintenance-depannage-informatiques`
   - `nos-services/perfectionnement-informatique`
   - `nos-services/formations-titres-services`
-- **Titres-service (page catalogue)** : slug `titres-service`
+- **Titres-services (page catalogue)** : slug `titres-services`
 - **Inclusion numérique**
   - `inclusion-numerique`
   - `inclusion-numerique/emploi-numerique`

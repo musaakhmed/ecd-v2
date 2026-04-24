@@ -10,6 +10,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/titres-service',
+        destination: '/titres-services',
+        permanent: true,
+      },
+      {
+        source: '/titres-service/:path*',
+        destination: '/titres-services/:path*',
+        permanent: true,
+      },
+    ]
+  },
   // Your Next.js config here
   // webpack: (webpackConfig) => {
   //   webpackConfig.resolve.extensionAlias = {

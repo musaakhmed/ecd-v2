@@ -68,7 +68,7 @@ export function TitresServiceCatalogueClient({
                   .map((mod) => (
                     <div key={mod.slug} className="h-full">
                       <CourseModuleCard
-                        href={`/titres-service/${mod.slug}`}
+                        href={`/titres-services/${mod.slug}`}
                         title={mod.titre}
                         imageSrc={mod.imageSrc}
                         imageAlt={mod.imageAlt}

@@ -97,7 +97,7 @@ Used for `/ecole-devoirs/[slug]`.
 
 ## 5) `titresServiceModule` (Titres-Services module detail pages)
 
-Used for `/titres-service/[slug]` and the `/titres-service` catalogue listing.
+Used for `/titres-services/[slug]` and the `/titres-services` catalogue listing.
 
 **Content type ID:** `titresServiceModule`
 
