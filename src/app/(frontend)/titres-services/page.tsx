@@ -4,6 +4,7 @@ import { titresServiceCatalogueHero } from '@/lib/content/pages/titresServicePag
 import { hasContentfulEnv } from '@/lib/contentful/env'
 import { listTitresServiceModules } from '@/lib/contentful/queries/titresServiceModule'
 import { TitresServiceCatalogueClient } from './TitresServiceCatalogueClient'
+import { CircleArrowDown } from 'lucide-react'
 
 const modalitiesParticipation = [
   {
@@ -138,6 +139,9 @@ const Page = async () => {
               ))}
             </div>
           </div>
+            <div className="py-12 flex justify-center items-center">
+              <CircleArrowDown className="w-15 h-15 text-primary-500 animate-bounce" />
+            </div>
         </div>
       </section>
 
