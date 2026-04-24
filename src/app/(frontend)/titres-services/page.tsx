@@ -4,7 +4,7 @@ import { titresServiceCatalogueHero } from '@/lib/content/pages/titresServicePag
 import { hasContentfulEnv } from '@/lib/contentful/env'
 import { listTitresServiceModules } from '@/lib/contentful/queries/titresServiceModule'
 import { TitresServiceCatalogueClient } from './TitresServiceCatalogueClient'
-import { CircleArrowDown } from 'lucide-react'
+import { ScrollToSectionButton } from './ScrollToSectionButton'
 
 const modalitiesParticipation = [
   {
@@ -139,14 +139,19 @@ const Page = async () => {
               ))}
             </div>
           </div>
-            <div className="py-12 flex justify-center items-center">
-              <CircleArrowDown className="w-15 h-15 text-primary-500 animate-bounce" />
-            </div>
+          <div className="py-12 flex justify-center items-center">
+            <ScrollToSectionButton
+              targetId="titres-services-modules"
+              className="rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+            />
+          </div>
         </div>
       </section>
 
       {/* Modules Section */}
-      <TitresServiceCatalogueClient modules={modules} />
+      <section id="titres-services-modules">
+        <TitresServiceCatalogueClient modules={modules} />
+      </section>
 
       {/* How it Works Section */}
       <section className="py-12 bg-white">
