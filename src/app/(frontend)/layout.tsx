@@ -58,10 +58,13 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const rebrandingToastDurationMs = settings?.rebrandingToastDurationMs ?? 5000
 
   return (
-    <html lang="fr">
+    <html lang="fr" data-scroll-behavior="smooth">
       <body>
         <main>
-          <RebrandingToast enabled={rebrandingToastEnabled} durationMs={rebrandingToastDurationMs} />
+          <RebrandingToast
+            enabled={rebrandingToastEnabled}
+            durationMs={rebrandingToastDurationMs}
+          />
           <Header />
           <SocialMediaBar />
           {children}
