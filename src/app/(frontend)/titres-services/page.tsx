@@ -85,8 +85,12 @@ const Page = async () => {
         </div>
       </HeroSection>
 
+      {/* Modules Section */}
+      <section id="titres-services-modules">
+        <TitresServiceCatalogueClient modules={modules} />
+      </section>
       {/* Modalités de partenariat (parallax background) */}
-      <section className="relative isolate py-12 md:py-24 overflow-hidden flex justify-center items-center">
+      <section className="relative isolate py-12 md:py-16 overflow-hidden flex justify-center items-center">
         <div
           className="absolute inset-0 z-0 bg-scroll md:bg-fixed bg-cover bg-top bg-no-repeat"
           style={{
@@ -95,7 +99,7 @@ const Page = async () => {
         />
         <div className="absolute inset-0 z-[1] bg-linear-to-b from-white/95 via-primary-50/85 to-white/95 " />
         <div className="relative z-10 container mx-auto px-4">
-          <div>
+          <div className="flex justify-center items-center flex-col">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-12 text-center drop-shadow-md drop-shadow-primary-150">
               Modalités de partenariat
             </h2>
@@ -139,18 +143,7 @@ const Page = async () => {
               ))}
             </div>
           </div>
-          <div className="py-12 flex justify-center items-center">
-            <ScrollToSectionButton
-              targetId="titres-services-modules"
-              className="rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
-            />
-          </div>
         </div>
-      </section>
-
-      {/* Modules Section */}
-      <section id="titres-services-modules">
-        <TitresServiceCatalogueClient modules={modules} />
       </section>
 
       {/* How it Works Section */}

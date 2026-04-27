@@ -49,7 +49,7 @@ export function TitresServiceCatalogueClient({
             variants={fadeInUp}
             className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 text-center"
           >
-            Modules de formation
+            Nos thèmes de formation{' '}
           </motion.h2>
 
           {groupes.map((g) => (
@@ -63,8 +63,8 @@ export function TitresServiceCatalogueClient({
               <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
                 {modules
                   .filter((m) => m.category === g.key)
-                    .slice()
-                    .reverse()
+                  .slice()
+                  .reverse()
                   .map((mod) => (
                     <div key={mod.slug} className="h-full">
                       <CourseModuleCard
@@ -86,4 +86,3 @@ export function TitresServiceCatalogueClient({
     </section>
   )
 }
-
