@@ -9,37 +9,37 @@ import { ScrollToSectionButton } from './ScrollToSectionButton'
 const modalitiesParticipation = [
   {
     step: '01',
-    title: 'Prise de contact avec l’entreprise',
+    title: 'Format des cours',
     description:
-      'L’entreprise agréée Titres-Services prend contact avec notre équipe afin d’organiser une formation destinée à ses travailleurs, par e-mail ou par téléphone. Un rendez-vous est ensuite fixé afin d’échanger sur vos besoins et les modalités d’organisation.',
+      'Formations en inter-entreprise ou au sein de votre structure. Une salle de formation équipée à Bruxelles est mise à votre disposition.',
   },
   {
     step: '02',
-    title: 'Analyse des besoins',
+    title: 'Financement',
     description:
-      'En fonction de votre demande, nous analysons les besoins spécifiques de l’entreprise afin de proposer un programme de formation adapté au contexte professionnel et au niveau des participants. Notre catalogue de formations est également mis à votre disposition pour vous aider dans le choix des modules.',
+      'Bénéficiez du remboursement des frais de formation via le Fonds de Formation de Bruxelles, Forem Formation ou FORM TS.',
   },
   {
     step: '03',
-    title: 'Planification des sessions',
+    title: 'Participants',
     description:
-      'Les sessions de formation sont planifiées en concertation avec l’entreprise, en tenant compte des disponibilités des travailleurs et des contraintes organisationnelles. Les formations peuvent être organisées directement dans votre entreprise ou dans nos locaux à Bruxelles.',
+      "L'effectif par session est de 6-12 participants. Le suivi de présence des participants est assuré par les partenaires.",
   },
   {
     step: '04',
-    title: 'Mise en œuvre de la formation',
+    title: 'Tarifs',
     description:
-      'Nos formateurs interviennent directement au sein de l’entreprise pour dispenser les formations et accompagner les travailleurs dans le développement de leurs compétences professionnelles. À l’issue des formations, nous transmettons à l’entreprise les évaluations des participants ainsi que nos recommandations pédagogiques.',
+      'Les tarifs sont proposés par participant ou par groupe, avec un forfait de déplacement inclus.',
   },
   {
     step: '05',
-    title: 'Démarches de remboursement',
+    title: 'Remboursement',
     description:
       'Pour les entreprises souhaitant introduire des demandes de remboursement, notre équipe peut vous accompagner tout au long de la procédure auprès des fonds de formation de Bruxelles, de la Wallonie et du Form TS.',
   },
   {
     step: '06',
-    title: 'Subventions de formation',
+    title: 'Subventions',
     description:
       'Certains de nos modules sont repris dans le catalogue du Form TS, en formule « In Company » ou « Calendrier ouvert », selon les sessions proposées.',
   },
@@ -89,69 +89,13 @@ const Page = async () => {
       <section id="titres-services-modules">
         <TitresServiceCatalogueClient modules={modules} />
       </section>
-      {/* Modalités de partenariat (parallax background) */}
-      <section className="relative isolate py-12 md:py-16 overflow-hidden flex justify-center items-center">
-        <div
-          className="absolute inset-0 z-0 bg-scroll md:bg-fixed bg-cover bg-top bg-no-repeat"
-          style={{
-            backgroundImage: "url('/assets/operateur/formation-titres-services.jpg')",
-          }}
-        />
-        <div className="absolute inset-0 z-[1] bg-linear-to-b from-white/95 via-primary-50/85 to-white/95 " />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="flex justify-center items-center flex-col">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-12 text-center drop-shadow-md drop-shadow-primary-150">
-              Modalités de partenariat
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {[
-                {
-                  title: 'Format',
-                  description:
-                    'Formations en inter-entreprise ou au sein de votre structure. Une salle de formation équipée à Bruxelles est mise à votre disposition.',
-                },
-                {
-                  title: 'Financement',
-                  description:
-                    'Bénéficiez du remboursement des frais de formation via le Fonds de Formation de Bruxelles, Forem Formation ou FORM TS.',
-                },
-                {
-                  title: 'Participants',
-                  description:
-                    "L'effectif par session est de 6-12 participants. Le suivi de présence des participants est assuré par les partenaires.",
-                },
-                {
-                  title: 'Tarifs',
-                  description:
-                    'Les tarifs sont proposés par participant ou par groupe, avec un forfait de déplacement inclus.',
-                },
-              ].map((card) => (
-                <div
-                  key={card.title}
-                  className="bg-gradient-to-br from-primary-700 to-primary-800 rounded-xl p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-primary-600 relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-12 -mt-12" />
-                  <div className="relative z-10">
-                    <h3 className="text-lg md:text-xl font-semibold text-white mb-3 md:mb-4">
-                      {card.title}
-                    </h3>
-                    <p className="text-primary-100 leading-relaxed text-sm md:text-base break-words">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* How it Works Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-12 text-center">
-              Modalités de Participation
+              Modalités de partenariat
             </h2>
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
