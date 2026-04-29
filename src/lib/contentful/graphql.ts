@@ -13,9 +13,9 @@ export function getContentfulGraphQLClient() {
 
   // Next.js may cache server-side fetches; force `no-store` so Contentful updates appear immediately.
   // graphql-request uses `fetch` under the hood, so we override it.
-  const noStoreFetch = (url: string, options?: RequestInit) =>
-    fetch(url, {
-      ...(options ?? {}),
+  const noStoreFetch: typeof fetch = (input, init) =>
+    fetch(input, {
+      ...(init ?? {}),
       cache: 'no-store',
     })
 
