@@ -32,7 +32,7 @@ export function CourseModuleCard({
     <motion.article variants={variants}>
       <Link
         href={href}
-        className="group block h-96 overflow-hidden rounded-2xl border border-azure-500/50 bg-linear-to-br from-azure-500 to-azure-600 shadow-[0_22px_45px_rgba(0,166,214,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(0,166,214,0.3)] hover:-translate-y-0.5"
+        className="group block h-96 overflow-hidden rounded-2xl border border-azure-500/50 bg-linear-to-br from-azure-600 to-azure-700 shadow-[0_22px_45px_rgba(0,166,214,0.25)] transition duration-300 hover:shadow-[0_28px_56px_rgba(0,166,214,0.3)] hover:-translate-y-0.5"
       >
         <div className="relative h-44 w-full overflow-hidden md:h-52">
           <Image
