@@ -1,4 +1,5 @@
 import React from 'react'
+import { defaultSocialLinks, type SocialLinks } from '@/lib/content/footerContent'
 
 /** Shared styles for all social buttons – change here to update every button. */
 const socialButtonStyles = {
@@ -17,25 +18,6 @@ interface SocialMediaLink {
   name: string
   link: string
 }
-
-const socialMediaLinks: SocialMediaLink[] = [
-  {
-    name: 'linkedin',
-    link: 'https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/',
-  },
-  {
-    name: 'instagram',
-    link: 'https://www.instagram.com/asblecd/',
-  },
-  {
-    name: 'facebook',
-    link: 'https://www.facebook.com/espaceculturesetdeveloppement/',
-  },
-  {
-    name: 'youtube',
-    link: 'https://www.youtube.com/channel/UChv037yCHcV7QNQR5OtRAAw',
-  },
-]
 
 const SocialMediaButton = ({ href, ariaLabel, iconColor, children }: SocialMediaButtonProps) => (
   <a
@@ -56,7 +38,30 @@ const SocialMediaButton = ({ href, ariaLabel, iconColor, children }: SocialMedia
   </a>
 )
 
-const SocialMediaBar = () => {
+type SocialMediaBarProps = {
+  socialLinks?: SocialLinks
+}
+
+const SocialMediaBar = ({ socialLinks = defaultSocialLinks }: SocialMediaBarProps) => {
+  const socialMediaLinks: SocialMediaLink[] = [
+    {
+      name: 'linkedin',
+      link: socialLinks.linkedin,
+    },
+    {
+      name: 'instagram',
+      link: socialLinks.instagram,
+    },
+    {
+      name: 'facebook',
+      link: socialLinks.facebook,
+    },
+    {
+      name: 'youtube',
+      link: socialLinks.youtube,
+    },
+  ]
+
   return (
     <section className="fixed right-4 bottom-4 md:bottom-auto md:top-1/4 z-50">
       <div className="flex flex-col gap-2">

@@ -3,9 +3,13 @@ import Link from 'next/link'
 import { menu } from '@/lib/data/navigation/menu'
 import Image from 'next/image'
 import Partners from '@/components/Footer/Partners'
-import { footerContent } from '@/lib/content/footerContent'
+import { defaultSocialLinks, footerContent, type SocialLinks } from '@/lib/content/footerContent'
 
-const Footer = () => {
+type FooterProps = {
+  socialLinks?: SocialLinks
+}
+
+const Footer = ({ socialLinks = defaultSocialLinks }: FooterProps) => {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -88,7 +92,7 @@ const Footer = () => {
               <h3 className="text-lg font-bold text-white mb-1.5">{footerContent.followUsTitle}</h3>
               <div className="flex space-x-3 mb-3">
                 <a
-                  href={footerContent.social.linkedin.href}
+                  href={socialLinks.linkedin}
                   aria-label={footerContent.social.linkedin.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
@@ -106,7 +110,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href={footerContent.social.instagram.href}
+                  href={socialLinks.instagram}
                   aria-label={footerContent.social.instagram.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
@@ -124,7 +128,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href={footerContent.social.facebook.href}
+                  href={socialLinks.facebook}
                   aria-label={footerContent.social.facebook.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >
@@ -142,7 +146,7 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href={footerContent.social.youtube.href}
+                  href={socialLinks.youtube}
                   aria-label={footerContent.social.youtube.ariaLabel}
                   className="w-10 h-10 bg-white/95 hover:bg-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-sm"
                 >

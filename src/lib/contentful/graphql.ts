@@ -11,10 +11,19 @@ export function getContentfulGraphQLClient() {
 
   const token = isPreview ? env.previewToken ?? env.deliveryToken : env.deliveryToken
 
+  // Next.js may cache server-side fetches; force `no-store` so Contentful updates appear immediately.
+  // graphql-request uses `fetch` under the hood, so we override it.
+  const noStoreFetch = (url: string, options?: RequestInit) =>
+    fetch(url, {
+      ...(options ?? {}),
+      cache: 'no-store',
+    })
+
   return new GraphQLClient(getContentfulGraphQLEndpoint(env.spaceId, env.environmentId), {
     headers: {
       Authorization: `Bearer ${token}`,
     },
+    fetch: noStoreFetch,
   })
 }
 

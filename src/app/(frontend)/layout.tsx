@@ -7,6 +7,7 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import SocialMediaBar from '@/components/ui/SocialMediaBar'
 import { RebrandingToast } from '@/components/RebrandingToast'
+import { defaultSocialLinks } from '@/lib/content/footerContent'
 import { hasContentfulEnv } from '@/lib/contentful/env'
 import { getSiteSettings } from '@/lib/contentful/queries/siteSettings'
 
@@ -56,6 +57,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const settings = hasContentfulEnv() ? await getSiteSettings() : null
   const rebrandingToastEnabled = settings?.rebrandingToastEnabled ?? true
   const rebrandingToastDurationMs = settings?.rebrandingToastDurationMs ?? 5000
+  const socialLinks = settings?.socialLinks ?? defaultSocialLinks
 
   return (
     <html lang="fr" data-scroll-behavior="smooth">
@@ -66,9 +68,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             durationMs={rebrandingToastDurationMs}
           />
           <Header />
-          <SocialMediaBar />
+          <SocialMediaBar socialLinks={socialLinks} />
           {children}
-          <Footer />
+          <Footer socialLinks={socialLinks} />
         </main>
         <Analytics />
       </body>

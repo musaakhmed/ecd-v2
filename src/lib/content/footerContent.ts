@@ -22,7 +22,7 @@ export const footerContent = {
   social: {
     linkedin: {
       ariaLabel: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/espace-cultures-et-d%C3%A9veloppement-94a9bb281/',
+      href: 'https://www.linkedin.com/in/espaceforma/',
     },
     instagram: { ariaLabel: 'Instagram', href: 'https://www.instagram.com/asblecd/' },
     facebook: {
@@ -51,3 +51,17 @@ export const footerContent = {
     cookies: { label: 'Politique de cookies', href: '/politique-de-cookies' },
   },
 } as const
+
+export type SocialLinks = {
+  linkedin: string
+  instagram: string
+  facebook: string
+  youtube: string
+}
+
+export const defaultSocialLinks: SocialLinks = {
+  linkedin: footerContent.social.linkedin.href,
+  instagram: footerContent.social.instagram.href,
+  facebook: footerContent.social.facebook.href,
+  youtube: footerContent.social.youtube.href,
+}
