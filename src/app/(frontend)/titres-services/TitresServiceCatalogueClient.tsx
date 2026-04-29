@@ -54,10 +54,11 @@ export function TitresServiceCatalogueClient({
 
           {groupes.map((g) => (
             <div key={g.key} className="mb-14 last:mb-0">
-              <motion.h3 variants={fadeInUp} className="text-xl md:text-2xl mb-2">
-                <h3 className="font-semibold bg-linear-to-br from-azure-600 to-azure-700 text-primary-100 inline-block p-1 px-2 rounded-sm">
-                  {g.title}
-                </h3>
+              <motion.h3
+                variants={fadeInUp}
+                className="text-xl md:text-2xl mb-2 font-semibold bg-linear-to-br from-azure-600 to-azure-700 text-primary-100 inline-block p-1 px-2 rounded-sm"
+              >
+                {g.title}
               </motion.h3>
               <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
                 {modules
