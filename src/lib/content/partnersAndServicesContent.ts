@@ -37,6 +37,11 @@ export const partnersContent = {
       link: 'https://www.leforem.be/',
       image: '/assets/partenaires/forem.png',
     },
+    {
+      title: 'Lotterie Nationale',
+      link: 'https://www.loterie-nationale.be/bien-plus-que-jouer',
+      image: '/assets/partenaires/Logo_LOTNAT_RGB_Baseline_Horiz.png',
+    },
     // { title: 'fondation roi baudoin', image: '/assets/partenaires/logoFRB.png' },
     // {
     //   title: 'region bruxelles capitale',
