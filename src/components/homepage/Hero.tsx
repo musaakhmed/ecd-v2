@@ -59,7 +59,7 @@ export const Hero = () => {
     const timer = setInterval(() => {
       setDirection(1)
       setActiveIndex((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 4500)
 
     return () => clearInterval(timer)
   }, [slides])
