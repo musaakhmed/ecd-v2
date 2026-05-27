@@ -3,16 +3,13 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, stagger } from 'framer-motion'
 import NextImage from 'next/image'
-import { homepageHeroSlides } from '@/lib/data/homepage/homepageData'
+import { homepageHeroSlides, type HeroSlide } from '@/lib/data/homepage/homepageData'
 
-type Slide = {
-  image: string
-  subtitle: string
-  title: string
-  description: string
+const slides: HeroSlide[] = homepageHeroSlides
+
+function isHeroVideoSrc(src: string) {
+  return /\.(mp4|webm)$/i.test(src)
 }
-
-const slides: Slide[] = homepageHeroSlides
 
 const textVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -36,6 +33,13 @@ export const Hero = () => {
     const next = slides[nextIndex]
     if (!next?.image) return
 
+    if (isHeroVideoSrc(next.image)) {
+      const v = document.createElement('video')
+      v.preload = 'auto'
+      v.src = next.image
+      return
+    }
+
     const img = new window.Image()
     img.decoding = 'async'
     img.loading = 'eager'
@@ -55,7 +59,7 @@ export const Hero = () => {
     const timer = setInterval(() => {
       setDirection(1)
       setActiveIndex((prev) => (prev + 1) % slides.length)
-    }, 7000)
+    }, 5000)
 
     return () => clearInterval(timer)
   }, [slides])
@@ -86,26 +90,44 @@ export const Hero = () => {
                 animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
                 transition={{ duration: 10, ease: 'linear' }}
               >
-                <NextImage
-                  src={slides[activeIndex].image}
-                  alt={slides[activeIndex].title}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  priority={activeIndex === 0}
-                  onLoad={(e) => {
-                    const img = e.currentTarget
+                {isHeroVideoSrc(slides[activeIndex].image) ? (
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster={slides[activeIndex].poster}
+                    aria-label={slides[activeIndex].title}
+                    onLoadedData={() => {
+                      setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
+                    }}
+                  >
+                    <source src={slides[activeIndex].image} type="video/mp4" />
+                  </video>
+                ) : (
+                  <NextImage
+                    src={slides[activeIndex].image}
+                    alt={slides[activeIndex].title}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    loading="eager"
+                    priority={activeIndex === 0}
+                    onLoad={(e) => {
+                      const img = e.currentTarget
 
-                    img
-                      .decode()
-                      .then(() => {
-                        setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                      })
-                      .catch(() => {
-                        setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                      })
-                  }}
-                />
+                      img
+                        .decode()
+                        .then(() => {
+                          setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
+                        })
+                        .catch(() => {
+                          setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
+                        })
+                    }}
+                  />
+                )}
                 <motion.div
                   className="absolute inset-0 bg-primary-800/20"
                   initial={false}

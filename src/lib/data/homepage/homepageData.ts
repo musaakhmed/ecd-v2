@@ -1,5 +1,7 @@
 export type HeroSlide = {
   image: string
+  /** Still image shown before / behind video backgrounds (`.mp4`, `.webm`). */
+  poster?: string
   subtitle: string
   title: string
   description: string
@@ -7,26 +9,30 @@ export type HeroSlide = {
 
 export const homepageHeroSlides: HeroSlide[] = [
   {
-    image: '/assets/hero/edd.webp',
+    image: '/assets/hero/videos/video_edd.mp4',
+    poster: '/assets/hero/edd.webp',
     title: 'Soutien scolaire',
     subtitle: "Parce que chaque enfant mérite toute ses chances à l'école",
     description: 'Un accompagnement attentif pour révéler le potentiel de chaque élève.',
   },
   {
-    image: '/assets/hero/transition-numerique-2.jpg',
+    image: '/assets/hero/videos/video_transition-numerique-2.mp4',
+    poster: '/assets/hero/transition-numerique-2.jpg',
     title: 'Transition numérique',
     subtitle: "Réussir sa transition numérique, c'est possible pour tous",
     description:
       'Une approche inclusive au numérique: Jeunes, adultes et seniors; femmes et hommes.',
   },
   {
-    image: '/assets/hero/cleaning6.jpg',
+    image: '/assets/hero/videos/video_cleaning6.mp4',
+    poster: '/assets/hero/cleaning6.jpg',
     title: 'Formations professionelles',
     subtitle: "Former aujourd'hui les professionels des Titres-Services de demain",
     description: 'Des formations qui transforment le quitidien des aide-ménagères.',
   },
   {
-    image: '/assets/hero/formation.jpg',
+    image: '/assets/hero/videos/video_formation.mp4',
+    poster: '/assets/hero/formation.jpg',
     title: 'Services sur mesure',
     subtitle: 'Des solutions adaptées à vos besoins, tout simplement',
     description: 'Un accompagnement sur mesure, adapté à vos besoins.',
