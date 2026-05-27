@@ -104,7 +104,7 @@ const Page = () => {
           </ul>
           <p>
             Ce changement s'accompagne de l'adoption d'une nouvelle identité visuelle, en cohérence
-            avec nos axes d'interventioin centrés sur:
+            avec nos axes d'intervention centrés sur:
           </p>
           <ul className="list-decimal ml-8">
             <li>La formation et le développement des compétences</li>
