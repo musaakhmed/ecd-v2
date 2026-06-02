@@ -5,6 +5,7 @@ import {
   alphaFleNumeriquePage,
   jeunesConnectesPage,
   seniorsDigitalPage,
+  connectesAutonomesPage,
 } from '../../src/lib/content/pages/inclusionNumeriqueData'
 import { getCmaClient } from './_client'
 import { getContentfulManagementEnv } from './_env'
@@ -104,6 +105,7 @@ export async function migrateInclusionNumeriquePages() {
     { slug: 'inclusion-numerique/alpha-fle-numerique', data: alphaFleNumeriquePage },
     { slug: 'inclusion-numerique/jeunes-connectes', data: jeunesConnectesPage },
     { slug: 'inclusion-numerique/seniors-digital', data: seniorsDigitalPage },
+    { slug: 'inclusion-numerique/connectes-autonomes', data: connectesAutonomesPage },
   ] as const
 
   for (const p of pages) {

@@ -50,6 +50,13 @@ export const inclusionNumeriqueLanding = {
       variant: 'gradient-secondary',
     },
     {
+      title: 'Connectés & Autonomes',
+      href: '/inclusion-numerique/connectes-autonomes',
+      description:
+        "Projet soutenu par la Loterie Nationale (avril 2026 – mars 2027) : ateliers et permanences gratuits pour les seniors à Bruxelles.",
+      variant: 'gradient-primary',
+    },
+    {
       title: 'Alpha, FLE et Numérique',
       href: '/inclusion-numerique/alpha-fle-numerique',
       description:
@@ -474,5 +481,53 @@ export const seniorsDigitalPage = {
     'De découvrir les innovations numériques et les simplifications administratives,',
     'De se familiariser avec les plateformes et procédures en ligne,',
     "D'utiliser les guichets électroniques et services numériques de manière autonome.",
+  ],
+} as const
+
+export const connectesAutonomesPage = {
+  hero: {
+    imageSrc: '/assets/hero/seniors-transition-numerique.jpg',
+    imageAlt: 'Connectés & Autonomes – inclusion numérique des seniors',
+    subtitle: 'Inclusion Numérique',
+    title: 'La Loterie Nationale soutient l’inclusion numérique des seniors',
+    description:
+      'Grâce à la participation de ses joueurs, la Loterie Nationale soutient notre projet d’inclusion numérique des seniors à Bruxelles, mis en œuvre d’avril 2026 à mars 2027.',
+  } satisfies HeroSectionData,
+  sections: {
+    objectif: {
+      title: 'Connectés & Autonomes : l’informatique au service des seniors',
+      paragraph:
+        'Le projet « Connectés & Autonomes : l’informatique au service des seniors » a pour objectif de lutter contre la fracture numérique touchant les personnes âgées en renforçant leurs compétences numériques et leur autonomie dans l’utilisation des outils digitaux du quotidien.',
+    },
+    objectifsSpecifiques: {
+      title: 'Objectifs du projet',
+      intro: 'Le projet poursuit plusieurs objectifs complémentaires :',
+    },
+    approche: {
+      title: 'Public cible',
+      paragraphs: [
+        'Le projet s’adresse principalement aux seniors en situation d’isolement, de fragilité sociale ou éloignés du numérique, notamment les personnes fréquentant des centres de jour, maisons de quartier, associations locales ou structures d’accompagnement social à Bruxelles.',
+        'Concrètement, des ateliers collectifs, des initiations pratiques et des permanences d’accompagnement individuel sont organisés directement dans les structures partenaires accueillant les seniors. Les bénéficiaires peuvent ainsi apprendre à utiliser un smartphone, une tablette ou un ordinateur, effectuer des démarches en ligne, communiquer avec leurs proches, accéder aux services numériques essentiels et adopter de bonnes pratiques de sécurité sur Internet.',
+        'Afin de garantir l’accessibilité du dispositif, les activités sont entièrement gratuites pour les participants.',
+      ],
+    },
+    impact: {
+      title: 'Organisations partenaires',
+      paragraph:
+        'Le projet est développé en collaboration avec plusieurs organisations et structures locales bruxelloises actives dans l’accompagnement des seniors et l’action sociale, notamment des centres récréatifs, maisons de quartier, associations de proximité, centres de jour et CPAS partenaires accueillant les activités et orientant les bénéficiaires.',
+    },
+    lieuPeriode: {
+      title: 'Lieu et période',
+      paragraph:
+        'Les activités sont organisées d’avril 2026 à mars 2027 dans différents lieux d’accueil des seniors à Bruxelles : maisons de quartier, centres de jour, associations locales, CPAS et autres structures partenaires du territoire.',
+    },
+  },
+  objectifsSpecifiques: [
+    'Réduire la fracture numérique chez les seniors ;',
+    'Renforcer l’autonomie numérique des bénéficiaires ;',
+    'Faciliter l’accès aux services en ligne (e-administration, santé, mobilité, banque, etc.) ;',
+    'Favoriser le maintien du lien social et familial grâce aux outils numériques ;',
+    'Sensibiliser aux risques liés au numérique et aux bonnes pratiques ;',
+    'Prévenir l’isolement social et renforcer la confiance en soi.',
   ],
 } as const
