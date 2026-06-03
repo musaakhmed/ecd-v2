@@ -8,16 +8,22 @@ interface DarkIntroSectionProps {
   children: React.ReactNode
   /** Optional: use motion for entrance animation (default true) */
   animated?: boolean
+  classes?: string
+  textClassName?: string
 }
 
 /**
  * First-section block used on every a-propos page: dark gradient background
  * (primary-700/800) with light text (primary-100), matching qui-sommes-nous intro.
  */
-export function DarkIntroSection({ children, animated = true }: DarkIntroSectionProps) {
-  const cardClasses =
-    'bg-gradient-to-br from-azure-500 to-azure-600 rounded-2xl shadow-lg p-8 md:p-10 border border-azure-600/50 relative overflow-hidden'
-  const contentClasses = 'relative z-10 text-white/90 leading-relaxed text-lg'
+export function DarkIntroSection({
+  children,
+  classes,
+  textClassName,
+  animated = true,
+}: DarkIntroSectionProps) {
+  const cardClasses = `bg-gradient-to-br from-azure-500 to-azure-600 rounded-2xl shadow-lg p-8 md:p-10 border border-azure-600/50 relative overflow-hidden ${classes}`
+  const contentClasses = `relative z-10 text-white/90 leading-relaxed text-lg ${textClassName}`
 
   const cardContent = (
     <>

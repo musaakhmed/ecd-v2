@@ -53,7 +53,7 @@ export const inclusionNumeriqueLanding = {
       title: 'Connectés & Autonomes',
       href: '/inclusion-numerique/connectes-autonomes',
       description:
-        "Projet soutenu par la Loterie Nationale (avril 2026 – mars 2027) : ateliers et permanences gratuits pour les seniors à Bruxelles.",
+        'Projet soutenu par la Loterie Nationale (avril 2026 – mars 2027) : ateliers et permanences gratuits pour les seniors à Bruxelles.',
       variant: 'gradient-primary',
     },
     {

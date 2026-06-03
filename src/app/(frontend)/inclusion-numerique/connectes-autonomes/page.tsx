@@ -7,6 +7,8 @@ import { BulletList } from '@/components/ui/BulletList'
 import { AlternatingImageCards } from '@/components/ui/AlternatingImageCards'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { connectesAutonomesPage } from '@/lib/content/pages/inclusionNumeriqueData'
+import { DarkIntroSection } from '@/components/ui/DarkIntroSection'
+import Image from 'next/image'
 
 const cardClassName = {
   primary: 'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
@@ -22,7 +24,30 @@ const Page = () => {
         subtitle={connectesAutonomesPage.hero.subtitle}
         title={connectesAutonomesPage.hero.title}
         description={connectesAutonomesPage.hero.description}
+        customBgOverlay="!from-green-600/90 !via-green-700/80 !to-green-900/80"
       />
+
+      <DarkIntroSection classes="!bg-gradient-to-br from-sage-200 via-green-200 to-primary-300 border-primary-300/50 !mb-0">
+        <h2 className="text-3xl md:text-4xl font-bold text-sage-700 mb-6">
+          {connectesAutonomesPage.sections.objectif.title}
+        </h2>
+        <Image
+          className="mx-auto"
+          src="/assets/partenaires/Logo_LOTNAT_RGB_Baseline_Horiz.png"
+          alt="La Lotterie Nationale soutient l'inclusion numérique des seniors"
+          width={400}
+          height={400}
+        />
+        <p className="text-sage-600">
+          Le projet
+          <span className="font-semibold">
+            « Connectés & Autonomes : l’informatique au service des seniors »
+          </span>{' '}
+          a pour objectif de lutter contre la fracture numérique touchant les personnes âgées en
+          renforçant leurs compétences numériques et leur autonomie dans l’utilisation des outils
+          digitaux du quotidien.
+        </p>
+      </DarkIntroSection>
 
       <section className="py-8 md:py-10">
         <div className="container mx-auto px-6 pb-8">
@@ -39,19 +64,8 @@ const Page = () => {
               className="bg-transparent"
               items={[
                 {
-                  title: connectesAutonomesPage.sections.objectif.title,
-                  imageSrc: '/assets/services/perfectionnement/outlook.jpg',
-                  imageAlt: 'Seniors utilisent Outlook pour communiquer en ligne',
-                  cardClassName: cardClassName.primary,
-                  content: (
-                    <p className="leading-relaxed text-inherit">
-                      {connectesAutonomesPage.sections.objectif.paragraph}
-                    </p>
-                  ),
-                },
-                {
                   title: connectesAutonomesPage.sections.objectifsSpecifiques.title,
-                  imageSrc: '/assets/services/perfectionnement/office.jpg',
+                  imageSrc: '/assets/seniors/senior-digital.jpg',
                   imageAlt: 'Compétences numériques pour seniors',
                   cardClassName: cardClassName.secondary,
                   content: (
@@ -70,7 +84,7 @@ const Page = () => {
                 },
                 {
                   title: connectesAutonomesPage.sections.approche.title,
-                  imageSrc: '/assets/services/perfectionnement/ai-work.jpg',
+                  imageSrc: '/assets/seniors/senior-laptop.jpg',
                   imageAlt: "Atelier pour seniors autour de l'usage du numérique",
                   cardClassName: cardClassName.primary,
                   content: (
@@ -89,7 +103,7 @@ const Page = () => {
                 },
                 {
                   title: connectesAutonomesPage.sections.impact.title,
-                  imageSrc: '/assets/services/perfectionnement/trello.jpg',
+                  imageSrc: '/assets/seniors/senior-atelier.jpg',
                   imageAlt: 'Atelier et accompagnement numérique pour seniors',
                   cardClassName: cardClassName.secondary,
                   content: (
@@ -100,7 +114,7 @@ const Page = () => {
                 },
                 {
                   title: connectesAutonomesPage.sections.lieuPeriode.title,
-                  imageSrc: '/assets/services/perfectionnement/bureautique.jpeg',
+                  imageSrc: '/assets/seniors/senior-campus.jpg',
                   imageAlt: 'Atelier numérique pour seniors à Bruxelles',
                   cardClassName: cardClassName.primary,
                   content: (

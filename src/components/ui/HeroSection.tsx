@@ -12,6 +12,7 @@ interface HeroSectionProps {
   subtitle: string
   title: string
   description: string
+  customBgOverlay?: string
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
@@ -21,13 +22,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   subtitle,
   title,
   description,
+  customBgOverlay,
 }) => {
   return (
     <section className="relative text-white h-[35vh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-700/90 via-teal-900/80 to-cyan-900/80" />
+      <div
+        className={`absolute inset-0 bg-gradient-to-br from-blue-700/90 via-teal-900/80 to-cyan-900/80 !${customBgOverlay}`}
+      />
       <div className="absolute inset-0 bg-black/20" />
       <div className="container mx-auto px-6 relative z-10 py-6">
         <motion.div

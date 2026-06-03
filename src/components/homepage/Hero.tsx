@@ -1,11 +1,14 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, stagger } from 'framer-motion'
 import NextImage from 'next/image'
 import { homepageHeroSlides, type HeroSlide } from '@/lib/data/homepage/homepageData'
 
 const slides: HeroSlide[] = homepageHeroSlides
+
+const SLIDE_INTERVAL_MS = 4000
+const MEDIA_CROSSFADE_MS = 800
 
 function isHeroVideoSrc(src: string) {
   return /\.(mp4|webm)$/i.test(src)
@@ -17,34 +20,51 @@ const textVariants = {
 }
 
 export const Hero = () => {
-  // const slideData: Slide[] = dummySlides?.length > 0 ? dummySlides : slides
-
   const [activeIndex, setActiveIndex] = useState(0)
   const [direction, setDirection] = useState<1 | -1>(1)
   const [readyByIndex, setReadyByIndex] = useState<Record<number, boolean>>({})
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
 
   useEffect(() => {
-    console.log('Client-side slides data:', slides || 'Using dummy slides')
-  }, [slides])
+    slides.forEach((slide) => {
+      if (!slide.image) return
+
+      if (isHeroVideoSrc(slide.image)) {
+        const v = document.createElement('video')
+        v.preload = 'auto'
+        v.muted = true
+        v.playsInline = true
+        v.src = slide.image
+        v.load()
+        return
+      }
+
+      const img = new window.Image()
+      img.decoding = 'async'
+      img.loading = 'eager'
+      img.src = slide.image
+      img.decode().catch(() => {})
+    })
+  }, [])
 
   useEffect(() => {
-    if (slides.length === 0) return
-    const nextIndex = (activeIndex + 1) % slides.length
-    const next = slides[nextIndex]
-    if (!next?.image) return
+    videoRefs.current.forEach((video, index) => {
+      if (!video) return
 
-    if (isHeroVideoSrc(next.image)) {
-      const v = document.createElement('video')
-      v.preload = 'auto'
-      v.src = next.image
-      return
-    }
+      if (index === activeIndex) {
+        const playWhenReady = () => {
+          void video.play().catch(() => {})
+        }
 
-    const img = new window.Image()
-    img.decoding = 'async'
-    img.loading = 'eager'
-    img.src = next.image
-    img.decode().catch(() => {})
+        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+          playWhenReady()
+        } else {
+          video.addEventListener('canplay', playWhenReady, { once: true })
+        }
+      } else {
+        video.pause()
+      }
+    })
   }, [activeIndex])
 
   const goToSlide = useCallback(
@@ -59,85 +79,100 @@ export const Hero = () => {
     const timer = setInterval(() => {
       setDirection(1)
       setActiveIndex((prev) => (prev + 1) % slides.length)
-    }, 4500)
+    }, SLIDE_INTERVAL_MS)
 
     return () => clearInterval(timer)
-  }, [slides])
+  }, [])
 
-  // safety check
   if (slides.length === 0) {
-    return null // or return a loading/empty state
+    return null
   }
 
   return (
     <>
       <section className=" w-full overflow-hidden lg:top-0 lg:bottom-0 relative bg-primary-800  text-white lg:h-screen h-[70vh] flex flex-col justify-between">
         <div className="relative aspect-video w-full sm:absolute sm:inset-0 sm:h-full sm:aspect-auto">
-          <AnimatePresence initial={false} mode="sync">
+          <motion.div
+            className="absolute inset-0 origin-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
             <motion.div
-              key={slides[activeIndex].image}
-              className="absolute inset-0 origin-center"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className="absolute inset-0"
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
+              transition={{ duration: 10, ease: 'linear' }}
             >
-              <motion.div
-                className="absolute inset-0"
-                initial={{ scale: 1.05 }}
-                animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
-                transition={{ duration: 10, ease: 'linear' }}
-              >
-                {isHeroVideoSrc(slides[activeIndex].image) ? (
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster={slides[activeIndex].poster}
-                    aria-label={slides[activeIndex].title}
-                    onLoadedData={() => {
-                      setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                    }}
-                  >
-                    <source src={slides[activeIndex].image} type="video/mp4" />
-                  </video>
-                ) : (
-                  <NextImage
-                    src={slides[activeIndex].image}
-                    alt={slides[activeIndex].title}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                    loading="eager"
-                    priority={activeIndex === 0}
-                    onLoad={(e) => {
-                      const img = e.currentTarget
+              {slides.map((slide, index) => {
+                const isActive = index === activeIndex
+                const isReady = readyByIndex[index]
 
-                      img
-                        .decode()
-                        .then(() => {
-                          setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                        })
-                        .catch(() => {
-                          setReadyByIndex((prev) => ({ ...prev, [activeIndex]: true }))
-                        })
+                return (
+                  <div
+                    key={slide.image}
+                    className="absolute inset-0 transition-opacity ease-in-out"
+                    style={{
+                      opacity: isActive ? 1 : 0,
+                      transitionDuration: `${MEDIA_CROSSFADE_MS}ms`,
+                      zIndex: isActive ? 1 : 0,
                     }}
-                  />
-                )}
-                <motion.div
-                  className="absolute inset-0 bg-primary-800/20"
-                  initial={false}
-                  animate={{ opacity: readyByIndex[activeIndex] ? 0 : 1 }}
-                  transition={{ duration: 0.25, ease: 'easeOut' }}
-                />
-              </motion.div>
-              <div className="absolute inset-0 " />
+                    aria-hidden={!isActive}
+                  >
+                    {isHeroVideoSrc(slide.image) ? (
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[index] = el
+                        }}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        poster={slide.poster}
+                        aria-label={slide.title}
+                        onLoadedData={() => {
+                          setReadyByIndex((prev) => ({ ...prev, [index]: true }))
+                        }}
+                      >
+                        <source src={slide.image} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <NextImage
+                        src={slide.image}
+                        alt={slide.title}
+                        fill
+                        className="object-cover"
+                        sizes="100vw"
+                        loading="eager"
+                        priority={index === 0}
+                        onLoad={(e) => {
+                          const img = e.currentTarget
+
+                          img
+                            .decode()
+                            .then(() => {
+                              setReadyByIndex((prev) => ({ ...prev, [index]: true }))
+                            })
+                            .catch(() => {
+                              setReadyByIndex((prev) => ({ ...prev, [index]: true }))
+                            })
+                        }}
+                      />
+                    )}
+                    <div
+                      className="absolute inset-0 bg-primary-800/20 transition-opacity ease-out"
+                      style={{
+                        opacity: isActive && !isReady ? 1 : 0,
+                        transitionDuration: '250ms',
+                      }}
+                    />
+                  </div>
+                )
+              })}
             </motion.div>
-          </AnimatePresence>
+            <div className="absolute inset-0 " />
+          </motion.div>
         </div>
 
         <div className="relative z-10 flex flex-col gap-6 bg-primary-800 px-4 pb-10 pt-6 sm:absolute sm:inset-0 sm:bg-transparent sm:px-8 sm:pb-36 sm:pt-0">
