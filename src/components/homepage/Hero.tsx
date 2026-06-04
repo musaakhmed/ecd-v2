@@ -7,7 +7,7 @@ import { homepageHeroSlides, type HeroSlide } from '@/lib/data/homepage/homepage
 
 const slides: HeroSlide[] = homepageHeroSlides
 
-const SLIDE_INTERVAL_MS = 4000
+const SLIDE_INTERVAL_MS = 5000
 const MEDIA_CROSSFADE_MS = 800
 
 function isHeroVideoSrc(src: string) {
