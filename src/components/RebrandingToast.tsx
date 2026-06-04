@@ -13,27 +13,27 @@ export function RebrandingToast(props: { enabled: boolean; durationMs: number })
     toast(
       (t) => (
         <section className="flex flex-col relative justify-between gap-2 min-w-60">
-          <div className="w-full -ml-20 mt-15 text-secondary-900 text-right mx-auto space-y-4">
-            <div className="flex justify-between gap-4">
-              <div className="flex flex-col">
-                <p className="uppercase text-sm">nouvauté</p>
+          <div className="w-full -ml-10 mt-15 text-secondary-900 text-right mx-auto space-y-4">
+            <div className="flex justify-between gap-4 w-full">
+              <div className="flex flex-col gap-2">
+                <p className="uppercase font-semibold">nouvauté</p>
                 <h6 className="font-bold text-xl">
                   La Loterie Nationale soutient l’inclusion numérique des seniors
                 </h6>
+                <Link href="/inclusion-numerique/seniors-digital">
+                  <button
+                    onClick={() => toast.dismiss(t.id)}
+                    className="px-2 py-1 font-semibold bg-azure-800 text-primary-200 rounded  cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"
+                  >
+                    En savoir plus
+                  </button>
+                </Link>
               </div>
 
               <p onClick={() => toast.dismiss(t.id)} className="cursor-pointer text-right text-sm">
                 <X className="h-6 w-6" />
               </p>
             </div>
-            <Link href="/inclusion-numerique/seniors-digital">
-              <button
-                onClick={() => toast.dismiss(t.id)}
-                className="px-2 py-1 font-semibold bg-azure-800 text-primary-200 rounded  cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"
-              >
-                En savoir plus
-              </button>
-            </Link>
           </div>
           <svg
             className="absolute top-2 -left-50 -z-50"

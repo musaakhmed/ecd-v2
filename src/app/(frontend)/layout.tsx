@@ -56,7 +56,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
   const settings = hasContentfulEnv() ? await getSiteSettings() : null
   const rebrandingToastEnabled = settings?.rebrandingToastEnabled ?? true
-  const rebrandingToastDurationMs = settings?.rebrandingToastDurationMs ?? 15000
+  const rebrandingToastDurationMs = settings?.rebrandingToastDurationMs ?? 30000
   const socialLinks = settings?.socialLinks ?? defaultSocialLinks
 
   return (
