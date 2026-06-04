@@ -43,15 +43,8 @@ export const inclusionNumeriqueLanding = {
       variant: 'gradient-primary',
     },
     {
-      title: 'Seniors & le digital',
-      href: '/inclusion-numerique/seniors-digital',
-      description:
-        'Accompagnement pour gagner en autonomie numérique : démarches en ligne, smartphone, tablette, sécurité. À son rythme, dans un cadre bienveillant.',
-      variant: 'gradient-secondary',
-    },
-    {
       title: 'Connectés & Autonomes',
-      href: '/inclusion-numerique/connectes-autonomes',
+      href: '/inclusion-numerique/seniors-digital',
       description:
         'Projet soutenu par la Loterie Nationale (avril 2026 – mars 2027) : ateliers et permanences gratuits pour les seniors à Bruxelles.',
       variant: 'gradient-primary',

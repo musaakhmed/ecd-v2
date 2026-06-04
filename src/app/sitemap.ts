@@ -36,11 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: '/inclusion-numerique/alpha-fle-numerique', changeFrequency: 'monthly', priority: 0.6 },
       { path: '/inclusion-numerique/emploi-numerique', changeFrequency: 'monthly', priority: 0.6 },
       { path: '/inclusion-numerique/seniors-digital', changeFrequency: 'monthly', priority: 0.6 },
-      {
-        path: '/inclusion-numerique/connectes-autonomes',
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      },
 
       { path: '/titres-services', changeFrequency: 'weekly', priority: 0.9 },
       { path: '/ecole-devoirs', changeFrequency: 'monthly', priority: 0.8 },

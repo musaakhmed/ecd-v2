@@ -104,8 +104,8 @@ export async function migrateInclusionNumeriquePages() {
     { slug: 'inclusion-numerique/emploi-numerique', data: emploiNumeriquePage },
     { slug: 'inclusion-numerique/alpha-fle-numerique', data: alphaFleNumeriquePage },
     { slug: 'inclusion-numerique/jeunes-connectes', data: jeunesConnectesPage },
-    { slug: 'inclusion-numerique/seniors-digital', data: seniorsDigitalPage },
-    { slug: 'inclusion-numerique/connectes-autonomes', data: connectesAutonomesPage },
+    { slug: 'inclusion-numerique/seniors-digital-old', data: seniorsDigitalPage },
+    { slug: 'inclusion-numerique/seniors-digital', data: connectesAutonomesPage },
   ] as const
 
   for (const p of pages) {

@@ -22,6 +22,11 @@ const nextConfig = {
         destination: '/titres-services/:path*',
         permanent: true,
       },
+      {
+        source: '/inclusion-numerique/connectes-autonomes',
+        destination: '/inclusion-numerique/seniors-digital',
+        permanent: true,
+      },
     ]
   },
   // Your Next.js config here

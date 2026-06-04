@@ -26,7 +26,7 @@ export function RebrandingToast(props: { enabled: boolean; durationMs: number })
                 <X className="h-6 w-6" />
               </p>
             </div>
-            <Link href="/inclusion-numerique/connectes-autonomes">
+            <Link href="/inclusion-numerique/seniors-digital">
               <button
                 onClick={() => toast.dismiss(t.id)}
                 className="px-2 py-1 font-semibold bg-azure-800 text-primary-200 rounded  cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"
