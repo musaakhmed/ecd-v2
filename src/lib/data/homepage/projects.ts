@@ -21,9 +21,9 @@ export const projects = [
     link: '/titres-services',
   },
   {
-    title: 'Seniors & transition numérique',
+    title: 'Connectés & Autonomes',
     description:
-      "Accompagnement des seniors dans l'appropriation des outils numériques du quotidien et l'accès aux services en ligne.",
+      'Projet soutenu par la Loterie Nationale : ateliers et permanences gratuits pour l’inclusion numérique des seniors à Bruxelles (2026–2027).',
     image: '/assets/hero/seniors-transition-numerique.jpg',
     link: '/inclusion-numerique/seniors-digital',
   },

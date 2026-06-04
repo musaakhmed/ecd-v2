@@ -18,6 +18,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/inclusion-numerique/seniors-digital-old'],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

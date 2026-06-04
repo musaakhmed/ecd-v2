@@ -69,7 +69,7 @@ export const menu: MenuItem[] = [
         { title: 'Alpha, FLE et Numérique ', link: '/inclusion-numerique/alpha-fle-numerique' },
         { title: 'Emploi & Numérique', link: '/inclusion-numerique/emploi-numerique' },
         {
-          title: 'Connectés & Autonomes',
+          title: 'Seniors & le digital',
           link: '/inclusion-numerique/seniors-digital',
         },
       ],
@@ -88,4 +88,3 @@ export const menu: MenuItem[] = [
     link: '/ecole-devoirs',
   },
 ]
-

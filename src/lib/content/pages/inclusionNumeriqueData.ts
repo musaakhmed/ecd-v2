@@ -524,3 +524,17 @@ export const connectesAutonomesPage = {
     'Prévenir l’isolement social et renforcer la confiance en soi.',
   ],
 } as const
+
+/** SEO metadata keyed by public route (see matching `layout.tsx` under `app/`) */
+export const inclusionNumeriquePageSeo = {
+  seniorsDigital: {
+    title: 'Connectés & Autonomes – Inclusion numérique des seniors',
+    description: connectesAutonomesPage.hero.description,
+    path: '/inclusion-numerique/seniors-digital',
+  },
+  seniorsDigitalOld: {
+    title: 'Seniors & le digital – Accompagnement numérique',
+    description: seniorsDigitalPage.hero.description,
+    path: '/inclusion-numerique/seniors-digital-old',
+  },
+} as const

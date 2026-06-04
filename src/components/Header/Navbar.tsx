@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { menu } from '@/lib/data/navigation/menu'
 import { uiLabels } from '@/lib/content/uiLabels'
