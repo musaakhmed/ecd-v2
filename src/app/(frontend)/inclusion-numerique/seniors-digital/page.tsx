@@ -12,7 +12,7 @@ import Image from 'next/image'
 
 const cardClassName = {
   primary: 'bg-gradient-to-br from-primary-800 to-primary-900 border-primary-600/50',
-  secondary: 'bg-gradient-to-br from-secondary-800 to-secondary-900 border-secondary-600/50',
+  secondary: 'bg-gradient-to-br from-secondary-800 to-secondary-900 ',
 } as const
 
 const Page = () => {
@@ -24,21 +24,13 @@ const Page = () => {
         subtitle={connectesAutonomesPage.hero.subtitle}
         title={connectesAutonomesPage.hero.title}
         description={connectesAutonomesPage.hero.description}
-        customBgOverlay="!from-green-600/90 !via-green-700/80 !to-green-900/80"
       />
 
-      <DarkIntroSection classes="!bg-gradient-to-br from-sage-200 via-green-200 to-primary-300 border-primary-300/50 !mb-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-sage-700 mb-6">
+      <DarkIntroSection classes="!bg-gradient-to-br bg-gradient-to-br from-primary-800 to-primary-900 !-mb-15">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-200 mb-6">
           {connectesAutonomesPage.sections.objectif.title}
         </h2>
-        <Image
-          className="mx-auto"
-          src="/assets/partenaires/Logo_LOTNAT_RGB_Baseline_Horiz.png"
-          alt="La Lotterie Nationale soutient l'inclusion numérique des seniors"
-          width={400}
-          height={400}
-        />
-        <p className="text-sage-600">
+        <p className="text-primary-50">
           Le projet
           <span className="font-semibold">
             « Connectés & Autonomes : l’informatique au service des seniors »
@@ -61,13 +53,13 @@ const Page = () => {
             <AlternatingImageCards
               variants={fadeInUp}
               gapClassName="space-y-8"
-              className="bg-transparent"
+              className="bg-transparent mb-8"
               items={[
                 {
                   title: connectesAutonomesPage.sections.objectifsSpecifiques.title,
                   imageSrc: '/assets/seniors/senior-digital.jpg',
                   imageAlt: 'Compétences numériques pour seniors',
-                  cardClassName: cardClassName.secondary,
+                  cardClassName: cardClassName.primary,
                   content: (
                     <>
                       <p className="leading-relaxed mb-6 text-inherit">
@@ -105,7 +97,7 @@ const Page = () => {
                   title: connectesAutonomesPage.sections.impact.title,
                   imageSrc: '/assets/seniors/senior-atelier.jpg',
                   imageAlt: 'Atelier et accompagnement numérique pour seniors',
-                  cardClassName: cardClassName.secondary,
+                  cardClassName: cardClassName.primary,
                   content: (
                     <p className="leading-relaxed text-inherit">
                       {connectesAutonomesPage.sections.impact.paragraph}
@@ -125,6 +117,19 @@ const Page = () => {
                 },
               ]}
             />
+            <DarkIntroSection classes="!bg-gradient-to-br from-primary-800 to-primary-900 !mb-0 mt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-200 mb-6 text-center">
+                Projet soutenu par la Loterie Nationale et ses joueurs
+              </h2>
+
+              <Image
+                className="mx-auto"
+                src="/assets/partenaires/Logo_LOTNAT_RGB_Baseline_Horiz.png"
+                alt="La Lotterie Nationale soutient l'inclusion numérique des seniors"
+                width={400}
+                height={400}
+              />
+            </DarkIntroSection>
           </motion.div>
         </div>
       </section>
