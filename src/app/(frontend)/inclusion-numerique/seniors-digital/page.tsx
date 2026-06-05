@@ -117,8 +117,8 @@ const Page = () => {
                 },
               ]}
             />
-            <DarkIntroSection classes="!bg-gradient-to-br from-primary-800 to-primary-900 !mb-0 mt-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-200 mb-6 text-center">
+            <DarkIntroSection classes="!bg-gradient-to-br from-green-200 via-green-100 to-sage-100 !mb-0 mt-8 border-green-500/50">
+              <h2 className="text-3xl md:text-4xl font-bold text-green-700 w-3/4 mx-auto mb-6 text-center">
                 Projet soutenu par la Loterie Nationale et ses joueurs
               </h2>
 
