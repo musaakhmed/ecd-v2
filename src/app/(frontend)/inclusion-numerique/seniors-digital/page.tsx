@@ -57,7 +57,7 @@ const Page = () => {
               items={[
                 {
                   title: connectesAutonomesPage.sections.objectifsSpecifiques.title,
-                  imageSrc: '/assets/seniors/senior-digital.jpg',
+                  imageSrc: '/assets/seniors/seniors-objectif.jpg',
                   imageAlt: 'Compétences numériques pour seniors',
                   cardClassName: cardClassName.primary,
                   content: (
@@ -76,7 +76,7 @@ const Page = () => {
                 },
                 {
                   title: connectesAutonomesPage.sections.approche.title,
-                  imageSrc: '/assets/seniors/senior-laptop.jpg',
+                  imageSrc: '/assets/seniors/seniors-groupe.jpg',
                   imageAlt: "Atelier pour seniors autour de l'usage du numérique",
                   cardClassName: cardClassName.primary,
                   content: (
