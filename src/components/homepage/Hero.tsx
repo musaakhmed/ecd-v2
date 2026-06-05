@@ -197,7 +197,7 @@ export const Hero = () => {
                   <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].title}</span>
                 </motion.p>
                 <motion.h1
-                  className="text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl "
+                  className="font-semibold leading-tight text-2xl! lg:text-6xl "
                   variants={textVariants}
                 >
                   <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].subtitle}</span>
