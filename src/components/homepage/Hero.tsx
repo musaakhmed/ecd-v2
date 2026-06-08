@@ -35,6 +35,7 @@ export const Hero = () => {
         v.muted = true
         v.playsInline = true
         v.src = slide.image
+        v.autoplay = true
         v.load()
         return
       }
