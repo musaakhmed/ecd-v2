@@ -7,11 +7,18 @@ import { homepageHeroSlides, type HeroSlide } from '@/lib/data/homepage/homepage
 
 const slides: HeroSlide[] = homepageHeroSlides
 
-const SLIDE_INTERVAL_MS = 5000
 const MEDIA_CROSSFADE_MS = 800
+const MEDIA_CROSSFADE_SEC = MEDIA_CROSSFADE_MS / 1000
+const IMAGE_SLIDE_DURATION_MS = 5000
+
+type Slot = 'a' | 'b'
 
 function isHeroVideoSrc(src: string) {
   return /\.(mp4|webm)$/i.test(src)
+}
+
+function otherSlot(slot: Slot): Slot {
+  return slot === 'a' ? 'b' : 'a'
 }
 
 const textVariants = {
@@ -19,26 +26,178 @@ const textVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
+type HeroSlideMediaProps = {
+  slide: HeroSlide
+  opacity: number
+  zIndex: number
+  priority?: boolean
+  videoRef?: React.RefObject<HTMLVideoElement | null>
+  onVideoTimeUpdate?: (event: React.SyntheticEvent<HTMLVideoElement>) => void
+  onReady: () => void
+}
+
+function HeroSlideMedia({
+  slide,
+  opacity,
+  zIndex,
+  priority,
+  videoRef,
+  onVideoTimeUpdate,
+  onReady,
+}: HeroSlideMediaProps) {
+  return (
+    <div
+      className="absolute inset-0 transition-opacity ease-in-out"
+      style={{
+        opacity,
+        zIndex,
+        transitionDuration: `${MEDIA_CROSSFADE_MS}ms`,
+      }}
+      aria-hidden={opacity === 0}
+    >
+      {isHeroVideoSrc(slide.image) ? (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          src={slide.image}
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          poster={slide.poster}
+          aria-label={slide.title}
+          onLoadedData={onReady}
+          onTimeUpdate={onVideoTimeUpdate}
+        />
+      ) : (
+        <NextImage
+          src={slide.image}
+          alt={slide.title}
+          fill
+          className="object-cover"
+          sizes="100vw"
+          loading="eager"
+          priority={priority}
+          onLoad={(e) => {
+            const img = e.currentTarget
+
+            img
+              .decode()
+              .then(onReady)
+              .catch(onReady)
+          }}
+        />
+      )}
+    </div>
+  )
+}
+
 export const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [frontSlot, setFrontSlot] = useState<Slot>('a')
+  const [slotSlides, setSlotSlides] = useState<{ a: number; b: number }>({ a: 0, b: 0 })
+  const [isCrossfading, setIsCrossfading] = useState(false)
+  const [fadeActive, setFadeActive] = useState(false)
   const [direction, setDirection] = useState<1 | -1>(1)
   const [readyByIndex, setReadyByIndex] = useState<Record<number, boolean>>({})
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+
+  const activeIndexRef = useRef(activeIndex)
+  const frontSlotRef = useRef(frontSlot)
+  const videoARef = useRef<HTMLVideoElement>(null)
+  const videoBRef = useRef<HTMLVideoElement>(null)
+  const transitionScheduledRef = useRef(false)
+
+  activeIndexRef.current = activeIndex
+  frontSlotRef.current = frontSlot
+
+  const activeSlide = slides[activeIndex]
+  const isIncomingReady = readyByIndex[activeIndex] ?? false
+  const isVideoSlide = isHeroVideoSrc(activeSlide.image)
+
+  const getVideoRef = (slot: Slot) => (slot === 'a' ? videoARef : videoBRef)
+
+  const markReady = useCallback((index: number) => {
+    setReadyByIndex((prev) => ({ ...prev, [index]: true }))
+  }, [])
+
+  const startCrossfadeTo = useCallback((nextIndex: number, dir?: 1 | -1) => {
+    if (transitionScheduledRef.current || nextIndex === activeIndexRef.current) return
+
+    transitionScheduledRef.current = true
+    if (dir !== undefined) setDirection(dir)
+
+    const incoming = otherSlot(frontSlotRef.current)
+
+    setSlotSlides((prev) => ({ ...prev, [incoming]: nextIndex }))
+    setActiveIndex(nextIndex)
+    setIsCrossfading(true)
+    setFadeActive(false)
+  }, [])
+
+  const advanceToNextSlide = useCallback(() => {
+    startCrossfadeTo((activeIndexRef.current + 1) % slides.length, 1)
+  }, [startCrossfadeTo])
+
+  useEffect(() => {
+    if (!isCrossfading) {
+      const back = otherSlot(frontSlot)
+      getVideoRef(back).current?.pause()
+      return
+    }
+
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setFadeActive(true))
+    })
+
+    const timer = setTimeout(() => {
+      const newFront = otherSlot(frontSlotRef.current)
+      const oldFront = frontSlotRef.current
+
+      getVideoRef(oldFront).current?.pause()
+
+      setFrontSlot(newFront)
+      setIsCrossfading(false)
+      setFadeActive(false)
+      transitionScheduledRef.current = false
+    }, MEDIA_CROSSFADE_MS)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      clearTimeout(timer)
+    }
+  }, [isCrossfading, activeIndex, frontSlot])
+
+  const handleVideoTimeUpdate = useCallback(
+    (event: React.SyntheticEvent<HTMLVideoElement>) => {
+      if (isCrossfading || transitionScheduledRef.current) return
+
+      const video = event.currentTarget
+      const { duration, currentTime } = video
+
+      if (!Number.isFinite(duration) || duration <= MEDIA_CROSSFADE_SEC) return
+
+      if (currentTime >= duration - MEDIA_CROSSFADE_SEC) {
+        advanceToNextSlide()
+      }
+    },
+    [advanceToNextSlide, isCrossfading],
+  )
+
+  useEffect(() => {
+    if (isCrossfading || isVideoSlide) return
+
+    const timer = setTimeout(() => {
+      if (!transitionScheduledRef.current) {
+        advanceToNextSlide()
+      }
+    }, IMAGE_SLIDE_DURATION_MS - MEDIA_CROSSFADE_MS)
+
+    return () => clearTimeout(timer)
+  }, [activeIndex, advanceToNextSlide, isCrossfading, isVideoSlide, frontSlot])
 
   useEffect(() => {
     slides.forEach((slide) => {
-      if (!slide.image) return
-
-      if (isHeroVideoSrc(slide.image)) {
-        const v = document.createElement('video')
-        v.preload = 'auto'
-        v.muted = true
-        v.playsInline = true
-        v.src = slide.image
-        v.autoplay = true
-        v.load()
-        return
-      }
+      if (!slide.image || isHeroVideoSrc(slide.image)) return
 
       const img = new window.Image()
       img.decoding = 'async'
@@ -48,45 +207,53 @@ export const Hero = () => {
     })
   }, [])
 
-  useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (!video) return
-
-      if (index === activeIndex) {
-        const playWhenReady = () => {
-          void video.play().catch(() => {})
-        }
-
-        if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-          playWhenReady()
-        } else {
-          video.addEventListener('canplay', playWhenReady, { once: true })
-        }
-      } else {
-        video.pause()
-      }
-    })
-  }, [activeIndex])
-
   const goToSlide = useCallback(
     (index: number) => {
-      setDirection(index > activeIndex ? 1 : -1)
-      setActiveIndex(index)
+      startCrossfadeTo(index, index > activeIndex ? 1 : -1)
     },
-    [activeIndex],
+    [activeIndex, startCrossfadeTo],
   )
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDirection(1)
-      setActiveIndex((prev) => (prev + 1) % slides.length)
-    }, SLIDE_INTERVAL_MS)
-
-    return () => clearInterval(timer)
-  }, [])
 
   if (slides.length === 0) {
     return null
+  }
+
+  const getSlotOpacity = (slot: Slot) => {
+    if (!isCrossfading) {
+      return slot === frontSlot ? 1 : 0
+    }
+
+    const incoming = otherSlot(frontSlot)
+
+    if (slot === frontSlot) {
+      return fadeActive ? 0 : 1
+    }
+
+    if (slot === incoming) {
+      return fadeActive ? 1 : 0
+    }
+
+    return 0
+  }
+
+  const renderSlot = (slot: Slot) => {
+    const slideIndex = slotSlides[slot]
+    const slide = slides[slideIndex]
+    const isFront = slot === frontSlot
+    const isVideo = isHeroVideoSrc(slide.image)
+
+    return (
+      <HeroSlideMedia
+        key={`${slot}-${slide.image}`}
+        slide={slide}
+        opacity={getSlotOpacity(slot)}
+        zIndex={isCrossfading && slot === otherSlot(frontSlot) ? 2 : isFront ? 2 : 1}
+        priority={slideIndex === 0}
+        videoRef={getVideoRef(slot)}
+        onVideoTimeUpdate={isFront && !isCrossfading && isVideo ? handleVideoTimeUpdate : undefined}
+        onReady={() => markReady(slideIndex)}
+      />
+    )
   }
 
   return (
@@ -105,72 +272,17 @@ export const Hero = () => {
               animate={{ scale: 1.18, x: direction === 1 ? -20 : 20 }}
               transition={{ duration: 10, ease: 'linear' }}
             >
-              {slides.map((slide, index) => {
-                const isActive = index === activeIndex
-                const isReady = readyByIndex[index]
-
-                return (
-                  <div
-                    key={slide.image}
-                    className="absolute inset-0 transition-opacity ease-in-out"
-                    style={{
-                      opacity: isActive ? 1 : 0,
-                      transitionDuration: `${MEDIA_CROSSFADE_MS}ms`,
-                      zIndex: isActive ? 1 : 0,
-                    }}
-                    aria-hidden={!isActive}
-                  >
-                    {isHeroVideoSrc(slide.image) ? (
-                      <video
-                        ref={(el) => {
-                          videoRefs.current[index] = el
-                        }}
-                        className="absolute inset-0 h-full w-full object-cover"
-                        muted
-                        loop
-                        playsInline
-                        preload="auto"
-                        poster={slide.poster}
-                        aria-label={slide.title}
-                        onLoadedData={() => {
-                          setReadyByIndex((prev) => ({ ...prev, [index]: true }))
-                        }}
-                      >
-                        <source src={slide.image} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <NextImage
-                        src={slide.image}
-                        alt={slide.title}
-                        fill
-                        className="object-cover"
-                        sizes="100vw"
-                        loading="eager"
-                        priority={index === 0}
-                        onLoad={(e) => {
-                          const img = e.currentTarget
-
-                          img
-                            .decode()
-                            .then(() => {
-                              setReadyByIndex((prev) => ({ ...prev, [index]: true }))
-                            })
-                            .catch(() => {
-                              setReadyByIndex((prev) => ({ ...prev, [index]: true }))
-                            })
-                        }}
-                      />
-                    )}
-                    <div
-                      className="absolute inset-0 bg-primary-800/20 transition-opacity ease-out"
-                      style={{
-                        opacity: isActive && !isReady ? 1 : 0,
-                        transitionDuration: '250ms',
-                      }}
-                    />
-                  </div>
-                )
-              })}
+              <div className="absolute inset-0">
+                {renderSlot('a')}
+                {renderSlot('b')}
+                <div
+                  className="absolute inset-0 z-[3] bg-primary-800/20 transition-opacity ease-out pointer-events-none"
+                  style={{
+                    opacity: isIncomingReady ? 0 : 1,
+                    transitionDuration: '250ms',
+                  }}
+                />
+              </div>
             </motion.div>
             <div className="absolute inset-0 " />
           </motion.div>
@@ -180,7 +292,7 @@ export const Hero = () => {
           <div className="mx-auto w-full max-w-6xl sm:mt-auto">
             <AnimatePresence mode="wait">
               <motion.div
-                key={slides[activeIndex].title}
+                key={activeSlide.title}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -195,21 +307,19 @@ export const Hero = () => {
                   className="mb-4 text-xs uppercase tracking-[0.35em] text-white/70 sm:text-sm "
                   variants={textVariants}
                 >
-                  <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].title}</span>
+                  <span className="bg-primary-800 px-0.5 py-1">{activeSlide.title}</span>
                 </motion.p>
                 <motion.h1
                   className="font-semibold leading-tight text-2xl! lg:text-6xl!"
                   variants={textVariants}
                 >
-                  <span className="bg-primary-800 px-0.5 py-1">{slides[activeIndex].subtitle}</span>
+                  <span className="bg-primary-800 px-0.5 py-1">{activeSlide.subtitle}</span>
                 </motion.h1>
                 <motion.p
                   className="mt-6 max-w-3xl text-base text-white/90 sm:text-xl text-justify [text-align-last:start]"
                   variants={textVariants}
                 >
-                  <span className="bg-primary-800 px-0.5 py-1">
-                    {slides[activeIndex].description}
-                  </span>
+                  <span className="bg-primary-800 px-0.5 py-1">{activeSlide.description}</span>
                 </motion.p>
               </motion.div>
             </AnimatePresence>
