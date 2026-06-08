@@ -38,7 +38,7 @@ export const partnersContent = {
       image: '/assets/partenaires/forem.png',
     },
     {
-      title: 'Lotterie Nationale',
+      title: 'Loterie Nationale',
       link: 'https://www.loterie-nationale.be/bien-plus-que-jouer',
       image: '/assets/partenaires/Logo_LOTNAT_RGB_Baseline_Horiz.png',
     },
