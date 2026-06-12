@@ -42,7 +42,7 @@ export function CourseModuleCard({
             className="object-cover transition duration-700 group-hover:scale-105"
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-azure-900/70 via-azure-800/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-azure-900/50 via-azure-800/10 to-transparent" />
           {badgeLabel ? (
             <span
               className={`absolute top-3 left-3 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold ${badgeClassName}`}
