@@ -85,6 +85,10 @@ export const menu: MenuItem[] = [
     link: '/titres-services',
   },
   {
+    title: 'Autres formations',
+    link: '/autres-formations',
+  },
+  {
     title: 'Ecole de devoirs',
     link: '/ecole-devoirs',
   },
