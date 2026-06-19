@@ -20,7 +20,7 @@ export function RebrandingToast(props: { enabled: boolean; durationMs: number })
                 <h6 className="font-bold text-xl w-full">
                   Ergonomie et prévention des TMS dans les maisons de repos
                 </h6>
-                <Link href="/autres-formations/ergonomie-tms-maisons-repos">
+                <Link href="/nos-services/autre-formation">
                   <button
                     onClick={() => toast.dismiss(t.id)}
                     className="px-2 py-1 font-semibold bg-azure-800 text-primary-200 rounded  cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"

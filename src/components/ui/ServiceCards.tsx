@@ -122,8 +122,8 @@ const NosServices = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-8">
             <div className="relative h-36 w-full md:h-24 md:w-36 shrink-0 rounded-xl overflow-hidden">
               <Image
-                src={serviceCardsContent.autresFormations.image}
-                alt={serviceCardsContent.autresFormations.imageAlt}
+                src={serviceCardsContent.autreFormation.image}
+                alt={serviceCardsContent.autreFormation.imageAlt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 144px"
@@ -131,17 +131,17 @@ const NosServices = () => {
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="text-xl md:text-2xl font-bold text-header mb-2">
-                {serviceCardsContent.autresFormations.title}
+                {serviceCardsContent.autreFormation.title}
               </h3>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                {serviceCardsContent.autresFormations.description}
+                {serviceCardsContent.autreFormation.description}
               </p>
             </div>
             <Link
-              href={serviceCardsContent.autresFormations.href}
+              href={serviceCardsContent.autreFormation.href}
               className="shrink-0 bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm md:text-base text-center md:self-center"
             >
-              {serviceCardsContent.autresFormations.ctaLabel}
+              {serviceCardsContent.autreFormation.ctaLabel}
             </Link>
           </div>
         </motion.div>

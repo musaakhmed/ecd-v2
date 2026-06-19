@@ -63,14 +63,14 @@ export type ServiceCardContent = {
 export const serviceCardsContent = {
   sectionTitle: 'Nos Services',
   ctaLabel: 'En savoir plus',
-  autresFormations: {
-    title: 'Autres formations',
+  autreFormation: {
+    title: 'Autre formation',
     description:
-      'Formations ciblées pour des secteurs spécifiques — ergonomie, prévention des risques et bien-être au travail.',
-    ctaLabel: 'Voir les formations',
-    href: '/nos-services/autres-formations',
-    image: '/assets/TS/courses/technique-prevention/ergonomie-tms.jpg',
-    imageAlt: 'Autres formations',
+      'Formation en ergonomie et prévention des TMS pour le personnel des maisons de repos.',
+    ctaLabel: 'En savoir plus',
+    href: '/nos-services/autre-formation',
+    image: '/assets/services/autres-formations/ergonomie-maison-repos/pexels-karola-g-5207102.jpg',
+    imageAlt: 'Autre formation — ergonomie en maison de repos',
   },
   cards: [
     {

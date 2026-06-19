@@ -53,7 +53,7 @@ export const menu: MenuItem[] = [
           title: 'Perfectionnement en informatique',
           link: '/nos-services/perfectionnement-informatique',
         },
-        { title: 'Autres formations', link: '/nos-services/autres-formations' },
+        { title: 'Autre formation', link: '/nos-services/autre-formation' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
@@ -83,10 +83,6 @@ export const menu: MenuItem[] = [
   {
     title: 'Titres Services',
     link: '/titres-services',
-  },
-  {
-    title: 'Autres formations',
-    link: '/autres-formations',
   },
   {
     title: 'Ecole de devoirs',
