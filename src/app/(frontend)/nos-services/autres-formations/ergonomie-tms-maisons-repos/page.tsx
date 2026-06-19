@@ -5,34 +5,18 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { DarkTextCard } from '@/components/ui/DarkTextCard'
+import { ImageCardHero } from '@/components/ui/ImageCardHero'
 import { fadeInUp, staggerContainer } from '@/lib/utils/animations'
 import { ergonomieTmsMaisonsReposPageContent as content } from '@/lib/content/nosServices/ergonomieTmsMaisonsReposPage'
 
 const gradientBlockClassName =
   'bg-gradient-to-br from-primary-700 to-primary-800 rounded-2xl shadow-lg p-8 md:p-10 border border-primary-600 relative overflow-hidden'
 
-const GradientBlock = ({
-  children,
-  className = '',
-}: {
-  children: React.ReactNode
-  className?: string
-}) => (
-  <div className={`${gradientBlockClassName} ${className}`}>
+const GradientBlock = ({ children }: { children: React.ReactNode }) => (
+  <div className={gradientBlockClassName}>
     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/40 to-transparent rounded-full -mr-16 -mt-16" />
     <div className="relative z-10">{children}</div>
   </div>
-)
-
-const BulletList = ({ items }: { items: readonly string[] }) => (
-  <ul className="space-y-4 text-primary-100">
-    {items.map((item) => (
-      <li key={item} className="flex gap-4 items-start">
-        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
-        <span className="leading-relaxed">{item}</span>
-      </li>
-    ))}
-  </ul>
 )
 
 const Section = ({
@@ -145,32 +129,20 @@ const Page = () => {
         </motion.div>
       </Section>
 
-      <Section className="bg-white">
-        <SectionTitle>{content.objectifs.title}</SectionTitle>
-        <motion.div variants={fadeInUp}>
-          <GradientBlock>
-            <p className="text-primary-100/90 leading-relaxed mb-6">{content.objectifs.intro}</p>
-            <BulletList items={content.objectifs.items} />
-          </GradientBlock>
-        </motion.div>
-      </Section>
-
-      <Section className="bg-gradient-to-b from-primary-50 to-white">
-        <SectionTitle>{content.publicCible.title}</SectionTitle>
-        <motion.div variants={fadeInUp} className="[&_.rounded-2xl]:rounded-2xl">
-          <DarkTextCard variant="solid" raw className="rounded-2xl p-6 md:p-8">
-            <p className="mb-4 leading-relaxed">{content.publicCible.intro}</p>
-            <ul className="space-y-3 text-inherit">
-              {content.publicCible.items.map((item) => (
-                <li key={item} className="flex gap-3 items-start leading-relaxed">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </DarkTextCard>
-        </motion.div>
-      </Section>
+      {content.imageSections.map((section, index) => (
+        <ImageCardHero
+          key={section.key}
+          title={section.title}
+          imageSrc={section.imageSrc}
+          imageAlt={section.imageAlt}
+          imageOnLeft={index % 2 === 0}
+          description={'description' in section ? section.description : undefined}
+          intro={'intro' in section ? section.intro : undefined}
+          listItems={'listItems' in section ? [...section.listItems] : undefined}
+          conclusion={'conclusion' in section ? section.conclusion : undefined}
+          compactSpacing
+        />
+      ))}
 
       <Section className="bg-white">
         <SectionTitle>{content.organisation.title}</SectionTitle>
@@ -236,16 +208,6 @@ const Page = () => {
             </motion.div>
           ))}
         </div>
-      </Section>
-
-      <Section className="bg-white">
-        <SectionTitle>{content.methodologie.title}</SectionTitle>
-        <motion.div variants={fadeInUp}>
-          <GradientBlock>
-            <p className="text-primary-100/90 leading-relaxed mb-6">{content.methodologie.intro}</p>
-            <BulletList items={content.methodologie.items} />
-          </GradientBlock>
-        </motion.div>
       </Section>
 
       <Section className="bg-gradient-to-b from-primary-50 to-white">

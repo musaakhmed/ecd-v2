@@ -1,3 +1,5 @@
+const IMAGE_BASE = '/assets/services/autres-formations/ergonomie-maison-repos'
+
 export type PedagogicalModule = {
   title: string
   items: readonly string[]
@@ -6,8 +8,8 @@ export type PedagogicalModule = {
 export const ergonomieTmsMaisonsReposPageContent = {
   slug: 'ergonomie-tms-maisons-repos',
   hero: {
-    imageSrc: '/assets/TS/courses/technique-prevention/ergonomie-tms.jpg',
-    imageAlt: 'Ergonomie et prévention des TMS dans les maisons de repos',
+    imageSrc: `${IMAGE_BASE}/pexels-karola-g-5207102.jpg`,
+    imageAlt: 'Personnel soignant en maison de repos',
     eyebrow: 'Autres formations',
     title: 'Ergonomie et prévention des TMS dans les maisons de repos',
     description:
@@ -21,37 +23,59 @@ export const ergonomieTmsMaisonsReposPageContent = {
       'Afin de réduire ces risques et d\'améliorer le bien-être au travail, Espace Forma propose un programme de formation spécifique en ergonomie et prévention des TMS destiné aux travailleurs des maisons de repos.',
     ],
   },
-  objectifs: {
-    title: 'Objectifs de la formation',
-    intro: 'À l\'issue de la formation, les participants seront capables de :',
-    items: [
-      'Identifier les principaux risques ergonomiques liés à leur activité professionnelle.',
-      'Comprendre les mécanismes d\'apparition des TMS.',
-      'Adopter les bonnes postures de travail.',
-      'Réaliser les gestes professionnels en limitant les contraintes physiques.',
-      'Utiliser correctement les aides techniques disponibles.',
-      'Prévenir les douleurs dorsales, cervicales et articulaires.',
-      'Améliorer leur confort et leur sécurité au travail.',
-    ],
-  },
-  publicCible: {
-    title: 'Public cible',
-    intro: 'Personnel des maisons de repos :',
-    items: [
-      'Aides-soignants',
-      'Aides familiaux',
-      'Agents d\'entretien',
-      'Personnel logistique',
-      'Accompagnateurs de vie',
-      'Équipes polyvalentes',
-    ],
-  },
+  imageSections: [
+    {
+      key: 'objectifs',
+      title: 'Objectifs de la formation',
+      imageSrc: `${IMAGE_BASE}/pexels-kampus-7551622.jpg`,
+      imageAlt: 'Session de formation professionnelle',
+      intro: "À l'issue de la formation, les participants seront capables de :",
+      listItems: [
+        'Identifier les principaux risques ergonomiques liés à leur activité professionnelle.',
+        "Comprendre les mécanismes d'apparition des TMS.",
+        'Adopter les bonnes postures de travail.',
+        'Réaliser les gestes professionnels en limitant les contraintes physiques.',
+        'Utiliser correctement les aides techniques disponibles.',
+        'Prévenir les douleurs dorsales, cervicales et articulaires.',
+        'Améliorer leur confort et leur sécurité au travail.',
+      ],
+    },
+    {
+      key: 'publicCible',
+      title: 'Public cible',
+      imageSrc: `${IMAGE_BASE}/pexels-karola-g-5207102.jpg`,
+      imageAlt: 'Équipe soignante en établissement médicalisé',
+      intro: 'Personnel des maisons de repos :',
+      listItems: [
+        'Aides-soignants',
+        'Aides familiaux',
+        "Agents d'entretien",
+        'Personnel logistique',
+        'Accompagnateurs de vie',
+        'Équipes polyvalentes',
+      ],
+    },
+    {
+      key: 'methodologie',
+      title: 'Méthodologie',
+      imageSrc: `${IMAGE_BASE}/pexels-jsme-mila-523821574-18459198.jpg`,
+      imageAlt: 'Travailleuse en situation professionnelle en maison de repos',
+      intro: 'La formation privilégie une approche participative :',
+      listItems: [
+        'Présentation interactive',
+        'Démonstrations pratiques',
+        'Exercices individuels et en groupe',
+        'Études de situations réelles rencontrées en maison de repos',
+        "Échanges d'expériences entre participants",
+      ],
+    },
+  ],
   organisation: {
     title: 'Organisation des formations',
     formule: {
       title: 'Formule',
       items: [
-        'Les formations sont organisées en inter-entreprises dans les locaux d\'Espace Forma.',
+        "Les formations sont organisées en inter-entreprises dans les locaux d'Espace Forma.",
         'Chaque maison de repos peut inscrire plusieurs travailleurs à la session.',
       ],
     },
@@ -85,11 +109,11 @@ export const ergonomieTmsMaisonsReposPageContent = {
         ],
       },
       {
-        title: 'Module 2 : Principes d\'ergonomie',
+        title: "Module 2 : Principes d'ergonomie",
         items: [
-          'Notions d\'ergonomie au travail',
+          "Notions d'ergonomie au travail",
           'Analyse des postures professionnelles',
-          'Organisation de l\'espace de travail',
+          "Organisation de l'espace de travail",
         ],
       },
       {
@@ -98,7 +122,7 @@ export const ergonomieTmsMaisonsReposPageContent = {
           'Prévention du mal de dos',
           'Techniques de levage sécurisées',
           'Réduction des mouvements répétitifs',
-          'Économie d\'effort',
+          "Économie d'effort",
         ],
       },
       {
@@ -120,17 +144,6 @@ export const ergonomieTmsMaisonsReposPageContent = {
       },
     ] satisfies PedagogicalModule[],
   },
-  methodologie: {
-    title: 'Méthodologie',
-    intro: 'La formation privilégie une approche participative :',
-    items: [
-      'Présentation interactive',
-      'Démonstrations pratiques',
-      'Exercices individuels et en groupe',
-      'Études de situations réelles rencontrées en maison de repos',
-      'Échanges d\'expériences entre participants',
-    ],
-  },
   resultatsAttendus: {
     title: 'Résultats attendus',
     items: [
@@ -138,11 +151,11 @@ export const ergonomieTmsMaisonsReposPageContent = {
       'Amélioration des postures de travail.',
       'Sensibilisation durable à la prévention des TMS.',
       'Diminution des douleurs liées aux activités professionnelles.',
-      'Contribution à la réduction de l\'absentéisme et des accidents de travail.',
+      "Contribution à la réduction de l'absentéisme et des accidents de travail.",
     ],
   },
   attestation: {
     title: 'Attestation',
-    text: 'Une attestation de participation sera remise à chaque participant à l\'issue de la formation.',
+    text: "Une attestation de participation sera remise à chaque participant à l'issue de la formation.",
   },
 } as const
