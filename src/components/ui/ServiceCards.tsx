@@ -111,6 +111,40 @@ const NosServices = () => {
             </Link>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="mt-8 rounded-2xl border border-primary-100 bg-white/80 backdrop-blur-sm shadow-md overflow-hidden"
+        >
+          <div className="flex flex-col md:flex-row md:items-center gap-6 p-6 md:p-8">
+            <div className="relative h-36 w-full md:h-24 md:w-36 shrink-0 rounded-xl overflow-hidden">
+              <Image
+                src={serviceCardsContent.autresFormations.image}
+                alt={serviceCardsContent.autresFormations.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 144px"
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xl md:text-2xl font-bold text-header mb-2">
+                {serviceCardsContent.autresFormations.title}
+              </h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                {serviceCardsContent.autresFormations.description}
+              </p>
+            </div>
+            <Link
+              href={serviceCardsContent.autresFormations.href}
+              className="shrink-0 bg-accent hover:bg-accent-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300 text-sm md:text-base text-center md:self-center"
+            >
+              {serviceCardsContent.autresFormations.ctaLabel}
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

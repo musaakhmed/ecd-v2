@@ -63,6 +63,15 @@ export type ServiceCardContent = {
 export const serviceCardsContent = {
   sectionTitle: 'Nos Services',
   ctaLabel: 'En savoir plus',
+  autresFormations: {
+    title: 'Autres formations',
+    description:
+      'Formations ciblées pour des secteurs spécifiques — ergonomie, prévention des risques et bien-être au travail.',
+    ctaLabel: 'Voir les formations',
+    href: '/nos-services/autres-formations',
+    image: '/assets/TS/courses/technique-prevention/ergonomie-tms.jpg',
+    imageAlt: 'Autres formations',
+  },
   cards: [
     {
       id: 1,

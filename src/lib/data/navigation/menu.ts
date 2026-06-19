@@ -53,6 +53,7 @@ export const menu: MenuItem[] = [
           title: 'Perfectionnement en informatique',
           link: '/nos-services/perfectionnement-informatique',
         },
+        { title: 'Autres formations', link: '/nos-services/autres-formations' },
       ],
       image: {
         src: '/assets/hero/devoirs.jpg',
