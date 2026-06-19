@@ -17,10 +17,10 @@ export function RebrandingToast(props: { enabled: boolean; durationMs: number })
             <div className="flex justify-between gap-4 w-full">
               <div className="flex flex-col gap-2">
                 <p className="uppercase font-semibold">nouvauté</p>
-                <h6 className="font-bold text-xl">
-                  La Loterie Nationale soutient l’inclusion numérique des seniors
+                <h6 className="font-bold text-xl w-full">
+                  Ergonomie et prévention des TMS dans les maisons de repos
                 </h6>
-                <Link href="/inclusion-numerique/seniors-digital">
+                <Link href="/nos-services/autres-formations/ergonomie-tms-maisons-repos">
                   <button
                     onClick={() => toast.dismiss(t.id)}
                     className="px-2 py-1 font-semibold bg-azure-800 text-primary-200 rounded  cursor-pointer hover:bg-primary-600 hover:text-azure-50 transition-all duration-300 ease-in-out"
