@@ -24,6 +24,24 @@ export type TitreServiceCatalogueModule = {
   isPlaceholder?: boolean
 }
 
+const outilsNumeriquesModalitesPedagogie =
+  '• Alternance d\'explications théoriques et d\'exercices pratiques ;\n' +
+  '• Manipulations guidées pas à pas sur ordinateur, tablette ou smartphone ;\n' +
+  '• Mises en situation réelles : envoi, réception, réponse, transfert et gestion d\'e-mails ;\n' +
+  '• Exercices de création et d\'organisation de boîtes mail ;\n' +
+  '• Apprentissage de l\'envoi de pièces jointes (documents, photos, PDF, etc.) ;\n' +
+  '• Sensibilisation aux bonnes pratiques de sécurité et à la détection des tentatives de fraude (phishing) ;\n' +
+  '• Accompagnement individualisé selon les besoins des participants.\n' +
+  '• Support de cours numérique accessible via QR Code ;\n' +
+  '• Fiches pratiques et tutoriels illustrés ;'
+
+const outilsNumeriquesEvaluationSuivi =
+  'L\'évaluation des acquis repose sur plusieurs outils complémentaires : exercices pratiques, mises en situation réelles, observations des manipulations réalisées, questions-réponses, QCM de validation des connaissances et auto-évaluation des participants. De courtes évaluations sont proposées en fin de séance afin de mesurer la progression. Les feedbacks recueillis permettent d\'adapter le contenu et le rythme de la formation aux besoins du groupe. Un bilan final des acquis est réalisé en fin de parcours et peut donner lieu à la délivrance d\'une attestation de participation.'
+
+const outilsNumeriquesSupportsLogistiques =
+  'Les formations peuvent être organisées dans les locaux du partenaire, dans nos espaces de formation ou sous forme d\'ateliers mobiles selon les besoins. Espace Forma met à disposition l\'ensemble du matériel nécessaire : ordinateurs portables, tablettes, vidéoprojecteur, connexion Internet (Flybox), supports pédagogiques et syllabus numériques accessibles via QR Code.\n' +
+  'Les participants sont également invités, s\'ils le souhaitent, à utiliser leur propre ordinateur portable, smartphone ou tablette afin de travailler directement sur leurs outils du quotidien et de favoriser une mise en pratique immédiate des apprentissages.'
+
 export const catalogueModules: TitreServiceCatalogueModule[] = [
   // ——— Outils numériques ———
   {
@@ -40,13 +58,9 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Réaliser des démarches administratives en ligne en toute autonomie. (ONVA, MyMinfin, MyPension, IRISbox, Mon Espace Wallonie)',
       'Adopter les bonnes pratiques de sécurité numérique (RGPD, phishing, mots de passe).',
     ],
-    modalitesPédagogie:
-      'La formation s’appuie sur une pédagogie différenciée mêlant théorie et pratique, avec une approche à la fois individuelle et collective. \n\n Un syllabus numérique et des tutoriels accessibles via QR Code sont remis à chaque participant. Une aide à distance est également proposée après la formation.\n',
-    evaluationSuivi:
-      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation :\n' +
-      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
-    supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'EF. \n \n Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. Les participants peuvent apporter leur propre PC/smartphone/tablette.",
+    modalitesPédagogie: outilsNumeriquesModalitesPedagogie,
+    evaluationSuivi: outilsNumeriquesEvaluationSuivi,
+    supportsLogistiques: outilsNumeriquesSupportsLogistiques,
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10240', date: '23/02/2024' },
@@ -71,12 +85,9 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Trier, classer, archiver et retrouver des messages.',
       'Identifier les spams et reconnaître les tentatives de phishing.',
     ],
-    modalitesPédagogie:
-      'Pédagogie différenciée, exercices pratiques et mises en situation réelles. Support via QR Code. Aide à distance possible après la formation.',
-    evaluationSuivi:
-      'Évaluations courtes en fin de séance, feedbacks et ajustements selon le niveau.',
-    supportsLogistiques:
-      'Formation dans vos locaux, nos espaces ou en ateliers mobiles. Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox, syllabus. \n Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
+    modalitesPédagogie: outilsNumeriquesModalitesPedagogie,
+    evaluationSuivi: outilsNumeriquesEvaluationSuivi,
+    supportsLogistiques: outilsNumeriquesSupportsLogistiques,
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10256', date: '15/04/2024' },
@@ -115,15 +126,9 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Découvrir l’apport de l’IA dans la navigation : utiliser Copilot (Edge) pour résumer, expliquer ou rechercher.',
       'Découvrir l’apport de l’IA dans la navigation : utiliser Gemini (Google) pour répondre, analyser et guider la recherche.',
     ],
-    modalitesPédagogie:
-      'Pédagogie différenciée mêlant théorie et pratique. Mises en situation, exercices guidés, démonstrations pas à pas. Syllabus via QR Code. Aide à distance possible après la formation.',
-    evaluationSuivi:
-      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation.\n' +
-      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
-    supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'ECD. \n" +
-      'Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox (connexion Internet), syllabus. ' +
-      'Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
+    modalitesPédagogie: outilsNumeriquesModalitesPedagogie,
+    evaluationSuivi: outilsNumeriquesEvaluationSuivi,
+    supportsLogistiques: outilsNumeriquesSupportsLogistiques,
     publicVise: 'Aide-ménagères',
     approbation: [
       { region: 'Wallonie', certificate: 'E10257', date: '15/04/2024' },
@@ -133,6 +138,30 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
     category: 'outils-numeriques',
     imageSrc: '/assets/TS/courses/numerique/navigation-internet.webp',
     imageAlt: 'Internet et navigation',
+  },
+  {
+    slug: 'trucs-et-astuces-numeriques',
+    titre: 'Trucs et astuces numériques',
+    isPlaceholder: true,
+    descriptionCourte:
+      'Word, Excel et outils du quotidien : raccourcis, bonnes pratiques et astuces pour gagner en efficacité.',
+    description:
+      'Ce module propose des trucs et astuces numériques pour faciliter le travail au quotidien sur ordinateur, tablette ou smartphone : raccourcis utiles, organisation des fichiers, bonnes pratiques bureautiques et astuces pour gagner en efficacité.',
+    objectifs: [
+      'Découvrir des raccourcis et astuces pour gagner du temps au quotidien.',
+      'Organiser ses fichiers et dossiers de manière simple et efficace.',
+      'Maîtriser les fonctions essentielles de Word et Excel.',
+      'Adopter les bonnes pratiques pour travailler plus sereinement sur ses outils numériques.',
+    ],
+    modalitesPédagogie: outilsNumeriquesModalitesPedagogie,
+    evaluationSuivi: outilsNumeriquesEvaluationSuivi,
+    supportsLogistiques: outilsNumeriquesSupportsLogistiques,
+    publicVise: 'Aide-ménagères',
+    approbation: [],
+    duree: '4 heures / Groupe',
+    category: 'outils-numeriques',
+    imageSrc: '/assets/TS/courses/numerique/word-excel.jpeg',
+    imageAlt: 'Trucs et astuces numériques',
   },
   {
     slug: 'decouverte-de-chatgpt',
@@ -150,14 +179,9 @@ export const catalogueModules: TitreServiceCatalogueModule[] = [
       'Rédiger/corriger/reformuler/traduire des messages et documents.',
       'Rechercher et résumer des informations en gardant un esprit critique.',
     ],
-    modalitesPédagogie:
-      'Pédagogie différenciée, théorie et pratique. Exercices guidés, démonstrations pas à pas. \n Un syllabus numérique et des tutoriels accessibles via QR Code sont remis à chaque participant. Une aide à distance est également proposée après la formation.',
-    evaluationSuivi:
-      'À la fin de chaque session, les participants complètent un questionnaire d’évaluation post-formation.\n' +
-      'Les feedbacks recueillis permettent d’améliorer en continu le contenu, la méthode et l’animation.',
-    supportsLogistiques:
-      "Formations chez les partenaires ou dans les locaux d'ECD. \n\n Matériel fourni : ordinateurs portables, tablettes, vidéoprojecteurs, Flybox (connexion Internet), syllabus.\n" +
-      'Les participants peuvent également apporter leur propre PC, smartphone ou tablette.',
+    modalitesPédagogie: outilsNumeriquesModalitesPedagogie,
+    evaluationSuivi: outilsNumeriquesEvaluationSuivi,
+    supportsLogistiques: outilsNumeriquesSupportsLogistiques,
     publicVise: 'Aide-ménagères',
     approbation: [{ region: 'Bruxelles', certificate: 'E1605/B', date: '17/05/2024' }],
     duree: '4 heures / Groupe',

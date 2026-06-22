@@ -25,18 +25,9 @@ export type TitresServiceModuleViewModel = {
   isPlaceholder?: boolean | null
 }
 
-export function TitresServiceModuleClient({
-  module_,
-}: {
-  module_: TitresServiceModuleViewModel
-}) {
+export function TitresServiceModuleClient({ module_ }: { module_: TitresServiceModuleViewModel }) {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={stagger}
-      className="space-y-8"
-    >
+    <motion.div initial="hidden" animate="visible" variants={stagger} className="space-y-8">
       {/* Description */}
       <motion.section variants={fadeInUp}>
         <h2 className="text-xl font-semibold text-primary-900 mb-3">
@@ -53,7 +44,7 @@ export function TitresServiceModuleClient({
               </p>
             </div>
           )}
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line text-justify">
             {module_.description}
           </p>
         </div>
@@ -66,7 +57,7 @@ export function TitresServiceModuleClient({
         </h2>
         <div className="bg-gradient-to-br from-primary-50 to-white rounded-xl border border-primary-100 p-6 shadow-sm">
           {module_.objectifsIntro && (
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-4">
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-4 text-justify">
               {module_.objectifsIntro}
             </p>
           )}
@@ -74,9 +65,7 @@ export function TitresServiceModuleClient({
             {module_.objectifs.map((obj, i) => (
               <li key={i} className="flex gap-3">
                 <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
-                <span className="text-gray-700 leading-relaxed whitespace-pre-line">
-                  {obj}
-                </span>
+                <span className="text-gray-700 leading-relaxed whitespace-pre-line">{obj}</span>
               </li>
             ))}
           </ul>
@@ -89,7 +78,7 @@ export function TitresServiceModuleClient({
           {titresServiceModuleLabels.modalitesTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line text-justify">
             {module_.modalitesPedagogie}
           </p>
         </div>
@@ -101,7 +90,7 @@ export function TitresServiceModuleClient({
           {titresServiceModuleLabels.evaluationTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line text-justify">
             {module_.evaluationSuivi}
           </p>
         </div>
@@ -113,7 +102,7 @@ export function TitresServiceModuleClient({
           {titresServiceModuleLabels.supportsTitle}
         </h2>
         <div className="bg-white rounded-xl border border-primary-100 p-6 shadow-sm">
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line text-justify">
             {module_.supportsLogistiques}
           </p>
         </div>
