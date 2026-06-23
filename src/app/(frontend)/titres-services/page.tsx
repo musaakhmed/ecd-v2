@@ -51,17 +51,28 @@ export const revalidate = 0
 const Page = async () => {
   const cmsModules = hasContentfulEnv() ? await listTitresServiceModules() : null
 
-  const modules = (cmsModules ?? catalogueModules).map((m) => ({
-    slug: m.slug,
-    titre: m.titre,
-    category: m.category,
-    imageSrc:
-      'imageSrc' in m
-        ? m.imageSrc
-        : (m.image?.url ?? '/assets/services/perfectionnement/office.jpg'),
-    imageAlt: 'imageAlt' in m ? m.imageAlt : (m.image?.title ?? m.titre),
-    isPlaceholder: m.isPlaceholder ?? null,
-  }))
+  const modules = cmsModules
+    ? cmsModules.map((m) => ({
+        slug: m.slug,
+        titre: m.titre,
+        category: m.category,
+        order: m.order ?? 999,
+        imageSrc: m.image?.url ?? '/assets/services/perfectionnement/office.jpg',
+        imageAlt: m.image?.title ?? m.titre,
+        isPlaceholder: m.isPlaceholder ?? null,
+      }))
+    : (() => {
+        const categoryOrder: Record<string, number> = {}
+        return catalogueModules.map((m) => ({
+          slug: m.slug,
+          titre: m.titre,
+          category: m.category,
+          order: (categoryOrder[m.category] = (categoryOrder[m.category] ?? 0) + 1),
+          imageSrc: m.imageSrc,
+          imageAlt: m.imageAlt,
+          isPlaceholder: m.isPlaceholder ?? null,
+        }))
+      })()
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">

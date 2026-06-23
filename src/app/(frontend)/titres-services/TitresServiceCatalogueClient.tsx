@@ -10,6 +10,7 @@ export type TitresServiceCatalogueCardModule = {
   slug: string
   titre: string
   category: CatalogueCategoryKey
+  order: number
   imageSrc: string
   imageAlt: string
   isPlaceholder?: boolean | null
@@ -63,8 +64,7 @@ export function TitresServiceCatalogueClient({
               <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
                 {modules
                   .filter((m) => m.category === g.key)
-                  .slice()
-                  .reverse()
+                  .sort((a, b) => a.order - b.order)
                   .map((mod) => (
                     <div key={mod.slug} className="h-full">
                       <CourseModuleCard

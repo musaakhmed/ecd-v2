@@ -58,10 +58,11 @@ async function upsertTitresServiceModule(args: {
   env: PlainClientAPI
   locale: string
   m: (typeof catalogueModules)[number]
+  order: number
   approbationsByKey: Map<ApprobationKey, EntryProps>
   fallbackApprovals: [EntryProps, EntryProps]
 }) {
-  const { env, locale, m, approbationsByKey, fallbackApprovals } = args
+  const { env, locale, m, order, approbationsByKey, fallbackApprovals } = args
   const existingId = await findEntryIdBySlug({
     cma: env,
     contentTypeId: 'titresServiceModule',
@@ -119,6 +120,7 @@ async function upsertTitresServiceModule(args: {
       approbation: { [locale]: finalApprobationLinks },
       duree: { [locale]: m.duree },
       category: { [locale]: m.category },
+      order: { [locale]: order },
       image: imageAsset
         ? {
             [locale]: { sys: { type: 'Link', linkType: 'Asset', id: imageAsset.sys.id } },
@@ -187,11 +189,14 @@ export async function migrateTitresService() {
   )
 
   // 2) Modules
+  const categoryOrder: Record<string, number> = {}
   for (const m of catalogueModules) {
+    categoryOrder[m.category] = (categoryOrder[m.category] ?? 0) + 1
     await upsertTitresServiceModule({
       env,
       locale: mgmtEnv.locale,
       m,
+      order: categoryOrder[m.category],
       approbationsByKey,
       fallbackApprovals: [fallbackApproval1, fallbackApproval2],
     })
