@@ -64,9 +64,8 @@ export const serviceCardsContent = {
   sectionTitle: 'Nos Services',
   ctaLabel: 'En savoir plus',
   autreFormation: {
-    title: 'Autre formation',
-    description:
-      'Formation en ergonomie et prévention des TMS pour le personnel des maisons de repos.',
+    title: 'Formation en ergonomie et prévention des TMS pour le personnel des maisons de repos.',
+    description: '',
     ctaLabel: 'En savoir plus',
     href: '/nos-services/autre-formation',
     image: '/assets/services/autres-formations/ergonomie-maison-repos/pexels-karola-g-5207102.jpg',
