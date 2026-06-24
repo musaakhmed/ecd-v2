@@ -135,43 +135,6 @@ const Page = () => {
         />
       ))}
 
-      <Section className="bg-white">
-        <SectionTitle>{content.organisation.title}</SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-stretch">
-          {organisationBlocks.map((block) => (
-            <motion.div
-              key={block.title}
-              variants={fadeInUp}
-              className="flex min-h-0 [&_.rounded-2xl]:rounded-2xl"
-            >
-              <DarkTextCard
-                variant={block.variant}
-                title={block.title}
-                raw
-                className="rounded-2xl p-6 md:p-8 h-full w-full"
-              >
-                <ul className="space-y-3 text-inherit">
-                  {block.items.map((item) => (
-                    <li key={item} className="flex gap-3 items-start leading-relaxed">
-                      <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </DarkTextCard>
-            </motion.div>
-          ))}
-        </div>
-        <motion.div variants={fadeInUp} className="mt-8 flex justify-center">
-          <Link
-            href="/contact"
-            className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 text-sm md:text-base text-center"
-          >
-            Demander une offre
-          </Link>
-        </motion.div>
-      </Section>
-
       <Section className="bg-gradient-to-b from-primary-50 to-white">
         <SectionTitle>{content.contenuPedagogique.title}</SectionTitle>
         <div className="space-y-6">
@@ -216,12 +179,42 @@ const Page = () => {
           </DarkTextCard>
         </motion.div>
 
-        <SectionTitle>{content.attestation.title}</SectionTitle>
-        <motion.div variants={fadeInUp}>
-          <GradientBlock>
-            <p className="text-primary-100/90 leading-relaxed text-lg">{content.attestation.text}</p>
-          </GradientBlock>
-        </motion.div>
+        <Section className="bg-white">
+          <SectionTitle>{content.organisation.title}</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-stretch">
+            {organisationBlocks.map((block) => (
+              <motion.div
+                key={block.title}
+                variants={fadeInUp}
+                className="flex min-h-0 [&_.rounded-2xl]:rounded-2xl"
+              >
+                <DarkTextCard
+                  variant={block.variant}
+                  title={block.title}
+                  raw
+                  className="rounded-2xl p-6 md:p-8 h-full w-full"
+                >
+                  <ul className="space-y-3 text-inherit">
+                    {block.items.map((item) => (
+                      <li key={item} className="flex gap-3 items-start leading-relaxed">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-primary-200 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </DarkTextCard>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div variants={fadeInUp} className="mt-8 flex justify-center">
+            <Link
+              href="/contact"
+              className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 text-sm md:text-base text-center"
+            >
+              Demander une offre
+            </Link>
+          </motion.div>
+        </Section>
       </Section>
     </div>
   )

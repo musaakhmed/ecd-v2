@@ -12,7 +12,7 @@ export const autreFormationPageContent = {
     eyebrow: 'Nos Services',
     title: 'Ergonomie et prévention des TMS dans les maisons de repos',
     description:
-      'Programme de formation spécifique en ergonomie et prévention des Troubles Musculo-Squelettiques, destiné aux travailleurs des maisons de repos.',
+      "Cette formation vise à prévenir les Troubles Musculo-Squelettiques (TMS) chez les professionnels travaillant en maison de repos. Les participants apprennent à adopter les bonnes postures lors des soins, des transferts de résidents, de la manutention du matériel et des tâches quotidiennes. Des techniques ergonomiques concrètes sont présentées afin de réduire la fatigue physique, les douleurs et les risques d'accidents. La formation alterne apports théoriques, démonstrations et exercices pratiques adaptés aux situations de terrain. ",
   },
   contexte: {
     title: 'Contexte',
