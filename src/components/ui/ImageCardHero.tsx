@@ -25,6 +25,12 @@ export interface ImageCardHeroProps {
   listItems?: string[]
   /** Optional conclusion paragraph after the list */
   conclusion?: string
+  /** Override image wrapper width (default: 68% on large screens) */
+  imageWidthClassName?: string
+  /** Override image aspect ratio container */
+  imageAspectClassName?: string
+  /** Responsive `sizes` hint for next/image */
+  imageSizes?: string
 }
 
 const motionConfig = {
@@ -43,13 +49,15 @@ export function ImageCardHero({
   intro,
   listItems,
   conclusion,
+  imageWidthClassName,
+  imageAspectClassName = 'aspect-[4/3]',
+  imageSizes = '(max-width: 1024px) 100vw, 68vw',
 }: ImageCardHeroProps) {
   const imageOffset = imageOnLeft ? -80 : 80
   const cardOffset = imageOnLeft ? 80 : -80
 
-  const imageClasses = imageOnLeft
-    ? 'w-full lg:w-[68%] rounded-3xl overflow-hidden shrink-0'
-    : 'w-full lg:w-[68%] lg:ml-auto rounded-3xl overflow-hidden shrink-0'
+  const imageWidth = imageWidthClassName ?? (imageOnLeft ? 'w-full lg:w-[68%]' : 'w-full lg:w-[68%] lg:ml-auto')
+  const imageClasses = `${imageWidth} rounded-3xl overflow-hidden shrink-0`
 
   const cardPositionClasses = imageOnLeft
     ? 'lg:absolute lg:right-8 lg:top-1/2 lg:-translate-y-1/2'
@@ -77,13 +85,13 @@ export function ImageCardHero({
             transition={motionConfig.transition}
             className={imageClasses}
           >
-            <div className="relative w-full aspect-[4/3]">
+            <div className={`relative w-full ${imageAspectClassName}`}>
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 68vw"
+                sizes={imageSizes}
               />
             </div>
           </motion.div>

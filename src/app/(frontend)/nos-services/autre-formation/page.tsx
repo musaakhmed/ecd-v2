@@ -122,18 +122,24 @@ const Page = () => {
         </motion.div>
       </Section>
 
-      {content.imageSections.map((section, index) => (
-        <ImageCardHero
-          key={section.key}
-          title={section.title}
-          imageSrc={section.imageSrc}
-          imageAlt={section.imageAlt}
-          imageOnLeft={index % 2 === 0}
-          intro={section.intro}
-          listItems={[...section.listItems]}
-          compactSpacing
-        />
-      ))}
+      {content.imageSections.map((section, index) => {
+        const imageOnLeft = index % 2 === 0
+        return (
+          <ImageCardHero
+            key={section.key}
+            title={section.title}
+            imageSrc={section.imageSrc}
+            imageAlt={section.imageAlt}
+            imageOnLeft={imageOnLeft}
+            intro={section.intro}
+            listItems={[...section.listItems]}
+            imageWidthClassName={imageOnLeft ? 'w-full lg:w-[60%]' : 'w-full lg:w-[60%] ml-auto'}
+            imageAspectClassName="aspect-[3/2] lg:aspect-[16/10]"
+            imageSizes="(max-width: 1024px) 100vw, 48vw"
+            compactSpacing
+          />
+        )
+      })}
 
       <Section className="bg-gradient-to-b from-primary-50 to-white">
         <SectionTitle>{content.contenuPedagogique.title}</SectionTitle>
