@@ -205,8 +205,22 @@ const Footer = ({ socialLinks = defaultSocialLinks }: FooterProps) => {
             {/* Oblique line */}
             {/*<div className="absolute top-0 left-0 w-full h-px bg-secondary-800 transform -skew-x-12 origin-left overflow-hidden"></div>*/}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-primary-300 text-sm">
-                © {currentYear} {footerContent.bottomBar.copyrightSuffix}
+              <p className="text-primary-300 text-sm text-center md:text-left">
+                <span>
+                  © {currentYear} {footerContent.bottomBar.copyrightSuffix}
+                </span>
+                <span className="hidden sm:inline"> · </span>
+                <span className="block sm:inline">
+                  {footerContent.bottomBar.developer.prefix}{' '}
+                  <a
+                    href={footerContent.bottomBar.developer.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-200 hover:text-white underline underline-offset-2 transition-colors duration-200"
+                  >
+                    {footerContent.bottomBar.developer.label}
+                  </a>
+                </span>
               </p>
               <div className="flex space-x-6 text-sm">
                 <Link

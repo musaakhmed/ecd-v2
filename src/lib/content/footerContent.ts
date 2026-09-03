@@ -46,6 +46,11 @@ export const footerContent = {
   },
   bottomBar: {
     copyrightSuffix: 'Espace Forma (EF) asbl. Tous droits réservés.',
+    developer: {
+      prefix: 'Développé par',
+      label: 'musah.dev',
+      href: 'https://musah.dev',
+    },
     legal: { label: 'Mentions légales', href: '/mentions-legales' },
     privacy: { label: 'Politique de confidentialité', href: '/politique-de-confidentialite' },
     cookies: { label: 'Politique de cookies', href: '/politique-de-cookies' },
