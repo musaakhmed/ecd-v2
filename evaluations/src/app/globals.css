@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.35;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@theme {
+  --color-primary: #0087b8;
+  --color-primary-50: #f6f8f9;
+  --color-azure: #00a6d6;
+  --color-azure-50: #e6f7fd;
+  --color-azure-200: #99e1f6;
+  --color-azure-600: #0086ab;
+  --color-azure-700: #006580;
+  --color-surface: #f4f7fb;
+  --color-text: #1f2533;
+  --color-muted: #5f6980;
+  --color-border: #d5ddea;
+}

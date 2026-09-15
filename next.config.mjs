@@ -1,3 +1,5 @@
+const evaluationsOrigin = (process.env.EVALUATIONS_ORIGIN || 'http://localhost:3002').replace(/\/+$/, '')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -28,23 +30,33 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/evaluations',
+        destination: evaluationsOrigin,
+        permanent: false,
+      },
+      {
+        source: '/evaluations/:slug',
+        destination: `${evaluationsOrigin}/:slug`,
+        permanent: false,
+      },
+      {
         source: '/quiz1a',
-        destination: 'https://forms.gle/mWDtJjMS9h8ncD7u6',
+        destination: `${evaluationsOrigin}/quiz-1a`,
         permanent: true,
       },
       {
         source: '/quiz1b',
-        destination: 'https://forms.gle/7fc4Ccgo4xdWHo5n7',
+        destination: `${evaluationsOrigin}/quiz-1b`,
         permanent: true,
       },
       {
         source: '/quiz2',
-        destination: 'https://forms.gle/oJsFa9afWVGsAX3XA',
+        destination: `${evaluationsOrigin}/quiz-2`,
         permanent: true,
       },
       {
         source: '/evaluation-ts',
-        destination: 'https://forms.gle/rfCioBKNw4eA7FSW9',
+        destination: `${evaluationsOrigin}/titres-services`,
         permanent: true,
       },
     ]
