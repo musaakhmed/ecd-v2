@@ -10,6 +10,7 @@ import {
 import { renderEvaluationPdf } from '@/lib/evaluations/pdf'
 
 export const runtime = 'nodejs'
+export const maxDuration = 30
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
 const RATE_LIMIT_MAX = 8
@@ -109,19 +110,12 @@ export async function POST(request: NextRequest) {
     dateStyle: 'long',
     timeStyle: 'short',
   })
-  const pdf = await renderEvaluationPdf({ form, firstName, lastName, answers, submittedAt })
   const filename = `${slugify(firstName)}-${slugify(lastName)}-${form.slug}-${new Date().toISOString().slice(0, 10)}.pdf`
   const score = form.kind === 'quiz' ? scoreQuiz(form, answers) : null
   const subject = score
     ? `Évaluation — ${form.shortTitle} — ${firstName} ${lastName} (${score.correct}/${score.total})`
     : `Évaluation — ${form.shortTitle} — ${firstName} ${lastName}`
-
-  const resend = new Resend(apiKey)
-  const { error } = await resend.emails.send({
-    from: fromEmail,
-    to: toEmail,
-    subject,
-    html: `
+  const html = `
       <p>Une nouvelle évaluation a été soumise.</p>
       <ul>
         <li><strong>Formulaire :</strong> ${form.title}</li>
@@ -130,19 +124,45 @@ export async function POST(request: NextRequest) {
         ${score ? `<li><strong>Score :</strong> ${score.correct} / ${score.total}</li>` : ''}
       </ul>
       <p>Le PDF est joint à cet e-mail.</p>
-    `,
+    `
+  const from = fromEmail.includes('<') ? fromEmail : `Espace Forma <${fromEmail}>`
+
+  let pdfBase64: string
+  try {
+    const pdf = await renderEvaluationPdf({ form, firstName, lastName, answers, submittedAt })
+    pdfBase64 = pdf.toString('base64')
+  } catch (error) {
+    console.error('Evaluation PDF generation failed', error)
+    return NextResponse.json(
+      { error: 'La génération du PDF a échoué. Merci de réessayer ou de prévenir le formateur.' },
+      { status: 500 },
+    )
+  }
+
+  const resend = new Resend(apiKey)
+  const { error } = await resend.emails.send({
+    from,
+    to: [toEmail],
+    subject,
+    html,
     attachments: [
       {
         filename,
-        content: pdf,
+        content: pdfBase64,
       },
     ],
   })
 
   if (error) {
     console.error('Resend evaluation email failed', error)
+    const detail = `${error.name ?? ''} ${error.message ?? ''}`.toLowerCase()
+    const configIssue = /domain|verif|from|invalid|api key|testing emails|not allowed/.test(detail)
     return NextResponse.json(
-      { error: 'L’envoi a échoué. Merci de réessayer ou de prévenir le formateur.' },
+      {
+        error: configIssue
+          ? 'L’envoi par e-mail n’est pas configuré (domaine Resend ou adresse d’expédition). Merci de prévenir le formateur.'
+          : 'L’envoi a échoué. Merci de réessayer ou de prévenir le formateur.',
+      },
       { status: 502 },
     )
   }
