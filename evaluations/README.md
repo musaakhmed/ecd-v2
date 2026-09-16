@@ -27,7 +27,7 @@ pnpm build
 pnpm start
 ```
 
-Sur le site vitrine, `EVALUATIONS_ORIGIN` (défaut `http://localhost:3002`) redirige `/quiz1a`, `/quiz1b`, `/quiz2`, `/evaluation-ts` et `/evaluations` vers cette app.
+En production l’app est sur [https://evaluations.espaceforma.be](https://evaluations.espaceforma.be). Le site vitrine redirige `/quiz1a`, `/quiz1b`, `/quiz2`, `/evaluation-ts` et `/evaluations` vers cette origine (`EVALUATIONS_ORIGIN`, défaut `https://evaluations.espaceforma.be`).
 
 Ou reliez ce dossier à un projet Vercel séparé. Anciens liens :
 

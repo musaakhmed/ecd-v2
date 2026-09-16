@@ -1,4 +1,6 @@
-const evaluationsOrigin = (process.env.EVALUATIONS_ORIGIN || 'http://localhost:3002').replace(/\/+$/, '')
+const evaluationsOrigin = (
+  process.env.EVALUATIONS_ORIGIN || 'https://evaluations.espaceforma.be'
+).replace(/\/+$/, '')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -42,22 +44,22 @@ const nextConfig = {
       {
         source: '/quiz1a',
         destination: `${evaluationsOrigin}/quiz-1a`,
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/quiz1b',
         destination: `${evaluationsOrigin}/quiz-1b`,
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/quiz2',
         destination: `${evaluationsOrigin}/quiz-2`,
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/evaluation-ts',
         destination: `${evaluationsOrigin}/titres-services`,
-        permanent: true,
+        permanent: false,
       },
     ]
   },
