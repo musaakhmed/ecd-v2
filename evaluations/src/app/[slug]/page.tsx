@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getEvaluationForm, getEvaluationSlugs } from '@/lib/evaluations'
+import { evaluationCategoryHref, getEvaluationForm, getEvaluationSlugs } from '@/lib/evaluations'
 import { EvaluationFormClient } from '../EvaluationFormClient'
 
 type Props = {
@@ -31,8 +31,11 @@ export default async function EvaluationFormPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-3xl px-5 py-8 md:py-10">
       <p className="mb-5">
-        <Link href="/" className="text-sm font-medium text-azure-700 hover:underline">
-          ← Toutes les évaluations
+        <Link
+          href={evaluationCategoryHref(form.kind)}
+          className="text-sm font-medium text-azure-700 hover:underline"
+        >
+          ← {form.kind === 'quiz' ? 'Quizz informatiques' : 'Évaluation de formation'}
         </Link>
       </p>
       <h1 className="text-2xl font-bold text-text md:text-3xl">{form.title}</h1>

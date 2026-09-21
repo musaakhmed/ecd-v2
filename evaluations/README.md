@@ -29,8 +29,11 @@ pnpm start
 
 En production l’app est sur [https://evaluations.espaceforma.be](https://evaluations.espaceforma.be). Le site vitrine redirige `/quiz1a`, `/quiz1b`, `/quiz2`, `/evaluation-ts` et `/evaluations` vers cette origine (`EVALUATIONS_ORIGIN`, défaut `https://evaluations.espaceforma.be`).
 
-Ou reliez ce dossier à un projet Vercel séparé. Anciens liens :
+Ou reliez ce dossier à un projet Vercel séparé. Pages :
 
+- `/` — choix entre quizz informatiques et évaluation de formation
+- `/quizz-informatiques` — quiz 1A, 1B et 2
+- `/evaluation-de-formation` — évaluations de module
 - `/quiz1a` → `/quiz-1a`
 - `/quiz1b` → `/quiz-1b`
 - `/quiz2` → `/quiz-2`

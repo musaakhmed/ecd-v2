@@ -4,6 +4,7 @@ import React, { useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
+  evaluationCategoryHref,
   flattenQuestionIds,
   isAnswerFilled,
   type EvaluationAnswers,
@@ -105,10 +106,10 @@ export function EvaluationFormClient({ form }: Props) {
           Un document PDF a été transmis à Espace Forma. Vous pouvez fermer cette page.
         </p>
         <Link
-          href="/"
+          href={evaluationCategoryHref(form.kind)}
           className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-azure-600 px-5 py-3 font-semibold text-white transition hover:bg-azure-700 active:scale-[0.97]"
         >
-          Retour aux évaluations
+          {form.kind === 'quiz' ? 'Retour aux quizz' : 'Retour aux évaluations'}
         </Link>
       </div>
     )

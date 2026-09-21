@@ -6,6 +6,13 @@ import { titresServicesEval } from './titresServices'
 
 export const evaluationForms: EvaluationForm[] = [quiz1a, quiz1b, quiz2, titresServicesEval]
 
+export const quizForms = evaluationForms.filter((form) => form.kind === 'quiz')
+export const courseEvalForms = evaluationForms.filter((form) => form.kind === 'course-eval')
+
+export function evaluationCategoryHref(kind: EvaluationForm['kind']): string {
+  return kind === 'quiz' ? '/quizz-informatiques' : '/evaluation-de-formation'
+}
+
 export function getEvaluationForm(slug: string): EvaluationForm | undefined {
   return evaluationForms.find((form) => form.slug === slug)
 }
