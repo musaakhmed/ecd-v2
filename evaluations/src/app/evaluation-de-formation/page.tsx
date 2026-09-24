@@ -19,7 +19,7 @@ export default function CourseEvalListPage() {
       </p>
       <h1 className="text-2xl font-bold text-text md:text-3xl">Évaluation de formation</h1>
       <p className="mt-2 text-muted">
-        Choisissez un formulaire. Aucun compte n’est demandé : indiquez simplement votre nom, puis envoyez vos
+        Un formulaire unique pour tous les modules Titres Services. Indiquez la formation suivie, puis envoyez vos
         réponses.
       </p>
       <EvaluationFormList forms={courseEvalForms} />

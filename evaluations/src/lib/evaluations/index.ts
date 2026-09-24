@@ -13,6 +13,10 @@ export function evaluationCategoryHref(kind: EvaluationForm['kind']): string {
   return kind === 'quiz' ? '/quizz-informatiques' : '/evaluation-de-formation'
 }
 
+export function courseOptionList(form: EvaluationForm): string[] {
+  return (form.courseGroups ?? []).flatMap((group) => group.options)
+}
+
 export function getEvaluationForm(slug: string): EvaluationForm | undefined {
   return evaluationForms.find((form) => form.slug === slug)
 }
@@ -24,6 +28,7 @@ export function getEvaluationSlugs(): string[] {
 export function flattenQuestionIds(form: EvaluationForm): string[] {
   const ids: string[] = []
   for (const question of form.questions) {
+    if (question.type === 'textarea' && question.optional) continue
     if (question.type === 'likert-group') {
       for (const item of question.items) ids.push(`${question.id}:${item.id}`)
     } else {

@@ -82,12 +82,14 @@ function EvaluationPdfDocument({
   form,
   firstName,
   lastName,
+  courseTitle,
   answers,
   submittedAt,
 }: {
   form: EvaluationForm
   firstName: string
   lastName: string
+  courseTitle?: string
   answers: EvaluationAnswers
   submittedAt: string
 }) {
@@ -100,6 +102,7 @@ function EvaluationPdfDocument({
         <Text style={styles.title}>{form.title}</Text>
         <View style={styles.meta}>
           <Text style={styles.metaLine}>Participant : {firstName} {lastName}</Text>
+          {courseTitle ? <Text style={styles.metaLine}>Module : {courseTitle}</Text> : null}
           <Text style={styles.metaLine}>Date : {submittedAt}</Text>
           {quizScore ? (
             <Text style={styles.score}>
@@ -121,6 +124,17 @@ function EvaluationPdfDocument({
                     </Text>
                   </View>
                 ))}
+              </View>
+            )
+          }
+
+          if (question.type === 'textarea') {
+            const remarks = formatValue(answers[question.id])
+            if (question.optional && remarks === '—') return null
+            return (
+              <View key={question.id} style={styles.block}>
+                <Text style={styles.prompt}>{question.prompt}</Text>
+                <Text style={styles.answer}>{remarks}</Text>
               </View>
             )
           }
@@ -153,6 +167,7 @@ export async function renderEvaluationPdf(input: {
   form: EvaluationForm
   firstName: string
   lastName: string
+  courseTitle?: string
   answers: EvaluationAnswers
   submittedAt: string
 }): Promise<Buffer> {
@@ -161,6 +176,7 @@ export async function renderEvaluationPdf(input: {
       form={input.form}
       firstName={input.firstName}
       lastName={input.lastName}
+      courseTitle={input.courseTitle}
       answers={input.answers}
       submittedAt={input.submittedAt}
     />,

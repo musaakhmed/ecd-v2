@@ -20,7 +20,7 @@ const categories = [
   {
     href: '/evaluation-de-formation',
     title: 'Évaluation de formation',
-    description: 'Donnez votre avis sur un module de formation : contenu, formateur et conditions.',
+    description: 'Formulaire unique pour tous les modules Titres Services.',
     countLabel: courseEvalForms.length > 1 ? `${courseEvalForms.length} formulaires` : '1 formulaire',
     heroImage: courseEvalForms[0]?.heroImage ?? '/assets/TS/courses/numerique/identite-numerique.jpg',
   },

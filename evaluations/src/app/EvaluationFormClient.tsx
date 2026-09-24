@@ -4,6 +4,7 @@ import React, { useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
+  courseOptionList,
   evaluationCategoryHref,
   flattenQuestionIds,
   isAnswerFilled,
@@ -26,11 +27,13 @@ function questionAnchor(id: string) {
 }
 
 export function EvaluationFormClient({ form }: Props) {
+  const courseOptions = useMemo(() => courseOptionList(form), [form])
   const questionIds = useMemo(() => flattenQuestionIds(form), [form])
   const formRef = useRef<HTMLFormElement>(null)
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [courseTitle, setCourseTitle] = useState('')
   const [honeypot, setHoneypot] = useState('')
   const [answers, setAnswers] = useState<EvaluationAnswers>({})
   const [fieldError, setFieldError] = useState<string | null>(null)
@@ -59,6 +62,11 @@ export function EvaluationFormClient({ form }: Props) {
       scrollTo('eval-identity')
       return false
     }
+    if (courseOptions.length > 0 && !courseTitle) {
+      setFieldError('Veuillez indiquer le module de formation suivi.')
+      scrollTo('eval-identity')
+      return false
+    }
     const missing = questionIds.find((id) => !isAnswerFilled(answers[id]))
     if (missing) {
       setFieldError('Veuillez répondre à toutes les questions.')
@@ -80,6 +88,7 @@ export function EvaluationFormClient({ form }: Props) {
           formId: form.slug,
           firstName: firstName.trim(),
           lastName: lastName.trim(),
+          courseTitle: courseTitle || undefined,
           answers,
           website: honeypot,
         }),
@@ -146,7 +155,7 @@ export function EvaluationFormClient({ form }: Props) {
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="eval-firstname" className="mb-1.5 block text-sm font-semibold text-text">
-              Prénom
+              Prénom <span className="text-azure-700">*</span>
             </label>
             <input
               id="eval-firstname"
@@ -163,7 +172,7 @@ export function EvaluationFormClient({ form }: Props) {
           </div>
           <div>
             <label htmlFor="eval-lastname" className="mb-1.5 block text-sm font-semibold text-text">
-              Nom
+              Nom <span className="text-azure-700">*</span>
             </label>
             <input
               id="eval-lastname"
@@ -179,6 +188,36 @@ export function EvaluationFormClient({ form }: Props) {
             />
           </div>
         </div>
+        {form.courseGroups?.length ? (
+          <div className="mt-4">
+            <label htmlFor="eval-course" className="mb-1.5 block text-sm font-semibold text-text">
+              Module suivi <span className="text-azure-700">*</span>
+            </label>
+            <select
+              id="eval-course"
+              name="courseTitle"
+              required
+              value={courseTitle}
+              aria-describedby={fieldError && !courseTitle ? 'eval-identity-error' : undefined}
+              onChange={(e) => {
+                setCourseTitle(e.target.value)
+                setFieldError(null)
+              }}
+              className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base text-text outline-none ring-azure-500 focus:ring-2"
+            >
+              <option value="">Choisir un module Titres Services</option>
+              {form.courseGroups.map((group) => (
+                <optgroup key={group.label} label={group.label}>
+                  {group.options.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+          </div>
+        ) : null}
       </div>
 
       <div className="space-y-8">
@@ -195,7 +234,7 @@ export function EvaluationFormClient({ form }: Props) {
       </div>
 
       {fieldError ? (
-        <p className="mt-6 text-sm font-medium text-red-700" role="alert">
+        <p id="eval-identity-error" className="mt-6 text-sm font-medium text-red-700" role="alert">
           {fieldError}
         </p>
       ) : null}
@@ -245,7 +284,7 @@ function QuestionBlock({
               className="scroll-mt-24 rounded-xl border border-border bg-surface p-4"
             >
               <p className="mb-3 font-medium text-text">{item.prompt}</p>
-              <div className="grid gap-2 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {question.scale.map((option) => {
                   const selected = value === option
                   return (
@@ -274,6 +313,28 @@ function QuestionBlock({
           )
         })}
       </fieldset>
+    )
+  }
+
+  if (question.type === 'textarea') {
+    const value = typeof answers[question.id] === 'string' ? answers[question.id] : ''
+    return (
+      <div id={questionAnchor(question.id)} className="scroll-mt-24">
+        <label htmlFor={`eval-${question.id}`} className="mb-2 block text-lg font-semibold text-text">
+          {question.prompt}
+          {question.optional ? (
+            <span className="ml-2 text-sm font-normal text-muted">(facultatif)</span>
+          ) : null}
+        </label>
+        <textarea
+          id={`eval-${question.id}`}
+          name={question.id}
+          rows={5}
+          value={value}
+          onChange={(e) => setAnswer(question.id, e.target.value)}
+          className="min-h-28 w-full rounded-xl border border-border bg-white px-4 py-3 text-base text-text outline-none ring-azure-500 focus:ring-2"
+        />
+      </div>
     )
   }
 

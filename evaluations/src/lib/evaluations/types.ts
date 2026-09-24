@@ -19,7 +19,14 @@ export type LikertGroupQuestion = {
   items: { id: string; prompt: string }[]
 }
 
-export type EvaluationQuestion = ChoiceQuestion | LikertGroupQuestion
+export type TextQuestion = {
+  id: string
+  type: 'textarea'
+  prompt: string
+  optional?: boolean
+}
+
+export type EvaluationQuestion = ChoiceQuestion | LikertGroupQuestion | TextQuestion
 
 export type EvaluationForm = {
   slug: string
@@ -31,6 +38,8 @@ export type EvaluationForm = {
   heroImage: string
   heroImageAlt: string
   questions: EvaluationQuestion[]
+  /** When set, the respondent must pick a Titres Services module before submitting. */
+  courseGroups?: { label: string; options: string[] }[]
 }
 
 export type EvaluationAnswers = Record<string, string | string[]>

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import {
+  courseOptionList,
   flattenQuestionIds,
   getEvaluationForm,
   isAnswerFilled,
@@ -37,6 +38,14 @@ function slugify(value: string): string {
     .replace(/^-|-$/g, '')
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
 }
@@ -71,12 +80,21 @@ export async function POST(request: NextRequest) {
   const formId = typeof body.formId === 'string' ? body.formId : ''
   const firstName = typeof body.firstName === 'string' ? body.firstName.trim() : ''
   const lastName = typeof body.lastName === 'string' ? body.lastName.trim() : ''
+  const courseTitle = typeof body.courseTitle === 'string' ? body.courseTitle.trim() : ''
   const answers = parseAnswers(body.answers)
   const form = getEvaluationForm(formId)
+  const allowedCourses = form ? courseOptionList(form) : []
 
   if (!form || !firstName || !lastName || !answers) {
     return NextResponse.json(
       { error: 'Veuillez indiquer votre nom et répondre à toutes les questions.' },
+      { status: 400 },
+    )
+  }
+
+  if (allowedCourses.length > 0 && !allowedCourses.includes(courseTitle)) {
+    return NextResponse.json(
+      { error: 'Veuillez indiquer le module de formation suivi.' },
       { status: 400 },
     )
   }
@@ -110,18 +128,24 @@ export async function POST(request: NextRequest) {
     dateStyle: 'long',
     timeStyle: 'short',
   })
-  const filename = `${slugify(firstName)}-${slugify(lastName)}-${form.slug}-${new Date().toISOString().slice(0, 10)}.pdf`
+  const filename = `${slugify(firstName)}-${slugify(lastName)}-${slugify(courseTitle || form.slug)}-${new Date().toISOString().slice(0, 10)}.pdf`
   const score = form.kind === 'quiz' ? scoreQuiz(form, answers) : null
   const subject = score
     ? `Évaluation — ${form.shortTitle} — ${firstName} ${lastName} (${score.correct}/${score.total})`
-    : `Évaluation — ${form.shortTitle} — ${firstName} ${lastName}`
+    : `Évaluation — ${courseTitle || form.shortTitle} — ${firstName} ${lastName}`
   const html = `
       <p>Une nouvelle évaluation a été soumise.</p>
       <ul>
         <li><strong>Formulaire :</strong> ${form.title}</li>
+        ${courseTitle ? `<li><strong>Module :</strong> ${courseTitle}</li>` : ''}
         <li><strong>Participant :</strong> ${firstName} ${lastName}</li>
         <li><strong>Date :</strong> ${submittedAt}</li>
         ${score ? `<li><strong>Score :</strong> ${score.correct} / ${score.total}</li>` : ''}
+        ${
+          typeof answers.remarques === 'string' && answers.remarques.trim()
+            ? `<li><strong>Remarques :</strong> ${escapeHtml(answers.remarques.trim())}</li>`
+            : ''
+        }
       </ul>
       <p>Le PDF est joint à cet e-mail.</p>
     `
@@ -129,7 +153,7 @@ export async function POST(request: NextRequest) {
 
   let pdfBase64: string
   try {
-    const pdf = await renderEvaluationPdf({ form, firstName, lastName, answers, submittedAt })
+    const pdf = await renderEvaluationPdf({ form, firstName, lastName, courseTitle, answers, submittedAt })
     pdfBase64 = pdf.toString('base64')
   } catch (error) {
     console.error('Evaluation PDF generation failed', error)

@@ -1,21 +1,54 @@
 import type { EvaluationForm } from './types'
 
+export const titresServicesCourseGroups: NonNullable<EvaluationForm['courseGroups']> = [
+  {
+    label: 'Outils numériques',
+    options: [
+      'Identité numérique et démarches administratives',
+      'Messageries électroniques',
+      'Internet, navigation et recherches en ligne',
+      'Découverte de ChatGPT',
+    ],
+  },
+  {
+    label: 'Techniques et prévention',
+    options: [
+      'Techniques de nettoyage et sécurité',
+      'Ergonomie et prévention des TMS',
+      'Produits chimiques et sécurité',
+      'Sécurité sur le lieu de travail - Prévention et protection',
+      'Techniques de repassage professionnel',
+    ],
+  },
+  {
+    label: 'Bien-être et savoir-faire',
+    options: [
+      'Communication professionnelle',
+      'Motivation et gestion de stress',
+      'Organisation du travail',
+      'Assertivité professionnelle',
+      'Déontologie professionnelle',
+    ],
+  },
+]
+
 export const titresServicesEval: EvaluationForm = {
   slug: 'titres-services',
-  title: 'Évaluation de formation — Identité numérique',
+  title: 'Évaluation de formation — Titres Services',
   shortTitle: 'Évaluation TS',
   description:
-    'Donnez votre avis sur le module Identité numérique : contenu, formateur et conditions de formation.',
+    'Formulaire unique pour tous les modules Titres Services. Choisissez la formation suivie, puis donnez votre avis sur le contenu, le formateur et les conditions.',
   kind: 'course-eval',
   badgeLabel: 'Évaluation de formation',
-  heroImage: '/assets/TS/courses/numerique/identite-numerique.jpg',
-  heroImageAlt: 'Module identité numérique',
+  heroImage: '/assets/services/perfectionnement/office.jpg',
+  heroImageAlt: 'Formations Titres Services',
+  courseGroups: titresServicesCourseGroups,
   questions: [
     {
-      id: 'module-identite-numerique',
+      id: 'module',
       type: 'likert-group',
-      prompt: 'Module identité numérique',
-      scale: ['Pas satisfait', 'Satisfait', 'Très satisfait'],
+      prompt: 'Votre formation',
+      scale: ['Aucun avis', 'Pas satisfait', 'Satisfait', 'Très satisfait'],
       items: [
         {
           id: 'attentes',
@@ -67,6 +100,12 @@ export const titresServicesEval: EvaluationForm = {
           prompt: 'Je recommande cette formation à mes collègues.',
         },
       ],
+    },
+    {
+      id: 'remarques',
+      type: 'textarea',
+      prompt: 'Remarques',
+      optional: true,
     },
   ],
 }
