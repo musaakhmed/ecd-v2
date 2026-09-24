@@ -49,7 +49,7 @@ function normalizeList(values: string[]): string[] {
 }
 
 export function isChoiceCorrect(question: EvaluationQuestion, answer: string | string[] | undefined): boolean {
-  if (question.type === 'likert-group') return false
+  if (question.type !== 'radio' && question.type !== 'checkboxes') return false
   if (!question.correct?.length) return false
   const given = Array.isArray(answer) ? answer : answer ? [answer] : []
   const expected = question.correct
