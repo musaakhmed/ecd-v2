@@ -5,6 +5,8 @@ import {
   flattenQuestionIds,
   getEvaluationForm,
   isAnswerFilled,
+  MAX_COURSE_TITLE_LENGTH,
+  requiresCourseTitle,
   scoreQuiz,
   type EvaluationAnswers,
 } from '@/lib/evaluations'
@@ -92,11 +94,21 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  if (allowedCourses.length > 0 && !allowedCourses.includes(courseTitle)) {
-    return NextResponse.json(
-      { error: 'Veuillez indiquer le module de formation suivi.' },
-      { status: 400 },
-    )
+  if (requiresCourseTitle(form)) {
+    if (allowedCourses.length > 0) {
+      if (!allowedCourses.includes(courseTitle)) {
+        return NextResponse.json(
+          { error: 'Veuillez indiquer le module de formation suivi.' },
+          { status: 400 },
+        )
+      }
+    } else if (!courseTitle) {
+      return NextResponse.json({ error: 'Veuillez indiquer la formation suivie.' }, { status: 400 })
+    }
+  }
+
+  if (courseTitle.length > MAX_COURSE_TITLE_LENGTH) {
+    return NextResponse.json({ error: 'L’intitulé de la formation est trop long.' }, { status: 400 })
   }
 
   const missing = flattenQuestionIds(form).some((id) => !isAnswerFilled(answers[id]))
@@ -137,7 +149,7 @@ export async function POST(request: NextRequest) {
       <p>Une nouvelle évaluation a été soumise.</p>
       <ul>
         <li><strong>Formulaire :</strong> ${form.title}</li>
-        ${courseTitle ? `<li><strong>Module :</strong> ${courseTitle}</li>` : ''}
+        ${courseTitle ? `<li><strong>Formation :</strong> ${escapeHtml(courseTitle)}</li>` : ''}
         <li><strong>Participant :</strong> ${firstName} ${lastName}</li>
         <li><strong>Date :</strong> ${submittedAt}</li>
         ${score ? `<li><strong>Score :</strong> ${score.correct} / ${score.total}</li>` : ''}

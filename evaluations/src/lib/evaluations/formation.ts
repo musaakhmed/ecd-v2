@@ -1,51 +1,18 @@
 import type { EvaluationForm } from './types'
 
-export const titresServicesCourseGroups: NonNullable<EvaluationForm['courseGroups']> = [
-  {
-    label: 'Outils numériques',
-    options: [
-      'Identité numérique et démarches administratives',
-      'Messageries électroniques',
-      'Internet, navigation et recherches en ligne',
-      'Découverte de ChatGPT',
-    ],
-  },
-  {
-    label: 'Techniques et prévention',
-    options: [
-      'Techniques de nettoyage et sécurité',
-      'Ergonomie et prévention des TMS',
-      'Produits chimiques et sécurité',
-      'Sécurité sur le lieu de travail - Prévention et protection',
-      'Techniques de repassage professionnel',
-    ],
-  },
-  {
-    label: 'Bien-être et savoir-faire',
-    options: [
-      'Communication professionnelle',
-      'Motivation et gestion de stress',
-      'Organisation du travail',
-      'Assertivité professionnelle',
-      'Déontologie professionnelle',
-    ],
-  },
-]
-
-export const titresServicesEval: EvaluationForm = {
-  slug: 'titres-services',
-  title: 'Évaluation de formation — Titres Services',
-  shortTitle: 'Évaluation TS',
+export const formationEval: EvaluationForm = {
+  slug: 'formation',
+  title: 'Évaluation de formation',
+  shortTitle: 'Évaluation de formation',
   description:
-    'Formulaire unique pour tous les modules Titres Services. Choisissez la formation suivie, puis donnez votre avis sur le contenu, le formateur et les conditions.',
+    'Donnez votre avis sur une formation : contenu, formateur et conditions.',
   kind: 'course-eval',
-  badgeLabel: 'Titres Services',
+  badgeLabel: 'Évaluation de formation',
   heroImage: '/assets/services/perfectionnement/office.jpg',
-  heroImageAlt: 'Formations Titres Services',
-  courseGroups: titresServicesCourseGroups,
+  heroImageAlt: 'Évaluation de formation',
   questions: [
     {
-      id: 'module',
+      id: 'formation',
       type: 'likert-group',
       prompt: 'Votre formation',
       scale: ['Aucun avis', 'Pas satisfait', 'Satisfait', 'Très satisfait'],
@@ -57,10 +24,6 @@ export const titresServicesEval: EvaluationForm = {
         {
           id: 'objectif-formateur',
           prompt: 'Le contenu de la formation correspond à l’objectif formulé par le formateur.',
-        },
-        {
-          id: 'lien-metier',
-          prompt: 'Le contenu de la formation est en lien avec ma fonction d’aide-ménager(e).',
         },
         {
           id: 'interactif',
@@ -80,8 +43,8 @@ export const titresServicesEval: EvaluationForm = {
             'Grâce à la diversité des méthodes d’apprentissage (exercices/exemples), je comprends mieux la théorie.',
         },
         {
-          id: 'pratique-metier',
-          prompt: 'Ce que j’ai appris, je peux l’utiliser dans la pratique de mon métier.',
+          id: 'pratique',
+          prompt: 'Ce que j’ai appris, je peux l’utiliser dans la pratique.',
         },
         {
           id: 'questions',
@@ -97,7 +60,7 @@ export const titresServicesEval: EvaluationForm = {
         },
         {
           id: 'recommandation',
-          prompt: 'Je recommande cette formation à mes collègues.',
+          prompt: 'Je recommande cette formation.',
         },
       ],
     },

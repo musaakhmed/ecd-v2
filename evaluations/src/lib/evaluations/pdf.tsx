@@ -102,7 +102,7 @@ function EvaluationPdfDocument({
         <Text style={styles.title}>{form.title}</Text>
         <View style={styles.meta}>
           <Text style={styles.metaLine}>Participant : {firstName} {lastName}</Text>
-          {courseTitle ? <Text style={styles.metaLine}>Module : {courseTitle}</Text> : null}
+          {courseTitle ? <Text style={styles.metaLine}>Formation : {courseTitle}</Text> : null}
           <Text style={styles.metaLine}>Date : {submittedAt}</Text>
           {quizScore ? (
             <Text style={styles.score}>

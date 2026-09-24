@@ -8,6 +8,8 @@ import {
   evaluationCategoryHref,
   flattenQuestionIds,
   isAnswerFilled,
+  MAX_COURSE_TITLE_LENGTH,
+  requiresCourseTitle,
   type EvaluationAnswers,
   type EvaluationForm,
   type EvaluationQuestion,
@@ -28,6 +30,8 @@ function questionAnchor(id: string) {
 
 export function EvaluationFormClient({ form }: Props) {
   const courseOptions = useMemo(() => courseOptionList(form), [form])
+  const asksCourseTitle = requiresCourseTitle(form)
+  const usesCourseSelect = courseOptions.length > 0
   const questionIds = useMemo(() => flattenQuestionIds(form), [form])
   const formRef = useRef<HTMLFormElement>(null)
 
@@ -62,8 +66,17 @@ export function EvaluationFormClient({ form }: Props) {
       scrollTo('eval-identity')
       return false
     }
-    if (courseOptions.length > 0 && !courseTitle) {
-      setFieldError('Veuillez indiquer le module de formation suivi.')
+    if (asksCourseTitle && !courseTitle.trim()) {
+      setFieldError(
+        usesCourseSelect
+          ? 'Veuillez indiquer le module de formation suivi.'
+          : 'Veuillez indiquer la formation suivie.',
+      )
+      scrollTo('eval-identity')
+      return false
+    }
+    if (courseTitle.trim().length > MAX_COURSE_TITLE_LENGTH) {
+      setFieldError('L’intitulé de la formation est trop long.')
       scrollTo('eval-identity')
       return false
     }
@@ -88,7 +101,7 @@ export function EvaluationFormClient({ form }: Props) {
           formId: form.slug,
           firstName: firstName.trim(),
           lastName: lastName.trim(),
-          courseTitle: courseTitle || undefined,
+          courseTitle: courseTitle.trim() || undefined,
           answers,
           website: honeypot,
         }),
@@ -188,7 +201,7 @@ export function EvaluationFormClient({ form }: Props) {
             />
           </div>
         </div>
-        {form.courseGroups?.length ? (
+        {usesCourseSelect ? (
           <div className="mt-4">
             <label htmlFor="eval-course" className="mb-1.5 block text-sm font-semibold text-text">
               Module suivi <span className="text-azure-700">*</span>
@@ -206,7 +219,7 @@ export function EvaluationFormClient({ form }: Props) {
               className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base text-text outline-none ring-azure-500 focus:ring-2"
             >
               <option value="">Choisir un module Titres Services</option>
-              {form.courseGroups.map((group) => (
+              {form.courseGroups?.map((group) => (
                 <optgroup key={group.label} label={group.label}>
                   {group.options.map((option) => (
                     <option key={option} value={option}>
@@ -216,6 +229,26 @@ export function EvaluationFormClient({ form }: Props) {
                 </optgroup>
               ))}
             </select>
+          </div>
+        ) : asksCourseTitle ? (
+          <div className="mt-4">
+            <label htmlFor="eval-course" className="mb-1.5 block text-sm font-semibold text-text">
+              Formation suivie <span className="text-azure-700">*</span>
+            </label>
+            <input
+              id="eval-course"
+              name="courseTitle"
+              type="text"
+              required
+              maxLength={MAX_COURSE_TITLE_LENGTH}
+              value={courseTitle}
+              aria-describedby={fieldError && !courseTitle.trim() ? 'eval-identity-error' : undefined}
+              onChange={(e) => {
+                setCourseTitle(e.target.value)
+                setFieldError(null)
+              }}
+              className="min-h-12 w-full rounded-xl border border-border bg-white px-4 text-base text-text outline-none ring-azure-500 focus:ring-2"
+            />
           </div>
         ) : null}
       </div>
